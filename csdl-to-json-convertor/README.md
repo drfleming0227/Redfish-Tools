@@ -9,7 +9,6 @@ The `csdl-to-json.py` tool is a Python tool that converts Redfish CSDL files to 
 To install the tool, see [Installation](https://github.com/DMTF/Redfish-Tools#installation "https://github.com/DMTF/Redfish-Tools#installation").
 
 * [Usage](#usage)
-* [Example](#example)
 * [Options](#options)
 * [dmtf-config.json file](#dmtf-configjson-file)
 * [Assumptions](#assumptions)
@@ -17,27 +16,27 @@ To install the tool, see [Installation](https://github.com/DMTF/Redfish-Tools#in
 
 ## Usage
 
-```
+```bash
 $ python3 csdl-to-json.py --input <INPUT> --output <OUTPUT> --config <CONFIG>
 ```
 
 where
 
-| Option               | Description                                                | 
-| :------------------- | :--------------------------------------------------------- |
-| `--input <INPUT>`    | Folder containing the CSDL files to convert to JSON files. |
-| `--output <OUTPUT>`  | Folder to which to write the generated JSON files.         |
-| `--config <CONFIG>`  | Location of the `dmtf-config.json` file.<br/><br/>The tool reads some control parameters from this JSON file. For more information, see [dmtf-config.json file](#dmtf-configjson-file). |
+| Option               | Description                                                   | 
+| :------------------- | :------------------------------------------------------------ |
+| `--input <INPUT>`    | Folder that contains the CSDL files to convert to JSON files. |
+| `--output <OUTPUT>`  | Folder to which to write the generated JSON files.            |
+| `--config <CONFIG>`  | Location of the `dmtf-config.json` file, from which the tool reads some control parameters.<br/><br/> See [dmtf-config.json file](#dmtf-configjson-file). |
 
-## Example
+For example:
 
-```
+```bash
 $ python3 csdl-to-json.py --input ../../Redfish/metadata --output ../../Redfish/json-schema/ --config dmtf-config.json
 ```
 
 ## Options
 
-```
+```text
 usage: csdl-to-json.py [-h] --input INPUT --output OUTPUT [--config CONFIG]
                        [--overwrite OVERWRITE]
 
@@ -61,7 +60,7 @@ optional arguments:
 
 **Sample config file and default values:**<a id="default-values"></a>
 
-```
+```json
 {
   "Copyright": "Copyright 2014-2021 DMTF. For the full DMTF copyright policy, see http://www.dmtf.org/about/policies/copyright",
   "RedfishSchema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
