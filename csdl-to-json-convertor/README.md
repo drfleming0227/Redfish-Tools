@@ -56,7 +56,7 @@ optional arguments:
 
 ### dmtf-config.json file
 
-The `dmtf-config.json` file contains the following parameters. If you omit any parameters, the tool uses the [default values](#default-values).
+The `dmtf-config.json` file contains the following parameters.
 
 | Parameter | Description | 
 | :-------- | :---------- |
@@ -66,6 +66,8 @@ The `dmtf-config.json` file contains the following parameters. If you omit any p
 | `Location` | Web folder in which to publish the generated JSON Schema files. |
 | `ResourceLocation` | Location of Redfish resources. |
 | `DoNotWrite` | Output files to exclude from generated JSON files. |
+
+If you omit any parameters, the tool uses the [default values](#default-values), which [Sample config file and default values](#default-values) shows.
 
 **Sample config file and default values:**<a id="default-values"></a>
 
