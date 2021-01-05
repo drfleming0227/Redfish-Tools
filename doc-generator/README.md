@@ -19,18 +19,13 @@ Other output formats include:
 
 ## Installation
 
-1. Clone the `Redfish-Tools` repository:
-
-    ```
-    git clone git@github.com:DMTF/Redfish-Tools.git
-    git remote add upstream git@github.com:DMTF/Redfish-Tools.git
-    ```
+See [Installation](https://github.com/DMTF/Redfish-Tools/blob/master#installation "https://github.com/DMTF/Redfish-Tools/blob/master#installation").
 
 1. Install the following required software on the machine from which you will run `doc_generator.py`:
 
     | Software | Description | Download |
     |----------|-------------|----------|
-    | Python 3 | For Markdown output, install only the standard library. | [https://www.python.org/downloads/](https://www.python.org/downloads/) |
+    | Python 3 | If you have not already installed Python, install only the standard library for Markdown output. | [https://www.python.org/downloads/](https://www.python.org/downloads/) |
     | Python&#8209;Markdown | Required for HTML output. | [https://python-markdown.github.io/install/](https://python-markdown.github.io/install/) |
     | Pygments | Required for HTML output. | [http://pygments.org/](http://pygments.org/) |
 

@@ -8,17 +8,7 @@ The `odata_validator.py` tool is a Python tool that crawls through OData-formatt
 
 ## Installation
 
-1. Clone the `Redfish-Tools` repository:
-
-    ```
-    git clone git@github.com:DMTF/Redfish-Tools.git
-    git remote add upstream git@github.com:DMTF/Redfish-Tools.git
-    ```
-1. Install the following required software on the machine from which you will run the `csdl-to-odata_validator.py` tool:
-
-    | Software | Download                             |
-    | :------- | :----------------------------------- |
-    | Python 3 | [https://www.python.org/downloads/](https://www.python.org/downloads/) |
+See [Installation](https://github.com/DMTF/Redfish-Tools/blob/master#installation "https://github.com/DMTF/Redfish-Tools/blob/master#installation").
 
 ## Usage
 
