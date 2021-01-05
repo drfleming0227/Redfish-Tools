@@ -23,11 +23,11 @@ $ python3 csdl-to-json.py --input <INPUT> --output <OUTPUT> --config <CONFIG>
 
 where
 
-| Option               | Description                                              | 
-| :------------------- | :------------------------------------------------------- |
-| `--input <INPUT>`   | Folder containing the CSDL files to convert to JSON files. |
-| `--output <OUTPUT>` | Folder to which to write the generated JSON files. |
-| `--config <CONFIG>` | Location of the `dmtf-config.json` file.  The tool reads some control parameters from this JSON file. For more information, see [dmtf-config.json file](#dmtf-configjson-file). |
+| Option               | Description                                                | 
+| :------------------- | :--------------------------------------------------------- |
+| `--input <INPUT>`    | Folder containing the CSDL files to convert to JSON files. |
+| `--output <OUTPUT>`  | Folder to which to write the generated JSON files.         |
+| `--config <CONFIG>`  | Location of the `dmtf-config.json` file.<br/><br/>The tool reads some control parameters from this JSON file. For more information, see [dmtf-config.json file](#dmtf-configjson-file). |
 
 ## Example
 
