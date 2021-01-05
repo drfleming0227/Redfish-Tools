@@ -6,3 +6,12 @@
 # Redfish-Tools
 
 Public repository of tools released by the Scalable Platforms Management Forum (SPMF) of the DMTF. For Redfish developer information, see [DMTF](https://redfish.dmtf.org/ "https://redfish.dmtf.org/").
+
+To use any of the tools in this repository, you must:
+
+1. Clone the `Redfish-Tools` repository:
+
+    ```
+    git clone git@github.com:DMTF/Redfish-Tools.git
+    git remote add upstream git@github.com:DMTF/Redfish-Tools.git
+    ```
