@@ -2,6 +2,14 @@
 
 Copyright 2017-2021 Distributed Management Task Force, Inc. All rights reserved.
 
+* [About](#about)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Options](#options)
+* [dmtf-config.json file](#dmtf-configjson-file)
+* [Assumptions](#assumptions)
+* [Processing](#processing)
+
 ## About
 
 The `csdl-to-json.py` tool is a Python tool that processes and converts Redfish CSDL files to Redfish JSON Schema files.
@@ -12,27 +20,21 @@ See [Installation](https://github.com/DMTF/Redfish-Tools#installation "https://g
 
 ## Usage
 
-Example: 
-
 ```
-$ python3 csdl-to-json.py --input <csdl-dir> --output <json-dir> --config <config-file>
+$ python3 csdl-to-json.py --input <INPUT> --output <OUTPUT> --config <CONFIG>
 ```
 
 where
 
-* `--input <csdl-dir>` is the path to the CSDL files from which you want to generate JSON files.
-
-    The tool processes all files in this folder. 
-* `--output <json-dir>` is the location for the generated JSON files.
-
-    The tool creates and saves JSON Schema files to this folder.
-* `--config <config-file>` is the location of the `dmtf-config.json` file.
-
-    The tool reads some control parameters from this JSON file. For more information, see [dmtf-config.json file](#dmtf-configjson-file).
+| Option.   | Description | 
+| :-------- | :---------- |
+| `--input <INPUT>` | Folder containing the CSDL files to convert to JSON files. |
+| `--output <OUTPUT>` | Folder to which to write the generated JSON files. |
+| `--config <CONFIG>` | Location of the `dmtf-config.json` file.  The tool reads some control parameters from this JSON file. For more information, see [dmtf-config.json file](#dmtf-configjson-file). |
 
 For more information, see [Assumptions](#assumptions) and [Processing](#processing).
 
-### Options
+## Options
 
 ```
 usage: csdl-to-json.py [-h] --input INPUT --output OUTPUT [--config CONFIG]
@@ -54,7 +56,7 @@ optional arguments:
                         if they already exist (default is True)
 ```
 
-### dmtf-config.json file
+## dmtf-config.json file
 
 The `dmtf-config.json` file contains the following parameters.
 
