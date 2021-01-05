@@ -2,7 +2,9 @@
 
 Copyright 2017-2021 Distributed Management Task Force, Inc. All rights reserved.
 
-The `csdl-to-json.py` tool is a Python tool that processes and converts Redfish CSDL files to Redfish JSON Schema files.
+## About
+
+The `csdl-to-json.py` tool is a Python tool that converts Redfish CSDL files to Redfish JSON Schema files.
 
 To install the tool, see [Installation](https://github.com/DMTF/Redfish-Tools#installation "https://github.com/DMTF/Redfish-Tools#installation").
 
@@ -20,13 +22,17 @@ $ python3 csdl-to-json.py --input <INPUT> --output <OUTPUT> --config <CONFIG>
 
 where
 
-| Option.   | Description | 
-| :-------- | :---------- |
-| `--input <INPUT>` | Folder containing the CSDL files to convert to JSON files. |
+| Option               | Description                                              | 
+| :------------------- | :------------------------------------------------------- |
+| `--input <INPUT>`   | Folder containing the CSDL files to convert to JSON files. |
 | `--output <OUTPUT>` | Folder to which to write the generated JSON files. |
 | `--config <CONFIG>` | Location of the `dmtf-config.json` file.  The tool reads some control parameters from this JSON file. For more information, see [dmtf-config.json file](#dmtf-configjson-file). |
 
-For more information, see [Assumptions](#assumptions) and [Processing](#processing).
+## Example
+
+```
+$ csdl-to-json-convertor % python3 csdl-to-json.py --input ../../Redfish/metadata --output ../../Redfish/json-schema/ --config dmtf-config.json
+```
 
 ## Options
 
@@ -52,19 +58,6 @@ optional arguments:
 
 ## dmtf-config.json file
 
-The `dmtf-config.json` file contains the following parameters.
-
-| Parameter | Description | 
-| :-------- | :---------- |
-| `Copyright` | Copyright string to include in the JSON Schema files. |
-| `RedfishSchema` | Redfish Schema files. |
-| `ODataSchema`  | OData Schema files. |
-| `Location` | Web folder in which to publish the generated JSON Schema files. |
-| `ResourceLocation` | Location of Redfish resources. |
-| `DoNotWrite` | Output files to exclude from generated JSON files. |
-
-If you omit any parameters, the tool uses the [default values](#default-values), which [Sample config file and default values](#default-values) shows.
-
 **Sample config file and default values:**<a id="default-values"></a>
 
 ```
@@ -77,6 +70,19 @@ If you omit any parameters, the tool uses the [default values](#default-values),
     "DoNotWrite": [ "Volume.", "VolumeCollection.", "RedfishError.", "RedfishExtensions.", "Validation." ]
 }
 ```
+
+The `dmtf-config.json` file contains the following parameters.
+
+| Parameter | Description | 
+| :-------- | :---------- |
+| `Copyright` | Copyright string to include in the JSON Schema files. |
+| `RedfishSchema` | Redfish Schema files. |
+| `ODataSchema`  | OData Schema files. |
+| `Location` | Web folder in which to publish the generated JSON Schema files. |
+| `ResourceLocation` | Location of Redfish resources. |
+| `DoNotWrite` | Output files to exclude from generated JSON files. |
+
+If you omit any parameters, the tool uses the [default values](#default-values), which [Sample config file and default values](#default-values) shows.
 
 ## Assumptions
 
@@ -96,8 +102,8 @@ After the tool caches the `Resource_v1.xml` definitions, it loops on all `.xml` 
 
 For every namespace defined in the file, the tool generates a corresponding `.json` file, as follows:
 
-| Namespace definitions       | Tool generates JSON file for XML file that is in an...                             |
+| Definition                  | Tool generates JSON file for XML file that is in an...                             |
 | :-------------------------- | :--------------------------------------------------------------------------------- |
-| `EntityType`<br/>`ComplexType` | <ul><li>Unversioned namespace and are marked as abstract and have a definition that contains an `anyOf` statement in the unversioned JSON Schema that points to all versioned definitions.</li><li>Unversioned namespace and are not marked as abstract and have their definition translated only to the unversioned JSON Schema file.</li><li>Versioned namespace have their definitions translated to that and newer versions of the JSON Schema file.</li></ul> |
-| `Action` |<ul><li>Unversioned namespace are translated to all versioned JSON Schema files</li><li>... that are Versioned namespace and have their definitions translated to that and newer versions of the JSON Schema file.</li></ul> |
-| `EnumType`<br/> `TypeDefinition` | <ul><li>Unversioned namespace and are translated to the unversioned JSON Schema file.</li><li>Versioned namespace and have their definitions translated to that and newer versions of the JSON Schema file.</li></ul> |
+| `EntityType` element<br/>`ComplexType` element | <ul><li>Unversioned namespace and are marked as abstract and have a definition that contains an `anyOf` statement in the unversioned JSON Schema that points to all versioned definitions.</li><li>Unversioned namespace and are not marked as abstract and have their definition translated only to the unversioned JSON Schema file.</li><li>Versioned namespace have their definitions translated to that and newer versions of the JSON Schema file.</li></ul> |
+| `Action` property |<ul><li>Unversioned namespace are translated to all versioned JSON Schema files</li><li>... that are Versioned namespace and have their definitions translated to that and newer versions of the JSON Schema file.</li></ul> |
+| `EnumType` element<br/> `TypeDefinition` element | <ul><li>Unversioned namespace and are translated to the unversioned JSON Schema file.</li><li>Versioned namespace and have their definitions translated to that and newer versions of the JSON Schema file.</li></ul> |
