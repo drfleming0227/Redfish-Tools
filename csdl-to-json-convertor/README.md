@@ -25,12 +25,22 @@ The `csdl-to-json.py` tool is a Python tool that processes and converts Redfish 
 Example: 
 
 ```
-python3 csdl-to-json.py --input <csdl-dir> --output <json-dir> --config <config-file>
+$ python3 csdl-to-json.py --input <csdl-dir> --output <json-dir> --config <config-file>
 ```
 
-The `csdl-to-json.py` tool reads some control parameters from the *config* argument-specified JSON file. For more information, see [dmtf-config.json file](#dmtf-configjson-file).
+where
 
-The `csdl-to-json.py` tool processes all files in the the *input* argument-specified folder. The tool converts the contents of the files to create JSON Schema files and save them to the *output* argument-specified folder. For more information, see [Assumptions](#assumptions) and [Processing](#processing).
+* `--input <csdl-dir>` is the path to the CSDL files from which you want to generate JSON files.
+
+    The tool processes all files in this folder. 
+* `--output <json-dir>` is the location for the generated JSON files.
+
+    The tool creates and saves JSON Schema files to this folder.
+* `--config <config-file>` is the location of the `dmtf-config.json` file.
+
+    The tool reads some control parameters from this JSON file. For more information, see [dmtf-config.json file](#dmtf-configjson-file).
+
+For more information, see [Assumptions](#assumptions) and [Processing](#processing).
 
 ### Options
 
@@ -94,7 +104,7 @@ The `csdl-to-json.py` tool makes the following assumptions about the format of t
 
 ## Processing
 
-Before any translation occurs, the tool tries to locate the `Resource_v1.xml` schema to cache properties for base definitions that all resources use. The tool checks whether the file exists in the input directory. If it is not there, the tool accesses the remote location for the file.
+Before any translation occurs, the tool tries to locate the `Resource_v1.xml` schema to cache properties for base definitions that all resources use. The tool checks whether the file is in the input directory. If it is not there, the tool accesses the file in the remote location.
 
 After the tool caches the `Resource_v1.xml` definitions, it loops on all `.xml` files in the input directory.
 
