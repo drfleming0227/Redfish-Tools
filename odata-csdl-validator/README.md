@@ -8,7 +8,7 @@ The `odata_validator.py` tool is a Python tool that crawls through OData-formatt
 
 ## Installation
 
-See [Installation](https://github.com/DMTF/Redfish-Tools/blob/master#installation "https://github.com/DMTF/Redfish-Tools/blob/master#installation").
+See [Installation](https://github.com/DMTF/Redfish-Tools#installation "https://github.com/DMTF/Redfish-Tools#installation").
 
 ## Usage
 

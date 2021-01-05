@@ -19,7 +19,7 @@ Other output formats include:
 
 ## Installation
 
-See [Installation](https://github.com/DMTF/Redfish-Tools/blob/master#installation "https://github.com/DMTF/Redfish-Tools/blob/master#installation").
+See [Installation](https://github.com/DMTF/Redfish-Tools#installation "https://github.com/DMTF/Redfish-Tools#installation").
 
 1. Install the following required software on the machine from which you will run `doc_generator.py`:
 

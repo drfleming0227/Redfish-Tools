@@ -8,7 +8,7 @@ The `json-to-yaml.py` tool is a Python tool that processes and converts Redfish 
 
 ## Installation
 
-See [Installation](https://github.com/DMTF/Redfish-Tools/blob/master#installation "https://github.com/DMTF/Redfish-Tools/blob/master#installation").
+See [Installation](https://github.com/DMTF/Redfish-Tools#installation "https://github.com/DMTF/Redfish-Tools#installation").
 
 ## Usage
 
