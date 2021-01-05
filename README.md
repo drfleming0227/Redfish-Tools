@@ -5,9 +5,11 @@
 
 # Redfish-Tools
 
-Public repository of tools released by the Scalable Platforms Management Forum (SPMF) of the DMTF. For Redfish developer information, see [DMTF](https://redfish.dmtf.org/ "https://redfish.dmtf.org/").
+**Redfish-Tools** is the public repository of tools released by the Scalable Platforms Management Forum (SPMF) of the DMTF. For Redfish developer information, see [DMTF](https://redfish.dmtf.org/ "https://redfish.dmtf.org/").
 
-To use any of the tools in this repository, you must:
+## Installation
+
+To use any of the tools in this repository:
 
 1. Clone the `Redfish-Tools` repository:
 
@@ -15,3 +17,9 @@ To use any of the tools in this repository, you must:
     git clone git@github.com:DMTF/Redfish-Tools.git
     git remote add upstream git@github.com:DMTF/Redfish-Tools.git
     ```
+
+1. Install Python on the machine from which you will run the tools:
+
+    | Software | Download                             |
+    | :------- | :----------------------------------- |
+    | Python 3 | [https://www.python.org/downloads/](https://www.python.org/downloads/) |
