@@ -108,6 +108,9 @@ The `csdl-to-json.py` tool completes this processing:
     For every namespace in each XML file, generates a corresponding JSON file for the following elements and properties:
 
     <table>
+      <col width="30%">
+      <col width="30%">
+      <col width="40%">
       <thead>
         <tr>
           <th align="left" valign="top">For every</th>
