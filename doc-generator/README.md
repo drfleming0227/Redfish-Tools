@@ -1,19 +1,32 @@
-# Redfish Documentation Generator
+# Redfish documentation generator
 
-Copyright 2016-2020 Distributed Management Task Force, Inc. All rights reserved.
+Copyright 2016-2021 Distributed Management Task Force, Inc. All rights reserved.
 
-Version 3 introduces breaking changes to how you configure this tool. See [Changes in Doc Generator V3](CHANGES_v2_to_v3.md) for guidance on how to restructure your existing configuration files. The README files have also been updated. A snapshot of the "version 2" code is available as the "Doc Generator v2" release.
+Version 3 introduces breaking changes to how you configure the `doc_generator.py` tool. For how to restructure your existing configuration files, see [Changes in Doc Generator V3](CHANGES_v2_to_v3.md). The `README` files have also been updated. A snapshot of the *version 2* code is available as the `Doc Generator v2` release.
 
 ## About
 
-The `doc_generator.py` is a Python tool that parses a set of JSON schema files (typically the entire set for a version) and generates a formatted documentation.
+The `doc_generator.py` tool is a Python tool that parses and generates documentation in a specified output format from a set of JSON Schema files. Typically, the tool processes an entire set of files for a version. 
 
-The default output is GitHub-flavored Markdown targeted for the [Slate API docs generator](https://github.com/tripit/slate). Other options include markdown tuned to the DMTF document publication process, HTML, "property index" documentation, and CSV.
+GitHub-flavored Markdown targeted for the [Slate API docs generator](https://github.com/slatedocs/slate "https://github.com/slatedocs/slate") is the default output.
 
+Other output formats include:
+
+* Markdown tuned to the DMTF document publication process
+* HTML 
+* *Property index* documentation
+* CSV
 
 ## Installation
 
-1. Install the following required software on the machine from which you will run the `doc_generator`:
+1. Clone the `Redfish-Tools` repository:
+
+    ```
+    git clone git@github.com:DMTF/Redfish-Tools.git
+    git remote add upstream git@github.com:DMTF/Redfish-Tools.git
+    ```
+
+1. Install the following required software on the machine from which you will run `doc_generator.py`:
 
     | Software | Description | Download |
     |----------|-------------|----------|
@@ -21,21 +34,21 @@ The default output is GitHub-flavored Markdown targeted for the [Slate API docs 
     | Python&#8209;Markdown | Required for HTML output. | [https://python-markdown.github.io/install/](https://python-markdown.github.io/install/) |
     | Pygments | Required for HTML output. | [http://pygments.org/](http://pygments.org/) |
 
-1. Verify the installation of requirements. If you use `pip`:
+1. Use `pip` to install requirements:
 
     ```
     % cd doc-generator
     % pip install -r requirements.txt
     ```
 
-1. If you are making changes to this code, please also install pytest and run the tests. Installation via `pip`:
+1. If you are making changes to this code, also install pytest and run the tests. To use `pip` to install:
 
     ```
     % cd doc-generator
     % pip install -r dev_requirements.txt
     ```
 
-    To run the tests, simply:
+    To run the tests:
 
     ```
     % cd doc-generator
@@ -44,25 +57,26 @@ The default output is GitHub-flavored Markdown targeted for the [Slate API docs 
 
 ## Usage
 
-By default, `doc_generator.py` looks for a `json-schema` directory and
-supplement file in the directory from where you run it. Alternatively,
-you can specify the locations of the `json-schema` directory and
-supplement file when you run `doc_generator.py`.
+By default, `doc_generator.py` looks for a `json-schema` directory and supplemental files in the configuration file that you specify when you run it. Several flavors of configuration files are available.
 
-The --config option specifies a file in which you can specify many of the command-line
-options described here, as well as some required parameters, such as URI mappings, that
-cannot be supplied on the command line, and many optional parameters. See
-[Config Files](README_config_files.md).
+The `--config` option specifies the configuration file.
+
+This file defines:
+
+* Many command-line options
+* Some required parameters, such as URI mappings, that you cannot specify on the command line
+* Many optional parameters
+
+See [Redfish documentation generator config files](README_config_files.md).
 
 ```
 usage: doc_generator.py [-h] [--config CONFIG_FILE] [-n]
-                        [--format {slate,markdown,html,csv}] [--out OUTFILE]
-                        [--sup SUPFILE] [--payload_dir payload_dir]
-                        [--profile PROFILE_DOC] [-t] [--subset SUBSET_DOC]
-                        [--property_index]
+                        [--format {markdown,slate,html,csv}] [--out OUTFILE]
+                        [--payload_dir payload_dir] [--profile PROFILE_DOC]
+                        [-t] [--subset SUBSET_DOC] [--property_index]
                         [--property_index_config_out CONFIG_FILE_OUT]
                         [--escape ESCAPE_CHARS]
-                        [import_from [import_from ...]]
+                        [import_from ...]
 
 Generate documentation for Redfish JSON schema files.
 
@@ -75,7 +89,7 @@ optional arguments:
   --config CONFIG_FILE  Path to a config file, containing configuration in
                         JSON format.
   -n, --normative       Produce normative (developer-focused) output
-  --format {slate,markdown,html,csv}
+  --format {markdown,slate,html,csv}
                         Output format
   --out OUTFILE         Output file (default depends on output format:
                         output.md for Markdown, index.html for HTML,
@@ -108,11 +122,14 @@ optional arguments:
                         embedded @ are being converted to mailto links.
 
 Example:
-   doc_generator.py --format=html
-   doc_generator.py --format=html --out=/path/to/output/index.html /path/to/spmf/json-files
+   python3 ../Redfish-Tools/doc-generator/doc_generator.py --config=../Redfish-Tools/doc-generator/sample_inputs/subset/config.json
 ```
 
-Refer to [Property Index Mode](README_Property_Index.md) for documentation on Property Index mode.
+For more examples, [Redfish documentation generator config files](README_config_files.md)
+
+## Notes
+
+For information about property index mode, see [Property Index Mode](README_Property_Index.md).
 
 Normative output prefers long descriptions to descriptions.
 

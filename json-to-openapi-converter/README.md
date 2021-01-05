@@ -4,7 +4,7 @@ Copyright 2018 DMTF. All rights reserved.
 
 ## About
 
-The JSON Schema to OpenAPI Converter is a Python3 tool which processes Redfish JSON Schema files and converts them to the Redfish OpenAPI format.
+The `json-to-yaml.py` tool is a Python tool that processes and converts Redfish JSON Schema files to Redfish OpenAPI files.
 
 ## Usage
 

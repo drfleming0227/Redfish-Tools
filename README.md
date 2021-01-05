@@ -5,4 +5,4 @@
 
 # Redfish-Tools
 
-Public repository of tools released by the Scalable Platforms Management Forum of the DMTF.  See http://redfish.dmtf.org for Redfish developer information.
+Public repository of tools released by the Scalable Platforms Management Forum (SPMF) of the DMTF. For Redfish developer information, see [DMTF](https://redfish.dmtf.org/ "https://redfish.dmtf.org/").

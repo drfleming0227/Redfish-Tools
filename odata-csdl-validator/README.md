@@ -1,23 +1,61 @@
 # OData CSDL Validator
 
-Copyright 2016 Distributed Management Task Force, Inc. All rights reserved.
+Copyright 2016-2021 Distributed Management Task Force, Inc. All rights reserved.
 
 ## About
-The OData Validator is a python3 tool which crawls through OData formatted metadata, parses it and validates that it conforms to OData V4.0.
+
+The `odata_validator.py` tool is a Python tool that crawls through OData-formatted metadata, parses it, and validates that it conforms to OData V4.0.
+
+## Installation
+
+1. Clone the `Redfish-Tools` repository:
+
+    ```
+    git clone git@github.com:DMTF/Redfish-Tools.git
+    git remote add upstream git@github.com:DMTF/Redfish-Tools.git
+    ```
+1. Install the following required software on the machine from which you will run the `csdl-to-odata_validator.py` tool:
+
+    | Software | Download                             |
+    | :------- | :----------------------------------- |
+    | Python 3 | [https://www.python.org/downloads/](https://www.python.org/downloads/) |
 
 ## Usage
-Ensure that the machine running the tool has a python 3 install.
 
-This tool requires one parameter which is used to navigate to the metadata file(s) to be validated.
-The parameter can be in one of 3 formats.
+The `odata_validator.py` tool requires one parameter. The tool uses this parameter's value to find and validate the metadata files.
 
-1. The local path to a single XML metadata file. Example - odata\_validator.py test\_metadata/ServiceRoot.xml
-2. The local path to a directory of XML metadata files. Example - odata\_validator.py test\_metadata
-3. The URL of an XML metadata file. Example - odata\_validator.py http://redfish.dmtf.org/schemas/v1/ServiceRoot.xml
+The parameter can be in one of the following formats:
 
-The validator will parse and validate the file(s) pointed to along with all referenced files.
+1. The local path to a single XML metadata file.
 
-If the tool finds an error, it will print to the screen a path starting from the metadata file the error is found in all the way to the error itsef along with a simple explanation of what the error is.
+    Example:
+
+    ```
+    odata\_validator.py test\_metadata/ServiceRoot.xml
+    ```
+1. The local path to a directory of XML metadata files.
+
+    Example:
+
+    ```
+    odata\_validator.py test\_metadata
+    ```
+1. The URL of an XML metadata file. 
+    
+    Example:
+
+    ```
+    odata\_validator.py http://redfish.dmtf.org/schemas/v1/ServiceRoot.xml
+    ```
+
+## Processing
+
+The `odata_validator.py` tool parses and validates the files and all referenced files.
+
+If the tool finds an error, it prints the path to the metadata file in which the error was found and a simple explanation of the error.
 
 Example:
+
+```
 MetaData:http://redfish.dmtf.org/schemas/v1/ServiceRoot.xml->DataServices->Schema:ServiceRoot->EntityType:ServiceRoot->Resource.1.0.0.Resource is not a valid QualifiedName
+```
