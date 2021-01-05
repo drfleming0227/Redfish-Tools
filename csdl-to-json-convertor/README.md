@@ -117,7 +117,7 @@ The `csdl-to-json.py` tool completes this processing:
       </thead>
       <tbody>
         <tr>
-          <td align="left" valign="top" colspan="3"><code>EntityType</code> element and<br/><br/><code>ComplexType</code> element</td>
+          <td align="left" valign="top" rowspan="3"><code>EntityType</code> element and<br/><br/><code>ComplexType</code> element</td>
           <td align="left" valign="top">Versioned and marked as abstract</td>
           <td align="left" valign="top">Unversioned JSON file that points to all versioned definitions with definition that contains an <code>anyOf</code> statement.</td>
         </tr>
@@ -130,7 +130,7 @@ The `csdl-to-json.py` tool completes this processing:
           <td align="left" valign="top">That version and newer versions of the JSON file.</td>
         </tr>
         <tr>
-          <td align="left" valign="top" colspan="2"><code>Action</code> property</td>
+          <td align="left" valign="top" rowspan="2"><code>Action</code> property</td>
           <td align="left" valign="top">Unversioned</td>
           <td align="left" valign="top">All versioned JSON files.</td>
         </tr>
@@ -139,7 +139,7 @@ The `csdl-to-json.py` tool completes this processing:
           <td align="left" valign="top">That version and newer versions of the JSON file.</td>
         </tr>
         <tr>
-          <td align="left" valign="top" colspan="2"><code>EnumType</code> element<br/><br/><code>TypeDefinition</code> elements</td>
+          <td align="left" valign="top" rowspan="2"><code>EnumType</code> element<br/><br/><code>TypeDefinition</code> elements</td>
           <td align="left" valign="top">Unversioned</td>
           <td align="left" valign="top">Unversioned JSON file.</td>
         </tr>
