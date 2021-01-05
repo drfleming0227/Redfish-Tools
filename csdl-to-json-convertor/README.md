@@ -17,16 +17,16 @@ To install the tool, see [Installation](https://github.com/DMTF/Redfish-Tools#in
 ## Usage
 
 ```bash
-$ python3 csdl-to-json.py --input <INPUT> --output <OUTPUT> --config <CONFIG>
+$ python3 csdl-to-json.py --input INPUT --output OUTPUT --config CONFIG
 ```
 
 where
 
-| Option               | Description                                                   | 
-| :------------------- | :------------------------------------------------------------ |
-| `--input <INPUT>`    | Folder that contains the CSDL files to convert to JSON files. |
-| `--output <OUTPUT>`  | Folder to which to write the generated JSON files.            |
-| `--config <CONFIG>`  | Location of the `dmtf-config.json` file, from which the tool reads some control parameters.<br/><br/> See [dmtf-config.json file](#dmtf-configjson-file). |
+| Option             | Description                                                   | 
+| :----------------- | :------------------------------------------------------------ |
+| `--input INPUT`    | Folder that contains the CSDL files to convert to JSON files. |
+| `--output OUTPUT`  | Folder to which to write the generated JSON files.            |
+| `--config CONFIG`  | Location of the `dmtf-config.json` file, from which the tool reads control parameters.<br/><br/>See [dmtf-config.json file](#dmtf-configjson-file). |
 
 For example:
 
@@ -58,8 +58,7 @@ optional arguments:
 
 ## dmtf-config.json file
 
-**Sample config file and default values:**<a id="default-values"></a>
-
+<a id="default-values"></a>
 ```json
 {
   "Copyright": "Copyright 2014-2021 DMTF. For the full DMTF copyright policy, see http://www.dmtf.org/about/policies/copyright",
@@ -82,16 +81,19 @@ The `dmtf-config.json` file contains the following parameters.
 | `ResourceLocation` | Location of Redfish resources.                                  |
 | `DoNotWrite`       | Output files to exclude from generated JSON files.              |
 
-If you omit any parameters, the tool uses the [default values](#default-values), which [Sample config file and default values](#default-values) shows.
+If you omit any parameters, the tool uses the [default values](#default-values).
 
 ## Assumptions
 
-The `csdl-to-json.py` tool makes the following assumptions about the format of the Redfish CSDL files:
+The `csdl-to-json.py` tool makes these assumptions about the format of the Redfish CSDL files:
 
 * Each file that defines a resource follows the Redfish model for inheritance by copy. Other than the base *Resource* definition, each resource definition is contained in one file.
-* Any referenced external namespaces have proper *Include* statements at the top of each CSL file.
-* All annotations have their expected facets filled. For example, the `OData.Description` annotation must use the *String=* facet.
-* All namespaces follow the Redfish-defined format, where a namespace is either unversioned or is in the form *name.vX_Y_Z*.
+* Any referenced external namespaces have proper `Include` statements at the top of each CSDL file.
+* All annotations have their expected facets filled. For example, the `OData.Description` annotation must use the `String=` facet.
+* All namespaces follow the Redfish-defined format, where a namespace is either:
+
+    * Unversioned.
+    * In the `name.v<X>_<Y>_<Z>` form.
 * If a reference is made to another CSDL file, its JSON Schema file is in the same folder.
 
 ## Processing
