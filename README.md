@@ -9,10 +9,10 @@ Redfish-Tools is the public repository of tools released by the Scalable Platfor
 
 ## Tools
 
-* [CSDL-to-JSON converter](https://github.com/DMTF/Redfish-Tools/blob/master/csdl-to-json-convertor/README.md "https://github.com/DMTF/Redfish-Tools/blob/master/csdl-to-json-convertor/README.md")
-* [Redfish documentation generator](https://github.com/DMTF/Redfish-Tools/blob/master/doc-generator/README.md "https://github.com/DMTF/Redfish-Tools/blob/master/doc-generator/README.md")
-* [JSON Schema-to-OpenAPI converter](https://github.com/DMTF/Redfish-Tools/blob/master/json-to-openapi-converter/README.md "https://github.com/DMTF/Redfish-Tools/blob/master/doc-generator/README.md")
-* [OData CSDL validator](https://github.com/DMTF/Redfish-Tools/blob/master/odata-csdl-validator/README.md "https://github.com/DMTF/Redfish-Tools/blob/master/doc-generator/README.md")
+* [CSDL-to-JSON converter](https://github.com/DMTF/Redfish-Tools/csdl-to-json-convertor/README.md "https://github.com/DMTF/Redfish-Tools/csdl-to-json-convertor/README.md")
+* [Redfish documentation generator](https://github.com/DMTF/Redfish-Tools/doc-generator/README.md "https://github.com/DMTF/Redfish-Tools/doc-generator/README.md")
+* [JSON Schema-to-OpenAPI converter](https://github.com/DMTF/Redfish-Tools/json-to-openapi-converter/README.md "https://github.com/DMTF/Redfish-Tools/doc-generator/README.md")
+* [OData CSDL validator](https://github.com/DMTF/Redfish-Tools/odata-csdl-validator/README.md "https://github.com/DMTF/Redfish-Tools/doc-generator/README.md")
 
 ## Installation
 
