@@ -98,14 +98,22 @@ The `csdl-to-json.py` tool makes these assumptions about the format of the Redfi
 
 ## Processing
 
-1. Before any conversion occurs, the tool tries to locate the `Resource_v1.xml` schema to cache properties for base definitions that all resources use.
-1. The tool checks whether the file is in the input directory. If it is not there, the tool accesses the file in the remote location.
-1. After the tool caches the `Resource_v1.xml` definitions, it loops on all XML files in the input folder.
+The `csdl-to-json.py` tool completes this processing:
 
-    For every namespace that the tool finds in the file, the tool generates a corresponding JSON file, as follows:
+1. Locates the `Resource_v1.xml` schema to cache base definition properties that all resources use.
 
-    | Definition                  | Tool generates JSON file for XML file that is in an...    |
-    | :-------------------------- | :-------------------------------------------------------- |
-    | `EntityType` element<br/>`ComplexType` element | <ul><li>Unversioned namespace and are marked as abstract and have a definition that contains an `anyOf` statement in the unversioned JSON Schema that points to all versioned definitions.</li><li>Unversioned namespace and are not marked as abstract and have their definition converted only to the unversioned JSON Schema file.</li><li>Versioned namespace have their definitions converted to that and newer versions of the JSON Schema file.</li></ul> |
-    | `Action` property |<ul><li>Unversioned namespace are converted to all versioned JSON Schema files</li><li>... that are Versioned namespace and have their definitions converted to that and newer versions of the JSON Schema file.</li></ul> |
-    | `EnumType` element<br/> `TypeDefinition` element | <ul><li>Unversioned namespace and are converted to the unversioned JSON Schema file.</li><li>Versioned namespace and have their definitions converted to that and newer versions of the JSON Schema file.</li></ul> |
+    If the file is not in the input directory, the tool accesses it in the remote location.
+1. Loops on all XML files in the input folder.
+
+    For every namespace in each XML file, generates a corresponding JSON file, as follows:
+
+    | For every                               | Converts                                                          |
+    | :-------------------------------------- | :---------------------------------------------------------------- |
+    | For every `EntityType` element and `ComplexType` element that is in an unversioned namespace and is marked as abstract | Has a definition that contains an `anyOf` statement in the unversioned JSON Schema that points to all versioned definitions. |
+    | For every `EntityType` element and `ComplexType` element that is in an unversioned namespace and not marked as abstract | Converts their definition to only the unversioned JSON Schema file |
+    | For every `EntityType` element and `ComplexType` element that is in a versioned namespace | Converts their definitions to that version of the JSON Schema file, and newer JSON Schema files. |
+    for every  and has a definition that contains an `anyOf` statement in the unversioned JSON Schema that points to all versioned definitions. |
+    | For every `Action` property that is in an unversioned namespace | Converts to all versioned JSON Schema files |
+    | For every `Action` property that is in a versioned namespace | Converts to that version of the JSON Schema file, and newer JSON Schema files |
+    | For every `EnumType` element and `TypeDefinition` element that is in an unversioned namespace | Converts to the unversioned JSON Schema file |
+    | For every `EnumType` element and `TypeDefinition` element that is in a versioned namespace | Converts their to that version and newer versions of the JSON Schema file. |
