@@ -1,6 +1,6 @@
-# JSON Schema to OpenAPI Converter
+# JSON Schema-to-OpenAPI converter
 
-Copyright 2018 DMTF. All rights reserved.
+Copyright 2018-2021 DMTF. All rights reserved.
 
 ## About
 

@@ -8,11 +8,7 @@ The `csdl-to-json.py` tool is a Python tool that processes and converts Redfish 
 
 ## Installation
 
-1. Install required software on the machine from which you will run the `csdl-to-json.py` tool:
 
-    | Software | Download                             |
-    | :------- | :----------------------------------- |
-    | Python 3 | [https://www.python.org/downloads/](https://www.python.org/downloads/) |
 
 ## Usage
 
