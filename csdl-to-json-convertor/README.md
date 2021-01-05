@@ -107,13 +107,12 @@ The `csdl-to-json.py` tool completes this processing:
 
     For every namespace in each XML file, generates a corresponding JSON file, as follows:
 
-    | For every                               | Converts                                                          |
+    | For every | In unversioned namespace | In versioned namespace | Abstract | Not abstract | Converts to |
     | :-------------------------------------- | :---------------------------------------------------------------- |
-    | For every `EntityType` element and `ComplexType` element that is in an unversioned namespace and is marked as abstract | Has a definition that contains an `anyOf` statement in the unversioned JSON Schema that points to all versioned definitions. |
-    | For every `EntityType` element and `ComplexType` element that is in an unversioned namespace and not marked as abstract | Converts their definition to only the unversioned JSON Schema file |
-    | For every `EntityType` element and `ComplexType` element that is in a versioned namespace | Converts their definitions to that version of the JSON Schema file, and newer JSON Schema files. |
-    for every  and has a definition that contains an `anyOf` statement in the unversioned JSON Schema that points to all versioned definitions. |
-    | For every `Action` property that is in an unversioned namespace | Converts to all versioned JSON Schema files |
-    | For every `Action` property that is in a versioned namespace | Converts to that version of the JSON Schema file, and newer JSON Schema files |
-    | For every `EnumType` element and `TypeDefinition` element that is in an unversioned namespace | Converts to the unversioned JSON Schema file |
-    | For every `EnumType` element and `TypeDefinition` element that is in a versioned namespace | Converts their to that version and newer versions of the JSON Schema file. |
+    | `EntityType` element and `ComplexType` element | X | | X | | Unversioned JSON file that points to all versioned definitions with definition that contains an `anyOf` statement. |
+    | `EntityType` element and `ComplexType` element | X | | | X | Unversioned JSON file. |
+    | `EntityType` element and `ComplexType` element | | X | | | That version and newer versions of the JSON file. |
+    | `Action` property | X | | | | All versioned JSON file versions |
+    | `Action` property | | X | | | That and newer version of the JSON file. |
+    | `EnumType` element and `TypeDefinition` element | X | | | | Unversioned JSON file |
+    | `EnumType` element and `TypeDefinition` element | | X | | | That and newer versions of the JSON file. |
