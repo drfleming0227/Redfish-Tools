@@ -26,7 +26,7 @@ To use any of the tools in this repository:
 
 ## Tools
 
- * **CSDL-to-JSON converter**: [`csdl-to-json.py`](https://github.com/DMTF/Redfish-Tools/blob/master/csdl-to-json-convertor/README.md "https://github.com/DMTF/Redfish-Tools/blob/master/csdl-to-json-convertor/README.md")
- * **Redfish documentation generator**: [`doc_generator.py`](https://github.com/DMTF/Redfish-Tools/blob/master/doc-generator/README.md "https://github.com/DMTF/Redfish-Tools/blob/master/doc-generator/README.md")
- * **JSON Schema-to-OpenAPI converter**: [`json-to-yaml.py`](https://github.com/DMTF/Redfish-Tools/blob/master/json-to-openapi-converter/README.md "https://github.com/DMTF/Redfish-Tools/blob/master/doc-generator/README.md")
- * **OData CSDL validator**: [`odata_validator.py`](https://github.com/DMTF/Redfish-Tools/blob/master/odata-csdl-validator/README.md "https://github.com/DMTF/Redfish-Tools/blob/master/doc-generator/README.md")
+ * [**CSDL-to-JSON converter**](https://github.com/DMTF/Redfish-Tools/blob/master/csdl-to-json-convertor/README.md "https://github.com/DMTF/Redfish-Tools/blob/master/csdl-to-json-convertor/README.md")
+ * [**Redfish documentation generator**](https://github.com/DMTF/Redfish-Tools/blob/master/doc-generator/README.md "https://github.com/DMTF/Redfish-Tools/blob/master/doc-generator/README.md")
+ * [**JSON Schema-to-OpenAPI converter**](https://github.com/DMTF/Redfish-Tools/blob/master/json-to-openapi-converter/README.md "https://github.com/DMTF/Redfish-Tools/blob/master/doc-generator/README.md")
+ * [**OData CSDL validator**](https://github.com/DMTF/Redfish-Tools/blob/master/odata-csdl-validator/README.md "https://github.com/DMTF/Redfish-Tools/blob/master/doc-generator/README.md")
