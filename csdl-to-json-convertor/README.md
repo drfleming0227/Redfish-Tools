@@ -2,21 +2,15 @@
 
 Copyright 2017-2021 Distributed Management Task Force, Inc. All rights reserved.
 
-* [About](#about)
-* [Installation](#installation)
+The `csdl-to-json.py` tool is a Python tool that processes and converts Redfish CSDL files to Redfish JSON Schema files.
+
+To install the tool, see [Installation](https://github.com/DMTF/Redfish-Tools#installation "https://github.com/DMTF/Redfish-Tools#installation").
+
 * [Usage](#usage)
 * [Options](#options)
 * [dmtf-config.json file](#dmtf-configjson-file)
 * [Assumptions](#assumptions)
 * [Processing](#processing)
-
-## About
-
-The `csdl-to-json.py` tool is a Python tool that processes and converts Redfish CSDL files to Redfish JSON Schema files.
-
-## Installation
-
-See [Installation](https://github.com/DMTF/Redfish-Tools#installation "https://github.com/DMTF/Redfish-Tools#installation").
 
 ## Usage
 
