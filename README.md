@@ -5,7 +5,14 @@
 
 # Redfish-Tools
 
-**Redfish-Tools** is the public repository of tools released by the Scalable Platforms Management Forum (SPMF) of the DMTF. For Redfish developer information, see [DMTF](https://redfish.dmtf.org/ "https://redfish.dmtf.org/").
+Redfish-Tools is the public repository of tools released by the Scalable Platforms Management Forum (SPMF) of the DMTF. For Redfish developer information, see [DMTF](https://redfish.dmtf.org/ "https://redfish.dmtf.org/").
+
+## Tools
+
+* [CSDL-to-JSON converter](https://github.com/DMTF/Redfish-Tools/blob/master/csdl-to-json-convertor/README.md "https://github.com/DMTF/Redfish-Tools/blob/master/csdl-to-json-convertor/README.md")
+* [Redfish documentation generator](https://github.com/DMTF/Redfish-Tools/blob/master/doc-generator/README.md "https://github.com/DMTF/Redfish-Tools/blob/master/doc-generator/README.md")
+* [JSON Schema-to-OpenAPI converter](https://github.com/DMTF/Redfish-Tools/blob/master/json-to-openapi-converter/README.md "https://github.com/DMTF/Redfish-Tools/blob/master/doc-generator/README.md")
+* [OData CSDL validator](https://github.com/DMTF/Redfish-Tools/blob/master/odata-csdl-validator/README.md "https://github.com/DMTF/Redfish-Tools/blob/master/doc-generator/README.md")
 
 ## Installation
 
@@ -24,9 +31,3 @@ To use any of the tools in this repository:
     | :------- | :----------------------------------- |
     | Python 3 | [https://www.python.org/downloads/](https://www.python.org/downloads/) |
 
-## Tools
-
- * [**CSDL-to-JSON converter**](https://github.com/DMTF/Redfish-Tools/blob/master/csdl-to-json-convertor/README.md "https://github.com/DMTF/Redfish-Tools/blob/master/csdl-to-json-convertor/README.md")
- * [**Redfish documentation generator**](https://github.com/DMTF/Redfish-Tools/blob/master/doc-generator/README.md "https://github.com/DMTF/Redfish-Tools/blob/master/doc-generator/README.md")
- * [**JSON Schema-to-OpenAPI converter**](https://github.com/DMTF/Redfish-Tools/blob/master/json-to-openapi-converter/README.md "https://github.com/DMTF/Redfish-Tools/blob/master/doc-generator/README.md")
- * [**OData CSDL validator**](https://github.com/DMTF/Redfish-Tools/blob/master/odata-csdl-validator/README.md "https://github.com/DMTF/Redfish-Tools/blob/master/doc-generator/README.md")
