@@ -93,19 +93,19 @@ The `csdl-to-json.py` tool makes these assumptions about the format of the Redfi
 * All namespaces follow the Redfish-defined format, where a namespace is either:
 
     * Unversioned.
-    * In the `name.v<X>_<Y>_<Z>` form.
+    * In the form, `<name>.v<X>_<Y>_<Z>`.
 * If a reference is made to another CSDL file, its JSON Schema file is in the same folder.
 
 ## Processing
 
-Before any translation occurs, the tool tries to locate the `Resource_v1.xml` schema to cache properties for base definitions that all resources use. The tool checks whether the file is in the input directory. If it is not there, the tool accesses the file in the remote location.
+1. Before any conversion occurs, the tool tries to locate the `Resource_v1.xml` schema to cache properties for base definitions that all resources use.
+1. The tool checks whether the file is in the input directory. If it is not there, the tool accesses the file in the remote location.
+1. After the tool caches the `Resource_v1.xml` definitions, it loops on all XML files in the input folder.
 
-After the tool caches the `Resource_v1.xml` definitions, it loops on all `.xml` files in the input directory.
+    For every namespace that the tool finds in the file, the tool generates a corresponding JSON file, as follows:
 
-For every namespace defined in the file, the tool generates a corresponding `.json` file, as follows:
-
-| Definition                  | Tool generates JSON file for XML file that is in an...                             |
-| :-------------------------- | :--------------------------------------------------------------------------------- |
-| `EntityType` element<br/>`ComplexType` element | <ul><li>Unversioned namespace and are marked as abstract and have a definition that contains an `anyOf` statement in the unversioned JSON Schema that points to all versioned definitions.</li><li>Unversioned namespace and are not marked as abstract and have their definition translated only to the unversioned JSON Schema file.</li><li>Versioned namespace have their definitions translated to that and newer versions of the JSON Schema file.</li></ul> |
-| `Action` property |<ul><li>Unversioned namespace are translated to all versioned JSON Schema files</li><li>... that are Versioned namespace and have their definitions translated to that and newer versions of the JSON Schema file.</li></ul> |
-| `EnumType` element<br/> `TypeDefinition` element | <ul><li>Unversioned namespace and are translated to the unversioned JSON Schema file.</li><li>Versioned namespace and have their definitions translated to that and newer versions of the JSON Schema file.</li></ul> |
+    | Definition                  | Tool generates JSON file for XML file that is in an...    |
+    | :-------------------------- | :-------------------------------------------------------- |
+    | `EntityType` element<br/>`ComplexType` element | <ul><li>Unversioned namespace and are marked as abstract and have a definition that contains an `anyOf` statement in the unversioned JSON Schema that points to all versioned definitions.</li><li>Unversioned namespace and are not marked as abstract and have their definition converted only to the unversioned JSON Schema file.</li><li>Versioned namespace have their definitions converted to that and newer versions of the JSON Schema file.</li></ul> |
+    | `Action` property |<ul><li>Unversioned namespace are converted to all versioned JSON Schema files</li><li>... that are Versioned namespace and have their definitions converted to that and newer versions of the JSON Schema file.</li></ul> |
+    | `EnumType` element<br/> `TypeDefinition` element | <ul><li>Unversioned namespace and are converted to the unversioned JSON Schema file.</li><li>Versioned namespace and have their definitions converted to that and newer versions of the JSON Schema file.</li></ul> |
