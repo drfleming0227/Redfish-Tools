@@ -112,51 +112,39 @@ The `csdl-to-json.py` tool completes this processing:
         <tr>
           <th align="left" valign="top">For every</th>
           <th align="left" valign="top">Namespace</th>
-          <th align="left" valign="top">Abstract</th>
           <th align="left" valign="top">Converts to</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td align="left" valign="top"><code>EntityType</code> and <code>ComplexType</code> element</td>
-          <td align="left" valign="top">Versioned</td>
-          <td align="left" valign="top">Yes</td>
+          <td align="left" valign="top" colspan="3"><code>EntityType</code> element and<br/><br/><code>ComplexType</code> element</td>
+          <td align="left" valign="top">Versioned and marked as abstract</td>
           <td align="left" valign="top">Unversioned JSON file that points to all versioned definitions with definition that contains an <code>anyOf</code> statement.</td>
         </tr>
         <tr>
-          <td align="left" valign="top"><code>EntityType</code> and <code>ComplexType</code> elements</td>
-          <td align="left" valign="top">Unversioned</td>
-          <td align="left" valign="top">No</td>
+          <td align="left" valign="top">Unversioned and not marked as abstract</td>
           <td align="left" valign="top">Unversioned JSON file.</td>
         </tr>
         <tr>
-          <td align="left" valign="top"><code>EntityType</code> and <code>ComplexType</code> elements</td>
           <td align="left" valign="top">Versioned</td>
-          <td align="left" valign="top"></td>
           <td align="left" valign="top">That version and newer versions of the JSON file.</td>
         </tr>
         <tr>
-          <td align="left" valign="top"><code>Action</code> property</td>
+          <td align="left" valign="top" colspan="2"><code>Action</code> property</td>
           <td align="left" valign="top">Unversioned</td>
-          <td align="left" valign="top"></td>
           <td align="left" valign="top">All versioned JSON files.</td>
         </tr>
         <tr>
-          <td align="left" valign="top"><code>Action</code> property</td>
           <td align="left" valign="top">Versioned</td>
-          <td align="left" valign="top"></td>
           <td align="left" valign="top">That version and newer versions of the JSON file.</td>
         </tr>
         <tr>
-          <td align="left" valign="top"><code>EnumType</code> and <code>TypeDefinition</code> elements</td>
+          <td align="left" valign="top" colspan="2"><code>EnumType</code> element<br/><br/><code>TypeDefinition</code> elements</td>
           <td align="left" valign="top">Unversioned</td>
-          <td align="left" valign="top"></td>
           <td align="left" valign="top">Unversioned JSON file.</td>
         </tr>
         <tr>
-          <td align="left" valign="top"><code>EnumType</code> and <code>TypeDefinition</code> elements</td>
           <td align="left" valign="top">Versioned</td>
-          <td align="left" valign="top"></td>
           <td align="left" valign="top">That version and newer versions of the JSON file.</td>
         </tr>
       </tbody>
