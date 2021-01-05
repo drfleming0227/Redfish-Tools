@@ -107,12 +107,57 @@ The `csdl-to-json.py` tool completes this processing:
 
     For every namespace in each XML file, generates a corresponding JSON file, as follows:
 
-    | For every | In unversioned namespace | In versioned namespace | Abstract | Not abstract | Converts to |
-    | :-------------------------------------- | :---------------------------------------------------------------- |
-    | `EntityType` element and `ComplexType` element | X | | X | | Unversioned JSON file that points to all versioned definitions with definition that contains an `anyOf` statement. |
-    | `EntityType` element and `ComplexType` element | X | | | X | Unversioned JSON file. |
-    | `EntityType` element and `ComplexType` element | | X | | | That version and newer versions of the JSON file. |
-    | `Action` property | X | | | | All versioned JSON file versions |
-    | `Action` property | | X | | | That and newer version of the JSON file. |
-    | `EnumType` element and `TypeDefinition` element | X | | | | Unversioned JSON file |
-    | `EnumType` element and `TypeDefinition` element | | X | | | That and newer versions of the JSON file. |
+    <table>
+      <thead>
+        <tr>
+          <th align="left" valign="top">For every</th>
+          <th align="left" valign="top">Namespace</th>
+          <th align="left" valign="top">Abstract</th>
+          <th align="left" valign="top">Converts to</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td align="left" valign="top"><code>EntityType</code> and <code>ComplexType</code> element</td>
+          <td align="left" valign="top">Versioned</td>
+          <td align="left" valign="top">Yes</td>
+          <td align="left" valign="top">Unversioned JSON file that points to all versioned definitions with definition that contains an <code>anyOf</code> statement.</td>
+        </tr>
+        <tr>
+          <td align="left" valign="top"><code>EntityType</code> and <code>ComplexType</code> elements</td>
+          <td align="left" valign="top">Unversioned</td>
+          <td align="left" valign="top">No</td>
+          <td align="left" valign="top">Unversioned JSON file.</td>
+        </tr>
+        <tr>
+          <td align="left" valign="top"><code>EntityType</code> and <code>ComplexType</code> elements</td>
+          <td align="left" valign="top">Versioned</td>
+          <td align="left" valign="top"></td>
+          <td align="left" valign="top">That version and newer versions of the JSON file.</td>
+        </tr>
+        <tr>
+          <td align="left" valign="top"><code>Action</code> property</td>
+          <td align="left" valign="top">Unversioned</td>
+          <td align="left" valign="top"></td>
+          <td align="left" valign="top">All versioned JSON files.</td>
+        </tr>
+        <tr>
+          <td align="left" valign="top"><code>Action</code> property</td>
+          <td align="left" valign="top">Versioned</td>
+          <td align="left" valign="top"></td>
+          <td align="left" valign="top">That version and newer versions of the JSON file.</td>
+        </tr>
+        <tr>
+          <td align="left" valign="top"><code>EnumType</code> and <code>TypeDefinition</code> elements</td>
+          <td align="left" valign="top">Unversioned</td>
+          <td align="left" valign="top"></td>
+          <td align="left" valign="top">Unversioned JSON file.</td>
+        </tr>
+        <tr>
+          <td align="left" valign="top"><code>EnumType</code> and <code>TypeDefinition</code> elements</td>
+          <td align="left" valign="top">Versioned</td>
+          <td align="left" valign="top"></td>
+          <td align="left" valign="top">That version and newer versions of the JSON file.</td>
+        </tr>
+      </tbody>
+    </table>
