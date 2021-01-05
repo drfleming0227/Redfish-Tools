@@ -108,7 +108,7 @@ The `csdl-to-json.py` tool completes this processing:
     For every namespace in each XML file, generates a corresponding JSON file for the following elements and properties:
 
     <table>
-      <col width="32%">
+      <col width="35%">
       <col width="32%">
       <col width="36%">
       <thead>
@@ -121,29 +121,29 @@ The `csdl-to-json.py` tool completes this processing:
       <tbody>
         <tr>
           <td align="left" valign="top" rowspan="3"><code>EntityType</code> element</td>
-          <td align="left" valign="top">Versioned<br/>Marked as abstract</td>
+          <td align="left" valign="top">Versioned<br/>Abstract</td>
           <td align="left" valign="top">Unversioned JSON file that points to all versioned definitions with definition that contains an <code>anyOf</code> statement.</td>
         </tr>
         <tr>
-          <td align="left" valign="top">Unversioned<br/>Not marked as abstract</td>
+          <td align="left" valign="top">Unversioned<br/>Not abstract</td>
           <td align="left" valign="top">Unversioned JSON file.</td>
         </tr>
         <tr>
           <td align="left" valign="top">Versioned</td>
-          <td align="left" valign="top">That version and newer versions of the JSON file.</td>
+          <td align="left" valign="top">That and newer JSON file versions.</td>
         </tr>
         <tr>
           <td align="left" valign="top" rowspan="3"><code>ComplexType</code> element</td>
-          <td align="left" valign="top">Versioned<br/>Marked as abstract</td>
+          <td align="left" valign="top">Versioned<br/>Abstract</td>
           <td align="left" valign="top">Unversioned JSON file that points to all versioned definitions with definition that contains an <code>anyOf</code> statement.</td>
         </tr>
         <tr>
-          <td align="left" valign="top">Unversioned<br/>Not marked as abstract</td>
+          <td align="left" valign="top">Unversioned<br/>Not abstract</td>
           <td align="left" valign="top">Unversioned JSON file.</td>
         </tr>
         <tr>
           <td align="left" valign="top">Versioned</td>
-          <td align="left" valign="top">That version and newer versions of the JSON file.</td>
+          <td align="left" valign="top">That and newer JSON file versions.</td>
         </tr>
         <tr>
           <td align="left" valign="top" rowspan="2"><code>Action</code> property</td>
@@ -152,7 +152,7 @@ The `csdl-to-json.py` tool completes this processing:
         </tr>
         <tr>
           <td align="left" valign="top">Versioned</td>
-          <td align="left" valign="top">That version and newer versions of the JSON file.</td>
+          <td align="left" valign="top">That and newer JSON file versions.</td>
         </tr>
         <tr>
           <td align="left" valign="top" rowspan="2"><code>EnumType</code> element</td>
@@ -161,7 +161,7 @@ The `csdl-to-json.py` tool completes this processing:
         </tr>
         <tr>
           <td align="left" valign="top">Versioned</td>
-          <td align="left" valign="top">That version and newer versions of the JSON file.</td>
+          <td align="left" valign="top">That and newer JSON file versions.</td>
         </tr>
         <tr>
           <td align="left" valign="top" rowspan="2"><code>TypeDefinition</code> element</td>
@@ -170,7 +170,7 @@ The `csdl-to-json.py` tool completes this processing:
         </tr>
         <tr>
           <td align="left" valign="top">Versioned</td>
-          <td align="left" valign="top">That version and newer versions of the JSON file.</td>
+          <td align="left" valign="top">That and newer JSON file versions.</td>
         </tr>
       </tbody>
     </table>
