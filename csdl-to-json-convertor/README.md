@@ -9,6 +9,7 @@ The `csdl-to-json.py` tool is a Python tool that converts Redfish CSDL files to 
 To install the tool, see [Installation](https://github.com/DMTF/Redfish-Tools#installation "https://github.com/DMTF/Redfish-Tools#installation").
 
 * [Usage](#usage)
+* [Example](#example)
 * [Options](#options)
 * [dmtf-config.json file](#dmtf-configjson-file)
 * [Assumptions](#assumptions)
@@ -31,7 +32,7 @@ where
 ## Example
 
 ```
-$ csdl-to-json-convertor % python3 csdl-to-json.py --input ../../Redfish/metadata --output ../../Redfish/json-schema/ --config dmtf-config.json
+$ python3 csdl-to-json.py --input ../../Redfish/metadata --output ../../Redfish/json-schema/ --config dmtf-config.json
 ```
 
 ## Options
@@ -62,25 +63,25 @@ optional arguments:
 
 ```
 {
-    "Copyright": "Copyright 2014-2021 DMTF. For the full DMTF copyright policy, see http://www.dmtf.org/about/policies/copyright",
-    "RedfishSchema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "ODataSchema": "http://redfish.dmtf.org/schemas/v1/odata-v4.json",
-    "Location": "http://redfish.dmtf.org/schemas/v1/",
-    "ResourceLocation": "http://redfish.dmtf.org/schemas/v1/",
-    "DoNotWrite": [ "Volume.", "VolumeCollection.", "RedfishError.", "RedfishExtensions.", "Validation." ]
+  "Copyright": "Copyright 2014-2021 DMTF. For the full DMTF copyright policy, see http://www.dmtf.org/about/policies/copyright",
+  "RedfishSchema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+  "ODataSchema": "http://redfish.dmtf.org/schemas/v1/odata-v4.json",
+  "Location": "http://redfish.dmtf.org/schemas/v1/",
+  "ResourceLocation": "http://redfish.dmtf.org/schemas/v1/",
+  "DoNotWrite": ["Volume.", "VolumeCollection.", "RedfishError.", "RedfishExtensions.", "Validation."]
 }
 ```
 
 The `dmtf-config.json` file contains the following parameters.
 
-| Parameter | Description | 
-| :-------- | :---------- |
-| `Copyright` | Copyright string to include in the JSON Schema files. |
-| `RedfishSchema` | Redfish Schema files. |
-| `ODataSchema`  | OData Schema files. |
-| `Location` | Web folder in which to publish the generated JSON Schema files. |
-| `ResourceLocation` | Location of Redfish resources. |
-| `DoNotWrite` | Output files to exclude from generated JSON files. |
+| Parameter          | Description                                                     | 
+| :----------------- | :-------------------------------------------------------------- |
+| `Copyright`        | Copyright string to include in the JSON Schema files.           |
+| `RedfishSchema`    | Redfish Schema files.                                           |
+| `ODataSchema`      | OData Schema files.                                             |
+| `Location`         | Web folder in which to publish the generated JSON Schema files. |
+| `ResourceLocation` | Location of Redfish resources.                                  |
+| `DoNotWrite`       | Output files to exclude from generated JSON files.              |
 
 If you omit any parameters, the tool uses the [default values](#default-values), which [Sample config file and default values](#default-values) shows.
 
