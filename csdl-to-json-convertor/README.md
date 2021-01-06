@@ -121,11 +121,11 @@ The `csdl-to-json.py` tool completes this processing:
       <tbody>
         <tr>
           <td align="left" valign="top" rowspan="3"><code>EntityType</code> element</td>
-          <td align="left" valign="top">Versioned<br/>Abstract</td>
+          <td align="left" valign="top">Versioned<br />Abstract</td>
           <td align="left" valign="top">Unversioned JSON file that points to all versioned definitions with definition that contains an <code>anyOf</code> statement.</td>
         </tr>
         <tr>
-          <td align="left" valign="top">Unversioned<br/>Not abstract</td>
+          <td align="left" valign="top">Unversioned<br />Not abstract</td>
           <td align="left" valign="top">Unversioned JSON file.</td>
         </tr>
         <tr>
@@ -134,11 +134,11 @@ The `csdl-to-json.py` tool completes this processing:
         </tr>
         <tr>
           <td align="left" valign="top" rowspan="3"><code>ComplexType</code> element</td>
-          <td align="left" valign="top">Versioned<br/>Abstract</td>
+          <td align="left" valign="top">Versioned<br />Abstract</td>
           <td align="left" valign="top">Unversioned JSON file that points to all versioned definitions with definition that contains an <code>anyOf</code> statement.</td>
         </tr>
         <tr>
-          <td align="left" valign="top">Unversioned<br/>Not abstract</td>
+          <td align="left" valign="top">Unversioned<br />Not abstract</td>
           <td align="left" valign="top">Unversioned JSON file.</td>
         </tr>
         <tr>
