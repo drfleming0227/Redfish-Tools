@@ -6,13 +6,17 @@ Copyright 2016-2021 Distributed Management Task Force, Inc. All rights reserved.
 
 The Redfish documentation generator, `doc_generator.py`, is a Python tool that parses and generates documentation in a specified output format from a set of JSON Schema files. Typically, the tool processes an entire set of files for a version. 
 
-The Redfish documentation generator version 3 introduces breaking changes to how you configure the `doc_generator.py` tool. For how to restructure your existing configuration files, see [Changes in Doc Generator V3](CHANGES_v2_to_v3.md). The `README` files have also been updated. A snapshot of the *version 2* code is available as the `Doc Generator v2` release.
+The Redfish documentation generator version 3 introduces breaking changes to how you configure the `doc_generator.py` tool. [Changes in Doc Generator V3](CHANGES_v2_to_v3.md). The `README` files have also been updated. A snapshot of the *version 2* code is available as the `Doc Generator v2` release.
 
 * [Installation](#installation)
 * [Usage](#usage)
-* [Configuration](#configuration)
-* [Assumptions](#assumptions)
-* [Processing](#processing)
+* [Notes](#notes)
+
+See also:
+
+* [Changes in Doc Generator V3](CHANGES_v2_to_v3.md) &mdash; How to restructure your existing configuration files.
+* [Redfish documentation generator configuration](README_config_files.md) &mdash; Configuration files for the Redfish documentation generator.
+* [Property index mode](README_Property_Index.md) &mdash; Property index mode.
 
 ## Installation
 
