@@ -114,7 +114,7 @@ To process CSDL files, the CSDL-to-JSON converter:
         <tr>
           <th align="left" valign="top">For&nbsp;every</th>
           <th align="left" valign="top">In&nbsp;namespace</th>
-          <th align="left" valign="top">Converts&nbsp;XML&nbsp;to</th>
+          <th align="left" valign="top">CSDL&#8209;to&#8209;JSON&nbsp;converter&nbsp;converts&nbsp;XML&nbsp;to</th>
         </tr>
       </thead>
       <tbody>
