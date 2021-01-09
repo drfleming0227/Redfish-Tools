@@ -31,7 +31,7 @@ where
 | :----------------- | :------------------------------------------------------------ |
 | `--input INPUT`    | Input folder that contains the CSDL files to convert to JSON files. |
 | `--output OUTPUT`  | Output folder for the generated JSON files.                         |
-| `--config CONFIG`  | Configuration file name. The tool reads control parameters from this file.<br/><br/>See [Configuration](#configuration). |
+| `--config CONFIG`  | Name of [configuration](#configuration) file, from which the tool reads control parameters. |
 
 
 ```text
