@@ -51,58 +51,49 @@ Other properties may be included for the user's reference, and will be ignored b
 
 A simple example config:
 
-```
+```json
 {
    "description": "Redfish Property Index generation file",
    "version": "2018.2",
-    "uri_mapping": { "redfish.dmtf.org/schemas/v1": "./json-schema" },
+   "uri_mapping": {
+      "redfish.dmtf.org/schemas/v1": "./json-schema"
+   },
    "excluded_properties": [
-      "description",
-      "Id",
+      "description", "Id",
       "@odata.context",
-      "@odata.type",
-      "@odata.id",
-      "@odata.etag",
-      "*@odata.count"
+      "@odata.type", "@odata.id",
+      "@odata.etag", "*@odata.count"
    ],
    "description_overrides": {
-      "EventType": [
-         {
-            "overrideDescription": "This indicates the type of an event recorded in this log.",
-            "globalOverride": true,
-            "type": "string"
-         }
-      ],
-       "FirmwareVersion": [
-           {
-               "description": "Firmware version.",
-               "type": "string",
-               "knownException": true,
-               "overrideDescription": "Override text for FirmwareVersion",
-               "schemas": [
-                   "AttributeRegistry/SupportedSystems"
-               ]
-           },
-           {
-               "overrideDescription": "The firmware version of this thingamajig.",
-               "type": "string",
-               "knownException": true,
-               "schemas": [
-                   "Power/PowerSupplies",
-                   "Manager",
-                   "ComputerSystem/TrustedModules",
-                   "Storage/StorageControllers"
-               ]
-           },
-           {
-               "description": "The version of firmware for this PCIe device.",
-               "type": "string",
-               "knownException": true,
-               "schemas": [
-                   "PCIeDevice"
-               ]
-           }
-       ]
+      "EventType": [{
+         "overrideDescription": "This indicates the type of an event recorded in this log.",
+         "globalOverride": true,
+         "type": "string"
+      }],
+      "FirmwareVersion": [{
+         "description": "Firmware version.",
+         "type": "string",
+         "knownException": true,
+         "overrideDescription": "Override text for FirmwareVersion",
+         "schemas": [
+            "AttributeRegistry/SupportedSystems"
+         ]
+      }, {
+         "overrideDescription": "The firmware version of this thingamajig.",
+         "type": "string",
+         "knownException": true,
+         "schemas": [
+            "Power/PowerSupplies",
+            "Manager",
+            "ComputerSystem/TrustedModules",
+            "Storage/StorageControllers"
+         ]
+      }, {
+         "description": "The version of firmware for this PCIe device.",
+         "type": "string",
+         "knownException": true,
+         "schemas": ["PCIeDevice"]
+      }]
    }
 }
 ```
@@ -119,16 +110,12 @@ This object maps partial URIs, as found in the schemas, to local directories. Th
 
 To exclude properties from the output, simply include them in the excluded_properties list. An asterisk as the first character in a property acts as a wild card; in this example, any property name that ends with "@odata.count" will be omitted.
 
-```
-   "excluded_properties": [
-      "description",
-      "Id",
-      "@odata.context",
-      "@odata.type",
-      "@odata.id",
-      "@odata.etag",
-      "*@odata.count"
-   ],
+```json
+"excluded_properties": ["description",
+   "Id", "@odata.context",
+   "@odata.type", "@odata.id",
+   "@odata.etag", "*@odata.count"
+]
 ```
 
 ### Description Overrides
@@ -149,52 +136,40 @@ The *description* and *knownException* entries are primarily for user reference;
 Some examples:
 
 
-```
-      "EventType": [
-         {
-            "overrideDescription": "This indicates the type of an event recorded in this log.",
-            "globalOverride": true,
-            "type": "string"
-         }
-      ]
-
+```json
+"EventType": [{
+   "overrideDescription": "This indicates the type of an event recorded in this log.",
+   "globalOverride": true,
+   "type": "string"
+}]
 ```
 
 The combination of "globalOverride" and "overrideDescription" indicates that all instances of the EventType property that have type "string" should have their description replaced with "This indicates the type of an event recorded in this log."
 
-
-```
-       "FirmwareVersion": [
-           {
-               "description": "Firmware version.",
-               "type": "string",
-               "knownException": true,
-               "overrideDescription": "Override text for FirmwareVersion",
-               "schemas": [
-                   "AttributeRegistry/SupportedSystems"
-               ]
-           },
-           {
-               "overrideDescription": "The firmware version of this thingamajig.",
-               "type": "string",
-               "knownException": true,
-               "schemas": [
-                   "Power/PowerSupplies",
-                   "Manager",
-                   "ComputerSystem/TrustedModules",
-                   "Storage/StorageControllers"
-               ]
-           },
-           {
-               "description": "The version of firmware for this PCIe device.",
-               "type": "string",
-               "knownException": true,
-               "schemas": [
-                   "PCIeDevice"
-               ]
-           }
-       ]
-   }
+```json
+"FirmwareVersion": [{
+   "description": "Firmware version.",
+   "type": "string",
+   "knownException": true,
+   "overrideDescription": "Override text for FirmwareVersion",
+   "schemas": [
+      "AttributeRegistry/SupportedSystems"
+   ]
+}, {
+   "overrideDescription": "The firmware version of this thingamajig.",
+   "type": "string",
+   "knownException": true,
+   "schemas": ["Power/PowerSupplies",
+      "Manager",
+      "ComputerSystem/TrustedModules",
+      "Storage/StorageControllers"
+   ]
+}, {
+   "description": "The version of firmware for this PCIe device.",
+   "type": "string",
+   "knownException": true,
+   "schemas": ["PCIeDevice"]
+}]
 ```
 
 The first two entries in this "FirmwareVersion" example override the description for FirmwareVersion, with type "string", in the specific schemas listed. The third entry identifies another instance of FirmwareVersion with another description, which should not be overridden but is expected.
