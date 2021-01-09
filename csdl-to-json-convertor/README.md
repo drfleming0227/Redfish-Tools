@@ -10,7 +10,7 @@ To install the tool, see [Installation](https://github.com/DMTF/Redfish-Tools#in
 
 * [Usage](#usage)
 * [Options](#options)
-* [dmtf-config.json file](#dmtf-configjson-file)
+* [Configuration file](#configuration-file)
 * [Assumptions](#assumptions)
 * [Processing](#processing)
 
@@ -32,7 +32,7 @@ where
 | :----------------- | :------------------------------------------------------------ |
 | `--input INPUT`    | Input folder that contains the CSDL files to convert to JSON files. |
 | `--output OUTPUT`  | Output folder to which to write the generated JSON files.            |
-| `--config CONFIG`  | Configuration file name. The tool reads control parameters from this file.<br/><br/>See [dmtf-config.json file](#dmtf-configjson-file). |
+| `--config CONFIG`  | Configuration file name. The tool reads control parameters from this file.<br/><br/>See [Configuration file](#configuration-file). |
 
 ## Options
 
@@ -56,7 +56,9 @@ optional arguments:
                         if they already exist (default is True)
 ```
 
-## dmtf-config.json file
+## Configuration file
+
+The default configuration file is `dmtf-config.json`, which contains these statements:
 
 <a id="default-values"></a>
 ```json
@@ -70,7 +72,7 @@ optional arguments:
 }
 ```
 
-The `dmtf-config.json` file contains the following parameters.
+The parameters are:
 
 | Parameter          | Description                                               | 
 | :----------------- | :-------------------------------------------------------- |
@@ -81,7 +83,7 @@ The `dmtf-config.json` file contains the following parameters.
 | `ResourceLocation` | Location of Redfish resources.                            |
 | `DoNotWrite`       | Output files to exclude from generated JSON files.        |
 
-If you omit any parameters, the tool uses the [default values](#default-values).
+If you omit any parameters, the tool uses the [default values](#default-values) in the `dmtf-config.json` file.
 
 ## Assumptions
 
@@ -113,9 +115,9 @@ The `csdl-to-json.py` tool completes this processing:
       <col width="34%">
       <thead>
         <tr>
-          <th align="left" valign="top">For every</th>
-          <th align="left" valign="top">In namespace</th>
-          <th align="left" valign="top">Converts XML to</th>
+          <th align="left" valign="top">For&nbsp;every</th>
+          <th align="left" valign="top">In&nbsp;namespace</th>
+          <th align="left" valign="top">Converts&nbsp;XML&nbsp;to</th>
         </tr>
       </thead>
       <tbody>

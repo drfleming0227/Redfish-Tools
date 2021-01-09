@@ -16,13 +16,13 @@ Redfish-Tools is the public repository of tools released by the Scalable Platfor
 
 ## Installation
 
-To use any of the tools in this repository:
+To use the tools in this repository:
 
 1. Clone the `Redfish-Tools` repository:
 
-    ```
-    git clone git@github.com:DMTF/Redfish-Tools.git
-    git remote add upstream git@github.com:DMTF/Redfish-Tools.git
+    ```bash
+    $ git clone git@github.com:DMTF/Redfish-Tools.git
+    $ git remote add upstream git@github.com:DMTF/Redfish-Tools.git
     ```
 
 1. Install Python on the machine from which you will run the tools:
@@ -30,4 +30,3 @@ To use any of the tools in this repository:
     | Software | Download                             |
     | :------- | :----------------------------------- |
     | Python 3 | [https://www.python.org/downloads/](https://www.python.org/downloads/) |
-
