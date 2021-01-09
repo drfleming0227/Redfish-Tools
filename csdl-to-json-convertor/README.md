@@ -4,13 +4,12 @@ Copyright 2017-2021 Distributed Management Task Force, Inc. All rights reserved.
 
 ## About
 
-The `csdl-to-json.py` tool is a Python tool that converts Redfish CSDL files to Redfish JSON Schema files.
+The CSDL-to-JSON converter,`csdl-to-json.py`, is a Python tool that converts Redfish CSDL files to Redfish JSON Schema files.
 
 To install the tool, see [Installation](https://github.com/DMTF/Redfish-Tools#installation "https://github.com/DMTF/Redfish-Tools#installation").
 
 * [Usage](#usage)
-* [Options](#options)
-* [Configuration file](#configuration-file)
+* [Configuration](#configuration)
 * [Assumptions](#assumptions)
 * [Processing](#processing)
 
@@ -34,7 +33,6 @@ where
 | `--output OUTPUT`  | Output folder to which to write the generated JSON files.            |
 | `--config CONFIG`  | Configuration file name. The tool reads control parameters from this file.<br/><br/>See [Configuration file](#configuration-file). |
 
-## Options
 
 ```text
 usage: csdl-to-json.py [-h] --input INPUT --output OUTPUT [--config CONFIG]
@@ -56,14 +54,15 @@ optional arguments:
                         if they already exist (default is True)
 ```
 
-## Configuration file
+## Configuration
 
 The default configuration file is `dmtf-config.json`, which contains these statements:
 
 <a id="default-values"></a>
 ```json
 {
-  "Copyright": "Copyright 2014-2021 DMTF. For the full DMTF copyright policy, see http://www.dmtf.org/about/policies/copyright",
+  "Copyright": 
+     "Copyright 2014-2021 DMTF. For the full DMTF copyright policy, see http://www.dmtf.org/about/policies/copyright",
   "RedfishSchema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
   "ODataSchema": "http://redfish.dmtf.org/schemas/v1/odata-v4.json",
   "Location": "http://redfish.dmtf.org/schemas/v1/",
@@ -74,24 +73,28 @@ The default configuration file is `dmtf-config.json`, which contains these state
 
 The parameters are:
 
-| Parameter          | Description                                               | 
-| :----------------- | :-------------------------------------------------------- |
-| `Copyright`        | Copyright string to include in the JSON Schema files.     |
-| `RedfishSchema`    | Redfish Schema files.                                     |
-| `ODataSchema`      | OData Schema files.                                       |
-| `Location`         | Output folder to which to write the generated JSON files. |
-| `ResourceLocation` | Location of Redfish resources.                            |
-| `DoNotWrite`       | Output files to exclude from generated JSON files.        |
+| Parameter          | Defines                                                                | 
+| :----------------- | :--------------------------------------------------------------------- |
+| `Copyright`        | Copyright string to include in the JSON Schema files.                  |
+| `RedfishSchema`    | Location of Redfish Schema files.                                      |
+| `ODataSchema`      | Location of OData Schema files.                                        |
+| `Location`         | Output folder for the generated JSON files.                            |
+| `ResourceLocation` | Location of Redfish resources.                                         |
+| `DoNotWrite`       | List of one or more output files to exclude from generated JSON files. |
 
 If you omit any parameters, the tool uses the [default values](#default-values) in the `dmtf-config.json` file.
 
 ## Assumptions
 
-The `csdl-to-json.py` tool makes these assumptions about the format of the Redfish CSDL files:
+The CSDL-to-JSON converter makes these assumptions about the format of the Redfish CSDL files:
 
-* Each file that defines a resource follows the Redfish model for inheritance by copy. Other than the base *Resource* definition, each resource definition is contained in one file.
+* Each file that defines a resource follows the Redfish model for inheritance by copy.
+
+    Other than the base *Resource* definition, each resource definition is contained in one file.
 * Any referenced external namespaces have proper `Include` statements at the top of each CSDL file.
-* All annotations have their expected facets filled. For example, the `OData.Description` annotation must use the `String=` facet.
+* All annotations have their expected facets filled.
+
+    For example, the `OData.Description` annotation must use the `String=` facet.
 * All namespaces follow the Redfish-defined format, where a namespace is either:
 
     * Unversioned.
