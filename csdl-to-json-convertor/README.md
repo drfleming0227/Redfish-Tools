@@ -27,11 +27,11 @@ $ python3 csdl-to-json.py --input ../../Redfish/metadata --output ../../Redfish/
 
 where
 
-| Option             | Description                                                   | 
+| Argument           | Description                                                   | 
 | :----------------- | :------------------------------------------------------------ |
 | `--input INPUT`    | Input folder that contains the CSDL files to convert to JSON files. |
-| `--output OUTPUT`  | Output folder to which to write the generated JSON files.            |
-| `--config CONFIG`  | Configuration file name. The tool reads control parameters from this file.<br/><br/>See [Configuration file](#configuration-file). |
+| `--output OUTPUT`  | Output folder for the generated JSON files.                         |
+| `--config CONFIG`  | Configuration file name. The tool reads control parameters from this file.<br/><br/>See [Configuration](#configuration). |
 
 
 ```text
@@ -95,15 +95,12 @@ The CSDL-to-JSON converter makes these assumptions about the format of the Redfi
 * All annotations have their expected facets filled.
 
     For example, the `OData.Description` annotation must use the `String=` facet.
-* All namespaces follow the Redfish-defined format, where a namespace is either:
-
-    * Unversioned.
-    * In the form, `<name>.v<X>_<Y>_<Z>`.
-* If a reference is made to another CSDL file, its JSON Schema file is in the same folder.
+* All namespaces follow the Redfish-defined format, where a namespace is either unversioned or in the form, `<name>.v<X>_<Y>_<Z>`.
+* References to another CSDL file assume that its JSON Schema file is in the same folder.
 
 ## Processing
 
-The `csdl-to-json.py` tool completes this processing:
+To process CSDL files, the CSDL-to-JSON converter:
 
 1. Locates the `Resource_v1.xml` schema to cache base definition properties that all resources use.
 
@@ -126,11 +123,11 @@ The `csdl-to-json.py` tool completes this processing:
       <tbody>
         <tr>
           <td align="left" valign="top" rowspan="3"><code>EntityType</code> element</td>
-          <td align="left" valign="top">Versioned<br />Abstract</td>
+          <td align="left" valign="top">Versioned and are marked as abstract</td>
           <td align="left" valign="top">Unversioned JSON file that points to all versioned definitions with definition that contains an <code>anyOf</code> statement.</td>
         </tr>
         <tr>
-          <td align="left" valign="top">Unversioned<br />Not abstract</td>
+          <td align="left" valign="top">Unversioned and are not marked as abstract</td>
           <td align="left" valign="top">Unversioned JSON file.</td>
         </tr>
         <tr>
@@ -139,11 +136,11 @@ The `csdl-to-json.py` tool completes this processing:
         </tr>
         <tr>
           <td align="left" valign="top" rowspan="3"><code>ComplexType</code> element</td>
-          <td align="left" valign="top">Versioned<br />Abstract</td>
+          <td align="left" valign="top">Versioned and are marked as abstract</td>
           <td align="left" valign="top">Unversioned JSON file that points to all versioned definitions with definition that contains an <code>anyOf</code> statement.</td>
         </tr>
         <tr>
-          <td align="left" valign="top">Unversioned<br />Not abstract</td>
+          <td align="left" valign="top">Unversioned and are not marked as abstract</td>
           <td align="left" valign="top">Unversioned JSON file.</td>
         </tr>
         <tr>
