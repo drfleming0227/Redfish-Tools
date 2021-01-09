@@ -1,4 +1,4 @@
-# Redfish Documentation Generator: Property Index Mode
+# Redfish documentation generator: Property index mode
 
 Copyright 2018 Distributed Management Task Force, Inc. All rights reserved.
 

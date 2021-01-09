@@ -16,7 +16,7 @@ See also:
 
 * [Changes in Doc Generator V3](CHANGES_v2_to_v3.md) &mdash; How to restructure your existing configuration files.
 * [Redfish documentation generator configuration](README_config_files.md) &mdash; Configuration files for the Redfish documentation generator.
-* [Property index mode](README_Property_Index.md) &mdash; Property index mode.
+* [Redfish documentation generator: Property index mode](README_Property_Index.md) &mdash; Property index mode.
 
 ## Installation
 
@@ -133,7 +133,7 @@ For more examples, [Redfish documentation generator config files](README_config_
 
 ## Notes
 
-For information about property index mode, see [Property Index Mode](README_Property_Index.md).
+For information about property index mode, see [Redfish documentation generator: Property index mode](README_Property_Index.md).
 
 Normative output prefers long descriptions to descriptions.
 
