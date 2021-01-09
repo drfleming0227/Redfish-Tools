@@ -107,13 +107,13 @@ To process CSDL files, the CSDL-to-JSON converter:
     If the file is not in the input directory, the tool accesses it in the remote location.
 1. Loops on all XML files in the input folder.
 
-    For every namespace in each XML file, generates a corresponding JSON file for the following elements and properties:
+    For the following elements and properties in every versioned and unversioned namespace in each XML file, the tool generates a corresponding JSON file:
 
     <table>
       <thead>
         <tr>
           <th align="left" valign="top">For&nbsp;every</th>
-          <th align="left" valign="top">CSDL&#8209;to&#8209;JSON&nbsp;converter&nbsp;converts&nbsp;XML&nbsp;to</th>
+          <th align="left" valign="top">CSDL&#8209;to&#8209;JSON&nbsp;converter&nbsp;converts&nbsp;XML&nbsp;file&nbsp;to</th>
         </tr>
       </thead>
       <tbody>
@@ -143,7 +143,7 @@ To process CSDL files, the CSDL-to-JSON converter:
         </tr>
         <tr>
           <td align="left" valign="top"><code>Action</code> property in an unversioned namespace</td>
-          <td align="left" valign="top">All versioned JSON files.</td>
+          <td align="left" valign="top">All JSON file versions.</td>
         </tr>
         <tr>
           <td align="left" valign="top"><code>Action</code> property in versioned namespace</td>
