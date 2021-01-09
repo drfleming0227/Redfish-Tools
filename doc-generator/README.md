@@ -2,30 +2,26 @@
 
 Copyright 2016-2021 Distributed Management Task Force, Inc. All rights reserved.
 
-Version 3 introduces breaking changes to how you configure the `doc_generator.py` tool. For how to restructure your existing configuration files, see [Changes in Doc Generator V3](CHANGES_v2_to_v3.md). The `README` files have also been updated. A snapshot of the *version 2* code is available as the `Doc Generator v2` release.
-
 ## About
 
-The `doc_generator.py` tool is a Python tool that parses and generates documentation in a specified output format from a set of JSON Schema files. Typically, the tool processes an entire set of files for a version. 
+The Redfish documentation generator, `doc_generator.py`, is a Python tool that parses and generates documentation in a specified output format from a set of JSON Schema files. Typically, the tool processes an entire set of files for a version. 
 
-GitHub-flavored Markdown targeted for the [Slate API docs generator](https://github.com/slatedocs/slate "https://github.com/slatedocs/slate") is the default output.
+The Redfish documentation generator version 3 introduces breaking changes to how you configure the `doc_generator.py` tool. For how to restructure your existing configuration files, see [Changes in Doc Generator V3](CHANGES_v2_to_v3.md). The `README` files have also been updated. A snapshot of the *version 2* code is available as the `Doc Generator v2` release.
 
-Other output formats include:
-
-* Markdown tuned to the DMTF document publication process
-* HTML 
-* *Property index* documentation
-* CSV
+* [Installation](#installation)
+* [Usage](#usage)
+* [Configuration](#configuration)
+* [Assumptions](#assumptions)
+* [Processing](#processing)
 
 ## Installation
 
-See [Installation](https://github.com/DMTF/Redfish-Tools#installation "https://github.com/DMTF/Redfish-Tools#installation").
+1. See [Installation](https://github.com/DMTF/Redfish-Tools#installation "https://github.com/DMTF/Redfish-Tools#installation").
 
 1. Install the following required software on the machine from which you will run `doc_generator.py`:
 
     | Software | Description | Download |
     |----------|-------------|----------|
-    | Python 3 | If you have not already installed Python, install only the standard library for Markdown output. | [https://www.python.org/downloads/](https://www.python.org/downloads/) |
     | Python&#8209;Markdown | Required for HTML output. | [https://python-markdown.github.io/install/](https://python-markdown.github.io/install/) |
     | Pygments | Required for HTML output. | [http://pygments.org/](http://pygments.org/) |
 
@@ -53,6 +49,15 @@ See [Installation](https://github.com/DMTF/Redfish-Tools#installation "https://g
 ## Usage
 
 By default, `doc_generator.py` looks for a `json-schema` directory and supplemental files in the configuration file that you specify when you run it. Several flavors of configuration files are available.
+
+The default output is GitHub-flavored Markdown targeted for the [Slate API docs generator](https://github.com/slatedocs/slate "https://github.com/slatedocs/slate").
+
+Other output formats include:
+
+* Markdown tuned to the DMTF document publication process
+* HTML 
+* *Property index* documentation
+* CSV
 
 The `--config` option specifies the configuration file.
 
