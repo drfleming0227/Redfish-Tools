@@ -61,13 +61,17 @@ The default configuration file is `dmtf-config.json`, which contains these state
 <a id="default-values"></a>
 ```json
 {
-  "Copyright": 
-     "Copyright 2014-2021 DMTF. For the full DMTF copyright policy, see http://www.dmtf.org/about/policies/copyright",
-  "RedfishSchema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-  "ODataSchema": "http://redfish.dmtf.org/schemas/v1/odata-v4.json",
-  "Location": "http://redfish.dmtf.org/schemas/v1/",
-  "ResourceLocation": "http://redfish.dmtf.org/schemas/v1/",
-  "DoNotWrite": ["Volume.", "VolumeCollection.", "RedfishError.", "RedfishExtensions.", "Validation."]
+   "Copyright": "Copyright 2014-2021 DMTF. For the full DMTF copyright policy, see http://www.dmtf.org/about/policies/copyright",
+   "RedfishSchema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+   "ODataSchema": "http://redfish.dmtf.org/schemas/v1/odata-v4.json",
+   "Location": "http://redfish.dmtf.org/schemas/v1/",
+   "ResourceLocation": "http://redfish.dmtf.org/schemas/v1/",
+   "DoNotWrite": ["Volume.",
+      "VolumeCollection.",
+      "RedfishError.",
+      "RedfishExtensions.",
+      "Validation."
+   ]
 }
 ```
 
