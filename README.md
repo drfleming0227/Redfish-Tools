@@ -26,11 +26,6 @@ To use the Redfish-Tools tools:
     $ git clone git@github.com:DMTF/Redfish-Tools.git
     $ git remote add upstream git@github.com:DMTF/Redfish-Tools.git
     ```
-
-1. Install Python on the machine from which you will run the tools:
-
-    | Software | Download                             |
-    | :------- | :----------------------------------- |
-    | Python 3 | [https://www.python.org/downloads/](https://www.python.org/downloads/) |
+1. [Download and install Python](https://www.python.org/downloads/ "https://www.python.org/downloads/") on the machine from which you will run the tools.
 
 > **Note:** Some tools have additional requirements.
