@@ -5,18 +5,18 @@
 
 # Redfish-Tools
 
-Redfish-Tools is the public repository of tools released by the Scalable Platforms Management Forum (SPMF) of the DMTF. For Redfish developer information, see [DMTF](https://redfish.dmtf.org/ "https://redfish.dmtf.org/").
+The Redfish-Tools public repository maintains tools the the Scalable Platforms Management Forum (SPMF) of the DMTF releases. For Redfish developer information, see [DMTF](https://redfish.dmtf.org/ "https://redfish.dmtf.org/").
 
 ## Tools
 
-* [CSDL-to-JSON converter](https://github.com/DMTF/Redfish-Tools/csdl-to-json-convertor/README.md "https://github.com/DMTF/Redfish-Tools/csdl-to-json-convertor/README.md")
-* [Redfish documentation generator](https://github.com/DMTF/Redfish-Tools/doc-generator/README.md "https://github.com/DMTF/Redfish-Tools/doc-generator/README.md")
-* [JSON Schema-to-OpenAPI converter](https://github.com/DMTF/Redfish-Tools/json-to-openapi-converter/README.md "https://github.com/DMTF/Redfish-Tools/doc-generator/README.md")
-* [OData CSDL validator](https://github.com/DMTF/Redfish-Tools/odata-csdl-validator/README.md "https://github.com/DMTF/Redfish-Tools/doc-generator/README.md")
+* [CSDL-to-JSON Converter](https://github.com/DMTF/Redfish-Tools/csdl-to-json-convertor/README.md "https://github.com/DMTF/Redfish-Tools/csdl-to-json-convertor/README.md")
+* [Redfish Documentation Generator](https://github.com/DMTF/Redfish-Tools/doc-generator/README.md "https://github.com/DMTF/Redfish-Tools/doc-generator/README.md")
+* [JSON Schema-to-OpenAPI Converter](https://github.com/DMTF/Redfish-Tools/json-to-openapi-converter/README.md "https://github.com/DMTF/Redfish-Tools/doc-generator/README.md")
+* [OData CSDL Validator](https://github.com/DMTF/Redfish-Tools/odata-csdl-validator/README.md "https://github.com/DMTF/Redfish-Tools/doc-generator/README.md")
 
 ## Installation
 
-To use the tools in this repository:
+To use the Redfish-Tools tools:
 
 1. Clone the `Redfish-Tools` repository:
 
@@ -30,3 +30,5 @@ To use the tools in this repository:
     | Software | Download                             |
     | :------- | :----------------------------------- |
     | Python 3 | [https://www.python.org/downloads/](https://www.python.org/downloads/) |
+
+> **Note:** Some tools have additional requirements.

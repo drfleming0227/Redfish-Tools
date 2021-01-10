@@ -1,23 +1,28 @@
-# Changes in Doc Generator Version 3
+# Redfish Documentation Generator v3 changes
 
-Version 3 of the doc generator introduces changes to the inputs the tool accepts. These changes are not backward compatible, so if you need to re-run the tool against an existing set of configuration files and don't need any other v3 or later changes, use the latest "doc_gen_v2" release.
+The Redfish Documentation Generator version 3 introduces changes to the inputs the tool accepts. These changes are not backward compatible so if you don't need v3 or later changes and you need to run the tool against an existing set of configuration files, use the latest [Doc Generator v2 release](https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0 "https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0").
 
-This document describes the changes, and how to update your configuration files.
+This document describes the changes and how to update your configuration files.
 
-## Version 3 Configuration Files
+* [Configuration file changes](#configuration-file-changes)
+* [Supplemental material changes](#supplementatl-material-changes)
+* [Fields removed from the base configuration](#fields-removed-from-the-base-configuration)
+* [Fields renamed in the base configuration](#fields-renamed-in-the-base-configuration)
+* [Content supplement JSON file](#content-supplement-json-file)
+
+## Configuration file changes
 
 The current version of the Doc Generator takes configuration input on the command line and from a configuration file, an optional boilerplate document, and an optional schema supplement file. In profile and subset modes, there is an additional mode-specific configuration file.
 
 | File             | Format     | Purpose                                                       |
-|------------------|------------|---------------------------------------------------------------|
+| :--------------- | :--------- | :------------------------------------------------------------ |
 | config           | JSON       | Top-level configuration, including all command-line options. This file also specifies the locations of other configuration  files. |
 | boilerplate intro | markdown or html | Content to be inserted in the output verbatim, prior to the generated documentation. May include an `[add_toc]` placeholder to specify where to include a table of contents. |
 | boilerplate postscript | markdown or html | Content to be inserted in the output verbatim, after the generated documentation. May include an `[add_toc]` placeholder to specify where to include a table of contents. |
 | content supplement | JSON     | Text replacements and additions. Includes: text overrides for property descriptions, units translation (replacements for unit abbreviations), schema-specific intros, postscripts, and property description substitutions. |
 | subset doc       | JSON       | Subset profile, unchanged for v3. _Link to spec for this?_         |
 
-
-## Replacing Supplemental Material
+## Supplemental material changes
 
 Features that previously were specified within the "Supplemental Material" markdown document are all available elsewhere:
 
@@ -45,7 +50,7 @@ The "Units Translation" table is replaced by the `units_translation` field, whic
 
  - "Units Translation": `units_translation` in content supplement
 
-## Fields That Move Out of Base Config
+## Fields removed from the base configuration
 
 Move these fields out of the base config.json and into the content supplement:
 
@@ -53,15 +58,14 @@ Move these fields out of the base config.json and into the content supplement:
  - `property_fulldescription_overrides`
  - `units_translation`
 
-## Renamed Fields in Base Config
+## Fields renamed in the base configuration
 
 Two field names, recognized only in "Property Index" mode and specified in config.json, have been renamed:
 
  - `ExcludedProperties` is now `excluded_properties` (as in other modes)
  - `DescriptionOverrides` is now `description_overrides`. Note that this is distinct from the `property_description_overrides` used in the content supplement for other modes, and is provided in the base config rather than the content supplement.
 
-
-## The Content Supplement JSON File
+## Content supplement JSON file
 
 The content supplement contains text replacements and insertions:
 

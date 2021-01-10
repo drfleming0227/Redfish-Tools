@@ -1,4 +1,4 @@
-# JSON Schema-to-OpenAPI converter
+# JSON Schema-to-OpenAPI Converter
 
 Copyright 2018-2021 DMTF. All rights reserved.
 

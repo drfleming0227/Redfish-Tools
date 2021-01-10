@@ -1,4 +1,4 @@
-# OData CSDL validator
+# OData CSDL Validator
 
 Copyright 2016-2021 Distributed Management Task Force, Inc. All rights reserved.
 

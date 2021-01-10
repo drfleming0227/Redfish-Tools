@@ -1,18 +1,30 @@
-# Redfish documentation generator: Property index mode
+# Redfish Documentation Generator: Property index mode
 
 Copyright 2018 Distributed Management Task Force, Inc. All rights reserved.
 
 ## About
 
-The `doc_generator` can be used to produce an index of property names and descriptions.
-The resulting output will include property name, type, schema(s) where found, and description(s) found.
+You can use the Redfish Documentation Generator &mdash; `doc_generator.py` &mdash; to produce an index of property names and descriptions.
 
-When run in "Property Index" mode, only a few of doc_generator.py's arguments are relevant, and the
-configuration file takes a different form from that used for the other output modes.
+The output includes property name, type, schemas where found, and descriptions found.
 
-Relevant arguments are:
+When you run run the Documentation Generator in *property index* mode:
 
-```
+* Only a few of `doc_generator.py` arguments apply.
+* The [configuration file](#configuration) takes a different form than the one used for the other output modes.
+
+Arguments:
+
+```text
+usage: doc_generator.py [-h]
+                        [--config CONFIG_FILE]
+                        [-n]
+                        [--format {markdown,html,csv}]
+                        [--out OUTFILE]
+                        [--profile PROFILE_DOC]
+                        [--property_index_config_out CONFIG_FILE_OUT]
+                        [import_from ...]
+
 positional arguments:
   import_from           Name of a file or directory to process (wild cards are
                         acceptable). Default: json-schema
@@ -22,13 +34,13 @@ optional arguments:
   -n, --normative       Produce normative (developer-focused) output
   --format {markdown,html,csv}
                         Output format
+  --out OUTFILE         Output file (default depends on output format:
+                        output.md for Markdown, index.html for HTML,
+                        output.csv for CSV
   --property_index      Produce Property Index output.
   --property_index_config_out CONFIG_FILE_OUT
                         Generate updated config file, with specified filename
                         (property_index mode only).
-  --out OUTFILE         Output file (default depends on output format:
-                        output.md for Markdown, index.html for HTML,
-                        output.csv for CSV
   --config CONFIG_FILE  Path to a config file, containing configuration in
                         JSON format.
 
@@ -36,20 +48,22 @@ Example:
    doc_generator.py --property_index --format=html --config=pi_config.json
 ```
 
-## Config File
+## Configuration
 
-The config file for this mode is a json document. It should include the following elements (only `uri_mapping` is required):
+The configuration file for this mode is a JSON document with the following elements:
 
-* boilerplate_intro: location of a markdown file providing content to place at the beginning of the document (prior to the generated schema documentation). If a relative path, should be relative to the location of the config file.
-* boilerplate_postscript: location of a markdown file providing content to place at the end of the document (after to the generated schema documentation). If a relative path, should be relative to the location of the config file.
-* description_overrides: an object keyed by property name, which can specify descriptions to "override" those found in the source schemas. (There's more about this below.)
-* excluded_properties: A list of property names to exclude from the output.
-* format: Output format. One of `markdown`, `slate`, `html`, `csv`
-* uri_mapping: Maps partial URIs (without protocol prefix) to local directories or files.
+| Element     | Required | Description                                                    | Reference     | 
+| :---------- | :------- | :------------------------------------------------------------- | :------------ |
+| `boilerplate_intro` | Optional | Location of a Markdown file that contains content that appears at the beginning of the document before the generated Redfish Schema documentation. If a relative path, should be relative to the location of the configuration file. | |
+| `boilerplate_postscript` | Optional | Location of a Markdown file that contains content that appears at the end of the document after the generated Redfish Schema documentation. If a relative path, should be relative to the location of the configuration file. | |
+| `description_overrides` | Optional | An object keyed by property name, which can specify descriptions that ooverride those in the source Schemas. | [Description overrides](#description-overrides) |
+| `excluded_properties` | Optional | List of property names to exclude from the output. | [Excluded properties](#excluded-properties) |
+| `format` | Optional | Output format. Value is `markdown`, `slate`, `html`, or `csv`. | |
+| `uri_mapping` | Required | Maps partial URIs without protocol prefix to local directories or files. | [URI mapping](#uri-mapping) |
 
-Other properties may be included for the user's reference, and will be ignored by the Doc Generator.
+Other properties may be included for the user's reference, and are ignored by the Documentation Generator.
 
-A simple example config:
+An example configuration file:
 
 ```json
 {
@@ -98,43 +112,24 @@ A simple example config:
 }
 ```
 
-### URI Mapping
+### Description overrides
 
-This object maps partial URIs, as found in the schemas, to local directories. The partial URI should include the domain part of the URI but can omit the protocol (http:// or https://).
+You can override descriptions for individual properties. The `description_overrides` object is keyed by property name. Values are lists, which enable you to specify different overrides for the same property in different schemas. Each object in the list can have the following entries:
 
-```
-    "uri_mapping": { "redfish.dmtf.org/schemas/v1": "./json-schema" }
-```
+| Key                   | Value          |
+| :-------------------- | :------------- |
+| `type`                | Property type. |
+| `schemas`             | List of schemas to which this element applies. |
+| `overrideDescription` | String that replaces the description in the schema. |
+| `globalOverride`      | The `overrideDescription` in this element applies to all instances of the property name that match the `type`. |
+| `description`         | Description in the schema. |
+| `knownException`      | A variant description is expected. |
 
-### Excluded Properties
+The `description` and `knownException` keys are primarily for user reference. When generating configuration output, the Documentation Generator includes the description and set `knownException` to `false`. The user can edit the resulting output to distinguish expected exceptions from those that need attention. Neither field affects the property index document itself.
 
-To exclude properties from the output, simply include them in the excluded_properties list. An asterisk as the first character in a property acts as a wild card; in this example, any property name that ends with "@odata.count" will be omitted.
-
-```json
-"excluded_properties": ["description",
-   "Id", "@odata.context",
-   "@odata.type", "@odata.id",
-   "@odata.etag", "*@odata.count"
-]
-```
-
-### Description Overrides
-
-Descriptions for individual properties can be overridden. The description_overrides object is keyed by property name. Values are lists, allowing you to specify different overrides for the same property in different schemas. Each object in the list can have the following entries:
-
-* type: the property type
-* schemas: a list of schemas this element applies to
-* overrideDescription: a string to replace the description found in the schema
-* globalOverride: indicates that the overrideDescription in this element applies to all instances of the property name where the type matches
-* description: the description found in the schema
-* knownException: indicates that a variant description is expected
-
-The *description* and *knownException* entries are primarily for user reference; when generating configuration output the `doc_generator` will include the description and set knownException to false; the user can edit the resulting output to distinguish expected exceptions from those that need attention. Neither field affects the property index document itself.
-
-(Note that although this has a similar function to property_description_overrides in other modes, description_overrides has a different structure.)
+> **Note:** Although `description_overrides` has a similar function to `property_description_overrides` in other modes, it has a different structure.
 
 Some examples:
-
 
 ```json
 "EventType": [{
@@ -144,7 +139,7 @@ Some examples:
 }]
 ```
 
-The combination of "globalOverride" and "overrideDescription" indicates that all instances of the EventType property that have type "string" should have their description replaced with "This indicates the type of an event recorded in this log."
+The combination of `globalOverride` and `overrideDescription` indicates that all instances of the `EventType` property that have type `string` should have their description replaced with `"This indicates the type of an event recorded in this log."`
 
 ```json
 "FirmwareVersion": [{
@@ -172,15 +167,34 @@ The combination of "globalOverride" and "overrideDescription" indicates that all
 }]
 ```
 
-The first two entries in this "FirmwareVersion" example override the description for FirmwareVersion, with type "string", in the specific schemas listed. The third entry identifies another instance of FirmwareVersion with another description, which should not be overridden but is expected.
+The first two entries in this `FirmwareVersion` example override the description for `FirmwareVersion` with type `string`, in the listed schemas. The third entry identifies another instance of `FirmwareVersion` with another description, which is expected but should not be overridden.
 
-## Config File Output
+### Excluded properties
 
-Use the --property_index_config_out flag to specify an output file for updated configuration information. The `doc_generator` will extend the input configuration by adding entries for any properties where:
+To exclude properties from the output, include them in the `excluded_properties` list. An asterisk (`*`) as the first character in a property acts as a wild card. In the following example, any property name that ends with `"@odata.count"` is omitted:
 
-* The property name appears with more than one type
-* The property name appears with more than one description
+```json
+"excluded_properties": ["description",
+   "Id", "@odata.context",
+   "@odata.type", "@odata.id",
+   "@odata.etag", "*@odata.count"
+]
+```
 
-If you have specified "globalOverride" for a property name or property name/type, no data will be added for matching instances.
+### URI mapping
 
-All added entries will include *"knownException": false*. In addition, if an entry was flagged with *"knownException": true* in the input configuration, but the description no longer matches, *knownException* will be set to false. (In the example above, if FirmwareVersion in the PCIeDevice schema had a different description than the one listed in the example input, it would appear in the output with its new description and *"knownException": false*.
+This object maps partial URIs, as found in the schemas, to local directories. The partial URI should include the domain part of the URI but can omit the protocol (http:// or https://).
+
+```json
+"uri_mapping": { "redfish.dmtf.org/schemas/v1": "./json-schema" }
+```
+
+## Configuration file output
+
+Use the `--property_index_config_out` option to specify an output file for updated configuration information. The Documentation Generator extends the input configuration by adding entries for any properties where the property name appears with more than one type or description.
+
+If you specify `globalOverride` for a property name or property name and type, no data is added for matching instances.
+
+All added entries include `"knownException": false`. In addition, if an entry includes `"knownException": true` in the input configuration but the description no longer matches, `knownException` is set to `false`. 
+
+In the previous example, if `FirmwareVersion` in the `PCIeDevice` schema had a different description than the one listed in the example input, it appears in the output with its new description and `"knownException": false`.
