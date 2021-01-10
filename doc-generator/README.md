@@ -4,7 +4,7 @@ Copyright 2016-2021 Distributed Management Task Force, Inc. All rights reserved.
 
 ## About
 
-The Redfish documentation generator, `doc_generator.py`, is a Python tool that parses and generates documentation in a specified output format from a set of JSON Schema files. Typically, the tool processes an entire set of files for a version. 
+The Redfish documentation generator, `doc_generator.py`, is a Python tool that parses a set of JSON Schema files to generate documentation in a specified format. Typically, the tool processes an entire set of files for a version. 
 
 The Redfish documentation generator version 3 introduces breaking changes to how you configure the `doc_generator.py` tool. [Changes in Doc Generator V3](CHANGES_v2_to_v3.md). The `README` files have also been updated. A snapshot of the *version 2* code is available as the `Doc Generator v2` release.
 
@@ -20,22 +20,19 @@ See also:
 
 ## Installation
 
-1. See [Installation](https://github.com/DMTF/Redfish-Tools#installation "https://github.com/DMTF/Redfish-Tools#installation").
-
+1. [Clone this repository and install Python](https://github.com/DMTF/Redfish-Tools#installation "https://github.com/DMTF/Redfish-Tools#installation").
 1. Install the following required software on the machine from which you will run `doc_generator.py`:
 
     | Software | Description | Download |
     |----------|-------------|----------|
     | Python&#8209;Markdown | Required for HTML output. | [https://python-markdown.github.io/install/](https://python-markdown.github.io/install/) |
     | Pygments | Required for HTML output. | [http://pygments.org/](http://pygments.org/) |
-
 1. Use `pip` to install requirements:
 
     ```
     % cd doc-generator
     % pip install -r requirements.txt
     ```
-
 1. If you are making changes to this code, also install pytest and run the tests. To use `pip` to install:
 
     ```
