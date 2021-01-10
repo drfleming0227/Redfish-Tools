@@ -120,62 +120,62 @@ To process CSDL files, the CSDL-to-JSON Converter:
       <tbody>
         <tr>
           <td align="left" valign="top"><code>EntityType</code> element</td>
-          <td align="left" valign="top">A versioned namespace that is marked abstract</td>
-          <td align="left" valign="top">Unversioned JSON file that points to all JSON file versions by using <code>anyOf</code> statement</td>
+          <td align="left" valign="top">Versioned namespace that is marked abstract</td>
+          <td align="left" valign="top">Unversioned JSON file that uses <code>anyOf</code> statement to point to all JSON file versions</td>
         </tr>
         <tr>
           <td align="left" valign="top"><code>EntityType</code> element</td>
-          <td align="left" valign="top">An unversioned namespace that is not marked abstract</td>
+          <td align="left" valign="top">Unversioned namespace that is not marked abstract</td>
           <td align="left" valign="top">Unversioned JSON file</td>
         </tr>
         <tr>
           <td align="left" valign="top"><code>EntityType</code> element </td>
-          <td align="left" valign="top">A versioned namespace</td>
+          <td align="left" valign="top">Cersioned namespace</td>
           <td align="left" valign="top">That JSON file version and newer JSON file versions</td>
         </tr>
         <tr>
           <td align="left" valign="top"><code>ComplexType</code> element </td>
-          <td align="left" valign="top">A versioned namespace that is marked abstract</td>
-          <td align="left" valign="top">Unversioned JSON file that points to all JSON file versions by using <code>anyOf</code> statement</td>
+          <td align="left" valign="top">Versioned namespace that is marked abstract</td>
+          <td align="left" valign="top">Unversioned JSON file that uses <code>anyOf</code> statement to point to all JSON file versions</td>
         </tr>
         <tr>
           <td align="left" valign="top"><code>ComplexType</code> element</td>
-          <td align="left" valign="top">An unversioned namespace that is not marked abstract</td>
+          <td align="left" valign="top">Unversioned namespace that is not marked abstract</td>
           <td align="left" valign="top">Unversioned JSON file</td>
         </tr>
         <tr>
           <td align="left" valign="top"><code>ComplexType</code> element </td>
-          <td align="left" valign="top">A versioned namespace</td>
+          <td align="left" valign="top">Versioned namespace</td>
           <td align="left" valign="top">That JSON file version and newer JSON file versions</td>
         </tr>
         <tr>
           <td align="left" valign="top"><code>Action</code> property</td>
-          <td align="left" valign="top">An unversioned namespace</td>
+          <td align="left" valign="top">Unversioned namespace</td>
           <td align="left" valign="top">All JSON file versions</td>
         </tr>
         <tr>
           <td align="left" valign="top"><code>Action</code> property</td>
-          <td align="left" valign="top">A versioned namespace</td>
+          <td align="left" valign="top">Versioned namespace</td>
           <td align="left" valign="top">That JSON file version and newer JSON file versions</td>
         </tr>
         <tr>
           <td align="left" valign="top"><code>EnumType</code> element</td>
-          <td align="left" valign="top">An unversioned namespace</td>
+          <td align="left" valign="top">Unversioned namespace</td>
           <td align="left" valign="top">Unversioned JSON file</td>
         </tr>
         <tr>
           <td align="left" valign="top"><code>EnumType</code> element </td>
-          <td align="left" valign="top">A versioned namespace</td>
+          <td align="left" valign="top">Versioned namespace</td>
           <td align="left" valign="top">That JSON file version and newer JSON file versions</td>
         </tr>
         <tr>
           <td align="left" valign="top"><code>TypeDefinition</code>&nbsp;element</td>
-          <td align="left" valign="top">An unversioned namespace</td>
+          <td align="left" valign="top">Unversioned namespace</td>
           <td align="left" valign="top">Unversioned JSON file</td>
         </tr>
         <tr>
           <td align="left" valign="top"><code>TypeDefinition</code>&nbsp;element </td>
-          <td align="left" valign="top">A versioned namespace</td>
+          <td align="left" valign="top">Versioned namespace</td>
           <td align="left" valign="top">That JSON file version and newer JSON file versions</td>
         </tr>
       </tbody>
