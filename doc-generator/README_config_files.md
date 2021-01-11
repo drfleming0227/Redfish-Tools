@@ -37,7 +37,7 @@ The [Content Supplement file](#content-supplement-config-file-supported-attribut
 Note that some configuration key names differ from their command-line counterparts. Unless otherwise noted, the meaning of the configuration key is the same as its command-line counterpart. The `uri_mapping` attribute is expected. All other attributes are optional in configuration files.
 
 | Configuration key           | Command-line equivalent | Type    | Description                                   |
-| :-------------------------- | :---------------------- | :------ | : ------------------------------------------- |
+| :-------------------------- | :---------------------- | :------ | :-------------------------------------------- |
 | `actions_in_property_table` |                         | Boolean | If `true`, omit `"Actions"` from the property tables. |
 | `add_toc`                   |                         | Boolean | If `true`, generate a table of contents and either substitute it for `[add_toc]` in the boilerplate (intro or postscript), or place it at the beginning of the output document. Makes sense only for HTML mode. If `[add_toc]` appears anywhere in the boilerplate, default is `true`. |
 | `boilerplate_intro`         |                         |         | Location of a Markdown file providing content to place at the beginning of the document (prior to the generated schema documentation). If a relative path, should be relative to the location of the configuration file. |
