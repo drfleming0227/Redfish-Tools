@@ -10,6 +10,7 @@ The [Redfish docs generator v3](CHANGES_v2_to_v3.md) introduces breaking changes
 
 * [Installation](#installation)
 * [Usage](#usage)
+* [Configuration](#configuration)
 * [Notes](#notes)
 
 ## Installation
@@ -17,10 +18,10 @@ The [Redfish docs generator v3](CHANGES_v2_to_v3.md) introduces breaking changes
 1. [Clone this repository and install Python](https://github.com/DMTF/Redfish-Tools#installation "https://github.com/DMTF/Redfish-Tools#installation").
 1. Install the following required software on the machine from which you will run `doc_generator.py`:
 
-    | Software | Description | Download |
-    |----------|-------------|----------|
-    | Python&#8209;Markdown | Required for HTML output. | [https://python-markdown.github.io/install/](https://python-markdown.github.io/install/) |
-    | Pygments | Required for HTML output. | [http://pygments.org/](http://pygments.org/) |
+    | Software   | Description   |
+    | :--------- | :------------ |
+    | [Install Python&#8209;Markdown](https://python-markdown.github.io/install/ "https://python-markdown.github.io/install/"") | Required for HTML output. |
+    | [Install Pygments](http://pygments.org/ "http://pygments.org/") | Required for HTML output. |
 1. Use `pip` to install requirements:
 
     ```
@@ -51,18 +52,8 @@ Other output formats include:
 
 * Markdown tuned to the DMTF document publication process
 * HTML 
-* *Property index* documentation
+* [*Property index* documentation](README_Property_Index.md)
 * CSV
-
-The `--config` option specifies the configuration file.
-
-This file defines:
-
-* Many command-line options
-* Some required parameters, such as URI mappings, that you cannot specify on the command line
-* Many optional parameters
-
-See [Redfish docs generator configuration](README_config_files.md).
 
 ```
 usage: doc_generator.py [-h] [--config CONFIG_FILE] [-n]
@@ -121,6 +112,18 @@ Example:
 ```
 
 For more examples, [Redfish docs generator configuration](README_config_files.md)
+
+## Configuration
+
+The `--config` option specifies the configuration file.
+
+This file defines:
+
+* Many command-line options
+* Some required parameters, such as URI mappings, that you cannot specify on the command line
+* Many optional parameters
+
+See [Redfish docs generator: Configuration](README_config_files.md).
 
 ## Notes
 
