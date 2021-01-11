@@ -22,7 +22,7 @@
    * [Generate property index HTML output](#generate-property-index-html-output)
    * [Generate CSV output](#generate-csv-output)
 
-The configuration files for the Redfish docs generator &mdash; [`doc_generator.py`](#doc_generator.py) &mdash; support most of the `doc_generator.py` command-line arguments except the `--help` and `--config` arguments.
+The configuration files for the Redfish docs generator &mdash; [`doc_generator.py`](doc_generator.py) &mdash; support most of the `doc_generator.py` command-line arguments except the `--help` and `--config` arguments.
 
 The configuration files support additional configuration options for some output modes.
 
@@ -71,9 +71,7 @@ Note that some configuration keys differ from their command-line argument equiva
 | `subset`<br/><br/>**Command-line argument:**`subset`    |         | Path to a JSON profile document. Generates **Schema subset** output, with the subset defined in the JSON profile document. |
 | `uri_mapping`                  | Object  | Partial URL of schema repositories as attributes, and local directory paths as values. |
 
-### Key details
-
-#### combine_multiple_refs key
+### combine_multiple_refs key
 
 The `combine_multiple_refs` key specifies a threshold at which multiple references to the same object within a schema are moved into **Property details** instead of expanded in place. For example, to move an object to **Property details** if it is referred to three or more times:
 
@@ -81,7 +79,7 @@ The `combine_multiple_refs` key specifies a threshold at which multiple referenc
 "combine_multiple_refs": 3,
 ```
 
-#### object_reference_disposition key
+### object_reference_disposition key
 
 The `object_reference_disposition` key specifies a JSON object with either or both these fields:
 
@@ -92,21 +90,21 @@ For example:
 
 ```json
 "object_reference_disposition": {
-  "common_object": ["Redundancy"],
-  "include": [
-    "http://redfish.dmtf.org/schemas/v1/PCIeDevice.json#/definitions/PCIeInterface"
-  ]
+   "common_object": ["Redundancy"],
+   "include": [
+      "http://redfish.dmtf.org/schemas/v1/PCIeDevice.json#/definitions/PCIeInterface"
+   ]
 }
 ```
 
-#### payload_dir key
+### payload_dir key
 
 The `payload_dir` key specifies a directory location for JSON payload and Action examples. If relative, this path is relative to the working directory in which the `doc_generator.py` script is run. Within the payload directory, use the following naming scheme for example files:
 
 * &lt;schema_name&gt;-v&lt;major_version&gt;-example.json for JSON payloads
 * &lt;schema_name&gt;-v&lt;major_version&gt;-action-&lt;action_name&gt;.json for action examples
 
-#### profile_terse key
+### profile_terse key
 
 The `profile_terse` key is meaningful only when a profile document is also specified. When `true`, *terse* output is produced. By default, profile output is verbose and includes all properties regardless of profile requirements. *Terse* output is intended for use by Service developers, including only the subset of properties with profile requirements.
 
@@ -122,51 +120,48 @@ The `profile_terse` key is meaningful only when a profile document is also speci
 | `schema_supplement` | Dictionary | Maps schema names to a dictionary of structured content, including introductory text and schema-specific text replacements. | [schema_supplement attribute](#schema-supplement-attribute) |
 | `units_translation` | Dictionary | Maps units as they appear in Redfish schemas to units as you want them to appear in the documentation. |
 
-### Key details
-
-#### schema_link_replacements key
+### schema_link_replacements key
 
 The `schema_link_replacements` key defines a dictionary mapping URIs of schema references to replacement URIs. Use to substitute a link to documentation where a link to a specific schema would otherwise appear in the documentation. The structure of this dictionary is:
 
 ```json
-
 "schema_link_replacements": {
-  "https://somewhere.example.com/some/path/to/a/some_schema.json": {
-    "full_match": true,
-    "replace_with": "https://docserver.example.org/some_schema_doc.html"
-  },
-  "fancy": {
-    "full_match": false,
-    "replace_with": "https://docserver.example.org/fancy_schemas.html"
-  }
+   "https://somewhere.example.com/some/path/to/a/some_schema.json": {
+      "full_match": true,
+      "replace_with": "https://docserver.example.org/some_schema_doc.html"
+   },
+   "fancy": {
+      "full_match": false,
+      "replace_with": "https://docserver.example.org/fancy_schemas.html"
+   }
 }
 ```
 
-#### schema_supplement key
+### schema_supplement key
 
 The `schema_supplement` key defines a dictionary of structured content, including text overrides for property descriptions, units translation (replacements for unit abbreviations), schema-specific intros, property description substitutions, and other supplementary data. The structure of this object looks like this (all fields are optional):
 
 ```json
 "schema_supplement": {
-  "SchemaName": {
-    "description": "A string to replace the schema description. Plain text or markdown.",
-    "mockup": "A path or URI to a mockup file.",
-    "jsonpayload": "A chunk of JSON.",
-    "intro": "",
-    "property_description_overrides": {
-      "PropertyName": "a string, plain text or markdown.",
-      "AnotherPropertyName": "a string, plain text or markdown."
-    },
-    "property_fulldescription_overrides": {
-      "YetAnotherPropertyName": "a string, plain text or markdown. This string will also eliminate any additional data the doc generator would normally append to the description."
-    },
-    "property_details": {
-      "EnumPropertyName": "A string, plain text or markdown. This will be inserted after the property description and prior to the table of enum details in the property information under Property Details.",
+   "SchemaName": {
+      "description": "A string to replace the schema description. Plain text or markdown.",
+      "mockup": "A path or URI to a mockup file.",
+      "jsonpayload": "A chunk of JSON.",
+      "intro": "",
+      "property_description_overrides": {
+         "PropertyName": "a string, plain text or markdown.",
+         "AnotherPropertyName": "a string, plain text or markdown."
+      },
+      "property_fulldescription_overrides": {
+         "YetAnotherPropertyName": "a string, plain text or markdown. This string will also eliminate any additional data the doc generator would normally append to the description."
+      },
       "property_details": {
-        "UUID": "\nThe UUID property contains a value that represents the universal unique identifier number (UUID) of a system.\n\nThe UUID property is a string data type. The format of the string is the 35-character string format specified in RFC4122: \"xxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\". Each x represents a hexadecimal digit (0-f).\n\nRegarding the case of the hex values, RFC4122 specifies that the hex values should be lowercase characters. Most modern scripting languages typically also represent hex values in lowercase characters following the RFC. However, dmidecode, WMI and some Redfish implementations currently use uppercase characters for UUID on output."
+         "EnumPropertyName": "A string, plain text or markdown. This will be inserted after the property description and prior to the table of enum details in the property information under Property Details.",
+         "property_details": {
+            "UUID": "\nThe UUID property contains a value that represents the universal unique identifier number (UUID) of a system.\n\nThe UUID property is a string data type. The format of the string is the 35-character string format specified in RFC4122: \"xxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\". Each x represents a hexadecimal digit (0-f).\n\nRegarding the case of the hex values, RFC4122 specifies that the hex values should be lowercase characters. Most modern scripting languages typically also represent hex values in lowercase characters following the RFC. However, dmidecode, WMI and some Redfish implementations currently use uppercase characters for UUID on output."
+         }
       }
-    }
-  }
+   }
 }
 ```
 
