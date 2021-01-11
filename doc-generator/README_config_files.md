@@ -2,23 +2,25 @@
 
 ## Contents
 
-* [Base configuration file: Supported keys](#base-configuration-file-supported-keys)
-* [Key details](#key-details)
-   * [combine_multiple_refs key](#combine_multiple_refs-key)
-   * [object_reference_disposition key](#object_reference_disposition-key)
-   * [payload_dir key](#payload_dir-key)
-   * [profile_terse key](#profile_terse-key)
-* [Content supplement configuration file: Supported keys](#content-supplement-configuration-file-supported-keys)
-* [Key details](#key-details-1)
-   * [schema_link_replacements key](#schema_link_replacements-key)
-   * [schema_supplement key](#schema_supplement-key)
-* [Examples](#examples)
-   * [Produce full HTML documentation](#produce-full-html-documentation)
-   * [Produce full HTML documentation with normative descriptions](#produce-full-html-documentation-with-normative-descriptions)
-   * [Produce profile index output — terse mode, markdown format](#produce-profile-index-output--terse-mode-markdown-format)
-   * [Produce HTML subset documentation](#produce-html-subset-documentation)
-   * [Produce Property Index HTML output](#produce-property-index-html-output)
-   * [Produce CSV output](#produce-csv-output)
+* [Base configuration file](#base-configuration-file)
+   * [Supported keys](#supported-keys)
+   * [Key details](#key-details)
+      * [combine_multiple_refs key](#combine_multiple_refs-key)
+      * [object_reference_disposition key](#object_reference_disposition-key)
+      * [payload_dir key](#payload_dir-key)
+      * [profile_terse key](#profile_terse-key)
+* [Content supplement configuration file](#content-supplement-configuration-file)
+   * [Supported keys](#supported-keys-1)
+   * [Key details](#key-details-1)
+      * [schema_link_replacements key](#schema_link_replacements-key)
+      * [schema_supplement key](#schema_supplement-key)
+* [Redfish doc generator examples](#redfish-doc-generator-examples)
+   * [Generate HTML documentation](#generate-html-documentation)
+   * [Generate HTML documentation with normative descriptions](#generate-html-documentation-with-normative-descriptions)
+   * [Generate profile index Markdown output — terse mode](#generate-profile-index-markdown-output--terse-mode)
+   * [Generate subset HTML documentation](#generate-subset-html-documentation)
+   * [Generate property index HTML output](#generate-property-index-html-output)
+   * [Generate CSV output](#generate-csv-output)
 
 The Redfish docs generator &mdash; [`doc_generator.py`](#doc_generator.py) &mdash; configuration files support most of the `doc_generator.py` command-line arguments except for the `--help` and `--config` arguments.
 
@@ -32,7 +34,9 @@ The [base configuration file](#base-configuration-file-supported-attributes) is 
 
 The [Content Supplement file](#content-supplement-config-file-supported-attributes) is a JSON file that contains text replacements and additions to be applied to the generated schema documentation. It includes text overrides for property descriptions, units translation (replacements for unit abbreviations), and schema-specific content including intros, postscripts, and property description substitutions.
 
-## Base configuration file: Supported keys
+## Base configuration file
+
+### Supported keys
 
 Note that some configuration keys differ from their command-line equivalents. Unless otherwise noted, the meaning of the configuration key is the same as its command-line counterpart. The `uri_mapping` attribute is expected. All other attributes are optional in configuration files.
 
@@ -67,9 +71,9 @@ Note that some configuration keys differ from their command-line equivalents. Un
 | `subset` | `subset` | | Path to a JSON profile document. Generates **Schema subset** output, with the subset defined in the JSON profile document. |
 | `uri_mapping` | Object | Partial URL of schema repositories as attributes, and local directory paths as values. | -->
 
-## Key details
+### Key details
 
-### combine_multiple_refs key
+#### combine_multiple_refs key
 
 The `combine_multiple_refs` key specifies a threshold at which multiple references to the same object within a schema are moved into **Property details** instead of expanded in place. For example, to move an object to **Property details** if it is referred to three or more times:
 
@@ -77,7 +81,7 @@ The `combine_multiple_refs` key specifies a threshold at which multiple referenc
 "combine_multiple_refs": 3,
 ```
 
-### object_reference_disposition key
+#### object_reference_disposition key
 
 The `object_reference_disposition` key specifies a JSON object with either or both these fields:
 
@@ -95,18 +99,20 @@ For example:
 }
 ```
 
-### payload_dir key
+#### payload_dir key
 
 The `payload_dir` key specifies a directory location for JSON payload and Action examples. If relative, this path is relative to the working directory in which the `doc_generator.py` script is run. Within the payload directory, use the following naming scheme for example files:
 
 * &lt;schema_name&gt;-v&lt;major_version&gt;-example.json for JSON payloads
 * &lt;schema_name&gt;-v&lt;major_version&gt;-action-&lt;action_name&gt;.json for action examples
 
-### profile_terse key
+#### profile_terse key
 
 The `profile_terse` key is meaningful only when a profile document is also specified. When `true`, *terse* output is produced. By default, profile output is verbose and includes all properties regardless of profile requirements. *Terse* output is intended for use by Service developers, including only the subset of properties with profile requirements.
 
-## Content supplement configuration file: Supported keys
+## Content supplement configuration file
+
+### Supported keys
 
 | Configuration key | Type | Description | Details |
 | :-------- | :--- | :---------- | :------ |
@@ -116,11 +122,11 @@ The `profile_terse` key is meaningful only when a profile document is also speci
 | `schema_supplement` | Dictionary | Maps schema names to a dictionary of structured content, including introductory text and schema-specific text replacements. | [schema_supplement attribute](#schema-supplement-attribute) |
 | `units_translation` | Dictionary | Maps units as they appear in Redfish schemas to units as you want them to appear in the documentation. |
 
-## Key details
+### Key details
 
-### schema_link_replacements key
+#### schema_link_replacements key
 
-The `schema_link_replacements` attribute defines a dictionary mapping URIs of schema references to replacement URIs. Use to substitute a link to documentation where a link to a specific schema would otherwise appear in the documentation. The structure of this dictionary is:
+The `schema_link_replacements` key defines a dictionary mapping URIs of schema references to replacement URIs. Use to substitute a link to documentation where a link to a specific schema would otherwise appear in the documentation. The structure of this dictionary is:
 
 ```json
 
@@ -136,7 +142,7 @@ The `schema_link_replacements` attribute defines a dictionary mapping URIs of sc
 }
 ```
 
-### schema_supplement key
+#### schema_supplement key
 
 The `schema_supplement` key defines a dictionary of structured content, including text overrides for property descriptions, units translation (replacements for unit abbreviations), schema-specific intros, property description substitutions, and other supplementary data. The structure of this object looks like this (all fields are optional):
 
@@ -170,15 +176,15 @@ If `description` or `intro` are specified for a schema, that value replaces the 
 
 The `mockup` and `jsonpayload` attributes are mutually exclusive. If you specify both attributes, the content at `mockup` takes precedence. If you specify a `payload_dir` in the base configuration file, a payload directory is preferred over using these attributes.
 
-## Examples
+## Redfish doc generator examples
 
 Several files in the `sample_inputs` directory provide examples of configuration files that you can use to produce different types of documentation. The following examples show some command-line invocations.
 
 These examples assume that you have a clone of the DMTF/Redfish repo and the DMTF/Redfish-Tools repo in the same parent directory, and that your working directory is the Redfish clone, so that the schemas are in `./json-schema` and `doc_generator.py` is at `../Redfish-Tools/doc-generator/doc_generator.py` relative to your current working directory.
 
-Note that the config files themselves contain references to other files in this directory.
+> **Note:** The configuration files reference other files in this directory.
 
-### Produce full HTML documentation
+### Generate HTML documentation
 
 ```bash
 $ python ../Redfish-Tools/doc-generator/doc_generator.py --config=../Redfish-Tools/doc-generator/sample_inputs/standard_html/config.json
@@ -186,13 +192,13 @@ $ python ../Redfish-Tools/doc-generator/doc_generator.py --config=../Redfish-Too
 
 Note that the `object_reference_disposition` in this config file identifies specific behavior for the `Redundancy` resource and for `PCIeInterface`, defined in `PCIeDevice`.
 
-### Produce full HTML documentation with normative descriptions
+### Generate HTML documentation with normative descriptions
 
 ```bash
 $ python ../Redfish-Tools/doc-generator/doc_generator.py --config=../Redfish-Tools/doc-generator/sample_inputs/standard_html/config_normative.json
 ```
 
-### Produce profile index output &mdash; terse mode, markdown format
+### Generate profile index Markdown output &mdash; terse mode
 
 ```bash
 $ python ../Redfish-Tools/doc-generator/doc_generator.py --config=../Redfish-Tools/doc-generator/sample_inputs/profile_mode/config.json
@@ -200,7 +206,7 @@ $ python ../Redfish-Tools/doc-generator/doc_generator.py --config=../Redfish-Too
 
 Configuration file references the profile `OCPBasicServer.v1_0_0.json`, which in turn references `OCPManagedDevice.v1_0_0.json`.
 
-### Produce HTML subset documentation
+### Generate subset HTML documentation
 
 ```bash
 $ python ../Redfish-Tools/doc-generator/doc_generator.py --config=../Redfish-Tools/doc-generator/sample_inputs/subset/config.json
@@ -208,7 +214,7 @@ $ python ../Redfish-Tools/doc-generator/doc_generator.py --config=../Redfish-Too
 
 Configuration file references the profile `OCPBasicServer.v1_0_0.json`, which in turn references `OCPManagedDevice.v1_0_0.json`.
 
-### Produce Property Index HTML output
+### Generate property index HTML output
 
 ```bash
 $ python ../Redfish-Tools/doc-generator/doc_generator.py --config=../Redfish-Tools/doc-generator/sample_inputs/property_index/config.json
@@ -216,7 +222,7 @@ $ python ../Redfish-Tools/doc-generator/doc_generator.py --config=../Redfish-Too
 
 > **Note:** The Base Configuration file for property index output includes some elements that are specific to that mode: `description_overrides`.
 
-### Produce CSV output
+### Generate CSV output
 
 ```bash
 $ python ../Redfish-Tools/doc-generator/doc_generator.py --config=../Redfish-Tools/doc-generator/sample_inputs/csv/config.json
