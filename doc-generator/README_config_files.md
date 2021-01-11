@@ -1,4 +1,4 @@
-# Redfish docs generator configuration
+# Redfish docs generator: Configuration
 
 The documentation generator &mdash; `doc_generator.py` &mdash; configuration files support most of the `doc_generator.py` command-line arguments except for `--help` and `--config`.
 

@@ -4,19 +4,13 @@ Copyright 2016-2021 Distributed Management Task Force, Inc. All rights reserved.
 
 ## About
 
-The Redfish docs generator &mdash; `doc_generator.py` &mdash; is a Python tool that parses JSON Schema files to generate documentation in a specified format. Typically, the tool processes an entire set of JSON Schema files for a version. 
+The Redfish docs generator &mdash; [`doc_generator.py`](#doc_generator.py) &mdash; is a Python tool that parses JSON Schema files to generate documentation in a specified format. Typically, the tool processes an entire set of JSON Schema files for a version. 
 
-The [Redfish docs generator v3](CHANGES_v2_to_v3.md) introduces breaking changes in how you configure the `doc_generator.py` tool and updates the `README` file. A snapshot of the *version 2* code is available as the [**doc_gen_v2** release](https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0 "https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0").
+The [Redfish docs generator v3](CHANGES_v2_to_v3.md) introduces breaking changes in how you configure the `doc_generator.py` tool and updates the `README` file. See [Doc Generator v2](https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0 "https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0") for a snapshot of the *version 2* code.
 
 * [Installation](#installation)
 * [Usage](#usage)
 * [Notes](#notes)
-
-See also:
-
-* [Redfish docs generator V3 changes](CHANGES_v2_to_v3.md) &mdash; How to restructure your existing configuration files.
-* [Redfish docs generator configuration](README_config_files.md) &mdash; Configuration files for the Redfish docs generator.
-* [Redfish docs generator: Property index mode](README_Property_Index.md) &mdash; Property index mode.
 
 ## Installation
 
@@ -130,8 +124,13 @@ For more examples, [Redfish docs generator configuration](README_config_files.md
 
 ## Notes
 
-For information about property index mode, see [Redfish docs generator: Property index mode](README_Property_Index.md).
-
 Normative output prefers long descriptions to descriptions.
 
 For Slate, place the `index.html.md` output in your Slate repository's source directory.
+
+See also:
+
+* [Redfish docs generator: V3 changes](CHANGES_v2_to_v3.md) &mdash; How to restructure your existing configuration files.
+* [Redfish docs generator: Configuration](README_config_files.md) &mdash; Configuration files for the Redfish docs generator.
+* [Redfish docs generator: Property index mode](README_Property_Index.md) &mdash; Property index mode.
+
