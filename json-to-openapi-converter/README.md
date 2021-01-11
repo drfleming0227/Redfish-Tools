@@ -14,7 +14,7 @@ See [Installation](https://github.com/DMTF/Redfish-Tools#installation "https://g
 
 Example: `python3 json-to-yaml.py --input <JSON-Dir> --output <YAML-Dir> --config <Config-File> --base <Base-OpenAPI-Doc>`
 
-The tool will process all files found in the folder specified by the *input* argument.  It will convert the contents of the files to create OpenAPI YAML files and save them to the folder specified by the *output* argument.  It will also produce the OpenAPI Service Document to describe the URIs of the Redfish Service.  If the *base* argument is given, the tool will start from the definitions found in the specified OpenAPI Service Document.  The [Operation section](#operation) describes this process in more detail.
+The tool processes all files in the folder specified by the *input* argument.  It converts the contents of the files to create OpenAPI YAML files and save them to the folder specified by the *output* argument.  It also produces the OpenAPI Service Document to describe the URIs of the Redfish Service.  If the *base* argument is given, the tool starts from the definitions in the specified OpenAPI service document.  [Processing](#processing) describes this process in more detail.
 
 ### Options
 
@@ -43,9 +43,10 @@ optional arguments:
                         if they already exist (default is True)
 ```
 
-### Config File
+### Configuration
 
-The config file is a JSON file that contains five properties at the root of the object:
+The configuration file is a JSON file that contains five properties at the root of the object:
+
 * info: The object for the OpenAPI service document
     * This property is required and does not have a default
 * OutputFile: The name of the output file for the OpenAPI Service Document
@@ -54,43 +55,43 @@ The config file is a JSON file that contains five properties at the root of the 
 * DoNotWrite: A list of the output files to filter out when writing the YAML files
 * Extensions: A structure containing additional URIs to apply to a given resource type if provided in the base OpenAPI Service Document
 
-Sample File:
-```
+Sample file:
+
+```json
 {
-    "info": {
-        "title": "Redfish API",
-        "x-copyright": "Copyright 2018 DMTF. For the full DMTF copyright policy, see http://www.dmtf.org/about/policies/copyright",
-        "description": "This contains the definition of a Redfish service.",
-        "version": "2018.2",
-        "contact": {
-            "name": "DMTF",
-            "url": "https://www.dmtf.org/standards/redfish"
-        }
-    },
-    "OutputFile": "openapi.yaml",
-    "TaskRef": "http://redfish.dmtf.org/schemas/v1/Task.v1_3_0.yaml#/components/schemas/Task",
-    "MessageRef": "http://redfish.dmtf.org/schemas/v1/Message.v1_0_6.yaml#/components/schemas/Message",
-    "DoNotWrite": [
-        "redfish-error.",
-        "redfish-payload-annotations.",
-        "redfish-schema.",
-        "redfish-schema-" ],
-    "Extensions": {
-        "Drive": [
-            "/redfish/v1/SpecialDriveArray/{DriveId}"
-        ]
-    }
+   "info": {
+      "title": "Redfish",
+      "x-copyright": "Copyright 2020-2021 DMTF. For the full DMTF copyright policy, see http://www.dmtf.org/about/policies/copyright",
+      "description": "This contains the definition of a Redfish service.",
+      "version": "2020.4",
+      "contact": {
+         "name": "DMTF",
+         "url": "https://www.dmtf.org/standards/redfish"
+      }
+   },
+   "OutputFile": "openapi.yaml",
+   "TaskRef": "http://redfish.dmtf.org/schemas/v1/Task.v1_5_1.yaml#/components/schemas/Task_v1_5_1_Task",
+   "MessageRef": "http://redfish.dmtf.org/schemas/v1/Message.v1_1_2.yaml#/components/schemas/Message_v1_1_2_Message",
+   "ODataSchema": "http://redfish.dmtf.org/schemas/v1/odata-v4.yaml",
+   "DoNotWrite": ["Volume.",
+      "VolumeCollection.",
+      "redfish-error.",
+      "redfish-payload-annotations.",
+      "redfish-schema.",
+      "redfish-schema-"
+   ]
 }
 ```
 
-## Operation
+## Processing
 
-If provided, the tool loads the referenced base OpenAPI Service Document and caches the provided definitions.  If any URI extensions are provided in the configuration file, it will also map the new URIs as needed.
+If provided, the tool loads the referenced base OpenAPI Service Document and caches the provided definitions.  If any URI extensions are provided in the configuration file, it also maps the new URIs as needed.
 
 The tool then interates over all JSON Schema files.  During each iteration, it performs the following steps:
+
 1. Scan the JSON file for the URI and HTTP method information and cache them
-2. Scan the JSON file for action definitions and cache them
-3. Perform a translation of the JSON data to create the corresponding OpenAPI YAML file.  This is largely a one to one conversion process over all properties and objects found in the JSON Schema file.
+1. Scan the JSON file for action definitions and cache them
+1. Perform a translation of the JSON data to create the corresponding OpenAPI YAML file.  This is largely a one to one conversion process over all properties and objects found in the JSON Schema file.
     * longDescription becomes x-longDescription
     * enumDescriptions becomes x-enumDescriptions
     * enumLongDescriptions becomes x-enumLongDescriptions
@@ -104,4 +105,4 @@ The tool then interates over all JSON Schema files.  During each iteration, it p
     * "nullable: true" is added to properties that contain an anyOf statement showing null, and the anyOf statement is removed
     * "definitions" becomes "components/schemas"
 
-Once each JSON file has been processed and converted to YAML, the OpenAPI Service Document is then constructed.  This is done by processing the cached URI, HTTP, and action information found in the converted JSON files.  For each URI, it will create the path entry with its HTTP methods, request body, and responses.
+After each JSON file has been processed and converted to YAML, the OpenAPI service document is then constructed.  This is done by processing the cached URI, HTTP, and action information found in the converted JSON files.  For each URI, it creates the path entry with its HTTP methods, request body, and responses.

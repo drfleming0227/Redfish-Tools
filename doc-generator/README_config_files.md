@@ -1,6 +1,6 @@
-# Redfish Documentation Generator configuration
+# Documentation generator configuration
 
-The Redfish Documentation Generator configuration files support most of the command-line arguments of the `doc_generator.py` script, except for `--help` and `--config`.
+The documentation generator &mdash; `doc_generator.py` &mdash; configuration files support most of the `doc_generator.py` command-line arguments except for `--help` and `--config`.
 
 The configuration files support additional configuration options for some output modes.
 
@@ -8,7 +8,7 @@ If you specify an option in more than one way, command-line arguments override c
 
 You must format configuration files in valid JSON Schema format.
 
-The [base configuration file](#base-configuration-file-supported-attributes) is a JSON file that can specify most of the options available for the doc generator, including the command-line options. This file is also where you will specify the location of other configuration files, including the Content Supplement and boilerplate (intro and postscript) files.
+The [base configuration file](#base-configuration-file-supported-attributes) is a JSON file that can specify most of the options available for the doc generator, including the command-line options. You also specify the location of other configuration files, including the content supplement and introduction and postscript boilerplate files.
 
 The [Content Supplement file](#content-supplement-config-file-supported-attributes) is a JSON file that contains text replacements and additions to be applied to the generated schema documentation. It includes text overrides for property descriptions, units translation (replacements for unit abbreviations), and schema-specific content including intros, postscripts, and property description substitutions.
 
@@ -41,7 +41,7 @@ Note that the names of some config keys differ from their command-line counterpa
 | `profile_doc` | `profile` | | Path to a JSON profile document, for profile output. | |
 | `profile_terse` | `terse` | Boolean | Produce *terse* profile output; meaningful only in profile mode. | [profile_terse attribute](#profile-terse-attribute) |
 | `profile_uri_to_local` | | | For profile mode only, an object like uri_mapping, for locations of profiles. | |
-| `property_index` | `property_index` |  Boolean | Produce **Property Index** output. | [Redfish Documentation Generator: Property index mode](README_Property_Index.md) |
+| `property_index` | `property_index` |  Boolean | Produce **Property Index** output. | [Documentation generator: Property index mode](README_Property_Index.md) |
 | `property_index_config_out` | `property_index_config_out` | | Generate an updated configuration file, with specified file name (property_index mode only). | |
 | `registry_uri_to_local` | | | For profile mode only, an object like uri_mapping, for locations of registries. | |
 | `subset` | `subset` |  | Path to a JSON profile document. Generates **Schema subset** output, with the subset defined in the JSON profile document. | |
@@ -148,7 +148,7 @@ Here, `SchemaName` might be a bare schema name, or it might be a schema name wit
 
 If `description` or `intro` are specified for a schema, that value replaces the description of the schema. If both are specified, the `description` is output, followed by the `intro`.
 
-The `mockup` and `jsonpayload` attributes are mutually exclusive. If both are provided, the content found at `mockup` will take precedence. Using a payload directory (specified as `payload_dir` in the base configuration file) is preferred over using these attributes.
+The `mockup` and `jsonpayload` attributes are mutually exclusive. If you specify both attributes, the content at `mockup` takes precedence. If you specify a `payload_dir` in the base configuration file, a payload directory is preferred over using these attributes.
 
 ## Examples
 

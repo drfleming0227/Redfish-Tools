@@ -1,15 +1,14 @@
-# CSDL-to-JSON Converter
+# CSDL-to-JSON converter
 
 Copyright 2017-2021 Distributed Management Task Force, Inc. All rights reserved.
 
 ## About
 
-The CSDL-to-JSON Converter &mdash; `csdl-to-json.py` &mdash; is a Python tool that converts Redfish CSDL files to Redfish JSON Schema files.
+The CSDL-to-JSON converter &mdash; `csdl-to-json.py` &mdash; is a Python tool that converts Redfish CSDL files to Redfish JSON Schema files.
 
 To install the tool, see [Installation](https://github.com/DMTF/Redfish-Tools#installation "https://github.com/DMTF/Redfish-Tools#installation").
 
 * [Usage](#usage)
-    * [Arguments](#arguments)
 * [Configuration](#configuration)
 * [Assumptions](#assumptions)
 * [Processing](#processing)
@@ -26,16 +25,7 @@ For example:
 $ python3 csdl-to-json.py --input ../../Redfish/metadata --output ../../Redfish/json-schema/ --config dmtf-config.json
 ```
 
-where
-
-| [Argument](#arguments) | Description                                                   | 
-| :----------------- | :------------------------------------------------------------ |
-| `--input INPUT`    | Input folder that contains the CSDL files to convert to JSON files. |
-| `--output OUTPUT`  | Output folder for the generated JSON files.                         |
-| `--config CONFIG`  | Name of [configuration](#configuration) file, from which the tool reads control parameters. |
-
-
-### Arguments
+The following help text describes the CSDL-to-JSON converter arguments:
 
 ```text
 usage: csdl-to-json.py [-h] --input INPUT --output OUTPUT [--config CONFIG]
@@ -56,6 +46,8 @@ optional arguments:
                         Overwrite the versioned files in the output directory
                         if they already exist (default is True)
 ```
+
+For more information about the configuration file, see [Configuration](#configuration).
 
 ## Configuration
 
@@ -93,7 +85,7 @@ If you omit any parameters, the tool uses the [default values](#default-values) 
 
 ## Assumptions
 
-The CSDL-to-JSON Converter makes these assumptions about the format of the Redfish CSDL files:
+The CSDL-to-JSON converter makes these assumptions about the format of the Redfish CSDL files:
 
 * Each file that defines a resource follows the Redfish model for inheritance by copy.
 
@@ -107,7 +99,7 @@ The CSDL-to-JSON Converter makes these assumptions about the format of the Redfi
 
 ## Processing
 
-To process CSDL files, the CSDL-to-JSON Converter:
+To process CSDL files, the CSDL-to-JSON converter:
 
 1. Locates the `Resource_v1.xml` schema to cache base definition properties that all resources use.
 

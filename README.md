@@ -11,8 +11,8 @@ For Redfish developer information, see [DMTF](https://redfish.dmtf.org/ "https:/
 
 ## Tools
 
-* [CSDL-to-JSON Converter](https://github.com/DMTF/Redfish-Tools/csdl-to-json-convertor/README.md "https://github.com/DMTF/Redfish-Tools/csdl-to-json-convertor/README.md")
-* [Redfish Documentation Generator](https://github.com/DMTF/Redfish-Tools/doc-generator/README.md "https://github.com/DMTF/Redfish-Tools/doc-generator/README.md")
+* [CSDL-to-JSON converter](https://github.com/DMTF/Redfish-Tools/csdl-to-json-convertor/README.md "https://github.com/DMTF/Redfish-Tools/csdl-to-json-convertor/README.md")
+* [Documentation generator](https://github.com/DMTF/Redfish-Tools/doc-generator/README.md "https://github.com/DMTF/Redfish-Tools/doc-generator/README.md")
 * [JSON Schema-to-OpenAPI Converter](https://github.com/DMTF/Redfish-Tools/json-to-openapi-converter/README.md "https://github.com/DMTF/Redfish-Tools/doc-generator/README.md")
 * [OData CSDL Validator](https://github.com/DMTF/Redfish-Tools/odata-csdl-validator/README.md "https://github.com/DMTF/Redfish-Tools/doc-generator/README.md")
 

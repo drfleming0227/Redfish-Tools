@@ -1,6 +1,6 @@
-# Redfish Documentation Generator v3 changes
+# Documentation generator v3 changes
 
-The Redfish Documentation Generator version 3 introduces changes to the inputs the tool accepts. These changes are not backward compatible so if you don't need v3 or later changes and you need to run the tool against an existing set of configuration files, use the latest [Doc Generator v2 release](https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0 "https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0").
+The Documentation generator version 3 introduces changes to the inputs the tool accepts. These changes are not backward compatible so if you don't need v3 or later changes and you need to run the tool against an existing set of configuration files, use the latest [Documentation generator v2 release](https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0 "https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0").
 
 This document describes the changes and how to update your configuration files.
 
@@ -12,7 +12,7 @@ This document describes the changes and how to update your configuration files.
 
 ## Configuration file changes
 
-The current version of the Doc Generator takes configuration input on the command line and from a configuration file, an optional boilerplate document, and an optional schema supplement file. In profile and subset modes, there is an additional mode-specific configuration file.
+The current version of the Documentation generator takes configuration input on the command line and from a configuration file, an optional boilerplate document, and an optional schema supplement file. In profile and subset modes, there is an additional mode-specific configuration file.
 
 | File             | Format     | Purpose                                                       |
 | :--------------- | :--------- | :------------------------------------------------------------ |

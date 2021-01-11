@@ -1,10 +1,10 @@
-# Redfish Documentation Generator: Property index mode
+# Documentation generator: Property index mode
 
 Copyright 2018 Distributed Management Task Force, Inc. All rights reserved.
 
 ## About
 
-You can use the Redfish Documentation Generator &mdash; `doc_generator.py` &mdash; to produce an index of property names and descriptions.
+You can use the Documentation generator &mdash; `doc_generator.py` &mdash; to produce an index of property names and descriptions.
 
 The output includes property name, type, schemas where found, and descriptions found.
 
