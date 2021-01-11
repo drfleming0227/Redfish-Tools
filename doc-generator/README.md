@@ -26,30 +26,32 @@ The Redfish docs generator &mdash; [`doc_generator.py`](#doc_generator.py) &mdas
       $ cd doc-generator
       $ pip install -r requirements.txt
       ```
-1. If you are making changes to the `doc_generator.py` code, install pytest and run the tests:
+1. If you make changes to the `doc_generator.py` code:
 
-    ```bash
-    $ cd doc-generator
-    $ pip install -r dev_requirements.txt
-    ```
+    * Install [pytest](https://docs.pytest.org/en/latest/getting-started.html "https://docs.pytest.org/en/latest/getting-started.html").
+    * Run the tests:
 
-    To run the tests:
+      ```bash
+      $ cd doc-generator
+      $ pip install -r dev_requirements.txt
+      ```
 
-    ```bash
-    $ cd doc-generator
-    $ pytest
-    ```
+      To run the tests:
+
+      ```bash
+      $ cd doc-generator
+      $ pytest
+      ```
 
 ## Usage
 
 By default, `doc_generator.py` looks for a `json-schema` directory and supplemental files in the configuration file that you specify when you run it. Several flavors of configuration files are available.
 
-The default output is GitHub-flavored Markdown targeted for the [Slate API docs generator](https://github.com/slatedocs/slate "https://github.com/slatedocs/slate").
+Output formats include:
 
-Other output formats include:
-
-* Markdown tuned to the DMTF document publication process
-* HTML 
+* (Default) GitHub-flavored Markdown targeted for the [Slate API docs generator](https://github.com/slatedocs/slate "https://github.com/slatedocs/slate")
+* Markdown targeted for the DMTF document publication process
+* HTML
 * [*Property index* documentation](README_Property_Index.md)
 * CSV
 
@@ -109,13 +111,11 @@ Example:
    python3 ../Redfish-Tools/doc-generator/doc_generator.py --config=../Redfish-Tools/doc-generator/sample_inputs/subset/config.json
 ```
 
-For more examples, [Redfish docs generator configuration](README_config_files.md)
+For more examples, see [Redfish docs generator: Configuration](README_config_files.md)
 
 ## Configuration
 
-The `--config` option specifies the configuration file.
-
-This file defines:
+Use the `--config` option to specify the configuration file, which defines:
 
 * Many command-line options
 * Some required parameters, such as URI mappings, that you cannot specify on the command line
