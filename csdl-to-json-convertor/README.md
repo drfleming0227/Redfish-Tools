@@ -9,7 +9,7 @@ The CSDL-to-JSON Converter &mdash; `csdl-to-json.py` &mdash; is a Python tool th
 To install the tool, see [Installation](https://github.com/DMTF/Redfish-Tools#installation "https://github.com/DMTF/Redfish-Tools#installation").
 
 * [Usage](#usage)
-* [Arguments](#arguments)
+    * [Arguments](#arguments)
 * [Configuration](#configuration)
 * [Assumptions](#assumptions)
 * [Processing](#processing)
