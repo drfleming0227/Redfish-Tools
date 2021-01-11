@@ -28,4 +28,4 @@ To use the tools in the Redfish-Tools respository:
     ```
 1. [Download and install Python](https://www.python.org/downloads/ "https://www.python.org/downloads/") on the machine from which you will run the tools.
 
-> **Note:** Some tools have additional requirements.
+> **Note:** See the `README.md` file for each tool for additional installation requirements.
