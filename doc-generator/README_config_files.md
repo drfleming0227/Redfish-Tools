@@ -38,11 +38,11 @@ Note that some configuration key names differ from their command-line counterpar
 
 | Configuration key           | Command-line equivalent | Type    | Description                                   |
 | :-------------------------- | :---------------------- | :------ | : ------------------------------------------- |
-| `actions_in_property_table` | | Boolean | If `true`, omit `"Actions"` from the property tables. |
-| `add_toc`                   | | Boolean | If `true`, generate a table of contents and either substitute it for `[add_toc]` in the boilerplate (intro or postscript), or place it at the beginning of the output document. Makes sense only for HTML mode. If `[add_toc]` appears anywhere in the boilerplate, default is `true`. |
-| `boilerplate_intro`         | | | Location of a Markdown file providing content to place at the beginning of the document (prior to the generated schema documentation). If a relative path, should be relative to the location of the configuration file. |
-| `boilerplate_postscript`    | | | Location of a Markdown file providing content to place at the end of the document (after to the generated schema documentation). If a relative path, should be relative to the location of the config file. |
-| `combine_multiple_refs`     | | Integer | Threshold at which multiple references to the same object within a schema are moved into Property details, instead of expanded in place. For details, see [combine_multiple_refs attribute](#combine_multiple_refs-attribute). |
+| `actions_in_property_table` |                         | Boolean | If `true`, omit `"Actions"` from the property tables. |
+| `add_toc`                   |                         | Boolean | If `true`, generate a table of contents and either substitute it for `[add_toc]` in the boilerplate (intro or postscript), or place it at the beginning of the output document. Makes sense only for HTML mode. If `[add_toc]` appears anywhere in the boilerplate, default is `true`. |
+| `boilerplate_intro`         |                         |         | Location of a Markdown file providing content to place at the beginning of the document (prior to the generated schema documentation). If a relative path, should be relative to the location of the configuration file. |
+| `boilerplate_postscript`    |                         |         | Location of a Markdown file providing content to place at the end of the document (after to the generated schema documentation). If a relative path, should be relative to the location of the config file. |
+<!-- | `combine_multiple_refs`     | | Integer | Threshold at which multiple references to the same object within a schema are moved into Property details, instead of expanded in place. For details, see [combine_multiple_refs attribute](#combine_multiple_refs-attribute). |
 | `content_supplement`        | | | Location of a JSON-formatted content supplement file, which specifies content substitutions to be made within the generated schema documentation. If a relative path, must be relative to the location of the configuration file. |
 | `escape_chars` | `escape` | | Characters to escape in generated Markdown. For example, use `--escape=@` if strings with embedded `@` are being converted to `mailto` links by your Markdown processor. |
 | `excluded_annotations` | | List of annotation names (strings) to omit. Wildcard match is supported for strings that begin with `"*"`. |
@@ -65,7 +65,7 @@ Note that some configuration key names differ from their command-line counterpar
 | `property_index_config_out` | `property_index_config_out` | | Generate an updated configuration file, with specified file name (property_index mode only). |
 | `registry_uri_to_local` | | For profile mode only, an object like uri_mapping, for locations of registries. |
 | `subset` | `subset` | | Path to a JSON profile document. Generates **Schema subset** output, with the subset defined in the JSON profile document. |
-| `uri_mapping` | Object | Partial URL of schema repositories as attributes, and local directory paths as values. |
+| `uri_mapping` | Object | Partial URL of schema repositories as attributes, and local directory paths as values. | -->
 
 ## Attribute details
 
