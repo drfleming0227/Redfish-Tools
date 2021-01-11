@@ -30,7 +30,7 @@ You must format configuration files in valid JSON Schema format.
 
 ## Base configuration file
 
-The base configuration file is a JSON file that can specify most of the docs generator options including the command-line options. You also specify the location of other configuration files, including the content supplement and introduction and postscript boilerplate files.
+The base configuration file is a JSON file that defines most of the docs generator options including the command-line options. You also specify the location of other configuration files, including the content supplement and introduction and postscript boilerplate files.
 
 ### Supported keys
 
@@ -40,24 +40,24 @@ Note that some configuration keys differ from their command-line argument equiva
 | :----------------------------- | :------ | :-------------------------------------------- |
 | `actions_in_property_table`    | Boolean | <ul><li><code>true</code>. Omit <code>"Actions"</code> from the property tables.</li><li><code>false</code>. (Default) Include <code>"Actions"</code> in the property tables.</li></ul> |
 | `add_toc`                      | Boolean | <ul><li><code>true</code>. (Default) (HTML mode only) Generate a table of contents and either:<ul><li>Substitute it for <code>[add_toc]</code> in the boilerplate introduction or postscript</li><li>Place it at the beginning of the generated document.</li></ul>If <code>[add_toc]</code> appears anywhere in the boilerplate, default is <code>true</code>.</li><li><code>false</code>. Do not generate a table of contents.</li></ul> |
-| `boilerplate_intro`            | String  | Location of a Markdown file providing content to place at the beginning of the document (prior to the generated schema documentation). If a relative path, should be relative to the location of the configuration file. |
-| `boilerplate_postscript`       | String  | Location of a Markdown file providing content to place at the end of the document (after to the generated schema documentation). If a relative path, should be relative to the location of the config file. |
-| `combine_multiple_refs`        | Integer | Threshold at which multiple references to the same object within a schema are moved into Property details, instead of expanded in place. For details, see [combine_multiple_refs key](#combine_multiple_refs-key). |
+| `boilerplate_intro`            | String  | Location of the Markdown file that contains content to appear at the beginning of the document before the generated schema documentation. If a relative path, should be relative to the location of the configuration file. |
+| `boilerplate_postscript`       | String  | Location of the Markdown file that contains content to appear at the end of the document after the generated schema documentation. If a relative path, should be relative to the location of the config file. |
+| `combine_multiple_refs`        | Integer | Threshold at which multiple references to the same object within a schema are moved into **Property details** instead of expanded in place.<br/><br/>For details, see [combine_multiple_refs key](#combine_multiple_refs-key). |
 | `content_supplement`           | String  | Location of a JSON-formatted content supplement file, which specifies content substitutions to be made within the generated schema documentation. If a relative path, must be relative to the location of the configuration file. |
-| `escape_chars` |         | Characters to escape in generated Markdown. For example, use `--escape=@` if strings with embedded `@` are being converted to `mailto` links by your Markdown processor.<br/><br/>**Command-line argument:**`escape` |
-| `excluded_annotations`         |         | List of annotation names (strings) to omit. Wildcard match is supported for strings that begin with `"*"`. |
+| `escape_chars` |         | Characters to escape in generated Markdown. For example, use `--escape=@` if your Markdown processor converts embedded `@` characters to `mailto` links.<br/><br/>**Command-line argument:**`escape` |
+| `excluded_annotations`         | Array of strings | Annotation names to omit. Wildcard match is supported for strings that begin with `*`. |
 | `excluded_pattern_properties`  |         | Pattern properties to omit from output. Note that backslashes must be escaped in JSON (`"\"` becomes `"\\"`). |
-| `excluded_properties`          |         | List of property names (strings) to omit. Wildcard match is supported for strings that begin with `"*"` (`"*odata.count"` matches `"Members\@odata.count"` and others). |
-| `excluded_schemas`             |         | Schemas, by name, to omit from output. |
+| `excluded_properties`          | Array of strings | Property names to omit. Wildcard match is supported for strings that begin with `*`. For example, `"*odata.count"` matches `"Members\@odata.count"` and others. |
+| `excluded_schemas`             | Array of strings | Schemas, by name, to omit from output. |
 | `format`    |         | Output format. Value is `markdown`, `slate`, `html`, or `csv`.<br/><br/>**Command-line argument:**`format` |
 | `html_title`                   | String  | HTML `title` element in HTML output. |
 | `import_from` | String | File name or directory that contains the JSON schemas to process. Wild cards are acceptable. Default: `json-schema`.<br/><br/>**Command-line argument:**`import_from ` |
-| `locale`                       |         | Locale code (case-sensitive) for localized output. Localization of strings supplied by the doc generator code uses `gettext`. Locale files go in the `locale` directory in the `doc_generator` root. Translated descriptions and annotations may be supplied in localized JSON schema files. |
+| `locale`                       |         | Case-sensitive locale code for localized output. Localization of strings supplied by the docs generator uses `gettext`. Locale files are in the `locale` directory in the `doc_generator` root. Translated descriptions and annotations may be supplied in localized JSON Schema files. |
 | `normative`                    |         | Produce normative (developer-focused) output. |
-| `object_reference_disposition` |         | Data structure that specifies properties that should be moved to the **Common Objects** clause and/or objects that should be included in-line where they are referenced, to override default behavior. For details, see [object_reference_disposition key](#object-reference-disposition-key) |
+| `object_reference_disposition` |         | Data structure that specifies properties that should be moved to the **Common Objects** clause and/or objects that should be included in-line where they are referenced, to override default behavior.<br/><br/>For details, see [object_reference_disposition key](#object-reference-disposition-key). |
 | `omit_version_in_headers`      | Boolean | <ul><li><code>true</code>. omit schema versions in clause headers. |
 | `outfile`                |         | Output file (default depends on output format: `output.md` for Markdown, `index.html` for HTML, `output.csv` for CSV.<br/><br/>**Command-line argument:**`out` |
-| `payload_dir` |       | Directory location for JSON payload and Action examples. Optional. For details, see [payload_dir key](#payload-dir-key).<br/><br/>**Command-line argument:**`payload_dir` | 
+| `payload_dir` |       | Directory location for JSON payload and Action examples. Optional.<br/><br/>For details, see [payload_dir key](#payload-dir-key).<br/><br/>**Command-line argument:**`payload_dir` | 
 | `profile_doc`   |         | Path to a JSON profile document, for profile output.<br/><br/>**Command-line argument:**`profile` |
 | `profile_terse`     | Boolean | Produce *terse* profile output; meaningful only in profile mode. For details, see [profile_terse key](#profile-terse-key).<br/><br/>**Command-line argument:**`terse` |
 | `profile_uri_to_local`         | | | For profile mode only, an object like `uri_mapping`, for locations of profiles. |
