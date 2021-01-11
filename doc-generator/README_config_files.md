@@ -22,17 +22,17 @@
    * [Generate property index HTML output](#generate-property-index-html-output)
    * [Generate CSV output](#generate-csv-output)
 
-The Redfish docs generator &mdash; [`doc_generator.py`](#doc_generator.py) &mdash; configuration files support most of the `doc_generator.py` command-line arguments except for the `--help` and `--config` arguments.
+The configuration files for the Redfish docs generator &mdash; [`doc_generator.py`](#doc_generator.py) &mdash; support most of the `doc_generator.py` command-line arguments except the `--help` and `--config` arguments.
 
 The configuration files support additional configuration options for some output modes.
 
-If you specify an option in more than one way, command-line arguments override configuration file arguments.
+If you specify an option in more than one way, command-line arguments override the configuration file keys.
 
 You must format configuration files in valid JSON Schema format.
 
-The [base configuration file](#base-configuration-file-supported-attributes) is a JSON file that can specify most of the options available for the doc generator, including the command-line options. You also specify the location of other configuration files, including the content supplement and introduction and postscript boilerplate files.
+The [base configuration file](#base-configuration-file) is a JSON file that can specify most of the options available for the doc generator, including the command-line options. You also specify the location of other configuration files, including the content supplement and introduction and postscript boilerplate files.
 
-The [Content Supplement file](#content-supplement-config-file-supported-attributes) is a JSON file that contains text replacements and additions to be applied to the generated schema documentation. It includes text overrides for property descriptions, units translation (replacements for unit abbreviations), and schema-specific content including intros, postscripts, and property description substitutions.
+The [content supplement configuration file](#content-supplement-configuration-file) is a JSON file that contains text replacements and additions to apply to the generated schema documentation. It includes text overrides for property descriptions, replacements for unit abbreviations, and schema-specific content including introductions, postscripts, and property description substitutions.
 
 ## Base configuration file
 
@@ -40,36 +40,36 @@ The [Content Supplement file](#content-supplement-config-file-supported-attribut
 
 Note that some configuration keys differ from their command-line equivalents. Unless otherwise noted, the meaning of the configuration key is the same as its command-line counterpart. The `uri_mapping` attribute is expected. All other attributes are optional in configuration files.
 
-| Configuration key           | Command&#8209;line equivalent | Type    | Description                                   |
-| :-------------------------- | :---------------------- | :------ | :-------------------------------------------- |
-| `actions_in_property_table` |                         | Boolean | If `true`, omit `"Actions"` from the property tables. |
-| `add_toc`                   |                         | Boolean | If `true`, generate a table of contents and either substitute it for `[add_toc]` in the boilerplate (intro or postscript), or place it at the beginning of the output document. Makes sense only for HTML mode. If `[add_toc]` appears anywhere in the boilerplate, default is `true`. |
-| `boilerplate_intro`         |                         | String  | Location of a Markdown file providing content to place at the beginning of the document (prior to the generated schema documentation). If a relative path, should be relative to the location of the configuration file. |
-| `boilerplate_postscript`    |                         | String  | Location of a Markdown file providing content to place at the end of the document (after to the generated schema documentation). If a relative path, should be relative to the location of the config file. |
-| `combine_multiple_refs`     |                         | Integer | Threshold at which multiple references to the same object within a schema are moved into Property details, instead of expanded in place. For details, see [combine_multiple_refs attribute](#combine_multiple_refs-attribute). |
-| `content_supplement`        |                         | String  | Location of a JSON-formatted content supplement file, which specifies content substitutions to be made within the generated schema documentation. If a relative path, must be relative to the location of the configuration file. |
-| `escape_chars`              | `escape`                | | Characters to escape in generated Markdown. For example, use `--escape=@` if strings with embedded `@` are being converted to `mailto` links by your Markdown processor. |
-| `excluded_annotations` | | List of annotation names (strings) to omit. Wildcard match is supported for strings that begin with `"*"`. |
-| `excluded_pattern_properties` | | | Pattern properties to omit from output. Note that backslashes must be escaped in JSON (`"\"` becomes `"\\"`). |
-<!-- | `excluded_properties` | | | List of property names (strings) to omit. Wildcard match is supported for strings that begin with `"*"` (`"*odata.count"` matches `"Members\@odata.count"` and others). |
-| `excluded_schemas` | | | Schemas, by name, to omit from output. |
-| `format` | `format` | | Output format. Value is `markdown`, `slate`, `html`, or `csv`. |
-| `html_title` | | String | HTML `title` element in HTML output. |
-| `import_from` | | | File name or directory that contains the JSON schemas to process. Wild cards are acceptable. Default: `json-schema`. |
-| `locale`| | | Locale code (case-sensitive) for localized output. Localization of strings supplied by the doc generator code uses gettext. Locale files go in the `locale` directory in the `doc_generator` root. Translated descriptions and annotations may be supplied in localized JSON schema files. |
-| `normative`| | | Produce normative (developer-focused) output. |
-| `object_reference_disposition`| | | Data structure that specifies properties that should be moved to the **Common Objects** clause and/or objects that should be included inline where they are referenced, to override default behavior. For details, see [object_reference_disposition attribute](#object-reference-disposition-attribute) |
-| `omit_version_in_headers`| | Boolean | If `true`, omit schema versions in clause headers. |
-| `outfile` `out`| | | Output file (default depends on output format: `output.md` for Markdown, `index.html` for HTML, `output.csv` for CSV. |
-| `payload_dir` | `payload_dir` | | Directory location for JSON payload and Action examples. Optional. For details, see [payload_dir attribute](#payload-dir-attribute) | 
-| `profile_doc` | `profile` | | Path to a JSON profile document, for profile output. |
-| `profile_terse` | `terse` | Boolean | Produce *terse* profile output; meaningful only in profile mode. For details, see [profile_terse attribute](#profile-terse-attribute) |
-| `profile_uri_to_local` | | For profile mode only, an object like uri_mapping, for locations of profiles. |
-| `property_index` | `property_index` |  Boolean | Produce **Property Index** output. For details, see [Redfish docs generator: Property index mode](README_Property_Index.md) |
-| `property_index_config_out` | `property_index_config_out` | | Generate an updated configuration file, with specified file name (property_index mode only). |
-| `registry_uri_to_local` | | For profile mode only, an object like uri_mapping, for locations of registries. |
-| `subset` | `subset` | | Path to a JSON profile document. Generates **Schema subset** output, with the subset defined in the JSON profile document. |
-| `uri_mapping` | Object | Partial URL of schema repositories as attributes, and local directory paths as values. | -->
+| Configuration key              | Command     | Type    | Description                                   |
+| :----------------------------- | :---------- | :------ | :-------------------------------------------- |
+| `actions_in_property_table`    |             | Boolean | If `true`, omit `"Actions"` from the property tables. |
+| `add_toc`                      |             | Boolean | If `true`, generate a table of contents and either substitute it for `[add_toc]` in the boilerplate (intro or postscript), or place it at the beginning of the output document. Makes sense only for HTML mode. If `[add_toc]` appears anywhere in the boilerplate, default is `true`. |
+| `boilerplate_intro`            |             | String  | Location of a Markdown file providing content to place at the beginning of the document (prior to the generated schema documentation). If a relative path, should be relative to the location of the configuration file. |
+| `boilerplate_postscript`       |             | String  | Location of a Markdown file providing content to place at the end of the document (after to the generated schema documentation). If a relative path, should be relative to the location of the config file. |
+| `combine_multiple_refs`        |             | Integer | Threshold at which multiple references to the same object within a schema are moved into Property details, instead of expanded in place. For details, see [combine_multiple_refs attribute](#combine_multiple_refs-attribute). |
+| `content_supplement`           |             | String  | Location of a JSON-formatted content supplement file, which specifies content substitutions to be made within the generated schema documentation. If a relative path, must be relative to the location of the configuration file. |
+| `escape_chars`                 | `escape`    |         | Characters to escape in generated Markdown. For example, use `--escape=@` if strings with embedded `@` are being converted to `mailto` links by your Markdown processor. |
+| `excluded_annotations`         |             |         | List of annotation names (strings) to omit. Wildcard match is supported for strings that begin with `"*"`. |
+| `excluded_pattern_properties`  |             |         | Pattern properties to omit from output. Note that backslashes must be escaped in JSON (`"\"` becomes `"\\"`). |
+| `excluded_properties`          |             |         | List of property names (strings) to omit. Wildcard match is supported for strings that begin with `"*"` (`"*odata.count"` matches `"Members\@odata.count"` and others). |
+| `excluded_schemas`             |             |         | Schemas, by name, to omit from output. |
+| `format`                       | `format`    |         | Output format. Value is `markdown`, `slate`, `html`, or `csv`. |
+| `html_title`                   |             | String  | HTML `title` element in HTML output. |
+| `import_from`                  |             |         | File name or directory that contains the JSON schemas to process. Wild cards are acceptable. Default: `json-schema`. |
+| `locale`                       |             |         | Locale code (case-sensitive) for localized output. Localization of strings supplied by the doc generator code uses gettext. Locale files go in the `locale` directory in the `doc_generator` root. Translated descriptions and annotations may be supplied in localized JSON schema files. |
+| `normative`                    |             |         | Produce normative (developer-focused) output. |
+| `object_reference_disposition` |             |         | Data structure that specifies properties that should be moved to the **Common Objects** clause and/or objects that should be included inline where they are referenced, to override default behavior. For details, see [object_reference_disposition attribute](#object-reference-disposition-attribute) |
+| `omit_version_in_headers`      |             | Boolean | If `true`, omit schema versions in clause headers. |
+| `outfile` `out`                |             |         | Output file (default depends on output format: `output.md` for Markdown, `index.html` for HTML, `output.csv` for CSV. |
+| `payload_dir`                  | `payload_dir` |       | Directory location for JSON payload and Action examples. Optional. For details, see [payload_dir attribute](#payload-dir-attribute) | 
+| `profile_doc`                  | `profile`   |         | Path to a JSON profile document, for profile output. |
+| `profile_terse`                | `terse`     | Boolean | Produce *terse* profile output; meaningful only in profile mode. For details, see [profile_terse attribute](#profile-terse-attribute) |
+| `profile_uri_to_local`         | | For profile mode only, an object like uri_mapping, for locations of profiles. |
+| `property_index`               | `property_index` | Boolean | Produce **Property Index** output. For details, see [Redfish docs generator: Property index mode](README_Property_Index.md) |
+| `property_index_config_out`    | `property_index_config_out` | | Generate an updated configuration file, with specified file name (property_index mode only). |
+| `registry_uri_to_local`        |             |         | For profile mode only, an object like uri_mapping, for locations of registries. |
+| `subset`                       | `subset`    |         | Path to a JSON profile document. Generates **Schema subset** output, with the subset defined in the JSON profile document. |
+| `uri_mapping`                  |             | Object  | Partial URL of schema repositories as attributes, and local directory paths as values. |
 
 ### Key details
 
