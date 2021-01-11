@@ -1,5 +1,25 @@
 # Redfish docs generator: Configuration
 
+## Contents
+
+* [Base configuration file: Supported keys](#base-configuration-file-supported-keys)
+* [Attribute details](#attribute-details)
+   * [combine_multiple_refs attribute](#combine_multiple_refs-attribute)
+   * [object_reference_disposition attribute](#object_reference_disposition-attribute)
+   * [payload_dir attribute](#payload_dir-attribute)
+   * [profile_terse attribute](#profile_terse-attribute)
+* [Content supplement configuration file: Supported attributes](#content-supplement-configuration-file-supported-attributes)
+* [Attribute details](#attribute-details-1)
+   * [schema_link_replacements attribute](#schema_link_replacements-attribute)
+   * [schema_supplement attribute](#schema_supplement-attribute)
+* [Examples](#examples)
+   * [Produce full documentation, in HTML format](#produce-full-documentation-in-html-format)
+   * [Produce full documentation, with normative descriptions and in HTML format](#produce-full-documentation-with-normative-descriptions-and-in-html-format)
+   * [Produce Profile output (terse mode, markdown format)](#produce-profile-output-terse-mode-markdown-format)
+   * [Produce Subset documentation (HTML format)](#produce-subset-documentation-html-format)
+   * [Produce Property Index output (HTML format):](#produce-property-index-output-html-format)
+   * [Produce CSV output:](#produce-csv-output)
+
 The Redfish docs generator &mdash; [`doc_generator.py`](#doc_generator.py) &mdash; configuration files support most of the `doc_generator.py` command-line arguments except for the `--help` and `--config` arguments.
 
 The configuration files support additional configuration options for some output modes.
@@ -12,12 +32,12 @@ The [base configuration file](#base-configuration-file-supported-attributes) is 
 
 The [Content Supplement file](#content-supplement-config-file-supported-attributes) is a JSON file that contains text replacements and additions to be applied to the generated schema documentation. It includes text overrides for property descriptions, units translation (replacements for unit abbreviations), and schema-specific content including intros, postscripts, and property description substitutions.
 
-## Base configuration file: Supported attributes
+## Base configuration file: Supported keys
 
-Note that the names of some config keys differ from their command-line counterparts, as noted. Unless otherwise noted, the meaning of the parameter is the same as its command-line counterpart. The `uri_mapping` attribute is expected. All other attributes are optional in config files.
+Note that some configuration key names differ from their command-line counterparts. Unless otherwise noted, the meaning of the configuration key is the same as its command-line counterpart. The `uri_mapping` attribute is expected. All other attributes are optional in configuration files.
 
-| Attribute | Type | Description                               |
-| :-------- | :--- | :---------------------------------------- |
+| Key                         | Type    | Description                                                             |
+| :-------------------------- | :------ | :---------------------------------------------------------------------- |
 | `actions_in_property_table` | Boolean | If `true`, omit `"Actions"` from the property tables. |
 | `add_toc`                   | Boolean | If `true`, generate a table of contents and either substitute it for `[add_toc]` in the boilerplate (intro or postscript), or place it at the beginning of the output document. Makes sense only for HTML mode. If `[add_toc]` appears anywhere in the boilerplate, default is `true`. |
 | `boilerplate_intro`         | | Location of a Markdown file providing content to place at the beginning of the document (prior to the generated schema documentation). If a relative path, should be relative to the location of the configuration file. |
