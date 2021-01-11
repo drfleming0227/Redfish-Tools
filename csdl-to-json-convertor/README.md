@@ -9,6 +9,7 @@ The CSDL-to-JSON Converter &mdash; `csdl-to-json.py` &mdash; is a Python tool th
 To install the tool, see [Installation](https://github.com/DMTF/Redfish-Tools#installation "https://github.com/DMTF/Redfish-Tools#installation").
 
 * [Usage](#usage)
+* [Arguments](#arguments)
 * [Configuration](#configuration)
 * [Assumptions](#assumptions)
 * [Processing](#processing)
@@ -27,12 +28,14 @@ $ python3 csdl-to-json.py --input ../../Redfish/metadata --output ../../Redfish/
 
 where
 
-| Argument           | Description                                                   | 
+| [Argument](#arguments) | Description                                                   | 
 | :----------------- | :------------------------------------------------------------ |
 | `--input INPUT`    | Input folder that contains the CSDL files to convert to JSON files. |
 | `--output OUTPUT`  | Output folder for the generated JSON files.                         |
 | `--config CONFIG`  | Name of [configuration](#configuration) file, from which the tool reads control parameters. |
 
+
+### Arguments
 
 ```text
 usage: csdl-to-json.py [-h] --input INPUT --output OUTPUT [--config CONFIG]
