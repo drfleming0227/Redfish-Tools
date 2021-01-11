@@ -2,11 +2,11 @@
 
 Copyright 2016-2021 Distributed Management Task Force, Inc. All rights reserved.
 
+> **Version 3 changes:** The [Redfish docs generator v3](CHANGES_v2_to_v3.md) introduces breaking changes in how you configure the `doc_generator.py` tool and updates the `README` file. See [Doc Generator v2](https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0 "https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0") for a snapshot of the *version 2* code.
+
 ## About
 
-The Redfish docs generator &mdash; [`doc_generator.py`](#doc_generator.py) &mdash; is a Python tool that parses JSON Schema files to generate documentation in a specified format. Typically, the tool processes an entire set of JSON Schema files for a version. 
-
-The [Redfish docs generator v3](CHANGES_v2_to_v3.md) introduces breaking changes in how you configure the `doc_generator.py` tool and updates the `README` file. See [Doc Generator v2](https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0 "https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0") for a snapshot of the *version 2* code.
+The Redfish docs generator &mdash; [`doc_generator.py`](#doc_generator.py) &mdash; is a Python tool that processes JSON Schema files to generate Markdown, Slate, HTML, CSV, or property index documentation. Typically, the tool processes an entire set of JSON Schema files for a version. 
 
 * [Installation](#installation)
 * [Usage](#usage)
@@ -20,8 +20,8 @@ The [Redfish docs generator v3](CHANGES_v2_to_v3.md) introduces breaking changes
 
     | Software   | Description   |
     | :--------- | :------------ |
-    | [Install Python&#8209;Markdown](https://python-markdown.github.io/install/ "https://python-markdown.github.io/install/"") | Required for HTML output. |
-    | [Install Pygments](http://pygments.org/ "http://pygments.org/") | Required for HTML output. |
+    | [Install Python&#8209;Markdown](https://python-markdown.github.io/install/ "https://python-markdown.github.io/install/") | Required for HTML output. |
+    | [Install Pygments](http://pygments.org/ "http://pygments.org/"). | Required for HTML output. |
 1. Use `pip` to install requirements:
 
     ```
