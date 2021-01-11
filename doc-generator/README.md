@@ -2,22 +2,34 @@
 
 Copyright 2016-2021 Distributed Management Task Force, Inc. All rights reserved.
 
-> **Version 3 changes:** The [Redfish docs generator v3](CHANGES_v2_to_v3.md) introduces breaking changes in how you configure the `doc_generator.py` tool and updates the `README` file. See [Doc Generator v2](https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0 "https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0") for a snapshot of the *version 2* code.
+## Version 3 changes
 
-## About
+The [Redfish docs generator v3](CHANGES_v2_to_v3.md) introduces breaking changes in how you configure the `doc_generator.py` tool and updates the `README` file. See [Doc Generator v2](https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0 "https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0") for a snapshot of the *version 2* code.
 
-The Redfish docs generator &mdash; [`doc_generator.py`](#doc_generator.py) &mdash; is a Python tool that processes JSON Schema files to generate Markdown, Slate, HTML, CSV, or property index documentation. Typically, the tool processes an entire set of JSON Schema files for a version. 
-
+* [About](#about)
 * [Installation](#installation)
 * [Usage](#usage)
 * [Configuration](#configuration)
 * [Notes](#notes)
 
+## About
+
+The Redfish docs generator &mdash; [`doc_generator.py`](#doc_generator.py) &mdash; is a Python tool that processes JSON Schema files to generate Markdown, Slate, HTML, CSV, or property index documentation. Typically, the tool processes an entire set of JSON Schema files for a version.
+
+By default, `doc_generator.py` looks for a `json-schema` directory and supplemental files in the configuration file that you specify when you run it. Several flavors of configuration files are available.
+
+Output formats include:
+
+* (Default) GitHub-flavored Markdown targeted for the [Slate API docs generator](https://github.com/slatedocs/slate "https://github.com/slatedocs/slate")
+* Markdown targeted for the DMTF document publication process
+* HTML
+* [*Property index* documentation](README_Property_Index.md)
+* CSV
+
 ## Installation
 
 1. [Clone this repository and install Python](https://github.com/DMTF/Redfish-Tools#installation "https://github.com/DMTF/Redfish-Tools#installation").
 1. On the machine from which you will run `doc_generator.py`, install the following software, which is required for HTML output:
-
     * [Install Python&#8209;Markdown](https://python-markdown.github.io/install/ "https://python-markdown.github.io/install/").
     * [Install Pygments](http://pygments.org/ "http://pygments.org/").
     * Use `pip` to install requirements:
@@ -26,8 +38,7 @@ The Redfish docs generator &mdash; [`doc_generator.py`](#doc_generator.py) &mdas
       $ cd doc-generator
       $ pip install -r requirements.txt
       ```
-1. If you make changes to the `doc_generator.py` code:
-
+1. (Optional) If you make changes to the `doc_generator.py` code:
     * Install [pytest](https://docs.pytest.org/en/latest/getting-started.html "https://docs.pytest.org/en/latest/getting-started.html").
     * Run the tests:
 
@@ -45,17 +56,7 @@ The Redfish docs generator &mdash; [`doc_generator.py`](#doc_generator.py) &mdas
 
 ## Usage
 
-By default, `doc_generator.py` looks for a `json-schema` directory and supplemental files in the configuration file that you specify when you run it. Several flavors of configuration files are available.
-
-Output formats include:
-
-* (Default) GitHub-flavored Markdown targeted for the [Slate API docs generator](https://github.com/slatedocs/slate "https://github.com/slatedocs/slate")
-* Markdown targeted for the DMTF document publication process
-* HTML
-* [*Property index* documentation](README_Property_Index.md)
-* CSV
-
-```
+```text
 usage: doc_generator.py [-h] [--config CONFIG_FILE] [-n]
                         [--format {markdown,slate,html,csv}] [--out OUTFILE]
                         [--payload_dir payload_dir] [--profile PROFILE_DOC]
