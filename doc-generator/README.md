@@ -1,12 +1,12 @@
-# Documentation generator
+# Redfish docs generator
 
 Copyright 2016-2021 Distributed Management Task Force, Inc. All rights reserved.
 
 ## About
 
-The Documentation generator &mdash; `doc_generator.py` &mdash; is a Python tool that parses JSON Schema files to generate documentation in a specified format. Typically, the tool processes an entire set of JSON Schema files for a version. 
+The Redfish docs generator &mdash; `doc_generator.py` &mdash; is a Python tool that parses JSON Schema files to generate documentation in a specified format. Typically, the tool processes an entire set of JSON Schema files for a version. 
 
-The [Documentation generator v3](CHANGES_v2_to_v3.md) introduces breaking changes in how you configure the `doc_generator.py` tool and updates the `README` file. A snapshot of the *version 2* code is available as the [**doc_gen_v2** release](https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0 "https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0").
+The [Redfish docs generator v3](CHANGES_v2_to_v3.md) introduces breaking changes in how you configure the `doc_generator.py` tool and updates the `README` file. A snapshot of the *version 2* code is available as the [**doc_gen_v2** release](https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0 "https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0").
 
 * [Installation](#installation)
 * [Usage](#usage)
@@ -14,9 +14,9 @@ The [Documentation generator v3](CHANGES_v2_to_v3.md) introduces breaking change
 
 See also:
 
-* [Documentation generator V3 changes](CHANGES_v2_to_v3.md) &mdash; How to restructure your existing configuration files.
-* [Documentation generator configuration](README_config_files.md) &mdash; Configuration files for the Documentation generator.
-* [Documentation generator: Property index mode](README_Property_Index.md) &mdash; Property index mode.
+* [Redfish docs generator V3 changes](CHANGES_v2_to_v3.md) &mdash; How to restructure your existing configuration files.
+* [Redfish docs generator configuration](README_config_files.md) &mdash; Configuration files for the Redfish docs generator.
+* [Redfish docs generator: Property index mode](README_Property_Index.md) &mdash; Property index mode.
 
 ## Installation
 
@@ -68,7 +68,7 @@ This file defines:
 * Some required parameters, such as URI mappings, that you cannot specify on the command line
 * Many optional parameters
 
-See [Documentation generator configuration](README_config_files.md).
+See [Redfish docs generator configuration](README_config_files.md).
 
 ```
 usage: doc_generator.py [-h] [--config CONFIG_FILE] [-n]
@@ -126,11 +126,11 @@ Example:
    python3 ../Redfish-Tools/doc-generator/doc_generator.py --config=../Redfish-Tools/doc-generator/sample_inputs/subset/config.json
 ```
 
-For more examples, [Documentation generator configuration](README_config_files.md)
+For more examples, [Redfish docs generator configuration](README_config_files.md)
 
 ## Notes
 
-For information about property index mode, see [Documentation generator: Property index mode](README_Property_Index.md).
+For information about property index mode, see [Redfish docs generator: Property index mode](README_Property_Index.md).
 
 Normative output prefers long descriptions to descriptions.
 

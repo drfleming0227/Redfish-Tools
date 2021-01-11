@@ -29,7 +29,7 @@ $ python3 csdl-to-json.py --input ../../Redfish/metadata --output ../../Redfish/
 
 For more information about the configuration file, see [Configuration](#configuration).
 
-The following help text describes the CSDL-to-JSON converter arguments:
+This help text describes the `csdl-to-json.py` arguments:
 
 ```text
 usage: csdl-to-json.py [-h] --input INPUT --output OUTPUT [--config CONFIG]

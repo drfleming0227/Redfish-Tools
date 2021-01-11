@@ -1,4 +1,4 @@
-# Documentation generator configuration
+# Redfish docs generator configuration
 
 The documentation generator &mdash; `doc_generator.py` &mdash; configuration files support most of the `doc_generator.py` command-line arguments except for `--help` and `--config`.
 
@@ -41,7 +41,7 @@ Note that the names of some config keys differ from their command-line counterpa
 | `profile_doc` | `profile` | | Path to a JSON profile document, for profile output. | |
 | `profile_terse` | `terse` | Boolean | Produce *terse* profile output; meaningful only in profile mode. | [profile_terse attribute](#profile-terse-attribute) |
 | `profile_uri_to_local` | | | For profile mode only, an object like uri_mapping, for locations of profiles. | |
-| `property_index` | `property_index` |  Boolean | Produce **Property Index** output. | [Documentation generator: Property index mode](README_Property_Index.md) |
+| `property_index` | `property_index` |  Boolean | Produce **Property Index** output. | [Redfish docs generator: Property index mode](README_Property_Index.md) |
 | `property_index_config_out` | `property_index_config_out` | | Generate an updated configuration file, with specified file name (property_index mode only). | |
 | `registry_uri_to_local` | | | For profile mode only, an object like uri_mapping, for locations of registries. | |
 | `subset` | `subset` |  | Path to a JSON profile document. Generates **Schema subset** output, with the subset defined in the JSON profile document. | |
