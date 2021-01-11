@@ -28,11 +28,9 @@ If you specify an option in more than one way, command-line arguments override t
 
 You must format configuration files in valid JSON Schema format.
 
-The [base configuration file](#base-configuration-file) is a JSON file that can specify most of the options available for the doc generator, including the command-line options. You also specify the location of other configuration files, including the content supplement and introduction and postscript boilerplate files.
-
-The [content supplement configuration file](#content-supplement-configuration-file) is a JSON file that contains text replacements and additions to apply to the generated schema documentation. It includes text overrides for property descriptions, replacements for unit abbreviations, and schema-specific content including introductions, postscripts, and property description substitutions.
-
 ## Base configuration file
+
+The base configuration file is a JSON file that can specify most of the docs generator options including the command-line options. You also specify the location of other configuration files, including the content supplement and introduction and postscript boilerplate files.
 
 ### Supported keys
 
@@ -46,27 +44,27 @@ Note that some configuration keys differ from their command-line argument equiva
 | `boilerplate_postscript`       | String  | Location of a Markdown file providing content to place at the end of the document (after to the generated schema documentation). If a relative path, should be relative to the location of the config file. |
 | `combine_multiple_refs`        | Integer | Threshold at which multiple references to the same object within a schema are moved into Property details, instead of expanded in place. For details, see [combine_multiple_refs key](#combine_multiple_refs-key). |
 | `content_supplement`           | String  | Location of a JSON-formatted content supplement file, which specifies content substitutions to be made within the generated schema documentation. If a relative path, must be relative to the location of the configuration file. |
-| `escape_chars`<br/><br/>**Command-line argument:**`escape` |         | Characters to escape in generated Markdown. For example, use `--escape=@` if strings with embedded `@` are being converted to `mailto` links by your Markdown processor. |
+| `escape_chars` |         | Characters to escape in generated Markdown. For example, use `--escape=@` if strings with embedded `@` are being converted to `mailto` links by your Markdown processor.<br/><br/>**Command-line argument:**`escape` |
 | `excluded_annotations`         |         | List of annotation names (strings) to omit. Wildcard match is supported for strings that begin with `"*"`. |
 | `excluded_pattern_properties`  |         | Pattern properties to omit from output. Note that backslashes must be escaped in JSON (`"\"` becomes `"\\"`). |
 | `excluded_properties`          |         | List of property names (strings) to omit. Wildcard match is supported for strings that begin with `"*"` (`"*odata.count"` matches `"Members\@odata.count"` and others). |
 | `excluded_schemas`             |         | Schemas, by name, to omit from output. |
-| `format`<br/><br/>**Command-line argument:**`format`    |         | Output format. Value is `markdown`, `slate`, `html`, or `csv`. |
+| `format`    |         | Output format. Value is `markdown`, `slate`, `html`, or `csv`.<br/><br/>**Command-line argument:**`format` |
 | `html_title`                   | String  | HTML `title` element in HTML output. |
-| `import_from`<br/><br/>**Command-line argument:**`import_from ` | String | File name or directory that contains the JSON schemas to process. Wild cards are acceptable. Default: `json-schema`. |
+| `import_from` | String | File name or directory that contains the JSON schemas to process. Wild cards are acceptable. Default: `json-schema`.<br/><br/>**Command-line argument:**`import_from ` |
 | `locale`                       |         | Locale code (case-sensitive) for localized output. Localization of strings supplied by the doc generator code uses `gettext`. Locale files go in the `locale` directory in the `doc_generator` root. Translated descriptions and annotations may be supplied in localized JSON schema files. |
 | `normative`                    |         | Produce normative (developer-focused) output. |
 | `object_reference_disposition` |         | Data structure that specifies properties that should be moved to the **Common Objects** clause and/or objects that should be included in-line where they are referenced, to override default behavior. For details, see [object_reference_disposition key](#object-reference-disposition-key) |
 | `omit_version_in_headers`      | Boolean | <ul><li><code>true</code>. omit schema versions in clause headers. |
-| `outfile`<br/><br/>**Command-line argument:**`out`                |         | Output file (default depends on output format: `output.md` for Markdown, `index.html` for HTML, `output.csv` for CSV. |
-| `payload_dir`<br/><br/>**Command-line argument:**`payload_dir` |       | Directory location for JSON payload and Action examples. Optional. For details, see [payload_dir key](#payload-dir-key) | 
-| `profile_doc`<br/><br/>**Command-line argument:**`profile`   |         | Path to a JSON profile document, for profile output. |
-| `profile_terse`<br/><br/>**Command-line argument:**`terse`     | Boolean | Produce *terse* profile output; meaningful only in profile mode. For details, see [profile_terse key](#profile-terse-key) |
+| `outfile`                |         | Output file (default depends on output format: `output.md` for Markdown, `index.html` for HTML, `output.csv` for CSV.<br/><br/>**Command-line argument:**`out` |
+| `payload_dir` |       | Directory location for JSON payload and Action examples. Optional. For details, see [payload_dir key](#payload-dir-key).<br/><br/>**Command-line argument:**`payload_dir` | 
+| `profile_doc`   |         | Path to a JSON profile document, for profile output.<br/><br/>**Command-line argument:**`profile` |
+| `profile_terse`     | Boolean | Produce *terse* profile output; meaningful only in profile mode. For details, see [profile_terse key](#profile-terse-key).<br/><br/>**Command-line argument:**`terse` |
 | `profile_uri_to_local`         | | | For profile mode only, an object like `uri_mapping`, for locations of profiles. |
-| `property_index`<br/><br/>**Command-line argument:**`property_index` | Boolean | Produce **Property Index** output. For details, see [Redfish docs generator: Property index mode](README_Property_Index.md) |
-| `property_index_config_out`<br/><br/>**Command-line argument:**`property_index_config_out` | | Generate an updated configuration file, with specified file name (property_index mode only). |
+| `property_index` | Boolean | Produce **Property Index** output. For details, see [Redfish docs generator: Property index mode](README_Property_Index.md).<br/><br/>**Command-line argument:**`property_index` |
+| `property_index_config_out` | | Generate an updated configuration file, with specified file name (property_index mode only).<br/><br/>**Command-line argument:**`property_index_config_out` |
 | `registry_uri_to_local`        |         | For profile mode only, an object like uri_mapping, for locations of registries. |
-| `subset`<br/><br/>**Command-line argument:**`subset`    |         | Path to a JSON profile document. Generates **Schema subset** output, with the subset defined in the JSON profile document. |
+| `subset`    |         | Path to a JSON profile document. Generates **Schema subset** output, with the subset defined in the JSON profile document.<br/><br/>**Command-line argument:**`subset` |
 | `uri_mapping`                  | Object  | Partial URL of schema repositories as attributes, and local directory paths as values. |
 
 ### combine_multiple_refs key
@@ -107,6 +105,8 @@ The `payload_dir` key specifies a directory location for JSON payload and Action
 The `profile_terse` key is meaningful only when a profile document is also specified. When `true`, *terse* output is produced. By default, profile output is verbose and includes all properties regardless of profile requirements. *Terse* output is intended for use by Service developers, including only the subset of properties with profile requirements.
 
 ## Content supplement configuration file
+
+The content supplement configuration file is a JSON file that contains text replacements and additions to apply to the generated schema documentation. It includes text overrides for property descriptions, replacements for unit abbreviations, and schema-specific content including introductions, postscripts, and property description substitutions.
 
 ### Supported keys
 
@@ -180,7 +180,7 @@ These examples assume that you have a clone of the DMTF/Redfish repo and the DMT
 ### Generate HTML documentation
 
 ```bash
-$ python ../Redfish-Tools/doc-generator/doc_generator.py --config=../Redfish-Tools/doc-generator/sample_inputs/standard_html/config.json
+% python ../Redfish-Tools/doc-generator/doc_generator.py --config=../Redfish-Tools/doc-generator/sample_inputs/standard_html/config.json
 ```
 
 Note that the `object_reference_disposition` in this config file identifies specific behavior for the `Redundancy` resource and for `PCIeInterface`, defined in `PCIeDevice`.
@@ -188,13 +188,13 @@ Note that the `object_reference_disposition` in this config file identifies spec
 ### Generate HTML documentation with normative descriptions
 
 ```bash
-$ python ../Redfish-Tools/doc-generator/doc_generator.py --config=../Redfish-Tools/doc-generator/sample_inputs/standard_html/config_normative.json
+% python ../Redfish-Tools/doc-generator/doc_generator.py --config=../Redfish-Tools/doc-generator/sample_inputs/standard_html/config_normative.json
 ```
 
 ### Generate profile index Markdown output &mdash; terse mode
 
 ```bash
-$ python ../Redfish-Tools/doc-generator/doc_generator.py --config=../Redfish-Tools/doc-generator/sample_inputs/profile_mode/config.json
+% python ../Redfish-Tools/doc-generator/doc_generator.py --config=../Redfish-Tools/doc-generator/sample_inputs/profile_mode/config.json
 ```
 
 Configuration file references the profile `OCPBasicServer.v1_0_0.json`, which in turn references `OCPManagedDevice.v1_0_0.json`.
@@ -202,7 +202,7 @@ Configuration file references the profile `OCPBasicServer.v1_0_0.json`, which in
 ### Generate subset HTML documentation
 
 ```bash
-$ python ../Redfish-Tools/doc-generator/doc_generator.py --config=../Redfish-Tools/doc-generator/sample_inputs/subset/config.json
+% python ../Redfish-Tools/doc-generator/doc_generator.py --config=../Redfish-Tools/doc-generator/sample_inputs/subset/config.json
 ```
 
 Configuration file references the profile `OCPBasicServer.v1_0_0.json`, which in turn references `OCPManagedDevice.v1_0_0.json`.
@@ -210,7 +210,7 @@ Configuration file references the profile `OCPBasicServer.v1_0_0.json`, which in
 ### Generate property index HTML output
 
 ```bash
-$ python ../Redfish-Tools/doc-generator/doc_generator.py --config=../Redfish-Tools/doc-generator/sample_inputs/property_index/config.json
+% python ../Redfish-Tools/doc-generator/doc_generator.py --config=../Redfish-Tools/doc-generator/sample_inputs/property_index/config.json
 ```
 
 > **Note:** The Base Configuration file for property index output includes some elements that are specific to that mode: `description_overrides`.
@@ -218,5 +218,5 @@ $ python ../Redfish-Tools/doc-generator/doc_generator.py --config=../Redfish-Too
 ### Generate CSV output
 
 ```bash
-$ python ../Redfish-Tools/doc-generator/doc_generator.py --config=../Redfish-Tools/doc-generator/sample_inputs/csv/config.json
+% python ../Redfish-Tools/doc-generator/doc_generator.py --config=../Redfish-Tools/doc-generator/sample_inputs/csv/config.json
 ```
