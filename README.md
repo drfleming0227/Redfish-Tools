@@ -18,7 +18,7 @@ For Redfish developer information, see [DMTF](https://redfish.dmtf.org/ "https:/
 
 ## Installation
 
-To use the Redfish-Tools tools:
+To use the tools in the Redfish-Tools respository:
 
 1. Clone the `Redfish-Tools` repository:
 
