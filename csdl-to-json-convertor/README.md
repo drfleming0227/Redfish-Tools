@@ -6,6 +6,8 @@ Copyright 2017-2021 Distributed Management Task Force, Inc. All rights reserved.
 
 The CSDL-to-JSON converter &mdash; `csdl-to-json.py` &mdash; is a Python tool that converts Redfish CSDL files to Redfish JSON Schema files.
 
+> **Note:** The Common Schema Definition Language (CSDL) defines an Extensible Markup Language (XML) representation of the entity data model that an OData service exposes.
+
 To install the tool, see [Installation](https://github.com/DMTF/Redfish-Tools#installation "https://github.com/DMTF/Redfish-Tools#installation").
 
 * [Usage](#usage)
@@ -24,6 +26,8 @@ For example:
 ```bash
 $ python3 csdl-to-json.py --input ../../Redfish/metadata --output ../../Redfish/json-schema/ --config dmtf-config.json
 ```
+
+For more information about the configuration file, see [Configuration](#configuration).
 
 The following help text describes the CSDL-to-JSON converter arguments:
 
@@ -46,8 +50,6 @@ optional arguments:
                         Overwrite the versioned files in the output directory
                         if they already exist (default is True)
 ```
-
-For more information about the configuration file, see [Configuration](#configuration).
 
 ## Configuration
 
