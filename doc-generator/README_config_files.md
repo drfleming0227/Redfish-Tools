@@ -56,11 +56,11 @@ Note that some configuration keys differ from their command-line argument equiva
 | `format`<br/><br/>**Command-line argument:**`format`    |         | Output format. Value is `markdown`, `slate`, `html`, or `csv`. |
 | `html_title`                   | String  | HTML `title` element in HTML output. |
 | `import_from`<br/><br/>**Command-line argument:**`import_from ` | String | File name or directory that contains the JSON schemas to process. Wild cards are acceptable. Default: `json-schema`. |
-| `locale`                       |         | Locale code (case-sensitive) for localized output. Localization of strings supplied by the doc generator code uses gettext. Locale files go in the `locale` directory in the `doc_generator` root. Translated descriptions and annotations may be supplied in localized JSON schema files. |
+| `locale`                       |         | Locale code (case-sensitive) for localized output. Localization of strings supplied by the doc generator code uses `gettext`. Locale files go in the `locale` directory in the `doc_generator` root. Translated descriptions and annotations may be supplied in localized JSON schema files. |
 | `normative`                    |         | Produce normative (developer-focused) output. |
-| `object_reference_disposition` |         | Data structure that specifies properties that should be moved to the **Common Objects** clause and/or objects that should be included inline where they are referenced, to override default behavior. For details, see [object_reference_disposition key](#object-reference-disposition-key) |
+| `object_reference_disposition` |         | Data structure that specifies properties that should be moved to the **Common Objects** clause and/or objects that should be included in-line where they are referenced, to override default behavior. For details, see [object_reference_disposition key](#object-reference-disposition-key) |
 | `omit_version_in_headers`      | Boolean | If `true`, omit schema versions in clause headers. |
-| `outfile` `out`                |         | Output file (default depends on output format: `output.md` for Markdown, `index.html` for HTML, `output.csv` for CSV. |
+| `outfile`<br/><br/>**Command-line argument:**`out`                |         | Output file (default depends on output format: `output.md` for Markdown, `index.html` for HTML, `output.csv` for CSV. |
 | `payload_dir`<br/><br/>**Command-line argument:**`payload_dir` |       | Directory location for JSON payload and Action examples. Optional. For details, see [payload_dir key](#payload-dir-key) | 
 | `profile_doc`<br/><br/>**Command-line argument:**`profile`   |         | Path to a JSON profile document, for profile output. |
 | `profile_terse`<br/><br/>**Command-line argument:**`terse`     | Boolean | Produce *terse* profile output; meaningful only in profile mode. For details, see [profile_terse key](#profile-terse-key) |
@@ -116,7 +116,7 @@ The `profile_terse` key is meaningful only when a profile document is also speci
 
 | Configuration key | Type | Description | Details |
 | :-------- | :--- | :---------- | :------ |
-| `property_description_overrides` | Dictionary | Maps property names to strings to use to replace the descripions of the named properties. |
+| `property_description_overrides` | Dictionary | Maps property names to strings to use to replace the descriptions of the named properties. |
 | `property_fulldescription_overrides` | Dictionary | Just like `property_description_overrides`. These replacements are *full* in that any additional information the `doc_generator.py` normally appends, like a reference to the definition of the property in another schema, is omitted. |
 | `schema_link_replacements` | Dictionary | Maps URIs of schema references to a structure specifying match type (full or partial) and replacement URIs. Use to substitute a link to documentation where a link to a specific schema would otherwise appear in the documentation. | [schema_link_replacements attribute](#schema-link-replacements-attribute)|
 | `schema_supplement` | Dictionary | Maps schema names to a dictionary of structured content, including introductory text and schema-specific text replacements. | [schema_supplement attribute](#schema-supplement-attribute) |
