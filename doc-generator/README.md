@@ -18,9 +18,9 @@ The Redfish docs generator &mdash; [`doc_generator.py`](#doc_generator.py) &mdas
 1. [Clone this repository and install Python](https://github.com/DMTF/Redfish-Tools#installation "https://github.com/DMTF/Redfish-Tools#installation").
 1. Install the following software, which is required for HTML output, on the machine from which you will run `doc_generator.py`:
 
-    1. [Install Python&#8209;Markdown](https://python-markdown.github.io/install/ "https://python-markdown.github.io/install/").
-    1. [Install Pygments](http://pygments.org/ "http://pygments.org/").
-    1. Use `pip` to install requirements:
+    * [Install Python&#8209;Markdown](https://python-markdown.github.io/install/ "https://python-markdown.github.io/install/").
+    * [Install Pygments](http://pygments.org/ "http://pygments.org/").
+    * Use `pip` to install requirements:
 
         ```
         $ cd doc-generator
