@@ -121,60 +121,40 @@ To process CSDL files, the CSDL-to-JSON converter:
       <thead>
         <tr>
           <th align="left" valign="top">For&nbsp;every</th>
-          <th align="left" valign="top">In namespace</th>
+          <th align="left" valign="top">That are in</th>
           <th align="left" valign="top">Tool&nbsp;generates JSON file of type</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td align="left" valign="top"><code>EntityType</code> and <code>ComplexType</code> definitions</td>
-          <td align="left" valign="top">
-            <ul>
-              <li>... that are in an unversioned namespace and are marked as abstract</li>
-              <li>... that are in an unversioned namespace and are not marked as abstract</li>
-              <li>... that are in a versioned namespace</li>
-            </ul>
-          </td>
-          <td align="left" valign="top">
-            <ul>
-              <li>have a definition that contains an <code>anyOf</code> statement in the unversioned JSON Schema that points to all versioned definitions</li>
-              <li>have their definition translated only to the unversioned JSON Schema file</li>
-              <li>have their definitions translated to that version of the JSON Schema file, and newer JSON Schema files</li>
-            </ul>
-          </td>
-        </tr>
+          <td align="left" valign="top" rowspan="3"><code>EntityType</code> and <code>ComplexType</code> definitions</td>
+          <td align="left" valign="top">An unversioned namespace and are marked as abstract</td>
+            <td align="left" valign="top">Have a definition that contains an <code>anyOf</code> statement in the unversioned JSON Schema that points to all versioned definitions</td>
+          </tr>
+          <tr>
+          <td align="left" valign="top">An unversioned namespace and are not marked as abstract</td>
+            <td align="left" valign="top">have their definition translated only to the unversioned JSON Schema file</td>
+          </tr>
+          <tr>
+          <td align="left" valign="top">A versioned namespace</td>
+            <td align="left" valign="top">have their definitions translated to that version of the JSON Schema file, and newer JSON Schema files</td>
+          </tr>
         <tr>
-          <td align="left" valign="top"><code>Action</code> definitions</td>
-          <td align="left" valign="top">
-            <ul>
-              <li>... that are in an unversioned namespace</li>
-              <li>... that are in a versioned namespace</li>
-            </ul>
-          </td>
-          <td align="left" valign="top">
-            <ul>
-              <li>are translated to all versioned JSON Schema files</li>
-              <li>have their definitions translated to that version of the JSON Schema file, and newer JSON Schema files</li>
-            </ul>
-          </td>
-        </tr>
+          <td align="left" valign="top" rowspan="2"><code>Action</code> definitions</td>
+          <td align="left" valign="top">An unversioned namespace</td>
+         <td align="left" valign="top">are translated to all versioned JSON Schema files</td>
+       </tr><tr>
+          <td align="left" valign="top">A versioned namespace</td>
+          <td align="left" valign="top">have their definitions translated to that version of the JSON Schema file, and newer JSON Schema files</td></tr>
         <tr>
-          <td align="left" valign="top"><code>EnumType</code> and <code>TypeDefinition</code> definitions</td>
+          <td align="left" valign="top" rowspan="2"><code>EnumType</code> and <code>TypeDefinition</code> definitions</td>
           <td align="left" valign="top">
-            <ul>
-              <li>... that are in an unversioned namespace</li>
-              <li>... that are in a versioned namespace</li>
-            </ul>
-          </td>
-          <td align="left" valign="top">
-            <ul>
-              <li>are translated to the unversioned JSON Schema file</li>
-              <li>have their definitions translated to that version of the JSON Schema file, and newer JSON Schema files</li>
-            </ul>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+            An unversioned namespace</td>
+           <td align="left" valign="top">are translated to the unversioned JSON Schema file</td>
+         </tr>
+         <tr>
+          <td align="left" valign="top">A versioned namespace</td>
+          <td align="left" valign="top">have their definitions translated to that version of the JSON Schema file, and newer JSON Schema files</td></tr></tbody></table>
 
 <!--     <table>
       <col width="40%">
