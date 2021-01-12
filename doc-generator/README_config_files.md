@@ -54,12 +54,12 @@ Note that some configuration keys differ from their command-line argument equiva
 | `import_from` | String | File name or directory that contains the JSON schemas to process. Wild cards are acceptable. Default: `json-schema`.<br/><br/>**Command-line argument:**`import_from ` |
 | `locale`                       |         | Case-sensitive locale code for localized output. Localization of strings supplied by the docs generator uses [`gettext`](https://www.gnu.org/software/gettext/ "https://www.gnu.org/software/gettext/""). Locale files are in the `locale` directory in the `doc_generator` root. Translated descriptions and annotations may be supplied in localized JSON Schema files. |
 | `normative`                    |         | Produce normative (developer-focused) output. |
-| `object_reference_disposition` |         | Data structure that specifies properties that should be moved to the **Common Objects** clause and/or objects that should be included in-line where they are referenced, to override default behavior.<br/><br/>For details, see [object_reference_disposition key](#object-reference-disposition-key). |
+| `object_reference_disposition` |         | Data structure that specifies properties that should be moved to the **Common Objects** clause and/or objects that should be included in-line where they are referenced, to override default behavior.<br/><br/>For details, see [object_reference_disposition key](#object_reference_disposition-key). |
 | `omit_version_in_headers`      | Boolean | <ul><li><code>true</code>. Exclude schema versions from clause headers.</li><li><code>false</code>. Include schema versions in clause headers.</li></ul> |
 | `outfile`                |         | Output file (default depends on output format: `output.md` for Markdown, `index.html` for HTML, `output.csv` for CSV.<br/><br/>**Command-line argument:**`out` |
-| `payload_dir` |       | Directory location for JSON payload and Action examples. Optional.<br/><br/>For details, see [payload_dir key](#payload-dir-key).<br/><br/>**Command-line argument:**`payload_dir` | 
+| `payload_dir` |       | Directory location for JSON payload and Action examples. Optional.<br/><br/>For details, see [payload_dir key](#payload_dir-key).<br/><br/>**Command-line argument:**`payload_dir` | 
 | `profile_doc`   |         | Path to a JSON profile document, for profile output.<br/><br/>**Command-line argument:**`profile` |
-| `profile_terse`     | Boolean | Produce *terse* profile output; meaningful only in profile mode. For details, see [profile_terse key](#profile-terse-key).<br/><br/>**Command-line argument:**`terse` |
+| `profile_terse`     | Boolean | Produce *terse* profile output; meaningful only in profile mode. For details, see [profile_terse key](#profile_terse-key).<br/><br/>**Command-line argument:**`terse` |
 | `profile_uri_to_local`         | | | For profile mode only, an object like `uri_mapping`, for locations of profiles. |
 | `property_index` | Boolean | Produce **Property Index** output. For details, see [Redfish docs generator: Property index mode](README_Property_Index.md).<br/><br/>**Command-line argument:**`property_index` |
 | `property_index_config_out` | | Generate an updated configuration file, with specified file name (property_index mode only).<br/><br/>**Command-line argument:**`property_index_config_out` |
@@ -110,17 +110,17 @@ The content supplement configuration file is a JSON file that contains text repl
 
 ### Supported keys
 
-| Configuration key | Type | Description | Details |
-| :-------- | :--- | :---------- | :------ |
+| Configuration key | Type | Description |
+| :-------- | :--- | :---------- |
 | `property_description_overrides` | Dictionary | Maps property names to strings to use to replace the descriptions of the named properties. |
 | `property_fulldescription_overrides` | Dictionary | Just like `property_description_overrides`. These replacements are *full* in that any additional information the `doc_generator.py` normally appends, like a reference to the definition of the property in another schema, is omitted. |
-| `schema_link_replacements` | Dictionary | Maps URIs of schema references to a structure specifying match type (full or partial) and replacement URIs. Use to substitute a link to documentation where a link to a specific schema would otherwise appear in the documentation. | [schema_link_replacements attribute](#schema-link-replacements-attribute)|
+| `schema_link_replacements` | Dictionary | Maps URIs of schema references to a structure that specifies either the full or partial match type and replacement URIs. Use to substitute a link to documentation where a link to a specific schema would otherwise appear in the documentation. | [schema_link_replacements attribute](#schema-link-replacements-attribute)|
 | `schema_supplement` | Dictionary | Maps schema names to a dictionary of structured content, including introductory text and schema-specific text replacements. | [schema_supplement attribute](#schema-supplement-attribute) |
 | `units_translation` | Dictionary | Maps units as they appear in Redfish schemas to units as you want them to appear in the documentation. |
 
 ### schema_link_replacements key
 
-The `schema_link_replacements` key defines a dictionary mapping URIs of schema references to replacement URIs. Use to substitute a link to documentation where a link to a specific schema would otherwise appear in the documentation. The structure of this dictionary is:
+The `schema_link_replacements` key is a dictionary that maps reference URIs to replacement URIs. The match type is full or partial. Replaces one link with another link. The dictionary structure is:
 
 ```json
 "schema_link_replacements": {
