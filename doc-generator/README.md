@@ -2,21 +2,6 @@
 
 Copyright 2016-2021 Distributed Management Task Force, Inc. All rights reserved.
 
-## Contents
-
-* [Version 3 changes](#version-3-changes)
-* [About](#about)
-* [Installation](#installation)
-* [Usage](#usage)
-* [Configuration](#configuration)
-* [Notes](#notes)
-
-## Version 3 changes
-
-The [Redfish docs generator v3](CHANGES_v2_to_v3.md) introduces breaking changes in how you configure the `doc_generator.py` tool and updates the `README` file. See [Doc Generator v2](https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0 "https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0") for a snapshot of the *version 2* code.
-
-## About
-
 The Redfish docs generator &mdash; [`doc_generator.py`](#doc_generator.py) &mdash; is a Python tool that processes JSON Schema files to generate Markdown, Slate, HTML, CSV, or property index documentation. Typically, the tool processes an entire set of JSON Schema files for a version.
 
 By default, `doc_generator.py` looks for a `json-schema` directory and supplemental files in the [configuration](#configuration) file that you specify when you run it. Several flavors of configuration files are available.
@@ -28,6 +13,18 @@ Output formats include:
 * HTML
 * [*Property index* documentation](README_Property_Index.md)
 * CSV
+
+## Contents
+
+* [Version 3 changes](#version-3-changes)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Configuration](#configuration)
+* [Notes](#notes)
+
+## Version 3 changes
+
+The [Redfish docs generator v3](CHANGES_v2_to_v3.md) introduces breaking changes in how you configure the `doc_generator.py` tool and updates the `README` file. See [Doc Generator v2](https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0 "https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0") for a snapshot of the *version 2* code.
 
 ## Installation
 
@@ -135,4 +132,3 @@ See also:
 * [Redfish docs generator: V3 changes](CHANGES_v2_to_v3.md) &mdash; How to restructure your existing configuration files.
 * [Redfish docs generator: Configuration](README_config_files.md) &mdash; Configuration files for the Redfish docs generator.
 * [Redfish docs generator: Property index mode](README_Property_Index.md) &mdash; Property index mode.
-
