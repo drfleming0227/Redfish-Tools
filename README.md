@@ -23,8 +23,8 @@ To use the tools in the Redfish-Tools respository:
 1. Clone the `Redfish-Tools` repository:
 
     ```bash
-    $ git clone git@github.com:DMTF/Redfish-Tools.git
-    $ git remote add upstream git@github.com:DMTF/Redfish-Tools.git
+    % git clone git@github.com:DMTF/Redfish-Tools.git
+    % git remote add upstream git@github.com:DMTF/Redfish-Tools.git
     ```
 1. [Download and install Python](https://www.python.org/downloads/ "https://www.python.org/downloads/") on the machine from which you will run the tools.
 
