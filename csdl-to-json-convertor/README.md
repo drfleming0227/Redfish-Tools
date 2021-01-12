@@ -118,6 +118,9 @@ To process CSDL files, the CSDL-to-JSON converter:
     For the following elements and properties in every versioned and unversioned namespace in each XML file, the CSDL-to-JSON converter generates corresponding JSON file or files, as follows:
 
     <table>
+      <col width="40%">
+      <col width="20%">
+      <col width="40%">
       <thead>
         <tr>
           <th align="left" valign="top">For&nbsp;every</th>
