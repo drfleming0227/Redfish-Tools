@@ -11,14 +11,14 @@ For Redfish developer information, see [DMTF](https://redfish.dmtf.org/ "https:/
 
 ## Tools
 
-* [CSDL-to-JSON converter](https://github.com/DMTF/Redfish-Tools/csdl-to-json-convertor/README.md "https://github.com/DMTF/Redfish-Tools/csdl-to-json-convertor/README.md")
-* [Redfish docs generator](https://github.com/DMTF/Redfish-Tools/doc-generator/README.md "https://github.com/DMTF/Redfish-Tools/doc-generator/README.md")
-* [JSON Schema-to-OpenAPI converter](https://github.com/DMTF/Redfish-Tools/json-to-openapi-converter/README.md "https://github.com/DMTF/Redfish-Tools/doc-generator/README.md")
-* [OData CSDL validator](https://github.com/DMTF/Redfish-Tools/odata-csdl-validator/README.md "https://github.com/DMTF/Redfish-Tools/doc-generator/README.md")
+* [CSDL-to-JSON converter](csdl-to-json-convertor/README.md "csdl-to-json-convertor/README.md")
+* [Redfish docs generator](doc-generator/README.md "doc-generator/README.md")
+* [JSON Schema-to-OpenAPI converter](json-to-openapi-converter/README.md "json-to-openapi-converter/README.md")
+* [OData CSDL validator](odata-csdl-validator/README.md "odata-csdl-validator/README.md")
 
 ## Installation
 
-To use the tools in the Redfish-Tools respository:
+To install the tools in the Redfish-Tools respository:
 
 1. Clone the `Redfish-Tools` repository:
 
