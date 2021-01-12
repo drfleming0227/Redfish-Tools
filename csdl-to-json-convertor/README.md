@@ -117,11 +117,11 @@ To process CSDL files, the CSDL-to-JSON converter:
 
     For the following elements and properties in every versioned and unversioned namespace in each XML file, the CSDL-to-JSON converter generates corresponding JSON file or files, as follows:
 
-| EntityType and ComplexType definitions that are in   | Tool converts definition to                             |
-| :--------------------------------------------------- | :------------------------------------------------------ |
-| Unversioned namespace and are marked as abstract     | Unversioned JSON Schema that uses <code>anyOf</code> statement to point to all versioned definitions |
-| Unversioned namespace and are not marked as abstract | Unversioned JSON Schema file |
-| Versioned namespace                                  | That version of the JSON Schema file and newer JSON Schema files |
+| EntityType and ComplexType definitions that are in | Tool converts definition to                                                   |
+| :------------------------------------------------- | :---------------------------------------------------------------------------- |
+| Unversioned namespace and marked as abstract       | Unversioned JSON Schema that uses <code>anyOf</code> statement to point to all versioned definitions |
+| Unversioned namespace and not marked as abstract   | Unversioned JSON Schema file |
+| Versioned namespace                                | That version of the JSON Schema file and newer JSON Schema files |
 
 <table>
   <col width="50%">
