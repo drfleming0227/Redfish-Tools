@@ -123,9 +123,14 @@ To process CSDL files, the CSDL-to-JSON converter:
       <col width="40%">
       <thead>
         <tr>
-          <th align="left" valign="top">For&nbsp;every</th>
-          <th align="left" valign="top">In namespace type</th>
-          <th align="left" valign="top">CSDL&#8209;to&#8209;JSON&nbsp;converter&nbsp;generates JSON file of type</th>
+          <th align="left" valign="top" rowspan="2">For&nbsp;every</th>
+          <th align="left" valign="top" colspan="3">In namespace of type</th>
+          <th align="left" valign="top" rowspan="2">CSDL&#8209;to&#8209;JSON&nbsp;converter&nbsp;generates JSON file of type</th>
+        </tr>
+        <tr>
+          <th align="left" valign="top">Versioned</th>
+          <th align="left" valign="top">Unversioned</th>
+          <th align="left" valign="top">Abstract</th>
         </tr>
       </thead>
       <tbody>
