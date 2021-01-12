@@ -2,13 +2,7 @@
 
 Copyright 2016-2021 Distributed Management Task Force, Inc. All rights reserved.
 
-The Redfish docs generator &mdash; [`doc_generator.py`](#doc_generator.py) &mdash; is a Python tool that processes JSON Schema files to generate documentation output. Output formats include:
-
-* (Default) GitHub-flavored Markdown targeted for the [Slate API docs generator](https://github.com/slatedocs/slate "https://github.com/slatedocs/slate")
-* Markdown targeted for the DMTF document publication process
-* HTML
-* [*Property index* documentation](README_Property_Index.md)
-* CSV
+The **Redfish docs generator** &mdash; [`doc_generator.py`](#doc_generator.py) &mdash; is a Python tool that processes JSON Schema files to generate GitHub-flavored Markdown targeted for the [Slate API docs generator](https://github.com/slatedocs/slate "https://github.com/slatedocs/slate"), which is the default output, Markdown targeted for the DMTF document publication process, HTML, [property index documentation](README_Property_Index.md), or CSV.
 
 ## Contents
 
@@ -16,6 +10,7 @@ The Redfish docs generator &mdash; [`doc_generator.py`](#doc_generator.py) &mdas
 * [Installation](#installation)
 * [Usage](#usage)
 * [Configuration](#configuration)
+* [Processing](#processing)
 * [Notes](#notes)
 
 ## Version 3 changes
@@ -121,11 +116,11 @@ Use the `--config` option to specify the configuration file, which defines:
 * Some required parameters, such as URI mappings, that you cannot specify on the command line
 * Many optional parameters
 
-See [Redfish docs generator: Configuration](README_config_files.md).
+Several flavors of configuration files are available. See [Redfish docs generator: Configuration](README_config_files.md).
 
 ## Processing
 
-By default, `doc_generator.py` looks for a `json-schema` directory and supplemental files in the [configuration](#configuration) file that you specify when you run it. Several flavors of configuration files are available.
+By default, `doc_generator.py` looks for a `json-schema` directory and supplemental files in the [configuration](#configuration) file that you specify when you run it.
 
 Typically, the tool processes an entire set of JSON Schema files for a version.
 
