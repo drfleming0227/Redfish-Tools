@@ -16,23 +16,23 @@ The **CSDL-to-JSON converter** &mdash; [`csdl-to-json.py`](csdl-to-json.py) &mda
 
 ## Installation
 
-To install the tool, see [Installation](https://github.com/DMTF/Redfish-Tools#installation "https://github.com/DMTF/Redfish-Tools#installation").
+To install the CSDL-to-JSON converter, see [Installation](https://github.com/DMTF/Redfish-Tools#installation "https://github.com/DMTF/Redfish-Tools#installation").
 
 ## Usage
 
 ```bash
-$ python3 csdl-to-json.py --input INPUT --output OUTPUT --config CONFIG
+% python3 csdl-to-json.py --input INPUT --output OUTPUT --config CONFIG
 ```
 
 For example:
 
 ```bash
-$ python3 csdl-to-json.py --input ../../Redfish/metadata --output ../../Redfish/json-schema/ --config dmtf-config.json
+% python3 csdl-to-json.py --input ../../Redfish/metadata --output ../../Redfish/json-schema/ --config dmtf-config.json
 ```
 
 For more information about the configuration file, see [Configuration](#configuration).
 
-This help text describes the `csdl-to-json.py` arguments:
+The `csdl-to-json.py` arguments are:
 
 ```text
 usage: csdl-to-json.py [-h] --input INPUT --output OUTPUT [--config CONFIG]
@@ -76,18 +76,18 @@ The default configuration file is `dmtf-config.json`, which contains these state
 }
 ```
 
-The configuration parameters are:
+The configuration keys are:
 
-| Parameter          | Defines                                                                | 
-| :----------------- | :--------------------------------------------------------------------- |
-| `Copyright`        | Copyright string to include in the JSON Schema files.                  |
-| `RedfishSchema`    | Location of Redfish Schema files.                                      |
-| `ODataSchema`      | Location of OData Schema files.                                        |
-| `Location`         | Output folder for the generated JSON files.                            |
-| `ResourceLocation` | Location of Redfish resources.                                         |
-| `DoNotWrite`       | List of one or more output files to exclude from generated JSON files. |
+| Key              | Defines                                                                 | 
+| :--------------- | :---------------------------------------------------------------------- |
+| `Copyright`      | Copyright string to include in the generated JSON Schema files.         |
+| `RedfishSchema`  | Location of Redfish Schema files.                                       |
+| `ODataSchema`    | Location of OData Schema files.                                         |
+| `Location`       | Output folder for the generated JSON files.                             |
+| `ResourceLocation` | Location of Redfish resources.                                        |
+| `DoNotWrite`     | Array of one or more output files to exclude from generated JSON files. |
 
-If you omit any parameters, the tool uses the [default values](#default-values) in the `dmtf-config.json` file.
+If you omit any keys, the CSDL-to-JSON converter uses the [default values](#default-values) in the `dmtf-config.json` file.
 
 ## Assumptions
 
@@ -95,12 +95,15 @@ The CSDL-to-JSON converter makes these assumptions about the format of the Redfi
 
 * Each file that defines a resource follows the Redfish model for inheritance by copy.
 
-    Other than the base *Resource* definition, each resource definition is contained in one file.
+    Other than the base *Resource* definition, each file defines a single resource.
 * Any referenced external namespaces have proper `Include` statements at the top of each CSDL file.
 * All annotations have their expected facets filled.
 
     For example, the `OData.Description` annotation must use the `String=` facet.
-* All namespaces follow the Redfish-defined format, where a namespace is either unversioned or in the form, `<name>.v<X>_<Y>_<Z>`.
+* All namespaces follow the Redfish-defined format where a namespace is either:
+
+    * Unversioned.
+    * In the form, `<name>.v<X>_<Y>_<Z>`.
 * References to another CSDL file assume that its JSON Schema file is in the same folder.
 
 ## Processing
@@ -112,43 +115,28 @@ To process CSDL files, the CSDL-to-JSON converter:
     If the file is not in the input directory, the tool accesses it in the remote location.
 1. Loops on all XML files in the input folder.
 
-    For the following elements and properties in every versioned and unversioned namespace in each XML file, the tool generates a corresponding JSON file:
+    For the following elements and properties in every versioned and unversioned namespace in each XML file, the CSDL-to-JSON converter generates corresponding JSON file or files, as follows:
 
     <table>
       <thead>
         <tr>
           <th align="left" valign="top" colspan="2">For&nbsp;every</th>
-          <th align="left" valign="top">CSDL&#8209;to&#8209;JSON&nbsp;converter&nbsp;creates</th>
+          <th align="left" valign="top">CSDL&#8209;to&#8209;JSON&nbsp;converter&nbsp;generates</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td align="left" valign="top"><code>EntityType</code> element</td>
+          <td align="left" valign="top"><code>EntityType</code> element and <code>ComplexType</code> element</td>
           <td align="left" valign="top">In versioned namespace that is marked abstract</td>
           <td align="left" valign="top">Unversioned JSON file that uses <code>anyOf</code> statement to point to all JSON file versions</td>
         </tr>
         <tr>
-          <td align="left" valign="top"><code>EntityType</code> element</td>
+          <td align="left" valign="top"><code>EntityType</code> element and <code>ComplexType</code> element</td>
           <td align="left" valign="top">In unversioned namespace that is not marked abstract</td>
           <td align="left" valign="top">Unversioned JSON file</td>
         </tr>
         <tr>
-          <td align="left" valign="top"><code>EntityType</code> element </td>
-          <td align="left" valign="top">In versioned namespace</td>
-          <td align="left" valign="top">Current and newer JSON file versions</td>
-        </tr>
-        <tr>
-          <td align="left" valign="top"><code>ComplexType</code> element </td>
-          <td align="left" valign="top">In versioned namespace that is marked abstract</td>
-          <td align="left" valign="top">Unversioned JSON file that uses <code>anyOf</code> statement to point to all JSON file versions</td>
-        </tr>
-        <tr>
-          <td align="left" valign="top"><code>ComplexType</code> element</td>
-          <td align="left" valign="top">In unversioned namespace that is not marked abstract</td>
-          <td align="left" valign="top">Unversioned JSON file</td>
-        </tr>
-        <tr>
-          <td align="left" valign="top"><code>ComplexType</code> element </td>
+          <td align="left" valign="top"><code>EntityType</code> element and <code>ComplexType</code> element</td>
           <td align="left" valign="top">In versioned namespace</td>
           <td align="left" valign="top">Current and newer JSON file versions</td>
         </tr>
@@ -163,22 +151,12 @@ To process CSDL files, the CSDL-to-JSON converter:
           <td align="left" valign="top">Current and newer JSON file versions</td>
         </tr>
         <tr>
-          <td align="left" valign="top"><code>EnumType</code> element</td>
+          <td align="left" valign="top"><code>EnumType</code> element and <code>TypeDefinition</code>&nbsp;element</td>
           <td align="left" valign="top">In unversioned namespace</td>
           <td align="left" valign="top">Unversioned JSON file</td>
         </tr>
         <tr>
-          <td align="left" valign="top"><code>EnumType</code> element </td>
-          <td align="left" valign="top">In versioned namespace</td>
-          <td align="left" valign="top">Current and newer JSON file versions</td>
-        </tr>
-        <tr>
-          <td align="left" valign="top"><code>TypeDefinition</code>&nbsp;element</td>
-          <td align="left" valign="top">In unversioned namespace</td>
-          <td align="left" valign="top">Unversioned JSON file</td>
-        </tr>
-        <tr>
-          <td align="left" valign="top"><code>TypeDefinition</code>&nbsp;element </td>
+          <td align="left" valign="top"><code>EnumType</code> element and <code>TypeDefinition</code>&nbsp;element</td>
           <td align="left" valign="top">In versioned namespace</td>
           <td align="left" valign="top">Current and newer JSON file versions</td>
         </tr>
