@@ -120,6 +120,32 @@ To process CSDL files, the CSDL-to-JSON converter:
 <table>
   <thead>
     <tr>
+      <th align="left" valign="top" colspan="2"><code>EntityType</code> and <code>ComplexType</code> definitions</th>
+    </tr>
+    <tr>
+      <th align="left" valign="top">That are in</th>
+      <th align="left" valign="top">Tool&nbsp;converts definition to</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="left" valign="top">An unversioned namespace and are marked as abstract</td>
+      <td align="left" valign="top">Unversioned JSON Schema that uses <code>anyOf</code> statement to point to all versioned definitions</td>
+    </tr>
+    <tr>
+      <td align="left" valign="top">An unversioned namespace and are not marked as abstract</td>
+      <td align="left" valign="top">Unversioned JSON Schema file</td>
+    </tr>
+    <tr>
+      <td align="left" valign="top">A versioned namespace</td>
+      <td align="left" valign="top">That version of the JSON Schema file and newer JSON Schema files</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- <table>
+  <thead>
+    <tr>
       <th align="left" valign="top">For</th>
       <th align="left" valign="top">That are in</th>
       <th align="left" valign="top">Tool&nbsp;converts definition to</th>
@@ -159,6 +185,49 @@ To process CSDL files, the CSDL-to-JSON converter:
     </tr>
   </tbody>
 </table>
+
+<table>
+  <thead>
+    <tr>
+      <th align="left" valign="top">For</th>
+      <th align="left" valign="top">That are in</th>
+      <th align="left" valign="top">Tool&nbsp;converts definition to</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="left" valign="top" rowspan="3"><code>EntityType</code> and <code>ComplexType</code> definitions</td>
+      <td align="left" valign="top">An unversioned namespace and are marked as abstract</td>
+      <td align="left" valign="top">Unversioned JSON Schema that uses <code>anyOf</code> statement to point to all versioned definitions</td>
+    </tr>
+    <tr>
+      <td align="left" valign="top">An unversioned namespace and are not marked as abstract</td>
+      <td align="left" valign="top">Unversioned JSON Schema file</td>
+    </tr>
+    <tr>
+      <td align="left" valign="top">A versioned namespace</td>
+      <td align="left" valign="top">That version of the JSON Schema file and newer JSON Schema files</td>
+    </tr>
+    <tr>
+      <td align="left" valign="top" rowspan="2"><code>Action</code> definitions</td>
+      <td align="left" valign="top">An unversioned namespace</td>
+      <td align="left" valign="top">All versioned JSON Schema files</td>
+    </tr>
+    <tr>
+      <td align="left" valign="top">A versioned namespace</td>
+      <td align="left" valign="top">That version of the JSON Schema file and newer JSON Schema files</td>
+    </tr>
+    <tr>
+      <td align="left" valign="top" rowspan="2"><code>EnumType</code> and <code>TypeDefinition</code> definitions</td>
+      <td align="left" valign="top">An unversioned namespace</td>
+      <td align="left" valign="top">Unversioned JSON Schema file</td>
+    </tr>
+    <tr>
+      <td align="left" valign="top">A versioned namespace</td>
+      <td align="left" valign="top">That version of the JSON Schema file and newer JSON Schema files</td>
+    </tr>
+  </tbody>
+</table> -->
 <!--     <table>
       <col width="40%">
       <col width="20%">
