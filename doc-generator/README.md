@@ -2,7 +2,7 @@
 
 Copyright 2016-2021 Distributed Management Task Force, Inc. All rights reserved.
 
-The **Redfish docs generator** &mdash; [`doc_generator.py`](#doc_generator.py) &mdash; is a Python tool that processes JSON Schema files to generate GitHub-flavored Markdown targeted for the [Slate API docs generator](https://github.com/slatedocs/slate "https://github.com/slatedocs/slate"), which is the default output, Markdown targeted for the DMTF document publication process, HTML, [property index documentation](README_Property_Index.md), or CSV.
+The **Redfish docs generator** &mdash; [`doc_generator.py`](#doc_generator.py) &mdash; is a Python tool that processes JSON Schema files to generate output in a specified format. These formats are GitHub-flavored Markdown targeted for the [Slate API docs generator](https://github.com/slatedocs/slate "https://github.com/slatedocs/slate"), which is the default output, Markdown targeted for the DMTF document publication process, HTML, [property index documentation](README_Property_Index.md), or CSV.
 
 ## Contents
 
@@ -18,7 +18,7 @@ The **Redfish docs generator** &mdash; [`doc_generator.py`](#doc_generator.py) &
 The [Redfish docs generator v3](CHANGES_v2_to_v3.md):
 
 * Introduces breaking changes in how you configure the `doc_generator.py` tool.
-* Updates the `README` file.
+* Updates the `README` files.
 
 For a snapshot of the *version 2* code, see [Doc Generator v2](https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0 "https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0").
 
@@ -28,28 +28,28 @@ For a snapshot of the *version 2* code, see [Doc Generator v2](https://github.co
 1. On the machine from which you will run `doc_generator.py`, install the following software, which is required for HTML output:
     * [Install Python&#8209;Markdown](https://python-markdown.github.io/install/ "https://python-markdown.github.io/install/").
     * [Install Pygments](http://pygments.org/ "http://pygments.org/").
-    * Use `pip` to install requirements:
+    * Install requirements:
 
       ```bash
-      $ cd doc-generator
-      $ pip install -r requirements.txt
+      % cd doc-generator
+      % pip install -r requirements.txt
       ```
 1. (Optional) If you make changes to the `doc_generator.py` code:
     * Install `pytest`:
 
       ```bash
-      $ cd doc-generator
-      $ pip install -r dev_requirements.txt
+      % cd doc-generator
+      % pip install -r dev_requirements.txt
       ```
 
     * Run the tests:
 
       ```bash
-      $ cd doc-generator
-      $ pytest
+      % cd doc-generator
+      % pytest
       ```
 
-    See [pytest](https://docs.pytest.org/en/latest/getting-started.html "https://docs.pytest.org/en/latest/getting-started.html").
+    For more information about `pytest`, see [pytest](https://docs.pytest.org/en/latest/getting-started.html "https://docs.pytest.org/en/latest/getting-started.html").
 
 ## Usage
 
@@ -106,7 +106,7 @@ optional arguments:
                         embedded @ are being converted to mailto links.
 ```
 
-For examples, see [Redfish docs generator: Configuration](README_config_files.md).
+For `doc_generator.py` examples, see [Redfish docs generator examples](README_config_files.md#redfish-doc-generator-examples).
 
 ## Configuration
 
