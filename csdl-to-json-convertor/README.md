@@ -120,10 +120,7 @@ To process CSDL files, the CSDL-to-JSON converter:
 <table>
   <thead>
     <tr>
-      <th align="left" valign="top" colspan="2"><code>EntityType</code> and <code>ComplexType</code> definitions</th>
-    </tr>
-    <tr>
-      <th align="left" valign="top">That are in</th>
+      <th align="left" valign="top"><code>EntityType</code> and <code>ComplexType</code> definitions that are in</th>
       <th align="left" valign="top">Tool&nbsp;converts definition to</th>
     </tr>
   </thead>
