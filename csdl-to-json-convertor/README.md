@@ -56,7 +56,7 @@ optional arguments:
 
 ## Configuration
 
-The default configuration file is `dmtf-config.json`, which contains these statements:
+The default configuration file is `dmtf-config.json`, which contains these configuration keys and values:
 
 <a id="default-values"></a>
 ```json
@@ -78,7 +78,7 @@ The default configuration file is `dmtf-config.json`, which contains these state
 
 The configuration keys are:
 
-| Key              | Defines                                                                 | 
+| Key              | Description                                                             | 
 | :--------------- | :---------------------------------------------------------------------- |
 | `Copyright`      | Copyright string to include in the generated JSON Schema files.         |
 | `RedfishSchema`  | Location of Redfish Schema files.                                       |
@@ -95,7 +95,7 @@ The CSDL-to-JSON converter makes these assumptions about the format of the Redfi
 
 * Each file that defines a resource follows the Redfish model for inheritance by copy.
 
-    Other than the base *Resource* definition, each file defines a single resource.
+    Other than the base `Resource` definition, each resource definition is contained in one file.
 * Any referenced external namespaces have proper `Include` statements at the top of each CSDL file.
 * All annotations have their expected facets filled.
 
@@ -126,15 +126,15 @@ To process CSDL files, the CSDL-to-JSON converter:
       </thead>
       <tbody>
         <tr>
-          <td align="left" valign="top"><code>EntityType</code> element and <code>ComplexType</code> element in versioned namespace that is marked abstract</td>
+          <td align="left" valign="top"><code>EntityType</code> and <code>ComplexType</code> element in versioned namespace that is marked abstract</td>
           <td align="left" valign="top">Unversioned JSON file that uses <code>anyOf</code> statement to point to all JSON file versions</td>
         </tr>
         <tr>
-          <td align="left" valign="top"><code>EntityType</code> element and <code>ComplexType</code> element in unversioned namespace that is not marked abstract</td>
+          <td align="left" valign="top"><code>EntityType</code> and <code>ComplexType</code> element in unversioned namespace that is not marked abstract</td>
           <td align="left" valign="top">Unversioned JSON file</td>
         </tr>
         <tr>
-          <td align="left" valign="top"><code>EntityType</code> element and <code>ComplexType</code> element in versioned namespace</td>
+          <td align="left" valign="top"><code>EntityType</code> and <code>ComplexType</code> element in versioned namespace</td>
           <td align="left" valign="top">Current and newer JSON file versions</td>
         </tr>
         <tr>
@@ -146,11 +146,11 @@ To process CSDL files, the CSDL-to-JSON converter:
           <td align="left" valign="top">Current and newer JSON file versions</td>
         </tr>
         <tr>
-          <td align="left" valign="top"><code>EnumType</code> element and <code>TypeDefinition</code>&nbsp;element in unversioned namespace</td>
+          <td align="left" valign="top"><code>EnumType</code> and <code>TypeDefinition</code>&nbsp;element in unversioned namespace</td>
           <td align="left" valign="top">Unversioned JSON file</td>
         </tr>
         <tr>
-          <td align="left" valign="top"><code>EnumType</code> element and <code>TypeDefinition</code>&nbsp;element in versioned namespace</td>
+          <td align="left" valign="top"><code>EnumType</code> and <code>TypeDefinition</code>&nbsp;element in versioned namespace</td>
           <td align="left" valign="top">Current and newer JSON file versions</td>
         </tr>
       </tbody>
