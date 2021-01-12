@@ -123,63 +123,76 @@ To process CSDL files, the CSDL-to-JSON converter:
       <col width="40%">
       <thead>
         <tr>
-          <th align="left" valign="top"> For&nbsp;every</th>
-          <th align="left" valign="top"> In namespace of type</th>
-          <th align="left" valign="top"> Marked abstract</th>
-          <th align="left" valign="top"> Tool&nbsp;generates JSON file of type</th>
+          <th align="left" valign="top">For&nbsp;every</th>
+          <th align="left" valign="top">In namespace of type</th>
+          <th align="left" valign="top">Marked abstract</th>
+          <th align="left" valign="top">Tool&nbsp;generates JSON file of type</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td align="left" valign="top">
-            <code>EntityType</code> and <code>ComplexType</code> element
-          </td>
-          <td align="left" valign="top"> Versioned </td>
-          <td align="left" valign="top"> Yes </td>
-          <td align="left" valign="top"> Unversioned that uses <code>anyOf</code> statement to point to all JSON file versions </td>
+          <td align="left" valign="top"><code>EntityType</code> element</td>
+          <td align="left" valign="top">Versioned</td>
+          <td align="left" valign="top">Yes</td>
+          <td align="left" valign="top">Unversioned that uses <code>anyOf</code> statement to point to all JSON file versions</td>
         </tr>
         <tr>
-          <td align="left" valign="top">
-            <code>EntityType</code> and <code>ComplexType</code> element
-          </td>
-          <td align="left" valign="top"> Unversioned </td>
-          <td align="left" valign="top"> No </td>
-          <td align="left" valign="top"> Unversioned </td>
+          <td align="left" valign="top"><code>EntityType</code> element</td>
+          <td align="left" valign="top">Unversioned</td>
+          <td align="left" valign="top">No</td>
+          <td align="left" valign="top">Unversioned</td>
         </tr>
         <tr>
-          <td align="left" valign="top">
-            <code>EntityType</code> and <code>ComplexType</code> element
-          </td>
+          <td align="left" valign="top"><code>EntityType</code> element</td>
+          <td align="left" valign="top" colspan="2">Versioned</td>
+          <td align="left" valign="top">Current and newer versions</td>
+        </tr>
+        <tr>
+          <td align="left" valign="top"><code>ComplexType</code> element</td>
+          <td align="left" valign="top">Versioned</td>
+          <td align="left" valign="top">Yes</td>
+          <td align="left" valign="top">Unversioned that uses <code>anyOf</code> statement to point to all JSON file versions</td>
+        </tr>
+        <tr>
+          <td align="left" valign="top"><code>ComplexType</code> element</td>
+          <td align="left" valign="top">Unversioned</td>
+          <td align="left" valign="top">No</td>
+          <td align="left" valign="top">Unversioned</td>
+        </tr>
+        <tr>
+          <td align="left" valign="top"><code>ComplexType</code> element</td>
           <td align="left" valign="top" colspan="2">Versioned </td>
-          <td align="left" valign="top"> Current and newer versions </td>
+          <td align="left" valign="top">Current and newer versions</td>
         </tr>
         <tr>
-          <td align="left" valign="top">
-            <code>Action</code> property
-          </td>
-          <td align="left" valign="top" colspan="2">Unversioned </td>
-          <td align="left" valign="top"> All versions</td>
+          <td align="left" valign="top"><code>Action</code> property</td>
+          <td align="left" valign="top" colspan="2">Unversioned</td>
+          <td align="left" valign="top">All versions</td>
         </tr>
         <tr>
-          <td align="left" valign="top">
-            <code>Action</code> property
-          </td>
-          <td align="left" valign="top" colspan="2">Versioned </td>
-          <td align="left" valign="top"> Current and newer versions </td>
+          <td align="left" valign="top"><code>Action</code> property</td>
+          <td align="left" valign="top" colspan="2">Versioned</td>
+          <td align="left" valign="top">Current and newer versions</td>
         </tr>
         <tr>
-          <td align="left" valign="top">
-            <code>EnumType</code> and <code>TypeDefinition</code>&nbsp;element
-          </td>
-          <td align="left" valign="top" colspan="2">Unversioned </td>
-          <td align="left" valign="top"> Unversioned </td>
+          <td align="left" valign="top"><code>EnumType</code>&nbsp;element</td>
+          <td align="left" valign="top" colspan="2">Unversioned</td>
+          <td align="left" valign="top">Unversioned</td>
         </tr>
         <tr>
-          <td align="left" valign="top">
-            <code>EnumType</code> and <code>TypeDefinition</code>&nbsp;element
-          </td>
-          <td align="left" valign="top" colspan="2">Versioned </td>
-          <td align="left" valign="top"> Current and newer versions </td>
+          <td align="left" valign="top"><code>EnumType</code>&nbsp;element</td>
+          <td align="left" valign="top" colspan="2">Versioned</td>
+          <td align="left" valign="top">Current and newer versions</td>
+        </tr>
+        <tr>
+          <td align="left" valign="top"><code>TypeDefinition</code>&nbsp;element</td>
+          <td align="left" valign="top" colspan="2">Unversioned</td>
+          <td align="left" valign="top">Unversioned</td>
+        </tr>
+        <tr>
+          <td align="left" valign="top"><code>TypeDefinition</code>&nbsp;element</td>
+          <td align="left" valign="top" colspan="2">Versioned</td>
+          <td align="left" valign="top">Current and newer versions</td>
         </tr>
       </tbody>
     </table>
