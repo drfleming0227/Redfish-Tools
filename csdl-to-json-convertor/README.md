@@ -118,23 +118,25 @@ To process CSDL files, the CSDL-to-JSON converter:
     For the following elements and properties in every versioned and unversioned namespace in each XML file, the CSDL-to-JSON converter generates corresponding JSON file or files, as follows:
 
 <table>
+  <col width="50%">
+  <col width="50%">
   <thead>
     <tr>
-      <th align="left" valign="top"><code>EntityType</code> and <code>ComplexType</code> definitions that are in</th>
-      <th align="left" valign="top">Tool&nbsp;converts definition to</th>
+      <th align="left" valign="top">EntityType and ComplexType definitions that are</th>
+      <th align="left" valign="top">Tool converts definition to</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td align="left" valign="top">An unversioned namespace and are marked as abstract</td>
+      <td align="left" valign="top">In an unversioned namespace and are marked as abstract</td>
       <td align="left" valign="top">Unversioned JSON Schema that uses <code>anyOf</code> statement to point to all versioned definitions</td>
     </tr>
     <tr>
-      <td align="left" valign="top">An unversioned namespace and are not marked as abstract</td>
+      <td align="left" valign="top">In an unversioned namespace and are not marked as abstract</td>
       <td align="left" valign="top">Unversioned JSON Schema file</td>
     </tr>
     <tr>
-      <td align="left" valign="top">A versioned namespace</td>
+      <td align="left" valign="top">In a versioned namespace</td>
       <td align="left" valign="top">That version of the JSON Schema file and newer JSON Schema files</td>
     </tr>
   </tbody>
