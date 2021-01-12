@@ -2,11 +2,7 @@
 
 Copyright 2016-2021 Distributed Management Task Force, Inc. All rights reserved.
 
-The Redfish docs generator &mdash; [`doc_generator.py`](#doc_generator.py) &mdash; is a Python tool that processes JSON Schema files to generate Markdown, Slate, HTML, CSV, or property index documentation. Typically, the tool processes an entire set of JSON Schema files for a version.
-
-By default, `doc_generator.py` looks for a `json-schema` directory and supplemental files in the [configuration](#configuration) file that you specify when you run it. Several flavors of configuration files are available.
-
-Output formats include:
+The Redfish docs generator &mdash; [`doc_generator.py`](#doc_generator.py) &mdash; is a Python tool that processes JSON Schema files to generate documentation output. Output formats include:
 
 * (Default) GitHub-flavored Markdown targeted for the [Slate API docs generator](https://github.com/slatedocs/slate "https://github.com/slatedocs/slate")
 * Markdown targeted for the DMTF document publication process
@@ -24,7 +20,12 @@ Output formats include:
 
 ## Version 3 changes
 
-The [Redfish docs generator v3](CHANGES_v2_to_v3.md) introduces breaking changes in how you configure the `doc_generator.py` tool and updates the `README` file. See [Doc Generator v2](https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0 "https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0") for a snapshot of the *version 2* code.
+The [Redfish docs generator v3](CHANGES_v2_to_v3.md):
+
+* Introduces breaking changes in how you configure the `doc_generator.py` tool.
+* Updates the `README` file.
+
+For a snapshot of the *version 2* code, see [Doc Generator v2](https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0 "https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0").
 
 ## Installation
 
@@ -39,20 +40,21 @@ The [Redfish docs generator v3](CHANGES_v2_to_v3.md) introduces breaking changes
       $ pip install -r requirements.txt
       ```
 1. (Optional) If you make changes to the `doc_generator.py` code:
-    * Install [pytest](https://docs.pytest.org/en/latest/getting-started.html "https://docs.pytest.org/en/latest/getting-started.html").
-    * Run the tests:
+    * Install `pytest`:
 
       ```bash
       $ cd doc-generator
       $ pip install -r dev_requirements.txt
       ```
 
-      To run the tests:
+    * Run the tests:
 
       ```bash
       $ cd doc-generator
       $ pytest
       ```
+
+    See [pytest](https://docs.pytest.org/en/latest/getting-started.html "https://docs.pytest.org/en/latest/getting-started.html").
 
 ## Usage
 
@@ -120,6 +122,12 @@ Use the `--config` option to specify the configuration file, which defines:
 * Many optional parameters
 
 See [Redfish docs generator: Configuration](README_config_files.md).
+
+## Processing
+
+By default, `doc_generator.py` looks for a `json-schema` directory and supplemental files in the [configuration](#configuration) file that you specify when you run it. Several flavors of configuration files are available.
+
+Typically, the tool processes an entire set of JSON Schema files for a version.
 
 ## Notes
 
