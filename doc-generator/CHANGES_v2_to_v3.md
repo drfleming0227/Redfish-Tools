@@ -8,10 +8,10 @@ This document describes the changes and how to update your configuration files.
 
 ## Contents
 
-* [Configuration file changes](#configuration-file-changes)
-* [Supplemental material changes](#supplemental-material-changes)
+* [Summary of configuration changes](#summary-of-configuration-changes)
 * [Base configuration file changes](#base-configuration-file-changes)
-* [Content supplement JSON file](#content-supplement-json-file)
+* [Supplemental material changes](#supplemental-material-changes)
+* [Content supplement configuration file changes](#content-supplement-configuration-file-changes)
 
 ## Summary of configuration changes
 
