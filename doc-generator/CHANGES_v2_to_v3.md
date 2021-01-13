@@ -4,16 +4,14 @@ The Redfish docs generator v3 changes the inputs that the tool accepts.
 
 > **Note:** These changes are not backward compatible so if you want to run the tool against an existing set of configuration files and you do not need v3 or later changes, use the latest [Redfish docs generator v2 release](https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0 "https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0").
 
-## Contents
-
 This document describes the changes and how to update your configuration files.
+
+## Contents
 
 * [Configuration file changes](#configuration-file-changes)
 * [Supplemental material changes](#supplemental-material-changes)
-* [Fields removed from the base configuration](#fields-removed-from-the-base-configuration)
-* [Fields renamed in the base configuration](#fields-renamed-in-the-base-configuration)
-* [Content supplement JSON file](
-#content-supplement-json-file)
+* [Base configuration file changes](#base-configuration-file-changes)
+* [Content supplement JSON file](#content-supplement-json-file)
 
 ## Configuration file changes
 
@@ -71,7 +69,7 @@ The Redfish docs generator v3 takes configuration input from the command line an
 
 ## Supplemental material changes
 
-Features that previously were specified within the *Supplemental Material* Markdown document are all available elsewhere:
+Features that previously were specified within the *Supplemental Material* Markdown document are available elsewhere:
 
 | Feature              | Description                                                       |
 | :------------------- | :---------------------------------------------------------------- |
@@ -103,15 +101,13 @@ The `units_translation` field replaces the **Units Translation** table, which ha
 | :------------------------- | :----------------------------- |
 | Units translation | `units_translation` in content supplement |
 
-## Fields removed from the base configuration
+## Base configuration file changes
 
-These fields have been moved from the base `config.json` into the content supplement:
+These fields have been moved from the base `config.json` into the content supplement file:
 
 * `property_description_overrides`
 * `property_fulldescription_overrides`
 * `units_translation`
-
-## Fields renamed in the base configuration
 
 These *Property Index* mode fields that are specified in `config.json` have been renamed:
 
