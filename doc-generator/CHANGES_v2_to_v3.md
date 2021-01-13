@@ -47,7 +47,7 @@ The Redfish docs generator v3 takes configuration input from the command line an
     </tr>
     <tr>
       <td />
-      <td align="left" valign="top">Boilerplate postscript</td>
+      <td align="left" valign="top">Boilerplate&nbsp;postscript</td>
       <td align="left" valign="top"><a href="sample_inputs/standard_html/postscript.md"><code>postscript.md</code></a></td>
       <td align="left" valign="top">Markdown or HTML</td>
       <td align="left" valign="top">Content to place in the output verbatim after the generated documentation. Can include an <code>[add_toc]</code> directive that specifies location for the table of contents.</td>
