@@ -13,7 +13,7 @@ This document describes the changes and how to update your configuration files.
 * [Base configuration file changes](#base-configuration-file-changes)
 * [Content supplement JSON file](#content-supplement-json-file)
 
-## Configuration file changes
+## Summary of configuration changes
 
 The Redfish docs generator v3 takes configuration input from the command line and the base configuration file. The base configuration file can include pointers to other files.
 
@@ -27,45 +27,60 @@ The Redfish docs generator v3 takes configuration input from the command line an
     <tr>
       <th align="left" valign="top" colspan="2">File type</th>
       <th align="left" valign="top">Example</th>
-      <th align="left" valign="top">Format</th>
       <th align="left" valign="top">Description</th>
+      <th align="left" valign="top">For changes, see</th>
     </tr>
     <tr>
       <td align="left" valign="top" colspan="2"><a href="README_config_files.md#base-configuration-file">Base&nbsp;configuration</a></td>
       <td align="left" valign="top"><a href="sample_inputs/standard_html/config.json"><code>config.json</code></a></td>
-      <td align="left" valign="top">JSON</td>
-      <td align="left" valign="top">Top-level configuration file, including all command-line options. Also specifies the locations of the following configuration files.</td>
+      <td align="left" valign="top">JSON file. Base configuration file, including all command-line options. Also specifies the locations of the following configuration files.</td>
+      <td align="left" valign="top"><a href="#base-configuration-file-changes">Base configuration file changes</a></td>
     </tr>
     <tr>
       <td />
       <td align="left" valign="top">Boilerplate intro</td>
       <td align="left" valign="top"><a href="sample_inputs/standard_html/intro.md"><code>intro.md</code></a></td>
-      <td align="left" valign="top">Markdown or HTML</td>
-      <td align="left" valign="top">Content to place in the output verbatim before the generated documentation. Can include an `[add_toc]` directive that specifies location for the table of contents.</td>
+      <td align="left" valign="top">Markdown or HTML file that contains content to place in the output verbatim before the generated documentation. Can include an `[add_toc]` directive that specifies location for the table of contents.</td>
+      <td align="left" valign="top"><a href="#base-configuration-file-changes">Base configuration file changes</a></td>
     </tr>
     <tr>
       <td />
       <td align="left" valign="top">Boilerplate&nbsp;postscript</td>
       <td align="left" valign="top"><a href="sample_inputs/standard_html/postscript.md"><code>postscript.md</code></a></td>
-      <td align="left" valign="top">Markdown or HTML</td>
-      <td align="left" valign="top">Content to place in the output verbatim after the generated documentation. Can include an <code>[add_toc]</code> directive that specifies location for the table of contents.</td>
+      <td align="left" valign="top">Markdown or HTML file that contains content to place in the output verbatim after the generated documentation. Can include an <code>[add_toc]</code> directive that specifies location for the table of contents.</td>
+      <td align="left" valign="top"><a href="#base-configuration-file-changes">Base configuration file changes</a></td>
     </tr>
     <tr>
       <td />
       <td align="left" valign="top"><a href="README_config_files.md#content-supplement-configuration-file">Content supplement</a></td>
       <td align="left" valign="top"><a href="sample_inputs/standard_html/content_supplement.json"><code>content_supplement.json</code></a></td>
-      <td align="left" valign="top">JSON</td>
-      <td align="left" valign="top">Text replacements and additions. Includes text overrides for property descriptions, units translation (replacements for unit abbreviations), schema-specific intros, postscripts, and property description substitutions.</td>
+      <td align="left" valign="top">JSON file that defines text replacements and additions. Includes text overrides for property descriptions, units translation (replacements for unit abbreviations), schema-specific intros, postscripts, and property description substitutions.</td>
+      <td align="left" valign="top"><a href="#supplemental-material-changes">Supplemental material changes</a></td>
     </tr>
     <tr>
       <td />
       <td align="left" valign="top">Subset document</td>
       <td align="left" valign="top"><a href="sample_inputs/subset/config.json"><code>config.json</code></a></td>
-      <td align="left" valign="top">JSON</td>
-      <td align="left" valign="top">Subset profile, unchanged for v3. _Link to spec for this?_</td>
+      <td align="left" valign="top">JSON file that defines the subset profile.</td>
+  <td align="left" valign="top">Unchanged for v3. _Link to spec for this?_</td>
     </tr>
   </tbody>
 </table>
+
+## Base configuration file changes
+
+These fields have been moved from the base `config.json` into the content supplement file:
+
+* `property_description_overrides`
+* `property_fulldescription_overrides`
+* `units_translation`
+
+These *Property Index* mode fields that are specified in `config.json` have been renamed:
+
+| Old name               | New name                | Notes                                         |
+| :--------------------- | :---------------------- | :-------------------------------------------- |
+| `ExcludedProperties`   | `excluded_properties`   | As in other modes.                            |
+| `DescriptionOverrides` | `description_overrides` | Distinct from the `property_description_overrides` in the content supplement for other modes, and is provided in the base configuration file rather than the content supplement. |
 
 ## Supplemental material changes
 
@@ -101,22 +116,7 @@ The `units_translation` field replaces the **Units Translation** table, which ha
 | :------------------------- | :----------------------------- |
 | Units translation | `units_translation` in content supplement |
 
-## Base configuration file changes
-
-These fields have been moved from the base `config.json` into the content supplement file:
-
-* `property_description_overrides`
-* `property_fulldescription_overrides`
-* `units_translation`
-
-These *Property Index* mode fields that are specified in `config.json` have been renamed:
-
-| Old name               | New name                | Notes                                         |
-| :--------------------- | :---------------------- | :-------------------------------------------- |
-| `ExcludedProperties`   | `excluded_properties`   | As in other modes.                            |
-| `DescriptionOverrides` | `description_overrides` | Distinct from the `property_description_overrides` in the content supplement for other modes, and is provided in the base configuration file rather than the content supplement. |
-
-## Content supplement JSON file
+## Content supplement configuration file changes
 
 The content supplement contains text replacements and insertions:
 
