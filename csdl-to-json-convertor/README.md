@@ -119,19 +119,18 @@ To process CSDL files, the CSDL-to-JSON converter:
 
 
 <table width="100%">
-  <col width="10%">
-  <col width="45%">
-  <col width="45%">
+  <col width="4%">
+  <col width="48%">
+  <col width="48%">
   <thead>
     <tr>
-      <th align="left" valign="top">Definitions</th>
-      <th align="left" valign="top">That are in</th>
+      <th align="left" valign="top" colspan="2">That are in</th>
       <th align="left" valign="top">Tool converts definitions to</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td align="left" valign="top" colspan="3"><b>EntityType&nbsp;and&nbsp;ComplexType</b></td>
+      <td align="left" valign="top" colspan="3"><b>EntityType&nbsp;and&nbsp;ComplexType definitions</b></td>
     </tr>
     <tr>
       <td/>
@@ -149,7 +148,7 @@ To process CSDL files, the CSDL-to-JSON converter:
       <td align="left" valign="top">That version of the JSON Schema file and newer JSON Schema files</td>
     </tr>
     <tr>
-      <td align="left" valign="top" colspan="3"><b>Action</b></td>
+      <td align="left" valign="top" colspan="3"><b>Action definitions</b></td>
     </tr>
     <tr>
       <td/>
@@ -162,7 +161,7 @@ To process CSDL files, the CSDL-to-JSON converter:
       <td align="left" valign="top">That version of the JSON Schema file and newer JSON Schema files</td>
     </tr>
     <tr>
-      <td align="left" valign="top" colspan="3"><b>EnumType and TypeDefinition</b></td>
+      <td align="left" valign="top" colspan="3"><b>EnumType and TypeDefinition definitions</b></td>
     </tr>
     <tr>
       <td/>
