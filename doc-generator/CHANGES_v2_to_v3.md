@@ -30,35 +30,35 @@ The Redfish docs generator v3 takes configuration input from the command line an
     </tr>
     <tr>
       <td align="left" valign="top" colspan="2">Configuration</td>
-      <td align="left" valign="top"><code>config.json</code></td>
+      <td align="left" valign="top"><a href="sample_inputs/standard_html/config.json"><code>config.json</code></a></td>
       <td align="left" valign="top">JSON</td>
       <td align="left" valign="top">Top-level configuration, including all command-line options. Also specifies the locations of other configuration files.</td>
     </tr>
     <tr>
       <td />
       <td align="left" valign="top">Boilerplate intro</td>
-      <td align="left" valign="top"><code>intro.md</code></td>
+      <td align="left" valign="top"><a href="sample_inputs/standard_html/intro.md"><code>intro.md</code></a></td>
       <td align="left" valign="top">Markdown or HTML</td>
       <td align="left" valign="top">Content to place in the output verbatim before the generated documentation. Can include an `[add_toc]` directive that specifies location for the table of contents.</td>
     </tr>
     <tr>
       <td />
       <td align="left" valign="top">Boilerplate postscript</td>
-      <td align="left" valign="top"><code>postscript.md</code></td>
+      <td align="left" valign="top"><a href="sample_inputs/standard_html/postscript.md"><code>postscript.md</code></a></td>
       <td align="left" valign="top">Markdown or HTML</td>
       <td align="left" valign="top">Content to place in the output verbatim after the generated documentation. Can include an <code>[add_toc]</code> directive that specifies location for the table of contents.</td>
     </tr>
     <tr>
       <td />
       <td align="left" valign="top">Content supplement</td>
-      <td align="left" valign="top"><code>content_supplement.json</code></td>
+      <td align="left" valign="top"><a href="sample_inputs/standard_html/content_supplement.json"><code>content_supplement.json</code></a></td>
       <td align="left" valign="top">JSON</td>
       <td align="left" valign="top">Text replacements and additions. Includes text overrides for property descriptions, units translation (replacements for unit abbreviations), schema-specific intros, postscripts, and property description substitutions.</td>
     </tr>
     <tr>
       <td />
       <td align="left" valign="top">Subset document</td>
-      <td align="left" valign="top"></td>
+      <td align="left" valign="top"><a href="sample_inputs/subset/config.json"><code>config.json</code></a></td>
       <td align="left" valign="top">JSON</td>
       <td align="left" valign="top">Subset profile, unchanged for v3. _Link to spec for this?_</td>
     </tr>
