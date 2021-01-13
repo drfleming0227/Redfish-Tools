@@ -1,6 +1,10 @@
 # Redfish docs generator v3 changes
 
-The Redfish docs generator v3 changes the inputs that the tool accepts. These changes are not backward compatible so if you don't need v3 or later changes and you want to run the tool against an existing set of configuration files, use the latest [Redfish docs generator v2 release](https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0 "https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0").
+The Redfish docs generator v3 changes the inputs that the tool accepts.
+
+> **Note:** These changes are not backward compatible so if you want to run the tool against an existing set of configuration files and you do not need v3 or later changes, use the latest [Redfish docs generator v2 release](https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0 "https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0").
+
+## Contents
 
 This document describes the changes and how to update your configuration files.
 
@@ -29,7 +33,7 @@ The Redfish docs generator v3 takes configuration input from the command line an
       <th align="left" valign="top">Description</th>
     </tr>
     <tr>
-      <td align="left" valign="top" colspan="2">Configuration</td>
+      <td align="left" valign="top" colspan="2"><a href="doc-generator/README_config_files.md#base-configuration-file">Base configuration</a></td>
       <td align="left" valign="top"><a href="sample_inputs/standard_html/config.json"><code>config.json</code></a></td>
       <td align="left" valign="top">JSON</td>
       <td align="left" valign="top">Top-level configuration, including all command-line options. Also specifies the locations of other configuration files.</td>
@@ -50,7 +54,7 @@ The Redfish docs generator v3 takes configuration input from the command line an
     </tr>
     <tr>
       <td />
-      <td align="left" valign="top">Content supplement</td>
+      <td align="left" valign="top"><a href="doc-generator/README_config_files.md#content-supplement-configuration-file">Content supplement</a></td>
       <td align="left" valign="top"><a href="sample_inputs/standard_html/content_supplement.json"><code>content_supplement.json</code></a></td>
       <td align="left" valign="top">JSON</td>
       <td align="left" valign="top">Text replacements and additions. Includes text overrides for property descriptions, units translation (replacements for unit abbreviations), schema-specific intros, postscripts, and property description substitutions.</td>
