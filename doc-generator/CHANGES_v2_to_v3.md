@@ -1,6 +1,6 @@
 # Redfish docs generator v3 changes
 
-The Redfish docs generator v3 introduces changes to the inputs the tool accepts. These changes are not backward compatible so if you don't need v3 or later changes and you want to run the tool against an existing set of configuration files, use the latest [Redfish docs generator v2 release](https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0 "https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0").
+The Redfish docs generator v3 changes the inputs that the tool accepts. These changes are not backward compatible so if you don't need v3 or later changes and you want to run the tool against an existing set of configuration files, use the latest [Redfish docs generator v2 release](https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0 "https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0").
 
 This document describes the changes and how to update your configuration files.
 
@@ -13,23 +13,57 @@ This document describes the changes and how to update your configuration files.
 
 ## Configuration file changes
 
-The Redfish docs generator v3 takes configuration input from:
+The Redfish docs generator v3 takes configuration input from the command line and the base configuration file. The base configuration file can include pointers to other files.
 
-* The command line
-* A configuration file. The configuration file can embed these files:
-
-		* (Optional) Boilerplate intro document. "boilerplate_intro &mdash; "./intro.md",
+<!-- 		* (Optional) Boilerplate intro document. "boilerplate_intro &mdash; "./intro.md",
         * (Optional) Boilerplate postscript document. "boilerplate_postscript &mdash; "./postscript.md",
 		* Schema supplement file. "content_supplement &mdash; "./content_supplement.json"
-		* (Profile and subset modes only) Mode-specific configuration file
+		* (Profile and subset modes only) Mode-specific configuration file -->
 
-| File type              | Example                   | Format           | Purpose                                                       |
-| :--------------------- | :------------------------ | :--------------- | :------------------------------------------------------------ |
-| Configuration          | `config.json`             | JSON             | Top-level configuration, including all command-line options. Also specifies the locations of other configuration files. |
-| Boilerplate intro      | `intro.md`                | Markdown or HTML | Content to place in the output verbatim before the generated documentation. Can include an `[add_toc]` directive that specifies location for the table of contents. |
-| Boilerplate postscript | `postscript.md`           | Markdown or HTML | Content to place in the output verbatim after the generated documentation. Can include an `[add_toc]` directive that specifies location for the table of contents. |
-| Content supplement     | `content_supplement.json` | JSON             | Text replacements and additions. Includes text overrides for property descriptions, units translation (replacements for unit abbreviations), schema-specific intros, postscripts, and property description substitutions. |
-| subset doc             |                           | JSON             | Subset profile, unchanged for v3. _Link to spec for this?_         |
+<table width="100%">
+  <tbody>
+    <tr>
+      <th align="left" valign="top" colspan="2">File type</th>
+      <th align="left" valign="top">Example</th>
+      <th align="left" valign="top">Format</th>
+      <th align="left" valign="top">Description</th>
+    </tr>
+    <tr>
+      <td align="left" valign="top" colspan="2">Configuration</td>
+      <td align="left" valign="top"><code>config.json</code></td>
+      <td align="left" valign="top">JSON</td>
+      <td align="left" valign="top">Top-level configuration, including all command-line options. Also specifies the locations of other configuration files.</td>
+    </tr>
+    <tr>
+      <td />
+      <td align="left" valign="top">Boilerplate intro</td>
+      <td align="left" valign="top"><code>intro.md</code></td>
+      <td align="left" valign="top">Markdown or HTML</td>
+      <td align="left" valign="top">Content to place in the output verbatim before the generated documentation. Can include an `[add_toc]` directive that specifies location for the table of contents.</td>
+    </tr>
+    <tr>
+      <td />
+      <td align="left" valign="top">Boilerplate postscript</td>
+      <td align="left" valign="top"><code>postscript.md</code></td>
+      <td align="left" valign="top">Markdown or HTML</td>
+      <td align="left" valign="top">Content to place in the output verbatim after the generated documentation. Can include an <code>[add_toc]</code> directive that specifies location for the table of contents.</td>
+    </tr>
+    <tr>
+      <td />
+      <td align="left" valign="top">Content supplement</td>
+      <td align="left" valign="top"><code>content_supplement.json</code></td>
+      <td align="left" valign="top">JSON</td>
+      <td align="left" valign="top">Text replacements and additions. Includes text overrides for property descriptions, units translation (replacements for unit abbreviations), schema-specific intros, postscripts, and property description substitutions.</td>
+    </tr>
+    <tr>
+      <td />
+      <td align="left" valign="top">Subset document</td>
+      <td align="left" valign="top"></td>
+      <td align="left" valign="top">JSON</td>
+      <td align="left" valign="top">Subset profile, unchanged for v3. _Link to spec for this?_</td>
+    </tr>
+  </tbody>
+</table>
 
 ## Supplemental material changes
 
