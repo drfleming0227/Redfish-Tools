@@ -33,10 +33,10 @@ The Redfish docs generator v3 takes configuration input from the command line an
       <th align="left" valign="top">Description</th>
     </tr>
     <tr>
-      <td align="left" valign="top" colspan="2"><a href="doc-generator/README_config_files.md#base-configuration-file">Base configuration</a></td>
+      <td align="left" valign="top" colspan="2"><a href="doc-generator/README_config_files.md#base-configuration-file">Base&nbsp;configuration</a></td>
       <td align="left" valign="top"><a href="sample_inputs/standard_html/config.json"><code>config.json</code></a></td>
       <td align="left" valign="top">JSON</td>
-      <td align="left" valign="top">Top-level configuration, including all command-line options. Also specifies the locations of other configuration files.</td>
+      <td align="left" valign="top">Top-level configuration file, including all command-line options. Also specifies the locations of the following configuration files.</td>
     </tr>
     <tr>
       <td />
