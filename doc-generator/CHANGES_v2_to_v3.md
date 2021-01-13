@@ -85,13 +85,13 @@ The `units_translation` field replaces the **Units Translation** table, which ha
 
 The <a href="README_config_files.md#content-supplement-configuration-file">content supplement configuration file</a> is a JSON file that contains text replacements and additions to apply to the generated schema documentation. It includes text overrides for property descriptions, replacements for unit abbreviations, and schema-specific content including introductions, postscripts, and property description substitutions.
 
-| Configuration key | Type | Description |
-| :-------- | :--- | :---------- |
-| `property_description_overrides` | Dictionary | Maps property names to strings to use to replace the descriptions of the named properties. |
-| `property_fulldescription_overrides` | Dictionary | Just like `property_description_overrides`. These replacements are *full* in that any additional information the `doc_generator.py` normally appends, like a reference to the definition of the property in another schema, is omitted. |
-| `schema_link_replacements` | Dictionary | Maps URIs of schema references to a structure that specifies either the full or partial match type and replacement URIs. Use to substitute a link to documentation where a link to a specific schema would otherwise appear in the documentation. | [schema_link_replacements attribute](README_config_files.md/#schema-link-replacements-attribute)|
-| `schema_supplement` | Dictionary | Maps schema names to a dictionary of structured content, including introductory text and schema-specific text replacements. | [schema_supplement attribute](README_config_files.md/#schema-supplement-attribute) |
-| `units_translation` | Dictionary | Maps units as they appear in Redfish schemas to units as you want them to appear in the documentation. |
+| Configuration key | Type | Description | Change |
+| :-------- | :--- | :---------- | :-------- |
+| `property_description_overrides` | Dictionary | Maps property names to strings to use to replace the descriptions of the named properties. | Moved from base configuration file. |
+| `property_fulldescription_overrides` | Dictionary | Just like `property_description_overrides`. These replacements are *full* in that any additional information the `doc_generator.py` normally appends, like a reference to the definition of the property in another schema, is omitted. | Moved from base configuration file. |
+| `schema_link_replacements` | Dictionary | Maps URIs of schema references to a structure that specifies either the full or partial match type and replacement URIs. Use to substitute a link to documentation where a link to a specific schema would otherwise appear in the documentation. | [schema_link_replacements attribute](README_config_files.md/#schema-link-replacements-attribute) | |
+| `schema_supplement` | Dictionary | Maps schema names to a dictionary of structured content, including introductory text and schema-specific text replacements. | [schema_supplement attribute](README_config_files.md/#schema-supplement-attribute) | |
+| `units_translation` | Dictionary | Maps units as they appear in Redfish schemas to units as you want them to appear in the documentation. | Moved from base configuration file. |
 
 For an example of the content supplement configuration file, see <a href="sample_inputs/standard_html/content_supplement.json"><code>content_supplement.json</code></a>.
 
