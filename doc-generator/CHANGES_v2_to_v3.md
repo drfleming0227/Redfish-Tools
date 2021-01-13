@@ -23,7 +23,7 @@ This document describes which files have been changed or added, and how to updat
 
 ## Base configuration file changes
 
-The <a href="README_config_files.md#base-configuration-file">base&nbsp;configuration file</a> is a JSON configuration file. It is the base configuration file, which includes all command-line options and provides links to the other configuration files and supplementary Markdown files:
+The <a href="README_config_files.md#base-configuration-file">base&nbsp;configuration file</a> is a JSON configuration file that includes all command-line options and that can provide links to the following configuration files and supplementary Markdown files:
 
 <ul>
   <li>Boilerplate intro file</li>
@@ -32,7 +32,7 @@ The <a href="README_config_files.md#base-configuration-file">base&nbsp;configura
   <li>(Profile and subset modes only) Subset configuration file</li>
 </ul>
 
-These fields have been moved from the base `config.json` into the content supplement file:
+These fields have been moved from the base `config.json` into the [content supplement configuration file](#content-supplement-configuration-file-changes):
 
 * `property_description_overrides`
 * `property_fulldescription_overrides`
@@ -83,7 +83,7 @@ The `units_translation` field replaces the **Units Translation** table, which ha
 
 ## Content supplement configuration file changes
 
-The <a href="README_config_files.md#content-supplement-configuration-file">Content supplement configuration file</a> is a JSON file that defines text replacements and additions. Includes text overrides for property descriptions, units translation (replacements for unit abbreviations), schema-specific intros, postscripts, and property description substitutions.
+The <a href="README_config_files.md#content-supplement-configuration-file">Content supplement configuration file</a> is a JSON file that defines text replacements and additions. It includes text overrides for property descriptions, replacements for unit abbreviations, schema-specific intros, postscripts, and property description substitutions.
 
 The content supplement contains text replacements and insertions:
 
