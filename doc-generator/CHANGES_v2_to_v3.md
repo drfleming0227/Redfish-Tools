@@ -8,21 +8,20 @@ This document describes the changes and how to update your configuration files.
 * [Supplemental material changes](#supplemental-material-changes)
 * [Fields removed from the base configuration](#fields-removed-from-the-base-configuration)
 * [Fields renamed in the base configuration](#fields-renamed-in-the-base-configuration)
-* [Content supplement JSON file](#content-supplement-json-file)
+* [Content supplement JSON file](
+#content-supplement-json-file)
 
 ## Configuration file changes
 
 The Redfish docs generator v3 takes configuration input from:
 
 * The command line
-* A configuration file
-* (Optional) Boilerplate document
-* Schema supplement file
-* (Profile and subset modes only) Mode-specific configuration file
+* A configuration file. The configuration file can embed these files:
 
-    "boilerplate_intro | "./intro.md",
-    "boilerplate_postscript | "./postscript.md",
-    "content_supplement | "./content_supplement.json"
+		* (Optional) Boilerplate intro document. "boilerplate_intro &mdash; "./intro.md",
+        * (Optional) Boilerplate postscript document. "boilerplate_postscript &mdash; "./postscript.md",
+		* Schema supplement file. "content_supplement &mdash; "./content_supplement.json"
+		* (Profile and subset modes only) Mode-specific configuration file
 
 | File type              | Example                   | Format           | Purpose                                                       |
 | :--------------------- | :------------------------ | :--------------- | :------------------------------------------------------------ |
