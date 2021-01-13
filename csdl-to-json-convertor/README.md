@@ -127,7 +127,7 @@ To process CSDL files, the CSDL-to-JSON converter:
           <th align="left" valign="top" colspan="3"><code>EntityType</code>&nbsp;and&nbsp;<code>ComplexType</code> definitions</th>
         </tr>
         <tr>
-          <th rowspan="4"/>
+          <th/>
           <th align="left" valign="top">That are in</th>
           <th align="left" valign="top">Tool converts definitions to</th>
         </tr>
@@ -150,7 +150,7 @@ To process CSDL files, the CSDL-to-JSON converter:
           <th align="left" valign="top" colspan="3"><code>Action</code> definitions</th>
         </tr>
         <tr>
-          <th rowspan="3"/>
+          <th/>
           <th align="left" valign="top">That are in</th>
           <th align="left" valign="top">Tool converts definitions to</th>
         </tr>
@@ -168,7 +168,7 @@ To process CSDL files, the CSDL-to-JSON converter:
           <th align="left" valign="top" colspan="3"><code>EnumType</code> and <code>TypeDefinition</code> definitions</th>
         </tr>
         <tr>
-          <th rowspan="3"/>
+          <th/>
           <th align="left" valign="top">That are in</th>
           <th align="left" valign="top">Tool converts definitions to</th>
         </tr>
