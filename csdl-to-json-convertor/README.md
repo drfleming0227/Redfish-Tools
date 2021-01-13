@@ -122,21 +122,19 @@ To process CSDL files, the CSDL-to-JSON converter:
   <col width="4%">
   <col width="48%">
   <col width="48%">
-  <thead>
-    <tr>
-      <th/>
-      <th align="left" valign="top">That are in</th>
-      <th align="left" valign="top">Tool converts definitions to</th>
-    </tr>
-  </thead>
   <tbody>
     <tr>
       <td align="left" valign="top" colspan="3"><b>EntityType&nbsp;and&nbsp;ComplexType definitions</b></td>
     </tr>
     <tr>
+      <th/>
+      <th align="left" valign="top">That are in</th>
+      <th align="left" valign="top">Tool converts definitions to</th>
+    </tr>
+    <tr>
       <td/>
       <td align="left" valign="top">Unversioned namespace and marked as abstract</td>
-      <td align="left" valign="top">Unversioned JSON Schema.<br/><br/>Uses <code>anyOf</code> statement to point to all versioned definitions.</td>
+      <td align="left" valign="top">Unversioned JSON Schema,<br/>which uses <code>anyOf</code> statement to point to all versioned definitions.</td>
     </tr>
     <tr>
       <td/>
@@ -152,6 +150,11 @@ To process CSDL files, the CSDL-to-JSON converter:
       <td align="left" valign="top" colspan="3"><b>Action definitions</b></td>
     </tr>
     <tr>
+      <th/>
+      <th align="left" valign="top">That are in</th>
+      <th align="left" valign="top">Tool converts definitions to</th>
+    </tr>
+    <tr>
       <td/>
       <td align="left" valign="top">Unversioned namespace</td>
       <td align="left" valign="top">All versioned JSON Schema files</td>
@@ -163,6 +166,11 @@ To process CSDL files, the CSDL-to-JSON converter:
     </tr>
     <tr>
       <td align="left" valign="top" colspan="3"><b>EnumType and TypeDefinition definitions</b></td>
+    </tr>
+    <tr>
+      <th/>
+      <th align="left" valign="top">That are in</th>
+      <th align="left" valign="top">Tool converts definitions to</th>
     </tr>
     <tr>
       <td/>
