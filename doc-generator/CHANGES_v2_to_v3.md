@@ -15,54 +15,57 @@ This document describes the changes and how to update your configuration files.
 
 ## Summary of configuration changes
 
-The Redfish docs generator v3 takes configuration input from the command line and the base configuration file. The base configuration file can include pointers to other files.
-
-<!-- 		* (Optional) Boilerplate intro document. "boilerplate_intro &mdash; "./intro.md",
-        * (Optional) Boilerplate postscript document. "boilerplate_postscript &mdash; "./postscript.md",
-		* Schema supplement file. "content_supplement &mdash; "./content_supplement.json"
-		* (Profile and subset modes only) Mode-specific configuration file -->
+The Redfish docs generator v3 takes configuration input from the command line and the base configuration file. The base configuration file can include pointers to other configuration files and supplementary Markdown files.
 
 <table width="100%">
   <tbody>
     <tr>
-      <th align="left" valign="top" colspan="2">File type</th>
+      <th align="left" valign="top">File</th>
+      <th align="left" valign="top">Format</th>
       <th align="left" valign="top">Example</th>
       <th align="left" valign="top">Description</th>
       <th align="left" valign="top">For changes, see</th>
     </tr>
     <tr>
-      <td align="left" valign="top" colspan="2"><a href="README_config_files.md#base-configuration-file">Base&nbsp;configuration</a></td>
+      <td align="left" valign="top"><a href="README_config_files.md#base-configuration-file">Base&nbsp;configuration file</a></td>
+      <td align="left" valign="top">JSON</td>
       <td align="left" valign="top"><a href="sample_inputs/standard_html/config.json"><code>config.json</code></a></td>
-      <td align="left" valign="top">JSON file. Base configuration file, including all command-line options. Also specifies the locations of the following configuration files.</td>
+      <td align="left" valign="top">Base configuration file, including all command-line options. Links to the other configuration files and supplementary markdown files:<ul>
+          <li>Boilerplate intro file</li>
+          <li>Boilerplate postscript file</li>
+          <li>Content supplement configuration file</li>
+          <li>(Profile and subset modes only) Mode-specific configuration file</li>
+        </ul>
+      </td>
       <td align="left" valign="top"><a href="#base-configuration-file-changes">Base configuration file changes</a></td>
     </tr>
     <tr>
-      <td />
-      <td align="left" valign="top">Boilerplate intro</td>
+      <td align="left" valign="top">Boilerplate intro file</td>
+      <td align="left" valign="top">Markdown<br />or<br />HTML</td>
       <td align="left" valign="top"><a href="sample_inputs/standard_html/intro.md"><code>intro.md</code></a></td>
-      <td align="left" valign="top">Markdown or HTML file that contains content to place in the output verbatim before the generated documentation. Can include an `[add_toc]` directive that specifies location for the table of contents.</td>
+      <td align="left" valign="top">Content to place in the output before the generated documentation. Can include an <code>[add_toc]</code> directive that specifies location for the table of contents.</td>
       <td align="left" valign="top"><a href="#base-configuration-file-changes">Base configuration file changes</a></td>
     </tr>
     <tr>
-      <td />
       <td align="left" valign="top">Boilerplate&nbsp;postscript</td>
+      <td align="left" valign="top">Markdown<br />or<br />HTML</td>
       <td align="left" valign="top"><a href="sample_inputs/standard_html/postscript.md"><code>postscript.md</code></a></td>
       <td align="left" valign="top">Markdown or HTML file that contains content to place in the output verbatim after the generated documentation. Can include an <code>[add_toc]</code> directive that specifies location for the table of contents.</td>
       <td align="left" valign="top"><a href="#base-configuration-file-changes">Base configuration file changes</a></td>
     </tr>
     <tr>
-      <td />
-      <td align="left" valign="top"><a href="README_config_files.md#content-supplement-configuration-file">Content supplement</a></td>
+      <td align="left" valign="top"><a href="README_config_files.md#content-supplement-configuration-file">Content supplement configuration file</a></td>
+      <td align="left" valign="top">JSON</td>
       <td align="left" valign="top"><a href="sample_inputs/standard_html/content_supplement.json"><code>content_supplement.json</code></a></td>
       <td align="left" valign="top">JSON file that defines text replacements and additions. Includes text overrides for property descriptions, units translation (replacements for unit abbreviations), schema-specific intros, postscripts, and property description substitutions.</td>
       <td align="left" valign="top"><a href="#supplemental-material-changes">Supplemental material changes</a></td>
     </tr>
     <tr>
-      <td />
-      <td align="left" valign="top">Subset document</td>
+      <td align="left" valign="top">Subset configuration file</td>
+      <td align="left" valign="top">JSON</td>
       <td align="left" valign="top"><a href="sample_inputs/subset/config.json"><code>config.json</code></a></td>
-      <td align="left" valign="top">JSON file that defines the subset profile.</td>
-  <td align="left" valign="top">Unchanged for v3. _Link to spec for this?_</td>
+      <td align="left" valign="top">Defines the subset profile.</td>
+      <td align="left" valign="top">Unchanged for v3. _Link to spec for this?_</td>
     </tr>
   </tbody>
 </table>
