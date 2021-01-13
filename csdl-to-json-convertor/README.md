@@ -124,7 +124,7 @@ To process CSDL files, the CSDL-to-JSON converter:
   <col width="48%">
   <tbody>
     <tr>
-      <td align="left" valign="top" colspan="3"><b>EntityType&nbsp;and&nbsp;ComplexType definitions</b></td>
+      <th align="left" valign="top" colspan="3"><code>EntityType</code>&nbsp;and&nbsp;<code>ComplexType</code> definitions</th>
     </tr>
     <tr>
       <th/>
@@ -134,7 +134,7 @@ To process CSDL files, the CSDL-to-JSON converter:
     <tr>
       <td/>
       <td align="left" valign="top">Unversioned namespace and marked as abstract</td>
-      <td align="left" valign="top">Unversioned JSON Schema,<br/>which uses <code>anyOf</code> statement to point to all versioned definitions.</td>
+      <td align="left" valign="top">Unversioned JSON Schema file,<br/>which uses <code>anyOf</code> statement to point to all versioned definitions</td>
     </tr>
     <tr>
       <td/>
@@ -144,10 +144,10 @@ To process CSDL files, the CSDL-to-JSON converter:
     <tr>
       <td/>
       <td align="left" valign="top">Versioned namespace</td>
-      <td align="left" valign="top">That version of the JSON Schema file and newer JSON Schema files</td>
+      <td align="left" valign="top">That JSON Schema file version and newer JSON Schema file verions</td>
     </tr>
     <tr>
-      <td align="left" valign="top" colspan="3"><b>Action definitions</b></td>
+      <th align="left" valign="top" colspan="3"><code>Action</code> definitions</th>
     </tr>
     <tr>
       <th/>
@@ -162,10 +162,10 @@ To process CSDL files, the CSDL-to-JSON converter:
     <tr>
       <td/>
       <td align="left" valign="top">Versioned namespace</td>
-      <td align="left" valign="top">That version of the JSON Schema file and newer JSON Schema files</td>
+      <td align="left" valign="top">That JSON Schema file version and newer JSON Schema file verions</td>
     </tr>
     <tr>
-      <td align="left" valign="top" colspan="3"><b>EnumType and TypeDefinition definitions</b></td>
+      <th align="left" valign="top" colspan="3"><code>EnumType</code> and <code>TypeDefinition</code> definitions</th>
     </tr>
     <tr>
       <th/>
@@ -180,7 +180,7 @@ To process CSDL files, the CSDL-to-JSON converter:
     <tr>
       <td/>
       <td align="left" valign="top">Versioned namespace</td>
-      <td align="left" valign="top">That version of the JSON Schema file and newer JSON Schema files</td>
+      <td align="left" valign="top">That JSON Schema file version and newer JSON Schema file verions</td>
     </tr>
   </tbody>
 </table>
