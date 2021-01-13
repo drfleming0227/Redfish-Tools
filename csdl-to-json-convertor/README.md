@@ -124,7 +124,8 @@ To process CSDL files, the CSDL-to-JSON converter:
   <col width="48%">
   <thead>
     <tr>
-      <th align="left" valign="top" colspan="2">That are in</th>
+      <th/>
+      <th align="left" valign="top">That are in</th>
       <th align="left" valign="top">Tool converts definitions to</th>
     </tr>
   </thead>
@@ -135,7 +136,7 @@ To process CSDL files, the CSDL-to-JSON converter:
     <tr>
       <td/>
       <td align="left" valign="top">Unversioned namespace and marked as abstract</td>
-      <td align="left" valign="top">Unversioned JSON Schema that uses <code>anyOf</code> statement to point to all versioned definitions</td>
+      <td align="left" valign="top">Unversioned JSON Schema.<br/><br/>Uses <code>anyOf</code> statement to point to all versioned definitions.</td>
     </tr>
     <tr>
       <td/>
