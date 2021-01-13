@@ -4,9 +4,7 @@ The Redfish docs generator v3 changes the inputs that the tool accepts.
 
 > **Note:** These changes are not backward compatible so if you want to run the tool against an existing set of configuration files and you do not need v3 or later changes, use the latest [Redfish docs generator v2 release](https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0 "https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0").
 
-The Redfish docs generator v3 configures the generated documentation by using command-line input and configuration key values from the base configuration file.
-
-The base configuration file can include pointers to other configuration files and supplementary Markdown files.
+The Redfish docs generator v3 configures the generated documentation by using command-line input and configuration key values from the base configuration file. The base configuration file can include pointers to other configuration files and supplementary Markdown files.
 
 The files of interest are:
 
@@ -21,16 +19,7 @@ The files of interest are:
 * [Boilerplate intro](#boilerplate-intro-file-changes)
 * [Boilerplate postscript](#boilerplate-postscript-file-changes)
 
-This document describes the changes and how to update your configuration files.
-
-## Contents
-
-* [Base configuration file changes](#base-configuration-file-changes)
-* [Supplemental material changes](#supplemental-material-changes)
-* [Content supplement configuration file changes](#content-supplement-configuration-file-changes)
-* [Subset configuration file changes](#subset-configuration-file-changes)
-* [Boilerplate intro file changes](#boilerplate-intro-file-changes)
-* [Boilerplate postscript file changes](#boilerplate-postscript-file-changes)
+This document describes which files have been changed or added, and how to update your configuration.
 
 ## Base configuration file changes
 
