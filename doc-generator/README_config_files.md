@@ -31,12 +31,12 @@ The base configuration file is a JSON file that defines most of the docs generat
 
 Note that some configuration keys differ from their command-line argument equivalents. Unless otherwise noted, the configuration key has the same meaning as its command-line argument equivalent. The `uri_mapping` configuration key is required but all other configuration keys are optional.
 
-| Configuration key              | Type    | Description                                   |
-| :----------------------------- | :------ | :-------------------------------------------- |
-| `actions_in_property_table`    | Boolean | <ul><li><code>true</code>. Omit <code>"Actions"</code> from the property tables.</li><li><code>false</code>. (Default) Include <code>"Actions"</code> in the property tables.</li></ul> |
-| `add_toc`                      | Boolean | <p>By default, the table of contents (TOC) appears at the top of the HTML output.</p> <p>If the <code>[add_toc]</code> directive appears anywhere in the boilerplate intro or boilerplate postscript file, default is <code>true</code>.</p> <ul> <li><code>true</code>. (Default) (HTML mode only) Generate a table of contents and place it at the beginning of the generated HTML document, or, if the <code>[add_toc]</code> directive appears in the boilerplate intro or boilerplate postscript file, place the TOC in the <code>[add_toc]</code>location. </li> <li><code>false</code>. Do not generate a TOC.</li> </ul> |
-| `boilerplate_intro`            | String  | Location of the Markdown file that contains content to appear at the beginning of the document before the generated schema documentation. If a relative path, should be relative to the location of the configuration file. |
-| `boilerplate_postscript`       | String  | Location of the Markdown file that contains content to appear at the end of the document after the generated schema documentation. If a relative path, should be relative to the location of the config file. |
+| Configuration key              | Type    | Default | Description                                   |
+| :----------------------------- | :------ | :------ | :-------------------------------------------- |
+| `actions_in_property_table`    | Boolean | `true`  | <ul><li><code>true</code>. Include <code>"Actions"</code> in the property tables.</li><li><code>false</code>. Suppress <code>"Actions"</code> from the property tables.</li></ul> |
+| `add_toc`                      | Boolean | `true`  | <p>By default, the table of contents (TOC) appears at the top of the HTML output.</p> <p>If the <code>[add_toc]</code> directive appears anywhere in the boilerplate intro or boilerplate postscript file, `add_toc` key is <code>true</code>.</p> <ul><li><p><code>true</code>. Generate a TOC and place it either:</p><ul><li>At the beginning of the generated HTML file.</li><li>In the <code>[add_toc]</code>location if the <code>[add_toc]</code> directive appears in the boilerplate intro or boilerplate postscript file.</li> <li><code>false</code>. Do not generate a TOC.</li></ul> |
+| `boilerplate_intro`            | String  | None | Location of the Markdown file that contains content to appear at the beginning of the document before the generated schema documentation. If a relative path, should be relative to the location of the configuration file. |
+| `boilerplate_postscript`       | String  | None | Location of the Markdown file that contains content to appear at the end of the document after the generated schema documentation. If a relative path, should be relative to the location of the config file. |
 | `combine_multiple_refs`        | Integer | Threshold at which multiple references to the same object within a schema are moved into **Property details** instead of expanded in place.<br/><br/>For details, see [combine_multiple_refs key](#combine_multiple_refs-key). |
 | `content_supplement`           | String  | Location of a JSON-formatted content supplement file, which specifies content substitutions to be made within the generated schema documentation. If a relative path, must be relative to the location of the configuration file. |
 | `escape_chars` |         | Characters to escape in generated Markdown. For example, use `--escape=@` if your Markdown processor converts embedded `@` characters to `mailto` links.<br/><br/>**Command-line argument:**`escape` |
@@ -63,6 +63,8 @@ Note that some configuration keys differ from their command-line argument equiva
 | `uri_mapping`                  | Object  | Partial URL of schema repositories as attributes, and local directory paths as values. |
 
 ### combine_multiple_refs key
+
+This setting specifies that multiple objects within a schema, that are defined by reference to the same definition, should have their definitions moved into the Property Details section, with a single-line (row) listing for each object in the main table. combine_multiple_refs is an integer threshold at which this behavior kicks in. If it is absent or 0, no combining occurs. If it is 2 or greater, combining occurs at that number of references to the same object. A setting of 1 does not make sense and should be prevented.
 
 The `combine_multiple_refs` key specifies a threshold at which multiple references to the same object within a schema are moved into **Property details** instead of expanded in place. For example, to move an object to **Property details** if it is referred to three or more times:
 
