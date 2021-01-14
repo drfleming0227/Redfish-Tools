@@ -6,22 +6,6 @@ The configuration files for the **Redfish docs generator** &mdash; [`doc_generat
 * [Content supplement configuration file](#content-supplement-configuration-file)
 * [Subset configuration file](#subset-configuration-file)
 
-## Contents
-
-* [Base configuration file](#base-configuration-file)
-   * [Supported keys](#supported-keys)
-   * [combine_multiple_refs key](#combine_multiple_refs-key)
-   * [object_reference_disposition key](#object_reference_disposition-key)
-   * [payload_dir key](#payload_dir-key)
-   * [profile_terse key](#profile_terse-key)
-* [Content supplement configuration file](#content-supplement-configuration-file)
-   * [Supported keys](#supported-keys-1)
-   * [schema_link_replacements key](#schema_link_replacements-key)
-   * [schema_supplement key](#schema_supplement-key)
-
-
-* [Redfish doc generator examples](#redfish-doc-generator-examples)
-
 The configuration files for the **Redfish docs generator** &mdash; [`doc_generator.py`](doc_generator.py) &mdash; support all command-line arguments except the `--help` and `--config` arguments.
 
 The configuration files support additional configuration options for some output modes.
@@ -30,9 +14,17 @@ If you specify an option in more than one way, command-line arguments override t
 
 You must format configuration files in valid JSON Schema format.
 
+For example `doc_generator.py` commands with various configuration files, see [Redfish docs generator examples](#redfish-docs-generator-examples).
+
 ## Base configuration file
 
 The base configuration file is a JSON file that defines most of the docs generator options including the command-line options. You also specify the location of other configuration files, including the content supplement and introduction and postscript boilerplate files.
+
+* [Supported keys](#supported-keys)
+* [combine_multiple_refs key](#combine_multiple_refs-key)
+* [object_reference_disposition key](#object_reference_disposition-key)
+* [payload_dir key](#payload_dir-key)
+* [profile_terse key](#profile_terse-key)
 
 ### Supported keys
 
@@ -110,6 +102,10 @@ The `profile_terse` key is meaningful only when a profile document is also speci
 
 The content supplement configuration file is a JSON file that contains text replacements and additions to apply to the generated schema documentation. It includes text overrides for property descriptions, replacements for unit abbreviations, and schema-specific content including introductions, postscripts, and property description substitutions.
 
+* [Supported keys](#supported-keys-1)
+* [schema_link_replacements key](#schema_link_replacements-key)
+* [schema_supplement key](#schema_supplement-key)
+
 ### Supported keys
 
 | Configuration key | Type | Description | Details |
@@ -155,7 +151,7 @@ The `schema_supplement` key defines a dictionary of structured content, includin
          "AnotherPropertyName": "a string, plain text or markdown."
       },
       "property_fulldescription_overrides": {
-         "YetAnotherPropertyName": "a string, plain text or markdown. This string will also eliminate any additional data the doc generator would normally append to the description."
+         "YetAnotherPropertyName": "a string, plain text or markdown. This string will also eliminate any additional data the docs generator would normally append to the description."
       },
       "property_details": {
          "EnumPropertyName": "A string, plain text or markdown. This will be inserted after the property description and prior to the table of enum details in the property information under Property Details.",
@@ -207,7 +203,7 @@ xx
 }
 ```
 
-## Redfish doc generator examples
+## Redfish docs generator examples
 
 Several files in the `sample_inputs` directory provide examples of configuration files that you can use to produce different types of documentation. The following examples show some command-line invocations.
 
