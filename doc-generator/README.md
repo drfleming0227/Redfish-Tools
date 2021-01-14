@@ -106,15 +106,14 @@ optional arguments:
                         embedded @ are being converted to mailto links.
 ```
 
-For `doc_generator.py` examples, see [Redfish docs generator examples](README_config_files.md#redfish-doc-generator-examples).
+For `doc_generator.py` examples, see [Redfish docs generator examples](README_config_files.md#redfish-docs-generator-examples).
 
 ## Configuration
 
-Use the `--config` option to specify the configuration file, which defines:
+Use the `--config` option to specify the configuration file. The configuration file defines:
 
-* Many command-line options
-* Some required parameters, such as URI mappings, that you cannot specify on the command line
-* Many optional parameters
+* Required and optional parameters that you can also specify on the command line. 
+* Some required parameters, such as URI mappings, that you cannot specify on the command line.
 
 Several flavors of configuration files are available. See [Redfish docs generator: Configuration](README_config_files.md).
 
@@ -132,6 +131,6 @@ For Slate, place the `index.html.md` output in your Slate repository's source di
 
 See also:
 
-* [Redfish docs generator: V3 changes](CHANGES_v2_to_v3.md) &mdash; How to restructure your existing configuration files.
+* [Redfish docs generator: V3 changes](CHANGES_v2_to_v3.md) &mdash; How to restructure your configuration files.
 * [Redfish docs generator: Configuration](README_config_files.md) &mdash; Configuration files for the Redfish docs generator.
 * [Redfish docs generator: Property index mode](README_Property_Index.md) &mdash; Property index mode.
