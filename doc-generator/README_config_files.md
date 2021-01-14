@@ -1,5 +1,11 @@
 # Redfish docs generator: Configuration
 
+The configuration files for the **Redfish docs generator** &mdash; [`doc_generator.py`](doc_generator.py) &mdash; are:
+
+* [Base configuration file](#base-configuration-file)
+* [Content supplement configuration file](#content-supplement-configuration-file)
+* [Subset configuration file](#subset-configuration-file)
+
 ## Contents
 
 * [Base configuration file](#base-configuration-file)
@@ -12,15 +18,11 @@
    * [Supported keys](#supported-keys-1)
    * [schema_link_replacements key](#schema_link_replacements-key)
    * [schema_supplement key](#schema_supplement-key)
-* [Redfish doc generator examples](#redfish-doc-generator-examples)
-   * [Generate HTML documentation](#generate-html-documentation)
-   * [Generate HTML documentation with normative descriptions](#generate-html-documentation-with-normative-descriptions)
-   * [Generate profile index Markdown output — terse mode](#generate-profile-index-markdown-output--terse-mode)
-   * [Generate subset HTML documentation](#generate-subset-html-documentation)
-   * [Generate property index HTML output](#generate-property-index-html-output)
-   * [Generate CSV output](#generate-csv-output)
 
-The configuration files for the Redfish docs generator &mdash; [`doc_generator.py`](doc_generator.py) &mdash; support most of the `doc_generator.py` command-line arguments except the `--help` and `--config` arguments.
+
+* [Redfish doc generator examples](#redfish-doc-generator-examples)
+
+The configuration files for the **Redfish docs generator** &mdash; [`doc_generator.py`](doc_generator.py) &mdash; support all command-line arguments except the `--help` and `--config` arguments.
 
 The configuration files support additional configuration options for some output modes.
 
@@ -165,11 +167,45 @@ The `schema_supplement` key defines a dictionary of structured content, includin
 }
 ```
 
-Here, `SchemaName` might be a bare schema name, or it might be a schema name with an underscore and major version appended. For example, `"ComputerSystem"` or `"ComputerSystem_2"`.
+In this file, `SchemaName` might be either a bare schema name or a schema name with an underscore and major version appended. For example, `"ComputerSystem"` or `"ComputerSystem_2"`.
 
 If `description` or `intro` are specified for a schema, that value replaces the description of the schema. If both are specified, the `description` is output, followed by the `intro`.
 
 The `mockup` and `jsonpayload` attributes are mutually exclusive. If you specify both attributes, the content at `mockup` takes precedence. If you specify a `payload_dir` in the base configuration file, a payload directory is preferred over using these attributes.
+
+## Subset configuration file
+
+xx
+
+```json
+{
+   "version": "The version string is optional. It may have (future?) meaning in property index mode.",
+   "description": "Redfish Documentation Generator Example: config file for output of subset documentation in HTML format.",
+   "format": "html",
+   "import_from": ["./json-schema"],
+   "outfile": "subset.html",
+   "uri_mapping": {
+      "redfish.dmtf.org/schemas/v1": "./json-schema"
+   },
+   "profile_uri_to_local": {
+      "redfish.dmtf.org/profiles": "../Redfish-Tools/doc-generator/sample_inputs"
+   },
+   "suppress_version_history": true,
+   "html_title": "Sample Profile-focused Document",
+   "subset_doc": "../Redfish-Tools/doc-generator/sample_inputs/OCPBasicServer.v1_0_0.json",
+   "excluded_annotations": [
+      "*@odata.count",
+      "*@odata.navigationLink"
+   ],
+   "excluded_properties": [
+      "@odata.context",
+      "@odata.type", "@odata.id"
+   ],
+   "excluded_schemas": ["*Collection"],
+   "boilerplate_intro": "./intro.md",
+   "content_supplement": "./content_supplement.json"
+}
+```
 
 ## Redfish doc generator examples
 
@@ -178,6 +214,13 @@ Several files in the `sample_inputs` directory provide examples of configuration
 These examples assume that you have a clone of the DMTF/Redfish repo and the DMTF/Redfish-Tools repo in the same parent directory, and that your working directory is the Redfish clone, so that the schemas are in `./json-schema` and `doc_generator.py` is at `../Redfish-Tools/doc-generator/doc_generator.py` relative to your current working directory.
 
 > **Note:** The configuration files reference other files in this directory.
+
+* [Generate HTML documentation](#generate-html-documentation)
+* [Generate HTML documentation with normative descriptions](#generate-html-documentation-with-normative-descriptions)
+* [Generate profile index Markdown output — terse mode](#generate-profile-index-markdown-output--terse-mode)
+* [Generate subset HTML documentation](#generate-subset-html-documentation)
+* [Generate property index HTML output](#generate-property-index-html-output)
+* [Generate CSV output](#generate-csv-output)
 
 ### Generate HTML documentation
 
