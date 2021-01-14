@@ -31,8 +31,8 @@ The base configuration file is a JSON file that defines most of the docs generat
 
 Note that some configuration keys differ from their command-line argument equivalents. Unless otherwise noted, the configuration key has the same meaning as its command-line argument equivalent. The `uri_mapping` configuration key is required but all other configuration keys are optional.
 
-| Configuration key                             | Type |  Description                                      |
-| :-------------------------------------------- | :--- | :------------------------------------------------ |
+| Configuration key                                 | Type |  Description                                      |
+| :------------------------------------------------ | :--- | :------------------------------------------------ |
 | `actions_in_property_table`<br/><br/>**Equivalent command-line argument:** None | Boolean | <ul><li><code>true</code>. (Default) Include <code>Actions</code> in the property tables.</li><li><code>false</code>. Exclude <code>Actions</code> from the property tables.</li></ul> |
 | `add_toc`<br/><br/>**Equivalent command-line argument:** None | Boolean | Default is `true`.<p>By default, the table of contents (TOC) appears at the top of the HTML output.</p> <p>If the <code>[add_toc]</code> directive appears anywhere in the boilerplate intro or boilerplate postscript file, `add_toc` key is <code>true</code>.</p> <ul><li><p><code>true</code>. Generate a TOC and place it either:</p><ul><li>At the beginning of the generated HTML file.</li><li>In the <code>[add_toc]</code>location if the <code>[add_toc]</code> directive appears in the boilerplate intro or boilerplate postscript file.</li> <li><code>false</code>. Do not generate a TOC.</li></ul> |
 | `boilerplate_intro`<br/><br/>**Equivalent command-line argument:** None | String | No default. Location of the Markdown file that contains content to appear at the beginning of the document before the generated schema documentation. If a relative path, should be relative to the location of the configuration file. |
