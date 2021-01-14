@@ -6,15 +6,16 @@ The configuration files for the **Redfish docs generator** &mdash; [`doc_generat
 * [Content supplement configuration file](#content-supplement-configuration-file)
 * [Subset configuration file](#subset-configuration-file)
 
-The configuration files for the **Redfish docs generator** &mdash; [`doc_generator.py`](doc_generator.py) &mdash; support all command-line arguments except the `--help` and `--config` arguments.
+The configuration files support:
 
-The configuration files support additional configuration options for some output modes.
+* All command-line arguments except the `--help` and `--config` arguments.
+* Additional configuration options for some output modes.
 
 If you specify an option in more than one way, command-line arguments override the configuration file keys.
 
 You must format configuration files in valid JSON Schema format.
 
-For example `doc_generator.py` commands with various configuration files, see [Redfish docs generator examples](#redfish-docs-generator-examples).
+For examples of `doc_generator.py` commands with various configuration files, see [Redfish docs generator examples](#redfish-docs-generator-examples).
 
 ## Base configuration file
 
