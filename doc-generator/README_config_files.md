@@ -2,12 +2,16 @@
 
 ## Contents
 
-* [About](#about)
-* [Configuration files](#configuration-files)
-* [Supplementary content files](#supplementary-content-files)
+* [About configuration and supplementary files](#about-configuration-and-supplementary-files)
+* [Base configuration file](#base-configuration-file)
+* [Content supplement configuration file](#content-supplement-configuration-file)
+* [Subset configuration file](#subset-configuration-file)
+* [Property index configuration file](#property-index-configuration-file)
+* [Boilerplate intro supplementary file](#boilerplate-intro-supplementary-file)
+* [Boilerplate postscript supplementary file](#boilerplate-postscript-supplementary-file)
 * [Redfish docs generator examples](#redfish-docs-generator-examples)
 
-## About
+## About configuration and supplementary files
 
 The **Redfish docs generator** accepts:
 
@@ -17,8 +21,8 @@ The **Redfish docs generator** accepts:
 These files are:
 
 <table width="100%">
-   <col width="30%">
-   <col width="70%">
+   <col width="50%">
+   <col width="50%">
    <thead>
       <tr>
          <th align="left" valign="top">File</th>
@@ -39,12 +43,11 @@ These files are:
       </tr>
       <tr>
          <td align="left" valign="top"><a href="#subset-configuration-file">Subset configuration file</a></td>
-         <td align="left" valign="top">Subset information to include in the _**Schema subset**_ documentation.</td>
+         <td align="left" valign="top">Subset information to include in a <cite>Schema subset</cite> document.</td>
       </tr>
       <tr>
          <td align="left" valign="top"><a href="#property-index-configuration-file">Property&nbsp;index configuration file</a></td>
-         <td align="left" valign="top">Property index information to include in the _**Property index**_ documentation.
-         </td>
+         <td align="left" valign="top">Property index information to include in a <cite>Property index</cite> document.</td>
       </tr>
       <!-- <tr id="supplementary-content-files-overview">
          <th align="left" valign="top" colspan="2">Supplementary content files in HTML or Markdown format</th>
@@ -66,14 +69,7 @@ If you specify an option in more than one way, command&#8209;line arguments over
 
 For examples of `doc_generator.py` command usage with various configuration files, see [Redfish docs generator examples](#redfish-docs-generator-examples).
 
-## Configuration files
-
-<!-- * [Base configuration file](#base-configuration-file)
-* [Content supplement configuration file](#content-supplement-configuration-file)
-* [Subset configuration file](#subset-configuration-file)
-* [Property index configuration file](#property-index-configuration-file) -->
-
-### Base configuration file
+## Base configuration file
 
 Defines most of the docs generator options including all command&#8209;line arguments except the <code>--help</code> and <code>--config</code> arguments. Also specifies the location of the <a href="#content-supplement-configuration-file-overview">content supplement configuration file</a> and the <a href="#supplementary-content-files-overview">supplementary content files</a>.
 
@@ -83,7 +79,7 @@ Defines most of the docs generator options including all command&#8209;line argu
 * [payload_dir key](#payload_dir-key)
 * [profile_terse key](#profile_terse-key)
 
-#### Supported keys
+### Supported keys
 
 Note that some configuration keys differ from their command&#8209;line argument equivalents. Unless otherwise noted, the configuration key has the same meaning as its command&#8209;line argument equivalent. The `uri_mapping` configuration key is required but all other configuration keys are optional.
 
@@ -118,7 +114,7 @@ Note that some configuration keys differ from their command&#8209;line argument 
 | `subset`|       | No default. Path to a JSON profile document. Generates **Schema subset** output, with the subset defined in the JSON profile document.<br/><br/>**Equivalent&nbsp;command&#8209;line&nbsp;argument:** `subset` |
 | `uri_mapping` | Object | No default. Partial URL of schema repositories as attributes, and local directory paths as values. |
 
-#### combine_multiple_refs key
+### combine_multiple_refs key
 
 This setting specifies that multiple objects within a schema, that are defined by reference to the same definition, should have their definitions moved into the Property Details section, with a single-line (row) listing for each object in the main table. combine_multiple_refs is an integer threshold at which this behavior kicks in. If it is absent or 0, no combining occurs. If it is 2 or greater, combining occurs at that number of references to the same object. A setting of 1 does not make sense and should be prevented.
 
@@ -128,7 +124,7 @@ The `combine_multiple_refs` key specifies a threshold at which multiple referenc
 "combine_multiple_refs": 3,
 ```
 
-#### object_reference_disposition key
+### object_reference_disposition key
 
 The `object_reference_disposition` key specifies a JSON object with either or both these fields:
 
@@ -146,18 +142,18 @@ For example:
 }
 ```
 
-#### payload_dir key
+### payload_dir key
 
 The `payload_dir` key specifies a directory location for JSON payload and Action examples. If relative, this path is relative to the working directory in which the `doc_generator.py` script is run. Within the payload directory, use the following naming scheme for example files:
 
 * &lt;schema_name&gt;-v&lt;major_version&gt;-example.json for JSON payloads
 * &lt;schema_name&gt;-v&lt;major_version&gt;-action-&lt;action_name&gt;.json for action examples
 
-#### profile_terse key
+### profile_terse key
 
 The `profile_terse` key is meaningful only when a profile document is also specified. When `true`, *terse* output is produced. By default, profile output is verbose and includes all properties regardless of profile requirements. *Terse* output is intended for use by Service developers, including only the subset of properties with profile requirements.
 
-### Content supplement configuration file
+## Content supplement configuration file
 
 Contains text replacements and additions to apply to the generated schema documentation. Includes text overrides for property descriptions, replacements for unit abbreviations, and schema-specific content including introductions, postscripts, and property description substitutions.
 
@@ -165,7 +161,7 @@ Contains text replacements and additions to apply to the generated schema docume
 * [schema_link_replacements key](#schema_link_replacements-key)
 * [schema_supplement key](#schema_supplement-key)
 
-#### Supported keys
+### Supported keys
 
 | Configuration key | Type | Description | Details |
 | :---------------- | :--- | :---------- | :------ |
@@ -177,7 +173,7 @@ Contains text replacements and additions to apply to the generated schema docume
 
 For an example of the content supplement configuration file, see <a href="sample_inputs/standard_html/content_supplement.json"><code>content_supplement.json</code></a>.
 
-#### schema_link_replacements key
+### schema_link_replacements key
 
 The `schema_link_replacements` key is a dictionary that maps reference URIs to replacement URIs. The match type is full or partial. Replaces one link with another link. The dictionary structure is:
 
@@ -194,7 +190,7 @@ The `schema_link_replacements` key is a dictionary that maps reference URIs to r
 }
 ```
 
-#### schema_supplement key
+### schema_supplement key
 
 The `schema_supplement` key defines a dictionary of structured content, including text overrides for property descriptions, units translation (replacements for unit abbreviations), schema-specific intros, property description substitutions, and other supplementary data. The structure of this object looks like this (all fields are optional):
 
@@ -228,7 +224,7 @@ If `description` or `intro` are specified for a schema, that value replaces the 
 
 The `mockup` and `jsonpayload` attributes are mutually exclusive. If you specify both attributes, the content at `mockup` takes precedence. If you specify a `payload_dir` in the base configuration file, a payload directory is preferred over using these attributes.
 
-### Subset configuration file
+## Subset configuration file
 
 Used in <b>subset mode</b> to generate <b>Schema subset</b> output, with the subset defined in the JSON profile document.
 
@@ -256,7 +252,7 @@ Used in <b>subset mode</b> to generate <b>Schema subset</b> output, with the sub
 }
 ```
 
-### Property index configuration file
+## Property index configuration file
 
 <p>Used in <b>property index mode</b> to generate <b>Property index</b> output, which is an index of property names and descriptions that includes property name, type, schemas where found, and descriptions found.</p>
 <p>When you run run the docs generator in <b>property index mode</b>:</p>
@@ -267,20 +263,15 @@ Used in <b>subset mode</b> to generate <b>Schema subset</b> output, with the sub
 
 See [Redfish docs generator: Property index configuration](README_Property_Index.md).
 
-## Supplementary content files
+## Boilerplate intro supplementary file
 
-* [Boilerplate intro file](#boilerplate-intro-file)
-* [Boilerplate postscript file](#boilerplate-postscript-file)
-
-### Boilerplate intro file
-
-The boilerplate intro file is a Markdown or HTML that contains the content to place in the output before the generated documentation. Can include an <code>[add_toc]</code> directive that specifies location for the table of contents.
+The boilerplate intro file is a Markdown or HTML that contains supplementary content to place in the output before the generated documentation. Can include an <code>[add_toc]</code> directive that specifies location for the table of contents.
 
 For an example boilerplate intro file, see <a href="sample_inputs/standard_html/intro.md"><code>intro.md</code></a>.
 
-### Boilerplate postscript file
+## Boilerplate postscript supplementary file
 
-The boilerplate postscript file is a Markdown or HTML that contains the content to place in the output after the generated documentation. 
+The boilerplate postscript file is a Markdown or HTML that contains supplementary content to place in the output after the generated documentation. 
 
 For an example boilerplate postscript file, see <a href="sample_inputs/standard_html/postscript.md"><code>postscript.md</code></a>.
 
