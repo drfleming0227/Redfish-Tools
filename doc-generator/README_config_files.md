@@ -45,12 +45,12 @@ These files are:
       <tr>
          <td align="left" valign="top"><a href="#subset-configuration-file">Subset configuration</a></td>
          <td align="left" valign="top">JSON</td>
-         <td align="left" valign="top">Subset information to include in a <cite>Schema subset</cite> document.</td>
+         <td align="left" valign="top">Subset information to include in a <em>Schema subset</em> document.</td>
       </tr>
       <tr>
          <td align="left" valign="top"><a href="#property-index-configuration-file">Property&nbsp;index configuration</a></td>
          <td align="left" valign="top">JSON</td>
-         <td align="left" valign="top">Property index information to include in a <cite>Property index</cite> document.</td>
+         <td align="left" valign="top">Property index information to include in a <em>Property index</em> document.</td>
       </tr>
       <tr>
          <td align="left" valign="top"><a href="#boilerplate-intro-file">Boilerplate intro supplementary content</a></td>
