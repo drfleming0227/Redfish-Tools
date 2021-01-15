@@ -100,7 +100,7 @@ Some configuration keys differ from their command&#8209;line argument equivalent
       <tr>
          <th align="left" valign="top">Configuration&nbsp;key</th>
          <th align="left" valign="top">Type</th>
-         <th align="left" valign="top">Supported mode or modes</th>
+         <th align="left" valign="top">Supported modes</th>
          <th align="left" valign="top">Description</th>
       </tr>
    </thead>
@@ -117,14 +117,29 @@ Some configuration keys differ from their command&#8209;line argument equivalent
             </ul>
          </td>
       </tr>
+      <tr>
+         <td align="left" valign="top"><code>add_toc</code></td>
+         <td align="left" valign="top">Boolean</td>
+         <td align="left" valign="top">Standard HTML, Normative standard HTML</td>
+         <td align="left" valign="top">
+            <p>By default, the table of contents (TOC) appears at the top of the HTML output. If the <code>[add_toc]</code> directive appears anywhere in the boilerplate intro or boilerplate postscript file, <code>add_toc</code> key is <code>true</code> by default.</p>
+            <p>Value is:</p>
+            <ul>
+               <li>
+                  <p><code>true</code>. (Default) Generate a TOC and place it either:</p>
+                  <ul>
+                     <li>At the beginning of the generated HTML file.</li>
+                     <li>In the <code>[add_toc]</code>location if that directive appears in the boilerplate intro or boilerplate postscript file.</li>
+                  </ul>
+               </li>
+               <li><code>false</code>. Do not generate a TOC.</li>
+            </ul>
+         </td>
+      </tr>
    </tbody>
 </table>
 
-<!--<tr>
-         <td align="left" valign="top"><code>add_toc</code></td>
-         <td align="left" valign="top">Boolean</td>
-         <td align="left" valign="top"><p>Standard HTML, normative.</p></td>
-         <td align="left" valign="top"><p>By default, the table of contents (TOC) appears at the top of the HTML output. If the <code>[add_toc]</code> directive appears anywhere in the boilerplate intro or boilerplate postscript file, `add_toc` key is <code>true</code> by default.</p><p>Value is:</p><ul> <li> <p><code>true</code>. (Default) Generate a TOC and place it either:</p> <ul> <li>At the beginning of the generated HTML file.</li> <li>In the <code>[add_toc]</code>location if that directive appears in the boilerplate intro or boilerplate postscript file. </li> </ul> <li><code>false</code>. Do not generate a TOC.</li> </ul>
+<!--
 <tr>
          <td align="left" valign="top"><code>boilerplate_intro</code></td><td align="left" valign="top">String</td><td align="left" valign="top"><p>Profile mode, subset mode, standard HTML, normative.</p>No default. Location of the HTML or Markdown file that contains content to appear at the beginning of the document before the generated schema documentation. If a relative path, should be relative to the location of the configuration file. |
 <tr>
