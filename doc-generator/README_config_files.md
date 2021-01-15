@@ -5,6 +5,7 @@ The configuration files for the **Redfish docs generator** are:
 * [Base configuration file](#base-configuration-file)
 * [Content supplement configuration file](#content-supplement-configuration-file)
 * [Subset configuration file](#subset-configuration-file)
+* [Property index configuration file](#property-index-configuration-file)
 
 The configuration files support:
 
@@ -205,6 +206,10 @@ xx
    "content_supplement": "./content_supplement.json"
 }
 ```
+
+## Property index configuration file
+
+See [Redfish docs generator: Property index configuration](README_Property_Index.md).
 
 ## Redfish docs generator examples
 
