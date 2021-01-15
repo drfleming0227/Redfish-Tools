@@ -1,30 +1,5 @@
 # Redfish docs generator: Configuration and supplementary files
 
-* [Redfish docs generator: Configuration and supplementary files](#redfish-docs-generator-configuration-and-supplementary-files)
-   * [Configuration files](#configuration-files)
-      * [Base configuration file](#base-configuration-file)
-         * [Supported keys](#supported-keys)
-         * [combine_multiple_refs key](#combine_multiple_refs-key)
-         * [object_reference_disposition key](#object_reference_disposition-key)
-         * [payload_dir key](#payload_dir-key)
-         * [profile_terse key](#profile_terse-key)
-      * [Content supplement configuration file](#content-supplement-configuration-file)
-         * [Supported keys](#supported-keys-1)
-         * [schema_link_replacements key](#schema_link_replacements-key)
-         * [schema_supplement key](#schema_supplement-key)
-      * [Subset configuration file](#subset-configuration-file)
-      * [Property index configuration file](#property-index-configuration-file)
-   * [Supplementary content files](#supplementary-content-files)
-      * [Boilerplate intro file](#boilerplate-intro-file)
-      * [Boilerplate postscript file](#boilerplate-postscript-file)
-   * [Redfish docs generator examples](#redfish-docs-generator-examples)
-      * [Generate HTML documentation](#generate-html-documentation)
-      * [Generate HTML documentation with normative descriptions](#generate-html-documentation-with-normative-descriptions)
-      * [Generate profile index Markdown output — terse mode](#generate-profile-index-markdown-output--terse-mode)
-      * [Generate subset HTML documentation](#generate-subset-html-documentation)
-      * [Generate property index HTML output](#generate-property-index-html-output)
-      * [Generate CSV output](#generate-csv-output)
-
 The **Redfish docs generator** accepts input from configuration files and supplementary content files.
 
 These files are:
@@ -43,6 +18,24 @@ Some output modes, such as the property index mode, support additional configura
 If you specify an option in more than one way, command&#8209;line arguments override the configuration file keys.
 
 For examples of `doc_generator.py` command usage with various configuration files, see [Redfish docs generator examples](#redfish-docs-generator-examples).
+
+## Contents
+
+* [Configuration files](#configuration-files)
+   * [Base configuration file](#base-configuration-file)
+   * [Content supplement configuration file](#content-supplement-configuration-file)
+   * [Subset configuration file](#subset-configuration-file)
+   * [Property index configuration file](#property-index-configuration-file)
+* [Supplementary content files](#supplementary-content-files)
+   * [Boilerplate intro file](#boilerplate-intro-file)
+   * [Boilerplate postscript file](#boilerplate-postscript-file)
+* [Redfish docs generator examples](#redfish-docs-generator-examples)
+   * [Generate HTML documentation](#generate-html-documentation)
+   * [Generate HTML documentation with normative descriptions](#generate-html-documentation-with-normative-descriptions)
+   * [Generate profile index Markdown output — terse mode](#generate-profile-index-markdown-output--terse-mode)
+   * [Generate subset HTML documentation](#generate-subset-html-documentation)
+   * [Generate property index HTML output](#generate-property-index-html-output)
+   * [Generate CSV output](#generate-csv-output)
 
 ## Configuration files
 
