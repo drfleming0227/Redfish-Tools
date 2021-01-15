@@ -20,10 +20,7 @@ The **Redfish docs generator** accepts:
 
 These files are:
 
-<table width="100%">
-   <col width="42%">
-   <col width="16%">
-   <col width="42%">
+<table>
    <thead>
       <tr>
          <th align="left" valign="top">File</th>
@@ -43,23 +40,23 @@ These files are:
          <td align="left" valign="top">Text replacements and additions to apply to the generated schema documentation. Includes text overrides for property descriptions, replacements for unit abbreviations, and schema-specific content including introductions, postscripts, and property description substitutions.</td>
       </tr>
       <tr>
-         <td align="left" valign="top"><a href="#subset-configuration-file">Subset configuration</a></td>
+         <td align="left" valign="top"><a href="#subset-configuration-file">Subset&nbsp;configuration</a></td>
          <td align="left" valign="top">JSON</td>
          <td align="left" valign="top">Subset information to include in a <i>Schema subset</i> document.</td>
       </tr>
       <tr>
-         <td align="left" valign="top"><a href="#property-index-configuration-file">Property&nbsp;index configuration</a></td>
+         <td align="left" valign="top"><a href="#property-index-configuration-file">Property&nbsp;index&nbsp;configuration</a></td>
          <td align="left" valign="top">JSON</td>
          <td align="left" valign="top">Property index information to include in a <i>Property index</i> document.</td>
       </tr>
       <tr>
-         <td align="left" valign="top"><a href="#boilerplate-intro-file">Boilerplate intro supplementary content</a></td>
-         <td align="left" valign="top">HTML or Markdown</td>
+         <td align="left" valign="top"><a href="#boilerplate-intro-file">Boilerplate&nbsp;intro&nbsp;supplementary&nbsp;content</a></td>
+         <td align="left" valign="top">HTML&nbsp;or&nbsp;Markdown</td>
          <td align="left" valign="top">Content to place in the output before the generated documentation.</td>
       </tr>
       <tr>
-         <td align="left" valign="top"><a href="#boilerplate-postscript-file">Boilerplate&nbsp;postscript&nbsp;supplementary&nbsp;content</a></td>
-         <td align="left" valign="top">HTML or Markdown</td>
+         <td align="left" valign="top"><a href="#boilerplate-postscript-file">Boilerplate&nbsp;postscript&nbsp&nbsp;supplementary&nbsp;content</a></td>
+         <td align="left" valign="top">HTML&nbsp;or&nbsp;Markdown</td>
          <td align="left" valign="top">Content to place in the output after the generated documentation.</td>
       </tr>
    </tbody>
