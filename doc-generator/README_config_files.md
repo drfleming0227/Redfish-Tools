@@ -21,9 +21,9 @@ The **Redfish docs generator** accepts:
 These files are:
 
 <table width="100%">
-   <col width="46%">
-   <col width="8%"
-   <col width="46%">
+   <col width="43%">
+   <col width="13%">
+   <col width="44%">
    <thead>
       <tr>
          <th align="left" valign="top">File</th>
@@ -64,6 +64,15 @@ These files are:
       </tr>
    </tbody>
 </table>
+
+The output modes are:
+
+* CSV mode - not implemented
+* Profile mode
+* Property index mode
+* Standard HTML mode
+* Normative standard HTML mode
+* Subset mode
 
 Some output modes, such as the property index mode, support additional configuration options.
 
@@ -141,6 +150,7 @@ Note that some configuration keys differ from their command&#8209;line argument 
 | `boilerplate_postscript` | String | <p>Standard HTML, normative.</p>No default. Location of the HTML or Markdown file that contains content to appear at the end of the document after the generated schema documentation. If a relative path, should be relative to the location of the config file. |
 | `combine_multiple_refs` | Integer | <p>Standard HTML, normative.</p>No default. Threshold at which multiple references to the same object within a schema are moved into **Property details** instead of expanded in place.<br/><br/>For details, see [combine_multiple_refs key](#combine_multiple_refs-key). |
 | `content_supplement` | String | <p>Profile mode, subset mode, standard HTML, normative.</p>No default. Location of a JSON-formatted content supplement file, which specifies content substitutions to be made within the generated schema documentation. If a relative path, must be relative to the location of the configuration file. |
+| `description_overrides` | | <p>Property index mode.</p>xx |
 | `escape_chars` |       | <p>Nowhere</p>No default. Characters to escape in generated Markdown. For example, use `--escape=@` if your Markdown processor converts embedded `@` characters to `mailto` links.<br/><br/>**Equivalent&nbsp;command&#8209;line&nbsp;argument:** `escape` |
 | `excluded_annotations` | Array of strings | <p>Profile mode, subset mode, standard HTML, normative, CSV.</p>No default. List of annotation names to exclude.<br/><br/>Wildcard match is supported for strings that begin with `*`. |
 | `excluded_pattern_properties` |       | <p>Profile mode, subset mode, standard HTML, normative, CSV.</p>No default. List of pattern properties to exclude from output.<br/><br/>In JSON, you must escape back slashes (`"\"` becomes `"\\"`). |
@@ -409,9 +419,11 @@ Configuration file references the profile `OCPBasicServer.v1_0_0.json`, which in
 % python ../Redfish-Tools/doc-generator/doc_generator.py --config=../Redfish-Tools/doc-generator/sample_inputs/property_index/config.json
 ```
 
-> **Note:** The Base Configuration file for property index output includes some elements that are specific to that mode: `description_overrides`.
+> **Note:** The base configuration file for property index output includes some elements that are specific to that mode: `description_overrides`.
 
 ### CSV
+
+**Not implemented**
 
 ```bash
 % python ../Redfish-Tools/doc-generator/doc_generator.py --config=../Redfish-Tools/doc-generator/sample_inputs/csv/config.json
