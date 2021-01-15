@@ -4,10 +4,10 @@ The configuration files for the **Redfish docs generator** are in JSON Schema fo
 
 | Configuration&nbsp;file | Description                                                                |
 | :---------------------- | :------------------------------------------------------------------------- |
-| [Base](#base-configuration-file) | Defines most of the docs generator options including all command&#8209;line arguments except the `--help` and `--config` arguments. Also specifies the location of other configuration files, including the content supplement configuration file, and supplementary Markdown files &mdash; The boilerplate introduction and boilerplate postscript files. |
-| [Content supplement](#content-supplement-configuration-file) | Contains text replacements and additions to apply to the generated schema documentation. Includes text overrides for property descriptions, replacements for unit abbreviations, and schema-specific content including introductions, postscripts, and property description substitutions. |
+| [Base](#base-configuration-file) | Defines most of the docs generator options including all command&#8209;line arguments except the `--help` and `--config` arguments. Also specifies the location of the [content supplement configuration file](#content-supplement-configuration-file), and the [boilerplate intro](#boilerplate-intro-file) and [Boilerplate postscript](#boilerplate-postscript-file) supplementary Markdown files. |
+| [Content&nbsp;supplement](#content-supplement-configuration-file) | Contains text replacements and additions to apply to the generated schema documentation. Includes text overrides for property descriptions, replacements for unit abbreviations, and schema-specific content including introductions, postscripts, and property description substitutions. |
 | [Subset](#subset-configuration-file) | Generates **Schema subset** output, with the subset defined in the JSON profile document. |
-| [Property index](#property-index-configuration-file) | <p>Produces an index of property names and descriptions. The output includes property name, type, schemas where found, and descriptions found. When you run run the docs generator in <i>property index</i> mode:</p><ul><li>Only a few of <code>doc_generator.py</code> arguments apply.</li><li>The <a href="#configuration">configuration file</a> takes a different form than the one used for the other output modes.</li></ul> |
+| [Property&nbsp;index](#property-index-configuration-file) | <p>Produces an index of property names and descriptions. The output includes property name, type, schemas where found, and descriptions found. When you run run the docs generator in <i>property index</i> mode:</p><ul><li>Only a few of <code>doc_generator.py</code> arguments apply.</li><li>The <a href="#configuration">configuration file</a> takes a different form than the one used for the other output modes.</li></ul> |
 
 Some output modes, such as the property index mode, support additional configuration options.
 
@@ -20,6 +20,7 @@ For examples of `doc_generator.py` command usage with various configuration file
 * [Base configuration file](#base-configuration-file-changes)
 * [Content supplement configuration file](#content-supplement-configuration-file-changes)
 * [Subset configuration file](#subset-configuration-file-changes)
+* [Property index configuration file](#property-index-configuration-file)
 
 **Supplementary Markdown files:**
 
