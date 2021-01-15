@@ -7,8 +7,8 @@
 * [Content supplement configuration file](#content-supplement-configuration-file)
 * [Subset configuration file](#subset-configuration-file)
 * [Property index configuration file](#property-index-configuration-file)
-* [Boilerplate intro supplementary file](#boilerplate-intro-supplementary-file)
-* [Boilerplate postscript supplementary file](#boilerplate-postscript-supplementary-file)
+* [Boilerplate intro file](#boilerplate-intro-file)
+* [Boilerplate postscript file](#boilerplate-postscript-file)
 * [Redfish docs generator examples](#redfish-docs-generator-examples)
 
 ## About configuration and supplementary files
@@ -73,7 +73,7 @@ For examples of `doc_generator.py` command usage with various configuration file
 
 ## Base configuration file
 
-Defines most of the docs generator options including all command&#8209;line arguments except the <code>--help</code> and <code>--config</code> arguments. Also specifies the location of the <a href="#content-supplement-configuration-file-overview">content supplement configuration file</a> and the <a href="#supplementary-content-files-overview">supplementary content files</a>.
+The base configuration file is a JSON file that defines most of the docs generator options including all command&#8209;line arguments except the <code>--help</code> and <code>--config</code> arguments. Also specifies the location of the <a href="#content-supplement-configuration-file-overview">content supplement configuration file</a> and the [boilerplate intro](#boilerplate-intro-file) and [boilerplate postscript](#boilerplate-postscript-file) supplementary content files.
 
 * [Supported keys](#supported-keys)
 * [combine_multiple_refs key](#combine_multiple_refs-key)
