@@ -45,12 +45,12 @@ These files are:
       <tr>
          <td align="left" valign="top"><a href="#subset-configuration-file">Subset configuration</a></td>
          <td align="left" valign="top">JSON</td>
-         <td align="left" valign="top">Subset information to include in a <em>Schema subset</em> document.</td>
+         <td align="left" valign="top">Subset information to include in a <i>Schema subset</i> document.</td>
       </tr>
       <tr>
          <td align="left" valign="top"><a href="#property-index-configuration-file">Property&nbsp;index configuration</a></td>
          <td align="left" valign="top">JSON</td>
-         <td align="left" valign="top">Property index information to include in a <em>Property index</em> document.</td>
+         <td align="left" valign="top">Property index information to include in a <i>Property index</i> document.</td>
       </tr>
       <tr>
          <td align="left" valign="top"><a href="#boilerplate-intro-file">Boilerplate intro supplementary content</a></td>
@@ -80,6 +80,52 @@ Defines most of the docs generator options including all command&#8209;line argu
 * [object_reference_disposition key](#object_reference_disposition-key)
 * [payload_dir key](#payload_dir-key)
 * [profile_terse key](#profile_terse-key)
+
+### Base configuration file example
+
+```json
+{
+   "version": "The version string is optional. It may have (future?) meaning in property index mode.",
+   "description": "Redfish Documentation Generator Example: config file for output of standard-mode documentation in HTML format.",
+   "uri_mapping": {
+      "redfish.dmtf.org/schemas/v1": "./json-schema"
+   },
+   "format": "html",
+   "import_from": ["./json-schema"],
+   "outfile": "standard.html",
+   "payload_dir": "./mockups/DSP2046-examples",
+   "add_toc": true,
+   "html_title": "Sample Standard Output",
+   "combine_multiple_refs": 3,
+   "excluded_properties": [
+      "@odata.context",
+      "@odata.type", "@odata.id",
+      "@odata.etag", "Name", "Id",
+      "Description", "Oem"
+   ],
+   "excluded_annotations": [
+      "*@odata.count",
+      "*@odata.navigationLink"
+   ],
+   "excluded_schemas": ["*Collection",
+      "HostedStorageServices",
+      "StorageService",
+      "StorageSystem", "idRef", "Oem"
+   ],
+   "excluded_pattern_properties": [
+      "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$"
+   ],
+   "object_reference_disposition": {
+      "common_object": ["Redundancy"],
+      "include": [
+         "http://redfish.dmtf.org/schemas/v1/PCIeDevice.json#/definitions/PCIeInterface"
+      ]
+   },
+   "boilerplate_intro": "./intro.md",
+   "boilerplate_postscript": "./postscript.md",
+   "content_supplement": "./content_supplement.json"
+}
+```
 
 ### Supported keys
 
@@ -159,9 +205,42 @@ The `profile_terse` key is meaningful only when a profile document is also speci
 
 Contains text replacements and additions to apply to the generated schema documentation. Includes text overrides for property descriptions, replacements for unit abbreviations, and schema-specific content including introductions, postscripts, and property description substitutions.
 
+* [Content supplement configuration file example](#content-supplement-configuration-file-example)
 * [Supported keys](#supported-keys-1)
 * [schema_link_replacements key](#schema_link_replacements-key)
 * [schema_supplement key](#schema_supplement-key)
+
+### Content supplement configuration file example
+
+```json
+{
+   "description": "Redfish Documentation Generator Example: content supplement config file for output of standard-mode documentation in HTML format.",
+   "keywords": {
+      "html_title": "Title from the supplemental doc"
+   },
+   "units_translation": {
+      "s": "seconds",
+      "Mb/s": "Mbits/second",
+      "By": "bytes",
+      "Cel": "Celsius",
+      "MiBy": "mebibytes",
+      "W": "Watts",
+      "V": "Volts",
+      "mW": "milliWatts",
+      "m": "meters"
+   },
+   "property_description_overrides": {
+      "Oem": "See the OEM object definition in the [Using this guide](#using-this-guide) section."
+   },
+   "schema_supplement": {
+      "ComputerSystem": {
+         "property_details": {
+            "UUID": "\nThe UUID property contains a value that represents the universal unique identifier number (UUID) of a system.\n\nThe UUID property is a string data type. The format of the string is the 35-character string format specified in RFC4122: \"xxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\". Each x represents a hexadecimal digit (0-f).\n\nRegarding the case of the hex values, RFC4122 specifies that the hex values should be lowercase characters. Most modern scripting languages typically also represent hex values in lowercase characters following the RFC. However, dmidecode, WMI and some Redfish implementations currently use uppercase characters for UUID on output."
+         }
+      }
+   }
+}
+```
 
 ### Supported keys
 
