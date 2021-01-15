@@ -2,25 +2,24 @@
 
 The configuration files for the **Redfish docs generator** are:
 
-* [Base configuration file](#base-configuration-file)
+* [Base configuration file](#base-configuration-file). Supports all command&#8209;line arguments except the `--help` and `--config` arguments.
 * [Content supplement configuration file](#content-supplement-configuration-file)
 * [Subset configuration file](#subset-configuration-file)
 * [Property index configuration file](#property-index-configuration-file)
 
-The configuration files support:
-
-* All command&#8209;line arguments except the `--help` and `--config` arguments.
-* Additional configuration options for some output modes.
+Some output modes, such as the property index mode, supports additional configuration options.
 
 If you specify an option in more than one way, command&#8209;line arguments override the configuration file keys.
 
 You must format configuration files in valid JSON Schema format.
 
-For examples of `doc_generator.py` commands with various configuration files, see [Redfish docs generator examples](#redfish-docs-generator-examples).
+For examples of `doc_generator.py` command usage with various configuration files, see [Redfish docs generator examples](#redfish-docs-generator-examples).
 
 ## Base configuration file
 
-The base configuration file is a JSON file that defines most of the docs generator options including the command&#8209;line options. You also specify the location of other configuration files, including the content supplement and introduction and postscript boilerplate files.
+The base configuration file is a JSON file that defines most of the docs generator options including all command&#8209;line arguments except the `--help` and `--config` arguments. 
+
+This file also specifies the location of other configuration files, including the content supplement and boilerplate introduction and boilerplate postscript files.
 
 * [Supported keys](#supported-keys)
 * [combine_multiple_refs key](#combine_multiple_refs-key)
@@ -32,10 +31,10 @@ The base configuration file is a JSON file that defines most of the docs generat
 
 Note that some configuration keys differ from their command&#8209;line argument equivalents. Unless otherwise noted, the configuration key has the same meaning as its command&#8209;line argument equivalent. The `uri_mapping` configuration key is required but all other configuration keys are optional.
 
-| Configuration key                                   | Type   |  Description                                        |
-| :-------------------------------------------------- | :----- | :-------------------------------------------------- |
+| Configuration key                                 | Type   |  Description                                        |
+| :------------------------------------------------ | :----- | :-------------------------------------------------- |
 | `actions_in_property_table` | Boolean | <p>Value is:</p><ul><li><code>true</code>. (Default) Include <code>Actions</code> in property tables.</li><li><code>false</code>. Exclude <code>Actions</code> from property tables.</li></ul> |
-| `add_toc` | Boolean | <p>By default, the table of contents (TOC) appears at the top of the HTML output. If the <code>[add_toc]</code> directive appears anywhere in the boilerplate intro or boilerplate postscript file, `add_toc` key is <code>true</code>.</p><p>Value is:</p><ul> <li> <p><code>true</code>. (Default) Generate a TOC and place it either:</p> <ul> <li>At the beginning of the generated HTML file.</li> <li>In the <code>[add_toc]</code>location if that directive appears in the boilerplate intro or boilerplate postscript file. </li> </ul> <li><code>false</code>. Do not generate a TOC.</li> </ul> |
+| `add_toc` | Boolean | <p>By default, the table of contents (TOC) appears at the top of the HTML output. If the <code>[add_toc]</code> directive appears anywhere in the boilerplate intro or boilerplate postscript file, `add_toc` key is <code>true</code> by default.</p><p>Value is:</p><ul> <li> <p><code>true</code>. (Default) Generate a TOC and place it either:</p> <ul> <li>At the beginning of the generated HTML file.</li> <li>In the <code>[add_toc]</code>location if that directive appears in the boilerplate intro or boilerplate postscript file. </li> </ul> <li><code>false</code>. Do not generate a TOC.</li> </ul> |
 | `boilerplate_intro` | String | No default. Location of the Markdown file that contains content to appear at the beginning of the document before the generated schema documentation. If a relative path, should be relative to the location of the configuration file. |
 | `boilerplate_postscript` | String | No default. Location of the Markdown file that contains content to appear at the end of the document after the generated schema documentation. If a relative path, should be relative to the location of the config file. |
 | `combine_multiple_refs` | Integer | None | Threshold at which multiple references to the same object within a schema are moved into **Property details** instead of expanded in place.<br/><br/>For details, see [combine_multiple_refs key](#combine_multiple_refs-key). |
