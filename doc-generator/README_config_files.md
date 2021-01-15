@@ -1,10 +1,10 @@
-# Redfish docs generator: Configuration
+# Redfish docs generator: Configuration and supplementary files
 
 The configuration files for the **Redfish docs generator** are in JSON Schema format. These files are:
 
 | Configuration&nbsp;file | Description                                                                |
 | :---------------------- | :------------------------------------------------------------------------- |
-| [Base](#base-configuration-file) | Defines most of the docs generator options including all command&#8209;line arguments except the `--help` and `--config` arguments. Also specifies the location of the [content supplement configuration file](#content-supplement-configuration-file), and the [boilerplate intro](#boilerplate-intro-file) and [Boilerplate postscript](#boilerplate-postscript-file) supplementary Markdown files. |
+| [Base](#base-configuration-file) | Defines most of the docs generator options including all command&#8209;line arguments except the `--help` and `--config` arguments. Also specifies the location of the [content supplement configuration file](#content-supplement-configuration-file), and the [boilerplate intro](#boilerplate-intro-file) and [Boilerplate postscript](#boilerplate-postscript-file) supplementary Markdown or HTML files. |
 | [Content&nbsp;supplement](#content-supplement-configuration-file) | Contains text replacements and additions to apply to the generated schema documentation. Includes text overrides for property descriptions, replacements for unit abbreviations, and schema-specific content including introductions, postscripts, and property description substitutions. |
 | [Subset](#subset-configuration-file) | Generates **Schema subset** output, with the subset defined in the JSON profile document. |
 | [Property&nbsp;index](#property-index-configuration-file) | <p>Produces an index of property names and descriptions. The output includes property name, type, schemas where found, and descriptions found. When you run run the docs generator in <i>property index</i> mode:</p><ul><li>Only a few of <code>doc_generator.py</code> arguments apply.</li><li>The <a href="#configuration">configuration file</a> takes a different form than the one used for the other output modes.</li></ul> |
@@ -15,17 +15,12 @@ If you specify an option in more than one way, command&#8209;line arguments over
 
 For examples of `doc_generator.py` command usage with various configuration files, see [Redfish docs generator examples](#redfish-docs-generator-examples).
 
-**Configuration files:**
+The supplementary Markdown or HTML files are:
 
-* [Base configuration file](#base-configuration-file-changes)
-* [Content supplement configuration file](#content-supplement-configuration-file-changes)
-* [Subset configuration file](#subset-configuration-file-changes)
-* [Property index configuration file](#property-index-configuration-file)
-
-**Supplementary Markdown files:**
-
-* [Boilerplate intro](#boilerplate-intro-file-changes)
-* [Boilerplate postscript](#boilerplate-postscript-file-changes)
+| Supplementary&nbsp;file | Description                                                                |
+| :---------------------- | :------------------------------------------------------------------------- |
+| [Boilerplate intro](#boilerplate-intro-file) | |
+| [Boilerplate postscript](#boilerplate-postscript-file) | |
 
 ## Base configuration file
 
@@ -215,6 +210,18 @@ xx
 ## Property index configuration file
 
 See [Redfish docs generator: Property index configuration](README_Property_Index.md).
+
+## Boilerplate intro file
+
+The boilerplate intro file is a Markdown or HTML that contains the content to place in the output before the generated documentation. Can include an <code>[add_toc]</code> directive that specifies location for the table of contents.
+
+For an example boilerplate intro file, see <a href="sample_inputs/standard_html/intro.md"><code>intro.md</code></a>.
+
+## Boilerplate postscript file
+
+The boilerplate postscript file is a Markdown or HTML that contains the content to place in the output after the generated documentation. 
+
+For an example boilerplate postscript file, see <a href="sample_inputs/standard_html/postscript.md"><code>postscript.md</code></a>.
 
 ## Redfish docs generator examples
 
