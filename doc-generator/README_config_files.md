@@ -21,9 +21,9 @@ The **Redfish docs generator** accepts:
 These files are:
 
 <table width="100%">
-   <col width="43%">
-   <col width="13%">
-   <col width="44%">
+   <col width="42%">
+   <col width="16%">
+   <col width="42%">
    <thead>
       <tr>
          <th align="left" valign="top">File</th>
