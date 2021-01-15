@@ -9,7 +9,12 @@
 
 ## About
 
-The **Redfish docs generator** accepts input from configuration files in JSON format and from supplementary content files in HTML or Markdown format. These files are:
+The **Redfish docs generator** accepts:
+
+* Configuration input from JSON configuration files
+* Supplementary content from HTML or Markdown files
+
+These files are:
 
 <table width="100%">
    <col width="30%">
@@ -68,10 +73,10 @@ For examples of `doc_generator.py` command usage with various configuration file
 
 ## Configuration files
 
-* [Base configuration file](#base-configuration-file)
+<!-- * [Base configuration file](#base-configuration-file)
 * [Content supplement configuration file](#content-supplement-configuration-file)
 * [Subset configuration file](#subset-configuration-file)
-* [Property index configuration file](#property-index-configuration-file)
+* [Property index configuration file](#property-index-configuration-file) -->
 
 ### Base configuration file
 
