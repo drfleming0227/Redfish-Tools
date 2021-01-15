@@ -98,32 +98,17 @@ Some configuration keys differ from their command&#8209;line argument equivalent
 <table>
    <thead>
       <tr>
-         <th align="left" valign="top" rowspan="2"> Configuration&nbsp;key</th>
-         <th align="left" valign="top" rowspan="2">Type</th>
-         <th align="left" valign="top" colspan="6">Mode</th>
-         <th align="left" valign="top"> Description</th>
-      </tr>
-      <tr>
-         <th align="left" valign="top">CSV</th>
-         <th align="left" valign="top">Profile</th>
-         <th align="left" valign="top">Property index</th>
-         <th align="left" valign="top">Standard HTML</th>
-         <th align="left" valign="top">Normative standard HTML</th>
-         <th align="left" valign="top">Subset</th>
+         <th align="left" valign="top">Configuration&nbsp;key</th>
+         <th align="left" valign="top">Type</th>
+         <th align="left" valign="top">Supported mode or modes</th>
+         <th align="left" valign="top">Description</th>
       </tr>
    </thead>
    <tbody>
       <tr>
-         <td align="left" valign="top">
-            <code>actions_in_property_table</code>
-         </td>
+         <td align="left" valign="top"><code>actions_in_property_table</code></td>
          <td align="left" valign="top">Boolean</td>
-         <td align="left" valign="top"></td>
-         <td align="left" valign="top"></td>
-         <td align="left" valign="top"></td>
-         <td align="left" valign="top"></td>
-         <td align="left" valign="top"></td>
-         <td align="left" valign="top">X</td>
+         <td align="left" valign="top">Subset</td>
          <td align="left" valign="top">
             <p>Value is:</p>
             <ul>
@@ -134,10 +119,12 @@ Some configuration keys differ from their command&#8209;line argument equivalent
       </tr>
    </tbody>
 </table>
-      <!-- <tr>
+
+<!--<tr>
          <td align="left" valign="top"><code>add_toc</code></td>
          <td align="left" valign="top">Boolean</td>
-         <td align="left" valign="top"><p>Standard HTML, normative.</p><p>By default, the table of contents (TOC) appears at the top of the HTML output. If the <code>[add_toc]</code> directive appears anywhere in the boilerplate intro or boilerplate postscript file, `add_toc` key is <code>true</code> by default.</p><p>Value is:</p><ul> <li> <p><code>true</code>. (Default) Generate a TOC and place it either:</p> <ul> <li>At the beginning of the generated HTML file.</li> <li>In the <code>[add_toc]</code>location if that directive appears in the boilerplate intro or boilerplate postscript file. </li> </ul> <li><code>false</code>. Do not generate a TOC.</li> </ul>
+         <td align="left" valign="top"><p>Standard HTML, normative.</p></td>
+         <td align="left" valign="top"><p>By default, the table of contents (TOC) appears at the top of the HTML output. If the <code>[add_toc]</code> directive appears anywhere in the boilerplate intro or boilerplate postscript file, `add_toc` key is <code>true</code> by default.</p><p>Value is:</p><ul> <li> <p><code>true</code>. (Default) Generate a TOC and place it either:</p> <ul> <li>At the beginning of the generated HTML file.</li> <li>In the <code>[add_toc]</code>location if that directive appears in the boilerplate intro or boilerplate postscript file. </li> </ul> <li><code>false</code>. Do not generate a TOC.</li> </ul>
 <tr>
          <td align="left" valign="top"><code>boilerplate_intro</code></td><td align="left" valign="top">String</td><td align="left" valign="top"><p>Profile mode, subset mode, standard HTML, normative.</p>No default. Location of the HTML or Markdown file that contains content to appear at the beginning of the document before the generated schema documentation. If a relative path, should be relative to the location of the configuration file. |
 <tr>
