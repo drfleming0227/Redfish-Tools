@@ -1,17 +1,56 @@
 # Redfish docs generator: Configuration and supplementary files
 
-The **Redfish docs generator** accepts input from configuration files and supplementary content files.
+The **Redfish docs generator** accepts input from configuration files, in JSON format, and supplementary content files, in HTML or Markdown format.
 
 These files are:
-
-| File                    | Format | Description                                                          |
-| :---------------------- | :----- | :------------------------------------------------------------------- |
-| [Base&nbsp;configuration&nbsp;file](#base-configuration-file) | JSON | Defines most of the docs generator options including all command&#8209;line arguments except the `--help` and `--config` arguments. Also specifies the location of the [content supplement configuration file](#content-supplement-configuration-file), and the [boilerplate intro](#boilerplate-intro-file) and [boilerplate postscript](#boilerplate-postscript-file) supplementary Markdown or HTML files. |
-| [Content&nbsp;supplement&nbsp;configuration&nbsp;file](#content-supplement-configuration-file) | JSON | Contains text replacements and additions to apply to the generated schema documentation. Includes text overrides for property descriptions, replacements for unit abbreviations, and schema-specific content including introductions, postscripts, and property description substitutions. |
-| [Subset configuration file](#subset-configuration-file) | JSON | Generates **Schema subset** output, with the subset defined in the JSON profile document. |
-| [Property&nbsp;index&nbsp;configuration&nbsp;file](#property-index-configuration-file) | JSON | Generates **Property index** output, which is an index of property names and descriptions that includes property name, type, schemas where found, and descriptions found. When you run run the docs generator in <i>property index</i> mode:<ul><li>Only a few of <code>doc_generator.py</code> arguments apply.</li><li>The <a href="#configuration">configuration file</a> takes a different form than the one used for the other output modes.</li></ul> |
-| [Boilerplate intro supplementary content file](#boilerplate-intro-file) | Markdown or HTML | Contains the content to place in the output before the generated documentation. Can include an <code>[add_toc]</code> directive that specifies location for the table of contents. For an example boilerplate intro file, see <a href="sample_inputs/standard_html/intro.md"><code>intro.md</code></a>. |
-| [Boilerplate&nbsp;postscript&nbsp;supplementary&nbsp;content&nbsp;file](#boilerplate-postscript-file) | Markdown or HTML | Contains the content to place in the output after the generated documentation. For an example boilerplate postscript file, see <a href="sample_inputs/standard_html/postscript.md"><code>postscript.md</code></a>. |
+<table width="100%">
+   <col width="50%">
+   <col width="50%">
+   <thead>
+      <tr>
+         <th align="left" valign="top">File</th>
+         <th align="left" valign="top">Description</th>
+      </tr>
+      <tr>
+         <th align="left" valign="top" colspan="2">Configuration files in JSON format</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td align="left" valign="top"><a href="#base-configuration-file">Base&nbsp;configuration&nbsp;file</a></td>
+         <td align="left" valign="top">Defines most of the docs generator options including all command&#8209;line arguments except the <code>--help</code> and <code>--config</code> arguments. Also specifies the location of the <a href="#content-supplement-configuration-file">content supplement configuration file</a>, and the <a href="#supplementary-content-files">supplementary content files</a>.</td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><a href="#content-supplement-configuration-file">Content&nbsp;supplement&nbsp;configuration&nbsp;file</a></td>
+         <td align="left" valign="top">Contains text replacements and additions to apply to the generated schema documentation. Includes text overrides for property descriptions, replacements for unit abbreviations, and schema-specific content including introductions, postscripts, and property description substitutions.</td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><a href="#subset-configuration-file">Subset configuration file</a></td>
+         <td align="left" valign="top">Generates **Schema subset** output, with the subset defined in the JSON profile document.</td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><a href="#property-index-configuration-file">Property&nbsp;index&nbsp;configuration&nbsp;file</a></td>
+         <td align="left" valign="top">
+            <p>Generates <b>Property index</b> output, which is an index of property names and descriptions that includes property name, type, schemas where found, and descriptions found. When you run run the docs generator in <b>property index</b> mode:</p>
+            <ul>
+               <li>Only a few of <code>doc_generator.py</code> arguments apply.</li>
+               <li>The <a href="#configuration">configuration file</a> takes a different form than the one used for the other output modes.</li>
+            </ul>
+         </td>
+      </tr>
+      <tr>
+         <th align="left" valign="top" colspan="2">Supplementary content files in HTML or Markdown format</th>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><a href="#boilerplate-intro-file">Boilerplate intro supplementary content file</a></td>
+         <td align="left" valign="top">Contains the content to place in the output before the generated documentation. Can include an <code>[add_toc]</code> directive that specifies location for the table of contents. For an example boilerplate intro file, see <a href="sample_inputs/standard_html/intro.md"><code>intro.md</code></a>.</td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><a href="#boilerplate-postscript-file">Boilerplate&nbsp;postscript&nbsp;supplementary&nbsp;content&nbsp;file</a></td>
+         <td align="left" valign="top">Contains the content to place in the output after the generated documentation. For an example boilerplate postscript file, see <a href="sample_inputs/standard_html/postscript.md"><code>postscript.md</code></a>.</td>
+      </tr>
+   </tbody>
+</table>
 
 Some output modes, such as the property index mode, support additional configuration options.
 
