@@ -1,25 +1,22 @@
 # Redfish docs generator: Configuration
 
-The configuration files for the **Redfish docs generator** are:
+The configuration files for the **Redfish docs generator** are in JSON Schema format. These files are:
 
-* [Base configuration file](#base-configuration-file). Supports all command&#8209;line arguments except the `--help` and `--config` arguments.
-* [Content supplement configuration file](#content-supplement-configuration-file)
-* [Subset configuration file](#subset-configuration-file)
-* [Property index configuration file](#property-index-configuration-file)
+| Configuration file | Description                                                                            |
+| :----------------- | :------------------------------------------------------------------------------------- |
+| [Base configuration file](#base-configuration-file) | Defines most of the docs generator options including all command&#8209;line arguments except the `--help` and `--config` arguments.<br/>Also specifies the location of other configuration files, including the content supplement and boilerplate introduction and boilerplate postscript files. |
+| [Content supplement configuration file](#content-supplement-configuration-file) | Contains text replacements and additions to apply to the generated schema documentation. Includes text overrides for property descriptions, replacements for unit abbreviations, and schema-specific content including introductions, postscripts, and property description substitutions. |
+| [Subset configuration file](#subset-configuration-file) | Generates **Schema subset** output, with the subset defined in the JSON profile document. |
+| [Property index configuration file](#property-index-configuration-file) | Produces an index of property names and descriptions. The output includes property name, type, schemas where found, and descriptions found. When you run run the docs generator in *property index* mode:<ul><li>Only a few of `doc_generator.py` arguments apply.</li><li>
+The [configuration file](#configuration) takes a different form than the one used for the other output modes.</li></ul> |
 
-Some output modes, such as the property index mode, supports additional configuration options.
+Some output modes, such as the property index mode, support additional configuration options.
 
 If you specify an option in more than one way, command&#8209;line arguments override the configuration file keys.
-
-You must format configuration files in valid JSON Schema format.
 
 For examples of `doc_generator.py` command usage with various configuration files, see [Redfish docs generator examples](#redfish-docs-generator-examples).
 
 ## Base configuration file
-
-The base configuration file is a JSON file that defines most of the docs generator options including all command&#8209;line arguments except the `--help` and `--config` arguments. 
-
-This file also specifies the location of other configuration files, including the content supplement and boilerplate introduction and boilerplate postscript files.
 
 * [Supported keys](#supported-keys)
 * [combine_multiple_refs key](#combine_multiple_refs-key)
@@ -102,8 +99,6 @@ The `payload_dir` key specifies a directory location for JSON payload and Action
 The `profile_terse` key is meaningful only when a profile document is also specified. When `true`, *terse* output is produced. By default, profile output is verbose and includes all properties regardless of profile requirements. *Terse* output is intended for use by Service developers, including only the subset of properties with profile requirements.
 
 ## Content supplement configuration file
-
-The content supplement configuration file is a JSON file that contains text replacements and additions to apply to the generated schema documentation. It includes text overrides for property descriptions, replacements for unit abbreviations, and schema-specific content including introductions, postscripts, and property description substitutions.
 
 * [Supported keys](#supported-keys-1)
 * [schema_link_replacements key](#schema_link_replacements-key)

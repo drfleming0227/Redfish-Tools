@@ -1,6 +1,6 @@
-# Redfish docs generator: Property index mode
+# Redfish docs generator: Property index configuration
 
-Copyright 2018 Distributed Management Task Force, Inc. All rights reserved.
+Copyright 2018-2021 Distributed Management Task Force, Inc. All rights reserved.
 
 ## About
 
