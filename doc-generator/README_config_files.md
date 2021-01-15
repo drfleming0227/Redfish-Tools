@@ -19,8 +19,8 @@ The supplementary Markdown or HTML files are:
 
 | Supplementary&nbsp;file | Description                                                                |
 | :---------------------- | :------------------------------------------------------------------------- |
-| [Boilerplate intro](#boilerplate-intro-file) | |
-| [Boilerplate postscript](#boilerplate-postscript-file) | |
+| [Boilerplate intro](#boilerplate-intro-file) | Markdown or HTML file that contains the content to place in the output before the generated documentation. Can include an <code>[add_toc]</code> directive that specifies location for the table of contents. For an example boilerplate intro file, see <a href="sample_inputs/standard_html/intro.md"><code>intro.md</code></a>. |
+| [Boilerplate postscript](#boilerplate-postscript-file) | Markdown or HTML file that contains the content to place in the output after the generated documentation. For an example boilerplate postscript file, see <a href="sample_inputs/standard_html/postscript.md"><code>postscript.md</code></a>. |
 
 ## Base configuration file
 
