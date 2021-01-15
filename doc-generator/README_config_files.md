@@ -24,43 +24,38 @@ These files are:
          <th align="left" valign="top">File</th>
          <th align="left" valign="top">Description</th>
       </tr>
-      <tr>
+      <!-- <tr>
          <th align="left" valign="top" colspan="2">Configuration files in JSON format</th>
-      </tr>
+      </tr> -->
    </thead>
    <tbody>
       <tr>
-         <td align="left" valign="top"><a href="#base-configuration-file">Base</a></td>
-         <td align="left" valign="top">Defines most of the docs generator options including all command&#8209;line arguments except the <code>--help</code> and <code>--config</code> arguments. Also specifies the location of the <a href="#content-supplement-configuration-file-overview">content supplement configuration file</a> and the <a href="#supplementary-content-files-overview">supplementary content files</a>.</td>
+         <td align="left" valign="top"><a href="#base-configuration-file">Base configuration file</a></td>
+         <td align="left" valign="top">Docs generator configuration options including pointers to other configuration files and supplementary content files.</td>
       </tr>
       <tr id="content-supplement-configuration-file-overview">
-         <td align="left" valign="top"><a href="#content-supplement-configuration-file">Content&nbsp;supplement</a></td>
-         <td align="left" valign="top">Contains text replacements and additions to apply to the generated schema documentation. Includes text overrides for property descriptions, replacements for unit abbreviations, and schema-specific content including introductions, postscripts, and property description substitutions.</td>
+         <td align="left" valign="top"><a href="#content-supplement-configuration-file">Content&nbsp;supplement configuration file</a></td>
+         <td align="left" valign="top">Text replacements and additions to apply to the generated schema documentation. Includes text overrides for property descriptions, replacements for unit abbreviations, and schema-specific content including introductions, postscripts, and property description substitutions.</td>
       </tr>
       <tr>
-         <td align="left" valign="top"><a href="#subset-configuration-file">Subset</a></td>
-         <td align="left" valign="top">Used in <b>subset mode</b> to generate <b>Schema subset</b> output, with the subset defined in the JSON profile document.</td>
+         <td align="left" valign="top"><a href="#subset-configuration-file">Subset configuration file</a></td>
+         <td align="left" valign="top">Subset information to include in the _**Schema subset**_ documentation.</td>
       </tr>
       <tr>
-         <td align="left" valign="top"><a href="#property-index-configuration-file">Property&nbsp;index</a></td>
-         <td align="left" valign="top">
-            <p>Used in <b>property index mode</b> to generate <b>Property index</b> output, which is an index of property names and descriptions that includes property name, type, schemas where found, and descriptions found.</p><p>When you run run the docs generator in <b>property index mode</b>:</p>
-            <ul>
-               <li>Only a few of <code>doc_generator.py</code> arguments apply.</li>
-               <li>The <a href="#configuration">configuration file</a> takes a different form than the one used for the other output modes.</li>
-            </ul>
+         <td align="left" valign="top"><a href="#property-index-configuration-file">Property&nbsp;index configuration file</a></td>
+         <td align="left" valign="top">Property index information to include in the _**Property index**_ documentation.
          </td>
       </tr>
-      <tr id="supplementary-content-files-overview">
+      <!-- <tr id="supplementary-content-files-overview">
          <th align="left" valign="top" colspan="2">Supplementary content files in HTML or Markdown format</th>
-      </tr>
+      </tr> -->
       <tr>
-         <td align="left" valign="top"><a href="#boilerplate-intro-file">Boilerplate intro</a></td>
-         <td align="left" valign="top">Contains the content to place in the output before the generated documentation. Can include an <code>[add_toc]</code> directive that specifies location for the table of contents. For an example boilerplate intro file, see <a href="sample_inputs/standard_html/intro.md"><code>intro.md</code></a>.</td>
+         <td align="left" valign="top"><a href="#boilerplate-intro-file">Boilerplate intro supplementary content file</a></td>
+         <td align="left" valign="top">Content to place in the output before the generated documentation.</td>
       </tr>
       <tr>
          <td align="left" valign="top"><a href="#boilerplate-postscript-file">Boilerplate&nbsp;postscript</a></td>
-         <td align="left" valign="top">Contains the content to place in the output after the generated documentation. For an example boilerplate postscript file, see <a href="sample_inputs/standard_html/postscript.md"><code>postscript.md</code></a>.</td>
+         <td align="left" valign="top">Content to place in the output after the generated documentation.</td>
       </tr>
    </tbody>
 </table>
@@ -79,6 +74,8 @@ For examples of `doc_generator.py` command usage with various configuration file
 * [Property index configuration file](#property-index-configuration-file) -->
 
 ### Base configuration file
+
+Defines most of the docs generator options including all command&#8209;line arguments except the <code>--help</code> and <code>--config</code> arguments. Also specifies the location of the <a href="#content-supplement-configuration-file-overview">content supplement configuration file</a> and the <a href="#supplementary-content-files-overview">supplementary content files</a>.
 
 * [Supported keys](#supported-keys)
 * [combine_multiple_refs key](#combine_multiple_refs-key)
@@ -162,6 +159,8 @@ The `profile_terse` key is meaningful only when a profile document is also speci
 
 ### Content supplement configuration file
 
+Contains text replacements and additions to apply to the generated schema documentation. Includes text overrides for property descriptions, replacements for unit abbreviations, and schema-specific content including introductions, postscripts, and property description substitutions.
+
 * [Supported keys](#supported-keys-1)
 * [schema_link_replacements key](#schema_link_replacements-key)
 * [schema_supplement key](#schema_supplement-key)
@@ -231,7 +230,7 @@ The `mockup` and `jsonpayload` attributes are mutually exclusive. If you specify
 
 ### Subset configuration file
 
-xx
+Used in <b>subset mode</b> to generate <b>Schema subset</b> output, with the subset defined in the JSON profile document.
 
 ```json
 {
@@ -249,14 +248,8 @@ xx
    "suppress_version_history": true,
    "html_title": "Sample Profile-focused Document",
    "subset_doc": "../Redfish-Tools/doc-generator/sample_inputs/OCPBasicServer.v1_0_0.json",
-   "excluded_annotations": [
-      "*@odata.count",
-      "*@odata.navigationLink"
-   ],
-   "excluded_properties": [
-      "@odata.context",
-      "@odata.type", "@odata.id"
-   ],
+   "excluded_annotations": ["*@odata.count", "*@odata.navigationLink"],
+   "excluded_properties": ["@odata.context", "@odata.type", "@odata.id"],
    "excluded_schemas": ["*Collection"],
    "boilerplate_intro": "./intro.md",
    "content_supplement": "./content_supplement.json"
@@ -264,6 +257,13 @@ xx
 ```
 
 ### Property index configuration file
+
+<p>Used in <b>property index mode</b> to generate <b>Property index</b> output, which is an index of property names and descriptions that includes property name, type, schemas where found, and descriptions found.</p>
+<p>When you run run the docs generator in <b>property index mode</b>:</p>
+<ul>
+   <li>Only a few of <code>doc_generator.py</code> arguments apply.</li>
+   <li>The <a href="#configuration">configuration file</a> takes a different form than the one used for the other output modes.</li>
+</ul>
 
 See [Redfish docs generator: Property index configuration](README_Property_Index.md).
 
