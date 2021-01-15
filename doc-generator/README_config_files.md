@@ -28,36 +28,30 @@ These files are:
          <th align="left" valign="top">File</th>
          <th align="left" valign="top">Description</th>
       </tr>
-      <!-- <tr>
-         <th align="left" valign="top" colspan="2">Configuration files in JSON format</th>
-      </tr> -->
    </thead>
    <tbody>
       <tr>
-         <td align="left" valign="top"><a href="#base-configuration-file">Base configuration file</a></td>
+         <td align="left" valign="top"><a href="#base-configuration-file">Base&nbsp;configuration</a></td>
          <td align="left" valign="top">Docs generator configuration options including pointers to other configuration files and supplementary content files.</td>
       </tr>
       <tr id="content-supplement-configuration-file-overview">
-         <td align="left" valign="top"><a href="#content-supplement-configuration-file">Content&nbsp;supplement configuration file</a></td>
+         <td align="left" valign="top"><a href="#content-supplement-configuration-file">Content&nbsp;supplement&nbsp;configuration</a></td>
          <td align="left" valign="top">Text replacements and additions to apply to the generated schema documentation. Includes text overrides for property descriptions, replacements for unit abbreviations, and schema-specific content including introductions, postscripts, and property description substitutions.</td>
       </tr>
       <tr>
-         <td align="left" valign="top"><a href="#subset-configuration-file">Subset configuration file</a></td>
+         <td align="left" valign="top"><a href="#subset-configuration-file">Subset configuration</a></td>
          <td align="left" valign="top">Subset information to include in a <cite>Schema subset</cite> document.</td>
       </tr>
       <tr>
-         <td align="left" valign="top"><a href="#property-index-configuration-file">Property&nbsp;index configuration file</a></td>
+         <td align="left" valign="top"><a href="#property-index-configuration-file">Property&nbsp;index configuration</a></td>
          <td align="left" valign="top">Property index information to include in a <cite>Property index</cite> document.</td>
       </tr>
-      <!-- <tr id="supplementary-content-files-overview">
-         <th align="left" valign="top" colspan="2">Supplementary content files in HTML or Markdown format</th>
-      </tr> -->
       <tr>
-         <td align="left" valign="top"><a href="#boilerplate-intro-file">Boilerplate intro supplementary content file</a></td>
+         <td align="left" valign="top"><a href="#boilerplate-intro-file">Boilerplate intro supplementary content</a></td>
          <td align="left" valign="top">Content to place in the output before the generated documentation.</td>
       </tr>
       <tr>
-         <td align="left" valign="top"><a href="#boilerplate-postscript-file">Boilerplate&nbsp;postscript</a></td>
+         <td align="left" valign="top"><a href="#boilerplate-postscript-file">Boilerplate&nbsp;postscript&nbsp;supplementary&nbsp;content</a></td>
          <td align="left" valign="top">Content to place in the output after the generated documentation.</td>
       </tr>
    </tbody>
