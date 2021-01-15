@@ -2,8 +2,8 @@
 
 The configuration files for the **Redfish docs generator** are in JSON Schema format. These files are:
 
-| Configuration file | Description                                                                            |
-| :----------------- | :------------------------------------------------------------------------------------- |
+| Configuration file                    | Description                                                                |
+| :------------------------------------ | :------------------------------------------------------------------------- |
 | [Base configuration file](#base-configuration-file) | Defines most of the docs generator options including all command&#8209;line arguments except the `--help` and `--config` arguments.<br/>Also specifies the location of other configuration files, including the content supplement and boilerplate introduction and boilerplate postscript files. |
 | [Content supplement configuration file](#content-supplement-configuration-file) | Contains text replacements and additions to apply to the generated schema documentation. Includes text overrides for property descriptions, replacements for unit abbreviations, and schema-specific content including introductions, postscripts, and property description substitutions. |
 | [Subset configuration file](#subset-configuration-file) | Generates **Schema subset** output, with the subset defined in the JSON profile document. |
