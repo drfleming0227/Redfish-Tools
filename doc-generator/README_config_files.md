@@ -27,12 +27,12 @@ These files are:
       </tr>
       <tr>
          <td align="left" valign="top"><a href="#subset-configuration-file">Subset</a></td>
-         <td align="left" valign="top">Used in **subset mode** to generate <b>Schema subset</b> output, with the subset defined in the JSON profile document.</td>
+         <td align="left" valign="top">Used in <b>subset mode</b> to generate <b>Schema subset</b> output, with the subset defined in the JSON profile document.</td>
       </tr>
       <tr>
          <td align="left" valign="top"><a href="#property-index-configuration-file">Property&nbsp;index</a></td>
          <td align="left" valign="top">
-            <p>Used in **property index mode** to generate <b>Property index</b> output, which is an index of property names and descriptions that includes property name, type, schemas where found, and descriptions found. When you run run the docs generator in <b>property index</b> mode:</p>
+            <p>Used in <b>property index mode</b> to generate <b>Property index</b> output, which is an index of property names and descriptions that includes property name, type, schemas where found, and descriptions found.</p><p>When you run run the docs generator in <b>property index mode</b>:</p>
             <ul>
                <li>Only a few of <code>doc_generator.py</code> arguments apply.</li>
                <li>The <a href="#configuration">configuration file</a> takes a different form than the one used for the other output modes.</li>
@@ -62,22 +62,15 @@ For examples of `doc_generator.py` command usage with various configuration file
 ## Contents
 
 * [Configuration files](#configuration-files)
-   * [Base configuration file](#base-configuration-file)
-   * [Content supplement configuration file](#content-supplement-configuration-file)
-   * [Subset configuration file](#subset-configuration-file)
-   * [Property index configuration file](#property-index-configuration-file)
 * [Supplementary content files](#supplementary-content-files)
-   * [Boilerplate intro file](#boilerplate-intro-file)
-   * [Boilerplate postscript file](#boilerplate-postscript-file)
 * [Redfish docs generator examples](#redfish-docs-generator-examples)
-   * [Generate HTML documentation](#generate-html-documentation)
-   * [Generate HTML documentation with normative descriptions](#generate-html-documentation-with-normative-descriptions)
-   * [Generate profile index Markdown output — terse mode](#generate-profile-index-markdown-output--terse-mode)
-   * [Generate subset HTML documentation](#generate-subset-html-documentation)
-   * [Generate property index HTML output](#generate-property-index-html-output)
-   * [Generate CSV output](#generate-csv-output)
 
 ## Configuration files
+
+* [Base configuration file](#base-configuration-file)
+* [Content supplement configuration file](#content-supplement-configuration-file)
+* [Subset configuration file](#subset-configuration-file)
+* [Property index configuration file](#property-index-configuration-file)
 
 ### Base configuration file
 
@@ -270,6 +263,9 @@ See [Redfish docs generator: Property index configuration](README_Property_Index
 
 ## Supplementary content files
 
+* [Boilerplate intro file](#boilerplate-intro-file)
+* [Boilerplate postscript file](#boilerplate-postscript-file)
+
 ### Boilerplate intro file
 
 The boilerplate intro file is a Markdown or HTML that contains the content to place in the output before the generated documentation. Can include an <code>[add_toc]</code> directive that specifies location for the table of contents.
@@ -290,14 +286,14 @@ These examples assume that you have a clone of the DMTF/Redfish repo and the DMT
 
 > **Note:** The configuration files reference other files in this directory.
 
-* [Generate HTML documentation](#generate-html-documentation)
-* [Generate HTML documentation with normative descriptions](#generate-html-documentation-with-normative-descriptions)
-* [Generate profile index Markdown output — terse mode](#generate-profile-index-markdown-output--terse-mode)
-* [Generate subset HTML documentation](#generate-subset-html-documentation)
-* [Generate property index HTML output](#generate-property-index-html-output)
-* [Generate CSV output](#generate-csv-output)
+* [Standard HTML](#standard-html)
+* [Standard HTML with normative descriptions](#standard-html-with-normative-descriptions)
+* [Profile index Markdown in terse mode](#profile-index-markdown-in-terse-mode)
+* [Subset HTML](#subset-html)
+* [Property index HTML](#property-index-html)
+* [CSV](#csv)
 
-### Generate HTML documentation
+### Standard HTML
 
 ```bash
 % python ../Redfish-Tools/doc-generator/doc_generator.py --config=../Redfish-Tools/doc-generator/sample_inputs/standard_html/config.json
@@ -305,13 +301,13 @@ These examples assume that you have a clone of the DMTF/Redfish repo and the DMT
 
 Note that the `object_reference_disposition` in this config file identifies specific behavior for the `Redundancy` resource and for `PCIeInterface`, defined in `PCIeDevice`.
 
-### Generate HTML documentation with normative descriptions
+### Standard HTML with normative descriptions
 
 ```bash
 % python ../Redfish-Tools/doc-generator/doc_generator.py --config=../Redfish-Tools/doc-generator/sample_inputs/standard_html/config_normative.json
 ```
 
-### Generate profile index Markdown output &mdash; terse mode
+### Profile index Markdown in terse mode
 
 ```bash
 % python ../Redfish-Tools/doc-generator/doc_generator.py --config=../Redfish-Tools/doc-generator/sample_inputs/profile_mode/config.json
@@ -319,7 +315,7 @@ Note that the `object_reference_disposition` in this config file identifies spec
 
 Configuration file references the profile `OCPBasicServer.v1_0_0.json`, which in turn references `OCPManagedDevice.v1_0_0.json`.
 
-### Generate subset HTML documentation
+### Subset HTML
 
 ```bash
 % python ../Redfish-Tools/doc-generator/doc_generator.py --config=../Redfish-Tools/doc-generator/sample_inputs/subset/config.json
@@ -327,7 +323,7 @@ Configuration file references the profile `OCPBasicServer.v1_0_0.json`, which in
 
 Configuration file references the profile `OCPBasicServer.v1_0_0.json`, which in turn references `OCPManagedDevice.v1_0_0.json`.
 
-### Generate property index HTML output
+### Property index HTML
 
 ```bash
 % python ../Redfish-Tools/doc-generator/doc_generator.py --config=../Redfish-Tools/doc-generator/sample_inputs/property_index/config.json
@@ -335,7 +331,7 @@ Configuration file references the profile `OCPBasicServer.v1_0_0.json`, which in
 
 > **Note:** The Base Configuration file for property index output includes some elements that are specific to that mode: `description_overrides`.
 
-### Generate CSV output
+### CSV
 
 ```bash
 % python ../Redfish-Tools/doc-generator/doc_generator.py --config=../Redfish-Tools/doc-generator/sample_inputs/csv/config.json
