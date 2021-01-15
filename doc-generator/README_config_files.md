@@ -35,7 +35,7 @@ These files are:
       <tr>
          <td align="left" valign="top"><a href="#base-configuration-file">Base&nbsp;configuration</a></td>
          <td align="left" valign="top">JSON</td>
-         <td align="left" valign="top">Docs generator configuration options including pointers to other configuration files and supplementary content files.</td>
+         <td align="left" valign="top">Docs generator configuration options including pointers to the content supplement configuration file and the supplementary content files.</td>
       </tr>
       <tr id="content-supplement-configuration-file-overview">
          <td align="left" valign="top"><a href="#content-supplement-configuration-file">Content&nbsp;supplement&nbsp;configuration</a></td>
@@ -73,7 +73,7 @@ For examples of `doc_generator.py` command usage with various configuration file
 
 ## Base configuration file
 
-The base configuration file is a JSON file that defines most of the docs generator options including all command&#8209;line arguments except the <code>--help</code> and <code>--config</code> arguments. Also specifies the location of the <a href="#content-supplement-configuration-file-overview">content supplement configuration file</a> and the [boilerplate intro](#boilerplate-intro-file) and [boilerplate postscript](#boilerplate-postscript-file) supplementary content files.
+The base configuration file is a JSON file that defines most of the docs generator confirmation options including pointers to the <a href="#content-supplement-configuration-file-overview">content supplement configuration file</a> and the [boilerplate intro](#boilerplate-intro-file) and [boilerplate postscript](#boilerplate-postscript-file) supplementary content files.
 
 * [Supported keys](#supported-keys)
 * [combine_multiple_refs key](#combine_multiple_refs-key)
