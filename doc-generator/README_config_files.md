@@ -3,9 +3,10 @@
 The **Redfish docs generator** accepts input from configuration files, in JSON format, and supplementary content files, in HTML or Markdown format.
 
 These files are:
+
 <table width="100%">
-   <col width="50%">
-   <col width="50%">
+   <col width="30%">
+   <col width="70%">
    <thead>
       <tr>
          <th align="left" valign="top">File</th>
@@ -17,36 +18,36 @@ These files are:
    </thead>
    <tbody>
       <tr>
-         <td align="left" valign="top"><a href="#base-configuration-file">Base&nbsp;configuration&nbsp;file</a></td>
-         <td align="left" valign="top">Defines most of the docs generator options including all command&#8209;line arguments except the <code>--help</code> and <code>--config</code> arguments. Also specifies the location of the <a href="#content-supplement-configuration-file">content supplement configuration file</a>, and the <a href="#supplementary-content-files">supplementary content files</a>.</td>
+         <td align="left" valign="top"><a href="#base-configuration-file">Base</a></td>
+         <td align="left" valign="top">Defines most of the docs generator options including all command&#8209;line arguments except the <code>--help</code> and <code>--config</code> arguments. Also specifies the location of the <a href="#content-supplement-configuration-file-overview">content supplement configuration file</a> and the <a href="#supplementary-content-files-overview">supplementary content files</a>.</td>
       </tr>
-      <tr>
-         <td align="left" valign="top"><a href="#content-supplement-configuration-file">Content&nbsp;supplement&nbsp;configuration&nbsp;file</a></td>
+      <tr id="content-supplement-configuration-file-overview">
+         <td align="left" valign="top"><a href="#content-supplement-configuration-file">Content&nbsp;supplement</a></td>
          <td align="left" valign="top">Contains text replacements and additions to apply to the generated schema documentation. Includes text overrides for property descriptions, replacements for unit abbreviations, and schema-specific content including introductions, postscripts, and property description substitutions.</td>
       </tr>
       <tr>
-         <td align="left" valign="top"><a href="#subset-configuration-file">Subset configuration file</a></td>
-         <td align="left" valign="top">Generates **Schema subset** output, with the subset defined in the JSON profile document.</td>
+         <td align="left" valign="top"><a href="#subset-configuration-file">Subset</a></td>
+         <td align="left" valign="top">Used in **subset mode** to generate <b>Schema subset</b> output, with the subset defined in the JSON profile document.</td>
       </tr>
       <tr>
-         <td align="left" valign="top"><a href="#property-index-configuration-file">Property&nbsp;index&nbsp;configuration&nbsp;file</a></td>
+         <td align="left" valign="top"><a href="#property-index-configuration-file">Property&nbsp;index</a></td>
          <td align="left" valign="top">
-            <p>Generates <b>Property index</b> output, which is an index of property names and descriptions that includes property name, type, schemas where found, and descriptions found. When you run run the docs generator in <b>property index</b> mode:</p>
+            <p>Used in **property index mode** to generate <b>Property index</b> output, which is an index of property names and descriptions that includes property name, type, schemas where found, and descriptions found. When you run run the docs generator in <b>property index</b> mode:</p>
             <ul>
                <li>Only a few of <code>doc_generator.py</code> arguments apply.</li>
                <li>The <a href="#configuration">configuration file</a> takes a different form than the one used for the other output modes.</li>
             </ul>
          </td>
       </tr>
-      <tr>
+      <tr id="supplementary-content-files-overview">
          <th align="left" valign="top" colspan="2">Supplementary content files in HTML or Markdown format</th>
       </tr>
       <tr>
-         <td align="left" valign="top"><a href="#boilerplate-intro-file">Boilerplate intro supplementary content file</a></td>
+         <td align="left" valign="top"><a href="#boilerplate-intro-file">Boilerplate intro</a></td>
          <td align="left" valign="top">Contains the content to place in the output before the generated documentation. Can include an <code>[add_toc]</code> directive that specifies location for the table of contents. For an example boilerplate intro file, see <a href="sample_inputs/standard_html/intro.md"><code>intro.md</code></a>.</td>
       </tr>
       <tr>
-         <td align="left" valign="top"><a href="#boilerplate-postscript-file">Boilerplate&nbsp;postscript&nbsp;supplementary&nbsp;content&nbsp;file</a></td>
+         <td align="left" valign="top"><a href="#boilerplate-postscript-file">Boilerplate&nbsp;postscript</a></td>
          <td align="left" valign="top">Contains the content to place in the output after the generated documentation. For an example boilerplate postscript file, see <a href="sample_inputs/standard_html/postscript.md"><code>postscript.md</code></a>.</td>
       </tr>
    </tbody>
