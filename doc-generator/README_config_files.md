@@ -419,30 +419,27 @@ Contains text replacements and additions to apply to the generated schema docume
       <tr>
          <td align="left" valign="top"><code>property_description_overrides</code></td>
          <td align="left" valign="top">Dictionary</td>
-         <td align="left" valign="top">&nbsp;</td>
+         <td align="left" valign="top" rowspan="5">Profile<br/>Standard HTML<br/>Normative standard HTML<br/>Subset</td>
          <td align="left" valign="top">Maps property names to strings to use to replace the descriptions of the named properties.</td>
       </tr>
       <tr>
          <td align="left" valign="top"><code>property_fulldescription_overrides</code></td>
          <td align="left" valign="top">Dictionary</td>
-         <td align="left" valign="top">&nbsp;</td>
          <td align="left" valign="top">Just like <code>property_description_overrides</code>. These replacements are <i>full</i> in that any additional information the <code>doc_generator.py</code> normally appends, like a reference to the definition of the property in another schema, is omitted.</td>
       </tr>
       <tr>
          <td align="left" valign="top"><code>schema_link_replacements</code></td>
          <td align="left" valign="top">Dictionary</td>
-         <td align="left" valign="top">&nbsp;</td>
          <td align="left" valign="top">Maps URIs of schema references to a structure that specifies either the full or partial match type and replacement URIs. Use to substitute a link to documentation where a link to a specific schema would otherwise appear in the documentation. See <a href="#schema-link-replacements-key">schema_link_replacements key</a>.</td>
       </tr>
       <tr>
          <td align="left" valign="top"><code>schema_supplement</code></td>
          <td align="left" valign="top">Dictionary</td>
-         <td align="left" valign="top">&nbsp;</td>
          <td align="left" valign="top">Maps schema names to a dictionary of structured content, including introductory text and schema-specific text replacements.See <a href="schema-supplement-key">schema_supplement key</a>.</td>
-      </tr> | <tr>
+      </tr>
+      <tr>
          <td align="left" valign="top"><code>units_translation</code></td>
          <td align="left" valign="top">Dictionary</td>
-         <td align="left" valign="top">&nbsp;</td>
          <td align="left" valign="top">Maps units as they appear in Redfish schemas to units as you want them to appear in the documentation.</td>
       </tr>
    </tbody>
