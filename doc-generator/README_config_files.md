@@ -191,6 +191,7 @@ Some configuration keys differ from their command&#8209;line argument equivalent
          <td align="left" valign="top">Array of strings</td>
          <td align="left" valign="top">Profile<br />Subset<br />Standard HTML<br />Normative standard HTML<br />CSV</td>
          <td align="left" valign="top">No default. List of annotation names to exclude.<br /><br />Wildcard match is supported for strings that begin with <code>*</code>.</td>
+      </tr>
       <tr>
          <td align="left" valign="top"><code>excluded_pattern_properties</code></td>
          <td align="left" valign="top">&nbsp;</td>
