@@ -1,5 +1,4 @@
-# Table numbering README
-
+# Table Numbering README
 > last modified: 10 November 2020
 
 ## Problem
@@ -13,7 +12,7 @@
     |-----|-------|
     |foo | bar |
 
-1. The existing docs generator doesn't produce content in a linear stream, so on-the-fly numbering was not an option.
+2. The existing doc generator doesn't produce content in a linear stream, so on-the-fly numbering was not an option
 
 ## Solution
 

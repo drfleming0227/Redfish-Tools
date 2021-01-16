@@ -1,4 +1,4 @@
-# Redfish docs generator: Configuration and supplementary files
+# Redfish doc generator: Configuration and supplementary files
 
 ## Contents
 
@@ -9,11 +9,11 @@
 * [Property index configuration file](#property-index-configuration-file)
 * [Boilerplate intro file](#boilerplate-intro-file)
 * [Boilerplate postscript file](#boilerplate-postscript-file)
-* [Redfish docs generator examples](#redfish-docs-generator-examples)
+* [Redfish doc generator examples](#redfish-docs-generator-examples)
 
 ## About configuration and supplementary files
 
-The **Redfish docs generator** accepts:
+The **Redfish doc generator** accepts:
 
 * Configuration input from JSON configuration files
 * Supplementary content from HTML or Markdown files
@@ -75,11 +75,11 @@ Some output modes, such as the property index mode, support additional configura
 
 If you specify an option in more than one way, command&#8209;line arguments override the configuration file keys.
 
-For examples of `doc_generator.py` command usage with various configuration files, see [Redfish docs generator examples](#redfish-docs-generator-examples).
+For examples of `doc_generator.py` command usage with various configuration files, see [Redfish doc generator examples](#redfish-docs-generator-examples).
 
 ## Base configuration file
 
-The base configuration file is a JSON file that defines most of the docs generator confirmation options including pointers to the <a href="#content-supplement-configuration-file-overview">content supplement configuration file</a> and the [boilerplate intro](#boilerplate-intro-file) and [boilerplate postscript](#boilerplate-postscript-file) supplementary content files.
+The base configuration file is a JSON file that defines most of the doc generator confirmation options including pointers to the <a href="#content-supplement-configuration-file-overview">content supplement configuration file</a> and the [boilerplate intro](#boilerplate-intro-file) and [boilerplate postscript](#boilerplate-postscript-file) supplementary content files.
 
 * [Supported keys](#supported-keys)
 * [combine_multiple_refs key](#combine_multiple_refs-key)
@@ -216,7 +216,7 @@ Some configuration keys differ from their command&#8209;line argument equivalent
          <td align="left" valign="top"><code>locale</code></td>
          <td align="left" valign="top">&nbsp;</td>
          <td align="left" valign="top">Not used.</td>
-         <td align="left" valign="top">No default. Case-sensitive locale code for localized output. Localization of strings supplied by the docs generator uses <a href="https://www.gnu.org/software/gettext/" title="https://www.gnu.org/software/gettext/"><code>gettext</code></a>. Locale files are in the <code>locale</code> directory in the <code>doc_generator</code> root. Translated descriptions and annotations may be supplied in localized JSON Schema files.</td>
+         <td align="left" valign="top">No default. Case-sensitive locale code for localized output. Localization of strings supplied by the doc generator uses <a href="https://www.gnu.org/software/gettext/" title="https://www.gnu.org/software/gettext/"><code>gettext</code></a>. Locale files are in the <code>locale</code> directory in the <code>doc_generator</code> root. Translated descriptions and annotations may be supplied in localized JSON Schema files.</td>
       </tr>
       <tr>
          <td align="left" valign="top"><code>normative</code></td>
@@ -278,7 +278,7 @@ Some configuration keys differ from their command&#8209;line argument equivalent
          <td align="left" valign="top"><code>property_index</code></td>
          <td align="left" valign="top">Boolean</td>
          <td align="left" valign="top">Property index</td>
-         <td align="left" valign="top">No default. Produce <b>Property Index</b> output. For details, see <a href="README_Property_Index.md">Redfish docs generator: Property index mode</a>.<br /><br /><b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>property_index</code>
+         <td align="left" valign="top">No default. Produce <b>Property Index</b> output. For details, see <a href="README_Property_Index.md">Redfish doc generator: Property index mode</a>.<br /><br /><b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>property_index</code>
          </td>
       </tr>
       <tr>
@@ -453,7 +453,7 @@ The `schema_supplement` key defines a dictionary of structured content, includin
          "AnotherPropertyName": "a string, plain text or markdown."
       },
       "property_fulldescription_overrides": {
-         "YetAnotherPropertyName": "a string, plain text or markdown. This string will also eliminate any additional data the docs generator would normally append to the description."
+         "YetAnotherPropertyName": "a string, plain text or markdown. This string will also eliminate any additional data the doc generator would normally append to the description."
       },
       "property_details": {
          "EnumPropertyName": "A string, plain text or markdown. This will be inserted after the property description and prior to the table of enum details in the property information under Property Details.",
@@ -502,13 +502,13 @@ Used in <b>subset mode</b> to generate <b>Schema subset</b> output, with the sub
 ## Property index configuration file
 
 <p>Used in <b>property index mode</b> to generate <b>Property index</b> output, which is an index of property names and descriptions that includes property name, type, schemas where found, and descriptions found.</p>
-<p>When you run run the docs generator in <b>property index mode</b>:</p>
+<p>When you run run the doc generator in <b>property index mode</b>:</p>
 <ul>
    <li>Only a few of <code>doc_generator.py</code> arguments apply.</li>
    <li>The <a href="#configuration">configuration file</a> takes a different form than the one used for the other output modes.</li>
 </ul>
 
-See [Redfish docs generator: Property index configuration](README_Property_Index.md).
+See [Redfish doc generator: Property index configuration](README_Property_Index.md).
 
 ## Boilerplate intro supplementary file
 
@@ -522,7 +522,7 @@ The boilerplate postscript file is a Markdown or HTML that contains supplementar
 
 For an example boilerplate postscript file, see <a href="sample_inputs/standard_html/postscript.md"><code>postscript.md</code></a>.
 
-## Redfish docs generator examples
+## Redfish doc generator examples
 
 Several files in the `sample_inputs` directory provide examples of configuration files that you can use to produce different types of documentation. The following examples show some command&#8209;line invocations.
 
