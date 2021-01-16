@@ -30,7 +30,7 @@ These files are:
    </thead>
    <tbody>
       <tr>
-         <th align="center" valign="center" colspan="3">Configuration files</th>
+         <th align="left" valign="top" colspan="3">Configuration files</th>
       </tr>
       <tr>
          <td align="left" valign="top"><a href="#base-configuration-file">Base</a></td>
@@ -40,20 +40,20 @@ These files are:
       <tr id="content-supplement-configuration-file-overview">
          <td align="left" valign="top"><a href="#content-supplement-configuration-file">Content&nbsp;supplement</a></td>
          <td align="left" valign="top">JSON</td>
-         <td align="left" valign="top">Text overrides for property descriptions, replacements for unit abbreviations, and schema-specific content including introductions, postscripts, and property description substitutions.</td>
+         <td align="left" valign="top"><p>Text overrides for property descriptions, replacements for unit abbreviations, and schema-specific content including introductions, postscripts, and property description substitutions.</p><p>The base configuration file contains a pointer to this file.</p></td>
       </tr>
       <tr>
          <td align="left" valign="top"><a href="#subset-configuration-file">Subset</a></td>
          <td align="left" valign="top">JSON</td>
-         <td align="left" valign="top">Subset information to include in a <i>Schema subset</i> document.</td>
+         <td align="left" valign="top"><p>Subset information to include in a <i>Schema subset</i> document.</p><p>The subset configuration file is a variation of the base configuration file.</p></td>
       </tr>
       <tr>
          <td align="left" valign="top"><a href="#property-index-configuration-file">Property&nbsp;index</a></td>
          <td align="left" valign="top">JSON</td>
-         <td align="left" valign="top">Property index information to include in a <i>Property index</i> document.</td>
+         <td align="left" valign="top"><p>Property index information to include in a <i>Property index</i> document.</p><p>The property index configuration file is a variation of the base configuration file.</p></td>
       </tr>
       <tr>
-         <th align="center" valign="center" colspan="3">Supplementary content files</th>
+         <th align="left" valign="top" colspan="3">Supplementary content files</th>
       </tr>
       <tr>
          <td align="left" valign="top"><a href="#boilerplate-intro-file">Boilerplate&nbsp;intro</a></td>
@@ -406,34 +406,47 @@ Contains text replacements and additions to apply to the generated schema docume
 
 ### Supported keys
 
-| Configuration key</td>
-         <td align="left" valign="top">Type</td>
-         <td align="left" valign="top">Description</td>
-         <td align="left" valign="top">Details |
-| :----------------</td>
-         <td align="left" valign="top">:---</td>
-         <td align="left" valign="top">:----------</td>
-         <td align="left" valign="top">:------ |
-| `property_description_overrides</code></td>
+<table>
+   <thead>
+      <tr>
+         <th align="left" valign="top">Configuration&nbsp;key</th>
+         <th align="left" valign="top">Type</th>
+         <th align="left" valign="top">Supported modes</th>
+         <th align="left" valign="top">Description</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td align="left" valign="top"><code>property_description_overrides</code></td>
          <td align="left" valign="top">Dictionary</td>
+         <td align="left" valign="top">&nbsp;</td>
          <td align="left" valign="top">Maps property names to strings to use to replace the descriptions of the named properties.</td>
-         <td align="left" valign="top">|
-| `property_fulldescription_overrides</code></td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><code>property_fulldescription_overrides</code></td>
          <td align="left" valign="top">Dictionary</td>
-         <td align="left" valign="top">Just like `property_description_overrides`. These replacements are *full* in that any additional information the `doc_generator.py` normally appends, like a reference to the definition of the property in another schema, is omitted.</td>
-         <td align="left" valign="top">|
-| `schema_link_replacements</code></td>
+         <td align="left" valign="top">&nbsp;</td>
+         <td align="left" valign="top">Just like <code>property_description_overrides</code>. These replacements are <i>full</i> in that any additional information the <code>doc_generator.py</code> normally appends, like a reference to the definition of the property in another schema, is omitted.</td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><code>schema_link_replacements</code></td>
          <td align="left" valign="top">Dictionary</td>
-         <td align="left" valign="top">Maps URIs of schema references to a structure that specifies either the full or partial match type and replacement URIs. Use to substitute a link to documentation where a link to a specific schema would otherwise appear in the documentation.</td>
-         <td align="left" valign="top">[schema_link_replacements key](#schema-link-replacements-key) |
-| `schema_supplement</code></td>
+         <td align="left" valign="top">&nbsp;</td>
+         <td align="left" valign="top">Maps URIs of schema references to a structure that specifies either the full or partial match type and replacement URIs. Use to substitute a link to documentation where a link to a specific schema would otherwise appear in the documentation. See <a href="#schema-link-replacements-key">schema_link_replacements key</a>.</td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><code>schema_supplement</code></td>
          <td align="left" valign="top">Dictionary</td>
-         <td align="left" valign="top">Maps schema names to a dictionary of structured content, including introductory text and schema-specific text replacements.</td>
-         <td align="left" valign="top">[schema_supplement key](#schema-supplement-key) |
-| `units_translation</code></td>
+         <td align="left" valign="top">&nbsp;</td>
+         <td align="left" valign="top">Maps schema names to a dictionary of structured content, including introductory text and schema-specific text replacements.See <a href="schema-supplement-key">schema_supplement key</a>.</td>
+      </tr> | <tr>
+         <td align="left" valign="top"><code>units_translation</code></td>
          <td align="left" valign="top">Dictionary</td>
+         <td align="left" valign="top">&nbsp;</td>
          <td align="left" valign="top">Maps units as they appear in Redfish schemas to units as you want them to appear in the documentation.</td>
-         <td align="left" valign="top">|
+      </tr>
+   </tbody>
+</table>
 
 For an example of the content supplement configuration file, see <a href="sample_inputs/standard_html/content_supplement.json"><code>content_supplement.json</code></a>.
 
