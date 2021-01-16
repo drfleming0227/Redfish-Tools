@@ -215,9 +215,8 @@ Some configuration keys differ from their command&#8209;line argument equivalent
       <tr>
          <td align="left" valign="top"><code>locale</code></td>
          <td align="left" valign="top">&nbsp;</td>
-         <td align="left" valign="top">
-            <p>Not used.</p>No default. Case-sensitive locale code for localized output. Localization of strings supplied by the docs generator uses <a href="https://www.gnu.org/software/gettext/" title="https://www.gnu.org/software/gettext/"><code>gettext</code></a>. Locale files are in the <code>locale</code> directory in the <code>doc_generator</code> root. Translated descriptions and annotations may be supplied in localized JSON Schema files.
-         </td>
+         <td align="left" valign="top">Not used.</td>
+         <td align="left" valign="top">No default. Case-sensitive locale code for localized output. Localization of strings supplied by the docs generator uses <a href="https://www.gnu.org/software/gettext/" title="https://www.gnu.org/software/gettext/"><code>gettext</code></a>. Locale files are in the <code>locale</code> directory in the <code>doc_generator</code> root. Translated descriptions and annotations may be supplied in localized JSON Schema files.</td>
       </tr>
       <tr>
          <td align="left" valign="top"><code>normative</code></td>
@@ -234,9 +233,7 @@ Some configuration keys differ from their command&#8209;line argument equivalent
       <tr>
          <td align="left" valign="top"><code>omit_version_in_headers</code></td>
          <td align="left" valign="top">Boolean</td>
-         <td align="left" valign="top">
-            <p>Not used.</p>
-         </td>
+         <td align="left" valign="top">Not used.</td>
          <td align="left" valign="top">
             <p>No default.</p>
             <p>Value is:</p>
@@ -249,73 +246,66 @@ Some configuration keys differ from their command&#8209;line argument equivalent
       <tr>
          <td align="left" valign="top"><code>outfile</code></td>
          <td align="left" valign="top">&nbsp;</td>
-         <td align="left" valign="top">
-            <p>All</p>
-         </td>
+         <td align="left" valign="top">All</td>
          <td align="left" valign="top">No default. Output file (default depends on output format: <code>output.md</code> for Markdown, <code>index.html</code> for HTML, <code>output.csv</code> for CSV.<br /><br /><b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>out</code></td>
       </tr>
       <tr>
          <td align="left" valign="top"><code>payload_dir</code></td>
          <td align="left" valign="top">&nbsp;</td>
          <td align="left" valign="top">Standard HTML<br />Normative standard HTML</td>
-         <td align="left" valign="top">No default. Directory location for JSON payload and Action examples. Optional.<br /><br />For details, see [payload_dir key](#payload_dir-key).<br /><br /><b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b>&nbsp;`payload_dir</code></td>
+         <td align="left" valign="top">No default. Directory location for JSON payload and Action examples. Optional.<br /><br />For details, see <a href="#payload_dir-key">payload_dir key</a>.<br /><br /><b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b>&nbsp;<code>payload_dir</code></td>
       </tr>
       <tr>
          <td align="left" valign="top"><code>profile_doc</code></td>
          <td align="left" valign="top">&nbsp;</td>
-         <td align="left" valign="top">
-            <p>Profile mode.</p>No default. Path to a JSON profile document, for profile output.<br /><br /><b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>profile</code>
+         <td align="left" valign="top">Profile</td>
+         <td align="left" valign="top">No default. Path to a JSON profile document, for profile output.<br /><br /><b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>profile</code>
          </td>
       </tr>
       <tr>
          <td align="left" valign="top"><code>profile_terse</code></td>
          <td align="left" valign="top">Boolean</td>
-         <td align="left" valign="top">
-            <p>Profile mode.</p>No default. Produce *terse* profile output; meaningful only in profile mode. For details, see [profile_terse key](#profile_terse-key).<br /><br /><b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>terse</code>
+         <td align="left" valign="top">Profile</td>
+         <td align="left" valign="top">No default. Produce <i>terse</i> profile output; meaningful only in profile mode. For details, see <a href="#profile_terse-key">profile_terse key</a>.<br /><br /><b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>terse</code>
          </td>
       </tr>
       <tr>
          <td align="left" valign="top"><code>profile_uri_to_local</code></td>
-         <td align="left" valign="top">| <p>Profile mode, subset.</p>No default. For profile mode only, an object like `uri_mapping`, for locations of profiles.</td>
+         <td align="left" valign="top">Profile<br />Subset</td>
+         <td align="left" valign="top">No default. For profile mode only, an object like <code>uri_mapping</code>, for locations of profiles.</td>
       </tr>
       <tr>
          <td align="left" valign="top"><code>property_index</code></td>
          <td align="left" valign="top">Boolean</td>
-         <td align="left" valign="top">
-            <p>Property index</p>No default. Produce <b>Property Index</b> output. For details, see [Redfish docs generator: Property index mode](README_Property_Index.md).<br /><br /><b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>property_index</code>
+         <td align="left" valign="top">Property index</td>
+         <td align="left" valign="top">No default. Produce <b>Property Index</b> output. For details, see <a href="README_Property_Index.md">Redfish docs generator: Property index mode</a>.<br /><br /><b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>property_index</code>
          </td>
       </tr>
       <tr>
          <td align="left" valign="top"><code>property_index_config_out</code></td>
-         <td align="left" valign="top">| <p>Not used</p>No default. Generate an updated configuration file, with specified file name (property_index mode only).<br /><br /><b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>property_index_config_out</code></td>
+         <td align="left" valign="top">Not used</td>
+         <td align="left" valign="top">No default. Generate an updated configuration file, with specified file name (property_index mode only).<br /><br /><b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>property_index_config_out</code></td>
       </tr>
       <tr>
          <td align="left" valign="top"><code>registry_uri_to_local</code></td>
          <td align="left" valign="top">&nbsp;</td>
-         <td align="left" valign="top">
-            <p>Profile mode.</p>No default. For profile mode only, an object like uri_mapping, for locations of registries.
-         </td>
+         <td align="left" valign="top">Profile</td>
+         <td align="left" valign="top">No default. For profile mode only, an object like <code>uri_mapping</code>, for locations of registries. </td>
       </tr>
       <tr>
          <td align="left" valign="top"><code>subset</code></td>
-         <td align="left" valign="top">
-            <p>Subset</p>No default. Path to a JSON profile document. Generates <b>Schema subset</b> output, with the subset defined in the JSON profile document.<br /><br /><b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>subset</code>
+         <td align="left" valign="top">Subset</td>
+         <td align="left" valign="top">No default. Path to a JSON profile document. Generates <b>Schema subset</b> output, with the subset defined in the JSON profile document.<br /><br /><b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>subset</code>
          </td>
       </tr>
       <tr>
          <td align="left" valign="top"><code>uri_mapping</code></td>
          <td align="left" valign="top">Object</td>
-         <td align="left" valign="top">
-            <p>All</p>
-         </td>
+         <td align="left" valign="top">All</td>
          <td align="left" valign="top">No default. Partial URL of schema repositories as attributes, and local directory paths as values.</td>
       </tr>
    </tbody>
 </table>
-
-<!--
- |
- |
 
 ### combine_multiple_refs key
 
