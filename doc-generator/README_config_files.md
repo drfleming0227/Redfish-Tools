@@ -367,6 +367,13 @@ The `profile_terse` key is meaningful only when a profile document is also speci
 
 Contains text replacements and additions to apply to the generated schema documentation. Includes text overrides for property descriptions, replacements for unit abbreviations, and schema-specific content including introductions, postscripts, and property description substitutions.
 
+The content supplement configuration file is supported in these output modes:
+
+* Profile
+* Standard&nbsp;HTML
+* Normative&nbsp;standard&nbsp;HTML
+* Subset
+
 * [Content supplement configuration file example](#content-supplement-configuration-file-example)
 * [Supported keys](#supported-keys-1)
 * [schema_link_replacements key](#schema_link_replacements-key)
@@ -411,7 +418,6 @@ Contains text replacements and additions to apply to the generated schema docume
       <tr>
          <th align="left" valign="top">Configuration&nbsp;key</th>
          <th align="left" valign="top">Type</th>
-         <th align="left" valign="top">Supported modes</th>
          <th align="left" valign="top">Description</th>
       </tr>
    </thead>
@@ -419,7 +425,6 @@ Contains text replacements and additions to apply to the generated schema docume
       <tr>
          <td align="left" valign="top"><code>property_description_overrides</code></td>
          <td align="left" valign="top">Dictionary</td>
-         <td align="left" valign="top" rowspan="5">Profile<br/>Standard&nbsp;HTML<br/>Normative&nbsp;standard&nbsp;HTML<br/>Subset</td>
          <td align="left" valign="top">Maps property names to strings to use to replace the descriptions of the named properties.</td>
       </tr>
       <tr>
@@ -435,7 +440,7 @@ Contains text replacements and additions to apply to the generated schema docume
       <tr>
          <td align="left" valign="top"><code>schema_supplement</code></td>
          <td align="left" valign="top">Dictionary</td>
-         <td align="left" valign="top">Maps schema names to a dictionary of structured content, including introductory text and schema-specific text replacements.See <a href="schema-supplement-key">schema_supplement key</a>.</td>
+         <td align="left" valign="top">Maps schema names to a dictionary of structured content, including introductory text and schema-specific text replacements.See <a href="#schema-supplement-key">schema_supplement key</a>.</td>
       </tr>
       <tr>
          <td align="left" valign="top"><code>units_translation</code></td>
