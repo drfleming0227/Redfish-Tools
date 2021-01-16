@@ -113,6 +113,10 @@ optional arguments:
                         Characters to escape (\) in generated Markdown. For
                         example, --escape=@#. Use --escape=@ if strings with
                         embedded @ are being converted to mailto links.
+
+Example:
+   doc_generator.py --format=html
+   doc_generator.py --format=html --out=/path/to/output/index.html /path/to/spmf/json-files
 ```
 
 For `doc_generator.py` examples, see [Redfish docs generator examples](README_config_files.md#redfish-docs-generator-examples).
