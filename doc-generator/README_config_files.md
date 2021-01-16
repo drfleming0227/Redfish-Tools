@@ -367,13 +367,6 @@ The `profile_terse` key is meaningful only when a profile document is also speci
 
 Contains text replacements and additions to apply to the generated schema documentation. Includes text overrides for property descriptions, replacements for unit abbreviations, and schema-specific content including introductions, postscripts, and property description substitutions.
 
-The content supplement configuration file is supported in these output modes:
-
-* Profile
-* Standard&nbsp;HTML
-* Normative&nbsp;standard&nbsp;HTML
-* Subset
-
 * [Content supplement configuration file example](#content-supplement-configuration-file-example)
 * [Supported keys](#supported-keys-1)
 * [schema_link_replacements key](#schema_link_replacements-key)
@@ -413,6 +406,13 @@ The content supplement configuration file is supported in these output modes:
 
 ### Supported keys
 
+The content supplement configuration file is supported in these output modes:
+
+* Profile
+* Standard&nbsp;HTML
+* Normative&nbsp;standard&nbsp;HTML
+* Subset
+
 <table>
    <thead>
       <tr>
@@ -435,12 +435,12 @@ The content supplement configuration file is supported in these output modes:
       <tr>
          <td align="left" valign="top"><code>schema_link_replacements</code></td>
          <td align="left" valign="top">Dictionary</td>
-         <td align="left" valign="top">Maps URIs of schema references to a structure that specifies either the full or partial match type and replacement URIs. Use to substitute a link to documentation where a link to a specific schema would otherwise appear in the documentation. See <a href="#schema-link-replacements-key">schema_link_replacements key</a>.</td>
+         <td align="left" valign="top">Maps URIs of schema references to a structure that specifies either the full or partial match type and replacement URIs. Use to substitute a link to documentation where a link to a specific schema would otherwise appear in the documentation. See <a href="#schema_link_replacements-key">schema_link_replacements key</a>.</td>
       </tr>
       <tr>
          <td align="left" valign="top"><code>schema_supplement</code></td>
          <td align="left" valign="top">Dictionary</td>
-         <td align="left" valign="top">Maps schema names to a dictionary of structured content, including introductory text and schema-specific text replacements.See <a href="#schema-supplement-key">schema_supplement key</a>.</td>
+         <td align="left" valign="top">Maps schema names to a dictionary of structured content, including introductory text and schema-specific text replacements.See <a href="#schema_supplement-key">schema_supplement key</a>.</td>
       </tr>
       <tr>
          <td align="left" valign="top"><code>units_translation</code></td>
