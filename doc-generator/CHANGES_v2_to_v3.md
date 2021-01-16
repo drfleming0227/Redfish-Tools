@@ -1,8 +1,8 @@
 # Redfish doc generator v3 changes
 
-The Redfish doc generator v3 changes the inputs that the tool accepts.
+The Redfish doc generator v3 changes the inputs that it accepts.
 
-> **Note:** These changes are not backward compatible so if you want to run the tool against an existing set of configuration files and you do not need v3 or later changes, use [Redfish-Tools doc generator v2](https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0 "https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0").
+> **Note:** These changes are not backward compatible so to run the tool against an existing set of configuration files and you do not need v3 or later changes, use [Redfish-Tools doc generator v2](https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0 "https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0").
 
 The doc generator v3 configures the generated documentation by using command-line input and configuration key values from the base configuration file. The base configuration file can include pointers to other configuration files and supplementary HTML or Markdown files.
 
