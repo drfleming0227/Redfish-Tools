@@ -286,6 +286,7 @@ Some configuration keys differ from their command&#8209;line argument equivalent
       </tr>
       <tr>
          <td align="left" valign="top"><code>profile_uri_to_local</code></td>
+         <td align="left" valign="top">&nbsp;</td>
          <td align="left" valign="top">Profile<br />Subset</td>
          <td align="left" valign="top">No default. For profile mode only, an object like <code>uri_mapping</code>, for locations of profiles.</td>
       </tr>
@@ -298,6 +299,7 @@ Some configuration keys differ from their command&#8209;line argument equivalent
       </tr>
       <tr>
          <td align="left" valign="top"><code>property_index_config_out</code></td>
+         <td align="left" valign="top">&nbsp;</td>
          <td align="left" valign="top">Not used</td>
          <td align="left" valign="top">No default. Generate an updated configuration file, with specified file name (property_index mode only).<br /><br /><b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>property_index_config_out</code></td>
       </tr>
