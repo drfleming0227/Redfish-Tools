@@ -99,12 +99,12 @@ The following table links to various versions of the base configuration file:
 
 | Output mode             | Sample base configuration file |
 | :---------------------- | :----------------------------- |
-| CSV                     | [`config.json`](sample_inputs/csv/config.json) |
-| Profile                 | [`config.json`](sample_inputs/profile_mode/config.json) |
-| Property index          | [`config.json`](sample_inputs/property_index/config.json) |
-| Standard HTML           | [`config.json`](sample_inputs/standard_html/config.json) |
-| Normative standard HTML | [`config_normative.json`](sample_inputs/standard_html/config_normative.json) |
-| Subset                  | [`config.json`](sample_inputs/subset/config.json) |
+| CSV                     | [`sample_inputs/csv/config.json`](sample_inputs/csv/config.json) |
+| Profile                 | [`sample_inputs/profile_mode/config.json`](sample_inputs/profile_mode/config.json) |
+| Property index          | [`sample_inputs/property_index/config.json`](sample_inputs/property_index/config.json) |
+| Standard HTML           | [`sample_inputs/standard_html/config.json`](sample_inputs/standard_html/config.json) |
+| Normative standard HTML | [`sample_inputs/standard_html/config_normative.json`](sample_inputs/standard_html/config_normative.json) |
+| Subset                  | [`sample_inputs/subset/config.json`](sample_inputs/subset/config.json) |
 
 ### Supported keys
 
