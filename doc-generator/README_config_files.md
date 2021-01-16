@@ -312,6 +312,7 @@ Some configuration keys differ from their command&#8209;line argument equivalent
       </tr>
       <tr>
          <td align="left" valign="top"><code>subset</code></td>
+         <td align="left" valign="top">&nbsp;</td>
          <td align="left" valign="top">Subset</td>
          <td align="left" valign="top">No default. Path to a JSON profile document. Generates <b>Schema subset</b> output, with the subset defined in the JSON profile document.<br /><br /><b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>subset</code>
          </td>
