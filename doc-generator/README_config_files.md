@@ -419,7 +419,7 @@ Contains text replacements and additions to apply to the generated schema docume
       <tr>
          <td align="left" valign="top"><code>property_description_overrides</code></td>
          <td align="left" valign="top">Dictionary</td>
-         <td align="left" valign="top" rowspan="5">Profile<br/>Standard HTML<br/>Normative standard HTML<br/>Subset</td>
+         <td align="left" valign="top" rowspan="5">Profile<br/>Standard&nbsp;HTML<br/>Normative&nbsp;standard&nbsp;HTML<br/>Subset</td>
          <td align="left" valign="top">Maps property names to strings to use to replace the descriptions of the named properties.</td>
       </tr>
       <tr>
