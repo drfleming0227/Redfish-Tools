@@ -13,7 +13,7 @@
 
 ## About configuration and supplementary files
 
-The **Redfish doc generator** accepts:
+To configure output, the **Redfish doc generator** accepts:
 
 * Configuration input from JSON configuration files
 * Supplementary content from HTML or Markdown files
@@ -30,39 +30,45 @@ These files are:
    </thead>
    <tbody>
       <tr>
-         <td align="left" valign="top"><a href="#base-configuration-file">Base&nbsp;configuration</a></td>
+         <th align="center" valign="center" colspan="3">Configuration files</th>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><a href="#base-configuration-file">Base</a></td>
          <td align="left" valign="top">JSON</td>
          <td align="left" valign="top">Configuration options including pointers to the content supplement configuration file and the supplementary content files.</td>
       </tr>
       <tr id="content-supplement-configuration-file-overview">
-         <td align="left" valign="top"><a href="#content-supplement-configuration-file">Content&nbsp;supplement&nbsp;configuration</a></td>
+         <td align="left" valign="top"><a href="#content-supplement-configuration-file">Content&nbsp;supplement</a></td>
          <td align="left" valign="top">JSON</td>
          <td align="left" valign="top">Text overrides for property descriptions, replacements for unit abbreviations, and schema-specific content including introductions, postscripts, and property description substitutions.</td>
       </tr>
       <tr>
-         <td align="left" valign="top"><a href="#subset-configuration-file">Subset&nbsp;configuration</a></td>
+         <td align="left" valign="top"><a href="#subset-configuration-file">Subset</a></td>
          <td align="left" valign="top">JSON</td>
          <td align="left" valign="top">Subset information to include in a <i>Schema subset</i> document.</td>
       </tr>
       <tr>
-         <td align="left" valign="top"><a href="#property-index-configuration-file">Property&nbsp;index&nbsp;configuration</a></td>
+         <td align="left" valign="top"><a href="#property-index-configuration-file">Property&nbsp;index</a></td>
          <td align="left" valign="top">JSON</td>
          <td align="left" valign="top">Property index information to include in a <i>Property index</i> document.</td>
       </tr>
       <tr>
-         <td align="left" valign="top"><a href="#boilerplate-intro-file">Boilerplate&nbsp;intro&nbsp;supplementary&nbsp;content</a></td>
+         <th align="center" valign="center" colspan="3">Supplementary content files</th>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><a href="#boilerplate-intro-file">Boilerplate&nbsp;intro</a></td>
          <td align="left" valign="top">HTML&nbsp;or&nbsp;Markdown</td>
          <td align="left" valign="top">Content to include in the output before the generated documentation.</td>
       </tr>
       <tr>
-         <td align="left" valign="top"><a href="#boilerplate-postscript-file">Boilerplate&nbsp;postscript&nbsp&nbsp;supplementary&nbsp;content</a></td>
+         <td align="left" valign="top"><a href="#boilerplate-postscript-file">Boilerplate&nbsp;postscript</a></td>
          <td align="left" valign="top">HTML&nbsp;or&nbsp;Markdown</td>
          <td align="left" valign="top">Content to include in the output after the generated documentation.</td>
       </tr>
    </tbody>
 </table>
 
-The output modes are:
+The supported output modes are:
 
 * CSV mode - not implemented
 * Profile mode
@@ -71,7 +77,7 @@ The output modes are:
 * Normative standard HTML mode
 * Subset mode
 
-Some output modes, such as the property index mode, support additional configuration options.
+Depending on the output mode, the configuration keys in the base configuration file can change. Some output modes, such as the property index mode, support additional configuration keys.
 
 If you specify an option in more than one way, command&#8209;line arguments override the configuration file keys.
 
@@ -87,9 +93,18 @@ The base configuration file is a JSON file that defines most of the doc generato
 * [payload_dir key](#payload_dir-key)
 * [profile_terse key](#profile_terse-key)
 
-### Base configuration file example
+### Base configuration file examples
 
-See [`config.json`](sample_inputs/standard_html/config.json).
+The following table links to various versions of the base configuration file:
+
+| Output mode             | Sample base configuration file |
+| :---------------------- | :----------------------------- |
+| CSV                     | [`config.json`](sample_inputs/csv/config.json) |
+| Profile                 | [`config.json`](sample_inputs/profile_mode/config.json) |
+| Property index          | [`config.json`](sample_inputs/property_index/config.json) |
+| Standard HTML           | [`config.json`](sample_inputs/standard_html/config.json) |
+| Normative standard HTML | [`config_normative.json`](sample_inputs/standard_html/config_normative.json) |
+| Subset                  | [`config.json`](sample_inputs/subset/config.json) |
 
 ### Supported keys
 
