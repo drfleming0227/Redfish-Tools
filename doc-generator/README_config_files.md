@@ -120,7 +120,7 @@ Some configuration keys differ from their command&#8209;line argument equivalent
       <tr>
          <td align="left" valign="top"><code>add_toc</code></td>
          <td align="left" valign="top">Boolean</td>
-         <td align="left" valign="top">Standard HTML, Normative standard HTML</td>
+         <td align="left" valign="top">Standard HTML<br />Normative standard HTML</td>
          <td align="left" valign="top">
             <p>By default, the table of contents (TOC) appears at the top of the HTML output. If the <code>[add_toc]</code> directive appears anywhere in the boilerplate intro or boilerplate postscript file, <code>add_toc</code> key is <code>true</code> by default.</p>
             <p>Value is:</p>
@@ -136,64 +136,186 @@ Some configuration keys differ from their command&#8209;line argument equivalent
             </ul>
          </td>
       </tr>
+      <tr>
+         <td align="left" valign="top"><code>boilerplate_intro</code></td>
+         <td align="left" valign="top">String</td>
+         <td align="left" valign="top">Profile<br />Subset<br />Standard HTML<br />Normative standard HTML</td>
+         <td align="left" valign="top">No default. Location of the HTML or Markdown file that contains content to appear at the beginning of the document before the generated schema documentation. If a relative path, should be relative to the location of the configuration file.</td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><code>boilerplate_postscript</code></td>
+         <td align="left" valign="top">String</td>
+         <td align="left" valign="top">Standard HTML<br />Normative standard HTML</td>
+         <td align="left" valign="top">No default. Location of the HTML or Markdown file that contains content to appear at the end of the document after the generated schema documentation. If a relative path, should be relative to the location of the configuration file.</td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><code>combine_multiple_refs</code></td>
+         <td align="left" valign="top">Integer</td>
+         <td align="left" valign="top">Standard HTML<br />Normative standard HTML</td>
+         <td align="left" valign="top">No default. Threshold at which multiple references to the same object within a schema are moved into <b>Property details</b> instead of expanded in place.<br /><br />For details, see <a href="#combine_multiple_refs-key">combine_multiple_refs key</a>.</td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><code>content_supplement</code></td>
+         <td align="left" valign="top">String</td>
+         <td align="left" valign="top">Profile<br />Subset<br />Standard HTML<br />Normative standard HTML</td>
+         <td align="left" valign="top">No default. Location of a JSON-formatted content supplement file, which specifies content substitutions to be made within the generated schema documentation. If a relative path, must be relative to the location of the configuration file.</td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><code>description_overrides</code></td>
+         <td align="left" valign="top">Property index</td>
+         <td align="left" valign="top">&nbsp;</td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><code>escape_chars</code></td>
+         <td align="left" valign="top">&nbsp;</td>
+         <td align="left" valign="top">&nbsp;</td>
+         <td align="left" valign="top">No default. Characters to escape in generated Markdown. For example, use <code>--escape=@</code> if your Markdown processor converts embedded <code>@</code> characters to <code>mailto</code> links.<br /><br /><b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>escape</code></td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><code>excluded_annotations</code></td>
+         <td align="left" valign="top">Array of strings</td>
+         <td align="left" valign="top">Profile<br />Subset<br />Standard HTML<br />Normative standard HTML<br />CSV</td>
+         <td align="left" valign="top">No default. List of annotation names to exclude.<br /><br />Wildcard match is supported for strings that begin with <code>*</code>.</td>
+      <tr>
+         <td align="left" valign="top"><code>excluded_pattern_properties</code></td>
+         <td align="left" valign="top">&nbsp;</td>
+         <td align="left" valign="top">Profile<br />Subset<br />Standard HTML<br />Normative standard HTML<br />CSV</td>
+         <td align="left" valign="top">No default. List of pattern properties to exclude from output.<br /><br />In JSON, you must escape back slashes (<code>"\"</code> becomes <code>"\\"</code>).</td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><code>excluded_properties</code></td>
+         <td align="left" valign="top">Array of strings</td>
+         <td align="left" valign="top">Profile<br />Subset<br />Standard HTML<br />Normative standard HTML<br />CSV</td>
+         <td align="left" valign="top">No default. List of property names to exclude. Wildcard match is supported for strings that begin with <code>*</code>. For example, <code>"*odata.count"</code> matches <code>"Members\@odata.count"</code> and others.</td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><code>excluded_schemas</code></td>
+         <td align="left" valign="top">Array of strings</td>
+         <td align="left" valign="top">Profile<br />Subset<br />Standard HTML<br />Normative standard HTML<br />CSV</td>
+         <td align="left" valign="top">No default. List of schemas, by name, to exclude from output.</td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><code>format</code></td>
+         <td align="left" valign="top">&nbsp;</td>
+         <td align="left" valign="top">Profile<br />Subset<br />Standard HTML<br />Normative standard HTML<br />CSV</td>
+         <td align="left" valign="top">Output format. Value is <code>markdown</code>, <code>slate</code>, <code>html</code>, or <code>csv</code>.<br /><br /><b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>format</code></td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><code>html_title</code></td>
+         <td align="left" valign="top">String</td>
+         <td align="left" valign="top">Standard HTML<br />Normative standard HTML<br />Subset<br />Content supplement</td>
+         <td align="left" valign="top">No default. HTML <code>title</code> element in HTML output.</td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><code>import_from</code></td>
+         <td align="left" valign="top">String</td>
+         <td align="left" valign="top">Profile<br />Property index<br />Subset<br />Standard HTML<br />Normative standard HTML<br />CSV</td>
+         <td align="left" valign="top">File name or directory that contains the JSON schemas to process. Wild cards are acceptable. Default: <code>json-schema</code>.<br /><br /><b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b>&nbsp;<code>import_from</code></td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><code>locale</code></td>
+         <td align="left" valign="top">&nbsp;</td>
+         <td align="left" valign="top">
+            <p>Not used.</p>No default. Case-sensitive locale code for localized output. Localization of strings supplied by the docs generator uses <a href="https://www.gnu.org/software/gettext/" title="https://www.gnu.org/software/gettext/"><code>gettext</code></a>. Locale files are in the <code>locale</code> directory in the <code>doc_generator</code> root. Translated descriptions and annotations may be supplied in localized JSON Schema files.
+         </td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><code>normative</code></td>
+         <td align="left" valign="top">&nbsp;</td>
+         <td align="left" valign="top">Normative standard HTML</td>
+         <td align="left" valign="top">No default. Produce normative (developer-focused) output.</td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><code>object_reference_disposition</code></td>
+         <td align="left" valign="top">&nbsp;</td>
+         <td align="left" valign="top">Standard HTML<br />Normative standard HTML</td>
+         <td align="left" valign="top">No default. Data structure that specifies properties that should be moved to the <b>Common Objects</b> clause and/or objects that should be included in-line where they are referenced, to override default behavior. For details, see <a href="#object_reference_disposition-key">object_reference_disposition key</a>.</td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><code>omit_version_in_headers</code></td>
+         <td align="left" valign="top">Boolean</td>
+         <td align="left" valign="top">
+            <p>Not used.</p>
+         </td>
+         <td align="left" valign="top">
+            <p>No default.</p>
+            <p>Value is:</p>
+            <ul>
+               <li><code>true</code>. Exclude schema versions from clause headers.</li>
+               <li><code>false</code>. Include schema versions in clause headers.</li>
+            </ul>
+         </td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><code>outfile</code></td>
+         <td align="left" valign="top">&nbsp;</td>
+         <td align="left" valign="top">
+            <p>All</p>
+         </td>
+         <td align="left" valign="top">No default. Output file (default depends on output format: <code>output.md</code> for Markdown, <code>index.html</code> for HTML, <code>output.csv</code> for CSV.<br /><br /><b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>out</code></td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><code>payload_dir</code></td>
+         <td align="left" valign="top">&nbsp;</td>
+         <td align="left" valign="top">Standard HTML<br />Normative standard HTML</td>
+         <td align="left" valign="top">No default. Directory location for JSON payload and Action examples. Optional.<br /><br />For details, see [payload_dir key](#payload_dir-key).<br /><br /><b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b>&nbsp;`payload_dir</code></td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><code>profile_doc</code></td>
+         <td align="left" valign="top">&nbsp;</td>
+         <td align="left" valign="top">
+            <p>Profile mode.</p>No default. Path to a JSON profile document, for profile output.<br /><br /><b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>profile</code>
+         </td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><code>profile_terse</code></td>
+         <td align="left" valign="top">Boolean</td>
+         <td align="left" valign="top">
+            <p>Profile mode.</p>No default. Produce *terse* profile output; meaningful only in profile mode. For details, see [profile_terse key](#profile_terse-key).<br /><br /><b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>terse</code>
+         </td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><code>profile_uri_to_local</code></td>
+         <td align="left" valign="top">| <p>Profile mode, subset.</p>No default. For profile mode only, an object like `uri_mapping`, for locations of profiles.</td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><code>property_index</code></td>
+         <td align="left" valign="top">Boolean</td>
+         <td align="left" valign="top">
+            <p>Property index</p>No default. Produce <b>Property Index</b> output. For details, see [Redfish docs generator: Property index mode](README_Property_Index.md).<br /><br /><b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>property_index</code>
+         </td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><code>property_index_config_out</code></td>
+         <td align="left" valign="top">| <p>Not used</p>No default. Generate an updated configuration file, with specified file name (property_index mode only).<br /><br /><b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>property_index_config_out</code></td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><code>registry_uri_to_local</code></td>
+         <td align="left" valign="top">&nbsp;</td>
+         <td align="left" valign="top">
+            <p>Profile mode.</p>No default. For profile mode only, an object like uri_mapping, for locations of registries.
+         </td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><code>subset</code></td>
+         <td align="left" valign="top">
+            <p>Subset</p>No default. Path to a JSON profile document. Generates <b>Schema subset</b> output, with the subset defined in the JSON profile document.<br /><br /><b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>subset</code>
+         </td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><code>uri_mapping</code></td>
+         <td align="left" valign="top">Object</td>
+         <td align="left" valign="top">
+            <p>All</p>
+         </td>
+         <td align="left" valign="top">No default. Partial URL of schema repositories as attributes, and local directory paths as values.</td>
+      </tr>
    </tbody>
 </table>
 
 <!--
-<tr>
-         <td align="left" valign="top"><code>boilerplate_intro</code></td><td align="left" valign="top">String</td><td align="left" valign="top"><p>Profile mode, subset mode, standard HTML, normative.</p>No default. Location of the HTML or Markdown file that contains content to appear at the beginning of the document before the generated schema documentation. If a relative path, should be relative to the location of the configuration file. |
-<tr>
-         <td align="left" valign="top"><code>boilerplate_postscript</code></td><td align="left" valign="top">String</td><td align="left" valign="top"><p>Standard HTML, normative.</p>No default. Location of the HTML or Markdown file that contains content to appear at the end of the document after the generated schema documentation. If a relative path, should be relative to the location of the config file. |
-<tr>
-         <td align="left" valign="top"><code>combine_multiple_refs</code></td><td align="left" valign="top">Integer</td><td align="left" valign="top"><p>Standard HTML, normative.</p>No default. Threshold at which multiple references to the same object within a schema are moved into **Property details** instead of expanded in place.<br/><br/>For details, see [combine_multiple_refs key](#combine_multiple_refs-key). |
-<tr>
-         <td align="left" valign="top"><code>content_supplement</code></td><td align="left" valign="top">String</td><td align="left" valign="top"><p>Profile mode, subset mode, standard HTML, normative.</p>No default. Location of a JSON-formatted content supplement file, which specifies content substitutions to be made within the generated schema documentation. If a relative path, must be relative to the location of the configuration file. |
-<tr>
-         <td align="left" valign="top"><code>description_overrides</code></td><td align="left" valign="top">| <p>Property index mode.</p>xx |
-<tr>
-         <td align="left" valign="top"><code>escape_chars</code></td><td align="left" valign="top">     </td><td align="left" valign="top"><p>Nowhere</p>No default. Characters to escape in generated Markdown. For example, use `--escape=@` if your Markdown processor converts embedded `@` characters to `mailto` links.<br/><br/>**Equivalent&nbsp;command&#8209;line&nbsp;argument:** `escape` |
-<tr>
-         <td align="left" valign="top"><code>excluded_annotations</code></td><td align="left" valign="top">Array of strings</td><td align="left" valign="top"><p>Profile mode, subset mode, standard HTML, normative, CSV.</p>No default. List of annotation names to exclude.<br/><br/>Wildcard match is supported for strings that begin with `*`. |
-<tr>
-         <td align="left" valign="top"><code>excluded_pattern_properties</code></td><td align="left" valign="top">     </td><td align="left" valign="top"><p>Profile mode, subset mode, standard HTML, normative, CSV.</p>No default. List of pattern properties to exclude from output.<br/><br/>In JSON, you must escape back slashes (`"\"` becomes `"\\"`). |
-<tr>
-         <td align="left" valign="top"><code>excluded_properties</code></td><td align="left" valign="top">Array of strings</td><td align="left" valign="top"><p>Profile mode, subset mode, standard HTML, normative, CSV.</p>No default. List of property names to exclude. Wildcard match is supported for strings that begin with `*`. For example, `"*odata.count"` matches `"Members\@odata.count"` and others. |
-<tr>
-         <td align="left" valign="top"><code>excluded_schemas</code></td><td align="left" valign="top">Array of strings</td><td align="left" valign="top"><p>Profile mode, subset mode, standard HTML, normative, CSV.</p>No default. List of schemas, by name, to exclude from output. |
-<tr>
-         <td align="left" valign="top"><code>format</code></td><td align="left" valign="top">      </td><td align="left" valign="top">| <p>Profile mode, subset mode, standard HTML, normative, CSV.</p>Output format. Value is `markdown`, `slate`, `html`, or `csv`.<br/><br/>**Equivalent&nbsp;command&#8209;line&nbsp;argument:** `format` |
-<tr>
-         <td align="left" valign="top"><code>html_title</code></td><td align="left" valign="top">String</td><td align="left" valign="top"><p>Standard HTML, normative,subset,content supplement.</p>No default. HTML `title` element in HTML output. |
-<tr>
-         <td align="left" valign="top"><code>import_from</code></td><td align="left" valign="top">String</td><td align="left" valign="top">| <p>Profile mode, property index, subset mode, standard HTML, normative, CSV.</p>File name or directory that contains the JSON schemas to process. Wild cards are acceptable. Default: `json-schema`.<br/><br/>**Equivalent&nbsp;command&#8209;line&nbsp;argument:**&nbsp;`import_from` |
-<tr>
-         <td align="left" valign="top"><code>locale</code></td><td align="left" valign="top">     </td><td align="left" valign="top"><p>Not used.</p>No default. Case-sensitive locale code for localized output. Localization of strings supplied by the docs generator uses [`gettext`](https://www.gnu.org/software/gettext/ "https://www.gnu.org/software/gettext/"). Locale files are in the `locale` directory in the `doc_generator` root. Translated descriptions and annotations may be supplied in localized JSON Schema files. |
-<tr>
-         <td align="left" valign="top"><code>normative</code></td><td align="left" valign="top">     </td><td align="left" valign="top"><p>normative standard-mode.</p>No default. Produce normative (developer-focused) output. |
-<tr>
-         <td align="left" valign="top"><code>object_reference_disposition</code></td><td align="left" valign="top">     </td><td align="left" valign="top"><p>Standard HTML, normative.</p>No default. Data structure that specifies properties that should be moved to the **Common Objects** clause and/or objects that should be included in-line where they are referenced, to override default behavior.<br/><br/>For details, see [object_reference_disposition key](#object_reference_disposition-key). |
-<tr>
-         <td align="left" valign="top"><code>omit_version_in_headers</code></td><td align="left" valign="top">Boolean</td><td align="left" valign="top"><p>Not used.</p>No default. <p>Value is:</p><ul><li><code>true</code>. Exclude schema versions from clause headers.</li><li><code>false</code>. Include schema versions in clause headers.</li></ul> |
-<tr>
-         <td align="left" valign="top"><code>outfile</code></td><td align="left" valign="top">     </td><td align="left" valign="top"><p>All</p>No default. Output file (default depends on output format: `output.md` for Markdown, `index.html` for HTML, `output.csv` for CSV.<br/><br/>**Equivalent&nbsp;command&#8209;line&nbsp;argument:** `out` |
-<tr>
-         <td align="left" valign="top"><code>payload_dir</code></td><td align="left" valign="top">   </td><td align="left" valign="top"><p>Standard HTML, normative.</p>No default. Directory location for JSON payload and Action examples. Optional.<br/><br/>For details, see [payload_dir key](#payload_dir-key).<br/><br/>**Equivalent&nbsp;command&#8209;line&nbsp;argument:**&nbsp;`payload_dir</code></td><td align="left" valign="top">
-<tr>
-         <td align="left" valign="top"><code>profile_doc</code></td><td align="left" valign="top">     </td><td align="left" valign="top"><p>Profile mode.</p>No default. Path to a JSON profile document, for profile output.<br/><br/>**Equivalent&nbsp;command&#8209;line&nbsp;argument:** `profile` |
-<tr>
-         <td align="left" valign="top"><code>profile_terse</code></td><td align="left" valign="top">Boolean</td><td align="left" valign="top"><p>Profile mode.</p>No default. Produce *terse* profile output; meaningful only in profile mode. For details, see [profile_terse key](#profile_terse-key).<br/><br/>**Equivalent&nbsp;command&#8209;line&nbsp;argument:** `terse` |
-<tr>
-         <td align="left" valign="top"><code>profile_uri_to_local</code></td><td align="left" valign="top">| <p>Profile mode, subset.</p>No default. For profile mode only, an object like `uri_mapping`, for locations of profiles. |
-<tr>
-         <td align="left" valign="top"><code>property_index</code></td><td align="left" valign="top">Boolean</td><td align="left" valign="top"><p>Property index</p>No default. Produce **Property Index** output. For details, see [Redfish docs generator: Property index mode](README_Property_Index.md).<br/><br/>**Equivalent&nbsp;command&#8209;line&nbsp;argument:** `property_index` |
-<tr>
-         <td align="left" valign="top"><code>property_index_config_out</code></td><td align="left" valign="top">| <p>Not used</p>No default. Generate an updated configuration file, with specified file name (property_index mode only).<br/><br/>**Equivalent&nbsp;command&#8209;line&nbsp;argument:** `property_index_config_out` |
-<tr>
-         <td align="left" valign="top"><code>registry_uri_to_local</code></td><td align="left" valign="top">     </td><td align="left" valign="top"><p>Profile mode.</p>No default. For profile mode only, an object like uri_mapping, for locations of registries. |
-<tr>
-         <td align="left" valign="top"><code>subset`|      </td><td align="left" valign="top"><p>Subset</p>No default. Path to a JSON profile document. Generates **Schema subset** output, with the subset defined in the JSON profile document.<br/><br/>**Equivalent&nbsp;command&#8209;line&nbsp;argument:** `subset` |
-<tr>
-         <td align="left" valign="top"><code>uri_mapping</code></td><td align="left" valign="top">Object</td><td align="left" valign="top"><p>All</p>No default. Partial URL of schema repositories as attributes, and local directory paths as values. | -->
+ |
+ |
 
 ### combine_multiple_refs key
 
@@ -277,13 +399,34 @@ Contains text replacements and additions to apply to the generated schema docume
 
 ### Supported keys
 
-| Configuration key</td><td align="left" valign="top">Type</td><td align="left" valign="top">Description</td><td align="left" valign="top">Details |
-| :----------------</td><td align="left" valign="top">:---</td><td align="left" valign="top">:----------</td><td align="left" valign="top">:------ |
-| `property_description_overrides</code></td><td align="left" valign="top">Dictionary</td><td align="left" valign="top">Maps property names to strings to use to replace the descriptions of the named properties.</td><td align="left" valign="top">|
-| `property_fulldescription_overrides</code></td><td align="left" valign="top">Dictionary</td><td align="left" valign="top">Just like `property_description_overrides`. These replacements are *full* in that any additional information the `doc_generator.py` normally appends, like a reference to the definition of the property in another schema, is omitted.</td><td align="left" valign="top">|
-| `schema_link_replacements</code></td><td align="left" valign="top">Dictionary</td><td align="left" valign="top">Maps URIs of schema references to a structure that specifies either the full or partial match type and replacement URIs. Use to substitute a link to documentation where a link to a specific schema would otherwise appear in the documentation.</td><td align="left" valign="top">[schema_link_replacements key](#schema-link-replacements-key) |
-| `schema_supplement</code></td><td align="left" valign="top">Dictionary</td><td align="left" valign="top">Maps schema names to a dictionary of structured content, including introductory text and schema-specific text replacements.</td><td align="left" valign="top">[schema_supplement key](#schema-supplement-key) |
-| `units_translation</code></td><td align="left" valign="top">Dictionary</td><td align="left" valign="top">Maps units as they appear in Redfish schemas to units as you want them to appear in the documentation.</td><td align="left" valign="top">|
+| Configuration key</td>
+         <td align="left" valign="top">Type</td>
+         <td align="left" valign="top">Description</td>
+         <td align="left" valign="top">Details |
+| :----------------</td>
+         <td align="left" valign="top">:---</td>
+         <td align="left" valign="top">:----------</td>
+         <td align="left" valign="top">:------ |
+| `property_description_overrides</code></td>
+         <td align="left" valign="top">Dictionary</td>
+         <td align="left" valign="top">Maps property names to strings to use to replace the descriptions of the named properties.</td>
+         <td align="left" valign="top">|
+| `property_fulldescription_overrides</code></td>
+         <td align="left" valign="top">Dictionary</td>
+         <td align="left" valign="top">Just like `property_description_overrides`. These replacements are *full* in that any additional information the `doc_generator.py` normally appends, like a reference to the definition of the property in another schema, is omitted.</td>
+         <td align="left" valign="top">|
+| `schema_link_replacements</code></td>
+         <td align="left" valign="top">Dictionary</td>
+         <td align="left" valign="top">Maps URIs of schema references to a structure that specifies either the full or partial match type and replacement URIs. Use to substitute a link to documentation where a link to a specific schema would otherwise appear in the documentation.</td>
+         <td align="left" valign="top">[schema_link_replacements key](#schema-link-replacements-key) |
+| `schema_supplement</code></td>
+         <td align="left" valign="top">Dictionary</td>
+         <td align="left" valign="top">Maps schema names to a dictionary of structured content, including introductory text and schema-specific text replacements.</td>
+         <td align="left" valign="top">[schema_supplement key](#schema-supplement-key) |
+| `units_translation</code></td>
+         <td align="left" valign="top">Dictionary</td>
+         <td align="left" valign="top">Maps units as they appear in Redfish schemas to units as you want them to appear in the documentation.</td>
+         <td align="left" valign="top">|
 
 For an example of the content supplement configuration file, see <a href="sample_inputs/standard_html/content_supplement.json"><code>content_supplement.json</code></a>.
 
