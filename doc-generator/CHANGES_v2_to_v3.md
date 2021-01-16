@@ -14,7 +14,7 @@ The files of interest are:
 * [Content supplement configuration file](#content-supplement-configuration-file-changes)
 * [Subset configuration file](#subset-configuration-file-changes)
 
-**Supplementary Markdown files:**
+**Supplementary HTML or Markdown files:**
 
 * [Boilerplate intro](#boilerplate-intro-file-changes)
 * [Boilerplate postscript](#boilerplate-postscript-file-changes)
