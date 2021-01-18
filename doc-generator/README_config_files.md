@@ -46,7 +46,7 @@ These files are:
          <td align="left" valign="top">Content to include in the output before the generated documentation.</td>
       </tr>
       <tr>
-         <td align="left" valign="top"><a href="#boilerplate-postscript-supplementary-file">Boilerplate&nbsp;postscript supplementary file</a></td>
+         <td align="left" valign="top"><a href="#boilerplate-postscript-supplementary-file">Boilerplate&nbsp;postscript&nbsp;supplementary&nbsp;file</a></td>
          <td align="left" valign="top">HTML&nbsp;or&nbsp;Markdown</td>
          <td align="left" valign="top">Content to include in the output after the generated documentation.</td>
       </tr>
@@ -57,7 +57,7 @@ If you specify an option in more than one way, command&#8209;line arguments over
 
 ## Output modes
 
-The following table:
+The doc generator supports several output modes through various command-line or configuration options. The following table:
 
 * Lists the supported output modes
 * Provides links to sample versions of the base configuration file
@@ -90,36 +90,6 @@ The names of some configuration keys differ from their command&#8209;line argume
 
 The clauses briefly describes each key and the output modes that support the key:
 
-<!-- * [actions_in_property_table key](#actions_in_property_table-key)
-* [add_toc key](#add_toc-key)
-* [boilerplate_intro key](#boilerplate_intro-key)
-* [boilerplate_postscript key](#boilerplate_postscript-key)
-* [combine_multiple_refs key](#combine_multiple_refs-key)
-* [content_supplement key](#content_supplement-key)
-* [description_overrides key](#description_overrides-key)
-* [escape_chars key](#escape_chars-key)
-* [excluded_annotations key](#excluded_annotations-key)
-* [excluded_pattern_properties key](#excluded_pattern_properties-key)
-* [excluded_properties key](#excluded_properties-key)
-* [excluded_schemas key](#excluded_schemas-key)
-* [format key](#format-key)
-* [html_title key](#html_title-key)
-* [import_from key](#import_from-key)
-* [locale key](#locale-key)
-* [normative key](#normative-key)
-* [object_reference_disposition key](#object_reference_disposition-key)
-* [omit_version_in_headers key](#omit_version_in_headers-key)
-* [outfile key](#outfile-key)
-* [payload_dir key](#payload_dir-key)
-* [profile_doc key](#profile_doc-key)
-* [profile_terse key](#profile_terse-key)
-* [profile_uri_to_local key](#profile_uri_to_local-key)
-* [property_index key](#property_index-key)
-* [property_index_config_out key](#property_index_config_out-key)
-* [registry_uri_to_local key](#registry_uri_to_local-key)
-* [subset key](#subset-key)
-* [uri_mapping key](#uri_mapping-key) -->
-
 * `actions_in_property_table` key
 
   **Supported output modes:** Subset
@@ -148,19 +118,19 @@ The clauses briefly describes each key and the output modes that support the key
       <li><code>false</code>. Do not generate a TOC.</li>
    </ul>
 
-#### boilerplate_intro key
+* `boilerplate_intro` key
 
   **Supported output modes:** Profile, standard, standard normative, subset
 
   String. No default. Location of the HTML or Markdown file that contains content to appear at the beginning of the document before the generated schema documentation. If a relative path, should be relative to the location of the configuration file.
 
-#### boilerplate_postscript key
+* `boilerplate_postscript` key
 
   **Supported output modes:** Standard, standard normative
 
   String. No default. Location of the HTML or Markdown file that contains content to appear at the end of the document after the generated schema documentation. If a relative path, should be relative to the location of the configuration file.
 
-#### combine_multiple_refs key
+* `combine_multiple_refs` key
 
   **Supported output modes:** Standard, standard normative
 
@@ -174,19 +144,19 @@ The clauses briefly describes each key and the output modes that support the key
    "combine_multiple_refs": 3,
    ```
 
-#### content_supplement key
+* `content_supplement` key
 
   **Supported output modes:** Profile, standard, standard normative, subset
 
   String. No default. Location of a JSON-formatted content supplement file, which specifies content substitutions to be made within the generated schema documentation. If a relative path, must be relative to the location of the configuration file.
 
-#### description_overrides key
+* `description_overrides` key
 
   **Supported output modes:** Property index
 
   String. ??
 
-#### escape_chars key
+* `escape_chars` key
 
   **Supported output modes:** ??
 
@@ -194,7 +164,7 @@ The clauses briefly describes each key and the output modes that support the key
 
    <b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>escape</code>
 
-#### excluded_annotations key
+* `excluded_annotations` key
 
   **Supported output modes:** CSV, profile, standard, standard normative, subset
 
@@ -202,633 +172,173 @@ The clauses briefly describes each key and the output modes that support the key
 
    Wildcard match is supported for strings that begin with <code>\*</code>.
 
-#### excluded_pattern_properties key
-
-<table>
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <thead>
-      <th align="left" valign="top">CSV</th>
-      <th align="left" valign="top">Profile</th>
-      <th align="left" valign="top">Property index</th>
-      <th align="left" valign="top">Standard</th>
-      <th align="left" valign="top">Standard normative</th>
-      <th align="left" valign="top">Subset</th>
-   </thead>
-   <tbody>
-      <td align="left" valign="top">X</td>
-      <td align="left" valign="top">X</td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top">X</td>
-      <td align="left" valign="top">X</td>
-      <td align="left" valign="top">X</td>
-   </tbody>
-</table>
-
-??. No default. List of pattern properties to exclude from output.<br /><br />In JSON, you must escape back slashes (<code>"\"</code> becomes <code>"\\"</code>).
-
-#### excluded_properties key
-
-<table>
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <thead>
-      <th align="left" valign="top">CSV</th>
-      <th align="left" valign="top">Profile</th>
-      <th align="left" valign="top">Property index</th>
-      <th align="left" valign="top">Standard</th>
-      <th align="left" valign="top">Standard normative</th>
-      <th align="left" valign="top">Subset</th>
-   </thead>
-   <tbody>
-      <td align="left" valign="top">X</td>
-      <td align="left" valign="top">X</td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top">X</td>
-      <td align="left" valign="top">X</td>
-      <td align="left" valign="top">X</td>
-   </tbody>
-</table>
-
-Array of strings. No default. List of property names to exclude. Wildcard match is supported for strings that begin with <code>*</code>. For example, <code>"*odata.count"</code> matches <code>"Members\@odata.count"</code> and others.
-
-#### excluded_schemas key
-
-<table>
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <thead>
-      <th align="left" valign="top">CSV</th>
-      <th align="left" valign="top">Profile</th>
-      <th align="left" valign="top">Property index</th>
-      <th align="left" valign="top">Standard</th>
-      <th align="left" valign="top">Standard normative</th>
-      <th align="left" valign="top">Subset</th>
-   </thead>
-   <tbody>
-      <td align="left" valign="top">X</td>
-      <td align="left" valign="top">X</td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top">X</td>
-      <td align="left" valign="top">X</td>
-      <td align="left" valign="top">X</td>
-   </tbody>
-</table>
-
-Array of strings. No default. List of schemas, by name, to exclude from output.
-
-#### format key
-
-<table>
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <thead>
-      <th align="left" valign="top">CSV</th>
-      <th align="left" valign="top">Profile</th>
-      <th align="left" valign="top">Property index</th>
-      <th align="left" valign="top">Standard</th>
-      <th align="left" valign="top">Standard normative</th>
-      <th align="left" valign="top">Subset</th>
-   </thead>
-   <tbody>
-      <td align="left" valign="top">X</td>
-      <td align="left" valign="top">X</td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top">X</td>
-      <td align="left" valign="top">X</td>
-      <td align="left" valign="top">X</td>
-   </tbody>
-</table>
-
-&nbsp;? Output format. Value is <code>markdown</code>, <code>slate</code>, <code>html</code>, or <code>csv</code>.
-
-<b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>format</code>
-
-#### html_title key
-
-<table>
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <thead>
-      <th align="left" valign="top">CSV</th>
-      <th align="left" valign="top">Profile</th>
-      <th align="left" valign="top">Property index</th>
-      <th align="left" valign="top">Standard</th>
-      <th align="left" valign="top">Standard normative</th>
-      <th align="left" valign="top">Subset</th>
-   </thead>
-   <tbody>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top">X</td>
-      <td align="left" valign="top">X</td>
-      <td align="left" valign="top">X</td>
-   </tbody>
-</table>
-
-String<. No default. HTML <code>title</code> element in HTML output.
-
-#### import_from key
-
-<table>
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <thead>
-      <th align="left" valign="top">CSV</th>
-      <th align="left" valign="top">Profile</th>
-      <th align="left" valign="top">Property index</th>
-      <th align="left" valign="top">Standard</th>
-      <th align="left" valign="top">Standard normative</th>
-      <th align="left" valign="top">Subset</th>
-   </thead>
-   <tbody>
-      <td align="left" valign="top">X</td>
-      <td align="left" valign="top">X</td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top">X</td>
-      <td align="left" valign="top">X</td>
-      <td align="left" valign="top">X</td>
-   </tbody>
-</table>
-
-String. File name or directory that contains the JSON schemas to process. Wild cards are acceptable. Default: <code>json-schema</code>.
-
-<b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b>&nbsp;<code>import_from</code>
-
-#### locale key
-
-<table>
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <thead>
-      <th align="left" valign="top">CSV</th>
-      <th align="left" valign="top">Profile</th>
-      <th align="left" valign="top">Property index</th>
-      <th align="left" valign="top">Standard</th>
-      <th align="left" valign="top">Standard normative</th>
-      <th align="left" valign="top">Subset</th>
-   </thead>
-   <tbody>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-   </tbody>
-</table>
-
-Not used. No default. Case-sensitive locale code for localized output. Localization of strings supplied by the doc generator uses <a href="https://www.gnu.org/software/gettext/" title="https://www.gnu.org/software/gettext/"><code>gettext</code></a>. Locale files are in the <code>locale</code> directory in the <code>doc_generator</code> root. Translated descriptions and annotations may be supplied in localized JSON Schema files.
-
-#### normative key
-
-<table>
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <thead>
-      <th align="left" valign="top">CSV</th>
-      <th align="left" valign="top">Profile</th>
-      <th align="left" valign="top">Property index</th>
-      <th align="left" valign="top">Standard</th>
-      <th align="left" valign="top">Standard normative</th>
-      <th align="left" valign="top">Subset</th>
-   </thead>
-   <tbody>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top">X</td>
-      <td align="left" valign="top"></td>
-   </tbody>
-</table>
-
-&nbsp;? No default. Produce normative (developer-focused) output.
-
-#### object_reference_disposition key
-
-<table>
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <thead>
-      <th align="left" valign="top">CSV</th>
-      <th align="left" valign="top">Profile</th>
-      <th align="left" valign="top">Property index</th>
-      <th align="left" valign="top">Standard</th>
-      <th align="left" valign="top">Standard normative</th>
-      <th align="left" valign="top">Subset</th>
-   </thead>
-   <tbody>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top">X</td>
-      <td align="left" valign="top">X</td>
-      <td align="left" valign="top"></td>
-   </tbody>
-</table>
-
-&nbsp;? No default. Data structure that specifies properties that should be moved to the <b>Common Objects</b> clause and/or objects that should be included in-line where they are referenced, to override default behavior. For details, see <a href="#object_reference_disposition-key">object_reference_disposition key</a>.
-
-The `object_reference_disposition` key specifies a JSON object with either or both these fields:
-
-* `common_object`. List of property names. For example `"Redundancy"`. 
-* `include`. List of properties by their full path.
-
-For example:
-
-```json
-"object_reference_disposition": {
-   "common_object": ["Redundancy"],
-   "include": [
-      "http://redfish.dmtf.org/schemas/v1/PCIeDevice.json#/definitions/PCIeInterface"
-   ]
-}
-```
-
-#### omit_version_in_headers key
-
-<table>
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <thead>
-      <th align="left" valign="top">CSV</th>
-      <th align="left" valign="top">Profile</th>
-      <th align="left" valign="top">Property index</th>
-      <th align="left" valign="top">Standard</th>
-      <th align="left" valign="top">Standard normative</th>
-      <th align="left" valign="top">Subset</th>
-   </thead>
-   <tbody>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-   </tbody>
-</table>
-
-Boolean. Not used.
-
-<p>No default.</p>
-<p>Value is:</p>
-<ul>
-   <li><code>true</code>. Exclude schema versions from clause headers.</li>
-   <li><code>false</code>. Include schema versions in clause headers.</li>
-</ul>
-
-#### outfile key
-
-<table>
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <thead>
-      <th align="left" valign="top">CSV</th>
-      <th align="left" valign="top">Profile</th>
-      <th align="left" valign="top">Property index</th>
-      <th align="left" valign="top">Standard</th>
-      <th align="left" valign="top">Standard normative</th>
-      <th align="left" valign="top">Subset</th>
-   </thead>
-   <tbody>
-      <td align="left" valign="top">x</td>
-      <td align="left" valign="top">X</td>
-      <td align="left" valign="top">X</td>
-      <td align="left" valign="top">X</td>
-      <td align="left" valign="top">X</td>
-      <td align="left" valign="top">X</td>
-   </tbody>
-</table>
-
-&nbsp;? No default. Output file (default depends on output format: <code>output.md</code> for Markdown, <code>index.html</code> for HTML, <code>output.csv</code> for CSV.
-
-<b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>out</code>
-
-#### payload_dir key
-
-<table>
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <thead>
-      <th align="left" valign="top">CSV</th>
-      <th align="left" valign="top">Profile</th>
-      <th align="left" valign="top">Property index</th>
-      <th align="left" valign="top">Standard</th>
-      <th align="left" valign="top">Standard normative</th>
-      <th align="left" valign="top">Subset</th>
-   </thead>
-   <tbody>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top">X</td>
-      <td align="left" valign="top">X</td>
-      <td align="left" valign="top"></td>
-   </tbody>
-</table>
-
-&nbsp;? No default. Directory location for JSON payload and Action examples. Optional.<br /><br />For details, see <a href="#payload_dir-key">payload_dir key</a>.
-
-The `payload_dir` key specifies a directory location for JSON payload and Action examples. If relative, this path is relative to the working directory in which the `doc_generator.py` script is run. Within the payload directory, use the following naming scheme for example files:
-
-* &lt;schema_name&gt;-v&lt;major_version&gt;-example.json for JSON payloads
-* &lt;schema_name&gt;-v&lt;major_version&gt;-action-&lt;action_name&gt;.json for action examples
-
-<b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b>&nbsp;<code>payload_dir</code>
-
-#### profile_doc key
-
-<table>
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <thead>
-      <th align="left" valign="top">CSV</th>
-      <th align="left" valign="top">Profile</th>
-      <th align="left" valign="top">Property index</th>
-      <th align="left" valign="top">Standard</th>
-      <th align="left" valign="top">Standard normative</th>
-      <th align="left" valign="top">Subset</th>
-   </thead>
-   <tbody>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top">X</td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-   </tbody>
-</table>
-
-&nbsp;? No default. Path to a JSON profile document, for profile output.
-
-<b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>profile</code>
-
-#### profile_terse key
-
-<table>
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <thead>
-      <th align="left" valign="top">CSV</th>
-      <th align="left" valign="top">Profile</th>
-      <th align="left" valign="top">Property index</th>
-      <th align="left" valign="top">Standard</th>
-      <th align="left" valign="top">Standard normative</th>
-      <th align="left" valign="top">Subset</th>
-   </thead>
-   <tbody>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top">X</td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-   </tbody>
-</table>
-
-Boolean. No default. Produce <i>terse</i> profile output; meaningful only in profile mode. For details, see <a href="#profile_terse-key">profile_terse key</a>.
-
-The `profile_terse` key is meaningful only when a profile document is also specified. When `true`, *terse* output is produced. By default, profile output is verbose and includes all properties regardless of profile requirements. *Terse* output is intended for use by Service developers, including only the subset of properties with profile requirements.
-
-<b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>terse</code>
-
-#### profile_uri_to_local key
-
-<table>
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <thead>
-      <th align="left" valign="top">CSV</th>
-      <th align="left" valign="top">Profile</th>
-      <th align="left" valign="top">Property index</th>
-      <th align="left" valign="top">Standard</th>
-      <th align="left" valign="top">Standard normative</th>
-      <th align="left" valign="top">Subset</th>
-   </thead>
-   <tbody>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top">X</td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top">X</td>
-   </tbody>
-</table>
-
-&nbsp;? No default. For profile mode only, an object like <code>uri_mapping</code>, for locations of profiles.
-
-#### property_index key
-
-<table>
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <thead>
-      <th align="left" valign="top">CSV</th>
-      <th align="left" valign="top">Profile</th>
-      <th align="left" valign="top">Property index</th>
-      <th align="left" valign="top">Standard</th>
-      <th align="left" valign="top">Standard normative</th>
-      <th align="left" valign="top">Subset</th>
-   </thead>
-   <tbody>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top">X</td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-   </tbody>
-</table>
-
-Boolean. No default. Produce <b>Property Index</b> output. For details, see <a href="README_Property_Index.md">Redfish doc generator: Property index mode</a>.
-
-<b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>property_index</code>
-
-#### property_index_config_out key
-
-<table>
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <thead>
-      <th align="left" valign="top">CSV</th>
-      <th align="left" valign="top">Profile</th>
-      <th align="left" valign="top">Property index</th>
-      <th align="left" valign="top">Standard</th>
-      <th align="left" valign="top">Standard normative</th>
-      <th align="left" valign="top">Subset</th>
-   </thead>
-   <tbody>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-   </tbody>
-</table>
-
-&nbsp;? Not used. No default. Generate an updated configuration file, with specified file name (property_index mode only).
-
-<b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>property_index_config_out</code>
-
-#### registry_uri_to_local key
-
-<table>
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <thead>
-      <th align="left" valign="top">CSV</th>
-      <th align="left" valign="top">Profile</th>
-      <th align="left" valign="top">Property index</th>
-      <th align="left" valign="top">Standard</th>
-      <th align="left" valign="top">Standard normative</th>
-      <th align="left" valign="top">Subset</th>
-   </thead>
-   <tbody>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top">X</td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-   </tbody>
-</table>
-
-&nbsp;? No default. For profile mode only, an object like <code>uri_mapping</code>, for locations of registries.
-
-#### subset key
-
-<table>
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <thead>
-      <th align="left" valign="top">CSV</th>
-      <th align="left" valign="top">Profile</th>
-      <th align="left" valign="top">Property index</th>
-      <th align="left" valign="top">Standard</th>
-      <th align="left" valign="top">Standard normative</th>
-      <th align="left" valign="top">Subset</th>
-   </thead>
-   <tbody>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top">X</td>
-   </tbody>
-</table>
-
-&nbsp;? No default. Path to a JSON profile document. Generates <b>Schema subset</b> output, with the subset defined in the JSON profile document.
-
-<b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>subset</code>
-
-#### uri_mapping key
-
-<table>
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <thead>
-      <th align="left" valign="top">CSV</th>
-      <th align="left" valign="top">Profile</th>
-      <th align="left" valign="top">Property index</th>
-      <th align="left" valign="top">Standard</th>
-      <th align="left" valign="top">Standard normative</th>
-      <th align="left" valign="top">Subset</th>
-   </thead>
-   <tbody>
-      <td align="left" valign="top">X</td>
-      <td align="left" valign="top">X</td>
-      <td align="left" valign="top">X</td>
-      <td align="left" valign="top">X</td>
-      <td align="left" valign="top">X</td>
-      <td align="left" valign="top">x</td>
-   </tbody>
-</table>
-
-Object. No default. Partial URL of schema repositories as attributes, and local directory paths as values.
+* `excluded_pattern_properties` key
+
+   **Supported output modes:** CSV, profile, standard, standard normative, subset
+
+   ??. No default. List of pattern properties to exclude from output.<br /><br />In JSON, you must escape back slashes (<code>"\"</code> becomes <code>"\\"</code>).
+
+* `excluded_properties` key
+
+  **Supported output modes:** CSV, profile, standard, standard normative, subset
+
+  Array of strings. No default. List of property names to exclude. Wildcard match is supported for strings that begin with <code>*</code>. For example, <code>"*odata.count"</code> matches <code>"Members\@odata.count"</code> and others.
+
+* `excluded_schemas` key
+
+   **Supported output modes:** CSV, profile, standard, standard normative, subset
+
+   Array of strings. No default. List of schemas, by name, to exclude from output.
+
+* `format` key
+
+  **Supported output modes:** CSV, profile, standard, standard normative, subset
+
+  &nbsp;? Output format. Value is <code>markdown</code>, <code>slate</code>, <code>html</code>, or <code>csv</code>.
+
+  **Equivalent&nbsp;command&#8209;line&nbsp;argument:** <code>format</code>
+
+* `html_title` key
+
+  **Supported output modes:** Standard, standard normative, subset
+
+  String. No default. HTML <code>title</code> element in HTML output.
+
+* `import_from` key
+
+  **Supported output modes:** Standard, standard normative, subset
+
+  String. File name or directory that contains the JSON schemas to process. Wild cards are acceptable. Default: <code>json-schema</code>.
+
+  <b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b>&nbsp;<code>import_from</code>
+
+* `locale` key
+
+  **Supported output modes:** 
+
+  No default. Case-sensitive locale code for localized output. Localization of strings supplied by the doc generator uses <a href="https://www.gnu.org/software/gettext/" title="https://www.gnu.org/software/gettext/"><code>gettext</code></a>. Locale files are in the <code>locale</code> directory in the <code>doc_generator</code> root. Translated descriptions and annotations may be supplied in localized JSON Schema files.
+
+* `normative` key
+
+  **Supported output modes:** Standard normative
+
+  &nbsp;? No default. Produce normative (developer-focused) output.
+
+* `object_reference_disposition` key
+
+  **Supported output modes:** Standard, standard normative
+
+  &nbsp;? No default. Data structure that specifies properties that should be moved to the <b>Common Objects</b> clause and/or objects that should be included in-line where they are referenced, to override default behavior. For details, see <a href="#object_reference_disposition-key">object_reference_disposition key</a>.
+
+  The `object_reference_disposition` key specifies a JSON object with either or both these fields:
+
+  * `common_object`. List of property names. For example `"Redundancy"`. 
+  * `include`. List of properties by their full path.
+
+  For example:
+
+  ```json
+  "object_reference_disposition": {
+     "common_object": ["Redundancy"],
+     "include": [
+        "http://redfish.dmtf.org/schemas/v1/PCIeDevice.json#/definitions/PCIeInterface"
+     ]
+  }
+  ```
+
+* `omit_version_in_headers` key
+
+  **Supported output modes:** 
+
+   Boolean. Not used.
+
+   <p>No default.</p>
+   <p>Value is:</p>
+   <ul>
+      <li><code>true</code>. Exclude schema versions from clause headers.</li>
+      <li><code>false</code>. Include schema versions in clause headers.</li>
+   </ul>
+
+* `outfile` key
+
+  **Supported output modes:** CSV, profile, property index, standard, standard normative, subset
+
+   &nbsp;? No default. Output file (default depends on output format: <code>output.md</code> for Markdown, <code>index.html</code> for HTML, <code>output.csv</code> for CSV.
+
+   <b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>out</code>
+
+* `payload_dir` key
+
+  **Supported output modes:** Standard, standard normative
+
+   &nbsp;? No default. Directory location for JSON payload and Action examples. Optional.<br /><br />For details, see <a href="#payload_dir-key">payload_dir key</a>.
+
+   The `payload_dir` key specifies a directory location for JSON payload and Action examples. If relative, this path is relative to the working directory in which the `doc_generator.py` script is run. Within the payload directory, use the following naming scheme for example files:
+
+   * &lt;schema_name&gt;-v&lt;major_version&gt;-example.json for JSON payloads
+   * &lt;schema_name&gt;-v&lt;major_version&gt;-action-&lt;action_name&gt;.json for action examples
+
+   <b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b>&nbsp;<code>payload_dir</code>
+
+* `profile_doc` key
+
+  **Supported output modes:** Profile
+
+   &nbsp;? No default. Path to a JSON profile document, for profile output.
+
+   <b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>profile</code>
+
+* `profile_terse` key
+
+  **Supported output modes:** Profile
+
+   Boolean. No default. Produce <i>terse</i> profile output; meaningful only in profile mode. For details, see <a href="#profile_terse-key">profile_terse key</a>.
+
+   The `profile_terse` key is meaningful only when a profile document is also specified. When `true`, *terse* output is produced. By default, profile output is verbose and includes all properties regardless of profile requirements. *Terse* output is intended for use by Service developers, including only the subset of properties with profile requirements.
+
+   <b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>terse</code>
+
+* `profile_uri_to_local` key
+
+  **Supported output modes:** Profile, subset
+
+  &nbsp;? No default. For profile mode only, an object like <code>uri_mapping</code>, for locations of profiles.
+
+* `property_index` key
+
+  **Supported output modes:** Property index
+
+  Boolean. No default. Produce <b>Property Index</b> output. For details, see <a href="README_Property_Index.md">Redfish doc generator: Property index mode</a>.
+
+  <b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>property_index</code>
+
+* `property_index_config_out` key
+
+  **Supported output modes:** 
+
+  &nbsp;? Not used. No default. Generate an updated configuration file, with specified file name (property_index mode only).
+
+  <b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>property_index_config_out</code>
+
+* `registry_uri_to_local` key
+
+  **Supported output modes:** Profile
+
+  &nbsp;? No default. For profile mode only, an object like <code>uri_mapping</code>, for locations of registries.
+
+* `subset` key
+
+  **Supported output modes:** Subset
+
+  &nbsp;? No default. Path to a JSON profile document. Generates <b>Schema subset</b> output, with the subset defined in the JSON profile document.
+
+  <b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>subset</code>
+
+* `uri_mapping` key
+
+  **Supported output modes:** CSV, profile, property index, standard, standard normative, subset
+
+  Object. No default. Partial URL of schema repositories as attributes, and local directory paths as values.
 
 ## Content supplement configuration file
 
@@ -1029,12 +539,20 @@ These examples assume that you have a clone of the DMTF/Redfish repo and the DMT
 
 > **Note:** The configuration files reference other files in this directory.
 
+* [CSV](#csv)
 * [Standard HTML](#standard-html)
 * [Standard with normative descriptions HTML](#standard-html-with-normative-descriptions)
 * [Profile index Markdown in terse mode](#profile-index-markdown-in-terse-mode)
 * [Subset HTML](#subset-html)
 * [Property index HTML](#property-index-html)
-* [CSV](#csv)
+
+### CSV
+
+**Not implemented**
+
+```bash
+% python ../Redfish-Tools/doc-generator/doc_generator.py --config=../Redfish-Tools/doc-generator/sample_inputs/csv/config.json
+```
 
 ### Standard HTML
 
@@ -1074,10 +592,3 @@ Configuration file references the profile `OCPBasicServer.v1_0_0.json`, which in
 
 > **Note:** The base configuration file for property index output includes some elements that are specific to that mode: `description_overrides`.
 
-### CSV
-
-**Not implemented**
-
-```bash
-% python ../Redfish-Tools/doc-generator/doc_generator.py --config=../Redfish-Tools/doc-generator/sample_inputs/csv/config.json
-```
