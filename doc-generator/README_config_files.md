@@ -31,28 +31,22 @@ These files are:
    </thead>
    <tbody>
       <tr>
-         <th align="left" valign="top" colspan="3">Configuration files</th>
-      </tr>
-      <tr>
-         <td align="left" valign="top"><a href="#base-configuration-file">Base</a></td>
+         <td align="left" valign="top"><a href="#base-configuration-file">Base configuration file</a></td>
          <td align="left" valign="top">JSON</td>
          <td align="left" valign="top"><p>Configuration options including pointers to the content supplement configuration file and the supplementary content files.</p><p>Depending on the <a href="#output-modes">output mode</a>, the configuration keys in the base configuration file can change. Some output modes, such as the property index mode, support additional configuration keys.</p></td>
       </tr>
       <tr id="content-supplement-configuration-file-overview">
-         <td align="left" valign="top"><a href="#content-supplement-configuration-file">Content&nbsp;supplement</a></td>
+         <td align="left" valign="top"><a href="#content-supplement-configuration-file">Content&nbsp;supplement configuration file</a></td>
          <td align="left" valign="top">JSON</td>
          <td align="left" valign="top"><p>Text overrides for property descriptions, replacements for unit abbreviations, and schema-specific content including introductions, postscripts, and property description substitutions.</p><p>The base configuration file contains a pointer to this file.</p></td>
       </tr>
       <tr>
-         <th align="left" valign="top" colspan="3">Supplementary content files</th>
-      </tr>
-      <tr>
-         <td align="left" valign="top"><a href="#boilerplate-intro-file">Boilerplate&nbsp;intro</a></td>
+         <td align="left" valign="top"><a href="#boilerplate-intro-supplementary-file">Boilerplate&nbsp;intro supplementary file</a></td>
          <td align="left" valign="top">HTML&nbsp;or&nbsp;Markdown</td>
          <td align="left" valign="top">Content to include in the output before the generated documentation.</td>
       </tr>
       <tr>
-         <td align="left" valign="top"><a href="#boilerplate-postscript-file">Boilerplate&nbsp;postscript</a></td>
+         <td align="left" valign="top"><a href="#boilerplate-postscript-supplementary-file">Boilerplate&nbsp;postscript supplementary file</a></td>
          <td align="left" valign="top">HTML&nbsp;or&nbsp;Markdown</td>
          <td align="left" valign="top">Content to include in the output after the generated documentation.</td>
       </tr>
