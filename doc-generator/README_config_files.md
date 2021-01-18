@@ -81,8 +81,6 @@ Depending on the output mode, the configuration keys in the base configuration f
 
 If you specify an option in more than one way, command&#8209;line arguments override the configuration file keys.
 
-For , see [Redfish doc generator examples](#redfish-docs-generator-examples).
-
 ## Base configuration file
 
 The base configuration file is a JSON file that defines most of the doc generator confirmation options including pointers to the <a href="#content-supplement-configuration-file-overview">content supplement configuration file</a> and the [boilerplate intro](#boilerplate-intro-file) and [boilerplate postscript](#boilerplate-postscript-file) supplementary content files.
@@ -108,7 +106,9 @@ The following table links to sample versions of the base configuration file and 
 
 ### Supported keys
 
-Some configuration keys differ from their command&#8209;line argument equivalents. Unless otherwise noted, the configuration key has the same meaning as its command&#8209;line argument equivalent. The `uri_mapping` configuration key is required but all other configuration keys are optional.
+The names of some configuration keys differ from their command&#8209;line argument equivalents. Unless otherwise noted, the configuration key has the same meaning as its command&#8209;line argument equivalent. The `uri_mapping` configuration key is required but all other configuration keys are optional.
+
+The following table briefly describes each key and the output modes that support the key:
 
 <table>
    <thead>
@@ -135,7 +135,7 @@ Some configuration keys differ from their command&#8209;line argument equivalent
       <tr>
          <td align="left" valign="top"><code>add_toc</code></td>
          <td align="left" valign="top">Boolean</td>
-         <td align="left" valign="top">Standard HTML<br />Standard with normative descriptions HTML</td>
+         <td align="left" valign="top">Standard HTML<br />Standard&nbsp;with&nbsp;normative&nbsp;descriptions&nbsp;HTML</td>
          <td align="left" valign="top">
             <p>By default, the table of contents (TOC) appears at the top of the HTML output. If the <code>[add_toc]</code> directive appears anywhere in the boilerplate intro or boilerplate postscript file, <code>add_toc</code> key is <code>true</code> by default.</p>
             <p>Value is:</p>
