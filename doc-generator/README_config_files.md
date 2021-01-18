@@ -3,6 +3,7 @@
 ## Contents
 
 * [About configuration and supplementary files](#about-configuration-and-supplementary-files)
+* [Output modes](#output-modes)
 * [Base configuration file](#base-configuration-file)
 * [Content supplement configuration file](#content-supplement-configuration-file)
 * [Subset configuration file](#subset-configuration-file)
@@ -60,18 +61,7 @@ These files are:
 
 If you specify an option in more than one way, command&#8209;line arguments override the configuration file keys.
 
-## Base configuration file
-
-The base configuration file is a JSON file that defines most of the doc generator confirmation options including pointers to the <a href="#content-supplement-configuration-file-overview">content supplement configuration file</a> and the [boilerplate intro](#boilerplate-intro-file) and [boilerplate postscript](#boilerplate-postscript-file) supplementary content files.
-
-* [Output modes](#output-modes)
-* [Supported keys](#supported-keys)
-* [combine_multiple_refs key](#combine_multiple_refs-key)
-* [object_reference_disposition key](#object_reference_disposition-key)
-* [payload_dir key](#payload_dir-key)
-* [profile_terse key](#profile_terse-key)
-
-### Output modes
+## Output modes
 
 The supported output modes are:
 
@@ -95,30 +85,15 @@ The following table links to sample versions of the base configuration file and 
 | Standard with normative descriptions HTML | [`sample_inputs/standard_html/config_normative.json`](sample_inputs/standard_html/config_normative.json) | [Standard with normative descriptions HTML](##standard-html-with-normative-descriptions) |
 | Subset                  | [`sample_inputs/subset/config.json`](sample_inputs/subset/config.json) | [Subset HTML](##subset-html) |
 
-<table>
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <thead>
-      <th align="left" valign="top">CSV</th>
-      <th align="left" valign="top">Profile</th>
-      <th align="left" valign="top">Property index</th>
-      <th align="left" valign="top">Standard</th>
-      <th align="left" valign="top">Standard normative</th>
-      <th align="left" valign="top">Subset</th>
-   </thead>
-   <tbody>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-   </tbody>
-</table>
+## Base configuration file
+
+The base configuration file is a JSON file that defines most of the doc generator confirmation options including pointers to the <a href="#content-supplement-configuration-file-overview">content supplement configuration file</a> and the [boilerplate intro](#boilerplate-intro-file) and [boilerplate postscript](#boilerplate-postscript-file) supplementary content files.
+
+* [Supported keys](#supported-keys)
+* [combine_multiple_refs key](#combine_multiple_refs-key)
+* [object_reference_disposition key](#object_reference_disposition-key)
+* [payload_dir key](#payload_dir-key)
+* [profile_terse key](#profile_terse-key)
 
 ### Supported keys
 
