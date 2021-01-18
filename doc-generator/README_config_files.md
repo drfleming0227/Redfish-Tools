@@ -7,9 +7,9 @@
 * [Content supplement configuration file](#content-supplement-configuration-file)
 * [Subset configuration file](#subset-configuration-file)
 * [Property index configuration file](#property-index-configuration-file)
-* [Boilerplate intro file](#boilerplate-intro-file)
-* [Boilerplate postscript file](#boilerplate-postscript-file)
-* [Redfish doc generator examples](#redfish-docs-generator-examples)
+* [Boilerplate intro supplementary file](#boilerplate-intro-supplementary-file)
+* [Boilerplate postscript supplementary file](#boilerplate-postscript-supplementary-file)
+* [Redfish doc generator examples](#redfish-doc-generator-examples)
 
 ## About configuration and supplementary files
 
@@ -68,6 +68,21 @@ These files are:
    </tbody>
 </table>
 
+If you specify an option in more than one way, command&#8209;line arguments override the configuration file keys.
+
+## Base configuration file
+
+The base configuration file is a JSON file that defines most of the doc generator confirmation options including pointers to the <a href="#content-supplement-configuration-file-overview">content supplement configuration file</a> and the [boilerplate intro](#boilerplate-intro-file) and [boilerplate postscript](#boilerplate-postscript-file) supplementary content files.
+
+* [Output modes](#output-modes)
+* [Supported keys](#supported-keys)
+* [combine_multiple_refs key](#combine_multiple_refs-key)
+* [object_reference_disposition key](#object_reference_disposition-key)
+* [payload_dir key](#payload_dir-key)
+* [profile_terse key](#profile_terse-key)
+
+### Output modes
+
 The supported output modes are:
 
 * CSV - (not implemented?)
@@ -78,20 +93,6 @@ The supported output modes are:
 * Subset
 
 Depending on the output mode, the configuration keys in the base configuration file can change. Some output modes, such as the property index mode, support additional configuration keys.
-
-If you specify an option in more than one way, command&#8209;line arguments override the configuration file keys.
-
-## Base configuration file
-
-The base configuration file is a JSON file that defines most of the doc generator confirmation options including pointers to the <a href="#content-supplement-configuration-file-overview">content supplement configuration file</a> and the [boilerplate intro](#boilerplate-intro-file) and [boilerplate postscript](#boilerplate-postscript-file) supplementary content files.
-
-* [Supported keys](#supported-keys)
-* [combine_multiple_refs key](#combine_multiple_refs-key)
-* [object_reference_disposition key](#object_reference_disposition-key)
-* [payload_dir key](#payload_dir-key)
-* [profile_terse key](#profile_terse-key)
-
-### Base configuration file examples
 
 The following table links to sample versions of the base configuration file and examples of `doc_generator.py` command usage with different versions of the base configuration file:
 
