@@ -74,14 +74,14 @@ The supported output modes are:
 * Profile
 * Property index
 * Standard HTML
-* Normative standard HTML
+* Standard with normative descriptions HTML
 * Subset
 
 Depending on the output mode, the configuration keys in the base configuration file can change. Some output modes, such as the property index mode, support additional configuration keys.
 
 If you specify an option in more than one way, command&#8209;line arguments override the configuration file keys.
 
-For examples of `doc_generator.py` command usage with various configuration files, see [Redfish doc generator examples](#redfish-docs-generator-examples).
+For , see [Redfish doc generator examples](#redfish-docs-generator-examples).
 
 ## Base configuration file
 
@@ -95,16 +95,16 @@ The base configuration file is a JSON file that defines most of the doc generato
 
 ### Base configuration file examples
 
-The following table links to sample versions of the base configuration file:
+The following table links to sample versions of the base configuration file and examples of `doc_generator.py` command usage with different versions of the base configuration file:
 
-| Output mode             | Sample base configuration file |
-| :---------------------- | :----------------------------- |
-| CSV                     | [`sample_inputs/csv/config.json`](sample_inputs/csv/config.json) |
-| Profile                 | [`sample_inputs/profile_mode/config.json`](sample_inputs/profile_mode/config.json) |
-| Property index          | [`sample_inputs/property_index/config.json`](sample_inputs/property_index/config.json) |
-| Standard HTML           | [`sample_inputs/standard_html/config.json`](sample_inputs/standard_html/config.json) |
-| Normative standard HTML | [`sample_inputs/standard_html/config_normative.json`](sample_inputs/standard_html/config_normative.json) |
-| Subset                  | [`sample_inputs/subset/config.json`](sample_inputs/subset/config.json) |
+| Output mode             | Sample base configuration file | Example command usage |
+| :---------------------- | :----------------------------- | :-------------------- |
+| CSV                     | [`sample_inputs/csv/config.json`](sample_inputs/csv/config.json) | [CSV](#csv) |
+| Profile                 | [`sample_inputs/profile_mode/config.json`](sample_inputs/profile_mode/config.json) | [Profile index Markdown in terse mode](##profile-index-markdown-in-terse-mode) |
+| Property index          | [`sample_inputs/property_index/config.json`](sample_inputs/property_index/config.json) | [Property index HTML](##property-index-html) |
+| Standard HTML           | [`sample_inputs/standard_html/config.json`](sample_inputs/standard_html/config.json) | [Standard HTML](##standard-html) |
+| Standard with normative descriptions HTML | [`sample_inputs/standard_html/config_normative.json`](sample_inputs/standard_html/config_normative.json) | [Standard with normative descriptions HTML](##standard-html-with-normative-descriptions) |
+| Subset                  | [`sample_inputs/subset/config.json`](sample_inputs/subset/config.json) | [Subset HTML](##subset-html) |
 
 ### Supported keys
 
@@ -135,7 +135,7 @@ Some configuration keys differ from their command&#8209;line argument equivalent
       <tr>
          <td align="left" valign="top"><code>add_toc</code></td>
          <td align="left" valign="top">Boolean</td>
-         <td align="left" valign="top">Standard HTML<br />Normative standard HTML</td>
+         <td align="left" valign="top">Standard HTML<br />Standard with normative descriptions HTML</td>
          <td align="left" valign="top">
             <p>By default, the table of contents (TOC) appears at the top of the HTML output. If the <code>[add_toc]</code> directive appears anywhere in the boilerplate intro or boilerplate postscript file, <code>add_toc</code> key is <code>true</code> by default.</p>
             <p>Value is:</p>
@@ -154,25 +154,25 @@ Some configuration keys differ from their command&#8209;line argument equivalent
       <tr>
          <td align="left" valign="top"><code>boilerplate_intro</code></td>
          <td align="left" valign="top">String</td>
-         <td align="left" valign="top">Profile<br />Subset<br />Standard HTML<br />Normative standard HTML</td>
+         <td align="left" valign="top">Profile<br />Subset<br />Standard HTML<br />Standard with normative descriptions HTML</td>
          <td align="left" valign="top">No default. Location of the HTML or Markdown file that contains content to appear at the beginning of the document before the generated schema documentation. If a relative path, should be relative to the location of the configuration file.</td>
       </tr>
       <tr>
          <td align="left" valign="top"><code>boilerplate_postscript</code></td>
          <td align="left" valign="top">String</td>
-         <td align="left" valign="top">Standard HTML<br />Normative standard HTML</td>
+         <td align="left" valign="top">Standard HTML<br />Standard with normative descriptions HTML</td>
          <td align="left" valign="top">No default. Location of the HTML or Markdown file that contains content to appear at the end of the document after the generated schema documentation. If a relative path, should be relative to the location of the configuration file.</td>
       </tr>
       <tr>
          <td align="left" valign="top"><code>combine_multiple_refs</code></td>
          <td align="left" valign="top">Integer</td>
-         <td align="left" valign="top">Standard HTML<br />Normative standard HTML</td>
+         <td align="left" valign="top">Standard HTML<br />Standard with normative descriptions HTML</td>
          <td align="left" valign="top">No default. Threshold at which multiple references to the same object within a schema are moved into <b>Property details</b> instead of expanded in place.<br /><br />For details, see <a href="#combine_multiple_refs-key">combine_multiple_refs key</a>.</td>
       </tr>
       <tr>
          <td align="left" valign="top"><code>content_supplement</code></td>
          <td align="left" valign="top">String</td>
-         <td align="left" valign="top">Profile<br />Subset<br />Standard HTML<br />Normative standard HTML</td>
+         <td align="left" valign="top">Profile<br />Subset<br />Standard HTML<br />Standard with normative descriptions HTML</td>
          <td align="left" valign="top">No default. Location of a JSON-formatted content supplement file, which specifies content substitutions to be made within the generated schema documentation. If a relative path, must be relative to the location of the configuration file.</td>
       </tr>
       <tr>
@@ -189,43 +189,43 @@ Some configuration keys differ from their command&#8209;line argument equivalent
       <tr>
          <td align="left" valign="top"><code>excluded_annotations</code></td>
          <td align="left" valign="top">Array of strings</td>
-         <td align="left" valign="top">Profile<br />Subset<br />Standard HTML<br />Normative standard HTML<br />CSV</td>
+         <td align="left" valign="top">Profile<br />Subset<br />Standard HTML<br />Standard with normative descriptions HTML<br />CSV</td>
          <td align="left" valign="top">No default. List of annotation names to exclude.<br /><br />Wildcard match is supported for strings that begin with <code>*</code>.</td>
       </tr>
       <tr>
          <td align="left" valign="top"><code>excluded_pattern_properties</code></td>
          <td align="left" valign="top">&nbsp;</td>
-         <td align="left" valign="top">Profile<br />Subset<br />Standard HTML<br />Normative standard HTML<br />CSV</td>
+         <td align="left" valign="top">Profile<br />Subset<br />Standard HTML<br />Standard with normative descriptions HTML<br />CSV</td>
          <td align="left" valign="top">No default. List of pattern properties to exclude from output.<br /><br />In JSON, you must escape back slashes (<code>"\"</code> becomes <code>"\\"</code>).</td>
       </tr>
       <tr>
          <td align="left" valign="top"><code>excluded_properties</code></td>
          <td align="left" valign="top">Array of strings</td>
-         <td align="left" valign="top">Profile<br />Subset<br />Standard HTML<br />Normative standard HTML<br />CSV</td>
+         <td align="left" valign="top">Profile<br />Subset<br />Standard HTML<br />Standard with normative descriptions HTML<br />CSV</td>
          <td align="left" valign="top">No default. List of property names to exclude. Wildcard match is supported for strings that begin with <code>*</code>. For example, <code>"*odata.count"</code> matches <code>"Members\@odata.count"</code> and others.</td>
       </tr>
       <tr>
          <td align="left" valign="top"><code>excluded_schemas</code></td>
          <td align="left" valign="top">Array of strings</td>
-         <td align="left" valign="top">Profile<br />Subset<br />Standard HTML<br />Normative standard HTML<br />CSV</td>
+         <td align="left" valign="top">Profile<br />Subset<br />Standard HTML<br />Standard with normative descriptions HTML<br />CSV</td>
          <td align="left" valign="top">No default. List of schemas, by name, to exclude from output.</td>
       </tr>
       <tr>
          <td align="left" valign="top"><code>format</code></td>
          <td align="left" valign="top">&nbsp;</td>
-         <td align="left" valign="top">Profile<br />Subset<br />Standard HTML<br />Normative standard HTML<br />CSV</td>
+         <td align="left" valign="top">Profile<br />Subset<br />Standard HTML<br />Standard with normative descriptions HTML<br />CSV</td>
          <td align="left" valign="top">Output format. Value is <code>markdown</code>, <code>slate</code>, <code>html</code>, or <code>csv</code>.<br /><br /><b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>format</code></td>
       </tr>
       <tr>
          <td align="left" valign="top"><code>html_title</code></td>
          <td align="left" valign="top">String</td>
-         <td align="left" valign="top">Standard HTML<br />Normative standard HTML<br />Subset<br />Content supplement</td>
+         <td align="left" valign="top">Standard HTML<br />Standard with normative descriptions HTML<br />Subset<br />Content supplement</td>
          <td align="left" valign="top">No default. HTML <code>title</code> element in HTML output.</td>
       </tr>
       <tr>
          <td align="left" valign="top"><code>import_from</code></td>
          <td align="left" valign="top">String</td>
-         <td align="left" valign="top">Profile<br />Property index<br />Subset<br />Standard HTML<br />Normative standard HTML<br />CSV</td>
+         <td align="left" valign="top">Profile<br />Property index<br />Subset<br />Standard HTML<br />Standard with normative descriptions HTML<br />CSV</td>
          <td align="left" valign="top">File name or directory that contains the JSON schemas to process. Wild cards are acceptable. Default: <code>json-schema</code>.<br /><br /><b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b>&nbsp;<code>import_from</code></td>
       </tr>
       <tr>
@@ -237,13 +237,13 @@ Some configuration keys differ from their command&#8209;line argument equivalent
       <tr>
          <td align="left" valign="top"><code>normative</code></td>
          <td align="left" valign="top">&nbsp;</td>
-         <td align="left" valign="top">Normative standard HTML</td>
+         <td align="left" valign="top">Standard with normative descriptions HTML</td>
          <td align="left" valign="top">No default. Produce normative (developer-focused) output.</td>
       </tr>
       <tr>
          <td align="left" valign="top"><code>object_reference_disposition</code></td>
          <td align="left" valign="top">&nbsp;</td>
-         <td align="left" valign="top">Standard HTML<br />Normative standard HTML</td>
+         <td align="left" valign="top">Standard HTML<br />Standard with normative descriptions HTML</td>
          <td align="left" valign="top">No default. Data structure that specifies properties that should be moved to the <b>Common Objects</b> clause and/or objects that should be included in-line where they are referenced, to override default behavior. For details, see <a href="#object_reference_disposition-key">object_reference_disposition key</a>.</td>
       </tr>
       <tr>
@@ -268,7 +268,7 @@ Some configuration keys differ from their command&#8209;line argument equivalent
       <tr>
          <td align="left" valign="top"><code>payload_dir</code></td>
          <td align="left" valign="top">&nbsp;</td>
-         <td align="left" valign="top">Standard HTML<br />Normative standard HTML</td>
+         <td align="left" valign="top">Standard HTML<br />Standard with normative descriptions HTML</td>
          <td align="left" valign="top">No default. Directory location for JSON payload and Action examples. Optional.<br /><br />For details, see <a href="#payload_dir-key">payload_dir key</a>.<br /><br /><b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b>&nbsp;<code>payload_dir</code></td>
       </tr>
       <tr>
@@ -565,7 +565,7 @@ These examples assume that you have a clone of the DMTF/Redfish repo and the DMT
 > **Note:** The configuration files reference other files in this directory.
 
 * [Standard HTML](#standard-html)
-* [Standard HTML with normative descriptions](#standard-html-with-normative-descriptions)
+* [Standard with normative descriptions HTML](#standard-html-with-normative-descriptions)
 * [Profile index Markdown in terse mode](#profile-index-markdown-in-terse-mode)
 * [Subset HTML](#subset-html)
 * [Property index HTML](#property-index-html)
@@ -579,16 +579,16 @@ These examples assume that you have a clone of the DMTF/Redfish repo and the DMT
 
 Note that the `object_reference_disposition` in this config file identifies specific behavior for the `Redundancy` resource and for `PCIeInterface`, defined in `PCIeDevice`.
 
-### Standard HTML with normative descriptions
+### Standard with normative descriptions HTML
 
 ```bash
 % python ../Redfish-Tools/doc-generator/doc_generator.py --config=../Redfish-Tools/doc-generator/sample_inputs/standard_html/config_normative.json
 ```
 
-### Profile index Markdown in terse mode
+### Profile Markdown in terse mode
 
 ```bash
-% python ../Redfish-Tools/doc-generator/doc_generator.py --config=../Redfish-Tools/doc-generator/sample_inputs/profile_mode/config.json
+% python3 ../Redfish-Tools/doc-generator/doc_generator.py --config=../Redfish-Tools/doc-generator/sample_inputs/profile_mode/config.json
 ```
 
 Configuration file references the profile `OCPBasicServer.v1_0_0.json`, which in turn references `OCPManagedDevice.v1_0_0.json`.
