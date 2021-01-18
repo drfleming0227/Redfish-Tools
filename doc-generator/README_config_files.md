@@ -42,7 +42,7 @@ These files are:
          <td align="left" valign="top">JSON</td>
          <td align="left" valign="top"><p>Text overrides for property descriptions, replacements for unit abbreviations, and schema-specific content including introductions, postscripts, and property description substitutions.</p><p>The base configuration file contains a pointer to this file.</p></td>
       </tr>
-      <tr>
+      <!-- <tr>
          <td align="left" valign="top"><a href="#subset-configuration-file">Subset</a></td>
          <td align="left" valign="top">JSON</td>
          <td align="left" valign="top"><p>Subset information to include in a <i>Schema subset</i> document.</p><p>The subset configuration file is a variation of the base configuration file.</p></td>
@@ -52,7 +52,7 @@ These files are:
          <td align="left" valign="top">JSON</td>
          <td align="left" valign="top"><p>Property index information to include in a <i>Property index</i> document.</p><p>The property index configuration file is a variation of the base configuration file.</p></td>
       </tr>
-      <tr>
+      <tr> -->
          <th align="left" valign="top" colspan="3">Supplementary content files</th>
       </tr>
       <tr>
