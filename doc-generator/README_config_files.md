@@ -90,7 +90,7 @@ The names of some configuration keys differ from their command&#8209;line argume
 
 The clauses briefly describes each key and the output modes that support the key:
 
-* [actions_in_property_table key](#actions_in_property_table-key)
+<!-- * [actions_in_property_table key](#actions_in_property_table-key)
 * [add_toc key](#add_toc-key)
 * [boilerplate_intro key](#boilerplate_intro-key)
 * [boilerplate_postscript key](#boilerplate_postscript-key)
@@ -118,11 +118,13 @@ The clauses briefly describes each key and the output modes that support the key
 * [property_index_config_out key](#property_index_config_out-key)
 * [registry_uri_to_local key](#registry_uri_to_local-key)
 * [subset key](#subset-key)
-* [uri_mapping key](#uri_mapping-key)
+* [uri_mapping key](#uri_mapping-key) -->
 
 * `actions_in_property_table` key
 
-   <table>
+  **Supported output modes:** Subset
+
+<!--    <table>
       <col width="16%">
       <col width="16%">
       <col width="16%">
@@ -145,7 +147,7 @@ The clauses briefly describes each key and the output modes that support the key
          <td align="left" valign="top"></td>
          <td align="left" valign="top">X</td>
       </tbody>
-   </table>
+   </table> -->
 
    Boolean. Value is:
 
@@ -156,7 +158,9 @@ The clauses briefly describes each key and the output modes that support the key
 
 * `add_toc` key
 
-   <table>
+  **Supported output modes:** Standard, standard normative
+
+<!--    <table>
       <col width="16%">
       <col width="16%">
       <col width="16%">
@@ -179,7 +183,7 @@ The clauses briefly describes each key and the output modes that support the key
          <td align="left" valign="top">X</td>
          <td align="left" valign="top"></td>
       </tbody>
-   </table>
+   </table> -->
 
    Boolean. By default, the table of contents (TOC) appears at the top of the HTML output. If the <code>[add_toc]</code> directive appears anywhere in the boilerplate intro or boilerplate postscript file, <code>add_toc</code> key is <code>true</code> by default.</p>
    <p>Value is:</p>
@@ -196,7 +200,9 @@ The clauses briefly describes each key and the output modes that support the key
 
 #### boilerplate_intro key
 
-<table>
+  **Supported output modes:** Profile, standard, standard normative, subset
+
+<!-- <table>
    <col width="16%">
    <col width="16%">
    <col width="16%">
@@ -219,13 +225,15 @@ The clauses briefly describes each key and the output modes that support the key
       <td align="left" valign="top">X</td>
       <td align="left" valign="top">X</td>
    </tbody>
-</table>
+</table> -->
 
 String. No default. Location of the HTML or Markdown file that contains content to appear at the beginning of the document before the generated schema documentation. If a relative path, should be relative to the location of the configuration file.
 
 #### boilerplate_postscript key
 
-<table>
+  **Supported output modes:** Standard, standard normative
+
+<!-- <table>
    <col width="16%">
    <col width="16%">
    <col width="16%">
@@ -248,13 +256,15 @@ String. No default. Location of the HTML or Markdown file that contains content 
       <td align="left" valign="top">X</td>
       <td align="left" valign="top"></td>
    </tbody>
-</table>
+</table> -->
 
 String. No default. Location of the HTML or Markdown file that contains content to appear at the end of the document after the generated schema documentation. If a relative path, should be relative to the location of the configuration file.
 
 #### combine_multiple_refs key
 
-<table>
+  **Supported output modes:** Standard, standard normative
+
+<!-- <table>
    <col width="16%">
    <col width="16%">
    <col width="16%">
@@ -277,7 +287,7 @@ String. No default. Location of the HTML or Markdown file that contains content 
       <td align="left" valign="top">X</td>
       <td align="left" valign="top"></td>
    </tbody>
-</table>
+</table> -->
 
 Integer. No default. Threshold at which multiple references to the same object within a schema are moved into <b>Property details</b> instead of expanded in place.<br /><br />For details, see <a href="#combine_multiple_refs-key">combine_multiple_refs key</a>.
 
@@ -291,7 +301,9 @@ The `combine_multiple_refs` key specifies a threshold at which multiple referenc
 
 #### content_supplement key
 
-<table>
+  **Supported output modes:** Profile, standard, standard normative, subset
+
+<!-- <table>
    <col width="16%">
    <col width="16%">
    <col width="16%">
@@ -314,13 +326,15 @@ The `combine_multiple_refs` key specifies a threshold at which multiple referenc
       <td align="left" valign="top">X</td>
       <td align="left" valign="top">X</td>
    </tbody>
-</table>
+</table> -->
 
 String. No default. Location of a JSON-formatted content supplement file, which specifies content substitutions to be made within the generated schema documentation. If a relative path, must be relative to the location of the configuration file.
 
 #### description_overrides key
 
-<table>
+  **Supported output modes:** Property index
+
+<!-- <table>
    <col width="16%">
    <col width="16%">
    <col width="16%">
@@ -343,13 +357,15 @@ String. No default. Location of a JSON-formatted content supplement file, which 
       <td align="left" valign="top"></td>
       <td align="left" valign="top"></td>
    </tbody>
-</table>
+</table> -->
 
 String. ??
 
 #### escape_chars key
 
-<table>
+  **Supported output modes:** ??
+
+<!-- <table>
    <col width="16%">
    <col width="16%">
    <col width="16%">
@@ -372,7 +388,7 @@ String. ??
       <td align="left" valign="top"></td>
       <td align="left" valign="top"></td>
    </tbody>
-</table>
+</table> -->
 
 ??. No default. Characters to escape in generated Markdown. For example, use <code>--escape=@</code> if your Markdown processor converts embedded <code>@</code> characters to <code>mailto</code> links.
 
@@ -380,7 +396,9 @@ String. ??
 
 #### excluded_annotations key
 
-<table>
+  **Supported output modes:** CSV, profile, standard, standard normative, subset
+
+<!-- <table>
    <col width="16%">
    <col width="16%">
    <col width="16%">
@@ -403,7 +421,7 @@ String. ??
       <td align="left" valign="top">X</td>
       <td align="left" valign="top">X</td>
    </tbody>
-</table>
+</table> -->
 
 Array of strings. No default. List of annotation names to exclude.
 
