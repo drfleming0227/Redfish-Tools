@@ -124,31 +124,6 @@ The clauses briefly describes each key and the output modes that support the key
 
   **Supported output modes:** Subset
 
-<!--    <table>
-      <col width="16%">
-      <col width="16%">
-      <col width="16%">
-      <col width="16%">
-      <col width="16%">
-      <col width="16%">
-      <thead>
-         <th align="left" valign="top">CSV</th>
-         <th align="left" valign="top">Profile</th>
-         <th align="left" valign="top">Property index</th>
-         <th align="left" valign="top">Standard</th>
-         <th align="left" valign="top">Standard normative</th>
-         <th align="left" valign="top">Subset</th>
-      </thead>
-      <tbody>
-         <td align="left" valign="top"></td>
-         <td align="left" valign="top"></td>
-         <td align="left" valign="top"></td>
-         <td align="left" valign="top"></td>
-         <td align="left" valign="top"></td>
-         <td align="left" valign="top">X</td>
-      </tbody>
-   </table> -->
-
    Boolean. Value is:
 
    <ul>
@@ -160,34 +135,9 @@ The clauses briefly describes each key and the output modes that support the key
 
   **Supported output modes:** Standard, standard normative
 
-<!--    <table>
-      <col width="16%">
-      <col width="16%">
-      <col width="16%">
-      <col width="16%">
-      <col width="16%">
-      <col width="16%">
-      <thead>
-         <th align="left" valign="top">CSV</th>
-         <th align="left" valign="top">Profile</th>
-         <th align="left" valign="top">Property index</th>
-         <th align="left" valign="top">Standard</th>
-         <th align="left" valign="top">Standard normative</th>
-         <th align="left" valign="top">Subset</th>
-      </thead>
-      <tbody>
-         <td align="left" valign="top"></td>
-         <td align="left" valign="top"></td>
-         <td align="left" valign="top"></td>
-         <td align="left" valign="top">X</td>
-         <td align="left" valign="top">X</td>
-         <td align="left" valign="top"></td>
-      </tbody>
-   </table> -->
-
-   Boolean. By default, the table of contents (TOC) appears at the top of the HTML output. If the <code>[add_toc]</code> directive appears anywhere in the boilerplate intro or boilerplate postscript file, <code>add_toc</code> key is <code>true</code> by default.</p>
-   <p>Value is:</p>
-   <ul>
+  Boolean. By default, the table of contents (TOC) appears at the top of the HTML output. If the <code>[add_toc]</code> directive appears anywhere in the boilerplate intro or boilerplate postscript file, <code>add_toc</code> key is <code>true</code> by default.</p>
+  <p>Value is:</p>
+  <ul>
       <li>
          <p><code>true</code>. (Default) Generate a TOC and place it either:</p>
          <ul>
@@ -202,230 +152,55 @@ The clauses briefly describes each key and the output modes that support the key
 
   **Supported output modes:** Profile, standard, standard normative, subset
 
-<!-- <table>
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <thead>
-      <th align="left" valign="top">CSV</th>
-      <th align="left" valign="top">Profile</th>
-      <th align="left" valign="top">Property index</th>
-      <th align="left" valign="top">Standard</th>
-      <th align="left" valign="top">Standard normative</th>
-      <th align="left" valign="top">Subset</th>
-   </thead>
-   <tbody>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top">X</td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top">X</td>
-      <td align="left" valign="top">X</td>
-      <td align="left" valign="top">X</td>
-   </tbody>
-</table> -->
-
-String. No default. Location of the HTML or Markdown file that contains content to appear at the beginning of the document before the generated schema documentation. If a relative path, should be relative to the location of the configuration file.
+  String. No default. Location of the HTML or Markdown file that contains content to appear at the beginning of the document before the generated schema documentation. If a relative path, should be relative to the location of the configuration file.
 
 #### boilerplate_postscript key
 
   **Supported output modes:** Standard, standard normative
 
-<!-- <table>
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <thead>
-      <th align="left" valign="top">CSV</th>
-      <th align="left" valign="top">Profile</th>
-      <th align="left" valign="top">Property index</th>
-      <th align="left" valign="top">Standard</th>
-      <th align="left" valign="top">Standard normative</th>
-      <th align="left" valign="top">Subset</th>
-   </thead>
-   <tbody>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top">X</td>
-      <td align="left" valign="top">X</td>
-      <td align="left" valign="top"></td>
-   </tbody>
-</table> -->
-
-String. No default. Location of the HTML or Markdown file that contains content to appear at the end of the document after the generated schema documentation. If a relative path, should be relative to the location of the configuration file.
+  String. No default. Location of the HTML or Markdown file that contains content to appear at the end of the document after the generated schema documentation. If a relative path, should be relative to the location of the configuration file.
 
 #### combine_multiple_refs key
 
   **Supported output modes:** Standard, standard normative
 
-<!-- <table>
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <thead>
-      <th align="left" valign="top">CSV</th>
-      <th align="left" valign="top">Profile</th>
-      <th align="left" valign="top">Property index</th>
-      <th align="left" valign="top">Standard</th>
-      <th align="left" valign="top">Standard normative</th>
-      <th align="left" valign="top">Subset</th>
-   </thead>
-   <tbody>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top">X</td>
-      <td align="left" valign="top">X</td>
-      <td align="left" valign="top"></td>
-   </tbody>
-</table> -->
+   Integer. No default. Threshold at which multiple references to the same object within a schema are moved into <b>Property details</b> instead of expanded in place.<br /><br />For details, see <a href="#combine_multiple_refs-key">combine_multiple_refs key</a>.
 
-Integer. No default. Threshold at which multiple references to the same object within a schema are moved into <b>Property details</b> instead of expanded in place.<br /><br />For details, see <a href="#combine_multiple_refs-key">combine_multiple_refs key</a>.
+   This setting specifies that multiple objects within a schema, that are defined by reference to the same definition, should have their definitions moved into the Property Details section, with a single-line (row) listing for each object in the main table. combine_multiple_refs is an integer threshold at which this behavior kicks in. If it is absent or 0, no combining occurs. If it is 2 or greater, combining occurs at that number of references to the same object. A setting of 1 does not make sense and should be prevented.
 
-This setting specifies that multiple objects within a schema, that are defined by reference to the same definition, should have their definitions moved into the Property Details section, with a single-line (row) listing for each object in the main table. combine_multiple_refs is an integer threshold at which this behavior kicks in. If it is absent or 0, no combining occurs. If it is 2 or greater, combining occurs at that number of references to the same object. A setting of 1 does not make sense and should be prevented.
+   The `combine_multiple_refs` key specifies a threshold at which multiple references to the same object within a schema are moved into **Property details** instead of expanded in place. For example, to move an object to **Property details** if it is referred to three or more times:
 
-The `combine_multiple_refs` key specifies a threshold at which multiple references to the same object within a schema are moved into **Property details** instead of expanded in place. For example, to move an object to **Property details** if it is referred to three or more times:
-
-```json
-"combine_multiple_refs": 3,
-```
+   ```json
+   "combine_multiple_refs": 3,
+   ```
 
 #### content_supplement key
 
   **Supported output modes:** Profile, standard, standard normative, subset
 
-<!-- <table>
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <thead>
-      <th align="left" valign="top">CSV</th>
-      <th align="left" valign="top">Profile</th>
-      <th align="left" valign="top">Property index</th>
-      <th align="left" valign="top">Standard</th>
-      <th align="left" valign="top">Standard normative</th>
-      <th align="left" valign="top">Subset</th>
-   </thead>
-   <tbody>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top">X</td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top">X</td>
-      <td align="left" valign="top">X</td>
-      <td align="left" valign="top">X</td>
-   </tbody>
-</table> -->
-
-String. No default. Location of a JSON-formatted content supplement file, which specifies content substitutions to be made within the generated schema documentation. If a relative path, must be relative to the location of the configuration file.
+  String. No default. Location of a JSON-formatted content supplement file, which specifies content substitutions to be made within the generated schema documentation. If a relative path, must be relative to the location of the configuration file.
 
 #### description_overrides key
 
   **Supported output modes:** Property index
 
-<!-- <table>
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <thead>
-      <th align="left" valign="top">CSV</th>
-      <th align="left" valign="top">Profile</th>
-      <th align="left" valign="top">Property index</th>
-      <th align="left" valign="top">Standard</th>
-      <th align="left" valign="top">Standard normative</th>
-      <th align="left" valign="top">Subset</th>
-   </thead>
-   <tbody>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top">X</td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-   </tbody>
-</table> -->
-
-String. ??
+  String. ??
 
 #### escape_chars key
 
   **Supported output modes:** ??
 
-<!-- <table>
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <thead>
-      <th align="left" valign="top">CSV</th>
-      <th align="left" valign="top">Profile</th>
-      <th align="left" valign="top">Property index</th>
-      <th align="left" valign="top">Standard</th>
-      <th align="left" valign="top">Standard normative</th>
-      <th align="left" valign="top">Subset</th>
-   </thead>
-   <tbody>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-   </tbody>
-</table> -->
+   ??. No default. Characters to escape in generated Markdown. For example, use <code>--escape=@</code> if your Markdown processor converts embedded <code>@</code> characters to <code>mailto</code> links.
 
-??. No default. Characters to escape in generated Markdown. For example, use <code>--escape=@</code> if your Markdown processor converts embedded <code>@</code> characters to <code>mailto</code> links.
-
-<b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>escape</code>
+   <b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>escape</code>
 
 #### excluded_annotations key
 
   **Supported output modes:** CSV, profile, standard, standard normative, subset
 
-<!-- <table>
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <thead>
-      <th align="left" valign="top">CSV</th>
-      <th align="left" valign="top">Profile</th>
-      <th align="left" valign="top">Property index</th>
-      <th align="left" valign="top">Standard</th>
-      <th align="left" valign="top">Standard normative</th>
-      <th align="left" valign="top">Subset</th>
-   </thead>
-   <tbody>
-      <td align="left" valign="top">X</td>
-      <td align="left" valign="top">X</td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top">X</td>
-      <td align="left" valign="top">X</td>
-      <td align="left" valign="top">X</td>
-   </tbody>
-</table> -->
+   Array of strings. No default. List of annotation names to exclude.
 
-Array of strings. No default. List of annotation names to exclude.
-
-Wildcard match is supported for strings that begin with <code>\*</code>.
+   Wildcard match is supported for strings that begin with <code>\*</code>.
 
 #### excluded_pattern_properties key
 
