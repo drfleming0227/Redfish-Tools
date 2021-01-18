@@ -18,13 +18,13 @@ To configure output, the **Redfish doc generator** accepts:
 
 * Configuration input from JSON configuration files:
 
-   * <a href="#base-configuration-file"><p>Base configuration file</a>. Defines configuration options including pointers to the content supplement configuration file and the supplementary content files.</p><p>Depending on the <a href="#output-modes">output mode</a>, the configuration keys in the base configuration file can change. Some output modes, such as the property index mode, support additional configuration keys.</p>
-   * <a href="#content-supplement-configuration-file"><p>Content&nbsp;supplement&nbsp;configuration&nbsp;file</a>. Defines text overrides for property descriptions, replacements for unit abbreviations, and schema-specific content including introductions, postscripts, and property description substitutions.</p><p>The base configuration file contains a pointer to this file.</p>
+   * The <a href="#base-configuration-file">base configuration file</a> defines configuration options including pointers to the content supplement configuration file and the supplementary content files. Depending on the <a href="#output-modes">output mode</a>, the configuration keys in the base configuration file can change. Some output modes, such as the property index mode, support additional configuration keys.
+   * The <a href="#content-supplement-configuration-file">content&nbsp;supplement&nbsp;configuration&nbsp;file</a>defines text overrides for property descriptions, replacements for unit abbreviations, and schema-specific content including introductions, postscripts, and property description substitutions. The base configuration file contains a pointer to this file.
 
 * Supplementary content from HTML or Markdown files:
 
-   * <a href="#boilerplate-intro-supplementary-file">Boilerplate&nbsp;intro supplementary file</a>. Defines content to include in the output before the generated documentation.
-   * <a href="#boilerplate-postscript-supplementary-file">Boilerplate&nbsp;postscript&nbsp;supplementary&nbsp;file</a>. defines content to include in the output after the generated documentation.
+   * The <a href="#boilerplate-intro-supplementary-file">boilerplate&nbsp;intro supplementary file</a> defines content to include in the output before the generated documentation.
+   * The <a href="#boilerplate-postscript-supplementary-file">Boilerplate&nbsp;postscript&nbsp;supplementary&nbsp;file</a> defines content to include in the output after the generated documentation.
 
 If you specify an option in more than one way, command&#8209;line arguments override the configuration file keys.
 
