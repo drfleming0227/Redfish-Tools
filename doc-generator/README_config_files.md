@@ -36,7 +36,7 @@ These files are:
          <td align="left" valign="top"><p>Configuration options including pointers to the content supplement configuration file and the supplementary content files.</p><p>Depending on the <a href="#output-modes">output mode</a>, the configuration keys in the base configuration file can change. Some output modes, such as the property index mode, support additional configuration keys.</p></td>
       </tr>
       <tr id="content-supplement-configuration-file-overview">
-         <td align="left" valign="top"><a href="#content-supplement-configuration-file">Content&nbsp;supplement configuration file</a></td>
+         <td align="left" valign="top"><a href="#content-supplement-configuration-file">Content&nbsp;supplement&nbsp;configuration&nbsp;file</a></td>
          <td align="left" valign="top">JSON</td>
          <td align="left" valign="top"><p>Text overrides for property descriptions, replacements for unit abbreviations, and schema-specific content including introductions, postscripts, and property description substitutions.</p><p>The base configuration file contains a pointer to this file.</p></td>
       </tr>
@@ -57,27 +57,18 @@ If you specify an option in more than one way, command&#8209;line arguments over
 
 ## Output modes
 
-The supported output modes are:
+The following table lists the supported output modes and links to sample versions of the base configuration file and examples of `doc_generator.py` command usage:
 
-* CSV - (not implemented?)
-* Profile
-* Property index
-* Standard HTML
-* Standard with normative descriptions HTML
-* Subset
+| Output mode        | Sample base configuration file | Example command usage |
+| :----------------- | :----------------------------- | :-------------------- |
+| CSV                | [`sample_inputs/csv/config.json`](sample_inputs/csv/config.json) | [CSV](#csv) |
+| Profile            | [`sample_inputs/profile_mode/config.json`](sample_inputs/profile_mode/config.json) | [Profile index Markdown in terse mode](##profile-index-markdown-in-terse-mode) |
+| Property index     | [`sample_inputs/property_index/config.json`](sample_inputs/property_index/config.json) | [Property index HTML](##property-index-html) |
+| Standard           | [`sample_inputs/standard_html/config.json`](sample_inputs/standard_html/config.json) | [Standard HTML](##standard-html) |
+| Standard normative | [`sample_inputs/standard_html/config_normative.json`](sample_inputs/standard_html/config_normative.json) | [Standard with normative descriptions HTML](##standard-html-with-normative-descriptions) |
+| Subset             | [`sample_inputs/subset/config.json`](sample_inputs/subset/config.json) | [Subset HTML](##subset-html) |
 
 Depending on the output mode, the configuration keys in the base configuration file can change. Some output modes, such as the property index mode, support additional configuration keys.
-
-The following table links to sample versions of the base configuration file and examples of `doc_generator.py` command usage with different versions of the base configuration file:
-
-| Output mode             | Sample base configuration file | Example command usage |
-| :---------------------- | :----------------------------- | :-------------------- |
-| CSV                     | [`sample_inputs/csv/config.json`](sample_inputs/csv/config.json) | [CSV](#csv) |
-| Profile                 | [`sample_inputs/profile_mode/config.json`](sample_inputs/profile_mode/config.json) | [Profile index Markdown in terse mode](##profile-index-markdown-in-terse-mode) |
-| Property index          | [`sample_inputs/property_index/config.json`](sample_inputs/property_index/config.json) | [Property index HTML](##property-index-html) |
-| Standard HTML           | [`sample_inputs/standard_html/config.json`](sample_inputs/standard_html/config.json) | [Standard HTML](##standard-html) |
-| Standard with normative descriptions HTML | [`sample_inputs/standard_html/config_normative.json`](sample_inputs/standard_html/config_normative.json) | [Standard with normative descriptions HTML](##standard-html-with-normative-descriptions) |
-| Subset                  | [`sample_inputs/subset/config.json`](sample_inputs/subset/config.json) | [Subset HTML](##subset-html) |
 
 ## Base configuration file
 
