@@ -1,5 +1,5 @@
 {
-    "version": "The version string is optional. It may have (future?) meaning in property index mode.",
+    "version": "The version string is optional. It may have (future?) meaning in profile mode.",
     "description": "Redfish Documentation Generator Example: config file for output of profile documentation in markdown format.",
     "format": "markdown",
     "import_from": [ "./json-schema" ],
