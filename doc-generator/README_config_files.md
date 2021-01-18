@@ -70,12 +70,12 @@ These files are:
 
 The supported output modes are:
 
-* CSV mode - not implemented
-* Profile mode
-* Property index mode
-* Standard HTML mode
-* Normative standard HTML mode
-* Subset mode
+* CSV - (not implemented?)
+* Profile
+* Property index
+* Standard HTML
+* Normative standard HTML
+* Subset
 
 Depending on the output mode, the configuration keys in the base configuration file can change. Some output modes, such as the property index mode, support additional configuration keys.
 
@@ -95,7 +95,7 @@ The base configuration file is a JSON file that defines most of the doc generato
 
 ### Base configuration file examples
 
-The following table links to various versions of the base configuration file:
+The following table links to sample versions of the base configuration file:
 
 | Output mode             | Sample base configuration file |
 | :---------------------- | :----------------------------- |
@@ -115,7 +115,7 @@ Some configuration keys differ from their command&#8209;line argument equivalent
       <tr>
          <th align="left" valign="top">Configuration&nbsp;key</th>
          <th align="left" valign="top">Type</th>
-         <th align="left" valign="top">Supported modes</th>
+         <th align="left" valign="top">Supported&nbsp;modes</th>
          <th align="left" valign="top">Description</th>
       </tr>
    </thead>
