@@ -35,24 +35,14 @@ These files are:
       <tr>
          <td align="left" valign="top"><a href="#base-configuration-file">Base</a></td>
          <td align="left" valign="top">JSON</td>
-         <td align="left" valign="top">Configuration options including pointers to the content supplement configuration file and the supplementary content files.</td>
+         <td align="left" valign="top"><p>Configuration options including pointers to the content supplement configuration file and the supplementary content files.</p><p>Depending on the <a href="#output-modes">output mode</a>, the configuration keys in the base configuration file can change. Some output modes, such as the property index mode, support additional configuration keys.</p></td>
       </tr>
       <tr id="content-supplement-configuration-file-overview">
          <td align="left" valign="top"><a href="#content-supplement-configuration-file">Content&nbsp;supplement</a></td>
          <td align="left" valign="top">JSON</td>
          <td align="left" valign="top"><p>Text overrides for property descriptions, replacements for unit abbreviations, and schema-specific content including introductions, postscripts, and property description substitutions.</p><p>The base configuration file contains a pointer to this file.</p></td>
       </tr>
-      <!-- <tr>
-         <td align="left" valign="top"><a href="#subset-configuration-file">Subset</a></td>
-         <td align="left" valign="top">JSON</td>
-         <td align="left" valign="top"><p>Subset information to include in a <i>Schema subset</i> document.</p><p>The subset configuration file is a variation of the base configuration file.</p></td>
-      </tr>
       <tr>
-         <td align="left" valign="top"><a href="#property-index-configuration-file">Property&nbsp;index</a></td>
-         <td align="left" valign="top">JSON</td>
-         <td align="left" valign="top"><p>Property index information to include in a <i>Property index</i> document.</p><p>The property index configuration file is a variation of the base configuration file.</p></td>
-      </tr>
-      <tr> -->
          <th align="left" valign="top" colspan="3">Supplementary content files</th>
       </tr>
       <tr>
@@ -111,221 +101,156 @@ The names of some configuration keys differ from their command&#8209;line argume
 
 The following table briefly describes each key and the output modes that support the key:
 
-<table>
-   <thead>
-      <tr>
-         <th align="left" valign="top">Configuration&nbsp;key</th>
-         <th align="left" valign="top">Type</th>
-         <th align="left" valign="top">Supported&nbsp;modes</th>
-         <th align="left" valign="top">Description</th>
-      </tr>
-   </thead>
-   <tbody>
-      <tr>
-         <td align="left" valign="top"><code>actions_in_property_table</code></td>
-         <td align="left" valign="top">Boolean</td>
-         <td align="left" valign="top">Subset</td>
-         <td align="left" valign="top">
-            <p>Value is:</p>
+<dl>
+   <dt><code>actions_in_property_table</code></dt>
+   <dd>Boolean</dd>
+   <dd>Subset</dd>
+   <dd>
+      <p>Value is:</p>
+      <ul>
+         <li><code>true</code>. (Default) Include <code>Actions</code> in property tables. </li>
+         <li><code>false</code>. Exclude <code>Actions</code> from property tables. </li>
+      </ul>
+   </dd>
+   <dt><code>add_toc</code></dt>
+   <dd>Boolean</dd>
+   <dd>Standard HTML<br />Standard&nbsp;with&nbsp;normative&nbsp;descriptions&nbsp;HTML</dd>
+   <dd>
+      <p>By default, the table of contents (TOC) appears at the top of the HTML output. If the <code>[add_toc]</code> directive appears anywhere in the boilerplate intro or boilerplate postscript file, <code>add_toc</code> key is <code>true</code> by default.</p>
+      <p>Value is:</p>
+      <ul>
+         <li>
+            <p><code>true</code>. (Default) Generate a TOC and place it either:</p>
             <ul>
-               <li><code>true</code>. (Default) Include <code>Actions</code> in property tables. </li>
-               <li><code>false</code>. Exclude <code>Actions</code> from property tables. </li>
+               <li>At the beginning of the generated HTML file.</li>
+               <li>In the <code>[add_toc]</code>location if that directive appears in the boilerplate intro or boilerplate postscript file.</li>
             </ul>
-         </td>
-      </tr>
-      <tr>
-         <td align="left" valign="top"><code>add_toc</code></td>
-         <td align="left" valign="top">Boolean</td>
-         <td align="left" valign="top">Standard HTML<br />Standard&nbsp;with&nbsp;normative&nbsp;descriptions&nbsp;HTML</td>
-         <td align="left" valign="top">
-            <p>By default, the table of contents (TOC) appears at the top of the HTML output. If the <code>[add_toc]</code> directive appears anywhere in the boilerplate intro or boilerplate postscript file, <code>add_toc</code> key is <code>true</code> by default.</p>
-            <p>Value is:</p>
-            <ul>
-               <li>
-                  <p><code>true</code>. (Default) Generate a TOC and place it either:</p>
-                  <ul>
-                     <li>At the beginning of the generated HTML file.</li>
-                     <li>In the <code>[add_toc]</code>location if that directive appears in the boilerplate intro or boilerplate postscript file.</li>
-                  </ul>
-               </li>
-               <li><code>false</code>. Do not generate a TOC.</li>
-            </ul>
-         </td>
-      </tr>
-      <tr>
-         <td align="left" valign="top"><code>boilerplate_intro</code></td>
-         <td align="left" valign="top">String</td>
-         <td align="left" valign="top">Profile<br />Subset<br />Standard HTML<br />Standard with normative descriptions HTML</td>
-         <td align="left" valign="top">No default. Location of the HTML or Markdown file that contains content to appear at the beginning of the document before the generated schema documentation. If a relative path, should be relative to the location of the configuration file.</td>
-      </tr>
-      <tr>
-         <td align="left" valign="top"><code>boilerplate_postscript</code></td>
-         <td align="left" valign="top">String</td>
-         <td align="left" valign="top">Standard HTML<br />Standard with normative descriptions HTML</td>
-         <td align="left" valign="top">No default. Location of the HTML or Markdown file that contains content to appear at the end of the document after the generated schema documentation. If a relative path, should be relative to the location of the configuration file.</td>
-      </tr>
-      <tr>
-         <td align="left" valign="top"><code>combine_multiple_refs</code></td>
-         <td align="left" valign="top">Integer</td>
-         <td align="left" valign="top">Standard HTML<br />Standard with normative descriptions HTML</td>
-         <td align="left" valign="top">No default. Threshold at which multiple references to the same object within a schema are moved into <b>Property details</b> instead of expanded in place.<br /><br />For details, see <a href="#combine_multiple_refs-key">combine_multiple_refs key</a>.</td>
-      </tr>
-      <tr>
-         <td align="left" valign="top"><code>content_supplement</code></td>
-         <td align="left" valign="top">String</td>
-         <td align="left" valign="top">Profile<br />Subset<br />Standard HTML<br />Standard with normative descriptions HTML</td>
-         <td align="left" valign="top">No default. Location of a JSON-formatted content supplement file, which specifies content substitutions to be made within the generated schema documentation. If a relative path, must be relative to the location of the configuration file.</td>
-      </tr>
-      <tr>
-         <td align="left" valign="top"><code>description_overrides</code></td>
-         <td align="left" valign="top">Property index</td>
-         <td align="left" valign="top">&nbsp;</td>
-      </tr>
-      <tr>
-         <td align="left" valign="top"><code>escape_chars</code></td>
-         <td align="left" valign="top">&nbsp;</td>
-         <td align="left" valign="top">&nbsp;</td>
-         <td align="left" valign="top">No default. Characters to escape in generated Markdown. For example, use <code>--escape=@</code> if your Markdown processor converts embedded <code>@</code> characters to <code>mailto</code> links.<br /><br /><b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>escape</code></td>
-      </tr>
-      <tr>
-         <td align="left" valign="top"><code>excluded_annotations</code></td>
-         <td align="left" valign="top">Array of strings</td>
-         <td align="left" valign="top">Profile<br />Subset<br />Standard HTML<br />Standard with normative descriptions HTML<br />CSV</td>
-         <td align="left" valign="top">No default. List of annotation names to exclude.<br /><br />Wildcard match is supported for strings that begin with <code>*</code>.</td>
-      </tr>
-      <tr>
-         <td align="left" valign="top"><code>excluded_pattern_properties</code></td>
-         <td align="left" valign="top">&nbsp;</td>
-         <td align="left" valign="top">Profile<br />Subset<br />Standard HTML<br />Standard with normative descriptions HTML<br />CSV</td>
-         <td align="left" valign="top">No default. List of pattern properties to exclude from output.<br /><br />In JSON, you must escape back slashes (<code>"\"</code> becomes <code>"\\"</code>).</td>
-      </tr>
-      <tr>
-         <td align="left" valign="top"><code>excluded_properties</code></td>
-         <td align="left" valign="top">Array of strings</td>
-         <td align="left" valign="top">Profile<br />Subset<br />Standard HTML<br />Standard with normative descriptions HTML<br />CSV</td>
-         <td align="left" valign="top">No default. List of property names to exclude. Wildcard match is supported for strings that begin with <code>*</code>. For example, <code>"*odata.count"</code> matches <code>"Members\@odata.count"</code> and others.</td>
-      </tr>
-      <tr>
-         <td align="left" valign="top"><code>excluded_schemas</code></td>
-         <td align="left" valign="top">Array of strings</td>
-         <td align="left" valign="top">Profile<br />Subset<br />Standard HTML<br />Standard with normative descriptions HTML<br />CSV</td>
-         <td align="left" valign="top">No default. List of schemas, by name, to exclude from output.</td>
-      </tr>
-      <tr>
-         <td align="left" valign="top"><code>format</code></td>
-         <td align="left" valign="top">&nbsp;</td>
-         <td align="left" valign="top">Profile<br />Subset<br />Standard HTML<br />Standard with normative descriptions HTML<br />CSV</td>
-         <td align="left" valign="top">Output format. Value is <code>markdown</code>, <code>slate</code>, <code>html</code>, or <code>csv</code>.<br /><br /><b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>format</code></td>
-      </tr>
-      <tr>
-         <td align="left" valign="top"><code>html_title</code></td>
-         <td align="left" valign="top">String</td>
-         <td align="left" valign="top">Standard HTML<br />Standard with normative descriptions HTML<br />Subset<br />Content supplement</td>
-         <td align="left" valign="top">No default. HTML <code>title</code> element in HTML output.</td>
-      </tr>
-      <tr>
-         <td align="left" valign="top"><code>import_from</code></td>
-         <td align="left" valign="top">String</td>
-         <td align="left" valign="top">Profile<br />Property index<br />Subset<br />Standard HTML<br />Standard with normative descriptions HTML<br />CSV</td>
-         <td align="left" valign="top">File name or directory that contains the JSON schemas to process. Wild cards are acceptable. Default: <code>json-schema</code>.<br /><br /><b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b>&nbsp;<code>import_from</code></td>
-      </tr>
-      <tr>
-         <td align="left" valign="top"><code>locale</code></td>
-         <td align="left" valign="top">&nbsp;</td>
-         <td align="left" valign="top">Not used.</td>
-         <td align="left" valign="top">No default. Case-sensitive locale code for localized output. Localization of strings supplied by the doc generator uses <a href="https://www.gnu.org/software/gettext/" title="https://www.gnu.org/software/gettext/"><code>gettext</code></a>. Locale files are in the <code>locale</code> directory in the <code>doc_generator</code> root. Translated descriptions and annotations may be supplied in localized JSON Schema files.</td>
-      </tr>
-      <tr>
-         <td align="left" valign="top"><code>normative</code></td>
-         <td align="left" valign="top">&nbsp;</td>
-         <td align="left" valign="top">Standard with normative descriptions HTML</td>
-         <td align="left" valign="top">No default. Produce normative (developer-focused) output.</td>
-      </tr>
-      <tr>
-         <td align="left" valign="top"><code>object_reference_disposition</code></td>
-         <td align="left" valign="top">&nbsp;</td>
-         <td align="left" valign="top">Standard HTML<br />Standard with normative descriptions HTML</td>
-         <td align="left" valign="top">No default. Data structure that specifies properties that should be moved to the <b>Common Objects</b> clause and/or objects that should be included in-line where they are referenced, to override default behavior. For details, see <a href="#object_reference_disposition-key">object_reference_disposition key</a>.</td>
-      </tr>
-      <tr>
-         <td align="left" valign="top"><code>omit_version_in_headers</code></td>
-         <td align="left" valign="top">Boolean</td>
-         <td align="left" valign="top">Not used.</td>
-         <td align="left" valign="top">
-            <p>No default.</p>
-            <p>Value is:</p>
-            <ul>
-               <li><code>true</code>. Exclude schema versions from clause headers.</li>
-               <li><code>false</code>. Include schema versions in clause headers.</li>
-            </ul>
-         </td>
-      </tr>
-      <tr>
-         <td align="left" valign="top"><code>outfile</code></td>
-         <td align="left" valign="top">&nbsp;</td>
-         <td align="left" valign="top">All</td>
-         <td align="left" valign="top">No default. Output file (default depends on output format: <code>output.md</code> for Markdown, <code>index.html</code> for HTML, <code>output.csv</code> for CSV.<br /><br /><b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>out</code></td>
-      </tr>
-      <tr>
-         <td align="left" valign="top"><code>payload_dir</code></td>
-         <td align="left" valign="top">&nbsp;</td>
-         <td align="left" valign="top">Standard HTML<br />Standard with normative descriptions HTML</td>
-         <td align="left" valign="top">No default. Directory location for JSON payload and Action examples. Optional.<br /><br />For details, see <a href="#payload_dir-key">payload_dir key</a>.<br /><br /><b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b>&nbsp;<code>payload_dir</code></td>
-      </tr>
-      <tr>
-         <td align="left" valign="top"><code>profile_doc</code></td>
-         <td align="left" valign="top">&nbsp;</td>
-         <td align="left" valign="top">Profile</td>
-         <td align="left" valign="top">No default. Path to a JSON profile document, for profile output.<br /><br /><b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>profile</code>
-         </td>
-      </tr>
-      <tr>
-         <td align="left" valign="top"><code>profile_terse</code></td>
-         <td align="left" valign="top">Boolean</td>
-         <td align="left" valign="top">Profile</td>
-         <td align="left" valign="top">No default. Produce <i>terse</i> profile output; meaningful only in profile mode. For details, see <a href="#profile_terse-key">profile_terse key</a>.<br /><br /><b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>terse</code>
-         </td>
-      </tr>
-      <tr>
-         <td align="left" valign="top"><code>profile_uri_to_local</code></td>
-         <td align="left" valign="top">&nbsp;</td>
-         <td align="left" valign="top">Profile<br />Subset</td>
-         <td align="left" valign="top">No default. For profile mode only, an object like <code>uri_mapping</code>, for locations of profiles.</td>
-      </tr>
-      <tr>
-         <td align="left" valign="top"><code>property_index</code></td>
-         <td align="left" valign="top">Boolean</td>
-         <td align="left" valign="top">Property index</td>
-         <td align="left" valign="top">No default. Produce <b>Property Index</b> output. For details, see <a href="README_Property_Index.md">Redfish doc generator: Property index mode</a>.<br /><br /><b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>property_index</code>
-         </td>
-      </tr>
-      <tr>
-         <td align="left" valign="top"><code>property_index_config_out</code></td>
-         <td align="left" valign="top">&nbsp;</td>
-         <td align="left" valign="top">Not used</td>
-         <td align="left" valign="top">No default. Generate an updated configuration file, with specified file name (property_index mode only).<br /><br /><b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>property_index_config_out</code></td>
-      </tr>
-      <tr>
-         <td align="left" valign="top"><code>registry_uri_to_local</code></td>
-         <td align="left" valign="top">&nbsp;</td>
-         <td align="left" valign="top">Profile</td>
-         <td align="left" valign="top">No default. For profile mode only, an object like <code>uri_mapping</code>, for locations of registries. </td>
-      </tr>
-      <tr>
-         <td align="left" valign="top"><code>subset</code></td>
-         <td align="left" valign="top">&nbsp;</td>
-         <td align="left" valign="top">Subset</td>
-         <td align="left" valign="top">No default. Path to a JSON profile document. Generates <b>Schema subset</b> output, with the subset defined in the JSON profile document.<br /><br /><b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>subset</code>
-         </td>
-      </tr>
-      <tr>
-         <td align="left" valign="top"><code>uri_mapping</code></td>
-         <td align="left" valign="top">Object</td>
-         <td align="left" valign="top">All</td>
-         <td align="left" valign="top">No default. Partial URL of schema repositories as attributes, and local directory paths as values.</td>
-      </tr>
-   </tbody>
-</table>
+         </li>
+         <li><code>false</code>. Do not generate a TOC.</li>
+      </ul>
+   </dd>
+   <dt>
+      <code>boilerplate_intro</code>
+   </dt>
+   <dd>String</dd>
+   <dd>Profile<br />Subset<br />Standard HTML<br />Standard with normative descriptions HTML</dd>
+   <dd>No default. Location of the HTML or Markdown file that contains content to appear at the beginning of the document before the generated schema documentation. If a relative path, should be relative to the location of the configuration file.</dd>
+   <dt><code>boilerplate_postscript</code></dt>
+   <dd>String</dd>
+   <dd>Standard HTML<br />Standard with normative descriptions HTML</dd>
+   <dd>No default. Location of the HTML or Markdown file that contains content to appear at the end of the document after the generated schema documentation. If a relative path, should be relative to the location of the configuration file.</dd>
+   <dt><code>combine_multiple_refs</code></dt>
+   <dd>Integer</dd>
+   <dd>Standard HTML<br />Standard with normative descriptions HTML</dd>
+   <dd>No default. Threshold at which multiple references to the same object within a schema are moved into <b>Property details</b> instead of expanded in place.<br /><br />For details, see <a href="#combine_multiple_refs-key">combine_multiple_refs key</a>.</dd>
+   <dt><code>content_supplement</code></dt>
+   <dd>String</dd>
+   <dd>Profile<br />Subset<br />Standard HTML<br />Standard with normative descriptions HTML</dd>
+   <dd>No default. Location of a JSON-formatted content supplement file, which specifies content substitutions to be made within the generated schema documentation. If a relative path, must be relative to the location of the configuration file.</dd>
+   <dt><code>description_overrides</code></dt>
+   <dd>String</dd>
+   <dd>Property index</dd>
+   <dd>&nbsp;</dd>
+   <dt><code>escape_chars</code></dt>
+   <dd>&nbsp;</dd>
+   <dd>&nbsp;</dd>
+   <dd>No default. Characters to escape in generated Markdown. For example, use <code>--escape=@</code> if your Markdown processor converts embedded <code>@</code> characters to <code>mailto</code> links.<br /><br /><b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>escape</code></dt>
+   <dt><code>excluded_annotations</code></dt>
+   <dd>Array of strings</dd>
+   <dd>Profile<br />Subset<br />Standard HTML<br />Standard with normative descriptions HTML<br />CSV</dd>
+   <dd>No default. List of annotation names to exclude.<br /><br />Wildcard match is supported for strings that begin with <code>*</code>.</dd>
+   <dt><code>excluded_pattern_properties</code></dt>
+   <dd>&nbsp;</dd>
+   <dd>Profile<br />Subset<br />Standard HTML<br />Standard with normative descriptions HTML<br />CSV</dd>
+   <dd>No default. List of pattern properties to exclude from output.<br /><br />In JSON, you must escape back slashes (<code>"\"</code> becomes <code>"\\"</code>).</dd>
+   <dt><code>excluded_properties</code></dt>
+   <dd>Array of strings</dd>
+   <dd>Profile<br />Subset<br />Standard HTML<br />Standard with normative descriptions HTML<br />CSV</dd>
+   <dd>No default. List of property names to exclude. Wildcard match is supported for strings that begin with <code>*</code>. For example, <code>"*odata.count"</code> matches <code>"Members\@odata.count"</code> and others.</dd>
+   <dt><code>excluded_schemas</code></dt>
+   <dd>Array of strings</dd>
+   <dd>Profile<br />Subset<br />Standard HTML<br />Standard with normative descriptions HTML<br />CSV</dd>
+   <dd>No default. List of schemas, by name, to exclude from output.</dd>
+   <dt><code>format</code></dt>
+   <dd>&nbsp;</dd>
+   <dd>Profile<br />Subset<br />Standard HTML<br />Standard with normative descriptions HTML<br />CSV</dd>
+   <dd>Output format. Value is <code>markdown</code>, <code>slate</code>, <code>html</code>, or <code>csv</code>.<br /><br /><b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>format</code></dt>
+   <dt><code>html_title</code></dt>
+   <dd>String</dd>
+   <dd>Standard HTML<br />Standard with normative descriptions HTML<br />Subset<br />Content supplement</dd>
+   <dd>No default. HTML <code>title</code> element in HTML output.</dd>
+   <dt><code>import_from</code></dt>
+   <dd>String</dd>
+   <dd>Profile<br />Property index<br />Subset<br />Standard HTML<br />Standard with normative descriptions HTML<br />CSV</dd>
+   <dd>File name or directory that contains the JSON schemas to process. Wild cards are acceptable. Default: <code>json-schema</code>.<br /><br /><b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b>&nbsp;<code>import_from</code></dt>
+   <dt><code>locale</code></dt>
+   <dd>&nbsp;</dd>
+   <dd>Not used.</dd>
+   <dd>No default. Case-sensitive locale code for localized output. Localization of strings supplied by the doc generator uses <a href="https://www.gnu.org/software/gettext/" title="https://www.gnu.org/software/gettext/"><code>gettext</code></a>. Locale files are in the <code>locale</code> directory in the <code>doc_generator</code> root. Translated descriptions and annotations may be supplied in localized JSON Schema files.</dd>
+   <dt><code>normative</code></dt>
+   <dd>&nbsp;</dd>
+   <dd>Standard with normative descriptions HTML</dd>
+   <dd>No default. Produce normative (developer-focused) output.</dd>
+   <dt><code>object_reference_disposition</code></dt>
+   <dd>&nbsp;</dd>
+   <dd>Standard HTML<br />Standard with normative descriptions HTML</dd>
+   <dd>No default. Data structure that specifies properties that should be moved to the <b>Common Objects</b> clause and/or objects that should be included in-line where they are referenced, to override default behavior. For details, see <a href="#object_reference_disposition-key">object_reference_disposition key</a>.</dd>
+   <dt><code>omit_version_in_headers</code></dt>
+   <dd>Boolean</dd>
+   <dd>Not used.</dd>
+   <dd>
+      <p>No default.</p>
+      <p>Value is:</p>
+      <ul>
+         <li><code>true</code>. Exclude schema versions from clause headers.</li>
+         <li><code>false</code>. Include schema versions in clause headers.</li>
+      </ul>
+   </dd>
+   <dt><code>outfile</code></dt>
+   <dd>&nbsp;</dd>
+   <dd>All</dd>
+   <dd>No default. Output file (default depends on output format: <code>output.md</code> for Markdown, <code>index.html</code> for HTML, <code>output.csv</code> for CSV.<br /><br /><b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>out</code></dt>
+   <dt><code>payload_dir</code></dt>
+   <dd>&nbsp;</dd>
+   <dd>Standard HTML<br />Standard with normative descriptions HTML</dd>
+   <dd>No default. Directory location for JSON payload and Action examples. Optional.<br /><br />For details, see <a href="#payload_dir-key">payload_dir key</a>.<br /><br /><b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b>&nbsp;<code>payload_dir</code></dt>
+   <dt><code>profile_doc</code></dt>
+   <dd>&nbsp;</dd>
+   <dd>Profile</dd>
+   <dd>No default. Path to a JSON profile document, for profile output.<br /><br /><b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>profile</code>
+   </dd>
+   <dt><code>profile_terse</code></dt>
+   <dd>Boolean</dd>
+   <dd>Profile</dd>
+   <dd>No default. Produce <i>terse</i> profile output; meaningful only in profile mode. For details, see <a href="#profile_terse-key">profile_terse key</a>.<br /><br /><b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>terse</code>
+   </dd>
+   <dt><code>profile_uri_to_local</code></dt>
+   <dd>&nbsp;</dd>
+   <dd>Profile<br />Subset</dd>
+   <dd>No default. For profile mode only, an object like <code>uri_mapping</code>, for locations of profiles.</dd>
+   <dt><code>property_index</code></dt>
+   <dd>Boolean</dd>
+   <dd>Property index</dd>
+   <dd>No default. Produce <b>Property Index</b> output. For details, see <a href="README_Property_Index.md">Redfish doc generator: Property index mode</a>.<br /><br /><b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>property_index</code>
+   </dd>
+   <dt><code>property_index_config_out</code></dt>
+   <dd>&nbsp;</dd>
+   <dd>Not used</dd>
+   <dd>No default. Generate an updated configuration file, with specified file name (property_index mode only).<br /><br /><b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>property_index_config_out</code></dt>
+   <dt><code>registry_uri_to_local</code></dt>
+   <dd>&nbsp;</dd>
+   <dd>Profile</dd>
+   <dd>No default. For profile mode only, an object like <code>uri_mapping</code>, for locations of registries. </dd>
+   <dt><code>subset</code></dt>
+   <dd>&nbsp;</dd>
+   <dd>Subset</dd>
+   <dd>No default. Path to a JSON profile document. Generates <b>Schema subset</b> output, with the subset defined in the JSON profile document.<br /><br /><b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>subset</code>
+   </dd>
+   <dt><code>uri_mapping</code></dt>
+   <dd>Object</dd>
+   <dd>All</dd>
+   <dd>No default. Partial URL of schema repositories as attributes, and local directory paths as values.</dd>
+</dl>
 
 ### combine_multiple_refs key
 
