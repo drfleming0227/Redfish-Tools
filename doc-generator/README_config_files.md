@@ -18,51 +18,13 @@ To configure output, the **Redfish doc generator** accepts:
 
 * Configuration input from JSON configuration files:
 
-   <table>
-      <thead>
-         <tr>
-            <th align="left" valign="top">File</th>
-            <th align="left" valign="top">Format</th>
-            <th align="left" valign="top">Defines</th>
-         </tr>
-      </thead>
-      <tbody>
-         <tr>
-            <td align="left" valign="top"><a href="#base-configuration-file">Base configuration file</a></td>
-            <td align="left" valign="top">JSON</td>
-            <td align="left" valign="top"><p>Configuration options including pointers to the content supplement configuration file and the supplementary content files.</p><p>Depending on the <a href="#output-modes">output mode</a>, the configuration keys in the base configuration file can change. Some output modes, such as the property index mode, support additional configuration keys.</p></td>
-         </tr>
-         <tr id="content-supplement-configuration-file-overview">
-            <td align="left" valign="top"><a href="#content-supplement-configuration-file">Content&nbsp;supplement&nbsp;configuration&nbsp;file</a></td>
-            <td align="left" valign="top">JSON</td>
-            <td align="left" valign="top"><p>Text overrides for property descriptions, replacements for unit abbreviations, and schema-specific content including introductions, postscripts, and property description substitutions.</p><p>The base configuration file contains a pointer to this file.</p></td>
-         </tr>
-      </tbody>
-   </table>
+   * <a href="#base-configuration-file"><p>Base configuration file</a>. Defines configuration options including pointers to the content supplement configuration file and the supplementary content files.</p><p>Depending on the <a href="#output-modes">output mode</a>, the configuration keys in the base configuration file can change. Some output modes, such as the property index mode, support additional configuration keys.</p>
+   * <a href="#content-supplement-configuration-file"><p>Content&nbsp;supplement&nbsp;configuration&nbsp;file</a>. Defines text overrides for property descriptions, replacements for unit abbreviations, and schema-specific content including introductions, postscripts, and property description substitutions.</p><p>The base configuration file contains a pointer to this file.</p>
 
 * Supplementary content from HTML or Markdown files:
 
-   <table>
-      <thead>
-         <tr>
-            <th align="left" valign="top">File</th>
-            <th align="left" valign="top">Format</th>
-            <th align="left" valign="top">Defines</th>
-         </tr>
-      </thead>
-      <tbody>
-         <tr>
-            <td align="left" valign="top"><a href="#boilerplate-intro-supplementary-file">Boilerplate&nbsp;intro supplementary file</a></td>
-            <td align="left" valign="top">HTML&nbsp;or&nbsp;Markdown</td>
-            <td align="left" valign="top">Content to include in the output before the generated documentation.</td>
-         </tr>
-         <tr>
-            <td align="left" valign="top"><a href="#boilerplate-postscript-supplementary-file">Boilerplate&nbsp;postscript&nbsp;supplementary&nbsp;file</a></td>
-            <td align="left" valign="top">HTML&nbsp;or&nbsp;Markdown</td>
-            <td align="left" valign="top">Content to include in the output after the generated documentation.</td>
-         </tr>
-      </tbody>
-   </table>
+   * <a href="#boilerplate-intro-supplementary-file">Boilerplate&nbsp;intro supplementary file</a>. Defines content to include in the output before the generated documentation.
+   * <a href="#boilerplate-postscript-supplementary-file">Boilerplate&nbsp;postscript&nbsp;supplementary&nbsp;file</a>. defines content to include in the output after the generated documentation.
 
 If you specify an option in more than one way, command&#8209;line arguments override the configuration file keys.
 
