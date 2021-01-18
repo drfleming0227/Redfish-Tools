@@ -126,6 +126,36 @@ The names of some configuration keys differ from their command&#8209;line argume
 
 The clauses briefly describes each key and the output modes that support the key:
 
+* [actions_in_property_table key](#actions_in_property_table-key)
+* [add_toc key](#add_toc-key)
+* [boilerplate_intro key](#boilerplate_intro-key)
+* [boilerplate_postscript key](#boilerplate_postscript-key)
+* [combine_multiple_refs key](#combine_multiple_refs-key)
+* [content_supplement key](#content_supplement-key)
+* [description_overrides key](#description_overrides-key)
+* [escape_chars key](#escape_chars-key)
+* [excluded_annotations key](#excluded_annotations-key)
+* [excluded_pattern_properties key](#excluded_pattern_properties-key)
+* [excluded_properties key](#excluded_properties-key)
+* [excluded_schemas key](#excluded_schemas-key)
+* [format key](#format-key)
+* [html_title key](#html_title-key)
+* [import_from key](#import_from-key)
+* [locale key](#locale-key)
+* [normative key](#normative-key)
+* [object_reference_disposition key](#object_reference_disposition-key)
+* [omit_version_in_headers key](#omit_version_in_headers-key)
+* [outfile key](#outfile-key)
+* [payload_dir key](#payload_dir-key)
+* [profile_doc key](#profile_doc-key)
+* [profile_terse key](#profile_terse-key)
+* [profile_uri_to_local key](#profile_uri_to_local-key)
+* [property_index key](#property_index-key)
+* [property_index_config_out key](#property_index_config_out-key)
+* [registry_uri_to_local key](#registry_uri_to_local-key)
+* [subset key](#subset-key)
+* [uri_mapping key](#uri_mapping-key)
+
 #### actions_in_property_table key
 
 <table>
