@@ -57,7 +57,11 @@ If you specify an option in more than one way, command&#8209;line arguments over
 
 ## Output modes
 
-The following table lists the supported output modes and links to sample versions of the base configuration file and examples of `doc_generator.py` command usage:
+The following table:
+
+* Lists the supported output modes
+* Provides links to sample versions of the base configuration file
+* Provides links to examples of `doc_generator.py` command usage
 
 | Output mode        | Sample base configuration file | Example command usage |
 | :----------------- | :----------------------------- | :-------------------- |
@@ -116,79 +120,79 @@ The clauses briefly describes each key and the output modes that support the key
 * [subset key](#subset-key)
 * [uri_mapping key](#uri_mapping-key)
 
-#### actions_in_property_table key
+* `actions_in_property_table` key
 
-<table>
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <thead>
-      <th align="left" valign="top">CSV</th>
-      <th align="left" valign="top">Profile</th>
-      <th align="left" valign="top">Property index</th>
-      <th align="left" valign="top">Standard</th>
-      <th align="left" valign="top">Standard normative</th>
-      <th align="left" valign="top">Subset</th>
-   </thead>
-   <tbody>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top">X</td>
-   </tbody>
-</table>
+   <table>
+      <col width="16%">
+      <col width="16%">
+      <col width="16%">
+      <col width="16%">
+      <col width="16%">
+      <col width="16%">
+      <thead>
+         <th align="left" valign="top">CSV</th>
+         <th align="left" valign="top">Profile</th>
+         <th align="left" valign="top">Property index</th>
+         <th align="left" valign="top">Standard</th>
+         <th align="left" valign="top">Standard normative</th>
+         <th align="left" valign="top">Subset</th>
+      </thead>
+      <tbody>
+         <td align="left" valign="top"></td>
+         <td align="left" valign="top"></td>
+         <td align="left" valign="top"></td>
+         <td align="left" valign="top"></td>
+         <td align="left" valign="top"></td>
+         <td align="left" valign="top">X</td>
+      </tbody>
+   </table>
 
-Boolean. Value is:
+   Boolean. Value is:
 
-<ul>
-   <li><code>true</code>. (Default) Include <code>Actions</code> in property tables. </li>
-   <li><code>false</code>. Exclude <code>Actions</code> from property tables. </li>
-</ul>
+   <ul>
+      <li><code>true</code>. (Default) Include <code>Actions</code> in property tables. </li>
+      <li><code>false</code>. Exclude <code>Actions</code> from property tables. </li>
+   </ul>
 
-#### add_toc key
+* `add_toc` key
 
-<table>
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <col width="16%">
-   <thead>
-      <th align="left" valign="top">CSV</th>
-      <th align="left" valign="top">Profile</th>
-      <th align="left" valign="top">Property index</th>
-      <th align="left" valign="top">Standard</th>
-      <th align="left" valign="top">Standard normative</th>
-      <th align="left" valign="top">Subset</th>
-   </thead>
-   <tbody>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top"></td>
-      <td align="left" valign="top">X</td>
-      <td align="left" valign="top">X</td>
-      <td align="left" valign="top"></td>
-   </tbody>
-</table>
+   <table>
+      <col width="16%">
+      <col width="16%">
+      <col width="16%">
+      <col width="16%">
+      <col width="16%">
+      <col width="16%">
+      <thead>
+         <th align="left" valign="top">CSV</th>
+         <th align="left" valign="top">Profile</th>
+         <th align="left" valign="top">Property index</th>
+         <th align="left" valign="top">Standard</th>
+         <th align="left" valign="top">Standard normative</th>
+         <th align="left" valign="top">Subset</th>
+      </thead>
+      <tbody>
+         <td align="left" valign="top"></td>
+         <td align="left" valign="top"></td>
+         <td align="left" valign="top"></td>
+         <td align="left" valign="top">X</td>
+         <td align="left" valign="top">X</td>
+         <td align="left" valign="top"></td>
+      </tbody>
+   </table>
 
-Boolean. By default, the table of contents (TOC) appears at the top of the HTML output. If the <code>[add_toc]</code> directive appears anywhere in the boilerplate intro or boilerplate postscript file, <code>add_toc</code> key is <code>true</code> by default.</p>
-<p>Value is:</p>
-<ul>
-   <li>
-      <p><code>true</code>. (Default) Generate a TOC and place it either:</p>
-      <ul>
-         <li>At the beginning of the generated HTML file.</li>
-         <li>In the <code>[add_toc]</code>location if that directive appears in the boilerplate intro or boilerplate postscript file.</li>
-      </ul>
-   </li>
-   <li><code>false</code>. Do not generate a TOC.</li>
-</ul>
+   Boolean. By default, the table of contents (TOC) appears at the top of the HTML output. If the <code>[add_toc]</code> directive appears anywhere in the boilerplate intro or boilerplate postscript file, <code>add_toc</code> key is <code>true</code> by default.</p>
+   <p>Value is:</p>
+   <ul>
+      <li>
+         <p><code>true</code>. (Default) Generate a TOC and place it either:</p>
+         <ul>
+            <li>At the beginning of the generated HTML file.</li>
+            <li>In the <code>[add_toc]</code>location if that directive appears in the boilerplate intro or boilerplate postscript file.</li>
+         </ul>
+      </li>
+      <li><code>false</code>. Do not generate a TOC.</li>
+   </ul>
 
 #### boilerplate_intro key
 
