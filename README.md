@@ -45,13 +45,13 @@ To install the tools in the Redfish-Tools respository:
          </td>
       </tr>
       <tr>
-         <td align="left" valign="top">&checkmark;&nbsp;Redfish doc generator</td>
+         <td align="left" valign="top" rowspan="2">&checkmark;&nbsp;Redfish doc generator</td>
          <td align="left" valign="top">3.</td>
          <td align="left" valign="top">
-            <p>On the machine from which you will run <code>doc_generator.py</code>, install the following software, which is required for HTML output:</p>
+            <p>Install the following software, which is required for HTML output:</p>
             <ol>
-               <li><a href="https://python-markdown.github.io/install/" title="https://python-markdown.github.io/install/">Install Python&#8209;Markdown</a>.</li>
-               <li><a href="http://pygments.org/" title="http://pygments.org/">Install Pygments</a>.</li>
+               <li><p><a href="https://python-markdown.github.io/install/" title="https://python-markdown.github.io/install/">Install Python&#8209;Markdown</a>.</p></li>
+               <li><p><a href="http://pygments.org/" title="http://pygments.org/">Install Pygments</a>.</p></li>
                <li>
                   <p>Install requirements:</p>
                   <pre lang="bash">% cd doc-generator
@@ -59,7 +59,6 @@ To install the tools in the Redfish-Tools respository:
          </td>
       </tr>
       <tr>
-         <td align="left" valign="top">&checkmark;&nbsp;Redfish doc generator</td>
          <td align="left" valign="top">4.</td>
          <td align="left" valign="top">
             <p>(Optional) If you plan to make changes to the <code>doc_generator.py</code> code:</p>
