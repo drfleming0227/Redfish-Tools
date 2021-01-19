@@ -27,5 +27,4 @@ To install the tools in the Redfish-Tools respository:
     % git remote add upstream git@github.com:DMTF/Redfish-Tools.git
     ```
 1. [Download and install Python](https://www.python.org/downloads/ "https://www.python.org/downloads/") on the machine from which you will run the tools.
-
-> **Note:** See the `README.md` file for each tool for additional installation requirements.
+1. See the `README.md` file for each tool for additional installation requirements.
