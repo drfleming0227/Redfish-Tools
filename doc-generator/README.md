@@ -24,7 +24,7 @@ For a snapshot of the *version 2* code, see [Doc Generator v2](https://github.co
 
 ## Installation
 
-To install the Redfish doc generator, see [Installation](README.md#installation "README.md#installation").
+To install the Redfish doc generator, see [Installation](../README.md#installation "../README.md#installation").
 
 ## Usage
 
