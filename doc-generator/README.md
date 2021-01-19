@@ -2,10 +2,11 @@
 
 Copyright 2016-2021 Distributed Management Task Force, Inc. All rights reserved.
 
+The **Redfish doc generator** &mdash; [`doc_generator.py`](#doc_generator.py) &mdash; is a Python tool that processes JSON Schema files to generate output in a specified format. The formats are GitHub-flavored Markdown targeted for the [Slate API doc generator](https://github.com/slatedocs/slate "https://github.com/slatedocs/slate"), which is the default output, Markdown targeted for the DMTF document publication process, HTML, [Property index documentation](README_Property_Index.md), and CSV.
+
 ## Contents
 
 * [Version 3 changes](#version-3-changes)
-* [About](#about)
 * [Installation](#installation)
 * [Usage](#usage)
 * [Configuration](#configuration)
@@ -20,16 +21,6 @@ The [Redfish doc generator v3](CHANGES_v2_to_v3.md):
 * Updates the `README` files.
 
 For a snapshot of the *version 2* code, see [Doc Generator v2](https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0 "https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0").
-
-## About
-
-The **Redfish doc generator** &mdash; [`doc_generator.py`](#doc_generator.py) &mdash; is a Python tool that processes JSON Schema files to generate output in a specified format. The formats are:
-
-* GitHub-flavored Markdown targeted for the [Slate API doc generator](https://github.com/slatedocs/slate "https://github.com/slatedocs/slate"), which is the default output
-* Markdown targeted for the DMTF document publication process
-* HTML
-* [Property index documentation](README_Property_Index.md)
-* CSV
 
 ## Installation
 
