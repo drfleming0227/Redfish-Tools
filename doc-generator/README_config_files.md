@@ -18,8 +18,10 @@ To configure output, the **Redfish doc generator** accepts:
 
 * Configuration input from JSON configuration files:
 
-   * The <a href="#base-configuration-file">base configuration file</a> defines configuration options including pointers to the content supplement configuration file and the supplementary content files. Depending on the <a href="#output-modes">output mode</a>, the configuration keys in the base configuration file can change. Some output modes, such as the property index mode, support additional configuration keys.
-   * The <a href="#content-supplement-configuration-file">content&nbsp;supplement&nbsp;configuration&nbsp;file</a>defines text overrides for property descriptions, replacements for unit abbreviations, and schema-specific content including introductions, postscripts, and property description substitutions. The base configuration file contains a pointer to this file.
+   * <a href="#base-configuration-file">Base configuration file</a> defines configuration options including pointers to the content supplement configuration file and the supplementary content files.
+
+       Depending on the <a href="#output-modes">output mode</a>, the configuration keys in the base configuration file can change. Some output modes, such as the property index mode, support additional configuration keys.
+   * <a href="#content-supplement-configuration-file">Content&nbsp;supplement&nbsp;configuration&nbsp;file</a> defines text overrides for property descriptions, replacements for unit abbreviations, and schema-specific content including introductions, postscripts, and property description substitutions. The base configuration file contains a pointer to this file.
 
 * Supplementary content from HTML or Markdown files:
 
