@@ -8,7 +8,7 @@ The `odata_validator.py` tool is a Python tool that crawls through OData-formatt
 
 ## Installation
 
-To install the OData CSDL validator, see [Installation](Redfish-Tools#installation "Redfish-Tools#installation").
+To install the OData CSDL validator, see [Installation](README.md#installation "README.md#installation").
 
 ## Usage
 

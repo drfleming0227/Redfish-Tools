@@ -8,7 +8,7 @@ The `json-to-yaml.py` tool is a Python tool that processes and converts Redfish 
 
 ## Installation
 
-To install the JSON Schema-to-OpenAPI convertor, see [Installation](Redfish-Tools#installation "Redfish-Tools#installation").
+To install the JSON Schema-to-OpenAPI convertor, see [Installation](README.md#installation "README.md#installation").
 
 ## Usage
 
