@@ -48,9 +48,9 @@ To install the tools in the Redfish-Tools respository:
          <td align="left" valign="top">
             <p>Install the following software, which is required for HTML output:</p>
             <ul>
-               <li><a href="https://python-markdown.github.io/install/" title="https://python-markdown.github.io/install/">Install Python&#8209;Markdown</a>.</li>
-               <li><a href="http://pygments.org/" title="http://pygments.org/">Install Pygments</a>.</li>
-               <li> Install requirements:
+               <li><p><a href="https://python-markdown.github.io/install/" title="https://python-markdown.github.io/install/">Install Python&#8209;Markdown</a>.</p></li>
+               <li><p><a href="http://pygments.org/" title="http://pygments.org/">Install Pygments</a>.</p></li>
+               <li><p>Install requirements:</p>
                   <pre lang="bash">% cd doc-generator
 % pip install -r requirements.txt</pre>
                </li>
@@ -62,15 +62,16 @@ To install the tools in the Redfish-Tools respository:
          <td align="left" valign="top">
             <p>(Optional) If you plan to make changes to the <code>doc_generator.py</code> code:</p>
             <ul>
-               <li>Install <code>pytest</code>:
+               <li><p>Install <code>pytest</code>:</p>
                   <pre lang="bash">% cd doc-generator
 % pip install -r dev_requirements.txt</pre>
                </li>
-               <li> Run the tests:
+               <li><p>Run the tests:</p>
                   <pre lang="bash">% cd doc-generator
 % pytest</pre>
                </li>
-            </ul> For information about <code>pytest</code>, see <a href="https://docs.pytest.org/en/latest/getting-started.html" title="https://docs.pytest.org/en/latest/getting-started.html">pytest</a>.
+            </ul>
+            <p>For information about <code>pytest</code>, see <a href="https://docs.pytest.org/en/latest/getting-started.html" title="https://docs.pytest.org/en/latest/getting-started.html">pytest</a>.</p>
          </td>
       </tr>
    </tbody>
