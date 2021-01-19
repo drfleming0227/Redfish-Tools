@@ -29,7 +29,7 @@ To install the tools in the Redfish-Tools respository:
    </thead>
    <tbody>
       <tr>
-         <td align="left" valign="top">All</td>
+         <td align="left" valign="top">&#10003;&nbsp;CSDL-to-JSON converter<br/>&#10003;&nbsp;Redfish doc generator<br/>&#10003;&nbsp;JSON Schema-to-OpenAPI converter<br/>&#10003;&nbsp;OData CSDL validator</td>
          <td align="left" valign="top">1.</td>
          <td align="left" valign="top">
             <p>Clone the <code>Redfish-Tools</code> repository:</p>
@@ -38,7 +38,7 @@ To install the tools in the Redfish-Tools respository:
          </td>
       </tr>
       <tr>
-         <td align="left" valign="top">All</td>
+         <td align="left" valign="top">&#10003;&nbsp;CSDL-to-JSON converter<br/>&#10003;&nbsp;Redfish doc generator<br/>&#10003;&nbsp;JSON Schema-to-OpenAPI converter<br/>&#10003;&nbsp;OData CSDL validator</td>
          <td align="left" valign="top">2.</td>
          <td align="left" valign="top">
             <p><a href="https://www.python.org/downloads/" title="https://www.python.org/downloads/">Download and install Python</a> on the machine from which you will run the tools.</p>
@@ -60,7 +60,7 @@ To install the tools in the Redfish-Tools respository:
          <td />
       </tr>
       <tr>
-         <td align="left" valign="top">Redfish doc generator</td>
+         <td align="left" valign="top">&#10003;&nbsp;Redfish&nbsp;doc&nbsp;generator</td>
          <td align="left" valign="top">4.</td>
          <td align="left" valign="top">
             <p>(Optional) If you plan to make changes to the <code>doc_generator.py</code> code:</p>
