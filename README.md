@@ -23,16 +23,16 @@ To install the tools in the Redfish-Tools respository:
 <table>
    <thead>
       <tr>
-         <th align="top" valign="left">Tool</th>
-         <th align="top" valign="left" colspan="2">Step</th>
-         <th align="top" valign="left">Details</th>
+         <th align="left" valign="top">Tool</th>
+         <th align="left" valign="top" colspan="2">Step</th>
+         <th align="left" valign="top">Details</th>
       </tr>
    </thead>
    <tbody>
       <tr>
-         <td align="top" valign="left">All</td>
-         <td align="top" valign="left">1.</td>
-         <td align="top" valign="left">
+         <td align="left" valign="top">All</td>
+         <td align="left" valign="top">1.</td>
+         <td align="left" valign="top">
             <p>Clone the <code>Redfish-Tools</code> repository:</p>
             <pre lang="bash">% git clone git@github.com:DMTF/Redfish-Tools.git
 % git remote add upstream git@github.com:DMTF/Redfish-Tools.git</pre>
@@ -40,19 +40,19 @@ To install the tools in the Redfish-Tools respository:
          <td />
       </tr>
       <tr>
-         <td align="top" valign="left">All</td>
-         <td align="top" valign="left">2.</td>
-         <td align="top" valign="left">
+         <td align="left" valign="top">All</td>
+         <td align="left" valign="top">2.</td>
+         <td align="left" valign="top">
             <p>Download and install Python on the machine from which you will run the tools.</p>
          </td>
-         <td align="top" valign="left">
+         <td align="left" valign="top">
             <a href="https://www.python.org/downloads/" title="https://www.python.org/downloads/">Download and install Python</a>.
          </td>
       </tr>
       <tr>
-         <td align="top" valign="left">Redfish doc generator</td>
-         <td align="top" valign="left">3.</td>
-         <td align="top" valign="left">
+         <td align="left" valign="top">Redfish doc generator</td>
+         <td align="left" valign="top">3.</td>
+         <td align="left" valign="top">
             <p>On the machine from which you will run <code>doc_generator.py</code>, install the following software, which is required for HTML output:</p>
             <ol>
                <li>[Install Python&#8209;Markdown](https://python-markdown.github.io/install/ "https://python-markdown.github.io/install/").</li>
@@ -65,9 +65,9 @@ To install the tools in the Redfish-Tools respository:
          <td />
       </tr>
       <tr>
-         <td align="top" valign="left">Redfish doc generator</td>
-         <td align="top" valign="left">4.</td>
-         <td align="top" valign="left">
+         <td align="left" valign="top">Redfish doc generator</td>
+         <td align="left" valign="top">4.</td>
+         <td align="left" valign="top">
             <p>(Optional) If you make changes to the <code>doc_generator.py</code> code:</p>
             <ol>
                <li>Install <code>pytest</code>:
@@ -80,7 +80,7 @@ To install the tools in the Redfish-Tools respository:
                </li>
             </ol>
          </td>
-         <td align="top" valign="left"><a href="https://docs.pytest.org/en/latest/getting-started.html" title="https://docs.pytest.org/en/latest/getting-started.html">pytest</a>.</td>
+         <td align="left" valign="top"><a href="https://docs.pytest.org/en/latest/getting-started.html" title="https://docs.pytest.org/en/latest/getting-started.html">pytest</a>.</td>
       </tr>
    </tbody>
 </table>
