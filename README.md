@@ -29,9 +29,9 @@ To install the tools in the Redfish-Tools respository:
    </thead>
    <tbody>
       <tr>
-         <td align="left" valign="top" rowspan="2">&checkmark;&nbsp;CSDL-to-JSON converter<br />&checkmark;&nbsp;Redfish doc generator<br />&checkmark;&nbsp;JSON&nbsp;Schema&#8209;to&#8209;OpenAPI&nbsp;converter<br />&checkmark;&nbsp;OData CSDL validator</td>
+         <td align="left" valign="top" rowspan="2">&checkmark;&nbsp;All</td>
          <td align="left" valign="top">1.</td>
-         <td align="left" valign="top"> Clone the <code>Redfish-Tools</code> repository:
+         <td align="left" valign="top"><p>Clone the <code>Redfish-Tools</code> repository:</p>
             <pre lang="bash">% git clone git@github.com:DMTF/Redfish-Tools.git
 % git remote add upstream git@github.com:DMTF/Redfish-Tools.git</pre>
          </td>
@@ -39,7 +39,7 @@ To install the tools in the Redfish-Tools respository:
       <tr>
          <td align="left" valign="top">2.</td>
          <td align="left" valign="top">
-            <a href="https://www.python.org/downloads/" title="https://www.python.org/downloads/">Download and install Python</a> on the machine from which you will run the tools.
+            <p><a href="https://www.python.org/downloads/" title="https://www.python.org/downloads/">Download and install Python</a> on the machine from which you will run the tools.</p>
          </td>
       </tr>
       <tr>
