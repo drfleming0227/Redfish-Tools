@@ -32,7 +32,7 @@ To install the tools in the Redfish-Tools respository:
          <td align="left" valign="top" rowspan="2">&checkmark;&nbsp;CSDL-to-JSON converter<br/>&checkmark;&nbsp;Redfish doc generator<br/>&checkmark;&nbsp;JSON&nbsp;Schema&#8209;to&#8209;OpenAPI&nbsp;converter<br/>&checkmark;&nbsp;OData CSDL validator</td>
          <td align="left" valign="top">1.</td>
          <td align="left" valign="top">
-            <p>Clone the <code>Redfish-Tools</code> repository:</p>
+            Clone the <code>Redfish-Tools</code> repository:
             <pre lang="bash">% git clone git@github.com:DMTF/Redfish-Tools.git
 % git remote add upstream git@github.com:DMTF/Redfish-Tools.git</pre>
          </td>
@@ -40,39 +40,39 @@ To install the tools in the Redfish-Tools respository:
       <tr>
          <td align="left" valign="top">2.</td>
          <td align="left" valign="top">
-            <p><a href="https://www.python.org/downloads/" title="https://www.python.org/downloads/">Download and install Python</a> on the machine from which you will run the tools.</p>
+            <a href="https://www.python.org/downloads/" title="https://www.python.org/downloads/">Download and install Python</a> on the machine from which you will run the tools.
          </td>
       </tr>
       <tr>
          <td align="left" valign="top" rowspan="2">&checkmark;&nbsp;Redfish doc generator</td>
          <td align="left" valign="top">3.</td>
          <td align="left" valign="top">
-            <p>Install the following software, which is required for HTML output:</p>
+            Install the following software, which is required for HTML output:
             <ol>
-               <li><p><a href="https://python-markdown.github.io/install/" title="https://python-markdown.github.io/install/">Install Python&#8209;Markdown</a>.</p></li>
-               <li><p><a href="http://pygments.org/" title="http://pygments.org/">Install Pygments</a>.</p></li>
+               <li><a href="https://python-markdown.github.io/install/" title="https://python-markdown.github.io/install/">Install Python&#8209;Markdown</a>.</li>
+               <li><a href="http://pygments.org/" title="http://pygments.org/">Install Pygments</a>.</li>
                <li>
-                  <p>Install requirements:</p>
+                  Install requirements:
                   <pre lang="bash">% cd doc-generator
-% pip install -r requirements.txt</pre>
+% pip install -r requirements.txt</pre></li>
          </td>
       </tr>
       <tr>
          <td align="left" valign="top">4.</td>
          <td align="left" valign="top">
-            <p>(Optional) If you plan to make changes to the <code>doc_generator.py</code> code:</p>
+            (Optional) If you plan to make changes to the <code>doc_generator.py</code> code:
             <ol>
-               <li><p>Install <code>pytest</code>:</p>
+               <li>Install <code>pytest</code>:
                   <pre lang="bash">% cd doc-generator
 % pip install -r dev_requirements.txt</pre>
                </li>
                <li>
-                  <p>Run the tests:</p>
+                  Run the tests:
                   <pre lang="bash">% cd doc-generator
 % pytest</pre>
                </li>
             </ol>
-            <p>For information about <code>pytest</code>, see <a href="https://docs.pytest.org/en/latest/getting-started.html" title="https://docs.pytest.org/en/latest/getting-started.html">pytest</a>.
+            For information about <code>pytest</code>, see <a href="https://docs.pytest.org/en/latest/getting-started.html" title="https://docs.pytest.org/en/latest/getting-started.html">pytest</a>.
          </td>
       </tr>
    </tbody>
