@@ -20,35 +20,67 @@ For Redfish developer information, see [DMTF](https://redfish.dmtf.org/ "https:/
 
 To install the tools in the Redfish-Tools respository:
 
-1. Clone the `Redfish-Tools` repository:
-
-    ```bash
-    % git clone git@github.com:DMTF/Redfish-Tools.git
-    % git remote add upstream git@github.com:DMTF/Redfish-Tools.git
-    ```
-1. [Download and install Python](https://www.python.org/downloads/ "https://www.python.org/downloads/") on the machine from which you will run the tools.
-1. (Redfish doc generator only) On the machine from which you will run `doc_generator.py`, install the following software, which is required for HTML output:
-    * [Install Python&#8209;Markdown](https://python-markdown.github.io/install/ "https://python-markdown.github.io/install/").
-    * [Install Pygments](http://pygments.org/ "http://pygments.org/").
-    * Install requirements:
-
-      ```bash
-      % cd doc-generator
-      % pip install -r requirements.txt
-      ```
-1. (Redfish doc generator only) (Optional) If you make changes to the `doc_generator.py` code:
-    * Install `pytest`:
-
-      ```bash
-      % cd doc-generator
-      % pip install -r dev_requirements.txt
-      ```
-
-    * Run the tests:
-
-      ```bash
-      % cd doc-generator
-      % pytest
-      ```
-
-    For more information about `pytest`, see [pytest](https://docs.pytest.org/en/latest/getting-started.html "https://docs.pytest.org/en/latest/getting-started.html").
+<table>
+   <thead>
+      <tr>
+         <th align="top" valign="left">Tool</th>
+         <th align="top" valign="left" colspan="2">Step</th>
+         <th align="top" valign="left">Details</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td align="top" valign="left">All</td>
+         <td align="top" valign="left">1.</td>
+         <td align="top" valign="left">
+            <p>Clone the <code>Redfish-Tools</code> repository:</p>
+            <pre lang="bash">% git clone git@github.com:DMTF/Redfish-Tools.git
+% git remote add upstream git@github.com:DMTF/Redfish-Tools.git</pre>
+         </td>
+         <td />
+      </tr>
+      <tr>
+         <td align="top" valign="left">All</td>
+         <td align="top" valign="left">2.</td>
+         <td align="top" valign="left">
+            <p>Download and install Python on the machine from which you will run the tools.</p>
+         </td>
+         <td align="top" valign="left">
+            <a href="https://www.python.org/downloads/" title="https://www.python.org/downloads/">Download and install Python</a>.
+         </td>
+      </tr>
+      <tr>
+         <td align="top" valign="left">Redfish doc generator</td>
+         <td align="top" valign="left">3.</td>
+         <td align="top" valign="left">
+            <p>On the machine from which you will run <code>doc_generator.py</code>, install the following software, which is required for HTML output:</p>
+            <ol>
+               <li>[Install Python&#8209;Markdown](https://python-markdown.github.io/install/ "https://python-markdown.github.io/install/").</li>
+               <li>[Install Pygments](http://pygments.org/ "http://pygments.org/").</li>
+               <li>
+                  <p>Install requirements:</p>
+                  <pre lang="bash">% cd doc-generator
+% pip install -r requirements.txt</pre>
+         </td>
+         <td />
+      </tr>
+      <tr>
+         <td align="top" valign="left">Redfish doc generator</td>
+         <td align="top" valign="left">4.</td>
+         <td align="top" valign="left">
+            <p>(Optional) If you make changes to the <code>doc_generator.py</code> code:</p>
+            <ol>
+               <li>Install <code>pytest</code>:
+                  <pre lang="bash">% cd doc-generator
+% pip install -r dev_requirements.txt</pre>
+               </li>
+               <li>Run the tests:
+                  <pre lang="bash">% cd doc-generator
+% pytest</pre>
+               </li>
+            </ol>
+         </td>
+         <td align="top" valign="left"><a href="https://docs.pytest.org/en/latest/getting-started.html" title="https://docs.pytest.org/en/latest/getting-started.html">pytest</a>.</td>
+      </tr>
+   </tbody>
+</table>
