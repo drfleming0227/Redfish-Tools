@@ -27,4 +27,28 @@ To install the tools in the Redfish-Tools respository:
     % git remote add upstream git@github.com:DMTF/Redfish-Tools.git
     ```
 1. [Download and install Python](https://www.python.org/downloads/ "https://www.python.org/downloads/") on the machine from which you will run the tools.
-1. See the `README.md` file for each tool for additional installation requirements.
+1. (Redfish doc generator only) On the machine from which you will run `doc_generator.py`, install the following software, which is required for HTML output:
+    * [Install Python&#8209;Markdown](https://python-markdown.github.io/install/ "https://python-markdown.github.io/install/").
+    * [Install Pygments](http://pygments.org/ "http://pygments.org/").
+    * Install requirements:
+
+      ```bash
+      % cd doc-generator
+      % pip install -r requirements.txt
+      ```
+1. (Redfish doc generator only) (Optional) If you make changes to the `doc_generator.py` code:
+    * Install `pytest`:
+
+      ```bash
+      % cd doc-generator
+      % pip install -r dev_requirements.txt
+      ```
+
+    * Run the tests:
+
+      ```bash
+      % cd doc-generator
+      % pytest
+      ```
+
+    For more information about `pytest`, see [pytest](https://docs.pytest.org/en/latest/getting-started.html "https://docs.pytest.org/en/latest/getting-started.html").

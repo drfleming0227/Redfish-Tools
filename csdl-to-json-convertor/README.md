@@ -16,7 +16,7 @@ The **CSDL-to-JSON converter** &mdash; [`csdl-to-json.py`](csdl-to-json.py) &mda
 
 ## Installation
 
-To install the CSDL-to-JSON converter, see [Installation](https://github.com/DMTF/Redfish-Tools#installation "https://github.com/DMTF/Redfish-Tools#installation").
+To install the CSDL-to-JSON converter, see [Installation](Redfish-Tools#installation "Redfish-Tools#installation").
 
 ## Usage
 

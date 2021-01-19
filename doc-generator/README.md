@@ -33,32 +33,7 @@ The **Redfish doc generator** &mdash; [`doc_generator.py`](#doc_generator.py) &m
 
 ## Installation
 
-1. [Clone this repository and install Python](https://github.com/DMTF/Redfish-Tools#installation "https://github.com/DMTF/Redfish-Tools#installation").
-1. On the machine from which you will run `doc_generator.py`, install the following software, which is required for HTML output:
-    * [Install Python&#8209;Markdown](https://python-markdown.github.io/install/ "https://python-markdown.github.io/install/").
-    * [Install Pygments](http://pygments.org/ "http://pygments.org/").
-    * Install requirements:
-
-      ```bash
-      % cd doc-generator
-      % pip install -r requirements.txt
-      ```
-1. (Optional) If you make changes to the `doc_generator.py` code:
-    * Install `pytest`:
-
-      ```bash
-      % cd doc-generator
-      % pip install -r dev_requirements.txt
-      ```
-
-    * Run the tests:
-
-      ```bash
-      % cd doc-generator
-      % pytest
-      ```
-
-    For more information about `pytest`, see [pytest](https://docs.pytest.org/en/latest/getting-started.html "https://docs.pytest.org/en/latest/getting-started.html").
+To install the Redfish doc generator, see [Installation](Redfish-Tools#installation "Redfish-Tools#installation").
 
 ## Usage
 
