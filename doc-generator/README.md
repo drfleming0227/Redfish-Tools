@@ -2,7 +2,7 @@
 
 Copyright 2016-2021 Distributed Management Task Force, Inc. All rights reserved.
 
-The **Redfish doc generator** &mdash; [`doc_generator.py`](#doc_generator.py) &mdash; is a Python tool that processes JSON Schema files to generate output in a specified format. The formats are GitHub-flavored Markdown targeted for the [Slate API doc generator](https://github.com/slatedocs/slate "https://github.com/slatedocs/slate"), which is the default output, Markdown targeted for the DMTF document publication process, HTML, [Property index documentation](README_Property_Index.md), and CSV.
+The **Redfish doc generator** &mdash; [`doc_generator.py`](#doc_generator.py) &mdash; is a Python tool that processes JSON Schema files to generate output in a specified format. The formats are GitHub-flavored Markdown targeted for the [Slate API doc generator](https://github.com/slatedocs/slate "https://github.com/slatedocs/slate"), which is the default output, Markdown targeted for the DMTF document publication process, HTML, [Property index documentation](README_Property_Index.md "README_Property_Index.md"), and CSV.
 
 ## Contents
 
@@ -89,7 +89,7 @@ For `doc_generator.py` examples, see [Redfish doc generator examples](README_con
 
 ## Configuration
 
-Use the `--config` option to specify the configuration file. The configuration file defines:
+Use the `--config` option to specify the [base configuration file](README_config_files.md "README_config_files.md"). The base configuration file defines:
 
 * Required and optional parameters that you can also specify on the command line. 
 * Some required parameters, such as URI mappings, that you cannot specify on the command line.
@@ -110,6 +110,6 @@ For Slate, place the `index.html.md` output in your Slate repository's source di
 
 See also:
 
-* [Redfish doc generator: V3 changes](CHANGES_v2_to_v3.md) &mdash; How to restructure your configuration files.
-* [Redfish doc generator: Configuration](README_config_files.md) &mdash; Configuration files for the Redfish doc generator.
-* [Redfish doc generator: Property index mode](README_Property_Index.md) &mdash; Property index mode.
+* [Redfish doc generator v3 changes](CHANGES_v2_to_v3.md "CHANGES_v2_to_v3.md") &mdash; How to restructure your configuration files.
+* [Redfish doc generator: Configuration and supplementary files](README_config_files.md "README_config_files.md") &mdash; Configuration files for the Redfish doc generator.
+* [Redfish doc generator: Property index configuration](README_Property_Index.md "README_Property_Index.md") &mdash; Property index mode.
