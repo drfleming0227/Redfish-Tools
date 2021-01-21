@@ -30,7 +30,7 @@ To install the tools in the Redfish-Tools respository:
    </li>
 </ol>
 
-For the Redfish doc generator only, complete these additional steps:
+For the **Redfish doc generator only**, complete these additional steps:
 
 <ol>
    <li>
@@ -47,7 +47,7 @@ For the Redfish doc generator only, complete these additional steps:
    <li>
       <p>(Optional) If you plan to make changes to the <code>doc_generator.py</code> code:</p>
       <ul>
-         <li>To install <a href="https://docs.pytest.org/en/latest/getting-started.html" title="https://docs.pytest.org/en/latest/getting-started.html"><code>pytest</code></a>, run these commands:
+         <li>To install <a href="https://docs.pytest.org/en/latest/getting-started.html" title="https://docs.pytest.org/en/latest/getting-started.html"><code>pytest</code></a>:
             <pre lang="bash">% cd doc-generator
 % pip install -r dev_requirements.txt</pre>
          </li>

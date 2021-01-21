@@ -2,9 +2,9 @@
 
 Copyright 2017-2021 Distributed Management Task Force, Inc. All rights reserved.
 
-The **CSDL-to-JSON converter** &mdash; [`csdl-to-json.py`](csdl-to-json.py) &mdash; is a Python tool that converts Redfish CSDL files to Redfish JSON Schema files.
+The **CSDL-to-JSON converter** &mdash; [`csdl-to-json.py`](csdl-to-json.py) &mdash; is a Python tool that converts Redfish Common Schema Definition Language (CSDL) files to Redfish JSON Schema files.
 
-> **Note:** The Common Schema Definition Language (CSDL) defines an Extensible Markup Language (XML) representation of the entity data model that an OData service exposes.
+> **Note:** The CSDL defines an Extensible Markup Language (XML) representation of the entity data model that an OData service exposes.
 
 ## Contents
 
@@ -56,7 +56,18 @@ optional arguments:
 
 ## Configuration
 
-The default configuration file is `dmtf-config.json`, which contains these configuration keys and values:
+The configuration keys are:
+
+| Key              | Description                                                             | 
+| :--------------- | :---------------------------------------------------------------------- |
+| `Copyright`      | Copyright string to include in the generated JSON Schema files.         |
+| `RedfishSchema`  | Location of Redfish Schema files.                                       |
+| `ODataSchema`    | Location of OData Schema files.                                         |
+| `Location`       | Output folder for the generated JSON files.                             |
+| `ResourceLocation` | Location of Redfish resources.                                        |
+| `DoNotWrite`     | Array of one or more output files to exclude from generated JSON files. |
+
+If you omit any keys, the CSDL-to-JSON converter uses the [default values](#default-values) in the default configuration file &mdash; `dmtf-config.json`:
 
 <a id="default-values"></a>
 ```json
@@ -75,19 +86,6 @@ The default configuration file is `dmtf-config.json`, which contains these confi
    ]
 }
 ```
-
-The configuration keys are:
-
-| Key              | Description                                                             | 
-| :--------------- | :---------------------------------------------------------------------- |
-| `Copyright`      | Copyright string to include in the generated JSON Schema files.         |
-| `RedfishSchema`  | Location of Redfish Schema files.                                       |
-| `ODataSchema`    | Location of OData Schema files.                                         |
-| `Location`       | Output folder for the generated JSON files.                             |
-| `ResourceLocation` | Location of Redfish resources.                                        |
-| `DoNotWrite`     | Array of one or more output files to exclude from generated JSON files. |
-
-If you omit any keys, the CSDL-to-JSON converter uses the [default values](#default-values) in the `dmtf-config.json` file.
 
 ## Assumptions
 
