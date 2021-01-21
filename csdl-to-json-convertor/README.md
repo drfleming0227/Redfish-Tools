@@ -112,17 +112,14 @@ To process CSDL files, the CSDL-to-JSON converter:
           <th align="left" valign="top">Tool converts definitions to</th>
         </tr>
         <tr>
-          <td/>
           <td align="left" valign="top">Unversioned namespace and marked as abstract</td>
           <td align="left" valign="top">Unversioned JSON Schema file,<br/>which uses <code>anyOf</code> statement to point to all versioned definitions</td>
         </tr>
         <tr>
-          <td/>
           <td align="left" valign="top">Unversioned namespace and not marked as abstract</td>
           <td align="left" valign="top">Unversioned JSON Schema file</td>
         </tr>
         <tr>
-          <td/>
           <td align="left" valign="top">Versioned namespace</td>
           <td align="left" valign="top">That JSON Schema file version and newer JSON Schema file verions</td>
         </tr>
@@ -130,17 +127,15 @@ To process CSDL files, the CSDL-to-JSON converter:
           <th align="left" valign="top" colspan="3"><code>Action</code> definitions</th>
         </tr>
         <tr>
-          <th/>
+          <th rowspan="3"/>
           <th align="left" valign="top">That are in</th>
           <th align="left" valign="top">Tool converts definitions to</th>
         </tr>
         <tr>
-          <td/>
           <td align="left" valign="top">Unversioned namespace</td>
           <td align="left" valign="top">All versioned JSON Schema files</td>
         </tr>
         <tr>
-          <td/>
           <td align="left" valign="top">Versioned namespace</td>
           <td align="left" valign="top">That JSON Schema file version and newer JSON Schema file verions</td>
         </tr>
@@ -148,17 +143,15 @@ To process CSDL files, the CSDL-to-JSON converter:
           <th align="left" valign="top" colspan="3"><code>EnumType</code> and <code>TypeDefinition</code> definitions</th>
         </tr>
         <tr>
-          <th/>
+          <th rowspan="3"/>
           <th align="left" valign="top">That are in</th>
           <th align="left" valign="top">Tool converts definitions to</th>
         </tr>
         <tr>
-          <td/>
           <td align="left" valign="top">Unversioned namespace</td>
           <td align="left" valign="top">Unversioned JSON Schema file</td>
         </tr>
         <tr>
-          <td/>
           <td align="left" valign="top">Versioned namespace</td>
           <td align="left" valign="top">That JSON Schema file version and newer JSON Schema file verions</td>
         </tr>
