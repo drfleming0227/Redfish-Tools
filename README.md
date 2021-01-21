@@ -23,13 +23,11 @@ To install the tools in the Redfish-Tools respository:
 <table>
    <thead>
       <tr>
-         <th align="left" valign="top">Tools</th>
          <th align="left" valign="top" colspan="2">Step</th>
       </tr>
    </thead>
    <tbody>
       <tr>
-         <td align="left" valign="top" rowspan="2">&checkmark;&nbsp;All</td>
          <td align="left" valign="top">1.</td>
          <td align="left" valign="top"><p>Clone the <code>Redfish-Tools</code> repository:</p>
             <pre lang="bash">% git clone git@github.com:DMTF/Redfish-Tools.git
@@ -42,9 +40,20 @@ To install the tools in the Redfish-Tools respository:
             <p><a href="https://www.python.org/downloads/" title="https://www.python.org/downloads/">Download and install Python</a> on the machine from which you will run the tools.</p>
          </td>
       </tr>
+   </tbody>
+</table>
+
+For the Redfish doc generator only:
+
+<table>
+   <thead>
       <tr>
-         <td align="left" valign="top" rowspan="2">&checkmark;&nbsp;Redfish&nbsp;doc&nbsp;generator</td>
-         <td align="left" valign="top">3.</td>
+         <th align="left" valign="top" colspan="2">Step</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td align="left" valign="top">1.</td>
          <td align="left" valign="top">
             <p>Install the following software, which is required for HTML output:</p>
             <ul>
@@ -58,7 +67,7 @@ To install the tools in the Redfish-Tools respository:
          </td>
       </tr>
       <tr>
-         <td align="left" valign="top">4.</td>
+         <td align="left" valign="top">2.</td>
          <td align="left" valign="top">
             <p>(Optional) If you plan to make changes to the <code>doc_generator.py</code> code:</p>
             <ul>
