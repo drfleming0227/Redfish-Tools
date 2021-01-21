@@ -67,25 +67,7 @@ The configuration keys are:
 | `ResourceLocation` | Location of Redfish resources.                                        |
 | `DoNotWrite`     | Array of one or more output files to exclude from generated JSON files. |
 
-If you omit any keys, the CSDL-to-JSON converter uses the [default values](#default-values) in the default configuration file &mdash; `dmtf-config.json`:
-
-<a id="default-values"></a>
-```json
-{
-   "Copyright":
-      "Copyright 2014-2021 DMTF. For the full DMTF copyright policy, see http://www.dmtf.org/about/policies/copyright",
-   "RedfishSchema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-   "ODataSchema": "http://redfish.dmtf.org/schemas/v1/odata-v4.json",
-   "Location": "http://redfish.dmtf.org/schemas/v1/",
-   "ResourceLocation": "http://redfish.dmtf.org/schemas/v1/",
-   "DoNotWrite": ["Volume.",
-      "VolumeCollection.",
-      "RedfishError.",
-      "RedfishExtensions.",
-      "Validation."
-   ]
-}
-```
+If you omit any keys, the CSDL-to-JSON converter uses the [default values](#default-values) in the default configuration file &mdash; [`dmtf-config.json`](dmtf-config.json).
 
 ## Assumptions
 
