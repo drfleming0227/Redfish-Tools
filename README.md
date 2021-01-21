@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.com/DMTF/Redfish-Tools.svg?branch=master)](https://travis-ci.com/github/DMTF/Redfish-Tools)
 <p align="center">
   <img src="http://redfish.dmtf.org/sites/all/themes/dmtf2015/images/dmtf-redfish-logo.png" alt="DMTF Redfish" width=180>
-</p>
+
 
 # Redfish-Tools
 
@@ -29,7 +29,7 @@ To install the tools in the Redfish-Tools respository:
    <tbody>
       <tr>
          <td align="left" valign="top">1.</td>
-         <td align="left" valign="top"><p>Clone the <code>Redfish-Tools</code> repository:</p>
+         <td align="left" valign="top">Clone the <code>Redfish-Tools</code> repository:
             <pre lang="bash">% git clone git@github.com:DMTF/Redfish-Tools.git
 % git remote add upstream git@github.com:DMTF/Redfish-Tools.git</pre>
          </td>
@@ -37,13 +37,13 @@ To install the tools in the Redfish-Tools respository:
       <tr>
          <td align="left" valign="top">2.</td>
          <td align="left" valign="top">
-            <p><a href="https://www.python.org/downloads/" title="https://www.python.org/downloads/">Download and install Python</a> on the machine from which you will run the tools.</p>
+            <a href="https://www.python.org/downloads/" title="https://www.python.org/downloads/">Download and install Python</a> on the machine from which you will run the tools.
          </td>
       </tr>
    </tbody>
 </table>
 
-For the Redfish doc generator only:
+For the Redfish doc generator only, complete these additional steps:
 
 <table>
    <thead>
@@ -55,11 +55,11 @@ For the Redfish doc generator only:
       <tr>
          <td align="left" valign="top">1.</td>
          <td align="left" valign="top">
-            <p>Install the following software, which is required for HTML output:</p>
+            Install the following software, which is required for HTML output:
             <ul>
-               <li><p><a href="https://python-markdown.github.io/install/" title="https://python-markdown.github.io/install/">Install Python&#8209;Markdown</a>.</p></li>
-               <li><p><a href="http://pygments.org/" title="http://pygments.org/">Install Pygments</a>.</p></li>
-               <li><p>Install requirements:</p>
+               <li><a href="https://python-markdown.github.io/install/" title="https://python-markdown.github.io/install/">Install Python&#8209;Markdown</a>.</li>
+               <li><a href="http://pygments.org/" title="http://pygments.org/">Install Pygments</a>.</li>
+               <li>Install requirements:
                   <pre lang="bash">% cd doc-generator
 % pip install -r requirements.txt</pre>
                </li>
@@ -69,13 +69,13 @@ For the Redfish doc generator only:
       <tr>
          <td align="left" valign="top">2.</td>
          <td align="left" valign="top">
-            <p>(Optional) If you plan to make changes to the <code>doc_generator.py</code> code:</p>
+            (Optional) If you plan to make changes to the <code>doc_generator.py</code> code:
             <ul>
-               <li><p>To install <a href="https://docs.pytest.org/en/latest/getting-started.html" title="https://docs.pytest.org/en/latest/getting-started.html"><code>pytest</code></a>, run these commands:</p>
+               <li>To install <a href="https://docs.pytest.org/en/latest/getting-started.html" title="https://docs.pytest.org/en/latest/getting-started.html"><code>pytest</code></a>, run these commands:
                   <pre lang="bash">% cd doc-generator
 % pip install -r dev_requirements.txt</pre>
                </li>
-               <li><p>Run the tests:</p>
+               <li>Run the tests:
                   <pre lang="bash">% cd doc-generator
 % pytest</pre>
                </li>
