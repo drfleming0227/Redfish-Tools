@@ -2,7 +2,6 @@
 <p align="center">
   <img src="http://redfish.dmtf.org/sites/all/themes/dmtf2015/images/dmtf-redfish-logo.png" alt="DMTF Redfish" width=180>
 
-
 # Redfish-Tools
 
 The Redfish-Tools public repository contains the DMTF Scalable Platforms Management Forum (SPMF) tools.
@@ -20,67 +19,42 @@ For Redfish developer information, see [DMTF](https://redfish.dmtf.org/ "https:/
 
 To install the tools in the Redfish-Tools respository:
 
-<table width="100%">
-   <thead>
-      <tr>
-         <th align="left" valign="top" colspan="2">Step</th>
-      </tr>
-   </thead>
-   <tbody>
-      <tr>
-         <td align="left" valign="top">1.</td>
-         <td align="left" valign="top">Clone the <code>Redfish-Tools</code> repository:
-            <pre lang="bash">% git clone git@github.com:DMTF/Redfish-Tools.git
+<ol>
+   <li>
+      <p>Clone the <code>Redfish-Tools</code> repository:</p>
+      <pre lang="bash">% git clone git@github.com:DMTF/Redfish-Tools.git
 % git remote add upstream git@github.com:DMTF/Redfish-Tools.git</pre>
-         </td>
-      </tr>
-      <tr>
-         <td align="left" valign="top">2.</td>
-         <td align="left" valign="top">
-            <a href="https://www.python.org/downloads/" title="https://www.python.org/downloads/">Download and install Python</a> on the machine from which you will run the tools.
-         </td>
-      </tr>
-   </tbody>
-</table>
+   </li>
+   <li>
+      <p><a href="https://www.python.org/downloads/" title="https://www.python.org/downloads/">Download and install Python</a> on the machine from which you will run the tools.</p>
+   </li>
+</ol>
 
 For the Redfish doc generator only, complete these additional steps:
 
-<table width="100%">
-   <thead>
-      <tr>
-         <th align="left" valign="top" colspan="2">Step</th>
-      </tr>
-   </thead>
-   <tbody>
-      <tr>
-         <td align="left" valign="top">1.</td>
-         <td align="left" valign="top">
-            <p>Install the following software, which is required for HTML output:</p>
-            <ul>
-               <li><a href="https://python-markdown.github.io/install/" title="https://python-markdown.github.io/install/">Install Python&#8209;Markdown</a>.</li>
-               <li><a href="http://pygments.org/" title="http://pygments.org/">Install Pygments</a>.</li>
-               <li>Install requirements:
-                  <pre lang="bash">% cd doc-generator
+<ol>
+   <li>
+      <p>Install the following software, which is required for HTML output:</p>
+      <ul>
+         <li><a href="https://python-markdown.github.io/install/" title="https://python-markdown.github.io/install/">Install Python&#8209;Markdown</a>.</li>
+         <li><a href="http://pygments.org/" title="http://pygments.org/">Install Pygments</a>.</li>
+         <li>Install requirements:
+            <pre lang="bash">% cd doc-generator
 % pip install -r requirements.txt</pre>
-               </li>
-            </ul>
-         </td>
-      </tr>
-      <tr>
-         <td align="left" valign="top">2.</td>
-         <td align="left" valign="top">
-            <p>(Optional) If you plan to make changes to the <code>doc_generator.py</code> code:</p>
-            <ul>
-               <li>To install <a href="https://docs.pytest.org/en/latest/getting-started.html" title="https://docs.pytest.org/en/latest/getting-started.html"><code>pytest</code></a>, run these commands:
-                  <pre lang="bash">% cd doc-generator
+         </li>
+      </ul>
+   </li>
+   <li>
+      <p>(Optional) If you plan to make changes to the <code>doc_generator.py</code> code:</p>
+      <ul>
+         <li>To install <a href="https://docs.pytest.org/en/latest/getting-started.html" title="https://docs.pytest.org/en/latest/getting-started.html"><code>pytest</code></a>, run these commands:
+            <pre lang="bash">% cd doc-generator
 % pip install -r dev_requirements.txt</pre>
-               </li>
-               <li>Run the tests:
-                  <pre lang="bash">% cd doc-generator
+         </li>
+         <li>Run the tests:
+            <pre lang="bash">% cd doc-generator
 % pytest</pre>
-               </li>
-            </ul>
-         </td>
-      </tr>
-   </tbody>
-</table>
+         </li>
+      </ul>
+   </li>
+</ol>
