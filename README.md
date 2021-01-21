@@ -43,7 +43,7 @@ To install the tools in the Redfish-Tools respository:
          </td>
       </tr>
       <tr>
-         <td align="left" valign="top" rowspan="2">&checkmark;&nbsp;Redfish doc generator</td>
+         <td align="left" valign="top" rowspan="2">&checkmark;&nbsp;Redfish&nbsp;doc&nbsp;generator</td>
          <td align="left" valign="top">3.</td>
          <td align="left" valign="top">
             <p>Install the following software, which is required for HTML output:</p>
