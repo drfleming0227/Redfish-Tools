@@ -55,7 +55,7 @@ For the Redfish doc generator only, complete these additional steps:
       <tr>
          <td align="left" valign="top">1.</td>
          <td align="left" valign="top">
-            Install the following software, which is required for HTML output:
+            <p>Install the following software, which is required for HTML output:</p>
             <ul>
                <li><a href="https://python-markdown.github.io/install/" title="https://python-markdown.github.io/install/">Install Python&#8209;Markdown</a>.</li>
                <li><a href="http://pygments.org/" title="http://pygments.org/">Install Pygments</a>.</li>
@@ -69,7 +69,7 @@ For the Redfish doc generator only, complete these additional steps:
       <tr>
          <td align="left" valign="top">2.</td>
          <td align="left" valign="top">
-            (Optional) If you plan to make changes to the <code>doc_generator.py</code> code:
+            <p>(Optional) If you plan to make changes to the <code>doc_generator.py</code> code:</p>
             <ul>
                <li>To install <a href="https://docs.pytest.org/en/latest/getting-started.html" title="https://docs.pytest.org/en/latest/getting-started.html"><code>pytest</code></a>, run these commands:
                   <pre lang="bash">% cd doc-generator
