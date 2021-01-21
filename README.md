@@ -20,7 +20,7 @@ For Redfish developer information, see [DMTF](https://redfish.dmtf.org/ "https:/
 
 To install the tools in the Redfish-Tools respository:
 
-<table>
+<table width="100%">
    <thead>
       <tr>
          <th align="left" valign="top" colspan="2">Step</th>
@@ -45,7 +45,7 @@ To install the tools in the Redfish-Tools respository:
 
 For the Redfish doc generator only, complete these additional steps:
 
-<table>
+<table width="100%">
    <thead>
       <tr>
          <th align="left" valign="top" colspan="2">Step</th>
