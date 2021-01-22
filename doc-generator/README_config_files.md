@@ -1,19 +1,5 @@
 # Redfish doc generator: Configuration and supplementary files
 
-## Contents
-
-* [About configuration and supplementary files](#about-configuration-and-supplementary-files)
-* [Output modes](#output-modes)
-* [Base configuration file](#base-configuration-file)
-* [Content supplement configuration file](#content-supplement-configuration-file)
-* [Subset configuration file](#subset-configuration-file)
-* [Property index configuration file](#property-index-configuration-file)
-* [Boilerplate intro supplementary file](#boilerplate-intro-supplementary-file)
-* [Boilerplate postscript supplementary file](#boilerplate-postscript-supplementary-file)
-* [Redfish doc generator examples](#redfish-doc-generator-examples)
-
-## About configuration and supplementary files
-
 To configure output, the **Redfish doc generator** accepts:
 
 * Configuration input from JSON configuration files:
@@ -29,6 +15,17 @@ To configure output, the **Redfish doc generator** accepts:
    * The <a href="#boilerplate-postscript-supplementary-file">Boilerplate&nbsp;postscript&nbsp;supplementary&nbsp;file</a> defines content to include in the output after the generated documentation.
 
 If you specify an option in more than one way, command&#8209;line arguments override the configuration file keys.
+
+## Contents
+
+* [Output modes](#output-modes)
+* [Base configuration file](#base-configuration-file)
+* [Content supplement configuration file](#content-supplement-configuration-file)
+* [Subset configuration file](#subset-configuration-file)
+* [Property index configuration file](#property-index-configuration-file)
+* [Boilerplate intro supplementary file](#boilerplate-intro-supplementary-file)
+* [Boilerplate postscript supplementary file](#boilerplate-postscript-supplementary-file)
+* [Redfish doc generator examples](#redfish-doc-generator-examples)
 
 ## Output modes
 
@@ -51,7 +48,7 @@ Depending on the output mode, the configuration keys in the base configuration f
 
 ## Base configuration file
 
-The base configuration file is a JSON file that defines most of the doc generator confirmation options including pointers to the <a href="#content-supplement-configuration-file-overview">content supplement configuration file</a> and the [boilerplate intro](#boilerplate-intro-file) and [boilerplate postscript](#boilerplate-postscript-file) supplementary content files.
+The base configuration file is a JSON file that configures the generated output and can include pointers to the <a href="#content-supplement-configuration-file-overview">content supplement configuration file</a> and the [boilerplate intro](#boilerplate-intro-file) and [boilerplate postscript](#boilerplate-postscript-file) supplementary content files.
 
 * [Supported keys](#supported-keys)
 * [combine_multiple_refs key](#combine_multiple_refs-key)
@@ -526,13 +523,13 @@ These examples assume that you have a clone of the DMTF/Redfish repo and the DMT
 **Not implemented**
 
 ```bash
-% python ../Redfish-Tools/doc-generator/doc_generator.py --config=../Redfish-Tools/doc-generator/sample_inputs/csv/config.json
+% python3 ../Redfish-Tools/doc-generator/doc_generator.py --config=../Redfish-Tools/doc-generator/sample_inputs/csv/config.json
 ```
 
 ### Standard HTML
 
 ```bash
-% python ../Redfish-Tools/doc-generator/doc_generator.py --config=../Redfish-Tools/doc-generator/sample_inputs/standard_html/config.json
+% python3 ../Redfish-Tools/doc-generator/doc_generator.py --config=../Redfish-Tools/doc-generator/sample_inputs/standard_html/config.json
 ```
 
 Note that the `object_reference_disposition` in this config file identifies specific behavior for the `Redundancy` resource and for `PCIeInterface`, defined in `PCIeDevice`.
@@ -540,7 +537,7 @@ Note that the `object_reference_disposition` in this config file identifies spec
 ### Standard with normative descriptions HTML
 
 ```bash
-% python ../Redfish-Tools/doc-generator/doc_generator.py --config=../Redfish-Tools/doc-generator/sample_inputs/standard_html/config_normative.json
+% python3 ../Redfish-Tools/doc-generator/doc_generator.py --config=../Redfish-Tools/doc-generator/sample_inputs/standard_html/config_normative.json
 ```
 
 ### Profile Markdown in terse mode
@@ -554,7 +551,7 @@ Configuration file references the profile `OCPBasicServer.v1_0_0.json`, which in
 ### Subset HTML
 
 ```bash
-% python ../Redfish-Tools/doc-generator/doc_generator.py --config=../Redfish-Tools/doc-generator/sample_inputs/subset/config.json
+% python3 ../Redfish-Tools/doc-generator/doc_generator.py --config=../Redfish-Tools/doc-generator/sample_inputs/subset/config.json
 ```
 
 Configuration file references the profile `OCPBasicServer.v1_0_0.json`, which in turn references `OCPManagedDevice.v1_0_0.json`.
@@ -562,7 +559,7 @@ Configuration file references the profile `OCPBasicServer.v1_0_0.json`, which in
 ### Property index HTML
 
 ```bash
-% python ../Redfish-Tools/doc-generator/doc_generator.py --config=../Redfish-Tools/doc-generator/sample_inputs/property_index/config.json
+% python3 ../Redfish-Tools/doc-generator/doc_generator.py --config=../Redfish-Tools/doc-generator/sample_inputs/property_index/config.json
 ```
 
 > **Note:** The base configuration file for property index output includes some elements that are specific to that mode: `description_overrides`.
