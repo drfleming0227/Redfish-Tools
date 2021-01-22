@@ -11,17 +11,15 @@ If you specify an option in more than one way, command&#8209;line arguments over
 The files of interest are:
 
 * [Configuration files](#configuration-files)
-  * [Changes to the base configuration file](#changes-to-the-base-configuration-file)
-  * [Changes to the content supplement configuration file](#changes-to-the-content-supplement-configuration-file)
-  * [Changes to the subset configuration file](#changes-to-the-subset-configuration-file)
-  
-* [Supplementary content](#supplementary-content)
-  * [New boilerplate intro file](#new-boilerplate-intro-file)
-  * [New boilerplate postscript file](#new-boilerplate-postscript-file)
+* [Supplementary content files](#supplementary-content-files)
 
 This document describes which files have been changed or added, and how to update your configuration.
 
 ## Configuration files
+
+* [Changes to the base configuration file](#changes-to-the-base-configuration-file)
+* [Changes to the content supplement configuration file](#changes-to-the-content-supplement-configuration-file)
+* [Changes to the subset configuration file](#changes-to-the-subset-configuration-file)
 
 ### Changes to the base configuration file
 
@@ -73,7 +71,13 @@ This file is unchanged for v3. _Link to spec for this?_
 
 For an example subset configuration file, see <a href="sample_inputs/subset/config.json"><code>config.json</code></a>.
 
-## Supplementary content
+## Supplementary content files
+
+* [Changes to the supplemental material file](#changes-to-the-supplemental-material-file)
+* [New boilerplate intro file](#new-boilerplate-intro-file)
+* [New boilerplate postscript file](#new-boilerplate-postscript-file)
+
+### Changes to the supplemental material file
 
 Features that previously were specified within the *Supplemental Material* Markdown document are available elsewhere:
 
