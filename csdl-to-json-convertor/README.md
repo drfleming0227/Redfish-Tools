@@ -11,8 +11,9 @@ The **CSDL-to-JSON converter** &mdash; [`csdl-to-json.py`](csdl-to-json.py) &mda
 * [Installation](#installation)
 * [Usage](#usage)
 * [Configuration](#configuration)
-* [Assumptions](#assumptions)
 * [Processing](#processing)
+   * [Assumptions](#assumptions)
+   * [To process CSDL files, the CSDL-to-JSON converter](#to-process-csdl-files-the-csdl-to-json-converter)
 
 ## Installation
 
@@ -69,7 +70,9 @@ The configuration keys are:
 
 If you omit any keys, the CSDL-to-JSON converter uses the values in the default [`dmtf-config.json`](dmtf-config.json) configuration file.
 
-## Assumptions
+## Processing
+
+### Assumptions
 
 The CSDL-to-JSON converter makes these assumptions about the format of the Redfish CSDL files:
 
@@ -86,9 +89,7 @@ The CSDL-to-JSON converter makes these assumptions about the format of the Redfi
     * In the form, `<name>.v<X>_<Y>_<Z>`.
 * References to another CSDL file assume that its JSON Schema file is in the same folder.
 
-## Processing
-
-To process CSDL files, the CSDL-to-JSON converter:
+### To process CSDL files, the CSDL-to-JSON converter
 
 1. Locates the `Resource_v1.xml` schema to cache base definition properties that all resources use.
 
