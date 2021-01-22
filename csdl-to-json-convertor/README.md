@@ -13,7 +13,7 @@ The **CSDL-to-JSON converter** &mdash; [`csdl-to-json.py`](csdl-to-json.py) &mda
 * [Configuration](#configuration)
 * [Processing](#processing)
    * [Assumptions](#assumptions)
-   * [To process CSDL files, the CSDL-to-JSON converter](#to-process-csdl-files-the-csdl-to-json-converter)
+   * [Processing details](#processing-details)
 
 ## Installation
 
@@ -89,7 +89,9 @@ The CSDL-to-JSON converter makes these assumptions about the format of the Redfi
     * In the form, `<name>.v<X>_<Y>_<Z>`.
 * References to another CSDL file assume that its JSON Schema file is in the same folder.
 
-### To process CSDL files, the CSDL-to-JSON converter
+### Processing details
+
+To process CSDL files, the CSDL-to-JSON converter:
 
 1. Locates the `Resource_v1.xml` schema to cache base definition properties that all resources use.
 
