@@ -1,29 +1,28 @@
 # Redfish doc generator v3 changes
 
-The inputs that Redfish doc generator v3 accepts change from those that the Redfish doc generator v2 accepted.
+The Redfish doc generator v3 accepts different inputs than those that the Redfish doc generator v2 accepted.
 
-> **Note:** These changes are not backward compatible so to run the tool against an existing set of configuration files, use [Redfish-Tools doc generator v2](https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0 "https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0").
+> **Note:** These changes are not backward compatible so use [Redfish-Tools doc generator v2](https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0 "https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0") to run the tool against an existing set of configuration files.
 
-The doc generator v3 takes command-line input and key values from the base configuration file to configure the generated documentation. The base configuration file can include pointers to other configuration files and supplementary HTML or Markdown files.
+The doc generator v3 takes command-line input and key values from the base configuration file to configure the generated documentation. The base configuration file can include pointers to the content supplement configuration file and supplementary HTML or Markdown files.
 
 If you specify an option in more than one way, command&#8209;line arguments override the configuration file keys.
 
 The files of interest are:
 
-**Configuration files:**
-
-* [Base configuration file](#base-configuration-file-changes)
-* [Content supplement configuration file](#content-supplement-configuration-file-changes)
-* [Subset configuration file](#subset-configuration-file-changes)
-
-**Supplementary HTML or Markdown files:**
-
-* [Boilerplate intro](#boilerplate-intro-file-changes)
-* [Boilerplate postscript](#boilerplate-postscript-file-changes)
+* [Configuration file changes](#configuration-file-changes)
+  * [Changes to the base configuration file](#changes-to-the-base-configuration-file)
+  * [Changes to the content supplement configuration file](#changes-to-the-content-supplement-configuration-file)
+  * [Changes to the subset configuration file](#changes-to-the-subset-configuration-file)
+* [Supplemental content changes](#supplemental-content-changes)
+  * [New boilerplate intro file](#new-boilerplate-intro-file)
+  * [New boilerplate postscript file](#new-boilerplate-postscript-file)
 
 This document describes which files have been changed or added, and how to update your configuration.
 
-## Base configuration file changes
+## Configuration file changes
+
+### Changes to the base configuration file
 
 The <a href="README_config_files.md#base-configuration-file">base&nbsp;configuration file</a> is a JSON configuration file that includes all command-line options and that can provide links to the following configuration files and supplementary Markdown files:
 
@@ -49,7 +48,31 @@ These *property index* mode fields that are specified in `config.json` have been
 
 For an example of the base configuration file, see <a href="sample_inputs/standard_html/config.json"><code>config.json</code></a>.
 
-## Supplemental material changes
+### Changes to the content supplement configuration file
+
+The <a href="README_config_files.md#content-supplement-configuration-file">content supplement configuration file</a> is a JSON file that contains text replacements and additions to apply to the generated schema documentation. It includes text overrides for property descriptions, replacements for unit abbreviations, and schema-specific content including introductions, postscripts, and property description substitutions.
+
+| Configuration key | Type | Description | Change    |
+| :---------------- | :--- | :---------- | :-------- |
+| `property_description_overrides` | Dictionary | Maps property names to strings to use to replace the descriptions of the named properties. | Moved from base configuration file. |
+| `property_fulldescription_overrides` | Dictionary | Just like `property_description_overrides`. These replacements are *full* in that any additional information the `doc_generator.py` normally appends, like a reference to the definition of the property in another schema, is omitted. | Moved from base configuration file. |
+| `schema_link_replacements` | Dictionary | Maps URIs of schema references to a structure that specifies either the full or partial match type and replacement URIs. Use to substitute a link to documentation where a link to a specific schema would otherwise appear in the documentation. | [schema_link_replacements key](README_config_files.md/#schema-link-replacements-key) | |
+| `schema_supplement` | Dictionary | Maps schema names to a dictionary of structured content, including introductory text and schema-specific text replacements. | [schema_supplement key](README_config_files.md/#schema-supplement-key) | |
+| `units_translation` | Dictionary | Maps units as they appear in Redfish schemas to units as you want them to appear in the documentation. | Moved from base configuration file. |
+
+For an example of the content supplement configuration file, see <a href="sample_inputs/standard_html/content_supplement.json"><code>content_supplement.json</code></a>.
+
+### Changes to the subset configuration file
+
+The subset configuration file is a version of the base configuration file.
+
+It is a JSON file that defines the subset profile. 
+      
+This file is unchanged for v3. _Link to spec for this?_
+
+For an example subset configuration file, see <a href="sample_inputs/subset/config.json"><code>config.json</code></a>.
+
+## Supplemental content changes
 
 Features that previously were specified within the *Supplemental Material* Markdown document are available elsewhere:
 
@@ -83,35 +106,13 @@ The `units_translation` field replaces the **Units Translation** table, which ha
 | :------------------------- | :----------------------------- |
 | Units translation | `units_translation` in content supplement |
 
-## Content supplement configuration file changes
-
-The <a href="README_config_files.md#content-supplement-configuration-file">content supplement configuration file</a> is a JSON file that contains text replacements and additions to apply to the generated schema documentation. It includes text overrides for property descriptions, replacements for unit abbreviations, and schema-specific content including introductions, postscripts, and property description substitutions.
-
-| Configuration key | Type | Description | Change    |
-| :---------------- | :--- | :---------- | :-------- |
-| `property_description_overrides` | Dictionary | Maps property names to strings to use to replace the descriptions of the named properties. | Moved from base configuration file. |
-| `property_fulldescription_overrides` | Dictionary | Just like `property_description_overrides`. These replacements are *full* in that any additional information the `doc_generator.py` normally appends, like a reference to the definition of the property in another schema, is omitted. | Moved from base configuration file. |
-| `schema_link_replacements` | Dictionary | Maps URIs of schema references to a structure that specifies either the full or partial match type and replacement URIs. Use to substitute a link to documentation where a link to a specific schema would otherwise appear in the documentation. | [schema_link_replacements key](README_config_files.md/#schema-link-replacements-key) | |
-| `schema_supplement` | Dictionary | Maps schema names to a dictionary of structured content, including introductory text and schema-specific text replacements. | [schema_supplement key](README_config_files.md/#schema-supplement-key) | |
-| `units_translation` | Dictionary | Maps units as they appear in Redfish schemas to units as you want them to appear in the documentation. | Moved from base configuration file. |
-
-For an example of the content supplement configuration file, see <a href="sample_inputs/standard_html/content_supplement.json"><code>content_supplement.json</code></a>.
-
-## Subset configuration file changes
-
-The subset configuration file is a JSON file that defines the subset profile. 
-      
-This file is unchanged for v3. _Link to spec for this?_
-
-For an example subset configuration file, see <a href="sample_inputs/subset/config.json"><code>config.json</code></a>.
-
-## Boilerplate intro file changes
+### New boilerplate intro file
 
 The boilerplate intro file is a Markdown or HTML that contains the content to place in the output before the generated documentation. Can include an <code>[add_toc]</code> directive that specifies location for the table of contents.
 
 For an example boilerplate intro file, see <a href="sample_inputs/standard_html/intro.md"><code>intro.md</code></a>.
 
-## Boilerplate postscript file changes
+### New boilerplate postscript file
 
 The boilerplate postscript file is a Markdown or HTML that contains the content to place in the output after the generated documentation. 
 
