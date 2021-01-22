@@ -12,8 +12,6 @@ The **CSDL-to-JSON converter** &mdash; [`csdl-to-json.py`](csdl-to-json.py) &mda
 * [Usage](#usage)
 * [Configuration](#configuration)
 * [Processing](#processing)
-   * [Assumptions](#assumptions)
-   * [Processing details](#processing-details)
 
 ## Installation
 
@@ -71,6 +69,9 @@ The configuration keys are:
 If you omit any keys, the CSDL-to-JSON converter uses the values in the default [`dmtf-config.json`](dmtf-config.json) configuration file.
 
 ## Processing
+
+* [Assumptions](#assumptions)
+* [Processing details](#processing-details)
 
 ### Assumptions
 
