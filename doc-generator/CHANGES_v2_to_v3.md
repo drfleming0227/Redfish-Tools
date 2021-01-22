@@ -4,23 +4,24 @@ The Redfish doc generator v3 accepts different inputs than those that the Redfis
 
 > **Note:** These changes are not backward compatible so use [Redfish-Tools doc generator v2](https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0 "https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0") to run the tool against an existing set of configuration files.
 
-The doc generator v3 takes command-line input and key values from the base configuration file to configure the generated documentation. The base configuration file can include pointers to the content supplement configuration file and supplementary HTML or Markdown files.
+The doc generator v3 takes command-line input and key values from the base configuration file to configure the generated documentation. The base configuration file can include pointers to the content supplement configuration file and supplementary content, which are HTML or Markdown files.
 
 If you specify an option in more than one way, command&#8209;line arguments override the configuration file keys.
 
 The files of interest are:
 
-* [Configuration file changes](#configuration-file-changes)
+* [Configuration files](#configuration-files)
   * [Changes to the base configuration file](#changes-to-the-base-configuration-file)
   * [Changes to the content supplement configuration file](#changes-to-the-content-supplement-configuration-file)
   * [Changes to the subset configuration file](#changes-to-the-subset-configuration-file)
-* [Supplemental content changes](#supplemental-content-changes)
+  
+* [Supplementary content](#supplementary-content)
   * [New boilerplate intro file](#new-boilerplate-intro-file)
   * [New boilerplate postscript file](#new-boilerplate-postscript-file)
 
 This document describes which files have been changed or added, and how to update your configuration.
 
-## Configuration file changes
+## Configuration files
 
 ### Changes to the base configuration file
 
@@ -72,7 +73,7 @@ This file is unchanged for v3. _Link to spec for this?_
 
 For an example subset configuration file, see <a href="sample_inputs/subset/config.json"><code>config.json</code></a>.
 
-## Supplemental content changes
+## Supplementary content
 
 Features that previously were specified within the *Supplemental Material* Markdown document are available elsewhere:
 
