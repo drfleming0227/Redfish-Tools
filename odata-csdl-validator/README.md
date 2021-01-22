@@ -33,11 +33,36 @@ optional arguments:
 
 The `odata_validator.py` tool takes a single parameter in one of the following formats:
 
-| Format                                 | Example                                      |
-| :------------------------------------- | :------------------------------------------- |
-| Local path to a single XML metadata file. | <pre lang="bash">odata\_validator.py test\_metadata/ServiceRoot.xml</pre> |
-| Local path to a directory of XML metadata files. | <pre lang="bash">odata\_validator.py test\_metadata</pre> |
-| URL of an XML metadata file. | <pre lang="bash">odata\_validator.py http://redfish.dmtf.org/schemas/v1/ServiceRoot.xml</pre> |
+<table>
+   <col width="50%">
+   <col width="50%">
+   <thead>
+      <tr>
+         <th align="left" valign="top">Format</th>
+         <th align="left" valign="top">Example</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td align="left" valign="top">Local path to a single XML metadata file.</td>
+         <td align="left" valign="top">
+            <pre lang="bash">odata\_validator.py test\_metadata/ServiceRoot.xml</pre>
+         </td>
+      </tr>
+      <tr>
+         <td align="left" valign="top">Local path to a directory of XML metadata files.</td>
+         <td align="left" valign="top">
+            <pre lang="bash">odata\_validator.py test\_metadata</pre>
+         </td>
+      </tr>
+      <tr>
+         <td align="left" valign="top">URL of an XML metadata file.</td>
+         <td align="left" valign="top">
+            <pre lang="bash">odata\_validator.py http://redfish.dmtf.org/schemas/v1/ServiceRoot.xml</pre>
+         </td>
+      </tr>
+   </tbody>
+</table>
 
 ## Processing
 
@@ -47,6 +72,6 @@ If the tool finds an error, it prints the path to the metadata file where it fou
 
 Example:
 
-```bash
+```text
 MetaData:http://redfish.dmtf.org/schemas/v1/ServiceRoot.xml->DataServices->Schema:ServiceRoot->EntityType:ServiceRoot->Resource.1.0.0.Resource is not a valid QualifiedName
 ```
