@@ -14,7 +14,7 @@ The **OData CSDL validator** &mdash; [`odata_validator.py`](odata_validator.py "
 
 ## Installation
 
-To install the OData CSDL validator, see [Installation](README.md#installation "README.md#installation").
+To install the OData CSDL validator, see [Installation](../README.md#installation "../README.md#installation").
 
 ## Usage
 
