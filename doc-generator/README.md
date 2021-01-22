@@ -98,14 +98,48 @@ For `doc_generator.py` examples, see [Redfish doc generator examples](README_con
 
 The type of output that the doc generator produces depends on the following command-line options:
 
-| Command&#8209;line&nbsp;option | Description                                                                   |
-| :----------------------- | :---------------------------------------------------------------------------- |
-| `-n`,&nbsp;`--normative` | Produces normative, or developer-focused, output. |
-| `--format`               | The output format. Value is: <ul><li><code>markdown</code> &mdash; Markdown targeted for the DMTF document publication process</li><li><code>slate</code> (default) &mdash; GitHub-flavored Markdown targeted for the [Slate API doc generator](https://github.com/slatedocs/slate "https://github.com/slatedocs/slate")</li><li><code>html</code> &mdash; HTML</li><li><code>csv</code></li></ul>, which is the default output
-| `--profile PROFILE_DOC`  | Path to a JSON profile document, for profile output. |
-| `-t`,&nbsp;`--terse`     | Terse output (meaningful only with --profile). By default, profile output is verbose and includes all properties regardless of profile requirements. "Terse"output is intended for use by Service developers, including only the subset of properties with profile requirements. |
-| `--subset SUBSET_DOC`    | Path to a JSON profile document. Generates *Schema subset* output, with the subset defined in the JSON profile document. |
-| `--property_index`       | Produces [*property index* output](README_Property_Index.md "README_Property_Index.md"). |
+<table width="100%">
+   <col width="40%">
+   <col width="60%">
+   <tbody>
+      <tr>
+         <th align="left" valign="top">Command-line option</th>
+         <th align="left" valign="top">Description</th>
+      </tr>
+      <tr>
+         <th align="left" valign="top"><code>-n`</code>,&nbsp;<code>--normative</code></th>
+         <th align="left" valign="top">Produces normative, or developer-focused, output.</th>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><code>--format</code></td>
+         <td align="left" valign="top">
+            <p>The output format. Value is:</p>
+            <ul>
+               <li><code>markdown</code> &mdash; Markdown targeted for the DMTF document publication process</li>
+               <li><code>slate</code> (default) &mdash; GitHub-flavored Markdown targeted for the <a href="https://github.com/slatedocs/slate" title="https://github.com/slatedocs/slate">Slate API doc generator</a></li>
+               <li><code>html</code> &mdash; HTML</li>
+               <li><code>csv</code></li>
+            </ul>
+         </td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><code>--profile PROFILE_DOC</code></td>
+         <td align="left" valign="top">Path to a JSON profile document, for profile output.</td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><code>-t</code>,&nbsp;<code>--terse</code></td>
+         <td align="left" valign="top">Terse output, which is meaningful only with <code>--profile</code>. By default, profile output is verbose and includes all properties regardless of profile requirements. *Terse* output is intended for use by service developers, including only the subset of properties with profile requirements.</td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><code>--subset SUBSET_DOC</code></td>
+         <td align="left" valign="top">Path to a JSON profile document. Generates *Schema subset* output, with the subset defined in the JSON profile document.</td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><code>--property_index</code></td>
+         <td align="left" valign="top">Produces <a href="README_Property_Index.md" title="README_Property_Index.md"><i>property index</i> output</a>.</td>
+      </tr>
+   </tbody>
+</table>
 
 ## Configuration
 
