@@ -92,11 +92,30 @@ Example:
 
 For more information about the output formats, see [Output formats](#output-formats).
 
-For `doc_generator.py` examples, see [Redfish doc generator examples](README_config_files.md#redfish-docs-generator-examples).
+For `doc_generator.py` examples, see [Redfish doc generator examples](README_config_files.md#redfish-doc-generator-examples).
 
-## Output formats
+## Output modes
 
-The type of output that the doc generator produces depends on the following command-line options:
+An output mode is a combination of an output format, such as Markdown or HTML, and a specific type of output, such as a developer-focused, or normative, document or a property index. So you could produce a normative HTML document or a standard HTML document.
+
+The doc generator supports several output modes through various command-line or configuration options. The following table:
+
+* Lists the supported output modes.
+* Provides links to sample versions of the base configuration file.
+* Provides links to examples of `doc_generator.py` command usage.
+
+| Output mode | Relevant command-line or configuration option | Sample base configuration file | Example `doc_generator.py` command usage |
+| :---------- | :---------------------------- | :----------------------------- | :--------------------------------- |
+| CSV                | `--format csv`<br/>`"format": "csv"` | [`sample_inputs/csv/config.json`](sample_inputs/csv/config.json) | [CSV](#csv) |
+| Profile            | `--format csv`<br/>`"format": "csv"` | [`sample_inputs/profile_mode/config.json`](sample_inputs/profile_mode/config.json) | [Profile index Markdown in terse mode](##profile-index-markdown-in-terse-mode) |
+| Property index     | `--format csv`<br/>`"format": "csv"` | [`sample_inputs/property_index/config.json`](sample_inputs/property_index/config.json) | [Property index HTML](##property-index-html) |
+| Standard           | `--format csv`<br/>`"format": "csv"` | [`sample_inputs/standard_html/config.json`](sample_inputs/standard_html/config.json) | [Standard HTML](##standard-html) |
+| Standard normative | `--format csv`<br/>`"format": "csv"` | [`sample_inputs/standard_html/config_normative.json`](sample_inputs/standard_html/config_normative.json) | [Standard with normative descriptions HTML](##standard-html-with-normative-descriptions) |
+| Subset             | `--format csv`<br/>`"format": "csv"`| [`sample_inputs/subset/config.json`](sample_inputs/subset/config.json) | [Subset HTML](##subset-html) |
+
+Depending on the output mode, the configuration keys in the base configuration file can change. Some output modes, such as the property index mode, support additional configuration keys.
+
+The type of output that the doc generator produces depends on the following command-line or configuration options:
 
 <table>
    <col width="40%">
@@ -117,10 +136,10 @@ The type of output that the doc generator produces depends on the following comm
          <td align="left" valign="top">
             <p>The output format. Value is:</p>
             <ul>
-               <li><code>markdown</code> &mdash; Markdown targeted for the DMTF document publication process.</li>
-               <li><code>slate</code> (default) &mdash; GitHub-flavored Markdown targeted for the <a href="https://github.com/slatedocs/slate" title="https://github.com/slatedocs/slate">Slate API doc generator</a>.</li>
-               <li><code>html</code> &mdash; HTML.</li>
-               <li><code>csv</code> &mdash; CSV.</li>
+               <li><code>markdown</code> &mdash; Markdown file targeted for the DMTF document publication process.</li>
+               <li><code>slate</code> (default) &mdash; GitHub-flavored Markdown file targeted for the <a href="https://github.com/slatedocs/slate" title="https://github.com/slatedocs/slate">Slate API doc generator</a>.</li>
+               <li><code>html</code> &mdash; HyperText Markup Language (HTML) file.</li>
+               <li><code>csv</code> &mdash; Comma-separated values (CSV) file.</li>
             </ul>
          </td>
       </tr>

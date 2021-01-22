@@ -33,11 +33,13 @@ If you specify an option in more than one way, command&#8209;line arguments over
 
 ## Output modes
 
+An output mode is a combination of an output format, such as Markdown or HTML, and a specific type of output, such as a developer-focused, or normative, document or a property index. So you could produce a normative HTML document or a standard HTML document.
+
 The doc generator supports several output modes through various command-line or configuration options. The following table:
 
-* Lists the supported output modes
-* Provides links to sample versions of the base configuration file
-* Provides links to examples of `doc_generator.py` command usage
+* Lists the supported output modes.
+* Provides links to sample versions of the base configuration file.
+* Provides links to examples of `doc_generator.py` command usage.
 
 | Output mode        | Sample base configuration file | Example command usage |
 | :----------------- | :----------------------------- | :-------------------- |
