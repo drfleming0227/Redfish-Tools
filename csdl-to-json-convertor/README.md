@@ -67,7 +67,7 @@ The configuration keys are:
 | `ResourceLocation` | Location of Redfish resources.                                        |
 | `DoNotWrite`     | Array of one or more output files to exclude from generated JSON files. |
 
-If you omit any keys, the CSDL-to-JSON converter uses the values in the default configuration file &mdash; [`dmtf-config.json`](dmtf-config.json).
+If you omit any keys, the CSDL-to-JSON converter uses the values in the default [`dmtf-config.json`](dmtf-config.json) configuration file.
 
 ## Assumptions
 
@@ -95,7 +95,7 @@ To process CSDL files, the CSDL-to-JSON converter:
     If the file is not in the input directory, the tool accesses it in the remote location.
 1. Loops on all XML files in the input folder.
 
-    For the following elements and properties in every versioned and unversioned namespace in each XML file, the CSDL-to-JSON converter generates corresponding JSON file or files, as follows:
+    For the following definitions in every versioned and unversioned namespace in each XML file, the CSDL-to-JSON converter generates corresponding JSON Schema file or files, as follows:
 
 
     <table width="100%">
@@ -113,7 +113,7 @@ To process CSDL files, the CSDL-to-JSON converter:
         </tr>
         <tr>
           <td align="left" valign="top">Unversioned namespace and marked as abstract</td>
-          <td align="left" valign="top">Unversioned JSON Schema file,<br/>which uses <code>anyOf</code> statement to point to all versioned definitions</td>
+          <td align="left" valign="top">Unversioned JSON Schema file, which uses <code>anyOf</code> statement to point to all versioned definitions</td>
         </tr>
         <tr>
           <td align="left" valign="top">Unversioned namespace and not marked as abstract</td>
