@@ -6,13 +6,14 @@
 
 Copyright 2016-2021 Distributed Management Task Force, Inc. All rights reserved.
 
-The **Redfish doc generator** &mdash; [`doc_generator.py`](doc_generator.py "doc_generator.py") &mdash; is a Python tool that processes JSON Schema files to generate output in a specified format. The formats are GitHub-flavored Markdown targeted for the [Slate API doc generator](https://github.com/slatedocs/slate "https://github.com/slatedocs/slate"), which is the default output, Markdown targeted for the DMTF document publication process, HTML, [Property index documentation](README_Property_Index.md "README_Property_Index.md"), and CSV.
+The **Redfish doc generator** &mdash; [`doc_generator.py`](doc_generator.py "doc_generator.py") &mdash; is a Python tool that processes JSON Schema files to generate output in a specified format.
 
 ## Contents
 
 * [Version 3 changes](#version-3-changes)
 * [Installation](#installation)
 * [Usage](#usage)
+* [Output formats](#output-formats)
 * [Configuration](#configuration)
 * [Processing](#processing)
 * [Notes](#notes)
@@ -90,6 +91,27 @@ Example:
 ```
 
 For `doc_generator.py` examples, see [Redfish doc generator examples](README_config_files.md#redfish-docs-generator-examples).
+
+## Output formats
+
+The output formats are:
+
+* GitHub-flavored Markdown targeted for the [Slate API doc generator](https://github.com/slatedocs/slate "https://github.com/slatedocs/slate"), which is the default output
+* Markdown targeted for the DMTF document publication process
+* HTML
+* [Property index documentation](README_Property_Index.md "README_Property_Index.md")
+* CSV
+
+The type of output that the doc generator produces depends on the following command-line options:
+
+| Command-line option     | Description                                                                   |
+| :---------------------- | :---------------------------------------------------------------------------- |
+| `-n`, `--normative`     | Produces normative, or developer-focused, output. |
+| `--format`              | The output format. Value is: <ul><li><code>markdown</code></li><li><code>slate</code> (default)</li><li><code>html</code></li><li><code>csv</code></li></ul> |
+| `--profile PROFILE_DOC` | Path to a JSON profile document, for profile output. |
+| `-t`, `--terse` | Terse output (meaningful only with --profile). By default, profile output is verbose and includes all properties regardless of profile requirements. "Terse"output is intended for use by Service developers, including only the subset of properties with profile requirements. |
+| `--subset SUBSET_DOC`   | Path to a JSON profile document. Generates *Schema subset* output, with the subset defined in the JSON profile document. |
+| `--property_index`      | Produces *property index* output. |
 
 ## Configuration
 
