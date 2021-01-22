@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.com/DMTF/Redfish-Tools.svg?branch=master)](https://travis-ci.com/github/DMTF/Redfish-Tools)
+<p align="center">
+  <img src="http://redfish.dmtf.org/sites/all/themes/dmtf2015/images/dmtf-redfish-logo.png" alt="DMTF Redfish" width=180>
+
 # OData CSDL validator
 
 Copyright 2016-2021 Distributed Management Task Force, Inc. All rights reserved.
