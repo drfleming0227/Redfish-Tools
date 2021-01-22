@@ -98,7 +98,7 @@ For `doc_generator.py` examples, see [Redfish doc generator examples](README_con
 
 The type of output that the doc generator produces depends on the following command-line options:
 
-| Command-line&nbsp;option | Description                                                                   |
+| Command&#8209;line&nbsp;option | Description                                                                   |
 | :----------------------- | :---------------------------------------------------------------------------- |
 | `-n`,&nbsp;`--normative` | Produces normative, or developer-focused, output. |
 | `--format`               | The output format. Value is: <ul><li><code>markdown</code> &mdash; Markdown targeted for the DMTF document publication process</li><li><code>slate</code> (default) &mdash; GitHub-flavored Markdown targeted for the [Slate API doc generator](https://github.com/slatedocs/slate "https://github.com/slatedocs/slate")</li><li><code>html</code> &mdash; HTML</li><li><code>csv</code></li></ul>, which is the default output
