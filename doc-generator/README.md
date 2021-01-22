@@ -125,7 +125,7 @@ The type of output that the doc generator produces depends on the following comm
          </td>
       </tr>
       <tr>
-         <td align="left" valign="top"><code>--profile PROFILE_DOC</code></td>
+         <td align="left" valign="top"><code>--profile&nbsp;PROFILE_DOC</code></td>
          <td align="left" valign="top">Path to a JSON profile document, for profile output.</td>
       </tr>
       <tr>
