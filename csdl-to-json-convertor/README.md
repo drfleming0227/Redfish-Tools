@@ -116,7 +116,7 @@ To process CSDL files, the CSDL-to-JSON converter:
           <td align="left" valign="top">Unversioned JSON Schema file, which uses <code>anyOf</code> statement to point to all versioned definitions</td>
         </tr>
         <tr>
-          <td align="left" valign="top">Unversioned namespace and not marked as abstract</td>
+          <td align="left" valign="top">Unversioned&nbsp;namespace&nbsp;and&nbsp;not&nbsp;marked&nbsp;as&nbsp;abstract</td>
           <td align="left" valign="top">Unversioned JSON Schema file</td>
         </tr>
         <tr>
