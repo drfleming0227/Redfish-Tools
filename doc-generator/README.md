@@ -6,7 +6,7 @@
 
 Copyright 2016-2021 Distributed Management Task Force, Inc. All rights reserved.
 
-The **Redfish doc generator** &mdash; [`doc_generator.py`](doc_generator.py "doc_generator.py") &mdash; is a Python tool that processes JSON Schema files to generate output in a specified format.
+The **Redfish doc generator** &mdash; [`doc_generator.py`](doc_generator.py "doc_generator.py") &mdash; is a Python tool that processes JSON Schema files to generate output in a specified [format](#output-formats).
 
 ## Contents
 
