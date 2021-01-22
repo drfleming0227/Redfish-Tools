@@ -98,14 +98,16 @@ For `doc_generator.py` examples, see [Redfish doc generator examples](README_con
 
 The type of output that the doc generator produces depends on the following command-line options:
 
-<table width="100%">
+<table>
    <col width="40%">
    <col width="60%">
-   <tbody>
+   <thead>
       <tr>
-         <th align="left" valign="top">Command-line option</th>
+         <th align="left" valign="top">Command&#8209;line&nbsp;option</th>
          <th align="left" valign="top">Description</th>
       </tr>
+    </thead>
+    <tbody>
       <tr>
          <td align="left" valign="top"><code>-n</code>,&nbsp;<code>--normative</code></td>
          <td align="left" valign="top">Produces normative, or developer-focused, output.</td>
