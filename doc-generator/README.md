@@ -107,18 +107,18 @@ The type of output that the doc generator produces depends on the following comm
          <th align="left" valign="top">Description</th>
       </tr>
       <tr>
-         <th align="left" valign="top"><code>-n`</code>,&nbsp;<code>--normative</code></th>
-         <th align="left" valign="top">Produces normative, or developer-focused, output.</th>
+         <td align="left" valign="top"><code>-n</code>,&nbsp;<code>--normative</code></td>
+         <td align="left" valign="top">Produces normative, or developer-focused, output.</td>
       </tr>
       <tr>
          <td align="left" valign="top"><code>--format</code></td>
          <td align="left" valign="top">
             <p>The output format. Value is:</p>
             <ul>
-               <li><code>markdown</code> &mdash; Markdown targeted for the DMTF document publication process</li>
-               <li><code>slate</code> (default) &mdash; GitHub-flavored Markdown targeted for the <a href="https://github.com/slatedocs/slate" title="https://github.com/slatedocs/slate">Slate API doc generator</a></li>
-               <li><code>html</code> &mdash; HTML</li>
-               <li><code>csv</code></li>
+               <li><code>markdown</code> &mdash; Markdown targeted for the DMTF document publication process.</li>
+               <li><code>slate</code> (default) &mdash; GitHub-flavored Markdown targeted for the <a href="https://github.com/slatedocs/slate" title="https://github.com/slatedocs/slate">Slate API doc generator</a>.</li>
+               <li><code>html</code> &mdash; HTML.</li>
+               <li><code>csv</code> &mdash; CSV.</li>
             </ul>
          </td>
       </tr>
