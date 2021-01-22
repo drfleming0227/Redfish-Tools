@@ -4,7 +4,9 @@
 
 # Redfish doc generator: Configuration and supplementary files
 
-To configure output, the **Redfish doc generator** accepts:
+To configure output, the **Redfish doc generator** accepts input from the command line and configuration and supplementary content files.
+
+This topic describes:
 
 * Configuration input from JSON configuration files:
 
@@ -16,7 +18,7 @@ To configure output, the **Redfish doc generator** accepts:
 * Supplementary content from HTML or Markdown files:
 
    * The <a href="#boilerplate-intro-supplementary-file">boilerplate&nbsp;intro supplementary file</a> defines content to include in the output before the generated documentation.
-   * The <a href="#boilerplate-postscript-supplementary-file">Boilerplate&nbsp;postscript&nbsp;supplementary&nbsp;file</a> defines content to include in the output after the generated documentation.
+   * The <a href="#boilerplate-postscript-supplementary-file">boilerplate&nbsp;postscript&nbsp;supplementary&nbsp;file</a> defines content to include in the output after the generated documentation.
 
 If you specify an option in more than one way, command&#8209;line arguments override the configuration file keys.
 
