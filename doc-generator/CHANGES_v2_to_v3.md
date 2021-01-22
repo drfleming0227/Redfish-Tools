@@ -23,16 +23,9 @@ This document describes which files have been changed or added, and how to updat
 
 ### Changes to the base configuration file
 
-The <a href="README_config_files.md#base-configuration-file">base&nbsp;configuration file</a> is a JSON configuration file that includes all command-line options and that can provide links to the following configuration files and supplementary Markdown files:
+The <a href="README_config_files.md#base-configuration-file">base&nbsp;configuration file</a> The base configuration file is a JSON file that configures the generated output and can include pointers to the <a href="#content-supplement-configuration-file-overview">content supplement configuration file</a> and the [boilerplate intro](#boilerplate-intro-file) and [boilerplate postscript](#boilerplate-postscript-file) supplementary content files.
 
-<ul>
-  <li>Boilerplate intro file</li>
-  <li>Boilerplate postscript file</li>
-  <li>Content supplement configuration file</li>
-  <li>(Profile and subset modes only) Subset configuration file</li>
-</ul>
-
-These fields have been moved from the base `config.json` into the [content supplement configuration file](#content-supplement-configuration-file-changes):
+These fields have been moved from the base configuration file into the [content supplement configuration file](#content-supplement-configuration-file-changes):
 
 * `property_description_overrides`
 * `property_fulldescription_overrides`
@@ -40,12 +33,12 @@ These fields have been moved from the base `config.json` into the [content suppl
 
 These *property index* mode fields that are specified in `config.json` have been renamed:
 
-| Old name               | New name                | Notes                                         |
+| Former name            | Current name            | Notes                                         |
 | :--------------------- | :---------------------- | :-------------------------------------------- |
 | `ExcludedProperties`   | `excluded_properties`   | As in other modes.                            |
 | `DescriptionOverrides` | `description_overrides` | Distinct from the `property_description_overrides` in the content supplement for other modes, and is provided in the base configuration file rather than the content supplement. |
 
-For an example of the base configuration file, see <a href="sample_inputs/standard_html/config.json"><code>config.json</code></a>.
+**Example base configuration file:** <a href="sample_inputs/standard_html/config.json"><code>config.json</code></a>
 
 ### Changes to the content supplement configuration file
 
