@@ -63,9 +63,7 @@ For an example of the content supplement configuration file, see <a href="sample
 
 ### Changes to the subset configuration file
 
-The subset configuration file is a version of the base configuration file.
-
-It is a JSON file that defines the subset profile. 
+The subset configuration file, which is a version of the base configuration file, is a JSON file that defines the subset profile. 
       
 This file is unchanged for v3. _Link to spec for this?_
 
@@ -79,17 +77,17 @@ For an example subset configuration file, see <a href="sample_inputs/subset/conf
 
 ### Changes to the supplemental material file
 
-Features that previously were specified within the *Supplemental Material* Markdown document are available elsewhere:
+The *Supplemental Material* Markdown file features are now available elsewhere:
 
-| Feature              | Description                                                       |
-| :------------------- | :---------------------------------------------------------------- |
-| Introduction | Replace with separate boilerplate intro file, file location specified in `config.json` as `boilerplate_intro`. Format is unchanged. |
-| Postscript | Replace with separate boilerplate intro file, file location specified in `config.json` as `boilerplate_postscript`. Format is unchanged. |
-| Keyword configuration | Specify individual fields in `config.json`: `omit_version_in_headers`, `add_toc`, `actions_in_property_table`, and `suppress_version_history`. |
-| Description overrides | `property_description_overrides` in content supplement (in JSON syntax). |
-| FullDescription Overrides | `property_fulldescription_overrides` in content supplement (in JSON syntax)
-| Schema supplement | `schema_supplement` in content supplement (in JSON syntax). No longer supports JSON payloads (use a `payload_dir` instead). |
-| Schema documentation | `schema_link_replacements` in content supplement (in JSON syntax). |
+| Supplemental material feature | Now available through | Details |
+| :---------------------------- | :-------------------- | :------ |
+| Introduction                  | Boilerplate intro file | Specify the location of this file in  `config.json` as `boilerplate_intro`.  Format is unchanged.<br/><br/>**Example:** [/doc-generator/sample_inputs/standard_html/intro.md](/doc-generator/sample_inputs/standard_html/intro.md). |
+| Postscript | Boilerplate intro file | Specify the location of this file in  `config.json` as `boilerplate_postscript`.  Format is unchanged.<br/><br/>**Example:** [/doc-generator/sample_inputs/standard_html/postscript.md](/doc-generator/sample_inputs/standard_html/postscript.md). |
+| Keyword configuration | Base configuration file | Specify individual fields in `config.json`: `omit_version_in_headers`, `add_toc`, `actions_in_property_table`, and `suppress_version_history`. |
+| Description overrides | Content supplement configuration file | Specify `property_description_overrides` in content supplement in JSON syntax. |
+| FullDescription Overrides | Content supplement configuration file | Specify `property_fulldescription_overrides` in in JSON syntax. |
+| Schema supplement | Content supplement configuration file | Specify `schema_supplement` in JSON syntax. No longer supports JSON payloads; Uuse a `payload_dir` instead. |
+| Schema documentation | Content supplement configuration file | Specify `schema_link_replacements` in JSON syntax. |
 
 The `config.json` is your base configuration file, specified with the `--config` command-line argument.
 
@@ -113,12 +111,12 @@ The `units_translation` field replaces the **Units Translation** table, which ha
 
 ### New boilerplate intro file
 
-The boilerplate intro file is a Markdown or HTML that contains the content to place in the output before the generated documentation. Can include an <code>[add_toc]</code> directive that specifies location for the table of contents.
+The new boilerplate intro file is a Markdown or HTML file that contains the content to place in the output before the generated documentation. Can include an <code>[add_toc]</code> directive that specifies location for the table of contents.
 
 For an example boilerplate intro file, see <a href="sample_inputs/standard_html/intro.md"><code>intro.md</code></a>.
 
 ### New boilerplate postscript file
 
-The boilerplate postscript file is a Markdown or HTML that contains the content to place in the output after the generated documentation. 
+The new boilerplate postscript file is a Markdown or HTML file that contains the content to place in the output after the generated documentation. 
 
 For an example boilerplate postscript file, see <a href="sample_inputs/standard_html/postscript.md"><code>postscript.md</code></a>.
