@@ -169,7 +169,7 @@ Use the `--config` option to specify the [base configuration file](README_config
 * Required and optional parameters that you can also specify on the command line. 
 * Some required parameters, such as URI mappings, that you cannot specify on the command line.
 
-Several flavors of configuration files are available. See [Redfish doc generator: Configuration](README_config_files.md).
+Several flavors of configuration files are available. See [Redfish doc generator: Configuration and supplementary files](README_config_files.md).
 
 ## Processing
 
