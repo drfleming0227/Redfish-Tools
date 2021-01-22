@@ -8,12 +8,12 @@ The doc generator v3 takes command-line input and key values from the base confi
 
 If you specify an option in more than one way, command&#8209;line arguments override the configuration file keys.
 
-The files of interest are:
+This document describes which files have been changed or added, and how to update your configuration.
+
+## Contents
 
 * [Configuration files](#configuration-files)
 * [Supplementary content files](#supplementary-content-files)
-
-This document describes which files have been changed or added, and how to update your configuration.
 
 ## Configuration files
 
@@ -79,15 +79,15 @@ For an example subset configuration file, see <a href="sample_inputs/subset/conf
 
 The *Supplemental Material* Markdown file features are now available elsewhere:
 
-| Supplemental material feature | Now available through | Details |
-| :---------------------------- | :-------------------- | :------ |
+| Feature                       | Now in                 | Details |
+| :---------------------------- | :--------------------- | :------ |
 | Introduction                  | Boilerplate intro file | Specify the location of this file in  `config.json` as `boilerplate_intro`.  Format is unchanged.<br/><br/>**Example:** [/doc-generator/sample_inputs/standard_html/intro.md](/doc-generator/sample_inputs/standard_html/intro.md). |
 | Postscript | Boilerplate intro file | Specify the location of this file in  `config.json` as `boilerplate_postscript`.  Format is unchanged.<br/><br/>**Example:** [/doc-generator/sample_inputs/standard_html/postscript.md](/doc-generator/sample_inputs/standard_html/postscript.md). |
-| Keyword configuration | Base configuration file | Specify individual fields in `config.json`: `omit_version_in_headers`, `add_toc`, `actions_in_property_table`, and `suppress_version_history`. |
-| Description overrides | Content supplement configuration file | Specify `property_description_overrides` in content supplement in JSON syntax. |
-| FullDescription Overrides | Content supplement configuration file | Specify `property_fulldescription_overrides` in in JSON syntax. |
-| Schema supplement | Content supplement configuration file | Specify `schema_supplement` in JSON syntax. No longer supports JSON payloads; Uuse a `payload_dir` instead. |
-| Schema documentation | Content supplement configuration file | Specify `schema_link_replacements` in JSON syntax. |
+| Keyword configuration         | <a href="README_config_files.md#base-configuration-file">Base&nbsp;configuration file</a> | Specify individual fields in `config.json`: `omit_version_in_headers`, `add_toc`, `actions_in_property_table`, and `suppress_version_history`. |
+| Description overrides         | <a href="README_config_files.md#content-supplement-configuration-file">Content&nbsp;supplement&nbsp;configuration file</a> | Specify `property_description_overrides` in content supplement in JSON syntax. |
+| FullDescription&nbsp;overrides | <a href="README_config_files.md#content-supplement-configuration-file">Content&nbsp;supplement&nbsp;configuration file</a> | Specify `property_fulldescription_overrides` in in JSON syntax. |
+| Schema supplement             | <a href="README_config_files.md#content-supplement-configuration-file">Content&nbsp;supplement&nbsp;configuration file</a> | Specify `schema_supplement` in JSON syntax. No longer supports JSON payloads; Uuse a `payload_dir` instead. |
+| Schema documentation          | <a href="README_config_files.md#content-supplement-configuration-file">Content&nbsp;supplement&nbsp;configuration file</a> | Specify `schema_link_replacements` in JSON syntax. |
 
 The `config.json` is your base configuration file, specified with the `--config` command-line argument.
 
