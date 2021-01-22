@@ -6,7 +6,7 @@
 
 Copyright 2016-2021 Distributed Management Task Force, Inc. All rights reserved.
 
-The **OData CSDL validator** &mdash; [`odata_validator.py`](odata_validator.py "odata_validator.py") &mdash; is a Python tool that parses OData-formatted metadata to validate that it conforms to OData V4.0.
+The **OData CSDL validator** &mdash; [`odata_validator.py`](odata_validator.py "odata_validator.py") &mdash; is a Python tool that parses OData-formatted metadata to validate that it conforms to [OData V4.0](https://www.odata.org/documentation/ "https://www.odata.org/documentation/").
 
 * [Installation](#installation)
 * [Usage](#usage)
@@ -34,8 +34,6 @@ optional arguments:
 The `odata_validator.py` tool takes a single parameter in one of the following formats:
 
 <table>
-   <col width="50%">
-   <col width="50%">
    <thead>
       <tr>
          <th align="left" valign="top">Format</th>
@@ -44,19 +42,19 @@ The `odata_validator.py` tool takes a single parameter in one of the following f
    </thead>
    <tbody>
       <tr>
-         <td align="left" valign="top">Local path to a single XML metadata file.</td>
+         <td align="left" valign="top"><p>Local path to a single XML metadata file.</p></td>
          <td align="left" valign="top">
             <pre lang="bash">odata\_validator.py test\_metadata/ServiceRoot.xml</pre>
          </td>
       </tr>
       <tr>
-         <td align="left" valign="top">Local path to a directory of XML metadata files.</td>
+         <td align="left" valign="top"><p>Local path to a directory of XML metadata files.</p></td>
          <td align="left" valign="top">
             <pre lang="bash">odata\_validator.py test\_metadata</pre>
          </td>
       </tr>
       <tr>
-         <td align="left" valign="top">URL of an XML metadata file.</td>
+         <td align="left" valign="top"><p>URL of an XML metadata file.</p></td>
          <td align="left" valign="top">
             <pre lang="bash">odata\_validator.py http://redfish.dmtf.org/schemas/v1/ServiceRoot.xml</pre>
          </td>
