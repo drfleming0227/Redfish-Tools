@@ -6,9 +6,13 @@
 
 Copyright 2018-2021 Distributed Management Task Force, Inc. All rights reserved.
 
-You can run the **Redfish doc generator** in *property-index mode* to generate an index of property names and descriptions. This output includes property name, type, schemas where found, and descriptions found.
+You can run the **Redfish doc generator** in *property-index mode* to generate an index of property names and descriptions. 
 
-When you run the doc generator in property-index mode, only a few of command-line options or configuration keys apply.
+DSP2053, *Redfish Property Guide* at [https://www.dmtf.org/sites/default/files/standards/documents/DSP2053_2020.4.pdf](https://www.dmtf.org/sites/default/files/standards/documents/DSP2053_2020.4.pdf "https://www.dmtf.org/sites/default/files/standards/documents/DSP2053_2020.4.pdf") is an example of a property index document.
+
+For each property, this output includes the property name, list of schemas in which the property is defined, the type, and description.
+
+When you run the doc generator in property-index mode, only a few command-line options or configuration keys apply.
 
 ## Contents
 
@@ -18,7 +22,7 @@ When you run the doc generator in property-index mode, only a few of command-lin
 
 ## Usage
 
-The following subset of command-line options apply to property-index mode:
+The following command-line options apply to property-index mode:
 
 ```text
 usage: doc_generator.py [-h]
@@ -122,7 +126,7 @@ Other properties may be included for the user's reference, and are ignored by th
 * [Description overrides](#description-overrides)
 * [Excluded properties](#excluded-properties)
 * [URI mapping](#uri-mapping)
-   
+
 ### Description overrides
 
 You can override descriptions for individual properties. The `description_overrides` object is keyed by property name. Values are lists, which enable you to specify different overrides for the same property in different schemas. Each object in the list can have the following entries:

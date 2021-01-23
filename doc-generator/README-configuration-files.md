@@ -554,7 +554,7 @@ Note that the `object_reference_disposition` in this config file identifies spec
 % python3 ../Redfish-Tools/doc-generator/doc_generator.py --config=../Redfish-Tools/doc-generator/sample_inputs/standard_html/config_normative.json
 ```
 
-### Terse profile index in Markdown
+### Terse profile in Markdown
 
 **Base configuration file:** <a href="sample_inputs/profile_mode/config.json"><code>sample_inputs/profile_mode/config.json</code></a>
 
