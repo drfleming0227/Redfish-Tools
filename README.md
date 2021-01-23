@@ -30,7 +30,7 @@ For Redfish developer information, see DMTF at [https://redfish.dmtf.org/](https
       ```bash
       % cd doc-generator
       % pip install -r requirements.txt
-         ```
+      ```
 1. (Optional) To make changes to the `doc_generator.py` code, install [`pytest`](https://docs.pytest.org/en/latest/getting-started.html "https://docs.pytest.org/en/latest/getting-started.html"):
 
     ```bash
