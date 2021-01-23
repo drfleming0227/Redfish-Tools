@@ -96,7 +96,56 @@ The *output format* defines the format of the generated output, such as Markdown
 
 The doc generator supports several output modes and formats through various command-line options or configuration keys.
 
+Use the following command-line options to generate specific output modes and formats:
+
+<table>
+   <col width="40%">
+   <col width="60%">
+   <thead>
+      <tr>
+         <th align="left" valign="top">Command&#8209;line&nbsp;option</th>
+         <th align="left" valign="top">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+         <td align="left" valign="top"><code>-n</code>,&nbsp;<code>--normative</code></td>
+         <td align="left" valign="top">Produces normative, or developer-focused, output.</td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><code>--format</code></td>
+         <td align="left" valign="top">
+            <p>The output format. Value is:</p>
+            <ul>
+               <li><code>markdown</code> &mdash; Markdown file targeted for the DMTF document publication process.</li>
+               <li><code>slate</code> (default) &mdash; GitHub-flavored Markdown file targeted for the <a href="https://github.com/slatedocs/slate" title="https://github.com/slatedocs/slate">Slate API doc generator</a>.</li>
+               <li><code>html</code> &mdash; HyperText Markup Language (HTML) file.</li>
+               <li><code>csv</code> &mdash; Comma-separated values (CSV) file.</li>
+            </ul>
+         </td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><code>--profile&nbsp;PROFILE_DOC</code></td>
+         <td align="left" valign="top">Path to a JSON profile document, for profile output.</td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><code>-t</code>,&nbsp;<code>--terse</code></td>
+         <td align="left" valign="top">Terse output, which is meaningful only with <code>--profile</code>. By default, profile output is verbose and includes all properties regardless of profile requirements. *Terse* output is intended for use by service developers, including only the subset of properties with profile requirements.</td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><code>--subset SUBSET_DOC</code></td>
+         <td align="left" valign="top">Path to a JSON profile document. Generates *Schema subset* output, with the subset defined in the JSON profile document.</td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><code>--property_index</code></td>
+         <td align="left" valign="top">Produces <a href="README-property-index-mode.md" title="README-property-index-mode.md"><i>property index</i> output</a>.</td>
+      </tr>
+   </tbody>
+</table>
+
 <dl>
+  <dt>CSV</dt>
+  <dd>Comma-separated values (CSV) file.</dd>
   <dt>Terse profile</dt>
   <dd>Includes only the subset of properties with profile requirements. Terse output is meaningful only for profile mode. By default, profile mode is verbose and includes all properties regardless of profile requirements. *Terse* output is intended for service developers.</dd>
 </dl>

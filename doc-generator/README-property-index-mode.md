@@ -6,16 +6,22 @@
 
 Copyright 2018-2021 Distributed Management Task Force, Inc. All rights reserved.
 
-## About
-
 You can use the **Redfish doc generator** &mdash; [`doc_generator.py`](doc_generator.py) &mdash; to produce an index of property names and descriptions.
 
 The output includes property name, type, schemas where found, and descriptions found.
 
-When you run run the doc generator in *property index* mode:
+When you run run the doc generator in *property index* mode, only a few of `doc_generator.py` arguments apply and the [base configuration file](#configuration) uses different keys than the ones in other output modes.
 
-* Only a few of `doc_generator.py` arguments apply.
-* The [configuration file](#configuration) takes a different form than the one used for the other output modes.
+## Contents
+
+* [Usage](#usage)
+* [Configuration](#configuration)
+   * [Description overrides](#description-overrides)
+   * [Excluded properties](#excluded-properties)
+   * [URI mapping](#uri-mapping)
+* [Configuration file output](#configuration-file-output)
+
+## Usage
 
 Arguments:
 
