@@ -6,14 +6,10 @@
 
 The Redfish-Tools public repository contains the DMTF Scalable Platforms Management Forum (SPMF) tools.
 
-For Redfish developer information, see [DMTF](https://redfish.dmtf.org/ "https://redfish.dmtf.org/").
+For Redfish developer information, see DMTF at [https://redfish.dmtf.org/](https://redfish.dmtf.org/ "https://redfish.dmtf.org/").
 
-## Tools
-
-* [CSDL-to-JSON converter](csdl-to-json-convertor/README.md "csdl-to-json-convertor/README.md")
-* [Redfish doc generator](doc-generator/README.md "doc-generator/README.md")
-* [JSON Schema-to-OpenAPI converter](json-to-openapi-converter/README.md "json-to-openapi-converter/README.md")
-* [OData CSDL validator](odata-csdl-validator/README.md "odata-csdl-validator/README.md")
+* [Installation](#installation)
+* [Tools](#tools)
 
 ## Installation
 
@@ -47,3 +43,10 @@ Complete these additional steps to install the **Redfish doc generator** only:
        % cd doc-generator
        % pip install -r dev_requirements.txt
        ```
+
+## Tools
+
+* [CSDL-to-JSON converter](csdl-to-json-convertor/README.md "csdl-to-json-convertor/README.md")
+* [Redfish doc generator](doc-generator/README.md "doc-generator/README.md")
+* [JSON Schema-to-OpenAPI converter](json-to-openapi-converter/README.md "json-to-openapi-converter/README.md")
+* [OData CSDL validator](odata-csdl-validator/README.md "odata-csdl-validator/README.md")
