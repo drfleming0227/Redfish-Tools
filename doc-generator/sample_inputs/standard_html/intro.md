@@ -196,4 +196,4 @@ The following table lists all of the Redfish-defined Resource Collections and th
 
 # Reference Guide
 
-This guide was produced using the contents of the schema files from DMTF Redfish Schema bundle DSP8010 version 2018.2 and merged with supplemental text using the DMTF's [Redfish Documentation Generator](#redfish-documentation-generator).
+This guide was produced using the contents of the schema files from DMTF Redfish Schema bundle DSP8010 version 2018.2 and merged with supplemental text using the DMTF's [Redfish doc generator](#redfish-documentation-generator).

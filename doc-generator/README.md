@@ -86,11 +86,19 @@ For `doc_generator.py` examples, see [Redfish doc generator examples](README-con
 
 # Output modes and output formats
 
-The *output mode* defines the type of generated output, such as:
+The *output mode* defines the type of generated output. 
 
-* Developer-focused, or normative
-* Property index
-* Subset
+The supported output modes are:
+
+| Mode | Audience | Description |
+| :--- | :------- | :---------- |
+| CSV          | ?? | Comma-separated values (CSV) file. |
+* Standard | Novice and developer | Standard guide. |
+* Standard normative | Developer | Standard guide with normative descriptions. |
+* Terse profile | Service developers | Includes only the subset of properties with profile requirements. Terse output is meaningful only for profile mode. |
+* Verbose profile | ?? | By default, profile mode is verbose and includes all properties regardless of profile requirements. |
+* Subset | ?? | ?? |
+* Property index | ?? | ?? |
 
 The *output format* defines the format of the generated output, such as Markdown, HTML, or CSV.
 
@@ -143,12 +151,54 @@ Use the following command-line options to generate specific output modes and for
    </tbody>
 </table>
 
-<dl>
-  <dt>CSV</dt>
-  <dd>Comma-separated values (CSV) file.</dd>
-  <dt>Terse profile</dt>
-  <dd>Includes only the subset of properties with profile requirements. Terse output is meaningful only for profile mode. By default, profile mode is verbose and includes all properties regardless of profile requirements. *Terse* output is intended for service developers.</dd>
-</dl>
+<table>
+   <col width="10%">
+   <col width="10%">
+   <col width="40%">
+   <col width="20%">
+   <col width="20%">
+   <thead>
+      <tr>
+         <th align="left" valign="top">Output mode</th>
+         <th align="left" valign="top">Format</th>
+         <th align="left" valign="top">Command-line options</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td align="left" valign="top">CSV</td>
+         <td align="left" valign="top">CSV</td>
+         <td align="left" valign="top"><code>--format csv</code></td>
+      </tr>
+      <tr>
+         <td align="left" valign="top">Terse profile</td>
+         <td align="left" valign="top">Markdown</td>
+         <td align="left" valign="top"><code>--format markdown</code><br /><code>--profile PROFILE_DOC</code><br /><code>-t</code>, <code>--terse</code></td>
+      </tr>
+      <tr>
+         <td align="left" valign="top">Property index</td>
+         <td align="left" valign="top">HTML</td>
+         <td align="left" valign="top"><code>--format html</code><br /><code>"property_index": true</td>
+      </tr>
+      <tr>
+         <td align="left" valign="top">Standard</td>
+         <td align="left" valign="top">HTML</td>
+         <td align="left" valign="top"><b>Command&#8209;line&nbsp;options:</b> <code>--format csv</code><br /><code>"format": "csv"</code></td>
+         <td align="left" valign="top"><a href="README-configuration-files.md#standard-html">Standard HTML</a></td>
+      </tr>
+      <tr>
+         <td align="left" valign="top">Standard with normative descriptions</td>
+         <td align="left" valign="top">HTML</td>
+         <td align="left" valign="top"><b>Command&#8209;line&nbsp;options:</b> <code>--format csv</code><br /><code>"format": "csv"</code></td>
+         <td align="left" valign="top"><a href="README-configuration-files.md#standard-html-with-normative-descriptions">Standard with normative descriptions HTML</a></td>
+      </tr>
+      <tr>
+         <td align="left" valign="top">Subset</td>
+         <td align="left" valign="top">HTML</td>
+         <td align="left" valign="top"><b>Command&#8209;line&nbsp;options:</b> <code>--format csv</code><br /><code>"format": "csv"</code></td>
+         <td align="left" valign="top"><a href="README-configuration-files.md#subset-html">Subset HTML</a></td>
+   </tbody>
+</table>
 
 The following table describes the supported output modes and formats and provides links to samples of `doc_generator.py` command usage.
 

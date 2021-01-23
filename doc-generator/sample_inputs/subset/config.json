@@ -1,6 +1,6 @@
 {
-   "version": "The version string is optional. It may have (future?) meaning in subset mode.",
-   "description": "Redfish Documentation Generator Example: config file for output of subset documentation in HTML format.",
+   "version": "The version string is optional. It may have (future?) meaning in subset mode in HTML format.",
+   "description": "Redfish doc generator example: Confirmation file for subset mode in HTML format.",
    "format": "html",
    "import_from": ["./json-schema"],
    "outfile": "subset.html",

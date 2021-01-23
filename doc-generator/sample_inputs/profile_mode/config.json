@@ -1,6 +1,6 @@
 {
     "version": "The version string is optional. It may have (future?) meaning in profile mode.",
-    "description": "Redfish Documentation Generator Example: config file for output of profile documentation in markdown format.",
+    "description": "Redfish doc generator example: Configuration file for profile mode in Markdown format.",
     "format": "markdown",
     "import_from": [ "./json-schema" ],
     "outfile": "profile-terse.md",

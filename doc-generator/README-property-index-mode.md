@@ -10,9 +10,11 @@ You can run the **Redfish doc generator** in *property-index mode* to generate a
 
 DSP2053, *Redfish Property Guide* at [https://www.dmtf.org/sites/default/files/standards/documents/DSP2053_2020.4.pdf](https://www.dmtf.org/sites/default/files/standards/documents/DSP2053_2020.4.pdf "https://www.dmtf.org/sites/default/files/standards/documents/DSP2053_2020.4.pdf") is an example of a property index document.
 
-For each property, this output includes the property name, list of schemas in which the property is defined, the type, and description.
+For each property, this output includes the property name, list of schemas in which the property is defined, the property type, and property description.
 
 When you run the doc generator in property-index mode, only a few command-line options or configuration keys apply.
+
+Use the `--property_index_config_out` option to specify an output file for updated configuration information. The doc generator extends the input configuration by adding entries for any properties where the property name appears with more than one type or description.
 
 ## Contents
 
@@ -22,7 +24,7 @@ When you run the doc generator in property-index mode, only a few command-line o
 
 ## Usage
 
-The following command-line options apply to property-index mode:
+The following command-line options apply in property-index mode:
 
 ```text
 usage: doc_generator.py [-h]
@@ -70,7 +72,7 @@ The configuration file for this mode is a JSON document with the following eleme
 | `format` | Optional | Output format. Value is `markdown`, `slate`, `html`, or `csv`. | |
 | `uri_mapping` | Required | Maps partial URIs without protocol prefix to local directories or files. | [URI mapping](#uri-mapping) |
 
-Other properties may be included for the user's reference, and are ignored by the Documentation Generator.
+Other properties may be included for the user's reference, and are ignored by the doc generator.
 
 **Base configuration file:** <a href="sample_inputs/property_index/config.json"><code>sample_inputs/property_index/config.json</code></a>
 
@@ -140,7 +142,7 @@ You can override descriptions for individual properties. The `description_overri
 | `description`         | Description in the schema. |
 | `knownException`      | A variant description is expected. |
 
-The `description` and `knownException` keys are primarily for user reference. When generating configuration output, the Documentation Generator includes the description and set `knownException` to `false`. The user can edit the resulting output to distinguish expected exceptions from those that need attention. Neither field affects the property index document itself.
+The `description` and `knownException` keys are primarily for user reference. When generating configuration output, the doc generator includes the description and set `knownException` to `false`. The user can edit the resulting output to distinguish expected exceptions from those that need attention. Neither field affects the property index document itself.
 
 > **Note:** Although `description_overrides` has a similar function to `property_description_overrides` in other modes, it has a different structure.
 
@@ -206,7 +208,7 @@ This object maps partial URIs, as found in the schemas, to local directories. Th
 
 ## Configuration file output
 
-Use the `--property_index_config_out` option to specify an output file for updated configuration information. The Documentation Generator extends the input configuration by adding entries for any properties where the property name appears with more than one type or description.
+Use the `--property_index_config_out` option to specify an output file for updated configuration information. The doc generator extends the input configuration by adding entries for any properties where the property name appears with more than one type or description.
 
 If you specify `globalOverride` for a property name or property name and type, no data is added for matching instances.
 

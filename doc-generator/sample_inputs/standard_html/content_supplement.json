@@ -1,5 +1,5 @@
 {
-    "description": "Redfish Documentation Generator Example: content supplement config file for output of standard-mode documentation in HTML format.",
+    "description": "Redfish doc generator example: Content supplement configuration file for standard-mode documentation in HTML format.",
     "keywords": {
         "html_title": "Title from the supplemental doc"
     },

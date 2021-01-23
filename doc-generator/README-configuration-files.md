@@ -26,12 +26,23 @@ If you specify an option in more than one way, command&#8209;line arguments over
 
 * [Output modes](#output-modes)
 * [Base configuration file](#base-configuration-file)
+   * [Supported keys](#supported-keys)
 * [Content supplement configuration file](#content-supplement-configuration-file)
+   * [Content supplement configuration file example](#content-supplement-configuration-file-example)
+   * [Supported keys](#supported-keys-1)
+   * [schema_link_replacements key](#schema_link_replacements-key)
+   * [schema_supplement key](#schema_supplement-key)
 * [Subset configuration file](#subset-configuration-file)
 * [Property index configuration file](#property-index-configuration-file)
 * [Boilerplate intro supplementary file](#boilerplate-intro-supplementary-file)
 * [Boilerplate postscript supplementary file](#boilerplate-postscript-supplementary-file)
 * [Redfish doc generator examples](#redfish-doc-generator-examples)
+   * [CSV mode](#csv-mode)
+   * [Standard mode in HTML format](#standard-mode-in-html-format)
+   * [Standard normative mode in HTML format](#standard-normative-mode-in-html-format)
+   * [Terse profile mode in Markdown format](#terse-profile-mode-in-markdown-format)
+   * [Subset mode in HTML format](#subset-mode-in-html-format)
+   * [Property-index mode in HTML format](#property-index-mode-in-html-format)
 
 ## Output modes
 
@@ -333,7 +344,7 @@ Contains text replacements and additions to apply to the generated schema docume
 
 ```json
 {
-   "description": "Redfish Documentation Generator Example: content supplement config file for output of standard-mode documentation in HTML format.",
+   "description": "Redfish doc generator Example: content supplement config file for output of standard-mode documentation in HTML format.",
    "keywords": {
       "html_title": "Title from the supplemental doc"
    },
@@ -467,7 +478,7 @@ Used in <b>subset mode</b> to generate <b>Schema subset</b> output, with the sub
 ```json
 {
    "version": "The version string is optional. It may have (future?) meaning in property index mode.",
-   "description": "Redfish Documentation Generator Example: config file for output of subset documentation in HTML format.",
+   "description": "Redfish doc generator Example: config file for output of subset documentation in HTML format.",
    "format": "html",
    "import_from": ["./json-schema"],
    "outfile": "subset.html",
@@ -526,7 +537,7 @@ These examples assume that you have a clone of the DMTF/Redfish repo and the DMT
 * [Subset HTML](#subset-html)
 * [Property index HTML](#property-index-html)
 
-### CSV
+### CSV mode
 
 **Not implemented**
 
@@ -536,7 +547,7 @@ These examples assume that you have a clone of the DMTF/Redfish repo and the DMT
 % python3 ../Redfish-Tools/doc-generator/doc_generator.py --config=../Redfish-Tools/doc-generator/sample_inputs/csv/config.json
 ```
 
-### Standard HTML
+### Standard mode in HTML format
 
 **Base configuration file:** <a href="sample_inputs/standard_html/config.json"><code>sample_inputs/standard_html/config.json</code></a>
 
@@ -546,7 +557,7 @@ These examples assume that you have a clone of the DMTF/Redfish repo and the DMT
 
 Note that the `object_reference_disposition` in this config file identifies specific behavior for the `Redundancy` resource and for `PCIeInterface`, defined in `PCIeDevice`.
 
-### Standard with normative descriptions HTML
+### Standard normative mode in HTML format
 
 **Base configuration file:** <a href="sample_inputs/standard_html/config_normative.json"><code>sample_inputs/standard_html/config_normative.json</code></a>
 
@@ -554,7 +565,7 @@ Note that the `object_reference_disposition` in this config file identifies spec
 % python3 ../Redfish-Tools/doc-generator/doc_generator.py --config=../Redfish-Tools/doc-generator/sample_inputs/standard_html/config_normative.json
 ```
 
-### Terse profile in Markdown
+### Terse profile mode in Markdown format
 
 **Base configuration file:** <a href="sample_inputs/profile_mode/config.json"><code>sample_inputs/profile_mode/config.json</code></a>
 
@@ -564,7 +575,7 @@ Note that the `object_reference_disposition` in this config file identifies spec
 
 Configuration file references the profile `OCPBasicServer.v1_0_0.json`, which in turn references `OCPManagedDevice.v1_0_0.json`.
 
-### Subset HTML
+### Subset mode in HTML format
 
 **Base configuration file:** <a href="sample_inputs/subset/config.json"><code>sample_inputs/subset/config.json</code></a>
 
@@ -574,7 +585,7 @@ Configuration file references the profile `OCPBasicServer.v1_0_0.json`, which in
 
 Configuration file references the profile `OCPBasicServer.v1_0_0.json`, which in turn references `OCPManagedDevice.v1_0_0.json`.
 
-### Property index HTML
+### Property-index mode in HTML format
 
 **Base configuration file:** <a href="sample_inputs/property_index/config.json"><code>sample_inputs/property_index/config.json</code></a>
 
