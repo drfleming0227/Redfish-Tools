@@ -19,42 +19,31 @@ For Redfish developer information, see [DMTF](https://redfish.dmtf.org/ "https:/
 
 To install the tools in the Redfish-Tools respository:
 
-<ol>
-   <li>
-      <p>Clone the <code>Redfish-Tools</code> repository:</p>
-      <pre lang="bash">% git clone git@github.com:DMTF/Redfish-Tools.git
-% git remote add upstream git@github.com:DMTF/Redfish-Tools.git</pre>
-   </li>
-   <li>
-      <p><a href="https://www.python.org/downloads/" title="https://www.python.org/downloads/">Download and install Python</a> on the machine from which you will run the tools.</p>
-   </li>
-</ol>
+1. Clone the `Redfish-Tools` repository:
+
+    ```bash
+    % git clone git@github.com:DMTF/Redfish-Tools.git
+    % git remote add upstream git@github.com:DMTF/Redfish-Tools.git
+    ```
+1. [Download and install Python](https://www.python.org/downloads/ "https://www.python.org/downloads/") on the machine from which you will run the tools.
 
 For the **Redfish doc generator only**, complete these additional steps:
 
-<ol>
-   <li>
-      <p>Install the following software, which is required for HTML output:</p>
-      <ul>
-         <li><a href="https://python-markdown.github.io/install/" title="https://python-markdown.github.io/install/">Install Python&#8209;Markdown</a>.</li>
-         <li><a href="http://pygments.org/" title="http://pygments.org/">Install Pygments</a>.</li>
-         <li>Install requirements:
-            <pre lang="bash">% cd doc-generator
-% pip install -r requirements.txt</pre>
-         </li>
-      </ul>
-   </li>
-   <li>
-      <p>(Optional) If you plan to make changes to the <code>doc_generator.py</code> code:</p>
-      <ul>
-         <li>To install <a href="https://docs.pytest.org/en/latest/getting-started.html" title="https://docs.pytest.org/en/latest/getting-started.html"><code>pytest</code></a>:
-            <pre lang="bash">% cd doc-generator
-% pip install -r dev_requirements.txt</pre>
-         </li>
-         <li>Run the tests:
-            <pre lang="bash">% cd doc-generator
-% pytest</pre>
-         </li>
-      </ul>
-   </li>
-</ol>
+1. Install the following software, which is required for HTML output:
+
+    * [Install Python‑Markdown](https://python-markdown.github.io/install/ "https://python-markdown.github.io/install/").
+    * [Install Pygments](http://pygments.org/ "http://pygments.org/").
+    * Install requirements:
+
+        ```bash
+        % cd doc-generator
+        % pip install -r requirements.txt
+        ```
+1. (Optional) If you plan to make changes to the `doc_generator.py` code:
+
+    * To install [`pytest`](https://docs.pytest.org/en/latest/getting-started.html "https://docs.pytest.org/en/latest/getting-started.html"):
+
+    ```bash
+    % cd doc-generator
+    % pip install -r dev_requirements.txt
+    ```
