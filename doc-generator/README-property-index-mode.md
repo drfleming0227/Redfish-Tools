@@ -2,13 +2,13 @@
 <p align="center">
   <img src="http://redfish.dmtf.org/sites/all/themes/dmtf2015/images/dmtf-redfish-logo.png" alt="DMTF Redfish" width=180>
 
-# Redfish doc generator: Property index mode
+# Redfish doc generator: Property-index mode
 
 Copyright 2018-2021 Distributed Management Task Force, Inc. All rights reserved.
 
-You can run the **Redfish doc generator** in **property index mode** to generate an index of property names and descriptions. The output includes property name, type, schemas where found, and descriptions found.
+You can run the **Redfish doc generator** in *property-index mode* to generate an index of property names and descriptions. The output includes property name, type, schemas where found, and descriptions found.
 
-When you run the doc generator in *property index* mode, only a few of `doc_generator.py` arguments apply and the [base configuration file](#configuration) uses different keys than the ones that other output modes use.
+When you run the doc generator in *property-index mode*, only a few of `doc_generator.py` arguments apply and the [base configuration file](#configuration) uses different keys than the ones that other output modes use.
 
 ## Contents
 
@@ -21,7 +21,7 @@ When you run the doc generator in *property index* mode, only a few of `doc_gene
 
 ## Usage
 
-Arguments:
+The following subset of command-line options apply to property-index mode:
 
 ```text
 usage: doc_generator.py [-h]
@@ -71,7 +71,9 @@ The configuration file for this mode is a JSON document with the following eleme
 
 Other properties may be included for the user's reference, and are ignored by the Documentation Generator.
 
-An example configuration file:
+**Base configuration file:** <a href="sample_inputs/property_index/config.json"><code>sample_inputs/property_index/config.json</code></a>
+
+<!-- An example configuration file:
 
 ```json
 {
@@ -118,7 +120,7 @@ An example configuration file:
       }]
    }
 }
-```
+``` -->
 
 ### Description overrides
 
