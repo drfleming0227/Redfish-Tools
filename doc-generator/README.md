@@ -114,7 +114,7 @@ Depending on the output mode, the configuration keys in the base configuration f
   <thead>
     <tr>
       <th align="left" valign="top">Output mode</th>
-      <th align="left" valign="top">Output format</th>
+      <th align="left" valign="top">Format</th>
       <th align="left" valign="top">Command&#8209;line&nbsp;option<br/>or<br/>Configuration&nbsp;keys</th>
       <th align="left" valign="top">Sample base configuration file</th>
       <th align="left" valign="top">Sample command usage</th>
@@ -126,37 +126,37 @@ Depending on the output mode, the configuration keys in the base configuration f
       <td align="left" valign="top">CSV</td>
       <td align="left" valign="top"><code>--format csv</code><br/><code>"format": "csv"</code></td>
       <td align="left" valign="top"><a href="sample_inputs/csv/config.json"><code>sample_inputs/csv/config.json</code></a></td>
-      <td align="left" valign="top"><a href="#csv">CSV</a></td>
+      <td align="left" valign="top"><a href="#README-configuration-files#csv">CSV</a></td>
     </tr>
     <tr>
       <td align="left" valign="top">Terse profile index</td><td align="left" valign="top">Markdown</td>
       <td align="left" valign="top"><code>--format csv</code><br/><code>"format": "csv"</code></td>
       <td align="left" valign="top"><a href="sample_inputs/profile_mode/config.json"><code>sample_inputs/profile_mode/config.json</code></a></td>
-      <td align="left" valign="top"><a href="#terse-profile-index-in-markdown">Terse profile index in Markdown</a></td>
+      <td align="left" valign="top"><a href="#README-configuration-files#terse-profile-index-in-markdown">Terse profile index in Markdown</a></td>
     </tr>
     <tr>
       <td align="left" valign="top">Property index</td><td align="left" valign="top">HTML</td>
       <td align="left" valign="top"><code>--format csv</code><br/><code>"format": "csv"</code></td>
       <td align="left" valign="top"><a href="sample_inputs/property_index/config.json"><code>sample_inputs/property_index/config.json</code></a></td>
-      <td align="left" valign="top"><a href="#property-index-html">Property index HTML</a></td>
+      <td align="left" valign="top"><a href="#README-configuration-files#property-index-html">Property index HTML</a></td>
     </tr>
     <tr>
       <td align="left" valign="top">Standard</td><td align="left" valign="top">HTML</td>
       <td align="left" valign="top"><code>--format csv</code><br/><code>"format": "csv"</code></td>
       <td align="left" valign="top"><a href="sample_inputs/standard_html/config.json"><code>sample_inputs/standard_html/config.json</code></a></td>
-      <td align="left" valign="top"><a href="#standard-html">Standard HTML</a></td>
+      <td align="left" valign="top"><a href="#README-configuration-files#standard-html">Standard HTML</a></td>
     </tr>
     <tr>
       <td align="left" valign="top">Standard with normative descriptions</td><td align="left" valign="top">HTML</td>
       <td align="left" valign="top"><code>--format csv</code><br/><code>"format": "csv"</code></td>
       <td align="left" valign="top"><a href="sample_inputs/standard_html/config_normative.json"><code>sample_inputs/standard_html/config_normative.json</code></a></td>
-      <td align="left" valign="top"><a href="#standard-html-with-normative-descriptions">Standard with normative descriptions HTML</a></td>
+      <td align="left" valign="top"><a href="#README-configuration-files#standard-html-with-normative-descriptions">Standard with normative descriptions HTML</a></td>
     </tr>
     <tr>
       <td align="left" valign="top">Subset</td><td align="left" valign="top">HTML</td>
       <td align="left" valign="top"><code>--format csv</code><br/><code>"format": "csv"</code></td>
       <td align="left" valign="top"><a href="sample_inputs/subset/config.json"><code>sample_inputs/subset/config.json</code></a></td>
-      <td align="left" valign="top"><a href="#subset-html">Subset HTML</a></td>
+      <td align="left" valign="top"><a href="#README-configuration-files#subset-html">Subset HTML</a></td>
   </tbody>
 </table>
 
