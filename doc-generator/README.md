@@ -10,12 +10,19 @@ The **Redfish doc generator** &mdash; [`doc_generator.py`](doc_generator.py "doc
 
 The doc generator v3 contains [breaking configuration changes](README-doc-generator-v3-changes.md) and updates to the `README` files. For a snapshot of the *version 2* code, see [Doc Generator v2](https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0 "https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0").
 
+See also:
+
+* [Redfish doc generator v3 changes](README-doc-generator-v3-changes.md "README-doc-generator-v3-changes.md") &mdash; How to restructure your configuration files.
+* [Redfish doc generator: Configuration and supplementary files](README-configuration-files.md "README-configuration-files.md") &mdash; Configuration and supplementary files for the Redfish doc generator.
+* [Redfish doc generator: Property index configuration](README-property-index-mode.md "README-property-index-mode.md") &mdash; Property index mode.
+
+## Contents
+
 * [Installation](#installation)
 * [Usage](#usage)
 * [Output modes and output formats](#output-modes-and-output-formats)
 * [Configuration](#configuration)
 * [Processing](#processing)
-* [Notes](#notes)
 
 # Installation
 
@@ -92,7 +99,7 @@ The *output mode* defines the type of generated output. The supported output mod
 | :--- | :------- | :---------- |
 | CSV          | ?? | Comma-separated values (CSV) file. |
 | Standard | Novice and developer | Standard guide. |
-| Standard normative | Developer | Standard guide with normative descriptions. |
+| Standard normative | Developer | Standard guide with normative descriptions. Normative output prefers long descriptions to descriptions. |
 | Terse profile | Service developers | Includes only the subset of properties with profile requirements. Terse output is meaningful only for profile mode. |
 | Verbose profile | ?? | By default, profile mode is verbose and includes all properties regardless of profile requirements. |
 | Subset | ?? | ?? |
@@ -102,7 +109,7 @@ The *output format* defines the format of the generated output. The supported ou
 
 <ul>
    <li><code>markdown</code> &mdash; Markdown file targeted for the DMTF document publication process.</li>
-   <li><code>slate</code> (default) &mdash; GitHub-flavored Markdown file targeted for the <a href="https://github.com/slatedocs/slate" title="https://github.com/slatedocs/slate">Slate API doc generator</a>.</li>
+   <li><code>slate</code> (default) &mdash; GitHub-flavored Markdown file targeted for the <a href="https://github.com/slatedocs/slate" title="https://github.com/slatedocs/slate">Slate API doc generator</a>. For Slate, place the <code>index.html.md</code> output in your Slate repository's source directory.</li>
    <li><code>html</code> &mdash; HyperText Markup Language (HTML) file.</li>
    <li><code>csv</code> &mdash; Comma-separated values (CSV) file.</li>
 </ul>
@@ -365,15 +372,3 @@ Several flavors of configuration files are available. See [Redfish doc generator
 By default, `doc_generator.py` looks for a `json-schema` directory and supplemental files in the [configuration](#configuration) file that you specify when you run it.
 
 Typically, the tool processes an entire set of JSON Schema files for a version.
-
-# Notes
-
-Normative output prefers long descriptions to descriptions.
-
-For Slate, place the `index.html.md` output in your Slate repository's source directory.
-
-See also:
-
-* [Redfish doc generator v3 changes](README-doc-generator-v3-changes.md "README-doc-generator-v3-changes.md") &mdash; How to restructure your configuration files.
-* [Redfish doc generator: Configuration and supplementary files](README-configuration-files.md "README-configuration-files.md") &mdash; Configuration and supplementary files for the Redfish doc generator.
-* [Redfish doc generator: Property index configuration](README-property-index-mode.md "README-property-index-mode.md") &mdash; Property index mode.
