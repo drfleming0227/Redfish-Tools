@@ -17,7 +17,7 @@ For Redfish developer information, see [DMTF](https://redfish.dmtf.org/ "https:/
 
 ## Installation
 
-To install the tools in the Redfish-Tools respository:
+Complete these steps to install all Redfish-Tools tools:
 
 1. Clone the `Redfish-Tools` repository:
 
@@ -27,7 +27,7 @@ To install the tools in the Redfish-Tools respository:
     ```
 1. [Download and install Python](https://www.python.org/downloads/ "https://www.python.org/downloads/") on the machine from which you will run the tools.
 
-For the **Redfish doc generator only**, complete these additional steps:
+Complete these additional steps to install the **Redfish doc generator only**:
 
 1. Install the following software, which is required for HTML output:
 
