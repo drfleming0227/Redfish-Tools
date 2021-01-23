@@ -288,7 +288,7 @@ The clauses briefly describes each key and the output modes that support the key
 
   **Supported output modes:** Property index
 
-  Boolean. No default. Produce <b>Property Index</b> output. For details, see <a href="README_Property_Index.md">Redfish doc generator: Property index mode</a>.
+  Boolean. No default. Produce <b>Property Index</b> output. For details, see <a href="README-property-index-mode.md">Redfish doc generator: Property index mode</a>.
 
   <b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>property_index</code>
 
@@ -497,7 +497,7 @@ Used in <b>subset mode</b> to generate <b>Schema subset</b> output, with the sub
    <li>The <a href="#configuration">configuration file</a> takes a different form than the one used for the other output modes.</li>
 </ul>
 
-See [Redfish doc generator: Property index configuration](README_Property_Index.md).
+See [Redfish doc generator: Property index configuration](README-property-index-mode.md).
 
 ## Boilerplate intro supplementary file
 

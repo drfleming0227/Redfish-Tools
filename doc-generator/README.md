@@ -8,24 +8,19 @@ Copyright 2016-2021 Distributed Management Task Force, Inc. All rights reserved.
 
 The **Redfish doc generator** &mdash; [`doc_generator.py`](doc_generator.py "doc_generator.py") &mdash; is a Python tool that generates output in a specified [format](#output-formats) from JSON Schema files and supplementary content files.
 
-## Contents
+The Redfish doc generator v3:
 
-* [Version 3 changes](#version-3-changes)
+* Introduces [breaking changes](README-doc-generator-v3-changes.md) in how you configure the `doc_generator.py` tool.
+* Updates the `README` files.
+
+For a snapshot of the *version 2* code, see [Doc Generator v2](https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0 "https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0").
+
 * [Installation](#installation)
 * [Usage](#usage)
 * [Output formats](#output-formats)
 * [Configuration](#configuration)
 * [Processing](#processing)
 * [Notes](#notes)
-
-## Version 3 changes
-
-The Redfish doc generator v3:
-
-* Introduces [breaking changes](CHANGES_v2_to_v3.md) in how you configure the `doc_generator.py` tool.
-* Updates the `README` files.
-
-For a snapshot of the *version 2* code, see [Doc Generator v2](https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0 "https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0").
 
 ## Installation
 
@@ -92,7 +87,7 @@ Example:
 
 For more information about the output formats, see [Output formats](#output-formats).
 
-For `doc_generator.py` examples, see [Redfish doc generator examples](README_config_files.md#redfish-doc-generator-examples).
+For `doc_generator.py` examples, see [Redfish doc generator examples](README-configuration-files.md#redfish-doc-generator-examples).
 
 ## Output modes
 
@@ -157,19 +152,19 @@ The type of output that the doc generator produces depends on the following comm
       </tr>
       <tr>
          <td align="left" valign="top"><code>--property_index</code></td>
-         <td align="left" valign="top">Produces <a href="README_Property_Index.md" title="README_Property_Index.md"><i>property index</i> output</a>.</td>
+         <td align="left" valign="top">Produces <a href="README-property-index-mode.md" title="README-property-index-mode.md"><i>property index</i> output</a>.</td>
       </tr>
    </tbody>
 </table>
 
 ## Configuration
 
-Use the `--config` option to specify the [base configuration file](README_config_files.md "README_config_files.md"). The base configuration file defines:
+Use the `--config` option to specify the [base configuration file](README-configuration-files.md "README-configuration-files.md"). The base configuration file defines:
 
 * Required and optional parameters that you can also specify on the command line. 
 * Some required parameters, such as URI mappings, that you cannot specify on the command line.
 
-Several flavors of configuration files are available. See [Redfish doc generator: Configuration and supplementary files](README_config_files.md).
+Several flavors of configuration files are available. See [Redfish doc generator: Configuration and supplementary files](README-configuration-files.md).
 
 ## Processing
 
@@ -185,6 +180,6 @@ For Slate, place the `index.html.md` output in your Slate repository's source di
 
 See also:
 
-* [Redfish doc generator v3 changes](CHANGES_v2_to_v3.md "CHANGES_v2_to_v3.md") &mdash; How to restructure your configuration files.
-* [Redfish doc generator: Configuration and supplementary files](README_config_files.md "README_config_files.md") &mdash; Configuration and supplementary files for the Redfish doc generator.
-* [Redfish doc generator: Property index configuration](README_Property_Index.md "README_Property_Index.md") &mdash; Property index mode.
+* [Redfish doc generator v3 changes](README-doc-generator-v3-changes.md "README-doc-generator-v3-changes.md") &mdash; How to restructure your configuration files.
+* [Redfish doc generator: Configuration and supplementary files](README-configuration-files.md "README-configuration-files.md") &mdash; Configuration and supplementary files for the Redfish doc generator.
+* [Redfish doc generator: Property index configuration](README-property-index-mode.md "README-property-index-mode.md") &mdash; Property index mode.
