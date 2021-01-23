@@ -8,7 +8,7 @@ Copyright 2016-2021 Distributed Management Task Force, Inc. All rights reserved.
 
 The **Redfish doc generator** &mdash; [`doc_generator.py`](doc_generator.py "doc_generator.py") &mdash; is a Python tool that generates output in a specified [format](#output-modes-and-output-formats) from JSON Schema files and supplementary content files. You use [configuration files](#configuration) to configure this output.
 
-The Redfish doc generator v3 introduces [breaking changes](README-doc-generator-v3-changes.md) in how you configure the `doc_generator.py` tool and updates the `README` files.
+The doc generator v3 makes [breaking configuration changes](README-doc-generator-v3-changes.md) and updates to the `README` files.
 
 For a snapshot of the *version 2* code, see [Doc Generator v2](https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0 "https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0").
 
@@ -124,32 +124,32 @@ Depending on the output mode, the configuration keys in the base configuration f
       <td align="left" valign="top">CSV</td>
       <td align="left" valign="top">CSV</td>
       <td align="left" valign="top"><code>--format csv</code><br/><code>"format": "csv"</code></td>
-      <td align="left" valign="top"><a href="README-configuration-files#csv">CSV</a></td>
+      <td align="left" valign="top"><a href="README-configuration-files.md#csv">CSV</a></td>
     </tr>
     <tr>
       <td align="left" valign="top">Terse profile index</td><td align="left" valign="top">Markdown</td>
       <td align="left" valign="top"><code>--format csv</code><br/><code>"format": "csv"</code></td>
-      <td align="left" valign="top"><a href="README-configuration-files#terse-profile-index-in-markdown">Terse profile index in Markdown</a></td>
+      <td align="left" valign="top"><a href="README-configuration-files.md#terse-profile-index-in-markdown">Terse profile index in Markdown</a></td>
     </tr>
     <tr>
       <td align="left" valign="top">Property index</td><td align="left" valign="top">HTML</td>
       <td align="left" valign="top"><code>--format csv</code><br/><code>"format": "csv"</code></td>
-      <td align="left" valign="top"><a href="README-configuration-files#property-index-html">Property index HTML</a></td>
+      <td align="left" valign="top"><a href="README-configuration-files.md#property-index-html">Property index HTML</a></td>
     </tr>
     <tr>
       <td align="left" valign="top">Standard</td><td align="left" valign="top">HTML</td>
       <td align="left" valign="top"><code>--format csv</code><br/><code>"format": "csv"</code></td>
-      <td align="left" valign="top"><a href="README-configuration-files#standard-html">Standard HTML</a></td>
+      <td align="left" valign="top"><a href="README-configuration-files.md#standard-html">Standard HTML</a></td>
     </tr>
     <tr>
       <td align="left" valign="top">Standard with normative descriptions</td><td align="left" valign="top">HTML</td>
       <td align="left" valign="top"><code>--format csv</code><br/><code>"format": "csv"</code></td>
-      <td align="left" valign="top"><a href="README-configuration-files#standard-html-with-normative-descriptions">Standard with normative descriptions HTML</a></td>
+      <td align="left" valign="top"><a href="README-configuration-files.md#standard-html-with-normative-descriptions">Standard with normative descriptions HTML</a></td>
     </tr>
     <tr>
       <td align="left" valign="top">Subset</td><td align="left" valign="top">HTML</td>
       <td align="left" valign="top"><code>--format csv</code><br/><code>"format": "csv"</code></td>
-      <td align="left" valign="top"><a href="README-configuration-files#subset-html">Subset HTML</a></td>
+      <td align="left" valign="top"><a href="README-configuration-files.md#subset-html">Subset HTML</a></td>
   </tbody>
 </table>
 
