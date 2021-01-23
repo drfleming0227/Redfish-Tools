@@ -105,14 +105,14 @@ The following description list describes the supported output modes and provides
 
 Depending on the output mode, the configuration keys in the base configuration file can change. Some output modes, such as the property index mode, support additional configuration keys.
 
-| Output mode | Command-line option | Configuration keys | Sample base configuration file | Sample command usage |
+| Output mode | Command-line option<br/>or<br/>configuration keys | Sample base configuration file | Sample command usage |
 | :---------- | :------------------ | :----------------- | :----------------------------- | :------------------- |
-| CSV output mode | `--format csv` | `"format": "csv"` |  [`sample_inputs/csv/config.json`](sample_inputs/csv/config.json) | [CSV](#csv) |
-| Profile documentation in Markdown output mode | `--format csv` | `"format": "csv"` |  [`sample_inputs/profile_mode/config.json`](sample_inputs/profile_mode/config.json) | [Profile index Markdown in terse mode](#profile-index-markdown-in-terse-mode) |
-| Property index documentation in HTML output mode | `--format csv` | `"format": "csv"` |  [`sample_inputs/property_index/config.json`](sample_inputs/property_index/config.json) | [Property index HTML](#property-index-html) |
-| Standard documentation in HTML format | `--format csv` | `"format": "csv"` | [`sample_inputs/standard_html/config.json`](sample_inputs/standard_html/config.json) | [Standard HTML](#standard-html) |
-| Standard with normative descriptions mode documentation in HTML format | `--format csv` | `"format": "csv"` | [`sample_inputs/standard_html/config_normative.json`](sample_inputs/standard_html/config_normative.json) | [Standard with normative descriptions HTML](#standard-html-with-normative-descriptions) |
-| Subset documentation in HTML format | `--format csv` | `"format": "csv"` |  [`sample_inputs/subset/config.json`](sample_inputs/subset/config.json) | [Subset HTML](#subset-html) |
+| CSV output mode | `--format csv`<br/>`"format": "csv"` | [`sample_inputs/csv/config.json`](sample_inputs/csv/config.json) | [CSV](#csv) |
+| Profile documentation in Markdown output mode | `--format csv`<br/>`"format": "csv"` | [`sample_inputs/profile_mode/config.json`](sample_inputs/profile_mode/config.json) | [Profile index Markdown in terse mode](#profile-index-markdown-in-terse-mode) |
+| Property index documentation in HTML output mode | `--format csv`<br/>`"format": "csv"` | [`sample_inputs/property_index/config.json`](sample_inputs/property_index/config.json) | [Property index HTML](#property-index-html) |
+| Standard documentation in HTML format | `--format csv`<br/>`"format": "csv"` | [`sample_inputs/standard_html/config.json`](sample_inputs/standard_html/config.json) | [Standard HTML](#standard-html) |
+| Standard with normative descriptions mode documentation in HTML format | `--format csv`<br/>`"format": "csv"` | [`sample_inputs/standard_html/config_normative.json`](sample_inputs/standard_html/config_normative.json) | [Standard with normative descriptions HTML](#standard-html-with-normative-descriptions) |
+| Subset documentation in HTML format | `--format csv`<br/>`"format": "csv"` | [`sample_inputs/subset/config.json`](sample_inputs/subset/config.json) | [Subset HTML](#subset-html) |
 <!-- <dl>
    | CSV output mode</dt>
    <dd><b>Command-line option:</b> <code>--format csv</code></dd>
