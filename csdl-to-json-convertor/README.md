@@ -10,8 +10,6 @@ The **CSDL-to-JSON converter** &mdash; [`csdl-to-json.py`](csdl-to-json.py) &mda
 
 > **Note:** The CSDL defines an Extensible Markup Language (XML) representation of the entity data model that an OData service exposes.
 
-## Contents
-
 * [Installation](#installation)
 * [Usage](#usage)
 * [Configuration](#configuration)
