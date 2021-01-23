@@ -90,7 +90,7 @@ For `doc_generator.py` examples, see [Redfish doc generator examples](README-con
 
 The Redfish doc generator generates output in a specified format, such as Markdown, HTML, or CSV.
 
-The *output mode* is a combination of the output and a specific type of output, such as:
+The *output mode* is a combination of the output format and a specific type of output, such as:
 
 * Developer-focused, or normative
 * Property index
@@ -98,18 +98,23 @@ The *output mode* is a combination of the output and a specific type of output, 
 
 The doc generator supports several output modes through various command-line or configuration options.
 
-The following description list:
+The following description list describes the supported output modes and provides links to:
 
-* Lists the supported output modes.
-* Provides links to sample versions of the base configuration file that produce output in that mode.
-* Provides links to examples of `doc_generator.py` command usage.
+* Sample versions of the base configuration file that produce output in that mode.
+* Sample `doc_generator.py` command usage.
 
 Depending on the output mode, the configuration keys in the base configuration file can change. Some output modes, such as the property index mode, support additional configuration keys.
 
-<!-- 
- -->
-<dl>
-   <dt>CSV output mode</dt>
+| Output mode | Command-line option | Configuration keys | Sample base configuration file | Sample command usage |
+| :---------- | :------------------ | :----------------- | :----------------------------- | :------------------- |
+| CSV output mode | `--format csv` | `"format": "csv"` |  [`sample_inputs/csv/config.json`](sample_inputs/csv/config.json) | [CSV](#csv) |
+| Profile documentation in Markdown output mode | `--format csv` | `"format": "csv"` |  [`sample_inputs/profile_mode/config.json`](sample_inputs/profile_mode/config.json) | [Profile index Markdown in terse mode](#profile-index-markdown-in-terse-mode) |
+| Property index documentation in HTML output mode | `--format csv` | `"format": "csv"` |  [`sample_inputs/property_index/config.json`](sample_inputs/property_index/config.json) | [Property index HTML](#property-index-html) |
+| Standard documentation in HTML format | `--format csv` | `"format": "csv"` | [`sample_inputs/standard_html/config.json`](sample_inputs/standard_html/config.json) | [Standard HTML](#standard-html) |
+| Standard with normative descriptions mode documentation in HTML format | `--format csv` | `"format": "csv"` | [`sample_inputs/standard_html/config_normative.json`](sample_inputs/standard_html/config_normative.json) | [Standard with normative descriptions HTML](#standard-html-with-normative-descriptions) |
+| Subset documentation in HTML format | `--format csv` | `"format": "csv"` |  [`sample_inputs/subset/config.json`](sample_inputs/subset/config.json) | [Subset HTML](#subset-html) |
+<!-- <dl>
+   | CSV output mode</dt>
    <dd><b>Command-line option:</b> <code>--format csv</code></dd>
    <dd><b>Configuration key:</b> <code>"format": "csv"</code></dd>
    <dd><b>Sample base configuration file:</b> [`sample_inputs/csv/config.json`](sample_inputs/csv/config.json)</dd>
@@ -139,7 +144,7 @@ Depending on the output mode, the configuration keys in the base configuration f
    <dd><b>Configuration key:</b> <code>"format": "csv"</code></dd>
    <dd><b>Sample base configuration file:</b> [`sample_inputs/subset/config.json`](sample_inputs/subset/config.json)</dd>
    <dd><b>Sample doc_generator.py command usage:</b> [Subset HTML](#subset-html)</dd>
-</dl>
+</dl> -->
 
 The type of output that the doc generator produces depends on the following command-line or configuration options:
 
