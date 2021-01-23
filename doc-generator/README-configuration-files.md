@@ -28,21 +28,11 @@ If you specify an option in more than one way, command&#8209;line arguments over
 * [Base configuration file](#base-configuration-file)
    * [Supported keys](#supported-keys)
 * [Content supplement configuration file](#content-supplement-configuration-file)
-   * [Content supplement configuration file example](#content-supplement-configuration-file-example)
-   * [Supported keys](#supported-keys-1)
-   * [schema_link_replacements key](#schema_link_replacements-key)
-   * [schema_supplement key](#schema_supplement-key)
 * [Subset configuration file](#subset-configuration-file)
 * [Property index configuration file](#property-index-configuration-file)
 * [Boilerplate intro supplementary file](#boilerplate-intro-supplementary-file)
 * [Boilerplate postscript supplementary file](#boilerplate-postscript-supplementary-file)
 * [Redfish doc generator examples](#redfish-doc-generator-examples)
-   * [CSV mode](#csv-mode)
-   * [Standard mode in HTML format](#standard-mode-in-html-format)
-   * [Standard normative mode in HTML format](#standard-normative-mode-in-html-format)
-   * [Terse profile mode in Markdown format](#terse-profile-mode-in-markdown-format)
-   * [Subset mode in HTML format](#subset-mode-in-html-format)
-   * [Property-index mode in HTML format](#property-index-mode-in-html-format)
 
 ## Output modes
 
@@ -530,12 +520,12 @@ These examples assume that you have a clone of the DMTF/Redfish repo and the DMT
 
 > **Note:** The configuration files reference other files in this directory.
 
-* [CSV](#csv)
-* [Standard HTML](#standard-html)
-* [Standard with normative descriptions HTML](#standard-html-with-normative-descriptions)
-* [Profile index Markdown in terse mode](#profile-index-markdown-in-terse-mode)
-* [Subset HTML](#subset-html)
-* [Property index HTML](#property-index-html)
+* [CSV mode](#csv-mode)
+* [Standard mode in HTML format](#standard-mode-in-html-format)
+* [Standard normative mode in HTML format](#standard-normative-mode-in-html-format)
+* [Terse profile mode in Markdown format](#terse-profile-mode-in-markdown-format)
+* [Subset mode in HTML format](#subset-mode-in-html-format)
+* [Property-index mode in HTML format](#property-index-mode-in-html-format)
 
 ### CSV mode
 
