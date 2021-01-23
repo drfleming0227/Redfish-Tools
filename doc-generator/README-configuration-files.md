@@ -530,11 +530,15 @@ These examples assume that you have a clone of the DMTF/Redfish repo and the DMT
 
 **Not implemented**
 
+**Base configuration file:** <a href="sample_inputs/csv/config.json"><code>sample_inputs/csv/config.json</code></a>
+
 ```bash
 % python3 ../Redfish-Tools/doc-generator/doc_generator.py --config=../Redfish-Tools/doc-generator/sample_inputs/csv/config.json
 ```
 
 ### Standard HTML
+
+**Base configuration file:** <a href="sample_inputs/standard_html/config.json"><code>sample_inputs/standard_html/config.json</code></a>
 
 ```bash
 % python3 ../Redfish-Tools/doc-generator/doc_generator.py --config=../Redfish-Tools/doc-generator/sample_inputs/standard_html/config.json
@@ -544,11 +548,15 @@ Note that the `object_reference_disposition` in this config file identifies spec
 
 ### Standard with normative descriptions HTML
 
+**Base configuration file:** <a href="sample_inputs/standard_html/config_normative.json"><code>sample_inputs/standard_html/config_normative.json</code></a>
+
 ```bash
 % python3 ../Redfish-Tools/doc-generator/doc_generator.py --config=../Redfish-Tools/doc-generator/sample_inputs/standard_html/config_normative.json
 ```
 
-### Profile Markdown in terse mode
+### Terse profile index in Markdown
+
+**Base configuration file:** <a href="sample_inputs/profile_mode/config.json"><code>sample_inputs/profile_mode/config.json</code></a>
 
 ```bash
 % python3 ../Redfish-Tools/doc-generator/doc_generator.py --config=../Redfish-Tools/doc-generator/sample_inputs/profile_mode/config.json
@@ -558,6 +566,8 @@ Configuration file references the profile `OCPBasicServer.v1_0_0.json`, which in
 
 ### Subset HTML
 
+**Base configuration file:** <a href="sample_inputs/subset/config.json"><code>sample_inputs/subset/config.json</code></a>
+
 ```bash
 % python3 ../Redfish-Tools/doc-generator/doc_generator.py --config=../Redfish-Tools/doc-generator/sample_inputs/subset/config.json
 ```
@@ -566,9 +576,10 @@ Configuration file references the profile `OCPBasicServer.v1_0_0.json`, which in
 
 ### Property index HTML
 
+**Base configuration file:** <a href="sample_inputs/property_index/config.json"><code>sample_inputs/property_index/config.json</code></a>
+
 ```bash
 % python3 ../Redfish-Tools/doc-generator/doc_generator.py --config=../Redfish-Tools/doc-generator/sample_inputs/property_index/config.json
 ```
 
 > **Note:** The base configuration file for property index output includes some elements that are specific to that mode: `description_overrides`.
-
