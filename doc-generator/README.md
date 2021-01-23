@@ -8,9 +8,7 @@ Copyright 2016-2021 Distributed Management Task Force, Inc. All rights reserved.
 
 The **Redfish doc generator** &mdash; [`doc_generator.py`](doc_generator.py "doc_generator.py") &mdash; is a Python tool that generates output in a specified [format](#output-modes-and-output-formats) from JSON Schema files and supplementary content files. You use [configuration files](#configuration) to configure this output.
 
-The doc generator v3 makes [breaking configuration changes](README-doc-generator-v3-changes.md) and updates to the `README` files.
-
-For a snapshot of the *version 2* code, see [Doc Generator v2](https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0 "https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0").
+The doc generator v3 contains [breaking configuration changes](README-doc-generator-v3-changes.md) and updates to the `README` files. For a snapshot of the *version 2* code, see [Doc Generator v2](https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0 "https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0").
 
 * [Installation](#installation)
 * [Usage](#usage)
@@ -82,7 +80,7 @@ Example:
    doc_generator.py --format=html --out=/path/to/output/index.html /path/to/spmf/json-files
 ```
 
-For more information about Output modes and output formats, see [Output modes and output formats](#output-modes-and-output-formats).
+For more information about output modes and output formats, see [Output modes and output formats](#output-modes-and-output-formats).
 
 For `doc_generator.py` examples, see [Redfish doc generator examples](README-configuration-files.md#redfish-doc-generator-examples).
 
@@ -96,61 +94,70 @@ The *output mode* defines the type of generated output, such as:
 
 The *output format* defines the format of the generated output, such as Markdown, HTML, or CSV.
 
-The doc generator supports several output modes and formats through various command-line or configuration options.
+The doc generator supports several output modes and formats through various command-line options or configuration keys.
 
-The following table describes the supported output modes and formats and provides links to:
+<dl>
+  <dt>Terse profile</dt>
+  <dd>Includes only the subset of properties with profile requirements. Terse output is meaningful only for profile mode. By default, profile mode is verbose and includes all properties regardless of profile requirements. *Terse* output is intended for service developers.</dd>
+</dl>
 
-* Sample versions of the base configuration file that produce output in that mode.
-* Sample `doc_generator.py` command usage.
+The following table describes the supported output modes and formats and provides links to samples of `doc_generator.py` command usage.
 
 Depending on the output mode, the configuration keys in the base configuration file can change. Some output modes, such as the property index mode, support additional configuration keys.
 
 <table>
-  <col width="10%">
-  <col width="10%">
-  <col width="40%">
-  <col width="20%">
-  <col width="20%">
-  <thead>
-    <tr>
-      <th align="left" valign="top">Output mode</th>
-      <th align="left" valign="top">Format</th>
-      <th align="left" valign="top">Command&#8209;line&nbsp;option<br/>or<br/>Configuration&nbsp;keys</th>
-      <th align="left" valign="top">Sample command usage</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td align="left" valign="top">CSV</td>
-      <td align="left" valign="top">CSV</td>
-      <td align="left" valign="top"><code>--format csv</code><br/><code>"format": "csv"</code></td>
-      <td align="left" valign="top"><a href="README-configuration-files.md#csv">CSV</a></td>
-    </tr>
-    <tr>
-      <td align="left" valign="top">Terse profile index</td><td align="left" valign="top">Markdown</td>
-      <td align="left" valign="top"><code>--format csv</code><br/><code>"format": "csv"</code></td>
-      <td align="left" valign="top"><a href="README-configuration-files.md#terse-profile-index-in-markdown">Terse profile index in Markdown</a></td>
-    </tr>
-    <tr>
-      <td align="left" valign="top">Property index</td><td align="left" valign="top">HTML</td>
-      <td align="left" valign="top"><code>--format csv</code><br/><code>"format": "csv"</code></td>
-      <td align="left" valign="top"><a href="README-configuration-files.md#property-index-html">Property index HTML</a></td>
-    </tr>
-    <tr>
-      <td align="left" valign="top">Standard</td><td align="left" valign="top">HTML</td>
-      <td align="left" valign="top"><code>--format csv</code><br/><code>"format": "csv"</code></td>
-      <td align="left" valign="top"><a href="README-configuration-files.md#standard-html">Standard HTML</a></td>
-    </tr>
-    <tr>
-      <td align="left" valign="top">Standard with normative descriptions</td><td align="left" valign="top">HTML</td>
-      <td align="left" valign="top"><code>--format csv</code><br/><code>"format": "csv"</code></td>
-      <td align="left" valign="top"><a href="README-configuration-files.md#standard-html-with-normative-descriptions">Standard with normative descriptions HTML</a></td>
-    </tr>
-    <tr>
-      <td align="left" valign="top">Subset</td><td align="left" valign="top">HTML</td>
-      <td align="left" valign="top"><code>--format csv</code><br/><code>"format": "csv"</code></td>
-      <td align="left" valign="top"><a href="README-configuration-files.md#subset-html">Subset HTML</a></td>
-  </tbody>
+   <col width="10%">
+   <col width="10%">
+   <col width="40%">
+   <col width="20%">
+   <col width="20%">
+   <thead>
+      <tr>
+         <th align="left" valign="top">Output mode</th>
+         <th align="left" valign="top">Format</th>
+         <th align="left" valign="top">Command&#8209;line&nbsp;option<br />or<br />Configuration&nbsp;keys</th>
+         <th align="left" valign="top">Sample command usage</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td align="left" valign="top">CSV</td>
+         <td align="left" valign="top">CSV</td>
+         <td align="left" valign="top"><code>--format csv</code><br /><code>"format": "csv"</code></td>
+         <td align="left" valign="top"><a href="README-configuration-files.md#csv">CSV</a></td>
+      </tr>
+      <tr>
+         <td align="left" valign="top">Terse profile</td>
+         <td align="left" valign="top">Markdown</td>
+         <td align="left" valign="top"><code>--format markdown</code><br /><code>--profile PROFILE_DOC</code><br /> Path to a JSON profile document, for profile output. <code>-t</code>, <code>--terse</code><br /><br /><code>"format": "markdown"</code><br />
+            <code>"profile_terse": true</code>
+         </td>
+         <td align="left" valign="top"><a href="README-configuration-files.md#terse-profile-index-in-markdown">Terse profile index in Markdown</a></td>
+      </tr>
+      <tr>
+         <td align="left" valign="top">Property index</td>
+         <td align="left" valign="top">HTML</td>
+         <td align="left" valign="top"><code>--format csv</code><br /><code>"format": "csv"</code></td>
+         <td align="left" valign="top"><a href="README-configuration-files.md#property-index-html">Property index HTML</a></td>
+      </tr>
+      <tr>
+         <td align="left" valign="top">Standard</td>
+         <td align="left" valign="top">HTML</td>
+         <td align="left" valign="top"><code>--format csv</code><br /><code>"format": "csv"</code></td>
+         <td align="left" valign="top"><a href="README-configuration-files.md#standard-html">Standard HTML</a></td>
+      </tr>
+      <tr>
+         <td align="left" valign="top">Standard with normative descriptions</td>
+         <td align="left" valign="top">HTML</td>
+         <td align="left" valign="top"><code>--format csv</code><br /><code>"format": "csv"</code></td>
+         <td align="left" valign="top"><a href="README-configuration-files.md#standard-html-with-normative-descriptions">Standard with normative descriptions HTML</a></td>
+      </tr>
+      <tr>
+         <td align="left" valign="top">Subset</td>
+         <td align="left" valign="top">HTML</td>
+         <td align="left" valign="top"><code>--format csv</code><br /><code>"format": "csv"</code></td>
+         <td align="left" valign="top"><a href="README-configuration-files.md#subset-html">Subset HTML</a></td>
+   </tbody>
 </table>
 
 <!-- <dl>
