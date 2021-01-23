@@ -6,27 +6,24 @@
 
 Copyright 2016-2021 Distributed Management Task Force, Inc. All rights reserved.
 
-The **Redfish doc generator** &mdash; [`doc_generator.py`](doc_generator.py "doc_generator.py") &mdash; is a Python tool that generates output in a specified [format](#output-formats) from JSON Schema files and supplementary content files.
+The **Redfish doc generator** &mdash; [`doc_generator.py`](doc_generator.py "doc_generator.py") &mdash; is a Python tool that generates output in a specified [format](#output-formats-and-output-modes) from JSON Schema files and supplementary content files. You use [configuration files](#configuration) to configure this output.
 
-The Redfish doc generator v3:
-
-* Introduces [breaking changes](README-doc-generator-v3-changes.md) in how you configure the `doc_generator.py` tool.
-* Updates the `README` files.
+The Redfish doc generator v3 introduces [breaking changes](README-doc-generator-v3-changes.md) in how you configure the `doc_generator.py` tool and updates the `README` files.
 
 For a snapshot of the *version 2* code, see [Doc Generator v2](https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0 "https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0").
 
 * [Installation](#installation)
 * [Usage](#usage)
-* [Output formats](#output-formats)
+* [Output modes and output formats](#output-modes-and-output-formats)
 * [Configuration](#configuration)
 * [Processing](#processing)
 * [Notes](#notes)
 
-## Installation
+# Installation
 
 To install the Redfish doc generator, see [Installation](../README.md#installation "../README.md#installation").
 
-## Usage
+# Usage
 
 ```text
 usage: doc_generator.py [-h] [--config CONFIG_FILE] [-n]
@@ -85,30 +82,64 @@ Example:
    doc_generator.py --format=html --out=/path/to/output/index.html /path/to/spmf/json-files
 ```
 
-For more information about the output formats, see [Output formats](#output-formats).
+For more information about output formats and output modes, see [Output formats and output modes](#output-formats-and-output-modes).
 
 For `doc_generator.py` examples, see [Redfish doc generator examples](README-configuration-files.md#redfish-doc-generator-examples).
 
-## Output modes
+# Output formats and output modes
 
-An output mode is a combination of an output format, such as Markdown or HTML, and a specific type of output, such as a developer-focused, or normative, document or a property index. So you could produce a normative HTML document or a standard HTML document.
+The Redfish doc generator generates output in a specified format, such as Markdown, HTML, or CSV.
 
-The doc generator supports several output modes through various command-line or configuration options. The following table:
+The *output mode* is a combination of the output and a specific type of output, such as:
+
+* Developer-focused, or normative
+* Property index
+* Subset
+
+The doc generator supports several output modes through various command-line or configuration options.
+
+The following description list:
 
 * Lists the supported output modes.
-* Provides links to sample versions of the base configuration file.
+* Provides links to sample versions of the base configuration file that produce output in that mode.
 * Provides links to examples of `doc_generator.py` command usage.
 
-| Output mode | Relevant command-line or configuration option | Sample base configuration file | Example `doc_generator.py` command usage |
-| :---------- | :---------------------------- | :----------------------------- | :--------------------------------- |
-| CSV                | `--format csv`<br/>`"format": "csv"` | [`sample_inputs/csv/config.json`](sample_inputs/csv/config.json) | [CSV](#csv) |
-| Profile            | `--format csv`<br/>`"format": "csv"` | [`sample_inputs/profile_mode/config.json`](sample_inputs/profile_mode/config.json) | [Profile index Markdown in terse mode](##profile-index-markdown-in-terse-mode) |
-| Property index     | `--format csv`<br/>`"format": "csv"` | [`sample_inputs/property_index/config.json`](sample_inputs/property_index/config.json) | [Property index HTML](##property-index-html) |
-| Standard           | `--format csv`<br/>`"format": "csv"` | [`sample_inputs/standard_html/config.json`](sample_inputs/standard_html/config.json) | [Standard HTML](##standard-html) |
-| Standard normative | `--format csv`<br/>`"format": "csv"` | [`sample_inputs/standard_html/config_normative.json`](sample_inputs/standard_html/config_normative.json) | [Standard with normative descriptions HTML](##standard-html-with-normative-descriptions) |
-| Subset             | `--format csv`<br/>`"format": "csv"`| [`sample_inputs/subset/config.json`](sample_inputs/subset/config.json) | [Subset HTML](##subset-html) |
-
 Depending on the output mode, the configuration keys in the base configuration file can change. Some output modes, such as the property index mode, support additional configuration keys.
+
+<!-- 
+ -->
+<dl>
+   <dt>CSV output mode</dt>
+   <dd><b>Command-line option:</b> <code>--format csv</code></dd>
+   <dd><b>Configuration key:</b> <code>"format": "csv"</code></dd>
+   <dd><b>Sample base configuration file:</b> [`sample_inputs/csv/config.json`](sample_inputs/csv/config.json)</dd>
+   <dd><b>Sample doc_generator.py command usage:</b> [CSV](#csv)</dd>
+   <dt>Profile documentation in Markdown output mode</dt>
+   <dd><b>Command-line option:</b> <code>--format csv</code></dd>
+   <dd><b>Configuration key:</b> <code>"format": "csv"</code></dd>
+   <dd><b>Sample base configuration file:</b> [`sample_inputs/profile_mode/config.json`](sample_inputs/profile_mode/config.json)</dd>
+   <dd><b>Sample doc_generator.py command usage:</b> [Profile index Markdown in terse mode](#profile-index-markdown-in-terse-mode)</dd>
+   <dt>Property index documentation in HTML output mode</dt>
+   <dd><b>Command-line option:</b> <code>--format csv</code></dd>
+   <dd><b>Configuration key:</b> <code>"format": "csv"</code></dd>
+   <dd><b>Sample base configuration file:</b> [`sample_inputs/property_index/config.json`](sample_inputs/property_index/config.json)</dd>
+   <dd><b>Sample doc_generator.py command usage:</b> [Property index HTML](#property-index-html)</dd>
+   <dt>Standard documentation in HTML format</dt>
+   <dd><b>Command-line option:</b> <code>--format csv</code></dd>
+   <dd><b>Configuration key:</b> <code>"format": "csv"</code></dd>
+   <dd><b>Sample base configuration file:</b> [`sample_inputs/standard_html/config.json`](sample_inputs/standard_html/config.json)</dd>
+   <dd><b>Sample doc_generator.py command usage:</b> [Standard HTML](#standard-html)</dd>
+   <dt>Standard with normative descriptions mode documentation in HTML format</dt>
+   <dd><b>Command-line option:</b> <code>--format csv</code></dd>
+   <dd><b>Configuration key:</b> <code>"format": "csv"</code></dd>
+   <dd><b>Sample base configuration file:</b> [`sample_inputs/standard_html/config_normative.json`](sample_inputs/standard_html/config_normative.json)</dd>
+   <dd><b>Sample doc_generator.py command usage:</b> [Standard with normative descriptions HTML](#standard-html-with-normative-descriptions)</dd>
+   <dt>Subset documentation in HTML format</dt>
+   <dd><b>Command-line option:</b> <code>--format csv</code></dd>
+   <dd><b>Configuration key:</b> <code>"format": "csv"</code></dd>
+   <dd><b>Sample base configuration file:</b> [`sample_inputs/subset/config.json`](sample_inputs/subset/config.json)</dd>
+   <dd><b>Sample doc_generator.py command usage:</b> [Subset HTML](#subset-html)</dd>
+</dl>
 
 The type of output that the doc generator produces depends on the following command-line or configuration options:
 
@@ -157,7 +188,7 @@ The type of output that the doc generator produces depends on the following comm
    </tbody>
 </table>
 
-## Configuration
+# Configuration
 
 Use the `--config` option to specify the [base configuration file](README-configuration-files.md "README-configuration-files.md"). The base configuration file defines:
 
@@ -166,13 +197,13 @@ Use the `--config` option to specify the [base configuration file](README-config
 
 Several flavors of configuration files are available. See [Redfish doc generator: Configuration and supplementary files](README-configuration-files.md).
 
-## Processing
+# Processing
 
 By default, `doc_generator.py` looks for a `json-schema` directory and supplemental files in the [configuration](#configuration) file that you specify when you run it.
 
 Typically, the tool processes an entire set of JSON Schema files for a version.
 
-## Notes
+# Notes
 
 Normative output prefers long descriptions to descriptions.
 
