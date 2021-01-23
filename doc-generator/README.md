@@ -93,12 +93,12 @@ The supported output modes are:
 | Mode | Audience | Description |
 | :--- | :------- | :---------- |
 | CSV          | ?? | Comma-separated values (CSV) file. |
-* Standard | Novice and developer | Standard guide. |
-* Standard normative | Developer | Standard guide with normative descriptions. |
-* Terse profile | Service developers | Includes only the subset of properties with profile requirements. Terse output is meaningful only for profile mode. |
-* Verbose profile | ?? | By default, profile mode is verbose and includes all properties regardless of profile requirements. |
-* Subset | ?? | ?? |
-* Property index | ?? | ?? |
+| Standard | Novice and developer | Standard guide. |
+| Standard normative | Developer | Standard guide with normative descriptions. |
+| Terse profile | Service developers | Includes only the subset of properties with profile requirements. Terse output is meaningful only for profile mode. |
+| Verbose profile | ?? | By default, profile mode is verbose and includes all properties regardless of profile requirements. |
+| Subset | ?? | ?? |
+| Property index | ?? | ?? |
 
 The *output format* defines the format of the generated output, such as Markdown, HTML, or CSV.
 
