@@ -61,9 +61,9 @@ Example:
 
 ## Configuration
 
-The configuration file for this mode is a JSON document with the following elements:
+The configuration file for property-index mode contains these keys:
 
-| Element     | Required | Description                                                    | Reference     | 
+| Key         | Required | Description                                                    | Reference     | 
 | :---------- | :------- | :------------------------------------------------------------- | :------------ |
 | `boilerplate_intro` | Optional | Location of a Markdown file that contains content that appears at the beginning of the document before the generated Redfish Schema documentation. If a relative path, should be relative to the location of the configuration file. | |
 | `boilerplate_postscript` | Optional | Location of a Markdown file that contains content that appears at the end of the document after the generated Redfish Schema documentation. If a relative path, should be relative to the location of the configuration file. | |

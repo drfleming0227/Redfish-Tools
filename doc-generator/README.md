@@ -87,19 +87,19 @@ For `doc_generator.py` examples, see [Redfish doc generator examples](README-con
 
 # Output modes and output formats
 
-The *output mode* defines the type of generated output. The supported output modes are:
+The *output mode* defines the type of generated output:
 
 | Mode               | Audience                         | Description |
 | :----------------- | :------------------------------- | :---------- |
 | CSV                | ??                               | Comma-separated values (CSV) file. |
-| Standard           | Novice and experienced developer | Standard guide. |
-| Standard normative | Developer                        | Standard guide with normative descriptions. Normative output prefers long descriptions to descriptions. |
+| Standard           | Novice&nbsp;and&nbsp;experienced&nbsp;developer | Standard guide. |
+| Standard&nbsp;normative | Developer                        | Standard guide with normative descriptions. Normative output prefers long descriptions to descriptions. |
 | Terse profile      | Service developer                | Includes only the subset of properties with profile requirements. Terse output is meaningful only for profile mode. |
 | Verbose profile    | ??                               | By default, profile mode is verbose and includes all properties regardless of profile requirements. |
 | Subset             | ??                               | ?? |
 | Property index     | ??                               | ?? |
 
-The *output format* defines the format of the generated output. The supported output formats are:
+The *output format* defines the format of the generated output:
 
 | Output&nbsp;format    | Description                      |
 | :-------------------- | :------------------------------- |
@@ -108,7 +108,7 @@ The *output format* defines the format of the generated output. The supported ou
 | <code>html</code>     | HyperText Markup Language (HTML) file. |
 | <code>csv</code>      | Comma-separated values (CSV) file. |
 
-Use the following command-line options to generate specific output modes and formats:
+Use the following command-line options to define the output mode and format:
 
 <table>
    <col width="20%">
@@ -119,7 +119,7 @@ Use the following command-line options to generate specific output modes and for
       <tr>
          <th align="left" valign="top">Command&#8209;line&nbsp;option</th>
          <th align="left" valign="top">Description</th>
-         <th align="left" valign="top">Output mode</th>
+         <th align="left" valign="top">Output modes</th>
          <th align="left" valign="top">Output format</th>
       </tr>
     </thead>
@@ -170,139 +170,10 @@ Use the following command-line options to generate specific output modes and for
       </tr>
    </tbody>
 </table>
-<!-- 
-<table>
-   <col width="10%">
-   <col width="10%">
-   <col width="40%">
-   <col width="20%">
-   <col width="20%">
-   <thead>
-      <tr>
-         <th align="left" valign="top">Output mode</th>
-         <th align="left" valign="top">Format</th>
-         <th align="left" valign="top">Command-line options</th>
-      </tr>
-   </thead>
-   <tbody>
-      <tr>
-         <td align="left" valign="top">CSV</td>
-         <td align="left" valign="top">CSV</td>
-         <td align="left" valign="top"><code>--format csv</code></td>
-      </tr>
-      <tr>
-         <td align="left" valign="top">Terse profile</td>
-         <td align="left" valign="top">Markdown</td>
-         <td align="left" valign="top"><code>--format markdown</code><br /><code>--profile PROFILE_DOC</code><br /><code>-t</code>, <code>--terse</code></td>
-      </tr>
-      <tr>
-         <td align="left" valign="top">Property index</td>
-         <td align="left" valign="top">HTML</td>
-         <td align="left" valign="top"><code>--format html</code><br /><code>"property_index": true</td>
-      </tr>
-      <tr>
-         <td align="left" valign="top">Standard</td>
-         <td align="left" valign="top">HTML</td>
-         <td align="left" valign="top"><b>Command&#8209;line&nbsp;options:</b> <code>--format csv</code><br /><code>"format": "csv"</code></td>
-         <td align="left" valign="top"><a href="README-configuration-files.md#standard-html">Standard HTML</a></td>
-      </tr>
-      <tr>
-         <td align="left" valign="top">Standard with normative descriptions</td>
-         <td align="left" valign="top">HTML</td>
-         <td align="left" valign="top"><b>Command&#8209;line&nbsp;options:</b> <code>--format csv</code><br /><code>"format": "csv"</code></td>
-         <td align="left" valign="top"><a href="README-configuration-files.md#standard-html-with-normative-descriptions">Standard with normative descriptions HTML</a></td>
-      </tr>
-      <tr>
-         <td align="left" valign="top">Subset</td>
-         <td align="left" valign="top">HTML</td>
-         <td align="left" valign="top"><b>Command&#8209;line&nbsp;options:</b> <code>--format csv</code><br /><code>"format": "csv"</code></td>
-         <td align="left" valign="top"><a href="README-configuration-files.md#subset-html">Subset HTML</a></td>
-   </tbody>
-</table> -->
-
-<!-- <dl>
-   | CSV output mode</dt>
-   <dd><b>Command-line option:</b> <code>--format csv</code></dd>
-   <dd><b>Configuration key:</b> <code>"format": "csv"</code></dd>
-   <dd><b>Sample base configuration file:</b> [`sample_inputs/csv/config.json`](sample_inputs/csv/config.json)</dd>
-   <dd><b>Sample doc_generator.py command usage:</b> [CSV](#csv)</dd>
-   <dt>Profile documentation in Markdown output mode</dt>
-   <dd><b>Command-line option:</b> <code>--format csv</code></dd>
-   <dd><b>Configuration key:</b> <code>"format": "csv"</code></dd>
-   <dd><b>Sample base configuration file:</b> [`sample_inputs/profile_mode/config.json`](sample_inputs/profile_mode/config.json)</dd>
-   <dd><b>Sample doc_generator.py command usage:</b> [Profile index Markdown in terse mode](#profile-index-markdown-in-terse-mode)</dd>
-   <dt>Property index documentation in HTML output mode</dt>
-   <dd><b>Command-line option:</b> <code>--format csv</code></dd>
-   <dd><b>Configuration key:</b> <code>"format": "csv"</code></dd>
-   <dd><b>Sample base configuration file:</b> [`sample_inputs/property_index/config.json`](sample_inputs/property_index/config.json)</dd>
-   <dd><b>Sample doc_generator.py command usage:</b> [Property index HTML](#property-index-html)</dd>
-   <dt>Standard documentation in HTML format</dt>
-   <dd><b>Command-line option:</b> <code>--format csv</code></dd>
-   <dd><b>Configuration key:</b> <code>"format": "csv"</code></dd>
-   <dd><b>Sample base configuration file:</b> [`sample_inputs/standard_html/config.json`](sample_inputs/standard_html/config.json)</dd>
-   <dd><b>Sample doc_generator.py command usage:</b> [Standard HTML](#standard-html)</dd>
-   <dt>Standard with normative descriptions mode documentation in HTML format</dt>
-   <dd><b>Command-line option:</b> <code>--format csv</code></dd>
-   <dd><b>Configuration key:</b> <code>"format": "csv"</code></dd>
-   <dd><b>Sample base configuration file:</b> [`sample_inputs/standard_html/config_normative.json`](sample_inputs/standard_html/config_normative.json)</dd>
-   <dd><b>Sample doc_generator.py command usage:</b> [Standard with normative descriptions HTML](#standard-html-with-normative-descriptions)</dd>
-   <dt>Subset documentation in HTML format</dt>
-   <dd><b>Command-line option:</b> <code>--format csv</code></dd>
-   <dd><b>Configuration key:</b> <code>"format": "csv"</code></dd>
-   <dd><b>Sample base configuration file:</b> [`sample_inputs/subset/config.json`](sample_inputs/subset/config.json)</dd>
-   <dd><b>Sample doc_generator.py command usage:</b> [Subset HTML](#subset-html)</dd>
-</dl> -->
-
-<!-- The type of output that the doc generator produces depends on the following command-line or configuration options:
-
-<table>
-   <col width="40%">
-   <col width="60%">
-   <thead>
-      <tr>
-         <th align="left" valign="top">Command&#8209;line&nbsp;option</th>
-         <th align="left" valign="top">Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-         <td align="left" valign="top"><code>-n</code>,&nbsp;<code>--normative</code></td>
-         <td align="left" valign="top">Produces normative, or developer-focused, output.</td>
-      </tr>
-      <tr>
-         <td align="left" valign="top"><code>--format</code></td>
-         <td align="left" valign="top">
-            <p>The output format. Value is:</p>
-            <ul>
-               <li><code>markdown</code> &mdash; Markdown file targeted for the DMTF document publication process.</li>
-               <li><code>slate</code> (default) &mdash; GitHub-flavored Markdown file targeted for the <a href="https://github.com/slatedocs/slate" title="https://github.com/slatedocs/slate">Slate API doc generator</a>.</li>
-               <li><code>html</code> &mdash; HyperText Markup Language (HTML) file.</li>
-               <li><code>csv</code> &mdash; Comma-separated values (CSV) file.</li>
-            </ul>
-         </td>
-      </tr>
-      <tr>
-         <td align="left" valign="top"><code>--profile&nbsp;PROFILE_DOC</code></td>
-         <td align="left" valign="top">Path to a JSON profile document, for profile output.</td>
-      </tr>
-      <tr>
-         <td align="left" valign="top"><code>-t</code>,&nbsp;<code>--terse</code></td>
-         <td align="left" valign="top">Terse output, which is meaningful only with <code>--profile</code>. By default, profile output is verbose and includes all properties regardless of profile requirements. *Terse* output is intended for use by service developers, including only the subset of properties with profile requirements.</td>
-      </tr>
-      <tr>
-         <td align="left" valign="top"><code>--subset SUBSET_DOC</code></td>
-         <td align="left" valign="top">Path to a JSON profile document. Generates *Schema subset* output, with the subset defined in the JSON profile document.</td>
-      </tr>
-      <tr>
-         <td align="left" valign="top"><code>--property_index</code></td>
-         <td align="left" valign="top">Produces <a href="README-property-index-mode.md" title="README-property-index-mode.md"><i>property index</i> output</a>.</td>
-      </tr>
-   </tbody>
-</table> -->
 
 # Configuration
 
-Use the `--config` option to specify the [base configuration file](README-configuration-files.md "README-configuration-files.md"). The base configuration file defines configuration keys that configure the generated output. Some configuration information, such as URI mappings,  cannot be specified on the command line.
+Use the `--config` option to specify the [base configuration file](README-configuration-files.md "README-configuration-files.md"). The base configuration file defines configuration keys that define the generated output. Some configuration information, such as URI mappings, cannot be specified on the command line.
 
 Several flavors of configuration files are available. See [Redfish doc generator: Configuration and supplementary files](README-configuration-files.md).
 
