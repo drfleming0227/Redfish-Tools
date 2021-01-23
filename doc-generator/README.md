@@ -115,7 +115,7 @@ Depending on the output mode, the configuration keys in the base configuration f
       <tr>
          <th align="left" valign="top">Output mode</th>
          <th align="left" valign="top">Format</th>
-         <th align="left" valign="top">Command&#8209;line&nbsp;option<br />or<br />Configuration&nbsp;keys</th>
+         <th align="left" valign="top">Implementation</th>
          <th align="left" valign="top">Sample command usage</th>
       </tr>
    </thead>
@@ -123,13 +123,13 @@ Depending on the output mode, the configuration keys in the base configuration f
       <tr>
          <td align="left" valign="top">CSV</td>
          <td align="left" valign="top">CSV</td>
-         <td align="left" valign="top"><code>--format csv</code><br /><code>"format": "csv"</code></td>
+         <td align="left" valign="top"><b>Command&#8209;line&nbsp;options:</b> <code>--format csv</code><br /><b>Configuration&nbsp;keys:</b> <code>"format": "csv"</code></td>
          <td align="left" valign="top"><a href="README-configuration-files.md#csv">CSV</a></td>
       </tr>
       <tr>
          <td align="left" valign="top">Terse profile</td>
          <td align="left" valign="top">Markdown</td>
-         <td align="left" valign="top"><code>--format markdown</code><br /><code>--profile PROFILE_DOC</code><br /> Path to a JSON profile document, for profile output. <code>-t</code>, <code>--terse</code><br /><br /><code>"format": "markdown"</code><br />
+         <td align="left" valign="top"><b>Command&#8209;line&nbsp;options:</b> <code>--format markdown</code><br /><code>--profile PROFILE_DOC</code><br /><code>-t</code>, <code>--terse</code><br /><b>Configuration&nbsp;keys:</b> <code>"format": "markdown"</code><br />
             <code>"profile_terse": true</code>
          </td>
          <td align="left" valign="top"><a href="README-configuration-files.md#terse-profile-index-in-markdown">Terse profile index in Markdown</a></td>
@@ -137,25 +137,25 @@ Depending on the output mode, the configuration keys in the base configuration f
       <tr>
          <td align="left" valign="top">Property index</td>
          <td align="left" valign="top">HTML</td>
-         <td align="left" valign="top"><code>--format csv</code><br /><code>"format": "csv"</code></td>
+         <td align="left" valign="top"><b>Command&#8209;line&nbsp;options:</b> <code>--format csv</code><br /><code>"format": "csv"</code></td>
          <td align="left" valign="top"><a href="README-configuration-files.md#property-index-html">Property index HTML</a></td>
       </tr>
       <tr>
          <td align="left" valign="top">Standard</td>
          <td align="left" valign="top">HTML</td>
-         <td align="left" valign="top"><code>--format csv</code><br /><code>"format": "csv"</code></td>
+         <td align="left" valign="top"><b>Command&#8209;line&nbsp;options:</b> <code>--format csv</code><br /><code>"format": "csv"</code></td>
          <td align="left" valign="top"><a href="README-configuration-files.md#standard-html">Standard HTML</a></td>
       </tr>
       <tr>
          <td align="left" valign="top">Standard with normative descriptions</td>
          <td align="left" valign="top">HTML</td>
-         <td align="left" valign="top"><code>--format csv</code><br /><code>"format": "csv"</code></td>
+         <td align="left" valign="top"><b>Command&#8209;line&nbsp;options:</b> <code>--format csv</code><br /><code>"format": "csv"</code></td>
          <td align="left" valign="top"><a href="README-configuration-files.md#standard-html-with-normative-descriptions">Standard with normative descriptions HTML</a></td>
       </tr>
       <tr>
          <td align="left" valign="top">Subset</td>
          <td align="left" valign="top">HTML</td>
-         <td align="left" valign="top"><code>--format csv</code><br /><code>"format": "csv"</code></td>
+         <td align="left" valign="top"><b>Command&#8209;line&nbsp;options:</b> <code>--format csv</code><br /><code>"format": "csv"</code></td>
          <td align="left" valign="top"><a href="README-configuration-files.md#subset-html">Subset HTML</a></td>
    </tbody>
 </table>
