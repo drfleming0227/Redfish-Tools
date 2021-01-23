@@ -86,9 +86,7 @@ For `doc_generator.py` examples, see [Redfish doc generator examples](README-con
 
 # Output modes and output formats
 
-The *output mode* defines the type of generated output. 
-
-The supported output modes are:
+The *output mode* defines the type of generated output. The supported output modes are:
 
 | Mode | Audience | Description |
 | :--- | :------- | :---------- |
@@ -100,9 +98,16 @@ The supported output modes are:
 | Subset | ?? | ?? |
 | Property index | ?? | ?? |
 
-The *output format* defines the format of the generated output, such as Markdown, HTML, or CSV.
+The *output format* defines the format of the generated output. The supported output formats are:
 
-The doc generator supports several output modes and formats through various command-line options or configuration keys.
+<ul>
+   <li><code>markdown</code> &mdash; Markdown file targeted for the DMTF document publication process.</li>
+   <li><code>slate</code> (default) &mdash; GitHub-flavored Markdown file targeted for the <a href="https://github.com/slatedocs/slate" title="https://github.com/slatedocs/slate">Slate API doc generator</a>.</li>
+   <li><code>html</code> &mdash; HyperText Markup Language (HTML) file.</li>
+   <li><code>csv</code> &mdash; Comma-separated values (CSV) file.</li>
+</ul>
+
+The doc generator supports several output modes and formats through various command-line options and configuration keys.
 
 Use the following command-line options to generate specific output modes and formats:
 
@@ -113,12 +118,14 @@ Use the following command-line options to generate specific output modes and for
       <tr>
          <th align="left" valign="top">Command&#8209;line&nbsp;option</th>
          <th align="left" valign="top">Description</th>
+         <th align="left" valign="top">Use for output mode</th>
       </tr>
     </thead>
     <tbody>
       <tr>
          <td align="left" valign="top"><code>-n</code>,&nbsp;<code>--normative</code></td>
          <td align="left" valign="top">Produces normative, or developer-focused, output.</td>
+         <td align="left" valign="top">Standard normative</td>
       </tr>
       <tr>
          <td align="left" valign="top"><code>--format</code></td>
@@ -131,26 +138,31 @@ Use the following command-line options to generate specific output modes and for
                <li><code>csv</code> &mdash; Comma-separated values (CSV) file.</li>
             </ul>
          </td>
+         <td align="left" valign="top">All</td>
       </tr>
       <tr>
          <td align="left" valign="top"><code>--profile&nbsp;PROFILE_DOC</code></td>
          <td align="left" valign="top">Path to a JSON profile document, for profile output.</td>
+         <td align="left" valign="top">Terse profile<br/>Verbose profile</td>
       </tr>
       <tr>
          <td align="left" valign="top"><code>-t</code>,&nbsp;<code>--terse</code></td>
          <td align="left" valign="top">Terse output, which is meaningful only with <code>--profile</code>. By default, profile output is verbose and includes all properties regardless of profile requirements. *Terse* output is intended for use by service developers, including only the subset of properties with profile requirements.</td>
+         <td align="left" valign="top">Terse profile</td>
       </tr>
       <tr>
          <td align="left" valign="top"><code>--subset SUBSET_DOC</code></td>
          <td align="left" valign="top">Path to a JSON profile document. Generates *Schema subset* output, with the subset defined in the JSON profile document.</td>
+         <td align="left" valign="top">Subset</td>
       </tr>
       <tr>
          <td align="left" valign="top"><code>--property_index</code></td>
          <td align="left" valign="top">Produces <a href="README-property-index-mode.md" title="README-property-index-mode.md"><i>property index</i> output</a>.</td>
+         <td align="left" valign="top">Property index</td>
       </tr>
    </tbody>
 </table>
-
+<!-- 
 <table>
    <col width="10%">
    <col width="10%">
@@ -198,7 +210,7 @@ Use the following command-line options to generate specific output modes and for
          <td align="left" valign="top"><b>Command&#8209;line&nbsp;options:</b> <code>--format csv</code><br /><code>"format": "csv"</code></td>
          <td align="left" valign="top"><a href="README-configuration-files.md#subset-html">Subset HTML</a></td>
    </tbody>
-</table>
+</table> -->
 
 The following table describes the supported output modes and formats and provides links to samples of `doc_generator.py` command usage.
 
@@ -292,7 +304,7 @@ Depending on the output mode, the configuration keys in the base configuration f
    <dd><b>Sample doc_generator.py command usage:</b> [Subset HTML](#subset-html)</dd>
 </dl> -->
 
-The type of output that the doc generator produces depends on the following command-line or configuration options:
+<!-- The type of output that the doc generator produces depends on the following command-line or configuration options:
 
 <table>
    <col width="40%">
@@ -337,7 +349,7 @@ The type of output that the doc generator produces depends on the following comm
          <td align="left" valign="top">Produces <a href="README-property-index-mode.md" title="README-property-index-mode.md"><i>property index</i> output</a>.</td>
       </tr>
    </tbody>
-</table>
+</table> -->
 
 # Configuration
 
