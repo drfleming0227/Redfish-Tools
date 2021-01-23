@@ -105,14 +105,54 @@ The following description list describes the supported output modes and provides
 
 Depending on the output mode, the configuration keys in the base configuration file can change. Some output modes, such as the property index mode, support additional configuration keys.
 
-| Output mode | Command-line option<br/>or<br/>configuration keys | Sample base configuration file | Sample command usage |
-| :---------- | :------------------ | :----------------- | :----------------------------- | :------------------- |
-| CSV output mode | `--format csv`<br/>`"format": "csv"` | [`sample_inputs/csv/config.json`](sample_inputs/csv/config.json) | [CSV](#csv) |
-| Profile documentation in Markdown output mode | `--format csv`<br/>`"format": "csv"` | [`sample_inputs/profile_mode/config.json`](sample_inputs/profile_mode/config.json) | [Profile index Markdown in terse mode](#profile-index-markdown-in-terse-mode) |
-| Property index documentation in HTML output mode | `--format csv`<br/>`"format": "csv"` | [`sample_inputs/property_index/config.json`](sample_inputs/property_index/config.json) | [Property index HTML](#property-index-html) |
-| Standard documentation in HTML format | `--format csv`<br/>`"format": "csv"` | [`sample_inputs/standard_html/config.json`](sample_inputs/standard_html/config.json) | [Standard HTML](#standard-html) |
-| Standard with normative descriptions mode documentation in HTML format | `--format csv`<br/>`"format": "csv"` | [`sample_inputs/standard_html/config_normative.json`](sample_inputs/standard_html/config_normative.json) | [Standard with normative descriptions HTML](#standard-html-with-normative-descriptions) |
-| Subset documentation in HTML format | `--format csv`<br/>`"format": "csv"` | [`sample_inputs/subset/config.json`](sample_inputs/subset/config.json) | [Subset HTML](#subset-html) |
+<table>
+  <thead>
+    <tr>
+      <th align="left" valign="top">Output mode</th>
+      <th align="left" valign="top">Command-line option<br/>or<br/>Configuration keys</th>
+      <th align="left" valign="top">Sample base configuration file</th>
+      <th align="left" valign="top">Sample command usage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="left" valign="top">CSV</td>
+      <td align="left" valign="top"><code>--format csv</code><br/><code>"format": "csv"</code></td>
+      <td align="left" valign="top"><a href="sample_inputs/csv/config.json"><code>sample_inputs/csv/config.json</code></a></td>
+      <td align="left" valign="top"><a href="#csv">CSV</a></td>
+    </tr>
+    <tr>
+      <td align="left" valign="top">Terse profile index in Markdown</td>
+      <td align="left" valign="top"><code>--format csv</code><br/><code>"format": "csv"</code></td>
+      <td align="left" valign="top"><a href="sample_inputs/profile_mode/config.json"><code>sample_inputs/profile_mode/config.json</code></a></td>
+      <td align="left" valign="top"><a href="#terse-profile-index-in-markdown">Terse profile index in Markdown</a></td>
+    </tr>
+    <tr>
+      <td align="left" valign="top">Property index in HTML</td>
+      <td align="left" valign="top"><code>--format csv</code><br/><code>"format": "csv"</code></td>
+      <td align="left" valign="top"><a href="sample_inputs/property_index/config.json"><code>sample_inputs/property_index/config.json</code></a></td>
+      <td align="left" valign="top"><a href="#property-index-html">Property index HTML</a></td>
+    </tr>
+    <tr>
+      <td align="left" valign="top">Standard in HTML</td>
+      <td align="left" valign="top"><code>--format csv</code><br/><code>"format": "csv"</code></td>
+      <td align="left" valign="top"><a href="sample_inputs/standard_html/config.json"><code>sample_inputs/standard_html/config.json</code></a></td>
+      <td align="left" valign="top"><a href="#standard-html">Standard HTML</a></td>
+    </tr>
+    <tr>
+      <td align="left" valign="top">Standard with normative descriptions in HTML</td>
+      <td align="left" valign="top"><code>--format csv</code><br/><code>"format": "csv"</code></td>
+      <td align="left" valign="top"><a href="sample_inputs/standard_html/config_normative.json"><code>sample_inputs/standard_html/config_normative.json</code></a></td>
+      <td align="left" valign="top"><a href="#standard-html-with-normative-descriptions">Standard with normative descriptions HTML</a></td>
+    </tr>
+    <tr>
+      <td align="left" valign="top">Subset in HTML</td>
+      <td align="left" valign="top"><code>--format csv</code><br/><code>"format": "csv"</code></td>
+      <td align="left" valign="top"><a href="sample_inputs/subset/config.json"><code>sample_inputs/subset/config.json</code></a></td>
+      <td align="left" valign="top"><a href="#subset-html">Subset HTML</a></td>
+  </tbody>
+</table>
+
 <!-- <dl>
    | CSV output mode</dt>
    <dd><b>Command-line option:</b> <code>--format csv</code></dd>
