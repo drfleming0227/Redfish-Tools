@@ -17,7 +17,7 @@ For Redfish developer information, see [DMTF](https://redfish.dmtf.org/ "https:/
 
 ## Installation
 
-Complete these steps to install all Redfish-Tools tools:
+Complete these steps to install all tools in the Redfish-Tools repository:
 
 1. Clone the `Redfish-Tools` repository:
 
@@ -27,7 +27,7 @@ Complete these steps to install all Redfish-Tools tools:
     ```
 1. [Download and install Python](https://www.python.org/downloads/ "https://www.python.org/downloads/") on the machine from which you will run the tools.
 
-Complete these additional steps to install the **Redfish doc generator only**:
+Complete these additional steps to install the **Redfish doc generator** only:
 
 1. Install the following software, which is required for HTML output:
 
@@ -35,15 +35,15 @@ Complete these additional steps to install the **Redfish doc generator only**:
     * [Install Pygments](http://pygments.org/ "http://pygments.org/").
     * Install requirements:
 
-        ```bash
-        % cd doc-generator
-        % pip install -r requirements.txt
-        ```
+      ```bash
+      % cd doc-generator
+      % pip install -r requirements.txt
+      ```
 1. (Optional) If you plan to make changes to the `doc_generator.py` code:
 
     * To install [`pytest`](https://docs.pytest.org/en/latest/getting-started.html "https://docs.pytest.org/en/latest/getting-started.html"):
 
-    ```bash
-    % cd doc-generator
-    % pip install -r dev_requirements.txt
-    ```
+       ```bash
+       % cd doc-generator
+       % pip install -r dev_requirements.txt
+       ```
