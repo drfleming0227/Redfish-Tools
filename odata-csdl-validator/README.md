@@ -44,19 +44,19 @@ The `odata_validator.py` tool takes a single parameter in one of the following f
       <tr>
          <td align="left" valign="top"><p>Local path to a single XML metadata file.</p></td>
          <td align="left" valign="top">
-            <pre lang="bash">python3 odata_validator.py test_metadata/ServiceRoot.xml</pre>
+            <pre lang="bash">% python3 odata_validator.py test_metadata/ServiceRoot.xml</pre>
          </td>
       </tr>
       <tr>
          <td align="left" valign="top"><p>Local path to a directory of XML metadata files.</p></td>
          <td align="left" valign="top">
-            <pre lang="bash">python3 odata_validator.py test_metadata</pre>
+            <pre lang="bash">% python3 odata_validator.py test_metadata</pre>
          </td>
       </tr>
       <tr>
          <td align="left" valign="top"><p>URL of an XML metadata file.</p></td>
          <td align="left" valign="top">
-            <pre lang="bash">python3 odata_validator.py http://redfish.dmtf.org/schemas/v1/ServiceRoot.xml</pre>
+            <pre lang="bash">% python3 odata_validator.py http://redfish.dmtf.org/schemas/v1/ServiceRoot.xml</pre>
          </td>
       </tr>
    </tbody>
