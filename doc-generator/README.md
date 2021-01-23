@@ -101,25 +101,26 @@ The *output mode* defines the type of generated output. The supported output mod
 
 The *output format* defines the format of the generated output. The supported output formats are:
 
-| Output format         | Description                      |
+| Output&nbsp;format    | Description                      |
 | :-------------------- | :------------------------------- |
 | <code>markdown</code> | Markdown file targeted for the DMTF document publication process. |
 | <code>slate</code>    | (default) GitHub-flavored Markdown file targeted for the <a href="https://github.com/slatedocs/slate" title="https://github.com/slatedocs/slate">Slate API doc generator</a>. For Slate, place the <code>index.html.md</code> output in your Slate repository's source directory. |
 | <code>html</code>     | HyperText Markup Language (HTML) file. |
 | <code>csv</code>      | Comma-separated values (CSV) file. |
 
-The doc generator supports several output modes and formats through various command-line options and configuration keys.
-
 Use the following command-line options to generate specific output modes and formats:
 
 <table>
+   <col width="20%">
    <col width="40%">
-   <col width="60%">
+   <col width="20%">
+   <col width="20%">
    <thead>
       <tr>
          <th align="left" valign="top">Command&#8209;line&nbsp;option</th>
          <th align="left" valign="top">Description</th>
-         <th align="left" valign="top">Use for output mode</th>
+         <th align="left" valign="top">Output mode</th>
+         <th align="left" valign="top">Output format</th>
       </tr>
     </thead>
     <tbody>
@@ -127,11 +128,12 @@ Use the following command-line options to generate specific output modes and for
          <td align="left" valign="top"><code>-n</code>,&nbsp;<code>--normative</code></td>
          <td align="left" valign="top">Produces normative, or developer-focused, output.</td>
          <td align="left" valign="top">Standard normative</td>
+         <td/>
       </tr>
       <tr>
          <td align="left" valign="top"><code>--format</code></td>
          <td align="left" valign="top">
-            <p>The output format. Value is:</p>
+            <p>Defines the output format. Value is:</p>
             <ul>
                <li><code>markdown</code> &mdash; Markdown file targeted for the DMTF document publication process.</li>
                <li><code>slate</code> (default) &mdash; GitHub-flavored Markdown file targeted for the <a href="https://github.com/slatedocs/slate" title="https://github.com/slatedocs/slate">Slate API doc generator</a>.</li>
@@ -139,27 +141,32 @@ Use the following command-line options to generate specific output modes and for
                <li><code>csv</code> &mdash; Comma-separated values (CSV) file.</li>
             </ul>
          </td>
+         <td/>
          <td align="left" valign="top">Use to specify the output format.</td>
       </tr>
       <tr>
          <td align="left" valign="top"><code>--profile&nbsp;PROFILE_DOC</code></td>
-         <td align="left" valign="top">Path to a JSON profile document, for profile output.</td>
+         <td align="left" valign="top">Defines path to a JSON profile document, for profile output.</td>
          <td align="left" valign="top">Terse profile<br/>Verbose profile</td>
+         <td/>
       </tr>
       <tr>
          <td align="left" valign="top"><code>-t</code>,&nbsp;<code>--terse</code></td>
-         <td align="left" valign="top">Terse output, which is meaningful only with <code>--profile</code>. By default, profile output is verbose and includes all properties regardless of profile requirements. *Terse* output is intended for use by service developers, including only the subset of properties with profile requirements.</td>
+         <td align="left" valign="top">Generates terse output, which includes a subset of properties with profile requirements. Meaningful only with <code>--profile</code>.</td>
          <td align="left" valign="top">Terse profile</td>
+         <td/>
       </tr>
       <tr>
          <td align="left" valign="top"><code>--subset SUBSET_DOC</code></td>
-         <td align="left" valign="top">Path to a JSON profile document. Generates *Schema subset* output, with the subset defined in the JSON profile document.</td>
+         <td align="left" valign="top">Defines path to a JSON profile document. Generates *Schema subset* output, with the subset defined in the JSON profile document.</td>
          <td align="left" valign="top">Subset</td>
+         <td/>
       </tr>
       <tr>
          <td align="left" valign="top"><code>--property_index</code></td>
          <td align="left" valign="top">Produces <a href="README-property-index-mode.md" title="README-property-index-mode.md"><i>property index</i> output</a>.</td>
          <td align="left" valign="top">Property index</td>
+         <td/>
       </tr>
    </tbody>
 </table>
@@ -295,10 +302,7 @@ Use the following command-line options to generate specific output modes and for
 
 # Configuration
 
-Use the `--config` option to specify the [base configuration file](README-configuration-files.md "README-configuration-files.md"). The base configuration file defines:
-
-* Required and optional parameters that you can also specify on the command line. 
-* Some required parameters, such as URI mappings, that you cannot specify on the command line.
+Use the `--config` option to specify the [base configuration file](README-configuration-files.md "README-configuration-files.md"). The base configuration file defines configuration keys that configure the generated output. Some configuration information, such as URI mappings,  cannot be specified on the command line.
 
 Several flavors of configuration files are available. See [Redfish doc generator: Configuration and supplementary files](README-configuration-files.md).
 
@@ -316,7 +320,6 @@ Depending on the output mode, the configuration keys in the base configuration f
       <tr>
          <th align="left" valign="top">Output mode</th>
          <th align="left" valign="top">Format</th>
-         <th align="left" valign="top">Implementation</th>
          <th align="left" valign="top">Sample command usage</th>
       </tr>
    </thead>
@@ -324,40 +327,33 @@ Depending on the output mode, the configuration keys in the base configuration f
       <tr>
          <td align="left" valign="top">CSV</td>
          <td align="left" valign="top">CSV</td>
-         <td align="left" valign="top"><b>Command&#8209;line&nbsp;options:</b> <code>--format csv</code><br /><b>Configuration&nbsp;keys:</b> <code>"format": "csv"</code></td>
          <td align="left" valign="top"><a href="README-configuration-files.md#csv">CSV</a></td>
       </tr>
       <tr>
          <td align="left" valign="top">Terse profile</td>
          <td align="left" valign="top">Markdown</td>
-         <td align="left" valign="top"><b>Command&#8209;line&nbsp;options:</b> <code>--format markdown</code><br /><code>--profile PROFILE_DOC</code><br /><code>-t</code>, <code>--terse</code><br /><b>Configuration&nbsp;keys:</b> <code>"format": "markdown"</code><br />
-            <code>"profile_terse": true</code>
-         </td>
          <td align="left" valign="top"><a href="README-configuration-files.md#terse-profile-index-in-markdown">Terse profile index in Markdown</a></td>
       </tr>
       <tr>
          <td align="left" valign="top">Property index</td>
          <td align="left" valign="top">HTML</td>
-         <td align="left" valign="top"><b>Command&#8209;line&nbsp;options:</b> <code>--format csv</code><br /><code>"format": "csv"</code></td>
          <td align="left" valign="top"><a href="README-configuration-files.md#property-index-html">Property index HTML</a></td>
       </tr>
       <tr>
          <td align="left" valign="top">Standard</td>
          <td align="left" valign="top">HTML</td>
-         <td align="left" valign="top"><b>Command&#8209;line&nbsp;options:</b> <code>--format csv</code><br /><code>"format": "csv"</code></td>
          <td align="left" valign="top"><a href="README-configuration-files.md#standard-html">Standard HTML</a></td>
       </tr>
       <tr>
-         <td align="left" valign="top">Standard with normative descriptions</td>
+         <td align="left" valign="top">Standard normative</td>
          <td align="left" valign="top">HTML</td>
-         <td align="left" valign="top"><b>Command&#8209;line&nbsp;options:</b> <code>--format csv</code><br /><code>"format": "csv"</code></td>
          <td align="left" valign="top"><a href="README-configuration-files.md#standard-html-with-normative-descriptions">Standard with normative descriptions HTML</a></td>
       </tr>
       <tr>
          <td align="left" valign="top">Subset</td>
          <td align="left" valign="top">HTML</td>
-         <td align="left" valign="top"><b>Command&#8209;line&nbsp;options:</b> <code>--format csv</code><br /><code>"format": "csv"</code></td>
          <td align="left" valign="top"><a href="README-configuration-files.md#subset-html">Subset HTML</a></td>
+      </tr>
    </tbody>
 </table>
 
