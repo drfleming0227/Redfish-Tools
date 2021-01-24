@@ -6,6 +6,8 @@
 
 Copyright 2016-2021 Distributed Management Task Force, Inc. All rights reserved.
 
+The **OData CSDL validator** &mdash; [`odata_validator.py`](odata_validator.py "odata_validator.py") &mdash; is a Python tool that parses OData-formatted metadata to validate that it conforms to [OData V4.0](https://www.odata.org/documentation/ "https://www.odata.org/documentation/").
+
 ## Contents
 
 * [Installation](#installation)
@@ -13,13 +15,15 @@ Copyright 2016-2021 Distributed Management Task Force, Inc. All rights reserved.
 * [Examples](#examples)
 * [Processing](#processing)
 
-## About
-
-The **OData CSDL validator** &mdash; [`odata_validator.py`](odata_validator.py "odata_validator.py") &mdash; is a Python tool that parses OData-formatted metadata to validate that it conforms to [OData V4.0](https://www.odata.org/documentation/ "https://www.odata.org/documentation/").
-
 ## Installation
 
-To install the OData CSDL validator, see [Installation](../README.md#installation "../README.md#installation").
+1. Clone the `Redfish-Tools` repository:
+
+   ```bash
+   % git clone git@github.com:DMTF/Redfish-Tools.git
+   % git remote add upstream git@github.com:DMTF/Redfish-Tools.git
+   ```
+1. [Download and install Python](https://www.python.org/downloads/ "https://www.python.org/downloads/") on the machine from which you will run this tool.
 
 ## Usage
 
