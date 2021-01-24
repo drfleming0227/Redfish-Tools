@@ -28,7 +28,7 @@ For information about OpenAPI, see [https://swagger.io/specification/](https://s
    % git clone git@github.com:DMTF/Redfish-Tools.git
    % git remote add upstream git@github.com:DMTF/Redfish-Tools.git
    ```
-1. [Download and install Python](https://www.python.org/downloads/ "https://www.python.org/downloads/") on the machine from which you will run the tools.
+1. [Download and install Python](https://www.python.org/downloads/ "https://www.python.org/downloads/") on the machine from which you will run this tool.
 1. Install YAML for Python:
     ```bash
     % pip install pyyaml
@@ -83,7 +83,7 @@ The configuration file is a JSON file that contains the following keys at the ro
 | Key          | Required | Default | Description                                |
 | :----------- | :------- | :------ | :----------------------------------------- |
 | `info`       | Required | None.   | Object for the OpenAPI service document. |
-| `OutputFile` | Required | None.   | Name of the output file for the OpenAPI service document. |
+| `OutputFile` | Optional | `openapi.yaml` | Output file for the constructed OpenAPI service document. |
 | `TaskRef`    | Required | None.   | Pointer to the JSON Schema definition of `Task`. |
 | `MessageRef` | Required | None.   | Pointer to the JSON Schema definition of `Message`. |
 | `DoNotWrite` | Required | None.   | List of the output files to exclude when writing the YAML files. |
