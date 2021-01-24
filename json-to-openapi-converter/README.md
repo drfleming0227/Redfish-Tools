@@ -11,7 +11,6 @@ Copyright 2018-2021 DMTF. All rights reserved.
 * [About](#about)
 * [Installation](#installation)
 * [Usage](#usage)
-* [Example](#example)
 * [Configuration](#configuration)
 * [Processing](#processing)
 
@@ -39,17 +38,6 @@ For information about OpenAPI, see [https://swagger.io/specification/](https://s
 ## Usage
 
 ```
-% python3 json-to-yaml.py --input INPUT --output OUTPUT --config CONFIG --base BASE
-```
-
-where
-
-* `--input <INPUT>`. Required. The folder that contains the JSON files to convert.
-* `--output <OUTPUT>`. Required. The folder in which to write the converted YAML files.
-* `--config <CONFIG>`. Required. The JSON file that configures the output. See [Configuration](#configuration).
-* `--base <BASE>`. Optional. The base OpenAPI service document that you want to extend.
-
-```
 usage: json-to-yaml.py [-h] --input INPUT --output OUTPUT --config CONFIG
                        [--base BASE] [--overwrite OVERWRITE]
 
@@ -74,12 +62,19 @@ optional arguments:
                         if they already exist (default is True)
 ```
 
-## Example
+For example:
 
 ```bash
 % cd Redfish-Tools/json-to-openapi-converter
 % python3 json-to-yaml.py --input ../../Redfish/json-schema --output ../../Redfish/openapi --config dmtf-config.json
 ```
+
+where
+
+* `--input <INPUT>`. Required. The folder that contains the JSON files to convert.
+* `--output <OUTPUT>`. Required. The folder in which to write the converted YAML files.
+* `--config <CONFIG>`. Required. The JSON file that configures the output. See [Configuration](#configuration).
+* `--base <BASE>`. Optional. The base OpenAPI service document that you want to extend.
 
 ## Configuration
 
