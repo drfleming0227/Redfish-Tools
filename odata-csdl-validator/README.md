@@ -64,15 +64,15 @@ The `odata_validator.py` tool takes a single `MetaData` parameter in one of the 
 
 ## Examples
 
-Single XML metadata file:
+Run the OData CSDL validator against a single XML metadata file:
 
 <pre lang="bash">% python3 odata_validator.py test_metadata/ServiceRoot.xml</pre>
 
-Local path to a directory of XML metadata files:
+Run the OData CSDL validator against the local path to a directory of XML metadata files:
          
 <pre lang="bash">% python3 odata_validator.py test_metadata</pre>
 
-URL or an XML metadata file:
+Run the OData CSDL validator against the URL of an XML metadata file:
          
 <pre lang="bash">% python3 odata_validator.py http://redfish.dmtf.org/schemas/v1/ServiceRoot.xml</pre>
 
