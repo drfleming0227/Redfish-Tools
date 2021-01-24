@@ -6,7 +6,9 @@
 
 Copyright 2018-2021 DMTF. All rights reserved.
 
-The JSON Schema-to-OpenAPI converter &mdash; [`json-to-yaml.py`](json-to-yaml.py) &mdash; is a Python tool that converts specified Redfish JSON Schema files to Redfish OpenAPI files. For information about OpenAPI, see [https://swagger.io/specification/](https://swagger.io/specification/ "https://swagger.io/specification/").
+The **JSON Schema-to-OpenAPI converter** &mdash; [`json-to-yaml.py`](json-to-yaml.py) &mdash; is a Python tool that converts specified Redfish JSON Schema files to Redfish OpenAPI files.
+
+For information about OpenAPI, see [https://swagger.io/specification/](https://swagger.io/specification/ "https://swagger.io/specification/").
 
 ## Contents
 
@@ -66,14 +68,14 @@ Sample configuration file: [`dmtf-config.json`](dmtf-config.json)
 
 The configuration file is a JSON file that contains the following keys at the root of the object:
 
-| Key          | Description                                |
-| :----------- | :----------------------------------------- |
-| `info`       | Object for the OpenAPI service document. Required. No default. |
-| `OutputFile` | Name of the output file for the OpenAPI service document. |
-| `TaskRef`    | Pointer to the JSON Schema definition of `Task`. |
-| `MessageRef` | Pointer to the JSON Schema definition of `Message`. |
-| `DoNotWrite` | List of the output files to exclude when writing the YAML files. |
-| `Extensions` | Structure containing additional URIs to apply to a resource type if provided in the base OpenAPI service document. |
+| Key          | Required | Default | Description                                |
+| :----------- | :------- | :------ | :----------------------------------------- |
+| `info`       | Required | None.   | Object for the OpenAPI service document. |
+| `OutputFile` | Required | None.   | Name of the output file for the OpenAPI service document. |
+| `TaskRef`    | Required | None.   | Pointer to the JSON Schema definition of `Task`. |
+| `MessageRef` | Required | None.   | Pointer to the JSON Schema definition of `Message`. |
+| `DoNotWrite` | Required | None.   | List of the output files to exclude when writing the YAML files. |
+| `Extensions` | Required | None.   | Structure containing additional URIs to apply to a resource type if provided in the base OpenAPI service document. |
 
 ## Processing
 
@@ -81,9 +83,9 @@ The tool processes all files in the folder specified by the *input* argument.  I
 
 If provided, the tool loads the referenced base OpenAPI Service Document and caches the provided definitions.  If any URI extensions are provided in the configuration file, it also maps the new URIs as needed.
 
-The tool iterates over all JSON Schema files.  During each iteration, it performs the following steps:
+The tool iterates over the JSON Schema files. During each iteration, it completes these steps:
 
-1. Scan the JSON file for the URI and HTTP method information and cache them
+1. Scans the JSON file for the URI and HTTP method information and cache them
 1. Scan the JSON file for action definitions and cache them
 1. Perform a translation of the JSON data to create the corresponding OpenAPI YAML file.  This is largely a one to one conversion process over all properties and objects found in the JSON Schema file.
     * longDescription becomes x-longDescription
