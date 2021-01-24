@@ -85,20 +85,23 @@ If provided, the tool loads the referenced base OpenAPI Service Document and cac
 
 The tool iterates over the JSON Schema files. During each iteration, it completes these steps:
 
-1. Scans the JSON file for the URI and HTTP method information and cache them
-1. Scan the JSON file for action definitions and cache them
-1. Perform a translation of the JSON data to create the corresponding OpenAPI YAML file.  This is largely a one to one conversion process over all properties and objects found in the JSON Schema file.
-    * longDescription becomes x-longDescription
-    * enumDescriptions becomes x-enumDescriptions
-    * enumLongDescriptions becomes x-enumLongDescriptions
-    * enumDeprecated becomes x-enumDeprecated
-    * units becomes x-units
-    * requiredOnCreate becomes x-requiredOnCreate
-    * parameters becomes x-parameters
-    * readonly becomes readOnly
-    * deprecated becomes x-deprecated, and also adds "deprecated: true"
-    * patternProperties becomes x-patternProperties, and the nested type object is removed
-    * "nullable: true" is added to properties that contain an anyOf statement showing null, and the anyOf statement is removed
-    * "definitions" becomes "components/schemas"
+1. Scans the JSON file for and caches the URI and HTTP method information.
+1. Scans the JSON file for and caches action definitions.
+1. Translates JSON data to create the corresponding OpenAPI YAML file. This is largely a one-to-one conversion process over all properties and objects found in the JSON Schema file.
+    
+    | JSON data              | OpenAPI YAML data                         |
+    | :--------------------- | :---------------------------------------- |
+    | `longDescription`      | `x-longDescription`                       |
+    | `enumDescriptions`     | `x-enumDescriptions`                      |
+    | `enumLongDescriptions` | `x-enumLongDescriptions`                  |
+    | `enumDeprecated`       | `x-enumDeprecated`                        |
+    | `units`                | `x-units`                                 |
+    | `requiredOnCreate`     | `x-requiredOnCreate`                      |
+    | `parameters`           | `x-parameters`                            |
+    | `readonly`             | `readOnly`                                |
+    | `deprecated`           | `x-deprecated`, and also adds `"deprecated: true"` |
+    | `patternProperties`    | `x-patternProperties`, and removes the nested type object. |
+    | Properties that contain an `anyOf` statement showing `null` | Adds `"nullable: true"` to those properties and removes the `anyOf` statement. |
+    | `"definitions"`        | `"components/schemas"`                    |
 
 After each JSON file has been processed and converted to YAML, the OpenAPI service document is then constructed.  This is done by processing the cached URI, HTTP, and action information found in the converted JSON files.  For each URI, it creates the path entry with its HTTP methods, request body, and responses.
