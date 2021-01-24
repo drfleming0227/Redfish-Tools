@@ -66,7 +66,7 @@ For example:
 % python3 json-to-yaml.py --input ../../Redfish/json-schema --output ../../Redfish/openapi --config dmtf-config.json
 ```
 
-In this example, the tool converts the JSON Schema files in the `Redfish/json-schema` input directory into YAML files that are saved to the `/Redfish/openapi` output directory. The tools reads the configuration keys in the `dmtf-config.json` file to configure the output, including the generated OpenAPI service document.
+In this example, the JSON Schema-to-OpenAPI converter processes the JSON Schema files in the `Redfish/json-schema` input directory to convert them into YAML files, which is saves to the `/Redfish/openapi` output directory. The JSON Schema-to-OpenAPI converter reads the configuration keys in the `dmtf-config.json` configuration file to configure the output, including the OpenAPI service document that it generates.
 
 ## Configuration
 
@@ -74,20 +74,20 @@ Sample configuration file: [`dmtf-config.json`](dmtf-config.json)
 
 The configuration file is a JSON file that contains the following keys at the root of the object:
 
-| Key          | Description                                |
-| :----------- | :----------------------------------------- |
-| `info`       | Required. No default. Object for the OpenAPI service document. |
-| `OutputFile` | Optional. Output file for the constructed OpenAPI service document. Default is `openapi.yaml` in the directory from where you run the tool. |
-| `TaskRef`    | Pointer to the JSON Schema definition of `Task`. |
-| `MessageRef` | Pointer to the JSON Schema definition of `Message`. |
-| `DoNotWrite` | List of the output files to exclude when writing the YAML files. |
-| `Extensions` | Structure containing additional URIs to apply to a resource type if provided in the base OpenAPI service document. |
+| Key          | Description                                | Default value |
+| :----------- | :----------------------------------------- | :------------ |
+| `info`       | Required. Object for the OpenAPI service document. | None |
+| `OutputFile` | Optional. Output file for the constructed OpenAPI service document. | `openapi.yaml` in the directory from where you run the tool |
+| `TaskRef`    | Pointer to the JSON Schema definition of `Task`. | |
+| `MessageRef` | Pointer to the JSON Schema definition of `Message`. | |
+| `DoNotWrite` | List of the output files to exclude when writing the YAML files. | |
+| `Extensions` | Structure of additional URIs to apply to a resource type if provided in the base OpenAPI service document. | |
 
 ## Processing
 
-The JSON Schema-to-OpenAPI converter processes and converts all JSON Schema files in the `--input` folder to OpenAPI YAML files, which it saves to the `--output` folder.  It also produces the OpenAPI service document to describe the URIs of the Redfish Service.
+The JSON Schema-to-OpenAPI converter processes and converts all JSON Schema files in the input folder to OpenAPI YAML files, which it saves to the output folder.  It also produces the OpenAPI service document to describe the URIs of the Redfish service.
 
-If you include the `--base` argument, the tool begins with the definitions in the specified OpenAPI service document. The tool loads the base OpenAPI service document and caches the provided definitions.  If the configuration file contains any URI extensions, the tool maps the new URIs as needed.
+If you include the `--base` argument, the JSON Schema-to-OpenAPI converter begins with the definitions in the specified OpenAPI service document. The JSON Schema-to-OpenAPI converter loads the base OpenAPI service document and caches the provided definitions.  If the configuration file contains any URI extensions, the JSON Schema-to-OpenAPI converter maps the new URIs, as needed.
 
 The tool iterates over the JSON Schema files. During each iteration, it completes these steps:
 
@@ -95,19 +95,32 @@ The tool iterates over the JSON Schema files. During each iteration, it complete
 1. Scans the JSON file for and caches action definitions.
 1. Translates JSON data to create the corresponding OpenAPI YAML file. This is largely a one-to-one conversion process over all properties and objects found in the JSON Schema file.
     
-    | JSON data              | OpenAPI YAML data                         |
-    | :--------------------- | :---------------------------------------- |
-    | `longDescription`      | `x-longDescription`                       |
-    | `enumDescriptions`     | `x-enumDescriptions`                      |
-    | `enumLongDescriptions` | `x-enumLongDescriptions`                  |
-    | `enumDeprecated`       | `x-enumDeprecated`                        |
-    | `units`                | `x-units`                                 |
-    | `requiredOnCreate`     | `x-requiredOnCreate`                      |
-    | `parameters`           | `x-parameters`                            |
-    | `readonly`             | `readOnly`                                |
-    | `deprecated`           | `x-deprecated`, and also adds `"deprecated: true"` |
-    | `patternProperties`    | `x-patternProperties`, and removes the nested type object. |
+    | JSON data               | OpenAPI YAML data                         |
+    | :---------------------- | :---------------------------------------- |
+    | `longDescription`       | `x-longDescription` |
+    | `enumDescriptions`      | `x-enumLongDescriptions` |
+    | `enumDeprecated`        | `x-enumDeprecated` |
+    | `enumVersionDeprecated` | `x-enumVersionDeprecated` |
+    | `enumVersionAdded`      | `x-enumVersionAdded` |
+    | `units`                 | `x-units` |
+    | `requiredOnCreate`      | `x-requiredOnCreate` |
+    | `owningEntity`          | `x-owningEntity` |
+    | `autoExpand`            | `x-autoExpand` |
+    | `release`               | `x-release` |
+    | `versionDeprecated`     | `x-versionDeprecated` |
+    | `versionAdded`          | `x-versionAdded` |
+    | `filter`                | `x-filter` |            
+    | `excerpt`               | `x-excerpt` |
+    | `excerptCopy`           | `x-excerptCopy` |
+    | `excerptCopyOnly`       | `x-excerptCopyOnly` |
+    | `translation`           | `x-translation` |
+    | `enumTranslations`      | `x-enumTranslations` |
+    | `language`              | `x-language` |
+    | `"insertable"`, `"updatable"`, `"deletable"`, `"uris"`, `"parameters"`, `"requiredParameter"`, `"actionResponse"` | Removes these terms from the file. |
+    | `readonly`              | `readOnly`                                |
+    | `deprecated`            | `x-deprecated`, and also adds `"deprecated: true"` |
+    | `patternProperties`     | `x-patternProperties`, and removes the nested type object. |
     | Properties that contain an `anyOf` statement showing `null` | Adds `"nullable: true"` to those properties and removes the `anyOf` statement. |
-    | `"definitions"`        | `"components/schemas"`                    |
+    | `"definitions"`         | `"components/schemas"`                    |
 
 1. After the tool converts the JSON Schema files to YAML files, it constructs the OpenAPI service document.  To accomplish this, the tool processes the cached URI, HTTP, and action information in the converted JSON Schema files. For each URI, the tool creates the path entry with its HTTP methods, request body, and responses.
