@@ -62,9 +62,7 @@ Run the OData CSDL validator against the URL of an XML metadata file:
 
 ## Processing
 
-The OData CSDL validator parses and validates the specified files and all files that those files reference.
-
-If it finds an error, it prints the path to the metadata file that contains the error with a simple explanation of the error.
+The OData CSDL validator parses and validates the specified file or files and all referenced files. If it finds an error, it prints the path to the metadata file that contains the error with a simple explanation of the error.
 
 Example:
 
