@@ -10,6 +10,7 @@ The **OData CSDL validator** &mdash; [`odata_validator.py`](odata_validator.py "
 
 * [Installation](#installation)
 * [Usage](#usage)
+* [Examples](#examples)
 * [Processing](#processing)
 
 ## Installation
@@ -33,34 +34,11 @@ optional arguments:
 
 The `odata_validator.py` tool takes a single `MetaData` parameter in one of the following formats:
 
-<table>
-   <thead>
-      <tr>
-         <th align="left" valign="top">Format</th>
-         <th align="left" valign="top">Example</th>
-      </tr>
-   </thead>
-   <tbody>
-      <tr>
-         <td align="left" valign="top"><p>Local path to a single XML metadata file.</p></td>
-         <td align="left" valign="top">
-            <code>test_metadata/ServiceRoot.xml</code>
-         </td>
-      </tr>
-      <tr>
-         <td align="left" valign="top"><p>Local path to a directory of XML metadata files.</p></td>
-         <td align="left" valign="top">
-            <code>test_metadata</code>
-         </td>
-      </tr>
-      <tr>
-         <td align="left" valign="top"><p>URL of an XML metadata file.</p></td>
-         <td align="left" valign="top">
-            <code>http://redfish.dmtf.org/schemas/v1/ServiceRoot.xml</code>
-         </td>
-      </tr>
-   </tbody>
-</table>
+| Format                                           | Example                                                         |
+| :----------------------------------------------- | :-------------------------------------------------------------- |
+| Local path to a single XML metadata file.        | <code>test_metadata/ServiceRoot.xml</code>                      |
+| Local path to a directory of XML metadata files. | <code>test_metadata</code>                                      |
+| URL of an XML metadata file.                     | <code>http://redfish.dmtf.org/schemas/v1/ServiceRoot.xml</code> |
 
 ## Examples
 
@@ -84,7 +62,7 @@ Run the OData CSDL validator against the URL of an XML metadata file:
 
 ## Processing
 
-The OData CSDL validator parses and validates the specified file or files and all files that those files reference.
+The OData CSDL validator parses and validates the specified files and all files that those files reference.
 
 If it finds an error, it prints the path to the metadata file that contains the error with a simple explanation of the error.
 
