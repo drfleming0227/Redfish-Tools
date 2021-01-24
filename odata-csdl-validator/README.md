@@ -44,19 +44,19 @@ The `odata_validator.py` tool takes a single `MetaData` parameter in one of the 
       <tr>
          <td align="left" valign="top"><p>Local path to a single XML metadata file.</p></td>
          <td align="left" valign="top">
-            <pre lang="bash">test_metadata/ServiceRoot.xml</pre>
+            <code>test_metadata/ServiceRoot.xml</code>
          </td>
       </tr>
       <tr>
          <td align="left" valign="top"><p>Local path to a directory of XML metadata files.</p></td>
          <td align="left" valign="top">
-            <pre lang="bash">test_metadata</pre>
+            <code>test_metadata</code>
          </td>
       </tr>
       <tr>
          <td align="left" valign="top"><p>URL of an XML metadata file.</p></td>
          <td align="left" valign="top">
-            <pre lang="bash">http://redfish.dmtf.org/schemas/v1/ServiceRoot.xml</pre>
+            <code>http://redfish.dmtf.org/schemas/v1/ServiceRoot.xml</code>
          </td>
       </tr>
    </tbody>
@@ -66,21 +66,27 @@ The `odata_validator.py` tool takes a single `MetaData` parameter in one of the 
 
 Run the OData CSDL validator against a single XML metadata file:
 
-<pre lang="bash">% python3 odata_validator.py test_metadata/ServiceRoot.xml</pre>
+```bash
+% python3 odata_validator.py test_metadata/ServiceRoot.xml
+```
 
 Run the OData CSDL validator against the local path to a directory of XML metadata files:
          
-<pre lang="bash">% python3 odata_validator.py test_metadata</pre>
+```bash
+% python3 odata_validator.py test_metadata
+```
 
 Run the OData CSDL validator against the URL of an XML metadata file:
          
-<pre lang="bash">% python3 odata_validator.py http://redfish.dmtf.org/schemas/v1/ServiceRoot.xml</pre>
+```bash
+% python3 odata_validator.py http://redfish.dmtf.org/schemas/v1/ServiceRoot.xml
+```
 
 ## Processing
 
-The `odata_validator.py` tool parses and validates the files and all referenced files.
+The OData CSDL validator parses and validates the specified file or files and all files that those files reference.
 
-If the tool finds an error, it prints the path to the metadata file where it found the error and a simple explanation of the error.
+If it finds an error, it prints the path to the metadata file that contains the error with a simple explanation of the error.
 
 Example:
 
