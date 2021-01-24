@@ -52,15 +52,15 @@ optional arguments:
 ## Example
 
 ```bash
-% python3 json-to-yaml.py INPUT --output OUTPUT --config CONFIG --base BASE
+% python3 json-to-yaml.py --input INPUT --output OUTPUT --config CONFIG --base BASE
 ```
 
 where
 
-* `INPUT`. The folder that contains the JSON files to convert.
-* `OUTPUT`. The folder in which to write the converted YAML files.
-* `CONFIG`. The JSON file that configures the output. See [Configuration](#configuration).
-* `BASE`. The base OpenAPI service document that you want to extend.
+* `--input INPUT`. The folder that contains the JSON files to convert.
+* `--output OUTPUT`. The folder in which to write the converted YAML files.
+* `--config CONFIG`. The JSON file that configures the output. See [Configuration](#configuration).
+* `--base BASE`. The base OpenAPI service document that you want to extend.
 
 ## Configuration
 
@@ -79,9 +79,9 @@ The configuration file is a JSON file that contains the following keys at the ro
 
 ## Processing
 
-The tool processes all files in the folder specified by the *input* argument.  It converts the contents of the files to create OpenAPI YAML files and save them to the folder specified by the *output* argument.  It also produces the OpenAPI Service Document to describe the URIs of the Redfish Service.  If the *base* argument is given, the tool starts from the definitions in the specified OpenAPI service document. 
+The JSON Schema-to-OpenAPI converter processes and converts all JSON Schema files in the `--input` folder to OpenAPI YAML files, which it saves to the `--output` folder.  It also produces the OpenAPI service document to describe the URIs of the Redfish Service.
 
-If provided, the tool loads the referenced base OpenAPI Service Document and caches the provided definitions.  If any URI extensions are provided in the configuration file, it also maps the new URIs as needed.
+If you include the `--base` argument, the tool begins with the definitions in the specified OpenAPI service document. The tool loads the base OpenAPI service document and caches the provided definitions.  If the configuration file contains any URI extensions, the tool maps the new URIs as needed.
 
 The tool iterates over the JSON Schema files. During each iteration, it completes these steps:
 
@@ -104,4 +104,4 @@ The tool iterates over the JSON Schema files. During each iteration, it complete
     | Properties that contain an `anyOf` statement showing `null` | Adds `"nullable: true"` to those properties and removes the `anyOf` statement. |
     | `"definitions"`        | `"components/schemas"`                    |
 
-After each JSON file has been processed and converted to YAML, the OpenAPI service document is then constructed.  This is done by processing the cached URI, HTTP, and action information found in the converted JSON files.  For each URI, it creates the path entry with its HTTP methods, request body, and responses.
+1. After the tool finishes converting the JSON Schema files to YAML files, the tool constructs the OpenAPI service document.  To accomplish this, the tool processes the cached URI, HTTP, and action information in the converted JSON Schema files. For each URI, the tool creates the path entry with its HTTP methods, request body, and responses.
