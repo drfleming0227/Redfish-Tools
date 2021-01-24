@@ -12,8 +12,8 @@ The JSON Schema-to-OpenAPI converter &mdash; [`json-to-yaml.py`](json-to-yaml.py
 
 * [Installation](#installation)
 * [Usage](#usage)
-   * [Options](#options)
-   * [Configuration](#configuration)
+* [Example](#example)
+* [Configuration](#configuration)
 * [Processing](#processing)
 
 ## Installation
@@ -21,12 +21,6 @@ The JSON Schema-to-OpenAPI converter &mdash; [`json-to-yaml.py`](json-to-yaml.py
 To install the JSON Schema-to-OpenAPI convertor, see [Installation](../README.md#installation "../README.md#installation").
 
 ## Usage
-
-Example: `python3 json-to-yaml.py --input <JSON-Dir> --output <YAML-Dir> --config <Config-File> --base <Base-OpenAPI-Doc>`
-
-The tool processes all files in the folder specified by the *input* argument.  It converts the contents of the files to create OpenAPI YAML files and save them to the folder specified by the *output* argument.  It also produces the OpenAPI Service Document to describe the URIs of the Redfish Service.  If the *base* argument is given, the tool starts from the definitions in the specified OpenAPI service document.  [Processing](#processing) describes this process in more detail.
-
-### Options
 
 ```
 usage: json-to-yaml.py [-h] --input INPUT --output OUTPUT --config CONFIG
@@ -53,7 +47,13 @@ optional arguments:
                         if they already exist (default is True)
 ```
 
-### Configuration
+## Example
+
+```bash
+% python3 json-to-yaml.py INPUT --output OUTPUT --config CONFIG --base BASE
+```
+
+## Configuration
 
 The configuration file is a JSON file that contains five properties at the root of the object:
 
@@ -65,39 +65,15 @@ The configuration file is a JSON file that contains five properties at the root 
 * DoNotWrite: A list of the output files to filter out when writing the YAML files
 * Extensions: A structure containing additional URIs to apply to a given resource type if provided in the base OpenAPI Service Document
 
-Sample file:
-
-```json
-{
-   "info": {
-      "title": "Redfish",
-      "x-copyright": "Copyright 2020-2021 DMTF. For the full DMTF copyright policy, see http://www.dmtf.org/about/policies/copyright",
-      "description": "This contains the definition of a Redfish service.",
-      "version": "2020.4",
-      "contact": {
-         "name": "DMTF",
-         "url": "https://www.dmtf.org/standards/redfish"
-      }
-   },
-   "OutputFile": "openapi.yaml",
-   "TaskRef": "http://redfish.dmtf.org/schemas/v1/Task.v1_5_1.yaml#/components/schemas/Task_v1_5_1_Task",
-   "MessageRef": "http://redfish.dmtf.org/schemas/v1/Message.v1_1_2.yaml#/components/schemas/Message_v1_1_2_Message",
-   "ODataSchema": "http://redfish.dmtf.org/schemas/v1/odata-v4.yaml",
-   "DoNotWrite": ["Volume.",
-      "VolumeCollection.",
-      "redfish-error.",
-      "redfish-payload-annotations.",
-      "redfish-schema.",
-      "redfish-schema-"
-   ]
-}
-```
+Sample configuration file: [`dmtf-config.json`](dmtf-config.json)
 
 ## Processing
 
+The tool processes all files in the folder specified by the *input* argument.  It converts the contents of the files to create OpenAPI YAML files and save them to the folder specified by the *output* argument.  It also produces the OpenAPI Service Document to describe the URIs of the Redfish Service.  If the *base* argument is given, the tool starts from the definitions in the specified OpenAPI service document. 
+
 If provided, the tool loads the referenced base OpenAPI Service Document and caches the provided definitions.  If any URI extensions are provided in the configuration file, it also maps the new URIs as needed.
 
-The tool then interates over all JSON Schema files.  During each iteration, it performs the following steps:
+The tool iterates over all JSON Schema files.  During each iteration, it performs the following steps:
 
 1. Scan the JSON file for the URI and HTTP method information and cache them
 1. Scan the JSON file for action definitions and cache them
@@ -110,7 +86,7 @@ The tool then interates over all JSON Schema files.  During each iteration, it p
     * requiredOnCreate becomes x-requiredOnCreate
     * parameters becomes x-parameters
     * readonly becomes readOnly
-    * deprecated becomes x-depcrecated, and also adds "deprecated: true"
+    * deprecated becomes x-deprecated, and also adds "deprecated: true"
     * patternProperties becomes x-patternProperties, and the nested type object is removed
     * "nullable: true" is added to properties that contain an anyOf statement showing null, and the anyOf statement is removed
     * "definitions" becomes "components/schemas"
