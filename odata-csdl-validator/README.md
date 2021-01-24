@@ -34,11 +34,11 @@ optional arguments:
 
 The `odata_validator.py` tool takes a single `MetaData` parameter in one of the following formats:
 
-| Format                                           | Example                                                         |
-| :----------------------------------------------- | :-------------------------------------------------------------- |
-| Local path to a single XML metadata file.        | <code lang="bash">test_metadata/ServiceRoot.xml</code>                      |
-| Local path to a directory of XML metadata files. | <code lang="bash">test_metadata</code>                                      |
-| URL of an XML metadata file.                     | <code lang="bash">http://redfish.dmtf.org/schemas/v1/ServiceRoot.xml</code> |
+| Format                                           | Example                                              |
+| :----------------------------------------------- | :--------------------------------------------------- |
+| Local path to a single XML metadata file.        | `test_metadata/ServiceRoot.xml`                      |
+| Local path to a directory of XML metadata files. | `test_metadata`                                      |
+| URL of an XML metadata file.                     | `http://redfish.dmtf.org/schemas/v1/ServiceRoot.xml` |
 
 ## Examples
 
