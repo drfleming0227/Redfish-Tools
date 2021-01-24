@@ -20,7 +20,16 @@ For information about OpenAPI, see [https://swagger.io/specification/](https://s
 
 ## Installation
 
-To install the JSON Schema-to-OpenAPI convertor, see [Installation](../README.md#installation "../README.md#installation").
+1. Clone the `Redfish-Tools` repository:
+   ```bash
+   % git clone git@github.com:DMTF/Redfish-Tools.git
+   % git remote add upstream git@github.com:DMTF/Redfish-Tools.git
+   ```
+1. [Download and install Python](https://www.python.org/downloads/ "https://www.python.org/downloads/") on the machine from which you will run the tools.
+1. Install YAML for Python:
+    ```bash
+    % pip install pyyaml
+    ```
 
 ## Usage
 
@@ -52,19 +61,15 @@ optional arguments:
 ## Example
 
 ```bash
-% python3 json-to-yaml.py --input INPUT --output OUTPUT --config CONFIG --base BASE
+% python3 json-to-yaml.py --input ../../Redfish/json-schema --output ../../Redfish/yaml --config dmtf-config.json
 ```
 
 where
 
-* `--input INPUT`. Required. The folder that contains the JSON files to convert.
-* `--output OUTPUT`. Required. The folder in which to write the converted YAML files.
-* `--config CONFIG`. Required. The JSON file that configures the output. See [Configuration](#configuration).
-* `--base BASE`. Optional. The base OpenAPI service document that you want to extend.
-
-```bash
-% python3 json-to-yaml.py --input ../../Redfish/json-schema --output ../../Redfish/yaml --config dmtf-config.json
-```
+* `--input <INPUT>`. Required. The folder that contains the JSON files to convert.
+* `--output <OUTPUT>`. Required. The folder in which to write the converted YAML files.
+* `--config <CONFIG>`. Required. The JSON file that configures the output. See [Configuration](#configuration).
+* `--base <BASE>`. Optional. The base OpenAPI service document that you want to extend.
 
 ## Configuration
 
