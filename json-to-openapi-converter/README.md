@@ -116,11 +116,11 @@ The tool iterates over the JSON Schema files. During each iteration, it complete
     | `translation`           | `x-translation` |
     | `enumTranslations`      | `x-enumTranslations` |
     | `language`              | `x-language` |
-    | `"insertable"`, `"updatable"`, `"deletable"`, `"uris"`, `"parameters"`, `"requiredParameter"`, `"actionResponse"` | Removes these terms from the file. |
+    | `insertable`<br/>`updatable`<br/>`deletable`<br/>`uris`<br/>`parameters`<br/>`requiredParameter`<br/>`actionResponse` | Removes these terms from the file. |
     | `readonly`              | `readOnly`                                |
-    | `deprecated`            | `x-deprecated`, and also adds `"deprecated: true"` |
+    | `deprecated`            | `x-deprecated`, and also adds `deprecated: true` |
     | `patternProperties`     | `x-patternProperties`, and removes the nested type object. |
-    | Properties that contain an `anyOf` statement showing `null` | Adds `"nullable: true"` to those properties and removes the `anyOf` statement. |
-    | `"definitions"`         | `"components/schemas"`                    |
+    | Properties that contain an `anyOf` statement showing `null` | Adds `nullable: true` to those properties and removes the `anyOf` statement. |
+    | `definitions`         | `components/schemas`                    |
 
-1. After the tool converts the JSON Schema files to YAML files, it constructs the OpenAPI service document.  To accomplish this, the tool processes the cached URI, HTTP, and action information in the converted JSON Schema files. For each URI, the tool creates the path entry with its HTTP methods, request body, and responses.
+1. After the tool converts the JSON Schema files to YAML files, the tool processes the cached URI, HTTP, and action information in the converted JSON Schema files. to construct the OpenAPI service document.  For each URI, the tool creates the path entry with its HTTP methods, request body, and responses.
