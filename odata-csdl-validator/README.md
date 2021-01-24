@@ -31,7 +31,7 @@ optional arguments:
   -h, --help  show this help message and exit
 ```
 
-The `odata_validator.py` tool takes a single parameter in one of the following formats:
+The `odata_validator.py` tool takes a single `MetaData` parameter in one of the following formats:
 
 <table>
    <thead>
@@ -44,23 +44,37 @@ The `odata_validator.py` tool takes a single parameter in one of the following f
       <tr>
          <td align="left" valign="top"><p>Local path to a single XML metadata file.</p></td>
          <td align="left" valign="top">
-            <pre lang="bash">% python3 odata_validator.py test_metadata/ServiceRoot.xml</pre>
+            <pre lang="bash">test_metadata/ServiceRoot.xml</pre>
          </td>
       </tr>
       <tr>
          <td align="left" valign="top"><p>Local path to a directory of XML metadata files.</p></td>
          <td align="left" valign="top">
-            <pre lang="bash">% python3 odata_validator.py test_metadata</pre>
+            <pre lang="bash">test_metadata</pre>
          </td>
       </tr>
       <tr>
          <td align="left" valign="top"><p>URL of an XML metadata file.</p></td>
          <td align="left" valign="top">
-            <pre lang="bash">% python3 odata_validator.py http://redfish.dmtf.org/schemas/v1/ServiceRoot.xml</pre>
+            <pre lang="bash">http://redfish.dmtf.org/schemas/v1/ServiceRoot.xml</pre>
          </td>
       </tr>
    </tbody>
 </table>
+
+## Examples
+
+Single XML metadata file:
+
+<pre lang="bash">% python3 odata_validator.py test_metadata/ServiceRoot.xml</pre>
+
+Local path to a directory of XML metadata files:
+         
+<pre lang="bash">% python3 odata_validator.py test_metadata</pre>
+
+URL or an XML metadata file:
+         
+<pre lang="bash">% python3 odata_validator.py http://redfish.dmtf.org/schemas/v1/ServiceRoot.xml</pre>
 
 ## Processing
 
