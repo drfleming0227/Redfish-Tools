@@ -57,10 +57,14 @@ optional arguments:
 
 where
 
-* `--input INPUT`. The folder that contains the JSON files to convert.
-* `--output OUTPUT`. The folder in which to write the converted YAML files.
-* `--config CONFIG`. The JSON file that configures the output. See [Configuration](#configuration).
-* `--base BASE`. The base OpenAPI service document that you want to extend.
+* `--input INPUT`. Required. The folder that contains the JSON files to convert.
+* `--output OUTPUT`. Required. The folder in which to write the converted YAML files.
+* `--config CONFIG`. Required. The JSON file that configures the output. See [Configuration](#configuration).
+* `--base BASE`. Optional. The base OpenAPI service document that you want to extend.
+
+```bash
+% python3 json-to-yaml.py --input ../../Redfish/json-schema --output ../../Redfish/yaml --config dmtf-config.json
+```
 
 ## Configuration
 
@@ -104,4 +108,4 @@ The tool iterates over the JSON Schema files. During each iteration, it complete
     | Properties that contain an `anyOf` statement showing `null` | Adds `"nullable: true"` to those properties and removes the `anyOf` statement. |
     | `"definitions"`        | `"components/schemas"`                    |
 
-1. After the tool finishes converting the JSON Schema files to YAML files, the tool constructs the OpenAPI service document.  To accomplish this, the tool processes the cached URI, HTTP, and action information in the converted JSON Schema files. For each URI, the tool creates the path entry with its HTTP methods, request body, and responses.
+1. After the tool converts the JSON Schema files to YAML files, it constructs the OpenAPI service document.  To accomplish this, the tool processes the cached URI, HTTP, and action information in the converted JSON Schema files. For each URI, the tool creates the path entry with its HTTP methods, request body, and responses.
