@@ -6,16 +6,20 @@
 
 Copyright 2018-2021 DMTF. All rights reserved.
 
-The **JSON Schema-to-OpenAPI converter** &mdash; [`json-to-yaml.py`](json-to-yaml.py) &mdash; is a Python tool that converts specified Redfish JSON Schema files to Redfish OpenAPI files.
-
-For information about OpenAPI, see [https://swagger.io/specification/](https://swagger.io/specification/ "https://swagger.io/specification/").
-
 ## Contents
 
+* [About](#about)
 * [Installation](#installation)
 * [Usage](#usage)
+* [Example](#example)
 * [Configuration](#configuration)
 * [Processing](#processing)
+
+## About
+
+The **JSON Schema-to-OpenAPI converter** &mdash; [`json-to-yaml.py`](json-to-yaml.py) &mdash; is a Python tool that converts specified Redfish JSON Schema files to Redfish OpenAPI files.
+
+For information about OpenAPI, see the *OpenAPI Specification* at [https://swagger.io/specification/](https://swagger.io/specification/ "https://swagger.io/specification/").
 
 ## Installation
 
@@ -59,7 +63,7 @@ optional arguments:
                         if they already exist (default is True)
 ```
 
-For example:
+## Example
 
 ```bash
 % cd Redfish-Tools/json-to-openapi-converter
@@ -85,7 +89,7 @@ The configuration file is a JSON file that contains the following keys at the ro
 
 ## Processing
 
-The JSON Schema-to-OpenAPI converter processes and converts all JSON Schema files in the input folder to OpenAPI YAML files, which it saves to the output folder.  It also produces the OpenAPI service document to describe the URIs of the Redfish service.
+The JSON Schema-to-OpenAPI converter processes and converts all JSON Schema files in the input folder to OpenAPI YAML files in the output folder.  It also produces the OpenAPI service document to describe the URIs of the Redfish service.
 
 If you include the `--base` argument, the JSON Schema-to-OpenAPI converter begins with the definitions in the specified OpenAPI service document. The JSON Schema-to-OpenAPI converter loads the base OpenAPI service document and caches the provided definitions.  If the configuration file contains any URI extensions, the JSON Schema-to-OpenAPI converter maps the new URIs, as needed.
 
