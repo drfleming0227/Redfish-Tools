@@ -89,15 +89,22 @@ The configuration file is a JSON file that contains the following keys at the ro
 
 ## Processing
 
+* [Summary](#summary)
+* [Details](#details)
+
+### Summary
+
 The JSON Schema-to-OpenAPI converter processes and converts all JSON Schema files in the input folder to OpenAPI YAML files in the output folder.  It also produces the OpenAPI service document to describe the URIs of the Redfish service.
 
 If you include the `--base` argument, the JSON Schema-to-OpenAPI converter begins with the definitions in the specified OpenAPI service document. The JSON Schema-to-OpenAPI converter loads the base OpenAPI service document and caches the provided definitions.  If the configuration file contains any URI extensions, the JSON Schema-to-OpenAPI converter maps the new URIs, as needed.
+
+### Details
 
 The tool iterates over the JSON Schema files. During each iteration, it completes these steps:
 
 1. Scans the JSON file for and caches the URI and HTTP method information.
 1. Scans the JSON file for and caches action definitions.
-1. Translates JSON data to create the corresponding OpenAPI YAML file. This is largely a one-to-one conversion process over all properties and objects found in the JSON Schema file.
+1. Converts JSON data in the JSON Schema file to OpenAPI YAML data in the YAML file. Largely a one-to-one conversion of all properties and objects found in the JSON Schema file.
     
     | JSON data               | OpenAPI YAML data                         |
     | :---------------------- | :---------------------------------------- |
@@ -127,4 +134,4 @@ The tool iterates over the JSON Schema files. During each iteration, it complete
     | Properties with an `anyOf` statement of `null` | Adds `nullable: true` to those properties and removes the `anyOf` statement. |
     | `definitions`         | `components/schemas` |
 
-1. After the tool converts the JSON Schema files to YAML files, the tool processes the cached URI, HTTP, and action information in the converted JSON Schema files. to construct the OpenAPI service document.  For each URI, the tool creates the path entry with its HTTP methods, request body, and responses.
+1. After the tool converts the JSON Schema files to YAML files, the tool processes the cached URI, HTTP, and action information in the converted JSON Schema files to construct the OpenAPI service document.  For each URI, the tool creates the path entry with its HTTP methods, request body, and responses.
