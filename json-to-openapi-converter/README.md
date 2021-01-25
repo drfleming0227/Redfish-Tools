@@ -70,7 +70,7 @@ optional arguments:
 % python3 json-to-yaml.py --input ../../Redfish/json-schema --output ../../Redfish/openapi --config dmtf-config.json
 ```
 
-In this example, the JSON Schema-to-OpenAPI converter processes the JSON Schema files in the `Redfish/json-schema` input directory to convert them into YAML files, which is saves to the `/Redfish/openapi` output directory. The JSON Schema-to-OpenAPI converter reads the configuration keys in the `dmtf-config.json` configuration file to configure the output, including the OpenAPI service document that it generates.
+In this example, the **JSON Schema-to-OpenAPI converter** converts the JSON Schema files in the `Redfish/json-schema` input directory to YAML files in the `/Redfish/openapi` output directory. The JSON Schema-to-OpenAPI converter reads the configuration keys in the `dmtf-config.json` configuration file to configure the output, including the OpenAPI service document that it generates.
 
 ## Configuration
 
@@ -78,14 +78,14 @@ Sample configuration file: [`dmtf-config.json`](dmtf-config.json)
 
 The configuration file is a JSON file that contains the following keys at the root of the object:
 
-| Key          | Description                                | Default value |
-| :----------- | :----------------------------------------- | :------------ |
-| `info`       | Required. Object for the OpenAPI service document. | None |
-| `OutputFile` | Optional. Output file for the constructed OpenAPI service document. | `openapi.yaml` in the directory from where you run the tool |
-| `TaskRef`    | Pointer to the JSON Schema definition of `Task`. | |
-| `MessageRef` | Pointer to the JSON Schema definition of `Message`. | |
-| `DoNotWrite` | List of the output files to exclude when writing the YAML files. | |
-| `Extensions` | Structure of additional URIs to apply to a resource type if provided in the base OpenAPI service document. | |
+| Key          | Required | Description                        | Default value |
+| :----------- | :------- | :--------------------------------- | :------------ |
+| `info`       | Required | Object for the OpenAPI service document. | None |
+| `OutputFile` | Optional | Output file for the constructed OpenAPI service document. | `openapi.yaml` in the directory from where you run the tool |
+| `TaskRef`    | Optional | Pointer to the JSON Schema definition of `Task`. | |
+| `MessageRef` | Optional | Pointer to the JSON Schema definition of `Message`. | |
+| `DoNotWrite` | Optional | List of the output files to exclude when writing the YAML files. | None |
+| `Extensions` | Optional | Structure of additional URIs to apply to a resource type if provided in the base OpenAPI service document. | |
 
 ## Processing
 
