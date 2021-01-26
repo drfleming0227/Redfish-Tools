@@ -30,10 +30,6 @@ The **Redfish doc generator** &mdash; [`doc_generator.py`](doc_generator.py "doc
    % git remote add upstream git@github.com:DMTF/Redfish-Tools.git
    ```
 1. [Download and install Python](https://www.python.org/downloads/ "https://www.python.org/downloads/") on the machine from which you will run the tools.
-1. (JSON Schema-to-OpenAPI converter only) Install YAML for Python:
-    ```zsh
-    % pip install pyyaml
-    ```
 1. Install the following software, which is required for HTML output:
    * [Install Python‑Markdown](https://python-markdown.github.io/install/ "https://python-markdown.github.io/install/").
    * [Install Pygments](http://pygments.org/ "http://pygments.org/").
