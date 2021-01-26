@@ -18,7 +18,7 @@ Copyright 2016-2021 Distributed Management Task Force, Inc. All rights reserved.
 
 ## About
 
-The **Redfish doc generator** &mdash; [`doc_generator.py`](doc_generator.py "doc_generator.py") &mdash; is a Python tool that generates output in a specified or default [output mode and format](#output-modes-and-output-formats) from JSON Schema files and supplementary content files. The doc generator reads configuration keys from the [base configuration file](#configuration), and if included, the [content supplement configuration file](#configuration) to configure this output.
+The **Redfish doc generator** &mdash; [`doc_generator.py`](doc_generator.py "doc_generator.py") &mdash; is a Python tool that generates output in a specified or default [output mode and format](#output-modes-and-output-formats) from JSON Schema files and supplementary content files. The doc generator reads configuration keys from the [base configuration file](#configuration), and if included, the [content supplement configuration file](README-configuration-files.md#content-supplement-configuration-file) to configure this output.
 
 > **Important:** The doc generator v3 contains [breaking configuration changes](README-doc-generator-v3-changes.md) and updates to the `README` files. For a snapshot of the *version 2* code, see [Doc Generator v2](https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0 "https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0").
 
@@ -250,7 +250,7 @@ Depending on the output mode, the configuration keys in the base configuration f
       <tr>
          <td align="left" valign="top">Subset</td>
          <td align="left" valign="top">HTML</td>
-         <td align="left" valign="top"><a href="README-configuration-files.md#subset-html">Subset HTML</a></td>
+         <td align="left" valign="top"><a href="README-configuration-files.md#subset-configuration-file" title="README-configuration-files.md#subset-configuration-file">Subset HTML</a></td>
       </tr>
    </tbody>
 </table>
