@@ -55,20 +55,22 @@ The `odata_validator.py` tool takes a single `MetaData` parameter in one of the 
 
 Run the OData CSDL validator against a single XML metadata file:
 
-```bash
+```zsh
 % cd Redfish-Tools/odata-csdl-validator
-% python3 odata_validator.py test_metadata/ServiceRoot.xml
+% python3 odata_validator.py ../../Redfish/test_metadata/ServiceRoot.xml
 ```
 
 Run the OData CSDL validator against the local path to a directory of XML metadata files:
          
-```bash
-% python3 odata_validator.py test_metadata
+```zsh
+% cd Redfish-Tools/odata-csdl-validator
+% python3 odata_validator.py ../../Redfish/test_metadata
 ```
 
 Run the OData CSDL validator against the URL of an XML metadata file:
          
 ```zsh
+$ cd Redfish-Tools/odata-csdl-validator
 % python3 odata_validator.py http://redfish.dmtf.org/schemas/v1/ServiceRoot.xml
 ```
 
