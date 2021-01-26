@@ -12,6 +12,7 @@ Copyright 2016-2021 Distributed Management Task Force, Inc. All rights reserved.
 * [Installation](#installation)
 * [Usage](#usage)
 * [Examples](#examples)
+* [Configuration](#configuration)
 * [Processing](#processing)
 
 ## About
@@ -79,6 +80,10 @@ $ cd Redfish-Tools/odata-csdl-validator
 ```
 
 In this example, the **OData CSDL validator** parses and validates that the metadata in the `http://redfish.dmtf.org/schemas/v1/ServiceRoot.xml` input file conforms to OData V4.0.
+
+## Configuration
+
+None.
 
 ## Processing
 
