@@ -6,6 +6,16 @@
 
 Copyright 2017-2021 Distributed Management Task Force, Inc. All rights reserved.
 
+## Contents
+
+* [About](#about)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Configuration](#configuration)
+* [Processing](#processing)
+
+## About
+
 The **CSDL-to-JSON converter** &mdash; [`csdl-to-json.py`](csdl-to-json.py) &mdash; is a Python tool that converts Redfish Common Schema Definition Language (CSDL) files to Redfish JSON Schema files.
 
 > **Note:** The CSDL defines an Extensible Markup Language (XML) representation of the entity data model that an OData service exposes.
@@ -17,7 +27,13 @@ The **CSDL-to-JSON converter** &mdash; [`csdl-to-json.py`](csdl-to-json.py) &mda
 
 ## Installation
 
-To install the CSDL-to-JSON converter, see [Installation](README.md#installation "README.md#installation").
+1. Clone the `Redfish-Tools` repository:
+
+   ```zsh
+   % git clone git@github.com:DMTF/Redfish-Tools.git
+   % git remote add upstream git@github.com:DMTF/Redfish-Tools.git
+   ```
+1. [Download and install Python](https://www.python.org/downloads/ "https://www.python.org/downloads/") on the machine from which you will run the tools.
 
 ## Usage
 
@@ -73,7 +89,7 @@ If you omit any keys, the CSDL-to-JSON converter uses the values in the default 
 ## Processing
 
 * [Assumptions](#assumptions)
-* [Processing details](#processing-details)
+* [Details](#details)
 
 ### Assumptions
 
@@ -92,7 +108,7 @@ The CSDL-to-JSON converter makes these assumptions about the format of the Redfi
     * In the form, `<name>.v<X>_<Y>_<Z>`.
 * References to another CSDL file assume that its JSON Schema file is in the same folder.
 
-### Processing details
+### Details
 
 To process CSDL files, the CSDL-to-JSON converter:
 
