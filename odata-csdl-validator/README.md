@@ -68,7 +68,7 @@ Run the OData CSDL validator against the local path to a directory of XML metada
 
 Run the OData CSDL validator against the URL of an XML metadata file:
          
-```bash
+```zsh
 % python3 odata_validator.py http://redfish.dmtf.org/schemas/v1/ServiceRoot.xml
 ```
 
@@ -80,6 +80,6 @@ If it finds an error, it prints the path to the metadata file that contains the 
 
 Example:
 
-```bash
+```text
 MetaData:http://redfish.dmtf.org/schemas/v1/ServiceRoot.xml->DataServices->Schema:ServiceRoot->EntityType:ServiceRoot->Resource.1.0.0.Resource is not a valid QualifiedName
 ```
