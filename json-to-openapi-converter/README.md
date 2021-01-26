@@ -25,14 +25,14 @@ For information about OpenAPI, see the *OpenAPI Specification* at [https://swagg
 
 1. Clone the `Redfish-Tools` repository:
 
-   ```bash
+   ```zsh
    % git clone git@github.com:DMTF/Redfish-Tools.git
    % git remote add upstream git@github.com:DMTF/Redfish-Tools.git
    ```
 1. [Download and install Python](https://www.python.org/downloads/ "https://www.python.org/downloads/") on the machine from which you will run this tool.
 1. Install YAML for Python:
 
-    ```bash
+    ```zsh
     % pip install pyyaml
     ```
 
@@ -65,7 +65,7 @@ optional arguments:
 
 ## Example
 
-```bash
+```zsh
 % cd Redfish-Tools/json-to-openapi-converter
 % python3 json-to-yaml.py --input ../../Redfish/json-schema --output ../../Redfish/openapi --config dmtf-config.json
 ```

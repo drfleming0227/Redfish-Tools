@@ -4,39 +4,23 @@
 
 # Redfish-Tools
 
+Copyright 2016-2021 DMTF. All rights reserved.
+
+## Contents
+
+* [About](#about)
+* [Installation](#installation)
+* [Tools](#tools)
+
+## About
+
 The Redfish-Tools public repository contains the DMTF Scalable Platforms Management Forum (SPMF) tools.
 
 For Redfish developer information, see DMTF at [https://redfish.dmtf.org/](https://redfish.dmtf.org/ "https://redfish.dmtf.org/").
 
-* [Installation](#installation)
-* [Tools](#tools)
-
 ## Installation
 
-1. (All tools) Clone the `Redfish-Tools` repository:
-   ```bash
-   % git clone git@github.com:DMTF/Redfish-Tools.git
-   % git remote add upstream git@github.com:DMTF/Redfish-Tools.git
-   ```
-1. (All tools) [Download and install Python](https://www.python.org/downloads/ "https://www.python.org/downloads/") on the machine from which you will run the tools.
-1. (JSON Schema-to-OpenAPI converter only) Install YAML for Python:
-    ```bash
-    % pip install pyyaml
-    ```
-1. (Redfish doc generator only) Install the following software, which is required for HTML output:
-   * [Install Python‑Markdown](https://python-markdown.github.io/install/ "https://python-markdown.github.io/install/").
-   * [Install Pygments](http://pygments.org/ "http://pygments.org/").
-   * Install requirements:
-      ```bash
-      % cd doc-generator
-      % pip install -r requirements.txt
-      ```
-1. (Optional) To make changes to the `doc_generator.py` code, install [`pytest`](https://docs.pytest.org/en/latest/getting-started.html "https://docs.pytest.org/en/latest/getting-started.html"):
-
-    ```bash
-    % cd doc-generator
-    % pip install -r dev_requirements.txt
-    ```
+See the `README.md` file for each tool for installation instructions.
 
 ## Tools
 

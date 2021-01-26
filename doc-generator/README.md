@@ -20,7 +20,30 @@ The doc generator v3 contains [breaking configuration changes](README-doc-genera
 
 # Installation
 
-To install the Redfish doc generator, see [Installation](../README.md#installation "../README.md#installation").
+1. Clone the `Redfish-Tools` repository:
+   ```zsh
+   % git clone git@github.com:DMTF/Redfish-Tools.git
+   % git remote add upstream git@github.com:DMTF/Redfish-Tools.git
+   ```
+1. [Download and install Python](https://www.python.org/downloads/ "https://www.python.org/downloads/") on the machine from which you will run the tools.
+1. (JSON Schema-to-OpenAPI converter only) Install YAML for Python:
+    ```zsh
+    % pip install pyyaml
+    ```
+1. Install the following software, which is required for HTML output:
+   * [Install Python‑Markdown](https://python-markdown.github.io/install/ "https://python-markdown.github.io/install/").
+   * [Install Pygments](http://pygments.org/ "http://pygments.org/").
+   * Install requirements:
+      ```zsh
+      % cd doc-generator
+      % pip install -r requirements.txt
+      ```
+1. (Optional) To make changes to the `doc_generator.py` code, install [`pytest`](https://docs.pytest.org/en/latest/getting-started.html "https://docs.pytest.org/en/latest/getting-started.html"):
+
+    ```zsh
+    % cd doc-generator
+    % pip install -r dev_requirements.txt
+    ```
 
 # Usage
 

@@ -23,7 +23,7 @@ The **OData CSDL validator** &mdash; [`odata_validator.py`](odata_validator.py "
 
 1. Clone the `Redfish-Tools` repository:
 
-   ```bash
+   ```zsh
    % git clone git@github.com:DMTF/Redfish-Tools.git
    % git remote add upstream git@github.com:DMTF/Redfish-Tools.git
    ```
