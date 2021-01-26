@@ -16,7 +16,7 @@ Copyright 2016-2021 Distributed Management Task Force, Inc. All rights reserved.
 
 ## About
 
-The **OData CSDL validator** &mdash; [`odata_validator.py`](odata_validator.py "odata_validator.py") &mdash; is a Python tool that parses OData-formatted metadata to validate that it conforms to [OData V4.0](https://www.odata.org/documentation/ "https://www.odata.org/documentation/").
+The **OData CSDL validator** &mdash; [`odata_validator.py`](odata_validator.py "odata_validator.py") &mdash; is a Python tool that validates that OData-formatted metadata conforms to [OData V4.0](https://www.odata.org/documentation/ "https://www.odata.org/documentation/").
 
 ## Installation
 
@@ -56,6 +56,7 @@ The `odata_validator.py` tool takes a single `MetaData` parameter in one of the 
 Run the OData CSDL validator against a single XML metadata file:
 
 ```bash
+% cd Redfish-Tools/odata-csdl-validator
 % python3 odata_validator.py test_metadata/ServiceRoot.xml
 ```
 
@@ -73,10 +74,12 @@ Run the OData CSDL validator against the URL of an XML metadata file:
 
 ## Processing
 
-The OData CSDL validator parses and validates the specified file or files and all referenced files. If it finds an error, it prints the path to the metadata file that contains the error with a simple explanation of the error.
+The OData CSDL validator parses and validates that the specified OData-formatted metadata file or files and all referenced files conform to [OData V4.0](https://www.odata.org/documentation/ "https://www.odata.org/documentation/"). 
+
+If it finds an error, it prints the path to the metadata file that contains the error with a simple explanation of the error.
 
 Example:
 
-```text
+```bash
 MetaData:http://redfish.dmtf.org/schemas/v1/ServiceRoot.xml->DataServices->Schema:ServiceRoot->EntityType:ServiceRoot->Resource.1.0.0.Resource is not a valid QualifiedName
 ```
