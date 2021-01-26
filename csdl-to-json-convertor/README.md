@@ -83,7 +83,7 @@ The configuration keys are:
 | `ResourceLocation` | Location of Redfish resources.                                        |
 | `DoNotWrite`     | Array of one or more output files to exclude from generated JSON files. |
 
-If you omit any keys, the CSDL-to-JSON converter uses the values in the default [`dmtf-config.json`](dmtf-config.json) configuration file.
+If you omit any keys or omit the `--config` argument, the CSDL-to-JSON converter uses the values in the default [`dmtf-config.json`](dmtf-config.json) configuration file.
 
 ## Processing
 
