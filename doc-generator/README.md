@@ -6,19 +6,23 @@
 
 Copyright 2016-2021 Distributed Management Task Force, Inc. All rights reserved.
 
-The **Redfish doc generator** &mdash; [`doc_generator.py`](doc_generator.py "doc_generator.py") &mdash; is a Python tool that generates output in a specified [format](#output-modes-and-output-formats) from JSON Schema files and supplementary content files. You use [configuration files](#configuration) to configure this output.
-
-The doc generator v3 contains [breaking configuration changes](README-doc-generator-v3-changes.md) and updates to the `README` files. For a snapshot of the *version 2* code, see [Doc Generator v2](https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0 "https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0").
-
 ## Contents
 
+* [About](#about)
 * [Installation](#installation)
 * [Usage](#usage)
+* [Examples](#examples)
 * [Output modes and output formats](#output-modes-and-output-formats)
 * [Configuration](#configuration)
 * [Processing](#processing)
 
-# Installation
+## About
+
+The **Redfish doc generator** &mdash; [`doc_generator.py`](doc_generator.py "doc_generator.py") &mdash; is a Python tool that generates output in a specified [format](#output-modes-and-output-formats) from JSON Schema files and supplementary content files. You use [configuration files](#configuration) to configure this output.
+
+The doc generator v3 contains [breaking configuration changes](README-doc-generator-v3-changes.md) and updates to the `README` files. For a snapshot of the *version 2* code, see [Doc Generator v2](https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0 "https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0").
+
+## Installation
 
 1. Clone the `Redfish-Tools` repository:
    ```zsh
@@ -45,7 +49,7 @@ The doc generator v3 contains [breaking configuration changes](README-doc-genera
     % pip install -r dev_requirements.txt
     ```
 
-# Usage
+## Usage
 
 ```text
 usage: doc_generator.py [-h] [--config CONFIG_FILE] [-n]
@@ -106,9 +110,11 @@ Example:
 
 For information about output modes and output formats, see [Output modes and output formats](#output-modes-and-output-formats).
 
+## Examples
+
 For `doc_generator.py` examples, see [Redfish doc generator examples](README-configuration-files.md#redfish-doc-generator-examples).
 
-# Output modes and output formats
+## Output modes and output formats
 
 The *output mode* defines the type of generated output:
 
@@ -194,9 +200,9 @@ Use the following command-line options to define the output mode and format:
    </tbody>
 </table>
 
-# Configuration
+## Configuration
 
-Use the `--config` option to specify the [base configuration file](README-configuration-files.md "README-configuration-files.md"). The base configuration file defines configuration keys that define the generated output. Some configuration information, such as URI mappings, cannot be specified on the command line.
+Use the `--config` option to specify the [base configuration file](README-configuration-files.md#base-configuration-file "README-configuration-files.md/#base-configuration-file"). The base configuration file defines configuration keys that define the generated output. Some configuration information, such as URI mappings, cannot be specified on the command line.
 
 Several flavors of configuration files are available. See [Redfish doc generator: Configuration and supplementary files](README-configuration-files.md).
 
@@ -251,7 +257,7 @@ Depending on the output mode, the configuration keys in the base configuration f
    </tbody>
 </table>
 
-# Processing
+## Processing
 
 By default, `doc_generator.py` looks for a `json-schema` directory and supplemental files in the [configuration](#configuration) file that you specify when you run it.
 
