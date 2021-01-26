@@ -60,6 +60,8 @@ Run the OData CSDL validator against a single XML metadata file:
 % python3 odata_validator.py ../../Redfish/test_metadata/ServiceRoot.xml
 ```
 
+In this example, the **OData CSDL validator** parses and validates that the metadata in the `Redfish/test_metadata/ServiceRoot.xml` input file conforms to OData V4.0.
+
 Run the OData CSDL validator against the local path to a directory of XML metadata files:
          
 ```zsh
@@ -67,12 +69,16 @@ Run the OData CSDL validator against the local path to a directory of XML metada
 % python3 odata_validator.py ../../Redfish/test_metadata
 ```
 
+In this example, the **OData CSDL validator** parses and validates that the metadata in the files in the `/Redfish/test_metadata` input directory conforms to OData V4.0.
+
 Run the OData CSDL validator against the URL of an XML metadata file:
          
 ```zsh
 $ cd Redfish-Tools/odata-csdl-validator
 % python3 odata_validator.py http://redfish.dmtf.org/schemas/v1/ServiceRoot.xml
 ```
+
+In this example, the **OData CSDL validator** parses and validates that the metadata in the `http://redfish.dmtf.org/schemas/v1/ServiceRoot.xml` input file conforms to OData V4.0.
 
 ## Processing
 

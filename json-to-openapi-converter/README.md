@@ -70,7 +70,7 @@ optional arguments:
 % python3 json-to-yaml.py --input ../../Redfish/json-schema --output ../../Redfish/openapi --config dmtf-config.json
 ```
 
-In this example, the **JSON Schema-to-OpenAPI converter** converts the JSON Schema files in the `Redfish/json-schema` input directory to YAML files in the `/Redfish/openapi` output directory. The JSON Schema-to-OpenAPI converter reads the configuration keys in the `dmtf-config.json` configuration file to configure the output, including the OpenAPI service document that it generates.
+In this example, the **JSON Schema-to-OpenAPI converter** converts the JSON Schema files in the `Redfish/json-schema` input directory to YAML files in the `/Redfish/openapi` output directory. The converter reads the configuration keys from the `dmtf-config.json` configuration file to configure the output, including the OpenAPI service document that it generates.
 
 ## Configuration
 
