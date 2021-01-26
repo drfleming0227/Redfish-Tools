@@ -108,12 +108,9 @@ The CSDL-to-JSON converter makes these assumptions about the format of the Redfi
 To process CSDL files, the CSDL-to-JSON converter:
 
 1. Locates the `Resource_v1.xml` schema to cache base definition properties that all resources use.
-
     If the file is not in the input directory, the tool accesses it in the remote location.
 1. Loops on all XML files in the input folder.
-
     For the following definitions in every versioned and unversioned namespace in each XML file, the CSDL-to-JSON converter generates corresponding JSON Schema file or files, as follows:
-
 
     <table width="100%">
       <col width="4%">
