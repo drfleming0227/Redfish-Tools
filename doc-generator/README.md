@@ -30,7 +30,7 @@ For information about:
 | :---- | :-- |
 | Output modes and output formats | [Output modes and output formats](#output-modes-and-output-formats) |
 | Configuration files | [Configuration](#configuration) |
-| Base configuration file | [Base configuration file](#README-configuration-files.md#base-configuration-file) |
+| Base configuration file | [Base configuration file](README-configuration-files.md#base-configuration-file) |
 | Content supplement configuration file | [Content supplement configuration file](README-configuration-files.md#content-supplement-configuration-file) |
 
 ## Installation
