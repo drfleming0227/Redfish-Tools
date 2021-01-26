@@ -112,7 +112,7 @@ For `doc_generator.py` examples, see [Redfish doc generator examples](README-con
 
 ## Output modes and output formats
 
-Use command-line arguments and configuration keys to define the output mode and format of the generated document.
+To define the output mode and format of the generated document, you can use either or both command-line arguments and configuration keys.
 
 The *output mode* defines the type of generated output:
 
