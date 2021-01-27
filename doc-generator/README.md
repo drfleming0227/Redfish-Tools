@@ -119,10 +119,6 @@ Example:
    doc_generator.py --format=html --out=/path/to/output/index.html /path/to/spmf/json-files
 ```
 
-## Examples
-
-For `doc_generator.py` command examples, see [Redfish doc generator examples](README-configuration-files.md#redfish-doc-generator-examples "README-configuration-files.md#redfish-doc-generator-examples").
-
 ## Configuration
 
 Use the `--config` option to specify the [base configuration file](README-configuration-files.md#base-configuration-file "README-configuration-files.md/#base-configuration-file"), which configures the generated output.
@@ -133,15 +129,19 @@ Several flavors of the base configuration file are available. Additionally, the 
 
 ## Output modes and formats
 
-* [Output modes and formats overview](#output-modes-and-formats-overview)
+* [Overview](#overview)
+* [Output modes](#output-modes)
+* [Output formats](#output-formats)
 * [Command-line arguments that define the output mode and format](#command-line-arguments-that-define-the-output-mode-and-format)
 * [Base configuration files that define the output mode and format](#base-configuration-files-that-define-the-output-mode-and-format)
 
-### Output modes and formats overview
+### Overview
 
 The combination of an output mode and output format enable you to generate documentation for a specific audience, such as a developer-focused, or normative, document, in a specific format, such as Markdown or HTML So, for example, you could produce a normative HTML document or a standard HTML document.
 
 To define the output mode and format of a generated document, use either or both command-line arguments and configuration keys. Command-line arguments take precedence over configuration keys.
+
+### Output modes
 
 The *output mode* defines the type of generated output:
 
@@ -154,6 +154,8 @@ The *output mode* defines the type of generated output:
 | Verbose profile    | ??                               | By default, profile mode is verbose and includes all properties regardless of profile requirements. |
 | Subset             | ??                               | ?? |
 | Property index     | ??                               | ?? |
+
+### Output formats
 
 The *output format* defines the format of the generated output:
 
@@ -298,6 +300,10 @@ The doc generator supports several output modes through various command-line or 
 | Subset             | [`sample_inputs/subset/config.json`](sample_inputs/subset/config.json) | [Subset HTML](##subset-html) |
 
 Depending on the output mode, the configuration keys in the base configuration file can change. Some output modes, such as the property index mode, support additional configuration keys.
+
+## Examples
+
+For `doc_generator.py` command examples, see [Redfish doc generator examples](README-configuration-files.md#redfish-doc-generator-examples "README-configuration-files.md#redfish-doc-generator-examples").
 
 ## Processing
 
