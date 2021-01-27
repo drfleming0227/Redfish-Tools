@@ -26,14 +26,14 @@ The doc generator reads configuration keys from the base configuration file, and
 >
 > To use the previous version of the doc generator, see [Doc Generator v2](https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0 "https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0").
 
-For information about:
+<!-- For information about:
 
 | Topic | See |
 | :---- | :-- |
 | Output modes and output formats | [Output modes and output formats](#output-modes-and-output-formats) |
 | Configuration files | [Configuration](#configuration) |
 | Base configuration file | [Base configuration file](README-configuration-files.md#base-configuration-file) |
-| Content supplement configuration file | [Content supplement configuration file](README-configuration-files.md#content-supplement-configuration-file) |
+| Content supplement configuration file | [Content supplement configuration file](README-configuration-files.md#content-supplement-configuration-file) | -->
 
 ## Installation
 
