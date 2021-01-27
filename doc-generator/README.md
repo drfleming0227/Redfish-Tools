@@ -153,7 +153,7 @@ The *output mode* defines the type of generated output:
 | <a id="terse-profile-mode"></a>Terse profile      | Service developer                | Includes only the subset of properties with profile requirements. Terse output is meaningful only for profile mode. |
 | <a id="verbose-profile-mode"></a>Verbose profile    | ??                               | By default, profile mode is verbose and includes all properties regardless of profile requirements. |
 | <a id="subset-mode"></a>Subset             | ??                               | ?? |
-| <a id="property-index-mode"></a>Property index     | ??                               | ?? |
+| <a id="property-index-mode"></a>Property index     | ??                               | <a href="README-property-index-mode.md" title="README-property-index-mode.md">Property index output</a> |
 
 ### Output formats
 
@@ -175,14 +175,12 @@ Use the following command-line options to define the output mode and format:
       <tr>
          <th align="left" valign="top">Command&#8209;line&nbsp;option</th>
          <th align="left" valign="top">Description</th>
-         <th align="left" valign="top">Output&nbsp;modes or formats</th>
       </tr>
     </thead>
     <tbody>
       <tr>
          <td align="left" valign="top"><code>-n</code>,&nbsp;<code>--normative</code></td>
-         <td align="left" valign="top">Produces normative, or developer-focused, output.</td>
-         <td align="left" valign="top"><a href="#standard-normative-mode">Standard normative mode</a></td>
+         <td align="left" valign="top">Produces <a href="#standard-normative-mode">normative, or developer-focused, output</a>.</td>
       </tr>
       <tr>
          <td align="left" valign="top"><code>--format</code></td>
@@ -195,27 +193,22 @@ Use the following command-line options to define the output mode and format:
                <li><code>csv</code> &mdash; Comma-separated values (CSV) file.</li>
             </ul>
          </td>
-         <td align="left" valign="top"><i>Use to specify the output format.</i></td>
       </tr>
       <tr>
          <td align="left" valign="top"><code>--profile&nbsp;PROFILE_DOC</code></td>
-         <td align="left" valign="top">Defines path to a JSON profile document, for profile output.</td>
-         <td align="left" valign="top"><ul><li><a href="#terse-profile-mode">Terse profile mode</a></li><li><a href="#verbose-profile-mode">Verbose profile mode</a></li></ul></td>
+         <td align="left" valign="top">Defines path to a JSON profile document, for <a href="#terse-profile-mode">profile mode</a> output.</td>
       </tr>
       <tr>
          <td align="left" valign="top"><code>-t</code>,&nbsp;<code>--terse</code></td>
-         <td align="left" valign="top">Generates terse output, which includes a subset of properties with profile requirements. Meaningful only with <code>--profile</code>.</td>
-         <td align="left" valign="top"><a href="#terse-profile-mode">Terse profile mode</a></td>
+         <td align="left" valign="top">Generates <a href="#terse-profile-mode">terse profile mode</a> output, which includes a subset of properties with profile requirements. Meaningful only with <code>--profile</code>.</td>
       </tr>
       <tr>
          <td align="left" valign="top"><code>--subset SUBSET_DOC</code></td>
-         <td align="left" valign="top">Defines path to a JSON profile document. Generates *Schema subset* output, with the subset defined in the JSON profile document.</td>
-         <td align="left" valign="top"><a href="#subset-mode">Subset mode</a></td>
+         <td align="left" valign="top">Defines path to a JSON profile document. Generates <a href="#subset-mode"><i>Schema subset mode</i></a> output, with the subset defined in the JSON profile document.</td>
       </tr>
       <tr>
          <td align="left" valign="top"><code>--property_index</code></td>
-         <td align="left" valign="top">Produces <a href="README-property-index-mode.md" title="README-property-index-mode.md"><i>property index</i> output</a>.</td>
-         <td align="left" valign="top"><a href="#property-index-mode">Property index mode</a></td>
+         <td align="left" valign="top">Produces <a href="#property-index-mode"><i>property index mode</i></a> output.</td>
       </tr>
    </tbody>
 </table>
