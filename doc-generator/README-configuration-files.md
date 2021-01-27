@@ -4,6 +4,24 @@
 
 # Redfish doc generator: Configuration files
 
+
+
+## Contents
+
+* [About](#about)
+* [Base configuration file](#base-configuration-file)
+   * [Supported keys](#supported-keys)
+* [Content supplement configuration file](#content-supplement-configuration-file)
+   * [Content supplement configuration file example](#content-supplement-configuration-file-example)
+   * [Supported keys](#supported-keys-1)
+   * [schema_link_replacements key](#schema_link_replacements-key)
+   * [schema_supplement key](#schema_supplement-key)
+* [Subset configuration file](#subset-configuration-file)
+* [Property index configuration file](#property-index-configuration-file)
+* [Redfish doc generator examples](#redfish-doc-generator-examples)
+
+## About
+
 To configure output, the **Redfish doc generator** accepts input from the command line and from configuration files.
 
 This topic describes configuration input from JSON configuration files:
@@ -14,18 +32,6 @@ This topic describes configuration input from JSON configuration files:
 * <a href="#content-supplement-configuration-file">Content&nbsp;supplement&nbsp;configuration&nbsp;file</a> defines text overrides for property descriptions, replacements for unit abbreviations, and schema-specific content including introductions, postscripts, and property description substitutions. The base configuration file contains a pointer to this file.
 
 If you specify an option in more than one way, command&#8209;line arguments override the configuration file keys.
-
-## Contents
-
-* [Output modes](#output-modes)
-* [Base configuration file](#base-configuration-file)
-   * [Supported keys](#supported-keys)
-* [Content supplement configuration file](#content-supplement-configuration-file)
-* [Subset configuration file](#subset-configuration-file)
-* [Property index configuration file](#property-index-configuration-file)
-* [Boilerplate intro supplementary file](#boilerplate-intro-supplementary-file)
-* [Boilerplate postscript supplementary file](#boilerplate-postscript-supplementary-file)
-* [Redfish doc generator examples](#redfish-doc-generator-examples)
 
 ## Base configuration file
 
