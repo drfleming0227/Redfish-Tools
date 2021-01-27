@@ -145,15 +145,15 @@ To define the output mode and format of a generated document, use either or both
 
 The *output mode* defines the type of generated output:
 
-| Mode               | Audience                         | Description |
+| Output&nbsp;mode   | Audience                         | Description |
 | :----------------- | :------------------------------- | :---------- |
-| CSV                | ??                               | Comma-separated values (CSV) file. |
-| Standard           | Novice&nbsp;and&nbsp;experienced&nbsp;developer | Standard guide. |
-| Standard&nbsp;normative | Developer                        | Standard guide with normative descriptions. Normative output prefers long descriptions to descriptions. |
-| Terse profile      | Service developer                | Includes only the subset of properties with profile requirements. Terse output is meaningful only for profile mode. |
-| Verbose profile    | ??                               | By default, profile mode is verbose and includes all properties regardless of profile requirements. |
-| Subset             | ??                               | ?? |
-| Property index     | ??                               | ?? |
+| <a id="csv-mode"></a>CSV                | ??                               | Comma-separated values (CSV) file. |
+| <a id="standard-mode"></a>Standard           | Novice&nbsp;and&nbsp;experienced&nbsp;developer | Standard guide. |
+| <a id="standard-normative-mode"></a>Standard&nbsp;normative | Developer                        | Standard guide with normative descriptions. Normative output prefers long descriptions to descriptions. |
+| <a id="terse-profile-mode"></a>Terse profile      | Service developer                | Includes only the subset of properties with profile requirements. Terse output is meaningful only for profile mode. |
+| <a id="verbose-profile-mode"></a>Verbose profile    | ??                               | By default, profile mode is verbose and includes all properties regardless of profile requirements. |
+| <a id="subset-mode"></a>Subset             | ??                               | ?? |
+| <a id="property-index-mode"></a>Property index     | ??                               | ?? |
 
 ### Output formats
 
@@ -171,23 +171,19 @@ The *output format* defines the format of the generated output:
 Use the following command-line options to define the output mode and format:
 
 <table>
-   <col width="20%">
-   <col width="40%">
-   <col width="20%">
-   <col width="20%">
    <thead>
       <tr>
          <th align="left" valign="top">Command&#8209;line&nbsp;option</th>
          <th align="left" valign="top">Description</th>
-         <th align="left" valign="top">Output modes</th>
-         <th align="left" valign="top">Output format</th>
+         <th align="left" valign="top">Output&nbsp;modes</th>
+         <th align="left" valign="top">Output&nbsp;format</th>
       </tr>
     </thead>
     <tbody>
       <tr>
          <td align="left" valign="top"><code>-n</code>,&nbsp;<code>--normative</code></td>
          <td align="left" valign="top">Produces normative, or developer-focused, output.</td>
-         <td align="left" valign="top">Standard normative</td>
+         <td align="left" valign="top"><a href="#standard-normative-mode">Standard normative</a></td>
          <td/>
       </tr>
       <tr>
@@ -207,25 +203,25 @@ Use the following command-line options to define the output mode and format:
       <tr>
          <td align="left" valign="top"><code>--profile&nbsp;PROFILE_DOC</code></td>
          <td align="left" valign="top">Defines path to a JSON profile document, for profile output.</td>
-         <td align="left" valign="top">Terse profile<br/>Verbose profile</td>
+         <td align="left" valign="top"><ul><li><a href="#terse-profile-mode">Terse profile</a></li><li><a href="#verbose-profile-mode">Verbose profile</a></li></ul></td>
          <td/>
       </tr>
       <tr>
          <td align="left" valign="top"><code>-t</code>,&nbsp;<code>--terse</code></td>
          <td align="left" valign="top">Generates terse output, which includes a subset of properties with profile requirements. Meaningful only with <code>--profile</code>.</td>
-         <td align="left" valign="top">Terse profile</td>
+         <td align="left" valign="top"><a href="#terse-profile-mode">Terse profile</a></td>
          <td/>
       </tr>
       <tr>
          <td align="left" valign="top"><code>--subset SUBSET_DOC</code></td>
          <td align="left" valign="top">Defines path to a JSON profile document. Generates *Schema subset* output, with the subset defined in the JSON profile document.</td>
-         <td align="left" valign="top">Subset</td>
+         <td align="left" valign="top"><a href="#subset-mode">Subset</a></td>
          <td/>
       </tr>
       <tr>
          <td align="left" valign="top"><code>--property_index</code></td>
          <td align="left" valign="top">Produces <a href="README-property-index-mode.md" title="README-property-index-mode.md"><i>property index</i> output</a>.</td>
-         <td align="left" valign="top">Property index</td>
+         <td align="left" valign="top"><a href="#property-index-mode">Property index</a></td>
          <td/>
       </tr>
    </tbody>
