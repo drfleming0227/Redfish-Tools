@@ -6,9 +6,14 @@
 
 Copyright 2016-2021 Distributed Management Task Force, Inc. All rights reserved.
 
+> **Important notice about the Redfish doc generator v3:**
+>
+> The doc generator v3 contains _**breaking configuration changes**_ and updates to the `README` files. For information about these changes, see [Redfish doc generator v3 changes](README-doc-generator-v3-changes.md "README-doc-generator-v3-changes.md").
+> 
+> To use the previous version of the doc generator, see [Doc Generator v2](https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0 "https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0").
+
 ## Contents
 
-* [Important](#important)
 * [About](#about)
 * [Installation](#installation)
 * [Usage](#usage)
@@ -16,12 +21,6 @@ Copyright 2016-2021 Distributed Management Task Force, Inc. All rights reserved.
 * [Configuration](#configuration)
 * [Output modes and formats](#output-modes-and-formats)
 * [Processing](#processing)
-
-## Important
-
-The doc generator v3 contains _**breaking configuration changes**_ and updates to the `README` files. For information about these changes, see [Redfish doc generator v3 changes](README-doc-generator-v3-changes.md "README-doc-generator-v3-changes.md").
-
-To use the previous version of the doc generator, see [Doc Generator v2](https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0 "https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0").
 
 ## About
 
