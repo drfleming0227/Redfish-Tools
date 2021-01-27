@@ -137,7 +137,7 @@ Several flavors of the base configuration file are available. Additionally, the 
 
 ### Overview
 
-The combination of an output mode and output format enable you to generate documentation for a specific audience, such as a developer-focused, or normative, document, in a specific format, such as Markdown or HTML So, for example, you could produce a normative HTML document or a standard HTML document.
+The combination of an output mode and output format enable you to generate documentation for a specific audience, such as a developer, in a specific format, such as Markdown or HTML. So, for example, you could produce a normative HTML document for developers.
 
 To define the output mode and format of a generated document, use either or both command-line arguments and configuration keys. Command-line arguments take precedence over configuration keys.
 
