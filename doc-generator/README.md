@@ -127,7 +127,7 @@ Use the `--config` option to specify the [base configuration file](README-config
 
 > **Note:** Some configuration information, such as URI mappings, can only be defined in the base configuration file and not on the command-line.
 
-Several flavors of the base configuration file are available. Additionally, the base configuration file can embed the content supplement configuration file. See [Redfish doc generator: Configuration and supplementary files](README-configuration-files.md).
+Several flavors of the base configuration file are available. Additionally, the base configuration file can embed the content supplement configuration file and supplementary files. See [Redfish doc generator: Configuration files](README-configuration-files.md "README-configuration-files.md") and [Redfish doc generator: Supplementary files](README-supplementary-files.md "README-supplementary-files.md").
 
 ## Output modes and output formats
 
