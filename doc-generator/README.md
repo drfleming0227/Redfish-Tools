@@ -119,9 +119,15 @@ Example:
 
 For `doc_generator.py` examples, see [Redfish doc generator examples](README-configuration-files.md#redfish-doc-generator-examples).
 
+## Configuration
+
+Use the `--config` option to specify the [base configuration file](README-configuration-files.md#base-configuration-file "README-configuration-files.md/#base-configuration-file"). The base configuration file defines configuration keys that define the generated output. Some configuration information, such as URI mappings, cannot be specified on the command line.
+
+Several flavors of configuration files are available. See [Redfish doc generator: Configuration and supplementary files](README-configuration-files.md).
+
 ## Output modes and output formats
 
-To define the output mode and format of the generated document, you can use either or both command-line arguments and configuration keys.
+To define the output mode and format of a generated document, use either or both command-line arguments and configuration keys.
 
 The *output mode* defines the type of generated output:
 
@@ -206,12 +212,6 @@ Use the following command-line options to define the output mode and format:
       </tr>
    </tbody>
 </table>
-
-## Configuration
-
-Use the `--config` option to specify the [base configuration file](README-configuration-files.md#base-configuration-file "README-configuration-files.md/#base-configuration-file"). The base configuration file defines configuration keys that define the generated output. Some configuration information, such as URI mappings, cannot be specified on the command line.
-
-Several flavors of configuration files are available. See [Redfish doc generator: Configuration and supplementary files](README-configuration-files.md).
 
 The following table describes the supported output modes and formats and provides links to samples of `doc_generator.py` command usage.
 
