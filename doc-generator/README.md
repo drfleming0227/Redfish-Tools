@@ -14,7 +14,7 @@ Copyright 2016-2021 Distributed Management Task Force, Inc. All rights reserved.
 * [Usage](#usage)
 * [Examples](#examples)
 * [Configuration](#configuration)
-* [Output modes and output formats](#output-modes-and-output-formats)
+* [Output modes and formats](#output-modes-and-formats)
 * [Processing](#processing)
 
 ## Important
@@ -27,7 +27,7 @@ To use the previous version of the doc generator, see [Doc Generator v2](https:/
 
 The **Redfish doc generator** &mdash; [`doc_generator.py`](doc_generator.py "doc_generator.py") &mdash; is a Python tool that generates output in a specified or default *output mode and format* from JSON Schema files and supplementary content files. 
 
-The doc generator reads configuration keys from the base configuration file, and if included, the content supplement configuration file to configure this output. 
+The doc generator reads configuration keys from the base configuration file, and if included, the content supplement configuration file to configure this output. The doc generator also includes content from supplemental files if the base configuration file embeds points to these files.
 
 <!-- For information about:
 
@@ -128,13 +128,21 @@ For `doc_generator.py` command examples, see [Redfish doc generator examples](RE
 
 Use the `--config` option to specify the [base configuration file](README-configuration-files.md#base-configuration-file "README-configuration-files.md/#base-configuration-file"), which configures the generated output.
 
-> **Note:** Some configuration information, such as URI mappings, can only be defined in the base configuration file and not on the command-line.
+> **Note:** Some configuration information, such as URI mappings, can be specified only in the base configuration file and cannot be specified on the command-line.
 
 Several flavors of the base configuration file are available. Additionally, the base configuration file can embed the content supplement configuration file and supplementary files. See [Redfish doc generator: Configuration files](README-configuration-files.md "README-configuration-files.md") and [Redfish doc generator: Supplementary files](README-supplementary-files.md "README-supplementary-files.md").
 
-## Output modes and output formats
+## Output modes and formats
 
-To define the output mode and format of a generated document, use either or both command-line arguments and configuration keys.
+* [Output modes and formats overview](#output-modes-and-formats-overview)
+* [Command-line arguments that define the output mode and format](#command-line-arguments-that-define-the-output-mode-and-format)
+* [Base configuration files that define the output mode and format](#base-configuration-files-that-define-the-output-mode-and-format)
+
+### Output modes and formats overview
+
+The combination of an output mode and output format enable you to generate documentation for a specific audience, such as a developer-focused, or normative, document, in a specific format, such as Markdown or HTML So, for example, you could produce a normative HTML document or a standard HTML document.
+
+To define the output mode and format of a generated document, use either or both command-line arguments and configuration keys. Command-line arguments take precedence over configuration keys.
 
 The *output mode* defines the type of generated output:
 
@@ -156,6 +164,8 @@ The *output format* defines the format of the generated output:
 | <code>slate</code>    | (default) GitHub-flavored Markdown file targeted for the <a href="https://github.com/slatedocs/slate" title="https://github.com/slatedocs/slate">Slate API doc generator</a>. For Slate, place the <code>index.html.md</code> output in your Slate repository's source directory. |
 | <code>html</code>     | HyperText Markup Language (HTML) file. |
 | <code>csv</code>      | Comma-separated values (CSV) file. |
+
+### Command-line arguments that define the output mode and format
 
 Use the following command-line options to define the output mode and format:
 
@@ -271,9 +281,7 @@ Depending on the output mode, the configuration keys in the base configuration f
    </tbody>
 </table>
 
-**HERE**
-
-An output mode is a combination of an output format, such as Markdown or HTML, and a specific type of output, such as a developer-focused, or normative, document or a property index. So you could produce a normative HTML document or a standard HTML document.
+### Base configuration files that define the output mode and format
 
 The doc generator supports several output modes through various command-line or configuration options. The following table:
 
