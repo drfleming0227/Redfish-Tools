@@ -2,23 +2,16 @@
 <p align="center">
   <img src="http://redfish.dmtf.org/sites/all/themes/dmtf2015/images/dmtf-redfish-logo.png" alt="DMTF Redfish" width=180>
 
-# Redfish doc generator: Configuration and supplementary files
+# Redfish doc generator: Configuration files
 
-To configure output, the **Redfish doc generator** accepts input from the command line and configuration and supplementary content files.
+To configure output, the **Redfish doc generator** accepts input from the command line and from configuration files.
 
-This topic describes:
+This topic describes configuration input from JSON configuration files:
 
-* Configuration input from JSON configuration files:
+* <a href="#base-configuration-file">Base configuration file</a> defines configuration options including pointers to the content supplement configuration file and the supplementary content files.
 
-   * <a href="#base-configuration-file">Base configuration file</a> defines configuration options including pointers to the content supplement configuration file and the supplementary content files.
-
-       Depending on the <a href="#output-modes">output mode</a>, the configuration keys in the base configuration file can change. Some output modes, such as the property index mode, support additional configuration keys.
-   * <a href="#content-supplement-configuration-file">Content&nbsp;supplement&nbsp;configuration&nbsp;file</a> defines text overrides for property descriptions, replacements for unit abbreviations, and schema-specific content including introductions, postscripts, and property description substitutions. The base configuration file contains a pointer to this file.
-
-* Supplementary content from HTML or Markdown files:
-
-   * The <a href="#boilerplate-intro-supplementary-file">boilerplate&nbsp;intro supplementary file</a> defines content to include in the output before the generated documentation.
-   * The <a href="#boilerplate-postscript-supplementary-file">boilerplate&nbsp;postscript&nbsp;supplementary&nbsp;file</a> defines content to include in the output after the generated documentation.
+    Depending on the <a href="#output-modes">output mode</a>, the configuration keys in the base configuration file can change. Some output modes, such as the property index mode, support additional configuration keys.
+* <a href="#content-supplement-configuration-file">Content&nbsp;supplement&nbsp;configuration&nbsp;file</a> defines text overrides for property descriptions, replacements for unit abbreviations, and schema-specific content including introductions, postscripts, and property description substitutions. The base configuration file contains a pointer to this file.
 
 If you specify an option in more than one way, command&#8209;line arguments override the configuration file keys.
 
@@ -57,7 +50,7 @@ Depending on the output mode, the configuration keys in the base configuration f
 
 ## Base configuration file
 
-The base configuration file is a JSON file that configures the generated output and can include pointers to the <a href="#content-supplement-configuration-file-overview">content supplement configuration file</a> and the [boilerplate intro](#boilerplate-intro-file) and [boilerplate postscript](#boilerplate-postscript-file) supplementary content files.
+The base configuration file is a JSON file that configures the generated output and can include pointers to the <a href="#content-supplement-configuration-file-overview">content supplement configuration file</a> and the [boilerplate intro](README-supplementary-files.md#boilerplate-intro-file "README-supplementary-files.md#boilerplate-intro-file") and [boilerplate postscript](README-supplementary-files.md#boilerplate-postscript-file "README-supplementary-files.md#boilerplate-postscript-file") supplementary content files.
 
 * [Supported keys](#supported-keys)
 * [combine_multiple_refs key](#combine_multiple_refs-key)
@@ -499,18 +492,6 @@ Used in <b>subset mode</b> to generate <b>Schema subset</b> output, with the sub
 </ul>
 
 See [Redfish doc generator: Property index configuration](README-property-index-mode.md).
-
-## Boilerplate intro supplementary file
-
-The boilerplate intro file is a Markdown or HTML that contains supplementary content to include in the output before the generated documentation. Can include an <code>[add_toc]</code> directive that specifies location for the table of contents.
-
-For an example boilerplate intro file, see <a href="sample_inputs/standard_html/intro.md"><code>intro.md</code></a>.
-
-## Boilerplate postscript supplementary file
-
-The boilerplate postscript file is a Markdown or HTML that contains supplementary content to include in the output after the generated documentation. 
-
-For an example boilerplate postscript file, see <a href="sample_inputs/standard_html/postscript.md"><code>postscript.md</code></a>.
 
 ## Redfish doc generator examples
 
