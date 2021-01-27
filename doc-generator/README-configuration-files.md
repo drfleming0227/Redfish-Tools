@@ -480,14 +480,14 @@ These examples assume that you have a clone of the DMTF/Redfish repo and the DMT
 
 > **Note:** The configuration files reference other files in this directory.
 
-* [CSV mode](#csv-mode)
+* [CSV format](#csv-format)
 * [Standard mode in HTML format](#standard-mode-in-html-format)
 * [Standard normative mode in HTML format](#standard-normative-mode-in-html-format)
 * [Terse profile mode in Markdown format](#terse-profile-mode-in-markdown-format)
 * [Subset mode in HTML format](#subset-mode-in-html-format)
 * [Property-index mode in HTML format](#property-index-mode-in-html-format)
 
-### CSV mode
+### CSV format
 
 **Not implemented**
 
