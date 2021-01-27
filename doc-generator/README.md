@@ -119,13 +119,15 @@ Example:
 
 ## Examples
 
-For `doc_generator.py` examples, see [Redfish doc generator examples](README-configuration-files.md#redfish-doc-generator-examples).
+For `doc_generator.py` command examples, see [Redfish doc generator examples](README-configuration-files.md#redfish-doc-generator-examples "README-configuration-files.md#redfish-doc-generator-examples").
 
 ## Configuration
 
-Use the `--config` option to specify the [base configuration file](README-configuration-files.md#base-configuration-file "README-configuration-files.md/#base-configuration-file"). The base configuration file defines configuration keys that define the generated output. Some configuration information, such as URI mappings, cannot be specified on the command line.
+Use the `--config` option to specify the [base configuration file](README-configuration-files.md#base-configuration-file "README-configuration-files.md/#base-configuration-file"), which configures the generated output.
 
-Several flavors of configuration files are available. See [Redfish doc generator: Configuration and supplementary files](README-configuration-files.md).
+> **Note:** Some configuration information, such as URI mappings, can only be defined in the base configuration file and not on the command-line.
+
+Several flavors of the base configuration file are available. Additionally, the base configuration file can embed the content supplement configuration file. See [Redfish doc generator: Configuration and supplementary files](README-configuration-files.md).
 
 ## Output modes and output formats
 
