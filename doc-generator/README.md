@@ -175,16 +175,14 @@ Use the following command-line options to define the output mode and format:
       <tr>
          <th align="left" valign="top">Command&#8209;line&nbsp;option</th>
          <th align="left" valign="top">Description</th>
-         <th align="left" valign="top">Output&nbsp;modes</th>
-         <th align="left" valign="top">Output&nbsp;format</th>
+         <th align="left" valign="top">Output&nbsp;modes or formats</th>
       </tr>
     </thead>
     <tbody>
       <tr>
          <td align="left" valign="top"><code>-n</code>,&nbsp;<code>--normative</code></td>
          <td align="left" valign="top">Produces normative, or developer-focused, output.</td>
-         <td align="left" valign="top"><a href="#standard-normative-mode">Standard normative</a></td>
-         <td/>
+         <td align="left" valign="top"><a href="#standard-normative-mode">Standard normative mode</a></td>
       </tr>
       <tr>
          <td align="left" valign="top"><code>--format</code></td>
@@ -197,32 +195,27 @@ Use the following command-line options to define the output mode and format:
                <li><code>csv</code> &mdash; Comma-separated values (CSV) file.</li>
             </ul>
          </td>
-         <td/>
-         <td align="left" valign="top">Use to specify the output format.</td>
+         <td align="left" valign="top"><i>Use to specify the output format.</i></td>
       </tr>
       <tr>
          <td align="left" valign="top"><code>--profile&nbsp;PROFILE_DOC</code></td>
          <td align="left" valign="top">Defines path to a JSON profile document, for profile output.</td>
-         <td align="left" valign="top"><ul><li><a href="#terse-profile-mode">Terse profile</a></li><li><a href="#verbose-profile-mode">Verbose profile</a></li></ul></td>
-         <td/>
+         <td align="left" valign="top"><ul><li><a href="#terse-profile-mode">Terse profile mode</a></li><li><a href="#verbose-profile-mode">Verbose profile mode</a></li></ul></td>
       </tr>
       <tr>
          <td align="left" valign="top"><code>-t</code>,&nbsp;<code>--terse</code></td>
          <td align="left" valign="top">Generates terse output, which includes a subset of properties with profile requirements. Meaningful only with <code>--profile</code>.</td>
-         <td align="left" valign="top"><a href="#terse-profile-mode">Terse profile</a></td>
-         <td/>
+         <td align="left" valign="top"><a href="#terse-profile-mode">Terse profile mode</a></td>
       </tr>
       <tr>
          <td align="left" valign="top"><code>--subset SUBSET_DOC</code></td>
          <td align="left" valign="top">Defines path to a JSON profile document. Generates *Schema subset* output, with the subset defined in the JSON profile document.</td>
-         <td align="left" valign="top"><a href="#subset-mode">Subset</a></td>
-         <td/>
+         <td align="left" valign="top"><a href="#subset-mode">Subset mode</a></td>
       </tr>
       <tr>
          <td align="left" valign="top"><code>--property_index</code></td>
          <td align="left" valign="top">Produces <a href="README-property-index-mode.md" title="README-property-index-mode.md"><i>property index</i> output</a>.</td>
-         <td align="left" valign="top"><a href="#property-index-mode">Property index</a></td>
-         <td/>
+         <td align="left" valign="top"><a href="#property-index-mode">Property index mode</a></td>
       </tr>
    </tbody>
 </table>
