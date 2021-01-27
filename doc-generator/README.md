@@ -120,7 +120,7 @@ Several flavors of the base configuration file are available. Additionally, the 
 
 ## Output modes and formats
 
-To generate documentation for a specific audience, such as a developer, in a specific format, such as Markdown or HTML, you specify an output mode and output format through either or both command-line arguments and configuration keys. Command-line arguments take precedence over configuration keys.
+To generate documentation for a specific audience, such as a developer, in a specific format, such as Markdown or HTML, you specify an output mode and output format through command-line arguments and configuration keys. Command-line arguments take precedence over configuration keys.
 
 So, for example, you could produce a normative HTML document for developers.
 
@@ -135,11 +135,11 @@ The *output mode* defines the type and audience of the generated document:
 
 | Output&nbsp;mode   | Description                          |
 | :----------------- | :----------------------------------- |
-| <a id="standard-mode"></a>Standard           | Standard guide geared for novice&nbsp;and&nbsp;experienced&nbsp;developers. |
-| <a id="standard-normative-mode"></a>Standard&nbsp;normative | Standard guide with normative descriptions geared for developers. Normative output prefers long descriptions to descriptions. |
-| <a id="profile-mode"></a>Profile      | Document with a subset of properties with profile requirements geared for service developers. A profile mode document can be terse or verbose. Default is verbose. |
-| <a id="subset-mode"></a>Subset             | ?? |
-| <a id="property-index-mode"></a>Property index     | <a href="README-property-index-mode.md" title="README-property-index-mode.md">Property index output</a> geared for Schema authors to enable them to locate existing property definitions within the Redfish Schema. End users and other consumers of Redfish data can also use a property index to look up property definitions without regard to their location in the Schema. |
+| <a id="standard-mode"></a>Standard | Standard guide for novice&nbsp;and&nbsp;experienced&nbsp;developers. |
+| <a id="standard-normative-mode"></a>Standard&nbsp;normative | Standard guide with normative descriptions for developers. Normative output prefers long descriptions to descriptions. |
+| <a id="profile-mode"></a>Profile | Document with a subset of properties with profile requirements for service developers. A profile mode document can be terse or verbose. Default is verbose. |
+| <a id="subset-mode"></a>Subset | ?? |
+| <a id="property-index-mode"></a>Property index | <a href="README-property-index-mode.md" title="README-property-index-mode.md">Property index output</a> for Schema authors to enable them to locate existing property definitions within the Redfish Schema. End users and other consumers of Redfish data can also use a property index to look up property definitions without regard to their location in the Schema. |
 
 ### Output formats
 
