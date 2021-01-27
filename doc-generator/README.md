@@ -17,9 +17,9 @@ Copyright 2016-2021 Distributed Management Task Force, Inc. All rights reserved.
 * [About](#about)
 * [Installation](#installation)
 * [Usage](#usage)
-* [Examples](#examples)
 * [Configuration](#configuration)
 * [Output modes and formats](#output-modes-and-formats)
+* [Examples](#examples)
 * [Processing](#processing)
 
 ## About
