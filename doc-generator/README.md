@@ -26,16 +26,7 @@ Copyright 2016-2021 Distributed Management Task Force, Inc. All rights reserved.
 
 The **Redfish doc generator** &mdash; [`doc_generator.py`](doc_generator.py "doc_generator.py") &mdash; is a Python tool that generates output in a specified or default [*output mode and format*](#output-modes-and-formats) from JSON Schema files and supplementary content files. 
 
-To configure this output, the doc generator reads configuration keys from the base configuration file, and if included, the content supplement configuration file.<!--  The doc generator also includes content from supplemental files if the base configuration file embeds points to these files. -->
-
-<!-- For information about:
-
-| Topic | See |
-| :---- | :-- |
-| Output modes and output formats | [Output modes and output formats](#output-modes-and-output-formats) |
-| Configuration files | [Configuration](#configuration) |
-| Base configuration file | [Base configuration file](README-configuration-files.md#base-configuration-file) |
-| Content supplement configuration file | [Content supplement configuration file](README-configuration-files.md#content-supplement-configuration-file) | -->
+To configure this output, the doc generator reads configuration keys from the base configuration file, and if included, the content supplement configuration file.
 
 ## Installation
 
@@ -129,17 +120,14 @@ Several flavors of the base configuration file are available. Additionally, the 
 
 ## Output modes and formats
 
-* [Overview](#overview)
+To generate documentation for a specific audience, such as a developer, in a specific format, such as Markdown or HTML, you specify an output mode and output format through either or both command-line arguments and configuration keys. Command-line arguments take precedence over configuration keys.
+
+So, for example, you could produce a normative HTML document for developers.
+
 * [Output modes](#output-modes)
 * [Output formats](#output-formats)
 * [Command-line arguments that define the output mode and format](#command-line-arguments-that-define-the-output-mode-and-format)
 * [Base configuration files that define the output mode and format](#base-configuration-files-that-define-the-output-mode-and-format)
-
-### Overview
-
-To generate documentation for a specific audience, such as a developer, in a specific format, such as Markdown or HTML, you specify an output mode and output format through either or both command-line arguments and configuration keys. Command-line arguments take precedence over configuration keys.
-
-So, for example, you could produce a normative HTML document for developers.
 
 ### Output modes
 
@@ -210,55 +198,6 @@ Use the following command-line options to define the output mode and format:
       </tr>
    </tbody>
 </table>
-
-<!-- The following table describes the supported output modes and formats and provides links to samples of `doc_generator.py` command usage.
-
-<table>
-   <col width="10%">
-   <col width="10%">
-   <col width="40%">
-   <col width="20%">
-   <col width="20%">
-   <thead>
-      <tr>
-         <th align="left" valign="top">Output mode</th>
-         <th align="left" valign="top">Format</th>
-         <th align="left" valign="top">Sample command usage</th>
-      </tr>
-   </thead>
-   <tbody>
-      <tr>
-         <td align="left" valign="top">CSV</td>
-         <td align="left" valign="top">CSV</td>
-         <td align="left" valign="top"><a href="README-configuration-files.md#csv">CSV</a></td>
-      </tr>
-      <tr>
-         <td align="left" valign="top">Terse profile</td>
-         <td align="left" valign="top">Markdown</td>
-         <td align="left" valign="top"><a href="README-configuration-files.md#terse-profile-index-in-markdown">Terse profile index in Markdown</a></td>
-      </tr>
-      <tr>
-         <td align="left" valign="top">Property index</td>
-         <td align="left" valign="top">HTML</td>
-         <td align="left" valign="top"><a href="README-configuration-files.md#property-index-html">Property index HTML</a></td>
-      </tr>
-      <tr>
-         <td align="left" valign="top">Standard</td>
-         <td align="left" valign="top">HTML</td>
-         <td align="left" valign="top"><a href="README-configuration-files.md#standard-html">Standard HTML</a></td>
-      </tr>
-      <tr>
-         <td align="left" valign="top">Standard normative</td>
-         <td align="left" valign="top">HTML</td>
-         <td align="left" valign="top"><a href="README-configuration-files.md#standard-html-with-normative-descriptions">Standard with normative descriptions HTML</a></td>
-      </tr>
-      <tr>
-         <td align="left" valign="top">Subset</td>
-         <td align="left" valign="top">HTML</td>
-         <td align="left" valign="top"><a href="README-configuration-files.md#subset-configuration-file" title="README-configuration-files.md#subset-configuration-file">Subset HTML</a></td>
-      </tr>
-   </tbody>
-</table> -->
 
 ### Base configuration files that define the output mode and format
 
