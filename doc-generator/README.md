@@ -22,7 +22,9 @@ The **Redfish doc generator** &mdash; [`doc_generator.py`](doc_generator.py "doc
 
 The doc generator reads configuration keys from the base configuration file, and if included, the content supplement configuration file to configure this output. 
 
-> **Important:** The doc generator v3 contains [breaking configuration changes](README-doc-generator-v3-changes.md) and updates to the `README` files. For a snapshot of the *version 2* code, see [Doc Generator v2](https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0 "https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0").
+> **Important:** The doc generator v3 contains _**breaking configuration changes**_ and updates to the `README` files. For information about these changes, see [Redfish doc generator v3 changes](README-doc-generator-v3-changes.md "README-doc-generator-v3-changes.md").
+>
+> To use the previous version of the doc generator, see [Doc Generator v2](https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0 "https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0").
 
 For information about:
 
