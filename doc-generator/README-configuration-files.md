@@ -27,27 +27,6 @@ If you specify an option in more than one way, command&#8209;line arguments over
 * [Boilerplate postscript supplementary file](#boilerplate-postscript-supplementary-file)
 * [Redfish doc generator examples](#redfish-doc-generator-examples)
 
-## Output modes
-
-An output mode is a combination of an output format, such as Markdown or HTML, and a specific type of output, such as a developer-focused, or normative, document or a property index. So you could produce a normative HTML document or a standard HTML document.
-
-The doc generator supports several output modes through various command-line or configuration options. The following table:
-
-* Lists the supported output modes.
-* Provides links to sample versions of the base configuration file.
-* Provides links to examples of `doc_generator.py` command usage.
-
-| Output mode        | Sample base configuration file | Example command usage |
-| :----------------- | :----------------------------- | :-------------------- |
-| CSV                | [`sample_inputs/csv/config.json`](sample_inputs/csv/config.json) | [CSV](#csv) |
-| Profile            | [`sample_inputs/profile_mode/config.json`](sample_inputs/profile_mode/config.json) | [Profile index Markdown in terse mode](##profile-index-markdown-in-terse-mode) |
-| Property index     | [`sample_inputs/property_index/config.json`](sample_inputs/property_index/config.json) | [Property index HTML](##property-index-html) |
-| Standard           | [`sample_inputs/standard_html/config.json`](sample_inputs/standard_html/config.json) | [Standard HTML](##standard-html) |
-| Standard normative | [`sample_inputs/standard_html/config_normative.json`](sample_inputs/standard_html/config_normative.json) | [Standard with normative descriptions HTML](##standard-html-with-normative-descriptions) |
-| Subset             | [`sample_inputs/subset/config.json`](sample_inputs/subset/config.json) | [Subset HTML](##subset-html) |
-
-Depending on the output mode, the configuration keys in the base configuration file can change. Some output modes, such as the property index mode, support additional configuration keys.
-
 ## Base configuration file
 
 The base configuration file is a JSON file that configures the generated output and can include pointers to the <a href="#content-supplement-configuration-file-overview">content supplement configuration file</a> and the [boilerplate intro](README-supplementary-files.md#boilerplate-intro-file "README-supplementary-files.md#boilerplate-intro-file") and [boilerplate postscript](README-supplementary-files.md#boilerplate-postscript-file "README-supplementary-files.md#boilerplate-postscript-file") supplementary content files.

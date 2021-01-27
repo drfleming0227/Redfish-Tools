@@ -8,23 +8,26 @@ Copyright 2016-2021 Distributed Management Task Force, Inc. All rights reserved.
 
 ## Contents
 
+* [Important](#important)
 * [About](#about)
 * [Installation](#installation)
 * [Usage](#usage)
 * [Examples](#examples)
-* [Output modes and output formats](#output-modes-and-output-formats)
 * [Configuration](#configuration)
+* [Output modes and output formats](#output-modes-and-output-formats)
 * [Processing](#processing)
+
+## Important
+
+The doc generator v3 contains _**breaking configuration changes**_ and updates to the `README` files. For information about these changes, see [Redfish doc generator v3 changes](README-doc-generator-v3-changes.md "README-doc-generator-v3-changes.md").
+
+To use the previous version of the doc generator, see [Doc Generator v2](https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0 "https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0").
 
 ## About
 
 The **Redfish doc generator** &mdash; [`doc_generator.py`](doc_generator.py "doc_generator.py") &mdash; is a Python tool that generates output in a specified or default *output mode and format* from JSON Schema files and supplementary content files. 
 
 The doc generator reads configuration keys from the base configuration file, and if included, the content supplement configuration file to configure this output. 
-
-> **Important:** The doc generator v3 contains _**breaking configuration changes**_ and updates to the `README` files. For information about these changes, see [Redfish doc generator v3 changes](README-doc-generator-v3-changes.md "README-doc-generator-v3-changes.md").
->
-> To use the previous version of the doc generator, see [Doc Generator v2](https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0 "https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0").
 
 <!-- For information about:
 
