@@ -143,17 +143,17 @@ To define the output mode and format of a generated document, use either or both
 
 ### Output modes
 
-The *output mode* defines the type of generated output:
+The *output mode* defines the type and audience of the generated document:
 
-| Output&nbsp;mode   | Audience                         | Description |
-| :----------------- | :------------------------------- | :---------- |
-| <a id="csv-mode"></a>CSV                | ??                               | Comma-separated values (CSV) file. |
-| <a id="standard-mode"></a>Standard           | Novice&nbsp;and&nbsp;experienced&nbsp;developer | Standard guide. |
-| <a id="standard-normative-mode"></a>Standard&nbsp;normative | Developer                        | Standard guide with normative descriptions. Normative output prefers long descriptions to descriptions. |
-| <a id="terse-profile-mode"></a>Terse profile      | Service developer                | Includes only the subset of properties with profile requirements. Terse output is meaningful only for profile mode. |
-| <a id="verbose-profile-mode"></a>Verbose profile    | ??                               | By default, profile mode is verbose and includes all properties regardless of profile requirements. |
-| <a id="subset-mode"></a>Subset             | ??                               | ?? |
-| <a id="property-index-mode"></a>Property index     | ??                               | <a href="README-property-index-mode.md" title="README-property-index-mode.md">Property index output</a> |
+| Output&nbsp;mode   | Description                          |
+| :----------------- | :----------------------------------- |
+| <a id="csv-mode"></a>CSV                | Comma-separated values (CSV) file geared for ??. |
+| <a id="standard-mode"></a>Standard           | Standard guide geared for novice&nbsp;and&nbsp;experienced&nbsp;developers. |
+| <a id="standard-normative-mode"></a>Standard&nbsp;normative | Standard guide with normative descriptions geared for developers. Normative output prefers long descriptions to descriptions. |
+| <a id="terse-profile-mode"></a>Terse profile      | Document with a subset of properties with profile requirements geared for service developers. Terse output is meaningful only for profile mode. |
+| <a id="verbose-profile-mode"></a>Verbose profile    | (Default profile mode) Document with all properties with profile requirements geared for ??. |
+| <a id="subset-mode"></a>Subset             | ?? |
+| <a id="property-index-mode"></a>Property index     | <a href="README-property-index-mode.md" title="README-property-index-mode.md">Property index output</a> geared for ?? |
 
 ### Output formats
 
