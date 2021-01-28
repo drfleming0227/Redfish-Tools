@@ -21,10 +21,14 @@ The **Redfish doc generator** accepts input from the following supplementary fil
 
 **Sample boilerplate intro file:** <a href="sample_inputs/standard_html/intro.md"><code>intro.md</code></a>
 
-The boilerplate intro file is a Markdown or HTML file that contains supplementary content to include in the output before the generated documentation. Can include an <code>[add_toc]</code> directive that specifies location for the table of contents.
+The boilerplate intro file is a Markdown or HTML file that contains supplementary content to include in the output before the generated documentation.
+
+Can include an <code>[add_toc]</code> directive that specifies location for the table of contents.
 
 ## Boilerplate postscript file
 
 **Sample boilerplate postscript file:** <a href="sample_inputs/standard_html/postscript.md"><code>postscript.md</code></a>
 
-The boilerplate postscript file is a Markdown or HTML file that contains supplementary content to include in the output after the generated documentation. 
+The boilerplate postscript file is a Markdown or HTML file that contains supplementary content to include in the output after the generated documentation.
+
+Can include an <code>[add_toc]</code> directive that specifies location for the table of contents.
