@@ -4,18 +4,16 @@
 
 # Redfish doc generator: Configuration files
 
-To configure the generated documentation, the **Redfish doc generator** reads command-line arguments and configuration file keys.
+To configure the generated documentation, the **Redfish doc generator** reads command-line arguments and configuration file keys. If you specify an option in more than one way, command&#8209;line arguments override the configuration file keys.
 
-If you specify an option in more than one way, command&#8209;line arguments override the configuration file keys.
-
-This `README` describes configuration keys that the doc generator reads from these JSON configuration files:
+The doc generator reads configuration keys from these JSON configuration files:
 
 * [Base configuration file](#base-configuration-file)
 * [Content supplement configuration file](#contentsupplementconfigurationfile)
 
 ## Base configuration file
 
-A JSON file that configures the generated documentation and can include pointers to the <a href="#content-supplement-configuration-file-overview">content supplement configuration file</a> and the [boilerplate intro](README-supplementary-files.md#boilerplate-intro-supplementary-file "README-supplementary-files.md#boilerplate-intro-supplementary-file") and [boilerplate postscript](README-supplementary-files.md#boilerplate-postscript-file "README-supplementary-files.md#boilerplate-postscript-file") supplementary content files.
+The base configuration file is a JSON file that configures the generated documentation and can include pointers to the <a href="#content-supplement-configuration-file-overview">content supplement configuration file</a> and the [boilerplate intro](README-supplementary-files.md#boilerplate-intro-supplementary-file "README-supplementary-files.md#boilerplate-intro-supplementary-file") and [boilerplate postscript](README-supplementary-files.md#boilerplate-postscript-file "README-supplementary-files.md#boilerplate-postscript-file") supplementary content files.
 
 Depending on the <a href="#output-modes">output mode</a>, the configuration keys in the base configuration file can change. Some output modes, such as the property index mode, support additional configuration keys.
 
@@ -25,6 +23,6 @@ See [Base configuration file](README-base-configuration-file.md "README-base-con
 
 ## Content&nbsp;supplement&nbsp;configuration&nbsp;file
 
-A JSON file that defines text overrides for property descriptions, replacements for unit abbreviations, and schema-specific content including introductions, postscripts, and property description substitutions. The base configuration file contains a pointer to this file.
+The content supplement configuration file is a JSON file that defines text overrides for property descriptions, replacements for unit abbreviations, and schema-specific content including introductions, postscripts, and property description substitutions. The base configuration file contains a pointer to this file.
 
 See [Content supplement configuration file](README-content-supplement-configuration-file.md "README-content-supplement-configuration-file.md").
