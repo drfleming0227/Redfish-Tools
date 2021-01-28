@@ -7,9 +7,11 @@
 The content supplement configuration file is a JSON file that contains text overrides for property descriptions, replacements for unit abbreviations, and schema-specific content to apply to the generated schema documentation.
 
 * [Content supplement configuration file examples](#content-supplement-configuration-file-examples)
-* [Supported keys](#supported-keys)
+* [property_description_overrides key](#property_description_overrides-key)
+* [property_fulldescription_overrides key](#property_fulldescription_overrides-key)
 * [schema_link_replacements key](#schema_link_replacements-key)
 * [schema_supplement key](#schema_supplement-key)
+* [units_translation key](#units_translation-key)
 
 ## Content supplement configuration file examples
 
@@ -18,53 +20,21 @@ The content supplement configuration file is supported in these output modes:
 | Output mode | Sample content supplement configuration file |
 | :---------- | :------------------------------------------- |
 | [Profile mode](README.md#profile-mode "README.md#profile-mode") | [`sample_inputs/profile_mode/content_supplement.json`](sample_inputs/profile_mode/content_supplement.json "sample_inputs/profile_mode/content_supplement.json") |
-| [Standard mode](README.md#standard-mode "README.md#standard-mode")<br/><br/>[Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode") | [`sample_inputs/standard_html/content_supplement.json`](sample_inputs/standard_html/content_supplement.json "sample_inputs/standard_html/content_supplement.json") |
+| [Standard mode](README.md#standard-mode "README.md#standard-mode") | [`sample_inputs/standard_html/content_supplement.json`](sample_inputs/standard_html/content_supplement.json "sample_inputs/standard_html/content_supplement.json") |
+| [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode") | [`sample_inputs/standard_html/content_supplement.json`](sample_inputs/standard_html/content_supplement.json "sample_inputs/standard_html/content_supplement.json") |
 | [Subset mode](README.md#subset-mode "README.md#subset-mode") | [`sample_inputs/subset/content_supplement.json`](subset/content_supplement.json "sample_inputs/subset/content_supplement.json") |
 
-## Supported keys
+## property_description_overrides key
 
-<table>
-   <thead>
-      <tr>
-         <th align="left" valign="top">Configuration&nbsp;key</th>
-         <th align="left" valign="top">Type</th>
-         <th align="left" valign="top">Description</th>
-      </tr>
-   </thead>
-   <tbody>
-      <tr>
-         <td align="left" valign="top"><code>property_description_overrides</code></td>
-         <td align="left" valign="top">Dictionary</td>
-         <td align="left" valign="top">Maps property names to strings to use to replace the descriptions of the named properties.</td>
-      </tr>
-      <tr>
-         <td align="left" valign="top"><code>property_fulldescription_overrides</code></td>
-         <td align="left" valign="top">Dictionary</td>
-         <td align="left" valign="top">Just like <code>property_description_overrides</code>. These replacements are <i>full</i> in that any additional information the <code>doc_generator.py</code> normally appends, like a reference to the definition of the property in another schema, is omitted.</td>
-      </tr>
-      <tr>
-         <td align="left" valign="top"><code>schema_link_replacements</code></td>
-         <td align="left" valign="top">Dictionary</td>
-         <td align="left" valign="top">Maps URIs of schema references to a structure that specifies either the full or partial match type and replacement URIs. Use to substitute a link to documentation where a link to a specific schema would otherwise appear in the documentation. See <a href="#schema_link_replacements-key">schema_link_replacements key</a>.</td>
-      </tr>
-      <tr>
-         <td align="left" valign="top"><code>schema_supplement</code></td>
-         <td align="left" valign="top">Dictionary</td>
-         <td align="left" valign="top">Maps schema names to a dictionary of structured content, including introductory text and schema-specific text replacements.See <a href="#schema_supplement-key">schema_supplement key</a>.</td>
-      </tr>
-      <tr>
-         <td align="left" valign="top"><code>units_translation</code></td>
-         <td align="left" valign="top">Dictionary</td>
-         <td align="left" valign="top">Maps units as they appear in Redfish schemas to units as you want them to appear in the documentation.</td>
-      </tr>
-   </tbody>
-</table>
+Dictionary. Maps property names to strings to use to replace the descriptions of the named properties.
 
-For an example of the content supplement configuration file, see <a href="sample_inputs/standard_html/content_supplement.json"><code>content_supplement.json</code></a>.
+## property_fulldescription_overrides key
+
+Dictionary. Just like <code>property_description_overrides</code>. These replacements are <i>full</i> in that any additional information the <code>doc_generator.py</code> normally appends, like a reference to the definition of the property in another schema, is omitted.
 
 ## schema_link_replacements key
 
-The `schema_link_replacements` key is a dictionary that maps reference URIs to replacement URIs. The match type is full or partial. Replaces one link with another link. The dictionary structure is:
+Dictionary. Maps URIs of schema references to a structure that specifies either the full or partial match type and replacement URIs. Use to substitute a link to documentation where a link to a specific schema would otherwise appear in the documentation. See <a href="#schema_link_replacements-key">schema_link_replacements key</a>.The `schema_link_replacements` key is a dictionary that maps reference URIs to replacement URIs. The match type is full or partial. Replaces one link with another link. The dictionary structure is:
 
 ```json
 "schema_link_replacements": {
@@ -80,6 +50,8 @@ The `schema_link_replacements` key is a dictionary that maps reference URIs to r
 ```
 
 ## schema_supplement key
+
+Dictionary. Maps schema names to a dictionary of structured content, including introductory text and schema-specific text replacements.
 
 The `schema_supplement` key defines a dictionary of structured content, including text overrides for property descriptions, units translation (replacements for unit abbreviations), schema-specific intros, property description substitutions, and other supplementary data. The structure of this object looks like this (all fields are optional):
 
@@ -112,3 +84,7 @@ In this file, `SchemaName` might be either a bare schema name or a schema name w
 If `description` or `intro` are specified for a schema, that value replaces the description of the schema. If both are specified, the `description` is output, followed by the `intro`.
 
 The `mockup` and `jsonpayload` attributes are mutually exclusive. If you specify both attributes, the content at `mockup` takes precedence. If you specify a `payload_dir` in the base configuration file, a payload directory is preferred over using these attributes.
+
+## units_translation key
+
+Dictionary. Maps units as they appear in Redfish schemas to units as you want them to appear in the documentation.
