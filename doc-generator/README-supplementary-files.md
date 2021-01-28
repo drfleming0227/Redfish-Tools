@@ -13,8 +13,7 @@ To include these files, add a pointer to one or both files at the bottom of the 
 
 ```json
 {
-   ...
-}, 
+   &#8230;
   "boilerplate_intro": "./intro.md",
   "boilerplate_postscript": "./postscript.md", 
   "content_supplement": "./content_supplement.json"
