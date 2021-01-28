@@ -9,11 +9,11 @@ To configure the generated documentation, the **Redfish doc generator** reads co
 The doc generator reads configuration keys from these JSON configuration files:
 
 * [Base configuration file](#base-configuration-file)
-* [Content supplement configuration file](#contentsupplementconfigurationfile)
+* [Content supplement configuration file](#content-supplement-configuration-file)
 
 ## Base configuration file
 
-The base configuration file is a JSON file that configures the generated documentation and can include pointers to the <a href="#content-supplement-configuration-file">content supplement configuration file</a> and the [boilerplate intro](README-supplementary-files.md#boilerplate-intro-supplementary-file "README-supplementary-files.md#boilerplate-intro-supplementary-file") and [boilerplate postscript](README-supplementary-files.md#boilerplate-postscript-file "README-supplementary-files.md#boilerplate-postscript-file") supplementary files.
+The base configuration file is a JSON file that configures the generated documentation and can include pointers to the [content supplement configuration file](#content-supplement-configuration-file) and the [boilerplate intro](README-supplementary-files.md#boilerplate-intro-supplementary-file "README-supplementary-files.md#boilerplate-intro-supplementary-file") and [boilerplate postscript](README-supplementary-files.md#boilerplate-postscript-file "README-supplementary-files.md#boilerplate-postscript-file") supplementary files.
 
 Depending on the <a href="#output-modes">output mode</a>, the configuration keys in the base configuration file can change. Some output modes, such as the property index mode, support additional configuration keys.
 
