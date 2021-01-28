@@ -290,3 +290,42 @@ Boolean. No default. Produce <b>Property Index</b> output. For details, see <a h
 **Output modes:** [CSV format](README.md#csv-format "README.md#csv-format"), [Profile mode](README.md#profile-mode "README.md#profile-mode"), [Property index mode](README.md#property-index-mode "README.md#property-index-mode"), [Standard](README.md#standard-mode), [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode"), [Subset](README.md#subset-mode)
 
 Object. No default. Partial URL of schema repositories as attributes, and local directory paths as values.
+
+## Subset configuration file
+
+Used in <b>subset mode</b> to generate <b>Schema subset</b> output, with the subset defined in the JSON profile document.
+
+```json
+{
+   "version": "The version string is optional. It may have (future?) meaning in property index mode.",
+   "description": "Redfish doc generator Example: config file for output of subset documentation in HTML format.",
+   "format": "html",
+   "import_from": ["./json-schema"],
+   "outfile": "subset.html",
+   "uri_mapping": {
+      "redfish.dmtf.org/schemas/v1": "./json-schema"
+   },
+   "profile_uri_to_local": {
+      "redfish.dmtf.org/profiles": "../Redfish-Tools/doc-generator/sample_inputs"
+   },
+   "suppress_version_history": true,
+   "html_title": "Sample Profile-focused Document",
+   "subset_doc": "../Redfish-Tools/doc-generator/sample_inputs/OCPBasicServer.v1_0_0.json",
+   "excluded_annotations": ["*@odata.count", "*@odata.navigationLink"],
+   "excluded_properties": ["@odata.context", "@odata.type", "@odata.id"],
+   "excluded_schemas": ["*Collection"],
+   "boilerplate_intro": "./intro.md",
+   "content_supplement": "./content_supplement.json"
+}
+```
+
+## Property index configuration file
+
+<p>Used in <b>property index mode</b> to generate <b>Property index</b> output, which is an index of property names and descriptions that includes property name, type, schemas where found, and descriptions found.</p>
+<p>When you run run the doc generator in <b>property index mode</b>:</p>
+<ul>
+   <li>Only a few of <code>doc_generator.py</code> arguments apply.</li>
+   <li>The <a href="#configuration">configuration file</a> takes a different form than the one used for the other output modes.</li>
+</ul>
+
+See [Redfish doc generator: Property index configuration](README-property-index-mode.md).
