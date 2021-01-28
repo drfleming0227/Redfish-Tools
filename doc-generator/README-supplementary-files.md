@@ -4,14 +4,6 @@
 
 # Redfish doc generator: Supplementary files
 
-## Contents
-
-* [About](#about)
-* [Boilerplate intro file](#boilerplate-intro-file)
-* [Boilerplate postscript file](#boilerplate-postscript-file)
-
-## About
-
 The **Redfish doc generator** accepts input from the following supplementary files:
 
 * <a href="#boilerplate-intro-file">Boilerplate&nbsp;intro file</a>
