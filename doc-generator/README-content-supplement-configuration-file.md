@@ -22,7 +22,7 @@ The content supplement configuration file is supported in these output modes:
 | [Profile mode](README.md#profile-mode "README.md#profile-mode") | [`sample_inputs/profile_mode/content_supplement.json`](sample_inputs/profile_mode/content_supplement.json "sample_inputs/profile_mode/content_supplement.json") |
 | [Standard mode](README.md#standard-mode "README.md#standard-mode") | [`sample_inputs/standard_html/content_supplement.json`](sample_inputs/standard_html/content_supplement.json "sample_inputs/standard_html/content_supplement.json") |
 | [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode") | [`sample_inputs/standard_html/content_supplement.json`](sample_inputs/standard_html/content_supplement.json "sample_inputs/standard_html/content_supplement.json") |
-| [Subset mode](README.md#subset-mode "README.md#subset-mode") | [`sample_inputs/subset/content_supplement.json`](subset/content_supplement.json "sample_inputs/subset/content_supplement.json") |
+| [Subset mode](README.md#subset-mode "README.md#subset-mode") | [`sample_inputs/subset/content_supplement.json`](sample_inputs/subset/content_supplement.json "sample_inputs/subset/content_supplement.json") |
 
 ## property_description_overrides key
 
