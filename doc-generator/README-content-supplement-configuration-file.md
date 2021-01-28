@@ -6,7 +6,7 @@
 
 The content supplement configuration file is a JSON file that contains text overrides for property descriptions, replacements for unit abbreviations, and schema-specific content to apply to the generated schema documentation.
 
-* [Content supplement configuration file example](#content-supplement-configuration-file-example)
+* [Content supplement configuration file examples](#content-supplement-configuration-file-examples)
 * [Supported keys](#supported-keys)
 * [schema_link_replacements key](#schema_link_replacements-key)
 * [schema_supplement key](#schema_supplement-key)
@@ -17,9 +17,9 @@ The content supplement configuration file is supported in these output modes:
 
 | Output mode | Sample content supplement configuration file |
 | :---------- | :------------------------------------------- |
-| [Profile mode](README.md#profile-mode "README.md#profile-mode") | [`profile_mode/content_supplement.json`](profile_mode/content_supplement.json "profile_mode/content_supplement.json") |
-| [Standard mode](README.md#standard-mode "README.md#standard-mode")<br/>[Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode") | [`standard_html/content_supplement.json`](standard_html/content_supplement.json "profile_mode/content_supplement.json") |
-| [Subset mode](README.md#subset-mode "README.md#subset-mode") | [`subset/content_supplement.json`](subset/content_supplement.json "subset/content_supplement.json") |
+| [Profile mode](README.md#profile-mode "README.md#profile-mode") | [`sample_inputs/profile_mode/content_supplement.json`](sample_inputs/profile_mode/content_supplement.json "sample_inputs/profile_mode/content_supplement.json") |
+| [Standard mode](README.md#standard-mode "README.md#standard-mode")<br/><br/>[Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode") | [`sample_inputs/standard_html/content_supplement.json`](sample_inputs/standard_html/content_supplement.json "sample_inputs/standard_html/content_supplement.json") |
+| [Subset mode](README.md#subset-mode "README.md#subset-mode") | [`sample_inputs/subset/content_supplement.json`](subset/content_supplement.json "sample_inputs/subset/content_supplement.json") |
 
 ## Supported keys
 
