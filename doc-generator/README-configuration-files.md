@@ -4,18 +4,11 @@
 
 # Redfish doc generator: Configuration files
 
-
-
 ## Contents
 
 * [About](#about)
 * [Base configuration file](#base-configuration-file)
-   * [Supported keys](#supported-keys)
 * [Content supplement configuration file](#content-supplement-configuration-file)
-   * [Content supplement configuration file example](#content-supplement-configuration-file-example)
-   * [Supported keys](#supported-keys-1)
-   * [schema_link_replacements key](#schema_link_replacements-key)
-   * [schema_supplement key](#schema_supplement-key)
 * [Subset configuration file](#subset-configuration-file)
 * [Property index configuration file](#property-index-configuration-file)
 * [Redfish doc generator examples](#redfish-doc-generator-examples)
@@ -40,6 +33,36 @@ The base configuration file is a JSON file that configures the generated output 
 The names of some configuration keys differ from their command&#8209;line argument equivalents. Unless otherwise noted, the configuration key has the same meaning as its command&#8209;line argument equivalent. The `uri_mapping` configuration key is required but all other configuration keys are optional.
 
 The clauses briefly describes each key and the output modes that support the key:
+
+* [actions_in_property_table key](#actions_in_property_table-key)
+* [add_toc key](#add_toc-key)
+* [boilerplate_intro key](#boilerplate_intro-key)
+* [boilerplate_postscript key](#boilerplate_postscript-key)
+* [combine_multiple_refs key](#combine_multiple_refs-key)
+* [content_supplement key](#content_supplement-key)
+* [description_overrides key](#description_overrides-key)
+* [escape_chars key](#escape_chars-key)
+* [excluded_annotations key](#excluded_annotations-key)
+* [excluded_pattern_properties key](#excluded_pattern_properties-key)
+* [excluded_properties key](#excluded_properties-key)
+* [excluded_schemas key](#excluded_schemas-key)
+* [format key](#format-key)
+* [html_title key](#html_title-key)
+* [import_from key](#import_from-key)
+* [locale key](#locale-key)
+* [normative key](#normative-key)
+* [object_reference_disposition key](#object_reference_disposition-key)
+* [omit_version_in_headers key](#omit_version_in_headers-key)
+* [outfile key](#outfile-key)
+* [payload_dir key](#payload_dir-key)
+* [profile_doc key](#profile_doc-key)
+* [profile_terse key](#profile_terse-key)
+* [profile_uri_to_local key](#profile_uri_to_local-key)
+* [property_index key](#property_index-key)
+* [property_index_config_out key](#property_index_config_out-key)
+* [registry_uri_to_local key](#registry_uri_to_local-key)
+* [subset key](#subset-key)
+* [uri_mapping key](#uri_mapping-key)
 
 ### actions_in_property_table key
 
@@ -183,8 +206,8 @@ String. No default. Location of the HTML or Markdown file that contains content 
 
   The `object_reference_disposition` key specifies a JSON object with either or both these fields:
 
-  ### common_object`. List of property names. For example `"Redundancy"`. 
-  ### include`. List of properties by their full path.
+  * `common_object`. List of property names. For example `"Redundancy"`. 
+  * `include`. List of properties by their full path.
 
   For example:
 
@@ -296,7 +319,7 @@ String. No default. Location of the HTML or Markdown file that contains content 
 Contains text replacements and additions to apply to the generated schema documentation. Includes text overrides for property descriptions, replacements for unit abbreviations, and schema-specific content including introductions, postscripts, and property description substitutions.
 
 * [Content supplement configuration file example](#content-supplement-configuration-file-example)
-* [Supported keys](#supported-keys-1)
+* [Supported keys](#supported-keys)
 * [schema_link_replacements key](#schema_link_replacements-key)
 * [schema_supplement key](#schema_supplement-key)
 
