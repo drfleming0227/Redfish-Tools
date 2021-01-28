@@ -4,10 +4,22 @@
 
 # Redfish doc generator: Supplementary files
 
-The **Redfish doc generator** accepts input from the following supplementary files:
+The **Redfish doc generator** takes content from the following supplementary files:
 
 * <a href="#boilerplate-intro-file">Boilerplate&nbsp;intro file</a>
 * <a href="#boilerplate-postscript-file">Boilerplate&nbsp;postscript&nbsp;file</a>
+
+To include these files, add a pointer to one or both files at the bottom of the base configuration file:
+
+```json
+{
+   ...
+}, 
+  "boilerplate_intro": "./intro.md",
+  "boilerplate_postscript": "./postscript.md", 
+  "content_supplement": "./content_supplement.json"
+}
+```
 
 ## Boilerplate intro file
 
