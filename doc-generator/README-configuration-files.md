@@ -4,19 +4,14 @@
 
 # Redfish doc generator: Configuration files
 
-## Contents
-
-* [About](#about)
-* [Base configuration file](#base-configuration-file)
-* [Content supplement configuration file](#contentsupplementconfigurationfile)
-
-## About
-
-To configure the generated documentation, the **Redfish doc generator** accepts input from the command line and from configuration files.
+To configure the generated documentation, the **Redfish doc generator** reads command-line arguments and configuration file keys.
 
 If you specify an option in more than one way, command&#8209;line arguments override the configuration file keys.
 
 This `README` describes configuration keys that the doc generator reads from these JSON configuration files:
+
+* [Base configuration file](#base-configuration-file)
+* [Content supplement configuration file](#contentsupplementconfigurationfile)
 
 ## Base configuration file
 
