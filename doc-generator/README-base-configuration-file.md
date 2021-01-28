@@ -4,7 +4,7 @@
 
 # Redfish doc generator: Base configuration file
 
-The base configuration file is a JSON file that configures the generated documentation and can include pointers to the <a href="README-content-supplement-configuration-file.md" title="README-content-supplement-configuration-file.md">content supplement configuration file</a> and the [boilerplate intro](README-supplementary-files.md#boilerplate-intro-supplementary-file "README-supplementary-files.md#boilerplate-intro-supplementary-file") and [boilerplate postscript](README-supplementary-files.md#boilerplate-postscript-file "README-supplementary-files.md#boilerplate-postscript-file") supplementary content files.
+The base configuration file is a JSON file that configures the generated documentation and can include pointers to the <a href="README-content-supplement-configuration-file.md" title="README-content-supplement-configuration-file.md">content supplement configuration file</a> and the [boilerplate intro](README-supplementary-files.md#boilerplate-intro-file "README-supplementary-files.md#boilerplate-intro-file") and [boilerplate postscript](README-supplementary-files.md#boilerplate-postscript-file "README-supplementary-files.md#boilerplate-postscript-file") supplementary content files.
 
 The names of some configuration keys differ from their command&#8209;line argument equivalents. Unless otherwise noted, the configuration key has the same meaning as its command&#8209;line argument equivalent. The `uri_mapping` configuration key is required but all other configuration keys are optional.
 
