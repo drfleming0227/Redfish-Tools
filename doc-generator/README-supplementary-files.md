@@ -9,17 +9,6 @@ The **Redfish doc generator** takes content from the following supplementary fil
 * <a href="#boilerplate-intro-file">Boilerplate&nbsp;intro file</a>
 * <a href="#boilerplate-postscript-file">Boilerplate&nbsp;postscript&nbsp;file</a>
 
-To include these files, add a pointer to one or both files at the bottom of the base configuration file:
-
-```json
-{
-   ...
-  "boilerplate_intro": "./intro.md",
-  "boilerplate_postscript": "./postscript.md", 
-  "content_supplement": "./content_supplement.json"
-}
-```
-
 ## Boilerplate intro file
 
 **Sample boilerplate intro file:** <a href="sample_inputs/standard_html/intro.md"><code>intro.md</code></a>
@@ -35,3 +24,16 @@ Can include an <code>[add_toc]</code> directive that specifies location for the 
 The boilerplate postscript file is a Markdown or HTML file that contains supplementary content to include in the output after the generated documentation.
 
 Can include an <code>[add_toc]</code> directive that specifies location for the table of contents.
+
+## Include the supplementary files
+
+To include the supplementary files, add a pointer to one or both files at the bottom of the base configuration file:
+
+```json
+{
+   ...
+  "boilerplate_intro": "./intro.md",
+  "boilerplate_postscript": "./postscript.md", 
+  "content_supplement": "./content_supplement.json"
+}
+```
