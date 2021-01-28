@@ -4,53 +4,24 @@
 
 # Redfish doc generator: Content supplement configuration file
 
-Contains text replacements and additions to apply to the generated schema documentation. Includes text overrides for property descriptions, replacements for unit abbreviations, and schema-specific content including introductions, postscripts, and property description substitutions.
+The content supplement configuration file is a JSON file that contains text overrides for property descriptions, replacements for unit abbreviations, and schema-specific content to apply to the generated schema documentation.
 
 * [Content supplement configuration file example](#content-supplement-configuration-file-example)
 * [Supported keys](#supported-keys)
 * [schema_link_replacements key](#schema_link_replacements-key)
 * [schema_supplement key](#schema_supplement-key)
 
-## Content supplement configuration file example
-
-```json
-{
-   "description": "Redfish doc generator Example: content supplement config file for output of standard-mode documentation in HTML format.",
-   "keywords": {
-      "html_title": "Title from the supplemental doc"
-   },
-   "units_translation": {
-      "s": "seconds",
-      "Mb/s": "Mbits/second",
-      "By": "bytes",
-      "Cel": "Celsius",
-      "MiBy": "mebibytes",
-      "W": "Watts",
-      "V": "Volts",
-      "mW": "milliWatts",
-      "m": "meters"
-   },
-   "property_description_overrides": {
-      "Oem": "See the OEM object definition in the [Using this guide](#using-this-guide) section."
-   },
-   "schema_supplement": {
-      "ComputerSystem": {
-         "property_details": {
-            "UUID": "\nThe UUID property contains a value that represents the universal unique identifier number (UUID) of a system.\n\nThe UUID property is a string data type. The format of the string is the 35-character string format specified in RFC4122: \"xxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\". Each x represents a hexadecimal digit (0-f).\n\nRegarding the case of the hex values, RFC4122 specifies that the hex values should be lowercase characters. Most modern scripting languages typically also represent hex values in lowercase characters following the RFC. However, dmidecode, WMI and some Redfish implementations currently use uppercase characters for UUID on output."
-         }
-      }
-   }
-}
-```
-
-## Supported keys
+## Content supplement configuration file examples
 
 The content supplement configuration file is supported in these output modes:
 
-* [Profile mode](README.md#profile-mode "README.md#profile-mode")
-* [Standard](README.md#standard-mode)&nbsp;HTML
-* Normative&nbsp;standard&nbsp;HTML
-* [Subset](README.md#subset-mode)
+| Output mode | Sample content supplement configuration file |
+| :---------- | :------------------------------------------- |
+| [Profile mode](README.md#profile-mode "README.md#profile-mode") | [`profile_mode/content_supplement.json`](profile_mode/content_supplement.json "profile_mode/content_supplement.json") |
+| [Standard mode](README.md#standard-mode "README.md#standard-mode")<br/>[Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode") | [`standard_html/content_supplement.json`](standard_html/content_supplement.json "profile_mode/content_supplement.json") |
+| [Subset mode](README.md#subset-mode "README.md#subset-mode") | [`subset/content_supplement.json`](subset/content_supplement.json "subset/content_supplement.json") |
+
+## Supported keys
 
 <table>
    <thead>
