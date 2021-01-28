@@ -37,35 +37,27 @@ If you specify an option in more than one way, command&#8209;line arguments over
 
 The base configuration file is a JSON file that configures the generated output and can include pointers to the <a href="#content-supplement-configuration-file-overview">content supplement configuration file</a> and the [boilerplate intro](README-supplementary-files.md#boilerplate-intro-file "README-supplementary-files.md#boilerplate-intro-file") and [boilerplate postscript](README-supplementary-files.md#boilerplate-postscript-file "README-supplementary-files.md#boilerplate-postscript-file") supplementary content files.
 
-* [Supported keys](#supported-keys)
-* [combine_multiple_refs key](#combine_multiple_refs-key)
-* [object_reference_disposition key](#object_reference_disposition-key)
-* [payload_dir key](#payload_dir-key)
-* [profile_terse key](#profile_terse-key)
-
-### Supported keys
-
 The names of some configuration keys differ from their command&#8209;line argument equivalents. Unless otherwise noted, the configuration key has the same meaning as its command&#8209;line argument equivalent. The `uri_mapping` configuration key is required but all other configuration keys are optional.
 
 The clauses briefly describes each key and the output modes that support the key:
 
-* `actions_in_property_table` key
+### actions_in_property_table key
 
-  **Supported output modes:** Subset
+**Supported output modes:** Subset
 
-   Boolean. Value is:
+Boolean. Value is:
 
-   <ul>
+<ul>
       <li><code>true</code>. (Default) Include <code>Actions</code> in property tables. </li>
       <li><code>false</code>. Exclude <code>Actions</code> from property tables. </li>
    </ul>
 
-* `add_toc` key
+### add_toc key
 
-  **Supported output modes:** Standard, standard normative
+**Supported output modes:** Standard, standard normative
 
-  Boolean. By default, the table of contents (TOC) appears at the top of the HTML output. If the <code>[add_toc]</code> directive appears anywhere in the boilerplate intro or boilerplate postscript file, <code>add_toc</code> key is <code>true</code> by default.</p>
-  <p>Value is:</p>
+Boolean. By default, the table of contents (TOC) appears at the top of the HTML output. If the <code>[add_toc]</code> directive appears anywhere in the boilerplate intro or boilerplate postscript file, <code>add_toc</code> key is <code>true</code> by default.</p>
+<p>Value is:</p>
   <ul>
       <li>
          <p><code>true</code>. (Default) Generate a TOC and place it either:</p>
@@ -77,19 +69,19 @@ The clauses briefly describes each key and the output modes that support the key
       <li><code>false</code>. Do not generate a TOC.</li>
    </ul>
 
-* `boilerplate_intro` key
+### boilerplate_intro key
 
-  **Supported output modes:** Profile, standard, standard normative, subset
+**Supported output modes:** Profile, standard, standard normative, subset
 
-  String. No default. Location of the HTML or Markdown file that contains content to appear at the beginning of the document before the generated schema documentation. If a relative path, should be relative to the location of the configuration file.
+String. No default. Location of the HTML or Markdown file that contains content to appear at the beginning of the document before the generated schema documentation. If a relative path, should be relative to the location of the configuration file.
 
-* `boilerplate_postscript` key
+### boilerplate_postscript key
 
   **Supported output modes:** Standard, standard normative
 
   String. No default. Location of the HTML or Markdown file that contains content to appear at the end of the document after the generated schema documentation. If a relative path, should be relative to the location of the configuration file.
 
-* `combine_multiple_refs` key
+### combine_multiple_refs key
 
   **Supported output modes:** Standard, standard normative
 
@@ -103,19 +95,19 @@ The clauses briefly describes each key and the output modes that support the key
    "combine_multiple_refs": 3,
    ```
 
-* `content_supplement` key
+### content_supplement key
 
   **Supported output modes:** Profile, standard, standard normative, subset
 
   String. No default. Location of a JSON-formatted content supplement file, which specifies content substitutions to be made within the generated schema documentation. If a relative path, must be relative to the location of the configuration file.
 
-* `description_overrides` key
+### description_overrides key
 
   **Supported output modes:** Property index
 
   String. ??
 
-* `escape_chars` key
+### escape_chars key
 
   **Supported output modes:** ??
 
@@ -123,7 +115,7 @@ The clauses briefly describes each key and the output modes that support the key
 
    <b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>escape</code>
 
-* `excluded_annotations` key
+### excluded_annotations key
 
   **Supported output modes:** CSV, profile, standard, standard normative, subset
 
@@ -131,25 +123,25 @@ The clauses briefly describes each key and the output modes that support the key
 
    Wildcard match is supported for strings that begin with <code>\*</code>.
 
-* `excluded_pattern_properties` key
+### excluded_pattern_properties key
 
    **Supported output modes:** CSV, profile, standard, standard normative, subset
 
    ??. No default. List of pattern properties to exclude from output.<br /><br />In JSON, you must escape back slashes (<code>"\"</code> becomes <code>"\\"</code>).
 
-* `excluded_properties` key
+### excluded_properties key
 
   **Supported output modes:** CSV, profile, standard, standard normative, subset
 
   Array of strings. No default. List of property names to exclude. Wildcard match is supported for strings that begin with <code>*</code>. For example, <code>"*odata.count"</code> matches <code>"Members\@odata.count"</code> and others.
 
-* `excluded_schemas` key
+### excluded_schemas key
 
    **Supported output modes:** CSV, profile, standard, standard normative, subset
 
    Array of strings. No default. List of schemas, by name, to exclude from output.
 
-* `format` key
+### format key
 
   **Supported output modes:** CSV, profile, standard, standard normative, subset
 
@@ -157,13 +149,13 @@ The clauses briefly describes each key and the output modes that support the key
 
   **Equivalent&nbsp;command&#8209;line&nbsp;argument:** <code>format</code>
 
-* `html_title` key
+### html_title key
 
   **Supported output modes:** Standard, standard normative, subset
 
   String. No default. HTML <code>title</code> element in HTML output.
 
-* `import_from` key
+### import_from key
 
   **Supported output modes:** Standard, standard normative, subset
 
@@ -171,19 +163,19 @@ The clauses briefly describes each key and the output modes that support the key
 
   <b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b>&nbsp;<code>import_from</code>
 
-* `locale` key
+### locale key
 
   **Supported output modes:** 
 
   No default. Case-sensitive locale code for localized output. Localization of strings supplied by the doc generator uses <a href="https://www.gnu.org/software/gettext/" title="https://www.gnu.org/software/gettext/"><code>gettext</code></a>. Locale files are in the <code>locale</code> directory in the <code>doc_generator</code> root. Translated descriptions and annotations may be supplied in localized JSON Schema files.
 
-* `normative` key
+### normative key
 
   **Supported output modes:** Standard normative
 
   &nbsp;? No default. Produce normative (developer-focused) output.
 
-* `object_reference_disposition` key
+### object_reference_disposition key
 
   **Supported output modes:** Standard, standard normative
 
@@ -191,8 +183,8 @@ The clauses briefly describes each key and the output modes that support the key
 
   The `object_reference_disposition` key specifies a JSON object with either or both these fields:
 
-  * `common_object`. List of property names. For example `"Redundancy"`. 
-  * `include`. List of properties by their full path.
+  ### common_object`. List of property names. For example `"Redundancy"`. 
+  ### include`. List of properties by their full path.
 
   For example:
 
@@ -205,7 +197,7 @@ The clauses briefly describes each key and the output modes that support the key
   }
   ```
 
-* `omit_version_in_headers` key
+### omit_version_in_headers key
 
   **Supported output modes:** 
 
@@ -218,7 +210,7 @@ The clauses briefly describes each key and the output modes that support the key
       <li><code>false</code>. Include schema versions in clause headers.</li>
    </ul>
 
-* `outfile` key
+### outfile key
 
   **Supported output modes:** CSV, profile, property index, standard, standard normative, subset
 
@@ -226,7 +218,7 @@ The clauses briefly describes each key and the output modes that support the key
 
    <b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>out</code>
 
-* `payload_dir` key
+### payload_dir key
 
   **Supported output modes:** Standard, standard normative
 
@@ -239,7 +231,7 @@ The clauses briefly describes each key and the output modes that support the key
 
    <b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b>&nbsp;<code>payload_dir</code>
 
-* `profile_doc` key
+### profile_doc key
 
   **Supported output modes:** Profile
 
@@ -247,7 +239,7 @@ The clauses briefly describes each key and the output modes that support the key
 
    <b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>profile</code>
 
-* `profile_terse` key
+### profile_terse key
 
   **Supported output modes:** Profile
 
@@ -257,13 +249,13 @@ The clauses briefly describes each key and the output modes that support the key
 
    <b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>terse</code>
 
-* `profile_uri_to_local` key
+### profile_uri_to_local key
 
   **Supported output modes:** Profile, subset
 
   &nbsp;? No default. For profile mode only, an object like <code>uri_mapping</code>, for locations of profiles.
 
-* `property_index` key
+### property_index key
 
   **Supported output modes:** Property index
 
@@ -271,7 +263,7 @@ The clauses briefly describes each key and the output modes that support the key
 
   <b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>property_index</code>
 
-* `property_index_config_out` key
+### property_index_config_out key
 
   **Supported output modes:** 
 
@@ -279,13 +271,13 @@ The clauses briefly describes each key and the output modes that support the key
 
   <b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>property_index_config_out</code>
 
-* `registry_uri_to_local` key
+### registry_uri_to_local key
 
   **Supported output modes:** Profile
 
   &nbsp;? No default. For profile mode only, an object like <code>uri_mapping</code>, for locations of registries.
 
-* `subset` key
+### subset key
 
   **Supported output modes:** Subset
 
@@ -293,7 +285,7 @@ The clauses briefly describes each key and the output modes that support the key
 
   <b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>subset</code>
 
-* `uri_mapping` key
+### uri_mapping key
 
   **Supported output modes:** CSV, profile, property index, standard, standard normative, subset
 
