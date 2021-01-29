@@ -2,9 +2,9 @@
 <p align="center">
   <img src="http://redfish.dmtf.org/sites/all/themes/dmtf2015/images/dmtf-redfish-logo.png" alt="DMTF Redfish" width=180>
 
-# Redfish doc generator: Supplementary files
+# Redfish doc generator: Supplemental files
 
-The **Redfish doc generator** takes content from the following supplementary files:
+The **Redfish doc generator** takes content from the following supplemental files:
 
 * <a href="#boilerplate-intro-file">Boilerplate&nbsp;intro file</a>
 * <a href="#boilerplate-postscript-file">Boilerplate&nbsp;postscript&nbsp;file</a>
@@ -25,9 +25,9 @@ The boilerplate postscript file is a Markdown or HTML file that contains supplem
 
 Can include an <code>[add_toc]</code> directive that specifies location for the table of contents.
 
-## Include the supplementary files
+## Include the supplemental files
 
-To include the supplementary files, add a pointer to one or both files at the bottom of the base configuration file:
+To include the supplemental files, add a pointer to one or both files at the bottom of the base configuration file:
 
 ```json
 {

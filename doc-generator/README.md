@@ -12,6 +12,15 @@ Copyright 2016-2021 Distributed Management Task Force, Inc. All rights reserved.
 > 
 > To use the previous version of the doc generator, see [Doc Generator v2](https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0 "https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0").
 
+* Doc-generator V3 change log README  2
+* Doc-generator configuration files README  2
+* Base configuration file README  2
+* Content supplement configuration file README  2
+* Property index README 2
+* Doc-generator supplemental files README 2
+    * [Boilerplate intro file](README-supplemental-files.md#boilerplate-intro-file)
+    * [Boilerplate postscript file](README-supplemental-files.md#boilerplate-postscript-file)
+
 ## Contents
 
 * [About](#about)
@@ -116,7 +125,7 @@ Use the `--config` option to specify the [base configuration file](README-config
 
 > **Note:** Some configuration information, such as URI mappings, can be specified only in the base configuration file and cannot be specified on the command-line.
 
-Several flavors of the base configuration file are available. Additionally, the base configuration file can embed the content supplement configuration file and supplementary files. See [Redfish doc generator: Configuration files](README-configuration-files.md "README-configuration-files.md") and [Redfish doc generator: Supplementary files](README-supplementary-files.md "README-supplementary-files.md").
+Several flavors of the base configuration file are available. Additionally, the base configuration file can embed the content supplement configuration file and supplemental files. See [Redfish doc generator: Configuration files](README-configuration-files.md "README-configuration-files.md") and [Redfish doc generator: supplemental files](README-supplementary-files.md "README-supplementary-files.md").
 
 ## Output modes and formats
 
