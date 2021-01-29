@@ -2,7 +2,7 @@
 <p align="center">
   <img src="http://redfish.dmtf.org/sites/all/themes/dmtf2015/images/dmtf-redfish-logo.png" alt="DMTF Redfish" width=180>
 
-# Redfish doc generator: Content supplement configuration file
+# Redfish doc generator content supplement configuration file
 
 The content supplement configuration file is a JSON file that contains text overrides for property descriptions, replacements for unit abbreviations, and schema-specific content to apply to the generated schema documentation.
 

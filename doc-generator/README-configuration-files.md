@@ -2,7 +2,7 @@
 <p align="center">
   <img src="http://redfish.dmtf.org/sites/all/themes/dmtf2015/images/dmtf-redfish-logo.png" alt="DMTF Redfish" width=180>
 
-# Redfish doc generator: Configuration files
+# Redfish doc generator configuration files
 
 To configure the generated documentation, the **Redfish doc generator** reads command-line arguments and configuration file keys. If you specify an option in more than one way, command&#8209;line arguments override the configuration file keys.
 

@@ -17,7 +17,7 @@ Copyright 2016-2021 Distributed Management Task Force, Inc. All rights reserved.
     * [Base configuration file](README-base-configuration-file.md "README-base-configuration-file.md")
     * [Content supplement configuration file](README-content-supplement-configuration-file.md "README-content-supplement-configuration-file.md")
     * [Property index mode](README-property-index-mode.md "README-property-index-mode.md")
-* [Doc-generator supplemental files README 2](README-supplemental-files.md "README-supplemental-files.md")
+* [Doc-generator supplemental files](README-supplemental-files.md "README-supplemental-files.md")
     * [Boilerplate intro file](README-supplemental-files.md#boilerplate-intro-file)
     * [Boilerplate postscript file](README-supplemental-files.md#boilerplate-postscript-file)
 
