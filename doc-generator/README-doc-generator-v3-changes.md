@@ -2,9 +2,9 @@
 <p align="center">
   <img src="http://redfish.dmtf.org/sites/all/themes/dmtf2015/images/dmtf-redfish-logo.png" alt="DMTF Redfish" width=180>
 
-# Redfish doc generator v3 changes
+# Redfish doc generator: v3 changes
 
-The Redfish doc generator v3 accepts different inputs than those that the Redfish doc generator v2 accepted.
+The Redfish doc generator: v3 accepts different inputs than those that the Redfish doc generator: v2 accepted.
 
 > **Note:** These changes are not backward compatible so use [Redfish-Tools doc generator v2](https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0 "https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0") to run the tool against an existing set of configuration files.
 

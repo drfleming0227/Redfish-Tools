@@ -6,20 +6,21 @@
 
 Copyright 2016-2021 Distributed Management Task Force, Inc. All rights reserved.
 
-> **Important notice about the Redfish doc generator v3:**
+> **Important notice about the Redfish doc generator: v3:**
 >
-> The doc generator v3 contains _**breaking configuration changes**_ and updates to the `README` files. For information about these changes, see [Redfish doc generator v3 changes](README-doc-generator-v3-changes.md "README-doc-generator-v3-changes.md").
+> The doc generator v3 contains _**breaking configuration changes**_ and updates to the `README` files. For information about these changes, see [Redfish doc generator: v3 changes](README-doc-generator-v3-changes.md "README-doc-generator-v3-changes.md").
 > 
 > To use the previous version of the doc generator, see [Doc Generator v2](https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0 "https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0").
 
-* [Redfish doc generator v3 changes](README-doc-generator-v3-changes.md "README-doc-generator-v3-changes.md")
-* [Redfish doc generator configuration files](README-configuration-files.md "README-configuration-files.md")
-    * [Base configuration file](README-base-configuration-file.md "README-base-configuration-file.md")
-    * [Content supplement configuration file](README-content-supplement-configuration-file.md "README-content-supplement-configuration-file.md")
-    * [Property index mode](README-property-index-mode.md "README-property-index-mode.md")
-* [Doc-generator supplemental files](README-supplemental-files.md "README-supplemental-files.md")
+* [Redfish doc generator: v3 changes](README-doc-generator-v3-changes.md "README-doc-generator-v3-changes.md")
+* [Redfish doc generator: Configuration files](README-configuration-files.md "README-configuration-files.md")
+    * [Redfish doc generator: Base configuration file](README-base-configuration-file.md "README-base-configuration-file.md")
+    * [Redfish doc generator: Content supplement configuration file](README-content-supplement-configuration-file.md "README-content-supplement-configuration-file.md")
+    * [Redfish doc generator: Property-index mode](README-property-index-mode.md "README-property-index-mode.md")
+* [Redfish doc generator: Supplemental files](README-supplemental-files.md "README-supplemental-files.md")
     * [Boilerplate intro file](README-supplemental-files.md#boilerplate-intro-file)
     * [Boilerplate postscript file](README-supplemental-files.md#boilerplate-postscript-file)
+* [Table numbering README](README-table-numbering.md "README-table-numbering.md")
 
 ## Contents
 
@@ -231,7 +232,7 @@ Depending on the output mode, the configuration keys in the base configuration f
 
 ## Examples
 
-For `doc_generator.py` command examples, see [Redfish doc generator examples](README-configuration-files.md#redfish-doc-generator-examples "README-configuration-files.md#redfish-doc-generator-examples").
+For `doc_generator.py` command examples, see [Redfish doc generator: examples](README-configuration-files.md#redfish-doc-generator-examples "README-configuration-files.md#redfish-doc-generator-examples").
 
 ## Processing
 

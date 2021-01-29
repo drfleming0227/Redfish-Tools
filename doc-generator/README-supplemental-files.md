@@ -2,7 +2,7 @@
 <p align="center">
   <img src="http://redfish.dmtf.org/sites/all/themes/dmtf2015/images/dmtf-redfish-logo.png" alt="DMTF Redfish" width=180>
 
-# Redfish doc generator supplemental files
+# Redfish doc generator: Supplemental files
 
 The **Redfish doc generator** takes content from the following supplemental files:
 
