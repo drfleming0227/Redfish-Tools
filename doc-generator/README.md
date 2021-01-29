@@ -12,12 +12,12 @@ Copyright 2016-2021 Distributed Management Task Force, Inc. All rights reserved.
 > 
 > To use the previous version of the doc generator, see [Doc Generator v2](https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0 "https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0").
 
-* Doc-generator V3 change log README  2
-* Doc-generator configuration files README  2
-* Base configuration file README  2
-* Content supplement configuration file README  2
-* Property index README 2
-* Doc-generator supplemental files README 2
+* [Redfish doc generator v3 changes](README-doc-generator-v3-changes.md "README-doc-generator-v3-changes.md")
+* [Redfish doc generator configuration files](README-configuration-files.md "README-configuration-files.md")
+    * [Base configuration file](README-base-configuration-file.md "README-base-configuration-file.md")
+    * [Content supplement configuration file](README-content-supplement-configuration-file.md "README-content-supplement-configuration-file.md")
+    * [Property index mode](README-property-index-mode.md "README-property-index-mode.md")
+* [Doc-generator supplemental files README 2](README-supplemental-files.md "README-supplemental-files.md")
     * [Boilerplate intro file](README-supplemental-files.md#boilerplate-intro-file)
     * [Boilerplate postscript file](README-supplemental-files.md#boilerplate-postscript-file)
 
