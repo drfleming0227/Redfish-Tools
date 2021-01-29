@@ -26,15 +26,15 @@ The content supplement configuration file is supported in these output modes:
 
 ## property_description_overrides key
 
-Dictionary. Maps property names to strings to use to replace the descriptions of the named properties.
+A dictionary, this key maps property names to strings to use to replace the descriptions of the named properties.
 
 ## property_fulldescription_overrides key
 
-Dictionary. Just like <code>property_description_overrides</code>. These replacements are <i>full</i> in that any additional information the <code>doc_generator.py</code> normally appends, like a reference to the definition of the property in another schema, is omitted.
+A dictionary, this key maps property names to strings to use to replace the descriptions of the named properties. These replacements are <i>full</i> in that the doc generator omits any any additional information that it normally appends, like a reference to the definition of the property in another schema.
 
 ## schema_link_replacements key
 
-Dictionary. Maps URIs of schema references to a structure that specifies either the full or partial match type and replacement URIs. Use to substitute a link to documentation where a link to a specific schema would otherwise appear in the documentation. See <a href="#schema_link_replacements-key">schema_link_replacements key</a>.The `schema_link_replacements` key is a dictionary that maps reference URIs to replacement URIs. The match type is full or partial. Replaces one link with another link. The dictionary structure is:
+A dictionary, this key maps URIs of schema references to a structure that specifies either the full or partial match type and replacement URIs. Use to substitute a link to documentation where a link to a specific schema would otherwise appear in the documentation. See <a href="#schema_link_replacements-key">schema_link_replacements key</a>.The `schema_link_replacements` key is a dictionary that maps reference URIs to replacement URIs. The match type is full or partial. Replaces one link with another link. The dictionary structure is:
 
 ```json
 "schema_link_replacements": {
@@ -51,7 +51,7 @@ Dictionary. Maps URIs of schema references to a structure that specifies either 
 
 ## schema_supplement key
 
-Dictionary. Maps schema names to a dictionary of structured content, including introductory text and schema-specific text replacements.
+A dictionary, this key maps schema names to a dictionary of structured content, including introductory text and schema-specific text replacements.
 
 The `schema_supplement` key defines a dictionary of structured content, including text overrides for property descriptions, units translation (replacements for unit abbreviations), schema-specific intros, property description substitutions, and other supplementary data. The structure of this object looks like this (all fields are optional):
 
@@ -87,4 +87,4 @@ The `mockup` and `jsonpayload` attributes are mutually exclusive. If you specify
 
 ## units_translation key
 
-Dictionary. Maps units as they appear in Redfish schemas to units as you want them to appear in the documentation.
+A dictionary, this key maps units as they appear in Redfish schemas to units as you want them to appear in the documentation.
