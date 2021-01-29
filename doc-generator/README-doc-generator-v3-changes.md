@@ -17,7 +17,7 @@ This document describes which files have been changed or added, and how to updat
 ## Contents
 
 * [Configuration files](#configuration-files)
-* [Supplementary content files](#supplementary-content-files)
+* [supplemental files](#supplementary-content-files)
 
 ## Configuration files
 
@@ -27,7 +27,7 @@ This document describes which files have been changed or added, and how to updat
 
 ### Changes to the base configuration file
 
-The <a href="README_config_files.md#base-configuration-file">base&nbsp;configuration file</a> The base configuration file is a JSON file that configures the generated output and can include pointers to the <a href="#content-supplement-configuration-file-overview">content supplement configuration file</a> and the [boilerplate intro](#boilerplate-intro-file) and [boilerplate postscript](#boilerplate-postscript-file) supplementary content files.
+The <a href="README_config_files.md#base-configuration-file">base&nbsp;configuration file</a> The base configuration file is a JSON file that configures the generated output and can include pointers to the <a href="#content-supplement-configuration-file-overview">content supplement configuration file</a> and the [boilerplate intro](#boilerplate-intro-file) and [boilerplate postscript](#boilerplate-postscript-file) supplemental files.
 
 These fields have been moved from the base configuration file into the [content supplement configuration file](#content-supplement-configuration-file-changes):
 
@@ -66,7 +66,7 @@ This file is unchanged for v3. _Link to spec for this?_
 
 For an example subset configuration file, see <a href="sample_inputs/subset/config.json"><code>config.json</code></a>.
 
-## Supplementary content files
+## supplemental files
 
 * [Changes to the supplemental material file](#changes-to-the-supplemental-material-file)
 * [New boilerplate intro file](#new-boilerplate-intro-file)

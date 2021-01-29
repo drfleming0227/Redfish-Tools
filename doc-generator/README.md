@@ -34,9 +34,9 @@ Copyright 2016-2021 Distributed Management Task Force, Inc. All rights reserved.
 
 ## About
 
-The **Redfish doc generator** &mdash; [`doc_generator.py`](doc_generator.py "doc_generator.py") &mdash; is a Python tool that generates output in a specified or default [*output mode and format*](#output-modes-and-formats) from JSON Schema files and supplementary content files. 
+The **Redfish doc generator** &mdash; [`doc_generator.py`](doc_generator.py "doc_generator.py") &mdash; is a Python tool that generates documentation in a specified or default [*output mode and format*](#output-modes-and-formats) from JSON Schema files and supplemental files. 
 
-To configure this output, the doc generator reads configuration keys from the base configuration file, and if included, the content supplement configuration file.
+To configure this documentation, the doc generator reads configuration keys from the base configuration file, and if included, the content supplement configuration file.
 
 ## Installation
 
@@ -122,7 +122,7 @@ Example:
 
 ## Configuration
 
-Use the `--config` option to specify the [base configuration file](README-configuration-files.md#base-configuration-file "README-configuration-files.md/#base-configuration-file"), which configures the generated output.
+Use the `--config` option to specify the [base configuration file](README-configuration-files.md#base-configuration-file "README-configuration-files.md/#base-configuration-file"), which configures the generated documentation.
 
 > **Note:** Some configuration information, such as URI mappings, can be specified only in the base configuration file and cannot be specified on the command-line.
 
