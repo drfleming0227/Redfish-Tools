@@ -22,13 +22,26 @@ Depending on the [output mode](README.md#output-modes "README.md#output-modes"),
 
 The names of some configuration keys differ from their command&#8209;line argument equivalents. Unless otherwise noted, the configuration key has the same meaning as its command&#8209;line argument equivalent.
 
-See [Base configuration file](README-base-configuration-file.md "README-base-configuration-file.md").
+To include supplemental files and the content supplement configuration file:
+
+1. Add a pointer to these files at the bottom of the base configuration file:
+
+    ```json
+    {
+    	...
+    	"boilerplate_intro": "./intro.md",
+    	"boilerplate_postscript": "./postscript.md", 
+    	"content_supplement": "./content_supplement.json"
+    }
+    ```
+
+For descriptions of the configuration keys, see [Base configuration file](README-base-configuration-file.md "README-base-configuration-file.md").
 
 ## Content supplement configuration file
 
 The content supplement configuration file is a JSON file that defines text overrides for property descriptions, replacements for unit abbreviations, and schema-specific content including introductions, postscripts, and property description substitutions. The base configuration file contains a pointer to this file.
 
-See [Content supplement configuration file](README-content-supplement-configuration-file.md "README-content-supplement-configuration-file.md").
+For descriptions of the configuration keys, see [Content supplement configuration file](README-content-supplement-configuration-file.md "README-content-supplement-configuration-file.md").
 
 ## Boilerplate intro file
 
@@ -46,15 +59,4 @@ The boilerplate postscript file is a Markdown or HTML file that contains supplem
 
 Can include an <code>[add_toc]</code> directive that specifies location for the table of contents.
 
-## Include supplemental files and the content supplement configuration file
 
-To include the supplemental files and the content supplement configuration file, add a pointer to these files at the bottom of the base configuration file:
-
-```json
-{
-   ...
-  "boilerplate_intro": "./intro.md",
-  "boilerplate_postscript": "./postscript.md", 
-  "content_supplement": "./content_supplement.json"
-}
-```
