@@ -121,7 +121,7 @@ String. ??
 
 Array of strings. No default. List of annotation names to exclude.
 
-Wildcard match is supported for strings that begin with <code>\*</code>.
+Strings that begin with <code>\*</code> define wildcards.
 
 ## excluded_pattern_properties key
 
@@ -133,7 +133,7 @@ Wildcard match is supported for strings that begin with <code>\*</code>.
 
 **Output modes:** [CSV format](README.md#csv-format "README.md#csv-format"), [Profile mode](README.md#profile-mode "README.md#profile-mode"), [Standard](README.md#standard-mode), [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode"), [Subset](README.md#subset-mode)
 
-  Array of strings. No default. List of property names to exclude. Wildcard match is supported for strings that begin with <code>*</code>. For example, <code>"*odata.count"</code> matches <code>"Members\@odata.count"</code> and others.
+  Array of strings. No default. List of property names to exclude. Strings that begin with <code>*</code> define wildcards. For example, <code>"*odata.count"</code> matches <code>"Members\@odata.count"</code> and others.
 
 ## excluded_schemas key
 

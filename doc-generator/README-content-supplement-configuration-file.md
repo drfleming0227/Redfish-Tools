@@ -6,7 +6,7 @@
 
 The content supplement configuration file is a JSON file that defines text overrides for property descriptions, replacements for unit abbreviations, and schema-specific content to apply to the generated schema documentation.
 
-The content supplement configuration file is supported in these output modes:
+These output modes support the content supplement configuration file:
 
 | Output mode | Sample content supplement configuration file |
 | :---------- | :------------------------------------------- |

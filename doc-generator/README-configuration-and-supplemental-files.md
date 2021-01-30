@@ -45,7 +45,7 @@ For descriptions of the configuration keys, see [Base configuration file](README
 
 ## Content supplement configuration file
 
-The content supplement configuration file is a JSON file that defines text overrides for property descriptions, replacements for unit abbreviations, and schema-specific content including introductions, postscripts, and property description substitutions. The base configuration file contains a pointer to this file.
+The content supplement configuration file is a JSON file that that defines text overrides for property descriptions, replacements for unit abbreviations, and schema-specific content to apply to the generated schema documentation. The base configuration file contains a pointer to this file.
 
 For descriptions of the configuration keys, see [Content supplement configuration file](README-content-supplement-configuration-file.md "README-content-supplement-configuration-file.md").
 
