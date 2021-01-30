@@ -86,14 +86,14 @@ The structure of this object is:
 }
 ```
 
-In this key:
+In this structure:
 
 | Attribute    | Description                                                   |
 | :----------- | :------------------------------------------------------------ |
-| `SchemaName` | Can be either a bare schema name or a schema name with an underscore and an appended major version. For example, `"ComputerSystem"` or `"ComputerSystem_2"`. |
+| `SchemaName` | Defines the schema name as either a bare schema name or a schema name with an underscore and an appended major version.<br/><br/>For example, `"ComputerSystem"` or `"ComputerSystem_2"`. |
 | `description` | Replaces the description of the schema. |
 | `intro`  | If you include both `description` and `intro`, the `description` appears, followed by the `intro` string. |
-| `mockup` and `jsonpayload` | Mutually exclusive. If you specify both attributes, the content at `mockup` takes precedence. > **Note:** If you specify a `payload_dir` key in the [base configuration file](README-base-configuration-file.md "README-base-configuration-file"), the payload directory takes precedence over these attributes. |
+| `mockup` and `jsonpayload` | Mutually exclusive. If you specify both attributes, the content at `mockup` takes precedence.<blockquote><b>Note:</b> If you specify a <code>payload_dir</code> key in the <a href="README-base-configuration-file.md" title="README-base-configuration-file">base configuration file</a>, the payload directory takes precedence over these attributes.</blockquote> |
 
 ### units_translation
 
