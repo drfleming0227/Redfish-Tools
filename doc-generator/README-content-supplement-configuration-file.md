@@ -17,25 +17,25 @@ These output modes support the content supplement configuration file:
 
 ## Configuration keys
 
-* [property_description_overrides key](#property_description_overrides-key)
-* [property_fulldescription_overrides key](#property_fulldescription_overrides-key)
-* [schema_link_replacements key](#schema_link_replacements-key)
-* [schema_supplement key](#schema_supplement-key)
-* [units_translation key](#units_translation-key)
+* [property_description_overrides](#property_description_overrides)
+* [property_fulldescription_overrides](#property_fulldescription_overrides)
+* [schema_link_replacements](#schema_link_replacements)
+* [schema_supplement](#schema_supplement)
+* [units_translation](#units_translation)
 
-### property_description_overrides key
+### property_description_overrides
 
 **Data type:** Dictionary
 
 Maps property names to strings that replace the descriptions of the named properties.
 
-### property_fulldescription_overrides key
+### property_fulldescription_overrides
 
 **Data type:** Dictionary
 
-Maps property names to strings that replace the descriptions of the named properties. These replacements are <i>full</i> in that the doc generator omits any any additional information that it normally appends, like a reference to the definition of the property in another schema.
+Maps property names to strings that replace the descriptions of the named properties. These replacements are <i>full</i> in that the doc generator omits any additional information that it normally appends, like a reference to the definition of the property in another schema.
 
-### schema_link_replacements key
+### schema_link_replacements
 
 **Data type:** Dictionary
 
@@ -54,7 +54,7 @@ Maps URIs of schema references to a structure that specifies either the full or 
 }
 ```
 
-### schema_supplement key
+### schema_supplement
 
 **Data type:** Dictionary
 
@@ -92,7 +92,7 @@ If `description` or `intro` are specified for a schema, that value replaces the 
 
 The `mockup` and `jsonpayload` attributes are mutually exclusive. If you specify both attributes, the content at `mockup` takes precedence. If you specify a `payload_dir` in the base configuration file, a payload directory is preferred over using these attributes.
 
-### units_translation key
+### units_translation
 
 **Data type:** Dictionary
 
