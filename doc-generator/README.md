@@ -147,7 +147,7 @@ The *output mode* defines the type and audience of the generated document:
 | <a id="standard-mode"></a>Standard | Standard guide for novice&nbsp;and&nbsp;experienced&nbsp;developers. |
 | <a id="standard-normative-mode"></a>Standard&nbsp;normative | Standard guide with normative descriptions for developers. Normative output prefers long descriptions to descriptions. |
 | <a id="profile-mode"></a>Profile | Document with a subset of properties with profile requirements for service developers. A profile mode document can be terse or verbose. Default is verbose. |
-| <a id="subset-mode"></a>Subset | ?? |
+| <a id="subset-mode"></a>Subset | Subset of schema to include in white papers or other documents. |
 | <a id="property-index-mode"></a>Property index | <a href="README-property-index-mode.md" title="README-property-index-mode.md">Property index output</a> for Schema authors to enable them to locate existing property definitions within the Redfish Schema. End users and other consumers of Redfish data can also use a property index to look up property definitions without regard to their location in the Schema. |
 
 ### Output formats

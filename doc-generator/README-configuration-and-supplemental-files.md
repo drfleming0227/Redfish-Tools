@@ -16,7 +16,7 @@
 
 To configure the generated documentation, the **Redfish doc generator** reads command-line arguments and configuration keys. If you specify a configuration option in more than one way, command&#8209;line arguments take precedence over the configuration keys.
 
-The doc generator reads configuration keys from the [base configuration file](#base-configuration-file). if the base configuration file includes a pointer to the [content supplement configuration file](#content-supplement-configuration-file), the doc generator reads configuration keys from it. 
+The doc generator reads configuration keys from the [base configuration file](#base-configuration-file). if the base configuration file includes a pointer to the [content supplement configuration file](#content-supplement-configuration-file), the doc generator also reads configuration keys from it. 
 
 Additionally, if the base configuration file includes pointers to the <a href="#boilerplate-intro-file">boilerplate&nbsp;intro</a> and <a href="#boilerplate-postscript-file">boilerplate&nbsp;postscript</a> supplemental files, the doc generator includes content from these files in the generated output.
 
