@@ -39,7 +39,7 @@ Maps property names to strings that replace the descriptions of the named proper
 
 **Data type:** Dictionary
 
-Maps URIs of schema references to a structure that specifies either the full or partial match type and replacement URIs. Use to substitute a link to documentation where a link to a specific schema would otherwise appear in the documentation. See <a href="#schema_link_replacements-key">schema_link_replacements key</a>.The `schema_link_replacements` key is a dictionary that maps reference URIs to replacement URIs. The match type is full or partial. Replaces one link with another link. The dictionary structure is:
+Maps reference URIs to replacement URIs. The match type is full or partial. Replaces one link with another link. The dictionary structure is:
 
 ```json
 "schema_link_replacements": {
@@ -58,9 +58,9 @@ Maps URIs of schema references to a structure that specifies either the full or 
 
 **Data type:** Dictionary
 
-Maps schema names to a dictionary of structured content, including introductory text and schema-specific text replacements.
+Maps schema names to a dictionary of structured content, including text overrides for property descriptions, replacements for unit abbreviations, schema-specific introductions, property description substitutions, and other supplementary data. All elements in this structure are optional. 
 
-The `schema_supplement` key defines a dictionary of structured content, including text overrides for property descriptions, units translation (replacements for unit abbreviations), schema-specific intros, property description substitutions, and other supplementary data. The structure of this object looks like this (all fields are optional):
+The structure of this object is:
 
 ```json
 "schema_supplement": {
@@ -86,14 +86,17 @@ The `schema_supplement` key defines a dictionary of structured content, includin
 }
 ```
 
-In this file, `SchemaName` might be either a bare schema name or a schema name with an underscore and major version appended. For example, `"ComputerSystem"` or `"ComputerSystem_2"`.
+In this key:
 
-If `description` or `intro` are specified for a schema, that value replaces the description of the schema. If both are specified, the `description` is output, followed by the `intro`.
-
-The `mockup` and `jsonpayload` attributes are mutually exclusive. If you specify both attributes, the content at `mockup` takes precedence. If you specify a `payload_dir` in the base configuration file, a payload directory is preferred over using these attributes.
+| Attribute    | Description                                                   |
+| :----------- | :------------------------------------------------------------ |
+| `SchemaName` | Can be either a bare schema name or a schema name with an underscore and an appended major version. For example, `"ComputerSystem"` or `"ComputerSystem_2"`. |
+| `description` | Replaces the description of the schema. |
+| `intro`  | If you include both `description` and `intro`, the `description` appears, followed by the `intro` string. |
+| `mockup` and `jsonpayload` | Mutually exclusive. If you specify both attributes, the content at `mockup` takes precedence. > **Note:** If you specify a `payload_dir` key in the [base configuration file](README-base-configuration-file.md "README-base-configuration-file"), the payload directory takes precedence over these attributes. |
 
 ### units_translation
 
 **Data type:** Dictionary
 
-Maps units as they appear in Redfish schemas to units as you want them to appear in the documentation.
+Maps Redfish schema units to units as you want them to appear in the documentation.
