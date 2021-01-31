@@ -4,18 +4,24 @@
 
 # Redfish doc generator: Examples
 
-Several files in the `sample_inputs` directory provide examples of configuration files that you can use to produce different types of documentation. The following examples show some command&#8209;line invocations.
+## Contents
 
-These examples assume that you have a clone of the DMTF/Redfish repo and the DMTF/Redfish-Tools repo in the same parent directory, and that your working directory is the Redfish clone, so that the schemas are in `./json-schema` and `doc_generator.py` is at `../Redfish-Tools/doc-generator/doc_generator.py` relative to your current working directory.
-
-> **Note:** The configuration files reference other files in this directory.
-
+* [About](#about)
 * [CSV format](#csv-format)
 * [Standard mode in HTML format](#standard-mode-in-html-format)
 * [Standard normative mode in HTML format](#standard-normative-mode-in-html-format)
 * [Terse profile mode in Markdown format](#terse-profile-mode-in-markdown-format)
 * [Subset mode in HTML format](#subset-mode-in-html-format)
 * [Property-index mode in HTML format](#property-index-mode-in-html-format)
+
+## About
+
+Several files in the `sample_inputs` directory provide examples of configuration files that you can use to produce different types of documentation. The following examples show some command&#8209;line invocations.
+
+> **Notes:** 
+>
+> * These examples assume that you have a clone of the `DMTF/Redfish` repo and the `DMTF/Redfish-Tools` repositories in the same parent directory, and that your working directory is the `Redfish` clone, so that the schemas are in `./json-schema` and `doc_generator.py` is at `../Redfish-Tools/doc-generator/doc_generator.py` relative to your current working directory.
+> * The configuration files reference other files in this directory.
 
 ## CSV format
 
