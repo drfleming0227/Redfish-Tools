@@ -12,15 +12,6 @@ Copyright 2016-2021 Distributed Management Task Force, Inc. All rights reserved.
 > 
 > To use the previous version of the doc generator, see [Doc Generator v2](https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0 "https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0").
 
-<!-- * [Redfish doc generator: v3 changes](README-doc-generator-v3-changes.md "README-doc-generator-v3-changes.md")
-* [Redfish doc generator: Configuration and supplemental files](README-configuration-and-supplemental-files.md "README-configuration-and-supplemental-files.md")
-    * [Redfish doc generator: Base configuration file](README-base-configuration-file.md "README-base-configuration-file.md")
-    * [Redfish doc generator: Content supplement configuration file](README-content-supplement-configuration-file.md "README-content-supplement-configuration-file.md")
-    * [Redfish doc generator: Property-index mode](README-property-index-mode.md "README-property-index-mode.md")
-    * [Boilerplate intro file](README-configuration-and-supplemental-files.md#boilerplate-intro-file)
-    * [Boilerplate postscript file](README-configuration-and-supplemental-files.md#boilerplate-postscript-file)
-* [Table numbering README](README-table-numbering.md "README-table-numbering.md")
- -->
 ## Contents
 
 * [About](#about)
@@ -56,7 +47,6 @@ To configure the generated documentation, you specify command-line arguments and
 1. (Optional) To make changes to the `doc_generator.py` code, install [`pytest`](https://docs.pytest.org/en/latest/getting-started.html "https://docs.pytest.org/en/latest/getting-started.html"):
 
     ```zsh
-    % cd doc-generator
     % pip install -r dev_requirements.txt
     ```
 
