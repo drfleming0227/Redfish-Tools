@@ -2,9 +2,9 @@
 <p align="center">
   <img src="http://redfish.dmtf.org/sites/all/themes/dmtf2015/images/dmtf-redfish-logo.png" alt="DMTF Redfish" width=180>
 
-# Redfish-Tools
-
 Copyright 2016-2021 DMTF. All rights reserved.
+
+# Redfish-Tools
 
 The public `Redfish-Tools` GitHub repository contains the DMTF Scalable Platforms Management Forum (SPMF) tools.
 
