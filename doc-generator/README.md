@@ -44,11 +44,11 @@ To configure the generated documentation, you specify command-line arguments and
       % cd doc-generator
       % pip install -r requirements.txt
       ```
-1. (Optional) To make changes to the `doc_generator.py` code, install [`pytest`](https://docs.pytest.org/en/latest/getting-started.html "https://docs.pytest.org/en/latest/getting-started.html"):
+    * (Optional) To make changes to the `doc_generator.py` code, install [`pytest`](https://docs.pytest.org/en/latest/getting-started.html "https://docs.pytest.org/en/latest/getting-started.html"):
 
-    ```zsh
-    % pip install -r dev_requirements.txt
-    ```
+        ```zsh
+        % pip install -r dev_requirements.txt
+        ```
 
 ## Usage
 
