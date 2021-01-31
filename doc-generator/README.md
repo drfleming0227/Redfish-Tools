@@ -33,9 +33,9 @@ Copyright 2016-2021 Distributed Management Task Force, Inc. All rights reserved.
 
 ## About
 
-The **Redfish doc generator** &mdash; [`doc_generator.py`](doc_generator.py "doc_generator.py") &mdash; is a Python tool that generates documentation in a specified or default [*output mode and format*](#output-modes-and-formats) from JSON Schema files and supplemental files. 
+The **Redfish doc generator** &mdash; [`doc_generator.py`](doc_generator.py "doc_generator.py") &mdash; is a Python tool that generates documentation in a specified or default [*output mode and format*](#output-modes-and-formats) from JSON Schema files and supplemental files.
 
-To configure this documentation, the doc generator reads configuration keys from the base configuration file, and if included, the content supplement configuration file.
+To configure the generated documentation, you specify command-line arguments and configuration keys. If you specify a configuration option in more than one way, command&#8209;line arguments take precedence over the configuration keys.
 
 ## Installation
 
@@ -121,9 +121,11 @@ Example:
 
 ## Configuration
 
-Use the `--config` option to specify the [base configuration file](README-configuration-files.md#base-configuration-file "README-configuration-files.md/#base-configuration-file"), which configures the generated documentation.
+To configure the generated documentation, you specify command-line arguments and configuration keys in the base configuration file. If you specify a configuration option in more than one way, command&#8209;line arguments take precedence over the configuration keys.
 
-> **Note:** Some configuration information, such as URI mappings, can be specified only in the base configuration file and cannot be specified on the command-line.
+Use the `--config` option to specify the [base configuration file](README-configuration-files.md#base-configuration-file "README-configuration-files.md/#base-configuration-file").
+
+> **Note:** You can specify some configuration information, such as URI mappings, only in the base configuration file and not on the command line.
 
 Several flavors of the base configuration file are available. Additionally, the base configuration file can embed the content supplement configuration file and supplemental files. See [Redfish doc generator: Configuration and supplemental files](README-configuration-and-supplemental-files.md "README-configuration-and-supplemental-files.md").
 
