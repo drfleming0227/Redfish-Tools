@@ -55,7 +55,7 @@ For descriptions of the configuration keys, see [Content supplement configuratio
 
 The boilerplate intro file is a Markdown or HTML file that contains supplementary content to include in the output before the generated documentation.
 
-Can include an <code>[add_toc]</code> directive that specifies location for the table of contents.
+This file can include an <code>[add_toc]</code> directive that specifies location for the table of contents.
 
 ## Boilerplate postscript file
 
@@ -63,6 +63,4 @@ Can include an <code>[add_toc]</code> directive that specifies location for the 
 
 The boilerplate postscript file is a Markdown or HTML file that contains supplementary content to include in the output after the generated documentation.
 
-Can include an <code>[add_toc]</code> directive that specifies location for the table of contents.
-
-
+This file can include an <code>[add_toc]</code> directive that specifies location for the table of contents.

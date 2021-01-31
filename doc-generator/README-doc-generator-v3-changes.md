@@ -8,7 +8,7 @@ The Redfish doc generator: v3 accepts different inputs than those that the Redfi
 
 > **Note:** These changes are not backward compatible so use [Redfish-Tools doc generator v2](https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0 "https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0") to run the tool against an existing set of configuration files.
 
-The doc generator v3 takes command-line input and key values from the base configuration file to configure the generated documentation. The base configuration file can include pointers to the content supplement configuration file and supplementary content, which are HTML or Markdown files.
+The doc generator v3 takes command-line input and key values from the base configuration file to configure the generated documentation. The base configuration file This file can include pointers to the content supplement configuration file and supplementary content, which are HTML or Markdown files.
 
 If you specify an option in more than one way, command&#8209;line arguments override the configuration file keys.
 
@@ -108,7 +108,7 @@ The `units_translation` field replaces the **Units Translation** table, which ha
 
 ### New boilerplate intro file
 
-The new boilerplate intro file is a Markdown or HTML file that contains the content to place in the output before the generated documentation. Can include an <code>[add_toc]</code> directive that specifies location for the table of contents.
+The new boilerplate intro file is a Markdown or HTML file that contains the content to place in the output before the generated documentation. This file can include an <code>[add_toc]</code> directive that specifies location for the table of contents.
 
 For an example boilerplate intro file, see <a href="sample_inputs/standard_html/intro.md"><code>intro.md</code></a>.
 
