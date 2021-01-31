@@ -10,7 +10,7 @@ The Redfish doc generator: v3 accepts different inputs than those that the Redfi
 
 The doc generator v3 takes command-line input and key values from the base configuration file to configure the generated documentation. The base configuration file This file can include pointers to the content supplement configuration file and supplementary content, which are HTML or Markdown files.
 
-If you specify an option in more than one way, command&#8209;line arguments override the configuration file keys.
+If you specify a configuration option in more than one way, command&#8209;line arguments override the configuration file keys.
 
 This document describes which files have been changed or added, and how to update your configuration.
 

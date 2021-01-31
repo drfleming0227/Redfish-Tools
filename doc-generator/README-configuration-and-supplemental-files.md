@@ -14,7 +14,7 @@
 
 ## About
 
-To configure the generated documentation, you specify command-line arguments and configuration keys. If you specify a configuration option in more than one way, command-line arguments take precedence over configuration keys.
+To configure the generated documentation, specify command-line arguments and configuration keys. If you specify a configuration option in more than one way, command-line arguments take precedence over configuration keys.
 
 The doc generator reads configuration keys from the [base configuration file](#base-configuration-file). if the base configuration file includes a pointer to the [content supplement configuration file](#content-supplement-configuration-file), the doc generator also reads configuration keys from it. 
 

@@ -131,7 +131,7 @@ Other properties may be included for the user's reference, and are ignored by th
 
 ### Description overrides
 
-You can override descriptions for individual properties. The `description_overrides` object is keyed by property name. Values are lists, which enable you to specify different overrides for the same property in different schemas. Each object in the list can have the following entries:
+You can override descriptions for individual properties. The `description_overrides` object is keyed by property name. Values are lists, which enable different overrides for the same property in different schemas. Each object in the list can have the following entries:
 
 | Key                   | Value          |
 | :-------------------- | :------------- |

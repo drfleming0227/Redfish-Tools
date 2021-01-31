@@ -70,7 +70,7 @@ optional arguments:
 % python3 json-to-yaml.py --input ../../Redfish/json-schema --output ../../Redfish/openapi --config dmtf-config.json
 ```
 
-In this example, the **JSON Schema-to-OpenAPI converter** converts the JSON Schema files in the `Redfish/json-schema` input directory to YAML files in the `/Redfish/openapi` output directory. The converter reads the configuration keys from the `dmtf-config.json` configuration file to configure the output, including the OpenAPI service document that it generates.
+In this example, the JSON Schema-to-OpenAPI converter converts the JSON Schema files in the `Redfish/json-schema` input directory to YAML files in the `/Redfish/openapi` output directory. The converter reads the configuration keys from the `dmtf-config.json` configuration file to configure the output, including the OpenAPI service document that it generates.
 
 ## Configuration
 
@@ -96,7 +96,7 @@ The configuration file is a JSON file that contains the following keys at the ro
 
 The JSON Schema-to-OpenAPI converter processes and converts all JSON Schema files in the input folder to OpenAPI YAML files in the output folder. It also produces the OpenAPI service document to describe the URIs of the Redfish service.
 
-(Optional) The JSON Schema-to-OpenAPI converter begins with the definitions in the OpenAPI service document that you specify in the optional `--base` argument. The JSON Schema-to-OpenAPI converter loads and caches the base OpenAPI service document definitions. If the configuration file contains any URI extensions, the JSON Schema-to-OpenAPI converter maps the new URIs, as needed.
+(Optional) The JSON Schema-to-OpenAPI converter begins with the definitions in the OpenAPI service document that specify in the optional `--base` argument. The JSON Schema-to-OpenAPI converter loads and caches the base OpenAPI service document definitions. If the configuration file contains any URI extensions, the JSON Schema-to-OpenAPI converter maps the new URIs, as needed.
 
 ### Details
 

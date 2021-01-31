@@ -26,7 +26,7 @@ Copyright 2016-2021 Distributed Management Task Force, Inc. All rights reserved.
 
 The **Redfish doc generator** &mdash; [`doc_generator.py`](doc_generator.py "doc_generator.py") &mdash; is a Python tool that generates documentation in a specified or default [*output mode and format*](#output-modes-and-formats) from JSON Schema files and supplemental files.
 
-To configure the generated documentation, you specify command-line arguments and configuration keys. If you specify a configuration option in more than one way, command&#8209;line arguments take precedence over the configuration keys.
+To configure the generated documentation, specify command-line arguments and configuration keys. If specify a configuration option in more than one way, command&#8209;line arguments take precedence over the configuration keys.
 
 ## Installation
 
@@ -111,7 +111,7 @@ Example:
 
 ## Configuration
 
-To configure the generated documentation, you specify command-line arguments and configuration keys in the base configuration file. If you specify a configuration option in more than one way, command&#8209;line arguments take precedence over configuration keys.
+To configure the generated documentation, specify command-line arguments and configuration keys in the base configuration file. If you specify a configuration option in more than one way, command-line arguments take precedence over configuration keys.
 
 Use the `--config` command-line argument to specify the [base configuration file](README-configuration-files.md#base-configuration-file "README-configuration-files.md/#base-configuration-file").
 
@@ -121,7 +121,7 @@ Several flavors of the base configuration file are available. Additionally, the 
 
 ## Output modes and formats
 
-To generate documentation for a specific audience, such as a developer, in a specific format, such as Markdown, you specify an output mode and output format through command-line arguments and configuration keys. Command-line arguments take precedence over configuration keys.
+To generate documentation for a specific audience, such as a developer, in a specific format, such as Markdown, specify an output mode and output format through command-line arguments and configuration keys. Command-line arguments take precedence over configuration keys.
 
 So, for example, you could produce a normative HTML document for developers.
 
@@ -227,6 +227,6 @@ For `doc_generator.py` command examples, see [Redfish doc generator: examples](R
 
 ## Processing
 
-The doc generator looks for a `json-schema` directory and supplemental files in the [base configuration file](README-configuration-and-supplemental-files#base=configurationfile) that you specify when you run it.
+The doc generator looks for a `json-schema` directory and supplemental files in the [base configuration file](README-configuration-and-supplemental-files#base=configuration-file) that you specify when you run it.
 
 Typically, the tool processes an entire set of JSON Schema files for a version.
