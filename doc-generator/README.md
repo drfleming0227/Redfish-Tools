@@ -237,6 +237,6 @@ For `doc_generator.py` command examples, see [Redfish doc generator: examples](R
 
 ## Processing
 
-By default, `doc_generator.py` looks for a `json-schema` directory and supplemental files in the [configuration](#configuration) file that you specify when you run it.
+The doc generator looks for a `json-schema` directory and supplemental files in the [base configuration file](README-configuration-and-supplemental-files#base=configurationfile) that you specify when you run it.
 
 Typically, the tool processes an entire set of JSON Schema files for a version.
