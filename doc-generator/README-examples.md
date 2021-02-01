@@ -19,7 +19,7 @@ Several files in the `sample_inputs` directory provide examples of configuration
 * [Standard mode in HTML format](#standard-mode-in-html-format)
 * [Standard normative mode in HTML format](#standard-normative-mode-in-html-format)
 * [Terse profile mode in Markdown format](#terse-profile-mode-in-markdown-format)
-* [Subset mode in HTML format](#subset-mode-in-html-format)
+* [Schema subset mode in HTML format](#schema-subset-mode-in-html-format)
 * [Property-index mode in HTML format](#property-index-mode-in-html-format)
 
 ## CSV format
@@ -64,7 +64,7 @@ Note that the `object_reference_disposition` in this config file identifies spec
 
 Configuration file references the profile `OCPBasicServer.v1_0_0.json`, which in turn references `OCPManagedDevice.v1_0_0.json`.
 
-## Subset mode in HTML format
+## Schema subset mode in HTML format
 
 **Base configuration file:** <a href="sample_inputs/subset/config.json"><code>sample_inputs/subset/config.json</code></a>
 

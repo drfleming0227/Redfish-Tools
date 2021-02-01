@@ -48,17 +48,17 @@ The names of some configuration keys differ from their command&#8209;line argume
 ## Example base configuration files
 
 | Output format or mode | Sample base configuration file | Example command usage |
-| :----------------- | :----------------------------- | :-------------------- |
-| CSV format              | [`sample_inputs/csv/config.json`](sample_inputs/csv/config.json) | [CSV format](README-configuration-files.md#csv-format) |
+| :-------------------- | :----------------------------- | :-------------------- |
+| CSV format            | [`sample_inputs/csv/config.json`](sample_inputs/csv/config.json) | [CSV format](README-configuration-files.md#csv-format) |
 | Profile mode          | [`sample_inputs/profile_mode/config.json`](sample_inputs/profile_mode/config.json) | [Terse profile mode in Markdown format](README-configuration-files.md#terse-profile-mode-in-markdown-format) |
-| Property index mode    | [`sample_inputs/property_index/config.json`](sample_inputs/property_index/config.json) | [Property index mode in HTML format](README-configuration-files.md#property-index-mode-in-html-format) |
-| Standard mode          | [`sample_inputs/standard_html/config.json`](sample_inputs/standard_html/config.json) | [Standard mode in HTML format](README-configuration-files.md#standard-mode-in-html-format) |
+| Property index mode   | [`sample_inputs/property_index/config.json`](sample_inputs/property_index/config.json) | [Property index mode in HTML format](README-configuration-files.md#property-index-mode-in-html-format) |
+| Standard mode         | [`sample_inputs/standard_html/config.json`](sample_inputs/standard_html/config.json) | [Standard mode in HTML format](README-configuration-files.md#standard-mode-in-html-format) |
 | Standard normative | [`sample_inputs/standard_html/config_normative.json`](sample_inputs/standard_html/config_normative.json) | [Standard normative mode in HTML format](README-configuration-files.md#standard-normative-mode-in-html-format) |
-| Subset mode           | [`sample_inputs/subset/config.json`](sample_inputs/subset/config.json) | [Subset mode in HTML format](README-configuration-files.md#subset-mode-in-html-format) |
+| Schema subset mode   | [`sample_inputs/subset/config.json`](sample_inputs/subset/config.json) | [Schema subset mode in HTML format](README-configuration-files.md#schema-subset-mode-in-html-format) |
 
 ## actions_in_property_table
 
-**Output modes:** [Subset](README.md#subset-mode)
+**Output modes:** [Schema subset](README.md#schema-subset-mode)
 
 Boolean. Value is:
 
@@ -113,7 +113,7 @@ The `combine_multiple_refs` key specifies a threshold at which multiple referenc
 
 ## content_supplement
 
-**Output modes:** [Profile mode](README.md#profile-mode "README.md#profile-mode"), [Standard](README.md#standard-mode), [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode"), [Subset](README.md#subset-mode)
+**Output modes:** [Profile mode](README.md#profile-mode "README.md#profile-mode"), [Standard](README.md#standard-mode), [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode"), [Schema subset](README.md#schema-subset-mode)
 
 String. No default. Location of a JSON-formatted content supplement file, which specifies content substitutions to be made within the generated schema documentation. If a relative path, must be relative to the location of the configuration file.
 
@@ -188,7 +188,7 @@ The first two entries in this `FirmwareVersion` example override the description
 
 ## excluded_annotations
 
-**Output modes:** [CSV format](README.md#csv-format "README.md#csv-format"), [Profile mode](README.md#profile-mode "README.md#profile-mode"), [Standard](README.md#standard-mode), [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode"), [Subset](README.md#subset-mode)
+**Output modes:** [CSV format](README.md#csv-format "README.md#csv-format"), [Profile mode](README.md#profile-mode "README.md#profile-mode"), [Standard](README.md#standard-mode), [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode"), [Schema subset](README.md#schema-subset-mode)
 
 Array of strings. No default. List of annotation names to exclude.
 
@@ -196,13 +196,13 @@ Strings that begin with <code>\*</code> define wildcards.
 
 ## excluded_pattern_properties
 
-**Output modes:** [CSV format](README.md#csv-format "README.md#csv-format"), [Profile mode](README.md#profile-mode "README.md#profile-mode"), [Standard](README.md#standard-mode), [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode"), [Subset](README.md#subset-mode)
+**Output modes:** [CSV format](README.md#csv-format "README.md#csv-format"), [Profile mode](README.md#profile-mode "README.md#profile-mode"), [Standard](README.md#standard-mode), [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode"), [Schema subset](README.md#schema-subset-mode)
 
 ??. No default. List of pattern properties to exclude from output.<br /><br />In JSON, you must escape back slashes (<code>"\"</code> becomes <code>"\\"</code>).
 
 ## excluded_properties
 
-**Output modes:** [CSV format](README.md#csv-format "README.md#csv-format"), [Profile mode](README.md#profile-mode "README.md#profile-mode"), [Standard](README.md#standard-mode), [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode"), [Subset](README.md#subset-mode)
+**Output modes:** [CSV format](README.md#csv-format "README.md#csv-format"), [Profile mode](README.md#profile-mode "README.md#profile-mode"), [Standard](README.md#standard-mode), [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode"), [Schema subset](README.md#schema-subset-mode)
 
 Array of strings. No default. List of property names to exclude from the generated documentation. Strings that begin with <code>*</code> define wildcards. For example, <code>"*odata.count"</code> matches <code>"Members\@odata.count"</code> and others.
 
@@ -218,13 +218,13 @@ To exclude properties from the output, include them in the `excluded_properties`
 
 ## excluded_schemas
 
-**Output modes:** [CSV format](README.md#csv-format "README.md#csv-format"), [Profile mode](README.md#profile-mode "README.md#profile-mode"), [Standard](README.md#standard-mode), [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode"), [Subset](README.md#subset-mode)
+**Output modes:** [CSV format](README.md#csv-format "README.md#csv-format"), [Profile mode](README.md#profile-mode "README.md#profile-mode"), [Standard](README.md#standard-mode), [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode"), [Schema subset](README.md#schema-subset-mode)
 
 Array of strings. No default. List of schemas, by name, to exclude from output.
 
 ## format
 
-**Output modes:** [CSV format](README.md#csv-format "README.md#csv-format"), [Profile mode](README.md#profile-mode "README.md#profile-mode"), [Standard](README.md#standard-mode), [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode"), [Subset](README.md#subset-mode)
+**Output modes:** [CSV format](README.md#csv-format "README.md#csv-format"), [Profile mode](README.md#profile-mode "README.md#profile-mode"), [Standard](README.md#standard-mode), [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode"), [Schema subset](README.md#schema-subset-mode)
 
 &nbsp;? Output format. Value is <code>markdown</code>, <code>slate</code>, <code>html</code>, or <code>csv</code>.
 
@@ -232,13 +232,13 @@ Array of strings. No default. List of schemas, by name, to exclude from output.
 
 ## html_title
 
-**Output modes:** [Standard](README.md#standard-mode), [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode"), [Subset](README.md#subset-mode)
+**Output modes:** [Standard](README.md#standard-mode), [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode"), [Schema subset](README.md#schema-subset-mode)
 
 String. No default. HTML <code>title</code> element in HTML output.
 
 ## import_from
 
-**Output modes:** [Standard](README.md#standard-mode), [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode"), [Subset](README.md#subset-mode)
+**Output modes:** [Standard](README.md#standard-mode), [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode"), [Schema subset](README.md#schema-subset-mode)
 
 String. File name or directory that contains the JSON schemas to process. Wild cards are acceptable. Default: <code>json-schema</code>.
 
@@ -293,7 +293,7 @@ For example:
 
 ## outfile
 
-**Output modes:** [CSV format](README.md#csv-format "README.md#csv-format"), [Profile mode](README.md#profile-mode "README.md#profile-mode"), [Property index mode](README.md#property-index-mode "README.md#property-index-mode"), [Standard](README.md#standard-mode), [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode"), [Subset](README.md#subset-mode)
+**Output modes:** [CSV format](README.md#csv-format "README.md#csv-format"), [Profile mode](README.md#profile-mode "README.md#profile-mode"), [Property index mode](README.md#property-index-mode "README.md#property-index-mode"), [Standard](README.md#standard-mode), [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode"), [Schema subset](README.md#schema-subset-mode)
 
  &nbsp;? No default. Output file (default depends on output format: <code>output.md</code> for Markdown, <code>index.html</code> for HTML, <code>output.csv</code> for CSV.
 
@@ -332,7 +332,7 @@ The `profile_terse` key is meaningful only when a profile document is also speci
 
 ## profile_uri_to_local
 
-**Output modes:** [Profile mode](README.md#profile-mode "README.md#profile-mode"), [Subset](README.md#subset-mode)
+**Output modes:** [Profile mode](README.md#profile-mode "README.md#profile-mode"), [Schema subset](README.md#schema-subset-mode)
 
 &nbsp;? No default. For profile mode only, an object like <code>uri_mapping</code>, for locations of profiles.
 
@@ -366,7 +366,7 @@ In the previous example, if `FirmwareVersion` in the `PCIeDevice` schema had a d
 
 ## subset
 
-**Output modes:** [Subset](README.md#subset-mode)
+**Output modes:** [Schema subset](README.md#schema-subset-mode)
 
 &nbsp;? No default. Path to a JSON profile document. Generates <b>Schema subset</b> output, with the subset defined in the JSON profile document.
 
@@ -374,7 +374,7 @@ In the previous example, if `FirmwareVersion` in the `PCIeDevice` schema had a d
 
 ## uri_mapping
 
-**Output modes:** [CSV format](README.md#csv-format "README.md#csv-format"), [Profile mode](README.md#profile-mode "README.md#profile-mode"), [Property index mode](README.md#property-index-mode "README.md#property-index-mode"), [Standard](README.md#standard-mode), [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode"), [Subset](README.md#subset-mode)
+**Output modes:** [CSV format](README.md#csv-format "README.md#csv-format"), [Profile mode](README.md#profile-mode "README.md#profile-mode"), [Property index mode](README.md#property-index-mode "README.md#property-index-mode"), [Standard](README.md#standard-mode), [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode"), [Schema subset](README.md#schema-subset-mode)
 
 Object. No default. Partial URL of schema repositories as attributes, and local directory paths as values.
 

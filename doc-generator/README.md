@@ -142,7 +142,7 @@ The *output mode* defines the type and audience of the generated document:
 | <a id="standard-mode"></a>Standard | Guide for novice&nbsp;and&nbsp;experienced&nbsp;developers. |
 | <a id="standard-normative-mode"></a>Standard&nbsp;normative | Guide with normative descriptions for developers. Normative output prefers long descriptions to descriptions. |
 | <a id="profile-mode"></a>Profile | Document with a subset of properties with profile requirements for service developers. A profile mode document can be terse or verbose. Default is verbose. |
-| <a id="subset-mode"></a>Subset | Subset of schema to include in white papers or other documents. |
+| <a id="subset-mode"></a>Schema subset | Subset of schema to include in white papers or other documents. |
 | <a id="property-index-mode"></a>Property index | An index of property names and descriptions for schema authors to enable them to locate existing property definitions within the Redfish Schema. End users and other consumers of Redfish data can also use a property index to look up property definitions without regard to their location in the schema. For each property, this output includes the property name, list of schemas in which the property is defined, the property type, and property description.<br/><br/>DSP2053, *Redfish Property Guide* at [https://www.dmtf.org/sites/default/files/standards/documents/DSP2053_2020.4.pdf](https://www.dmtf.org/sites/default/files/standards/documents/DSP2053_2020.4.pdf "https://www.dmtf.org/sites/default/files/standards/documents/DSP2053_2020.4.pdf") is an example of a property index document.<br/><br/>When you run the doc generator in property-index mode, only a few command-line options or configuration keys apply. |
 
 ### Output formats
@@ -192,7 +192,7 @@ Use the following command-line options to define the output mode and format:
          <td align="left" valign="top">
             <code>--profile&nbsp;PROFILE_DOC</code>
          </td>
-         <td align="left" valign="top">Defines path to a JSON profile document, for <a href="#terse-profile-mode">profile mode</a>output.</td>
+         <td align="left" valign="top">Defines path to a JSON profile document, for <a href="#profile-mode">profile mode</a> output.</td>
       </tr>
       <tr>
          <td align="left" valign="top">
@@ -204,19 +204,19 @@ Use the following command-line options to define the output mode and format:
          <td align="left" valign="top">
             <code>-t</code>,&nbsp;<code>--terse</code>
          </td>
-         <td align="left" valign="top">Generates <a href="#profile-mode">terse profile mode</a>output, which includes a subset of properties with profile requirements. Meaningful only with <code>--profile</code>.</td>
+         <td align="left" valign="top">Generates <a href="#profile-mode">terse profile mode</a> output, which includes a subset of properties with profile requirements. Meaningful only with <code>--profile</code>.</td>
       </tr>
       <tr>
          <td align="left" valign="top">
             <code>--subset SUBSET_DOC</code>
          </td>
-         <td align="left" valign="top">Defines path to a JSON profile document. Generates <a href="#subset-mode"><i>Schema subset mode</i></a>output, with the subset defined in the JSON profile document.</td>
+         <td align="left" valign="top">Defines path to a JSON profile document. Generates <a href="#subset-mode">Schema subset mode</a> output, with the subset defined in the JSON profile document.</td>
       </tr>
       <tr>
          <td align="left" valign="top">
             <code>--property_index</code>
          </td>
-         <td align="left" valign="top">Produces <a href="#property-index-mode">property index mode</a>output. </td>
+         <td align="left" valign="top">Produces <a href="#property-index-mode">property index mode</a> output. </td>
       </tr>
    </tbody>
 </table>
