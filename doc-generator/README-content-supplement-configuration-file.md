@@ -4,6 +4,8 @@
 
 # Redfish doc generator: Content supplement configuration file
 
+Copyright 2016-2021 Distributed Management Task Force, Inc. All rights reserved.
+
 The content supplement configuration file is a JSON file that defines text overrides for property descriptions, replacements for unit abbreviations, and schema-specific content to apply to the generated schema documentation.
 
 These output modes support the content supplement configuration file:

@@ -4,21 +4,20 @@
 
 # Redfish doc generator: Configuration and supplemental files
 
-## Contents
-
-* [About](#about)
-* [Base configuration file](#base-configuration-file)
-* [Content supplement configuration file](#content-supplement-configuration-file)
-* [Boilerplate intro file](#boilerplate-intro-file)
-* [Boilerplate postscript file](#boilerplate-postscript-file)
-
-## About
+Copyright 2016-2021 Distributed Management Task Force, Inc. All rights reserved.
 
 To configure the generated documentation, specify command-line arguments and configuration keys. If you specify a configuration option in more than one way, command-line arguments take precedence over configuration keys.
 
 The doc generator reads configuration keys from the [base configuration file](#base-configuration-file). if the base configuration file includes a pointer to the [content supplement configuration file](#content-supplement-configuration-file), the doc generator also reads configuration keys from it. 
 
 Additionally, if the base configuration file includes pointers to the <a href="#boilerplate-intro-file">boilerplate&nbsp;intro</a> and <a href="#boilerplate-postscript-file">boilerplate&nbsp;postscript</a> supplemental files, the doc generator includes content from these files in the generated output.
+
+## Contents
+
+* [Base configuration file](#base-configuration-file)
+* [Content supplement configuration file](#content-supplement-configuration-file)
+* [Boilerplate intro file](#boilerplate-intro-file)
+* [Boilerplate postscript file](#boilerplate-postscript-file)
 
 ## Base configuration file
 

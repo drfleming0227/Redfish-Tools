@@ -6,18 +6,15 @@
 
 Copyright 2016-2021 Distributed Management Task Force, Inc. All rights reserved.
 
+The **OData CSDL validator** &mdash; [`odata_validator.py`](odata_validator.py "odata_validator.py") &mdash; is a Python tool that validates that OData-formatted metadata conforms to [OData V4.0](https://www.odata.org/documentation/ "https://www.odata.org/documentation/").
+
 ## Contents
 
-* [About](#about)
 * [Installation](#installation)
 * [Usage](#usage)
 * [Examples](#examples)
 * [Configuration](#configuration)
 * [Processing](#processing)
-
-## About
-
-The **OData CSDL validator** &mdash; [`odata_validator.py`](odata_validator.py "odata_validator.py") &mdash; is a Python tool that validates that OData-formatted metadata conforms to [OData V4.0](https://www.odata.org/documentation/ "https://www.odata.org/documentation/").
 
 ## Installation
 

@@ -8,11 +8,6 @@ Copyright 2016-2021 DMTF. All rights reserved.
 
 The public `Redfish-Tools` GitHub repository contains the DMTF Scalable Platforms Management Forum (SPMF) tools. For Redfish developer information, see DMTF at [https://redfish.dmtf.org/](https://redfish.dmtf.org/ "https://redfish.dmtf.org/").
 
-## Contents
-
-* [Installation](#installation)
-* [Tools](#tools)
-
 ## Installation
 
 For installation instructions, see the `README.md` file for each tool.

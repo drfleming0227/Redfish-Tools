@@ -4,6 +4,8 @@
 
 # Redfish doc generator: v3 changes
 
+Copyright 2016-2021 Distributed Management Task Force, Inc. All rights reserved.
+
 The Redfish doc generator: v3 accepts different inputs than those that the Redfish doc generator: v2 accepted.
 
 > **Note:** These changes are not backward compatible so use [Redfish-Tools doc generator v2](https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0 "https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0") to run the tool against an existing set of configuration files.
@@ -17,7 +19,7 @@ This document describes which files have been changed or added, and how to updat
 ## Contents
 
 * [Configuration files](#configuration-files)
-* [supplemental files](#supplementary-content-files)
+* [Supplemental files](#supplemental-files)
 
 ## Configuration files
 
@@ -66,7 +68,7 @@ This file is unchanged for v3. _Link to spec for this?_
 
 For an example subset configuration file, see <a href="sample_inputs/subset/config.json"><code>config.json</code></a>.
 
-## supplemental files
+## Supplemental files
 
 * [Changes to the supplemental material file](#changes-to-the-supplemental-material-file)
 * [New boilerplate intro file](#new-boilerplate-intro-file)

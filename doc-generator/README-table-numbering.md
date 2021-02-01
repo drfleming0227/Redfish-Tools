@@ -4,6 +4,8 @@
 
 # Table Numbering README
 
+Copyright 2016-2021 Distributed Management Task Force, Inc. All rights reserved.
+
 > last modified: 10 November 2020
 
 ## Problem
