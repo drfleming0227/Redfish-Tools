@@ -110,11 +110,13 @@ Example:
 
 To configure the generated documentation, specify command-line arguments and configuration keys in the base configuration file. If you specify a configuration option in more than one way, command-line arguments take precedence over configuration keys.
 
-Use the `--config` command-line argument to specify the [base configuration file](README-configuration-and-supplemental-files.md#base-configuration-file "README-configuration-and-supplemental-files.md/#base-configuration-file").
+Use the `--config` command-line argument to specify the base configuration file.
 
 > **Note:** You can specify some configuration information, such as URI mappings, through the base configuration file only and not on the command line.
 
-Several flavors of the base configuration file are available. Additionally, the base configuration file can embed the content supplement configuration file and supplemental files. See [Redfish doc generator: Configuration and supplemental files](README-configuration-and-supplemental-files.md "README-configuration-and-supplemental-files.md").
+Several flavors of the base configuration file are available. Additionally, the base configuration file can embed the content supplement configuration file and supplemental files.
+
+For details about configuration files and supplemental files, see [Redfish doc generator: Configuration and supplemental files](README-configuration-and-supplemental-files.md "README-configuration-and-supplemental-files.md").
 
 ## Output modes and formats
 
