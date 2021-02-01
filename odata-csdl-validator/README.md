@@ -32,9 +32,9 @@ The `odata_validator.py` tool takes a single `MetaData` argument in one of the f
 
 | Format                                           | Example                                              |
 | :----------------------------------------------- | :--------------------------------------------------- |
-| Local path to a single XML metadata file.        | `test_metadata/ServiceRoot.xml`                      |
-| Local path to a directory of XML metadata files. | `test_metadata`                                      |
-| URL of an XML metadata file.                     | `http://redfish.dmtf.org/schemas/v1/ServiceRoot.xml` |
+| Local path to a [single XML metadata file](#single-xml-metadata-file).        | `test_metadata/ServiceRoot.xml`                      |
+| Local path to a [directory of XML metadata files](#directory-of-xml-metadata-files). | `test_metadata`                                      |
+| [URL of an XML metadata file](#url-of-an-xml-metadata-file).                     | `http://redfish.dmtf.org/schemas/v1/ServiceRoot.xml` |
 
 ```
 usage: odata_validator.py [-h] MetaData
@@ -53,7 +53,7 @@ optional arguments:
 
 * [Single XML metadata file](#single-xml-metadata-file)
 * [Directory of XML metadata files](#directory-of-xml-metadata-files)
-* [URL of a single XML metadata file](#url-of-a-single-xml-metadata-file)
+* [URL of an XML metadata file](#url-of-an-xml-metadata-file)
 
 ### Single XML metadata file
 
@@ -77,7 +77,7 @@ Run the OData CSDL validator against the local path to a directory of XML metada
 
 In this example, the **OData CSDL validator** parses and validates that the metadata in the files in the `/Redfish/test_metadata` input directory conforms to OData V4.0.
 
-### URL of a single XML metadata file
+### URL of an XML metadata file
 
 Run the OData CSDL validator against the URL of an XML metadata file:
          
