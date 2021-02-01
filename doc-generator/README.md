@@ -110,7 +110,7 @@ Example:
 
 To configure the generated documentation, specify command-line arguments and configuration keys in the base configuration file. If you specify a configuration option in more than one way, command-line arguments take precedence over configuration keys.
 
-Use the `--config` command-line argument to specify the [base configuration file](README-configuration-files.md#base-configuration-file "README-configuration-files.md/#base-configuration-file").
+Use the `--config` command-line argument to specify the [base configuration file](README-configuration-and-supplemental-files.md#base-configuration-file "README-configuration-and-supplemental-files.md/#base-configuration-file").
 
 > **Note:** You can specify some configuration information, such as URI mappings, through the base configuration file only and not on the command line.
 

@@ -12,6 +12,7 @@ The names of some configuration keys differ from their command&#8209;line argume
 
 ## Contents
 
+* [Example base configuration files](#example-base-configuration-files)
 * [actions_in_property_table](#actions_in_property_table)
 * [add_toc](#add_toc)
 * [boilerplate_intro](#boilerplate_intro)
@@ -44,7 +45,7 @@ The names of some configuration keys differ from their command&#8209;line argume
 * [Subset configuration file](#subset-configuration-file)
 * [Property index configuration file](#property-index-configuration-file)
 
-## xx
+## Example base configuration files
 
 | Output format or mode | Sample base configuration file | Example command usage |
 | :----------------- | :----------------------------- | :-------------------- |
