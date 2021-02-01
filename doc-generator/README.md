@@ -8,7 +8,7 @@ Copyright 2016-2021 Distributed Management Task Force, Inc. All rights reserved.
 
 The **Redfish doc generator** &mdash; [`doc_generator.py`](doc_generator.py "doc_generator.py") &mdash; is a Python tool that generates documentation in a specified or default [*output mode and format*](#output-modes-and-formats) from JSON Schema files and supplemental files.
 
-To configure the generated documentation, specify command-line arguments and configuration keys. If specify a configuration option in more than one way, command&#8209;line arguments take precedence over the configuration keys.
+To configure the generated documentation, specify command-line arguments and configuration keys. If you specify a configuration option in more than one way, command&#8209;line arguments take precedence over the configuration keys.
 
 > **Important notice about the Redfish doc generator: v3:**
 >
