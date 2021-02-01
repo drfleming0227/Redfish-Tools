@@ -88,9 +88,303 @@ To include supplemental files and the content supplement configuration file:
 | Standard normative | [`sample_inputs/standard_html/config_normative.json`](sample_inputs/standard_html/config_normative.json) | [Standard normative mode in HTML format](README-configuration-files.md#standard-normative-mode-in-html-format) |
 | Schema subset mode   | [`sample_inputs/subset/config.json`](sample_inputs/subset/config.json) | [Schema subset mode in HTML format](README-configuration-files.md#schema-subset-mode-in-html-format) |
 
-### actions_in_property_table
+<table>
+   <thead>
+      <tr>
+         <th align="left" valign="top">Key</th>
+         <th align="left" valign="top">Output modes</th>
+         <th align="left" valign="top">Type</th>
+         <th align="left" valign="top">Description</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td align="left" valign="top"><code>actions_in_property_table</code></td>
+         <td align="left" valign="top"><a href="README.md#schema-subset-mode">Schema subset</a></td>
+         <td align="left" valign="top">Boolean.</td>
+         <td align="left" valign="top">
+            <p>Value is:</p>
+            <ul>
+               <li><code>true</code>. (Default) Include <code>Actions</code> in property tables.</li>
+               <li><code>false</code>. Exclude <code>Actions</code> from property tables.</li>
+            </ul>
+         </td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><code>add_toc</code></td>
+         <td align="left" valign="top"><a href="README.md#standard-mode" title="README.md#standard-mode">Standard mode</a>, <a href="README.md#standard-normative-mode" title="README.md#standard-normative-mode">Standard normative mode</a></td>
+         <td align="left" valign="top"> Boolean</td>
+         <td align="left" valign="top">
+            <p>By default, the table of contents (TOC) appears at the top of the HTML output. If the <code>[add_toc]</code> directive appears anywhere in the boilerplate intro or boilerplate postscript file, <code>add_toc</code> key is <code>true</code> by default.</p>
+            <p>Value is:</p>
+            <ul>
+               <li>
+                  <p><code>true</code>. (Default) Generate a TOC and place it either:</p>
+                  <ul>
+                     <li>At the beginning of the generated HTML file.</li>
+                     <li>In the <code>[add_toc]</code>location if that directive appears in the boilerplate intro or boilerplate postscript file.</li>
+                  </ul>
+               </li>
+               <li><code>false</code>. Do not generate a TOC.</li>
+            </ul>
+         </td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><code>boilerplate_intro</code></td>
+         <td align="left" valign="top"><a href="README.md#profile-mode" title="README.md#profile-mode">Profile mode</a>, <a href="README.md#standard-mode" title="README.md#standard-mode">Standard mode</a>, <a href="README.md#standard-normative-mode" title="README.md#standard-normative-mode">Standard normative mode</a>, <a href="README.md#subset-mode" title="README.md#subset-mode">Subset mode</a></td>
+         <td align="left" valign="top"> String</td>
+         <td align="left" valign="top">No default. Location of the HTML or Markdown file that contains content to appear at the beginning of the document before the generated schema documentation. If a relative path, should be relative to the location of the configuration file.</td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><code>boilerplate_postscript</code></td>
+         <td align="left" valign="top"><a href="README.md#standard-mode" title="README.md#standard-mode">Standard mode</a>, <a href="README.md#standard-normative-mode" title="README.md#standard-normative-mode">Standard normative mode</a></td>
+         <td align="left" valign="top">String</td>
+         <td align="left" valign="top">No default. Location of the HTML or Markdown file that contains content to appear at the end of the document after the generated schema documentation. If a relative path, should be relative to the location of the configuration file.</td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><code>combine_multiple_refs</code></td>
+         <td align="left" valign="top"><a href="README.md#standard-mode" title="README.md#standard-mode">Standard mode</a>, <a href="README.md#standard-normative-mode" title="README.md#standard-normative-mode">Standard normative mode</a></td>
+         <td align="left" valign="top"> Integer</td>
+         <td align="left" valign="top">
+            <p>No default. Threshold at which multiple references to the same object within a schema are moved into <b>Property details</b> instead of expanded in place.</p>
+            <p>For details, see <a href="#combine_multiple_refs-key">combine_multiple_refs key</a>.</p>
+            <p> This setting specifies that multiple objects within a schema, that are defined by reference to the same definition, should have their definitions moved into the Property Details section, with a single-line (row) listing for each object in the main table. combine_multiple_refs is an integer threshold at which this behavior kicks in. If it is absent or 0, no combining occurs. If it is 2 or greater, combining occurs at that number of references to the same object. A setting of 1 does not make sense and should be prevented.</p>
+            <p>The <code>combine_multiple_refs</code> key specifies a threshold at which multiple references to the same object within a schema are moved into <b>Property details</b> instead of expanded in place. For example, to move an object to <b>Property details</b> if it is referred to three or more times:</p>
+            <pre lang="json">"combine_multiple_refs": 3</pre>
+         </td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><code>content_supplement</code></td>
+         <td align="left" valign="top"><a href="README.md#profile-mode" title="README.md#profile-mode">Profile mode</a>, <a href="README.md#standard-mode" title="README.md#standard-mode">Standard mode</a>, <a href="README.md#standard-normative-mode" title="README.md#standard-normative-mode">Standard normative mode</a>, <a href="README.md#schema-subset-mode">Schema subset</a></td>
+         <td align="left" valign="top">String</td>
+         <td align="left" valign="top">No default. Location of a JSON-formatted content supplement file, which specifies content substitutions to be made within the generated schema documentation. If a relative path, must be relative to the location of the configuration file.</td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><code>description_overrides</code></td>
+         <td align="left" valign="top"><a href="README.md#property-index-mode" title="README.md#property-index-mode">Property index mode</a></td>
+         <td align="left" valign="top">Object</td>
+         <td align="left" valign="top">
+            <p>An object keyed by property name, which can specify descriptions that override those in the source schemas.</p>
+            <p>You can override descriptions for individual properties. The <code>description_overrides</code> object is keyed by property name. Values are lists, which enable different overrides for the same property in different schemas. Each object in the list can have the following entries:</p> | Key | Value | | :-------------------- | :------------- | | `type` | Property type. | | `schemas` | List of schemas to which this element applies. | | `overrideDescription` | String that replaces the description in the schema. | | `globalOverride` | The `overrideDescription` in this element applies to all instances of the property name that match the `type`. | | `description` | Description in the schema. | | `knownException` | A variant description is expected. | <p>The `description` and `knownException` keys are primarily for user reference. When generating configuration output, the doc generator includes the description and set `knownException` to `false`. The user can edit the resulting output to distinguish expected exceptions from those that need attention. Neither field affects the property index document itself.</p>
+            <blockquote><b>Note:</b> Although `description_overrides` has a similar function to `property_description_overrides` in other modes, it has a different structure.</blockquote>
+            <p>Some examples:</p>
+            <pre lang="json">"EventType": [{
+   "overrideDescription": "This indicates the type of an event recorded in this log.",
+   "globalOverride": true,
+   "type": "string"
+}]</pre>
+            <p>The combination of `globalOverride` and `overrideDescription` indicates that all instances of the `EventType` property that have type `string` should have their description replaced with `"This indicates the type of an event recorded in this log."`</p>
+            <pre lang="json">
+"FirmwareVersion": [{
+   "description": "Firmware version.",
+   "type": "string",
+   "knownException": true,
+   "overrideDescription": "Override text for FirmwareVersion",
+   "schemas": [
+      "AttributeRegistry/SupportedSystems"
+   ]
+}, {
+   "overrideDescription": "The firmware version of this thingamajig.",
+   "type": "string",
+   "knownException": true,
+   "schemas": ["Power/PowerSupplies",
+      "Manager",
+      "ComputerSystem/TrustedModules",
+      "Storage/StorageControllers"
+   ]
+}, {
+   "description": "The version of firmware for this PCIe device.",
+   "type": "string",
+   "knownException": true,
+   "schemas": ["PCIeDevice"]
+}]</pre>
+            <p>The first two entries in this `FirmwareVersion` example override the description for `FirmwareVersion` with type `string`, in the listed schemas. The third entry identifies another instance of `FirmwareVersion` with another description, which is expected but should not be overridden.</p>
+         </td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><code>escape_chars</code></td>
+         <td align="left" valign="top">??</td>
+         <td align="left" valign="top">??</td>
+         <td align="left" valign="top">
+            <p>No default. Characters to escape in generated Markdown. For example, use <code>--escape=@</code> if your Markdown processor converts embedded <code>@</code> characters to <code>mailto</code> links.</p>
+            <p><b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>escape</code></p>
+         </td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><code>excluded_annotations</code></td>
+         <td align="left" valign="top"><a href="README.md#csv-formnat" title="README.md#csv-format">CSV format</a>, <a href="README.md#profile-mode" title="README.md#profile-mode">Profile mode</a>, <a href="README.md#standard-mode" title="README.md#standard-mode">Standard mode</a>, <a href="README.md#standard-normative-mode" title="README.md#standard-normative-mode">Standard normative mode</a>, <a href="README.md#schema-subset-mode">Schema subset</a></td>
+         <td align="left" valign="top">Array of strings</td>
+         <td align="left" valign="top">No default. List of annotation names to exclude. Strings that begin with <code>\*</code> define wildcards.</td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><code>excluded_pattern_properties</code></td>
+         <td align="left" valign="top"><a href="README.md#csv-formnat" title="README.md#csv-format">CSV format</a>, <a href="README.md#profile-mode" title="README.md#profile-mode">Profile mode</a>, <a href="README.md#standard-mode" title="README.md#standard-mode">Standard mode</a>, <a href="README.md#standard-normative-mode" title="README.md#standard-normative-mode">Standard normative mode</a>, <a href="README.md#schema-subset-mode">Schema subset</a></td>
+         <td align="left" valign="top">??</td>
+         <td align="left" valign="top">No default. List of pattern properties to exclude from output.<br /><br />In JSON, you must escape back slashes (<code>"\"</code> becomes <code>"\\"</code>).</td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><code>excluded_properties</code></td>
+         <td align="left" valign="top"><a href="README.md#csv-formnat" title="README.md#csv-format">CSV format</a>, <a href="README.md#profile-mode" title="README.md#profile-mode">Profile mode</a>, <a href="README.md#standard-mode" title="README.md#standard-mode">Standard mode</a>, <a href="README.md#standard-normative-mode" title="README.md#standard-normative-mode">Standard normative mode</a>, <a href="README.md#schema-subset-mode">Schema subset</a></td>
+         <td align="left" valign="top">Array of strings</td>
+         <td align="left" valign="top">
+            <p>No default. List of property names to exclude from the generated documentation. Strings that begin with <code>*</code> define wildcards. For example, <code>"*odata.count"</code> matches <code>"Members\@odata.count"</code> and others.</p>
+            <p>To exclude properties from the output, include them in the `excluded_properties` list. An asterisk (`*`) as the first character in a property acts as a wild card. In the following example, any property name that ends with `"@odata.count"` is omitted:</p>
+            <pre lang="json">"excluded_properties": ["description",
+   "Id", "@odata.context",
+   "@odata.type", "@odata.id",
+   "@odata.etag", "*@odata.count"
+]</pre>
+         </td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><code>excluded_schemas</code></td>
+         <td align="left" valign="top"><a href="README.md#csv-formnat" title="README.md#csv-format">CSV format</a>, <a href="README.md#profile-mode" title="README.md#profile-mode">Profile mode</a>, <a href="README.md#standard-mode" title="README.md#standard-mode">Standard mode</a>, <a href="README.md#standard-normative-mode" title="README.md#standard-normative-mode">Standard normative mode</a>, <a href="README.md#schema-subset-mode">Schema subset</a></td>
+         <td align="left" valign="top">Array of strings</td>
+         <td align="left" valign="top">No default. List of schemas, by name, to exclude from output.</td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><code>format</code></td>
+         <td align="left" valign="top"><a href="README.md#csv-formnat" title="README.md#csv-format">CSV format</a>, <a href="README.md#profile-mode" title="README.md#profile-mode">Profile mode</a>, <a href="README.md#standard-mode" title="README.md#standard-mode">Standard mode</a>, <a href="README.md#standard-normative-mode" title="README.md#standard-normative-mode">Standard normative mode</a>, <a href="README.md#schema-subset-mode">Schema subset</a></td>
+         <td align="left" valign="top">&nbsp;?</td>
+         <td align="left" valign="top">
+            <p>Output format. Value is <code>markdown</code>, <code>slate</code>, <code>html</code>, or <code>csv</code>.</p>
+            <p><b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>format</code></p>
+         </td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><code>html_title</code></td>
+         <td align="left" valign="top"><a href="README.md#standard-mode" title="README.md#standard-mode">Standard mode</a>, <a href="README.md#standard-normative-mode" title="README.md#standard-normative-mode">Standard normative mode</a>, <a href="README.md#schema-subset-mode">Schema subset</a></td>
+         <td align="left" valign="top">String</td>
+         <td align="left" valign="top">No default. HTML <code>title</code> element in HTML output.</td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><code>import_from</code></td>
+         <td align="left" valign="top"><a href="README.md#standard-mode" title="README.md#standard-mode">Standard mode</a>, <a href="README.md#standard-normative-mode" title="README.md#standard-normative-mode">Standard normative mode</a>, <a href="README.md#schema-subset-mode">Schema subset</a></td>
+         <td align="left" valign="top">String</td>
+         <td align="left" valign="top">
+            <p>File name or directory that contains the JSON schemas to process. Wild cards are acceptable. Default: <code>json-schema</code>.</p>
+            <p><b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b>&nbsp;<code>import_from</code></p>
+         </td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><code>locale</code></td>
+         <td align="left" valign="top">??</td>
+         <td align="left" valign="top">No default. Case-sensitive locale code for localized output. Localization of strings supplied by the doc generator uses <a href="https://www.gnu.org/software/gettext/" title="https://www.gnu.org/software/gettext/"><code>gettext</code></a>. Locale files are in the <code>locale</code> directory in the <code>doc_generator</code> root. Translated descriptions and annotations may be supplied in localized JSON Schema files.</td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><code>normative</code></td>
+         <td align="left" valign="top"><a href="README.md#standard-normative-mode" title="README.md#standard-normative-mode">Standard normative mode</a></td>
+         <td align="left" valign="top">&nbsp;?</td>
+         <td align="left" valign="top">No default. Produce normative (developer-focused) output.</td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><code>object_reference_disposition</code></td>
+         <td align="left" valign="top"><a href="README.md#standard-mode" title="README.md#standard-mode">Standard mode</a>, <a href="README.md#standard-normative-mode" title="README.md#standard-normative-mode">Standard normative mode</a></td>
+         <td align="left" valign="top">&nbsp;?</td>
+         <td align="left" valign="top">
+            <p>No default. Data structure that specifies properties that should be moved to the <b>Common Objects</b> clause and/or objects that should be included in-line where they are referenced, to override default behavior. For details, see <a href="#object_reference_disposition-key">object_reference_disposition key</a>.</p>
+            <p>The `object_reference_disposition` key specifies a JSON object with either or both these fields:</p>
+            <ul>
+               <li>`common_object`. List of property names. For example `"Redundancy"`.</li>
+               <li>`include`. List of properties by their full path.</li>
+            </ul>
+            <p>For example:</p>
+            <pre lang="json">
+"object_reference_disposition": {
+   "common_object": ["Redundancy"],
+   "include": [
+    "http://redfish.dmtf.org/schemas/v1/PCIeDevice.json#/definitions/PCIeInterface"
+  ]
+}
+</pre>
+         </td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><code>omit_version_in_headers</code></td>
+         <td align="left" valign="top"></td>
+         <td align="left" valign="top">Boolean.</td>
+         <td align="left" valign="top">
+            <p>Not used.</p>
+            <p>No default.</p>
+            <p>Value is:</p>
+            <ul>
+               <li><code>true</code>. Exclude schema versions from clause headers.</li>
+               <li><code>false</code>. Include schema versions in clause headers.</li>
+            </ul>
+         </td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><code>outfile</code></td>
+         <td align="left" valign="top"><a href="README.md#csv-formnat" title="README.md#csv-format">CSV format</a>, <a href="README.md#profile-mode" title="README.md#profile-mode">Profile mode</a>, <a href="README.md#property-index-mode" title="README.md#property-index-mode">Property index mode</a>, <a href="README.md#standard-mode" title="README.md#standard-mode">Standard mode</a>, <a href="README.md#standard-normative-mode" title="README.md#standard-normative-mode">Standard normative mode</a>, <a href="README.md#schema-subset-mode">Schema subset</a> &nbsp;? No default. Output file (default depends on output format: <code>output.md</code> for Markdown, <code>index.html</code> for HTML, <code>output.csv</code> for CSV. <b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>out</code>
+      <tr>
+         <td align="left" valign="top"><code>payload_dir</code></td>
+         <td align="left" valign="top"><a href="README.md#standard-mode" title="README.md#standard-mode">Standard mode</a>, <a href="README.md#standard-normative-mode" title="README.md#standard-normative-mode">Standard normative mode</a> &nbsp;? No default. Directory location for JSON payload and Action examples. Optional.<br /><br />For details, see <a href="#payload_dir-key">payload_dir key</a>. The `payload_dir` key specifies a directory location for JSON payload and Action examples. If relative, this path is relative to the working directory in which the `doc_generator.py` script is run. Within the payload directory, use the following naming scheme for example files: * &lt;schema_name&gt;-v&lt;major_version&gt;-example.json for JSON payloads * &lt;schema_name&gt;-v&lt;major_version&gt;-action-&lt;action_name&gt;.json for action examples <b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b>&nbsp;<code>payload_dir</code>
+      <tr>
+         <td align="left" valign="top"><code>profile_doc</code></td>
+         <td align="left" valign="top"><a href="README.md#profile-mode" title="README.md#profile-mode">Profile mode</a> &nbsp;? No default. Path to a JSON profile document, for profile output. <b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>profile</code>
+      <tr>
+         <td align="left" valign="top"><code>profile_terse</code></td>
+         <td align="left" valign="top"><a href="README.md#profile-mode" title="README.md#profile-mode">Profile mode</a> Boolean. No default. Produce <i>terse</i> profile output; meaningful only in profile mode. For details, see <a href="#profile_terse-key">profile_terse key</a>. The `profile_terse` key is meaningful only when a profile document is also specified. When `true`, *terse* output is produced. By default, profile output is verbose and includes all properties regardless of profile requirements. *Terse* output is intended for use by Service developers, including only the subset of properties with profile requirements. <b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>terse</code>
+      <tr>
+         <td align="left" valign="top"><code>profile_uri_to_local</code></td>
+         <td align="left" valign="top"><a href="README.md#profile-mode" title="README.md#profile-mode">Profile mode</a>, <a href="README.md#schema-subset-mode">Schema subset</a></td>
+         <td align="left" valign="top">&nbsp;?</td>
+         <td align="left" valign="top">No default. For profile mode only, an object like <code>uri_mapping</code>, for locations of profiles.</td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><code>property_index</code></td>
+         <td align="left" valign="top"><a href="README.md#property-index-mode" title="README.md#property-index-mode">Property index mode</a></td>
+         <td align="left" valign="top">Boolean</td>
+         <td align="left" valign="top">
+            <p>No default. Produces <b>property index mode</b> output.</p>
+            <p><b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>property_index</code></p>
+         </td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><code>property_index_config_out</code></td>
+         <td align="left" valign="top"><a href="README.md#property-index-mode" title="README.md#property-index-mode">Property index mode</a></td>
+         <td align="left" valign="top">String</td>
+         <td align="left" valign="top">
+            <p>No default. Generates an updated configuration file with the specified file name. The doc generator adds entries for any properties where the property name appears with more than one type or description to extend the input configuration.</p>
+            <p>If you specify `globalOverride` for a property name or property name and type, no data is added for matching instances.</p>
+            <p>All added entries include `"knownException": false`. In addition, if an entry includes `"knownException": true` in the input configuration but the description no longer matches, `knownException` is set to `false`.</p>
+            <p>In the previous example, if `FirmwareVersion` in the `PCIeDevice` schema had a different description than the one listed in the example input, it appears in the output with its new description and `"knownException": false`.</p>
+            <p><b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>property_index_config_out</code></p>
+         </td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><code>registry_uri_to_local</code></td>
+         <td align="left" valign="top"><a href="README.md#profile-mode" title="README.md#profile-mode">Profile mode</a></td>
+         <td align="left" valign="top">&nbsp;?</td>
+         <td align="left" valign="top">No default. For profile mode only, an object like <code>uri_mapping</code>, for locations of registries.</td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><code>subset</code></td>
+         <td align="left" valign="top"><a href="README.md#schema-subset-mode">Schema subset</a></td>
+         <td align="left" valign="top">&nbsp;?</td>
+         <td align="left" valign="top">
+            <p>No default. Path to a JSON profile document. Generates <b>Schema subset</b> output, with the subset defined in the JSON profile document.</p>
+            <p><b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>subset</code></p>
+         </td>
+      </tr>
+      <tr>
+         <td align="left" valign="top"><code>uri_mapping</code></td>
+         <td align="left" valign="top"><a href="README.md#csv-formnat" title="README.md#csv-format">CSV format</a>, <a href="README.md#profile-mode" title="README.md#profile-mode">Profile mode</a>, <a href="README.md#property-index-mode" title="README.md#property-index-mode">Property index mode</a>, <a href="README.md#standard-mode" title="README.md#standard-mode">Standard mode</a>, <a href="README.md#standard-normative-mode" title="README.md#standard-normative-mode">Standard normative mode</a>, <a href="README.md#schema-subset-mode">Schema subset</a></td>
+         <td align="left" valign="top">Object</td>
+         <td align="left" valign="top">
+            <p>No default. Partial URL of schema repositories as attributes, and local directory paths as values.</p>
+            <p>This object maps partial URIs, as found in the schemas, to local directories. The partial URI should include the domain part of the URI but can omit the protocol (http:// or https://).</p>
+            <pre lang="json">
+"uri_mapping": { "redfish.dmtf.org/schemas/v1": "./json-schema" }
+</pre>
+         </td>
+      </tr>
+   </tbody>
+</table>
 
-**Output modes:** [Schema subset](README.md#schema-subset-mode)
+<!-- ### actions_in_property_table
+
+**Output modes:** <a href="README.md#schema-subset-mode">Schema subset</a>
 
 Boolean. Value is:
 
@@ -101,7 +395,7 @@ Boolean. Value is:
 
 ### add_toc
 
-**Output modes:** [Standard mode](README.md#standard-mode "README.md#standard-mode"), [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode")
+**Output modes:** <a href="README.md#standard-mode" title="README.md#standard-mode">Standard mode</a>, <a href="README.md#standard-normative-mode" title="README.md#standard-normative-mode">Standard normative mode</a>
 
 Boolean. By default, the table of contents (TOC) appears at the top of the HTML output. If the <code>[add_toc]</code> directive appears anywhere in the boilerplate intro or boilerplate postscript file, <code>add_toc</code> key is <code>true</code> by default.
 
@@ -119,19 +413,19 @@ Boolean. By default, the table of contents (TOC) appears at the top of the HTML 
 
 ### boilerplate_intro
 
-**Output modes:** [Profile mode](README.md#profile-mode "README.md#profile-mode"), [Standard mode](README.md#standard-mode "README.md#standard-mode"), [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode"), [Subset mode](README.md#subset-mode "README.md#subset-mode")
+**Output modes:** <a href="README.md#profile-mode" title="README.md#profile-mode">Profile mode</a>, <a href="README.md#standard-mode" title="README.md#standard-mode">Standard mode</a>, <a href="README.md#standard-normative-mode" title="README.md#standard-normative-mode">Standard normative mode</a>, <a href="README.md#subset-mode" title="README.md#subset-mode">Subset mode</a>
 
 String. No default. Location of the HTML or Markdown file that contains content to appear at the beginning of the document before the generated schema documentation. If a relative path, should be relative to the location of the configuration file.
 
 ### boilerplate_postscript
 
-**Output modes:** [Standard mode](README.md#standard-mode "README.md#standard-mode"), [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode")
+**Output modes:** <a href="README.md#standard-mode" title="README.md#standard-mode">Standard mode</a>, <a href="README.md#standard-normative-mode" title="README.md#standard-normative-mode">Standard normative mode</a>
 
 String. No default. Location of the HTML or Markdown file that contains content to appear at the end of the document after the generated schema documentation. If a relative path, should be relative to the location of the configuration file.
 
 ### combine_multiple_refs
 
-**Output modes:** [Standard mode](README.md#standard-mode "README.md#standard-mode"), [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode")
+**Output modes:** <a href="README.md#standard-mode" title="README.md#standard-mode">Standard mode</a>, <a href="README.md#standard-normative-mode" title="README.md#standard-normative-mode">Standard normative mode</a>
 
 Integer. No default. Threshold at which multiple references to the same object within a schema are moved into <b>Property details</b> instead of expanded in place.<br /><br />For details, see <a href="#combine_multiple_refs-key">combine_multiple_refs key</a>.
 
@@ -145,13 +439,13 @@ The `combine_multiple_refs` key specifies a threshold at which multiple referenc
 
 ### content_supplement
 
-**Output modes:** [Profile mode](README.md#profile-mode "README.md#profile-mode"), [Standard](README.md#standard-mode), [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode"), [Schema subset](README.md#schema-subset-mode)
+**Output modes:** <a href="README.md#profile-mode" title="README.md#profile-mode">Profile mode</a>, <a href="README.md#standard-mode" title="README.md#standard-mode">Standard mode</a>, <a href="README.md#standard-normative-mode" title="README.md#standard-normative-mode">Standard normative mode</a>, <a href="README.md#schema-subset-mode">Schema subset</a>
 
 String. No default. Location of a JSON-formatted content supplement file, which specifies content substitutions to be made within the generated schema documentation. If a relative path, must be relative to the location of the configuration file.
 
 ### description_overrides
 
-**Output modes:** [Property index mode](README.md#property-index-mode "README.md#property-index-mode")
+**Output modes:** <a href="README.md#property-index-mode" title="README.md#property-index-mode">Property index mode</a>
 
 Object. An object keyed by property name, which can specify descriptions that override those in the source schemas.
 
@@ -220,7 +514,7 @@ The first two entries in this `FirmwareVersion` example override the description
 
 ### excluded_annotations
 
-**Output modes:** [CSV format](README.md#csv-format "README.md#csv-format"), [Profile mode](README.md#profile-mode "README.md#profile-mode"), [Standard](README.md#standard-mode), [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode"), [Schema subset](README.md#schema-subset-mode)
+**Output modes:** <a href="README.md#csv-formnat" title="README.md#csv-format">CSV format</a>, <a href="README.md#profile-mode" title="README.md#profile-mode">Profile mode</a>, <a href="README.md#standard-mode" title="README.md#standard-mode">Standard mode</a>, <a href="README.md#standard-normative-mode" title="README.md#standard-normative-mode">Standard normative mode</a>, <a href="README.md#schema-subset-mode">Schema subset</a>
 
 Array of strings. No default. List of annotation names to exclude.
 
@@ -228,13 +522,13 @@ Strings that begin with <code>\*</code> define wildcards.
 
 ### excluded_pattern_properties
 
-**Output modes:** [CSV format](README.md#csv-format "README.md#csv-format"), [Profile mode](README.md#profile-mode "README.md#profile-mode"), [Standard](README.md#standard-mode), [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode"), [Schema subset](README.md#schema-subset-mode)
+**Output modes:** <a href="README.md#csv-formnat" title="README.md#csv-format">CSV format</a>, <a href="README.md#profile-mode" title="README.md#profile-mode">Profile mode</a>, <a href="README.md#standard-mode" title="README.md#standard-mode">Standard mode</a>, <a href="README.md#standard-normative-mode" title="README.md#standard-normative-mode">Standard normative mode</a>, <a href="README.md#schema-subset-mode">Schema subset</a>
 
 ??. No default. List of pattern properties to exclude from output.<br /><br />In JSON, you must escape back slashes (<code>"\"</code> becomes <code>"\\"</code>).
 
 ### excluded_properties
 
-**Output modes:** [CSV format](README.md#csv-format "README.md#csv-format"), [Profile mode](README.md#profile-mode "README.md#profile-mode"), [Standard](README.md#standard-mode), [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode"), [Schema subset](README.md#schema-subset-mode)
+**Output modes:** <a href="README.md#csv-formnat" title="README.md#csv-format">CSV format</a>, <a href="README.md#profile-mode" title="README.md#profile-mode">Profile mode</a>, <a href="README.md#standard-mode" title="README.md#standard-mode">Standard mode</a>, <a href="README.md#standard-normative-mode" title="README.md#standard-normative-mode">Standard normative mode</a>, <a href="README.md#schema-subset-mode">Schema subset</a>
 
 Array of strings. No default. List of property names to exclude from the generated documentation. Strings that begin with <code>*</code> define wildcards. For example, <code>"*odata.count"</code> matches <code>"Members\@odata.count"</code> and others.
 
@@ -250,13 +544,13 @@ To exclude properties from the output, include them in the `excluded_properties`
 
 ### excluded_schemas
 
-**Output modes:** [CSV format](README.md#csv-format "README.md#csv-format"), [Profile mode](README.md#profile-mode "README.md#profile-mode"), [Standard](README.md#standard-mode), [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode"), [Schema subset](README.md#schema-subset-mode)
+**Output modes:** <a href="README.md#csv-formnat" title="README.md#csv-format">CSV format</a>, <a href="README.md#profile-mode" title="README.md#profile-mode">Profile mode</a>, <a href="README.md#standard-mode" title="README.md#standard-mode">Standard mode</a>, <a href="README.md#standard-normative-mode" title="README.md#standard-normative-mode">Standard normative mode</a>, <a href="README.md#schema-subset-mode">Schema subset</a>
 
 Array of strings. No default. List of schemas, by name, to exclude from output.
 
 ### format
 
-**Output modes:** [CSV format](README.md#csv-format "README.md#csv-format"), [Profile mode](README.md#profile-mode "README.md#profile-mode"), [Standard](README.md#standard-mode), [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode"), [Schema subset](README.md#schema-subset-mode)
+**Output modes:** <a href="README.md#csv-formnat" title="README.md#csv-format">CSV format</a>, <a href="README.md#profile-mode" title="README.md#profile-mode">Profile mode</a>, <a href="README.md#standard-mode" title="README.md#standard-mode">Standard mode</a>, <a href="README.md#standard-normative-mode" title="README.md#standard-normative-mode">Standard normative mode</a>, <a href="README.md#schema-subset-mode">Schema subset</a>
 
 &nbsp;? Output format. Value is <code>markdown</code>, <code>slate</code>, <code>html</code>, or <code>csv</code>.
 
@@ -264,13 +558,13 @@ Array of strings. No default. List of schemas, by name, to exclude from output.
 
 ### html_title
 
-**Output modes:** [Standard](README.md#standard-mode), [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode"), [Schema subset](README.md#schema-subset-mode)
+**Output modes:** <a href="README.md#standard-mode" title="README.md#standard-mode">Standard mode</a>, <a href="README.md#standard-normative-mode" title="README.md#standard-normative-mode">Standard normative mode</a>, <a href="README.md#schema-subset-mode">Schema subset</a>
 
 String. No default. HTML <code>title</code> element in HTML output.
 
 ### import_from
 
-**Output modes:** [Standard](README.md#standard-mode), [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode"), [Schema subset](README.md#schema-subset-mode)
+**Output modes:** <a href="README.md#standard-mode" title="README.md#standard-mode">Standard mode</a>, <a href="README.md#standard-normative-mode" title="README.md#standard-normative-mode">Standard normative mode</a>, <a href="README.md#schema-subset-mode">Schema subset</a>
 
 String. File name or directory that contains the JSON schemas to process. Wild cards are acceptable. Default: <code>json-schema</code>.
 
@@ -284,13 +578,13 @@ No default. Case-sensitive locale code for localized output. Localization of str
 
 ### normative
 
-**Output modes:** [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode")
+**Output modes:** <a href="README.md#standard-normative-mode" title="README.md#standard-normative-mode">Standard normative mode</a>
 
 &nbsp;? No default. Produce normative (developer-focused) output.
 
 ### object_reference_disposition
 
-**Output modes:** [Standard](README.md#standard-mode), [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode")
+**Output modes:** <a href="README.md#standard-mode" title="README.md#standard-mode">Standard mode</a>, <a href="README.md#standard-normative-mode" title="README.md#standard-normative-mode">Standard normative mode</a>
 
 &nbsp;? No default. Data structure that specifies properties that should be moved to the <b>Common Objects</b> clause and/or objects that should be included in-line where they are referenced, to override default behavior. For details, see <a href="#object_reference_disposition-key">object_reference_disposition key</a>.
 
@@ -325,7 +619,7 @@ For example:
 
 ### outfile
 
-**Output modes:** [CSV format](README.md#csv-format "README.md#csv-format"), [Profile mode](README.md#profile-mode "README.md#profile-mode"), [Property index mode](README.md#property-index-mode "README.md#property-index-mode"), [Standard](README.md#standard-mode), [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode"), [Schema subset](README.md#schema-subset-mode)
+**Output modes:** <a href="README.md#csv-formnat" title="README.md#csv-format">CSV format</a>, <a href="README.md#profile-mode" title="README.md#profile-mode">Profile mode</a>, <a href="README.md#property-index-mode" title="README.md#property-index-mode">Property index mode</a>, <a href="README.md#standard-mode" title="README.md#standard-mode">Standard mode</a>, <a href="README.md#standard-normative-mode" title="README.md#standard-normative-mode">Standard normative mode</a>, <a href="README.md#schema-subset-mode">Schema subset</a>
 
  &nbsp;? No default. Output file (default depends on output format: <code>output.md</code> for Markdown, <code>index.html</code> for HTML, <code>output.csv</code> for CSV.
 
@@ -333,7 +627,7 @@ For example:
 
 ### payload_dir
 
-**Output modes:** [Standard](README.md#standard-mode), [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode")
+**Output modes:** <a href="README.md#standard-mode" title="README.md#standard-mode">Standard mode</a>, <a href="README.md#standard-normative-mode" title="README.md#standard-normative-mode">Standard normative mode</a>
 
  &nbsp;? No default. Directory location for JSON payload and Action examples. Optional.<br /><br />For details, see <a href="#payload_dir-key">payload_dir key</a>.
 
@@ -346,7 +640,7 @@ The `payload_dir` key specifies a directory location for JSON payload and Action
 
 ### profile_doc
 
-**Output modes:** [Profile mode](README.md#profile-mode "README.md#profile-mode")
+**Output modes:** <a href="README.md#profile-mode" title="README.md#profile-mode">Profile mode</a>
 
 &nbsp;? No default. Path to a JSON profile document, for profile output.
 
@@ -354,7 +648,7 @@ The `payload_dir` key specifies a directory location for JSON payload and Action
 
 ### profile_terse
 
-**Output modes:** [Profile mode](README.md#profile-mode "README.md#profile-mode")
+**Output modes:** <a href="README.md#profile-mode" title="README.md#profile-mode">Profile mode</a>
 
 Boolean. No default. Produce <i>terse</i> profile output; meaningful only in profile mode. For details, see <a href="#profile_terse-key">profile_terse key</a>.
 
@@ -364,13 +658,13 @@ The `profile_terse` key is meaningful only when a profile document is also speci
 
 ### profile_uri_to_local
 
-**Output modes:** [Profile mode](README.md#profile-mode "README.md#profile-mode"), [Schema subset](README.md#schema-subset-mode)
+**Output modes:** <a href="README.md#profile-mode" title="README.md#profile-mode">Profile mode</a>, <a href="README.md#schema-subset-mode">Schema subset</a>
 
 &nbsp;? No default. For profile mode only, an object like <code>uri_mapping</code>, for locations of profiles.
 
 ### property_index
 
-**Output modes:** [Property index mode](README.md#property-index-mode "README.md#property-index-mode")
+**Output modes:** <a href="README.md#property-index-mode" title="README.md#property-index-mode">Property index mode</a>
 
 Boolean. No default. Produces <b>property index mode</b> output.
 
@@ -378,7 +672,7 @@ Boolean. No default. Produces <b>property index mode</b> output.
 
 ### property_index_config_out
 
-**Output modes:** [Property index mode](README.md#property-index-mode "README.md#property-index-mode")
+**Output modes:** <a href="README.md#property-index-mode" title="README.md#property-index-mode">Property index mode</a>
 
 String. No default. Generates an updated configuration file with the specified file name. The doc generator adds entries for any properties where the property name appears with more than one type or description to extend the input configuration.
 
@@ -392,13 +686,13 @@ In the previous example, if `FirmwareVersion` in the `PCIeDevice` schema had a d
 
 ### registry_uri_to_local
 
-**Output modes:** [Profile mode](README.md#profile-mode "README.md#profile-mode")
+**Output modes:** <a href="README.md#profile-mode" title="README.md#profile-mode">Profile mode</a>
 
 &nbsp;? No default. For profile mode only, an object like <code>uri_mapping</code>, for locations of registries.
 
 ### subset
 
-**Output modes:** [Schema subset](README.md#schema-subset-mode)
+**Output modes:** <a href="README.md#schema-subset-mode">Schema subset</a>
 
 &nbsp;? No default. Path to a JSON profile document. Generates <b>Schema subset</b> output, with the subset defined in the JSON profile document.
 
@@ -406,7 +700,7 @@ In the previous example, if `FirmwareVersion` in the `PCIeDevice` schema had a d
 
 ### uri_mapping
 
-**Output modes:** [CSV format](README.md#csv-format "README.md#csv-format"), [Profile mode](README.md#profile-mode "README.md#profile-mode"), [Property index mode](README.md#property-index-mode "README.md#property-index-mode"), [Standard](README.md#standard-mode), [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode"), [Schema subset](README.md#schema-subset-mode)
+**Output modes:** <a href="README.md#csv-formnat" title="README.md#csv-format">CSV format</a>, <a href="README.md#profile-mode" title="README.md#profile-mode">Profile mode</a>, <a href="README.md#property-index-mode" title="README.md#property-index-mode">Property index mode</a>, <a href="README.md#standard-mode" title="README.md#standard-mode">Standard mode</a>, <a href="README.md#standard-normative-mode" title="README.md#standard-normative-mode">Standard normative mode</a>, <a href="README.md#schema-subset-mode">Schema subset</a>
 
 Object. No default. Partial URL of schema repositories as attributes, and local directory paths as values.
 
@@ -414,7 +708,7 @@ This object maps partial URIs, as found in the schemas, to local directories. Th
 
 ```json
 "uri_mapping": { "redfish.dmtf.org/schemas/v1": "./json-schema" }
-```
+``` -->
 
 ### Subset configuration file
 
@@ -502,9 +796,9 @@ These output modes support the content supplement configuration file:
 
 | Output mode | Sample content supplement configuration file |
 | :---------- | :------------------------------------------- |
-| [Profile mode](README.md#profile-mode "README.md#profile-mode") | [`sample_inputs/profile_mode/content_supplement.json`](sample_inputs/profile_mode/content_supplement.json "sample_inputs/profile_mode/content_supplement.json") |
+| <a href="README.md#profile-mode" title="README.md#profile-mode">Profile mode</a> | [`sample_inputs/profile_mode/content_supplement.json`](sample_inputs/profile_mode/content_supplement.json "sample_inputs/profile_mode/content_supplement.json") |
 | [Standard mode](README.md#standard-mode "README.md#standard-mode") | [`sample_inputs/standard_html/content_supplement.json`](sample_inputs/standard_html/content_supplement.json "sample_inputs/standard_html/content_supplement.json") |
-| [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode") | [`sample_inputs/standard_html/content_supplement.json`](sample_inputs/standard_html/content_supplement.json "sample_inputs/standard_html/content_supplement.json") |
+| <a href="README.md#standard-normative-mode" title="README.md#standard-normative-mode">Standard normative mode</a> | [`sample_inputs/standard_html/content_supplement.json`](sample_inputs/standard_html/content_supplement.json "sample_inputs/standard_html/content_supplement.json") |
 | [Subset mode](README.md#subset-mode "README.md#subset-mode") | [`sample_inputs/subset/content_supplement.json`](sample_inputs/subset/content_supplement.json "sample_inputs/subset/content_supplement.json") |
 
 ### Content supplement configuration file keys
