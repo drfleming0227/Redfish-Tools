@@ -183,7 +183,7 @@ Use the following command-line options to define the output mode and format:
          <td align="left" valign="top">Defines path to a JSON profile document, for <a href="#terse-profile-mode">profile mode</a> output.</td>
       </tr>
       <tr>
-        <td align="left" valign="top"><code>--property_index_config_out CONFIG_FILE_OUT</code></td>
+        <td align="left" valign="top"><code>--property_index_config_out&nbsp;CONFIG_FILE_OUT</code></td>
         <td align="left" valign="top">Specifies an output file for updated configuration information. The doc generator extends the input configuration by adding entries for any properties where the property name appears with more than one type or description.</td>
       </tr>
       <tr>
