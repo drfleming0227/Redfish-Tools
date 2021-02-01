@@ -21,9 +21,9 @@ The names of some configuration keys differ from their command&#8209;line argume
 * [description_overrides](#description_overrides)
 * [escape_chars](#escape_chars)
 * [excluded_annotations](#excluded_annotations)
-* [excluded_pattern_properties key](#excluded_pattern_properties-key)
+* [excluded_pattern_properties](#excluded_pattern_properties)
 * [excluded_properties](#excluded_properties)
-* [excluded_schemas key](#excluded_schemas-key)
+* [excluded_schemas](#excluded_schemas)
 * [format](#format)
 * [html_title](#html_title)
 * [import_from](#import_from)
@@ -182,11 +182,11 @@ Array of strings. No default. List of annotation names to exclude.
 
 Strings that begin with <code>\*</code> define wildcards.
 
-## excluded_pattern_properties key
+## excluded_pattern_properties
 
- **Output modes:** [CSV format](README.md#csv-format "README.md#csv-format"), [Profile mode](README.md#profile-mode "README.md#profile-mode"), [Standard](README.md#standard-mode), [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode"), [Subset](README.md#subset-mode)
+**Output modes:** [CSV format](README.md#csv-format "README.md#csv-format"), [Profile mode](README.md#profile-mode "README.md#profile-mode"), [Standard](README.md#standard-mode), [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode"), [Subset](README.md#subset-mode)
 
-   ??. No default. List of pattern properties to exclude from output.<br /><br />In JSON, you must escape back slashes (<code>"\"</code> becomes <code>"\\"</code>).
+??. No default. List of pattern properties to exclude from output.<br /><br />In JSON, you must escape back slashes (<code>"\"</code> becomes <code>"\\"</code>).
 
 ## excluded_properties
 
@@ -204,7 +204,7 @@ To exclude properties from the output, include them in the `excluded_properties`
 ]
 ```
 
-## excluded_schemas key
+## excluded_schemas
 
 **Output modes:** [CSV format](README.md#csv-format "README.md#csv-format"), [Profile mode](README.md#profile-mode "README.md#profile-mode"), [Standard](README.md#standard-mode), [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode"), [Subset](README.md#subset-mode)
 
@@ -293,10 +293,10 @@ For example:
 
  &nbsp;? No default. Directory location for JSON payload and Action examples. Optional.<br /><br />For details, see <a href="#payload_dir-key">payload_dir key</a>.
 
-   The `payload_dir` key specifies a directory location for JSON payload and Action examples. If relative, this path is relative to the working directory in which the `doc_generator.py` script is run. Within the payload directory, use the following naming scheme for example files:
+The `payload_dir` key specifies a directory location for JSON payload and Action examples. If relative, this path is relative to the working directory in which the `doc_generator.py` script is run. Within the payload directory, use the following naming scheme for example files:
 
-   * &lt;schema_name&gt;-v&lt;major_version&gt;-example.json for JSON payloads
-   * &lt;schema_name&gt;-v&lt;major_version&gt;-action-&lt;action_name&gt;.json for action examples
+* &lt;schema_name&gt;-v&lt;major_version&gt;-example.json for JSON payloads
+* &lt;schema_name&gt;-v&lt;major_version&gt;-action-&lt;action_name&gt;.json for action examples
 
  <b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b>&nbsp;<code>payload_dir</code>
 
@@ -304,19 +304,19 @@ For example:
 
 **Output modes:** [Profile mode](README.md#profile-mode "README.md#profile-mode")
 
- &nbsp;? No default. Path to a JSON profile document, for profile output.
+&nbsp;? No default. Path to a JSON profile document, for profile output.
 
- <b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>profile</code>
+<b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>profile</code>
 
 ## profile_terse
 
 **Output modes:** [Profile mode](README.md#profile-mode "README.md#profile-mode")
 
- Boolean. No default. Produce <i>terse</i> profile output; meaningful only in profile mode. For details, see <a href="#profile_terse-key">profile_terse key</a>.
+Boolean. No default. Produce <i>terse</i> profile output; meaningful only in profile mode. For details, see <a href="#profile_terse-key">profile_terse key</a>.
 
-   The `profile_terse` key is meaningful only when a profile document is also specified. When `true`, *terse* output is produced. By default, profile output is verbose and includes all properties regardless of profile requirements. *Terse* output is intended for use by Service developers, including only the subset of properties with profile requirements.
+The `profile_terse` key is meaningful only when a profile document is also specified. When `true`, *terse* output is produced. By default, profile output is verbose and includes all properties regardless of profile requirements. *Terse* output is intended for use by Service developers, including only the subset of properties with profile requirements.
 
- <b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>terse</code>
+<b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>terse</code>
 
 ## profile_uri_to_local
 
@@ -340,6 +340,14 @@ Boolean. No default. Produce <b>Property Index</b> output. For details, see <a h
 
 <b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>property_index_config_out</code>
 
+Specifies an output file for updated configuration information. The doc generator extends the input configuration by adding entries for any properties where the property name appears with more than one type or description.
+
+If you specify `globalOverride` for a property name or property name and type, no data is added for matching instances.
+
+All added entries include `"knownException": false`. In addition, if an entry includes `"knownException": true` in the input configuration but the description no longer matches, `knownException` is set to `false`. 
+
+In the previous example, if `FirmwareVersion` in the `PCIeDevice` schema had a different description than the one listed in the example input, it appears in the output with its new description and `"knownException": false`.
+
 ## registry_uri_to_local
 
 **Output modes:** [Profile mode](README.md#profile-mode "README.md#profile-mode")
@@ -359,6 +367,12 @@ Boolean. No default. Produce <b>Property Index</b> output. For details, see <a h
 **Output modes:** [CSV format](README.md#csv-format "README.md#csv-format"), [Profile mode](README.md#profile-mode "README.md#profile-mode"), [Property index mode](README.md#property-index-mode "README.md#property-index-mode"), [Standard](README.md#standard-mode), [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode"), [Subset](README.md#subset-mode)
 
 Object. No default. Partial URL of schema repositories as attributes, and local directory paths as values.
+
+This object maps partial URIs, as found in the schemas, to local directories. The partial URI should include the domain part of the URI but can omit the protocol (http:// or https://).
+
+```json
+"uri_mapping": { "redfish.dmtf.org/schemas/v1": "./json-schema" }
+```
 
 ## Subset configuration file
 
@@ -397,4 +411,41 @@ Used in <b>subset mode</b> to generate <b>Schema subset</b> output, with the sub
    <li>The <a href="#configuration">configuration file</a> takes a different form than the one used for the other output modes.</li>
 </ul>
 
-See [Redfish doc generator: Property index configuration](README-property-index-mode.md).
+The following command-line options apply in property-index mode:
+
+```text
+usage: doc_generator.py [-h]
+                        [--config CONFIG_FILE]
+                        [-n]
+                        [--format {markdown,html,csv}]
+                        [--out OUTFILE]
+                        [--profile PROFILE_DOC]
+                        [--property_index_config_out CONFIG_FILE_OUT]
+                        [import_from ...]
+
+positional arguments:
+  import_from           Name of a file or directory to process (wild cards are
+                        acceptable). Default: json-schema
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -n, --normative       Produce normative (developer-focused) output
+  --format {markdown,html,csv}
+                        Output format
+  --out OUTFILE         Output file (default depends on output format:
+                        output.md for Markdown, index.html for HTML,
+                        output.csv for CSV
+  --property_index      Produce Property Index output.
+  --property_index_config_out CONFIG_FILE_OUT
+                        Generate updated config file, with specified filename
+                        (property_index mode only).
+  --config CONFIG_FILE  Path to a config file, containing configuration in
+                        JSON format.
+
+Example:
+   doc_generator.py --property_index --format=html --config=pi_config.json
+```
+
+Other properties may be included for the user's reference, and are ignored by the doc generator.
+
+**Base configuration file:** <a href="sample_inputs/property_index/config.json"><code>sample_inputs/property_index/config.json</code></a>
