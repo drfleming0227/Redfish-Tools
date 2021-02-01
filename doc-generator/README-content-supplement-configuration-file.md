@@ -27,21 +27,15 @@ These output modes support the content supplement configuration file:
 
 ### property_description_overrides
 
-**Data type:** Dictionary
-
-Maps property names to strings that replace the descriptions of the named properties.
+Dictionary. Maps property names to strings that replace the descriptions of the named properties.
 
 ### property_fulldescription_overrides
 
-**Data type:** Dictionary
-
-Maps property names to strings that replace the descriptions of the named properties. These replacements are <i>full</i> in that the doc generator omits any additional information that it normally appends, like a reference to the definition of the property in another schema.
+Dictionary. Maps property names to strings that replace the descriptions of the named properties. These replacements are *full* in that the doc generator omits any additional information that it normally appends, like a reference to the definition of the property in another schema.
 
 ### schema_link_replacements
 
-**Data type:** Dictionary
-
-Maps reference URIs to replacement URIs. The match type is full or partial. Replaces one link with another link. The dictionary structure is:
+Dictionary. Maps reference URIs to replacement URIs. The match type is full or partial. Replaces one link with another link. The dictionary structure is:
 
 ```json
 "schema_link_replacements": {
@@ -66,9 +60,7 @@ In this structure:
 
 ### schema_supplement
 
-**Data type:** Dictionary
-
-Maps schema names to a dictionary of structured content, including text overrides for property descriptions, replacements for unit abbreviations, schema-specific introductions, property description substitutions, and other supplementary data. All elements in this structure are optional. 
+Dictionary. Maps schema names to a dictionary of structured content, including text overrides for property descriptions, replacements for unit abbreviations, schema-specific introductions, property description substitutions, and other supplementary data. All elements in this structure are optional. 
 
 The structure of this object is:
 
@@ -108,6 +100,4 @@ In this structure:
 
 ### units_translation
 
-**Data type:** Dictionary
-
-Maps Redfish schema units to units as you want them to appear in the documentation.
+Dictionary. Maps Redfish schema units to units as you want them to appear in the documentation.
