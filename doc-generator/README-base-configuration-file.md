@@ -328,25 +328,23 @@ The `profile_terse` key is meaningful only when a profile document is also speci
 
 **Output modes:** [Property index mode](README.md#property-index-mode "README.md#property-index-mode")
 
-Boolean. No default. Produce <b>Property Index</b> output. For details, see <a href="README-property-index-mode.md">Redfish doc generator: Property index mode</a>.
+Boolean. No default. Produces <b>property index mode</b> output.
 
 <b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>property_index</code>
 
 ## property_index_config_out
 
-**Output modes:** 
+**Output modes:** [Property index mode](README.md#property-index-mode "README.md#property-index-mode")
 
-&nbsp;? Not used. No default. Generate an updated configuration file, with specified file name (property_index mode only).
-
-<b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>property_index_config_out</code>
-
-Specifies an output file for updated configuration information. The doc generator extends the input configuration by adding entries for any properties where the property name appears with more than one type or description.
+String. No default. Generates an updated configuration file with the specified file name. The doc generator adds entries for any properties where the property name appears with more than one type or description to extend the input configuration.
 
 If you specify `globalOverride` for a property name or property name and type, no data is added for matching instances.
 
 All added entries include `"knownException": false`. In addition, if an entry includes `"knownException": true` in the input configuration but the description no longer matches, `knownException` is set to `false`. 
 
 In the previous example, if `FirmwareVersion` in the `PCIeDevice` schema had a different description than the one listed in the example input, it appears in the output with its new description and `"knownException": false`.
+
+<b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>property_index_config_out</code>
 
 ## registry_uri_to_local
 
