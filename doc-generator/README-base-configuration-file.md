@@ -10,41 +10,41 @@ The base configuration file is a JSON file that configures the generated documen
 
 The names of some configuration keys differ from their command&#8209;line argument equivalents. Unless otherwise noted, the configuration key has the same meaning as its command&#8209;line argument equivalent. The `uri_mapping` configuration key is required but all other configuration keys are optional.
 
-The clauses briefly describes each key and the output modes that support the key:
+## Contents
 
-* [actions_in_property_table key](#actions_in_property_table-key)
-* [add_toc key](#add_toc-key)
-* [boilerplate_intro key](#boilerplate_intro-key)
-* [boilerplate_postscript key](#boilerplate_postscript-key)
-* [combine_multiple_refs key](#combine_multiple_refs-key)
-* [content_supplement key](#content_supplement-key)
-* [description_overrides key](#description_overrides-key)
-* [escape_chars key](#escape_chars-key)
-* [excluded_annotations key](#excluded_annotations-key)
+* [actions_in_property_table](#actions_in_property_table)
+* [add_toc](#add_toc)
+* [boilerplate_intro](#boilerplate_intro)
+* [boilerplate_postscript](#boilerplate_postscript)
+* [combine_multiple_refs](#combine_multiple_refs)
+* [content_supplement](#content_supplement)
+* [description_overrides](#description_overrides)
+* [escape_chars](#escape_chars)
+* [excluded_annotations](#excluded_annotations)
 * [excluded_pattern_properties key](#excluded_pattern_properties-key)
-* [excluded_properties key](#excluded_properties-key)
+* [excluded_properties](#excluded_properties)
 * [excluded_schemas key](#excluded_schemas-key)
-* [format key](#format-key)
-* [html_title key](#html_title-key)
-* [import_from key](#import_from-key)
-* [locale key](#locale-key)
-* [normative key](#normative-key)
-* [object_reference_disposition key](#object_reference_disposition-key)
-* [omit_version_in_headers key](#omit_version_in_headers-key)
-* [outfile key](#outfile-key)
-* [payload_dir key](#payload_dir-key)
-* [profile_doc key](#profile_doc-key)
-* [profile_terse key](#profile_terse-key)
-* [profile_uri_to_local key](#profile_uri_to_local-key)
-* [property_index key](#property_index-key)
-* [property_index_config_out key](#property_index_config_out-key)
-* [registry_uri_to_local key](#registry_uri_to_local-key)
-* [subset key](#subset-key)
-* [uri_mapping key](#uri_mapping-key)
+* [format](#format)
+* [html_title](#html_title)
+* [import_from](#import_from)
+* [locale](#locale)
+* [normative](#normative)
+* [object_reference_disposition](#object_reference_disposition)
+* [omit_version_in_headers](#omit_version_in_headers)
+* [outfile](#outfile)
+* [payload_dir](#payload_dir)
+* [profile_doc](#profile_doc)
+* [profile_terse](#profile_terse)
+* [profile_uri_to_local](#profile_uri_to_local)
+* [property_index](#property_index)
+* [property_index_config_out](#property_index_config_out)
+* [registry_uri_to_local](#registry_uri_to_local)
+* [subset](#subset)
+* [uri_mapping](#uri_mapping)
 * [Subset configuration file](#subset-configuration-file)
 * [Property index configuration file](#property-index-configuration-file)
 
-## actions_in_property_table key
+## actions_in_property_table
 
 **Output modes:** [Subset](README.md#subset-mode)
 
@@ -55,7 +55,7 @@ Boolean. Value is:
    <li><code>false</code>. Exclude <code>Actions</code> from property tables. </li>
 </ul>
 
-## add_toc key
+## add_toc
 
 **Output modes:** [Standard mode](README.md#standard-mode "README.md#standard-mode"), [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode")
 
@@ -73,19 +73,19 @@ Boolean. By default, the table of contents (TOC) appears at the top of the HTML 
    <li><code>false</code>. Do not generate a TOC.</li>
 </ul>
 
-## boilerplate_intro key
+## boilerplate_intro
 
 **Output modes:** [Profile mode](README.md#profile-mode "README.md#profile-mode"), [Standard mode](README.md#standard-mode "README.md#standard-mode"), [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode"), [Subset mode](README.md#subset-mode "README.md#subset-mode")
 
 String. No default. Location of the HTML or Markdown file that contains content to appear at the beginning of the document before the generated schema documentation. If a relative path, should be relative to the location of the configuration file.
 
-## boilerplate_postscript key
+## boilerplate_postscript
 
 **Output modes:** [Standard mode](README.md#standard-mode "README.md#standard-mode"), [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode")
 
 String. No default. Location of the HTML or Markdown file that contains content to appear at the end of the document after the generated schema documentation. If a relative path, should be relative to the location of the configuration file.
 
-## combine_multiple_refs key
+## combine_multiple_refs
 
 **Output modes:** [Standard mode](README.md#standard-mode "README.md#standard-mode"), [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode")
 
@@ -99,19 +99,74 @@ The `combine_multiple_refs` key specifies a threshold at which multiple referenc
 "combine_multiple_refs": 3,
 ```
 
-## content_supplement key
+## content_supplement
 
 **Output modes:** [Profile mode](README.md#profile-mode "README.md#profile-mode"), [Standard](README.md#standard-mode), [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode"), [Subset](README.md#subset-mode)
 
 String. No default. Location of a JSON-formatted content supplement file, which specifies content substitutions to be made within the generated schema documentation. If a relative path, must be relative to the location of the configuration file.
 
-## description_overrides key
+## description_overrides
 
 **Output modes:** [Property index mode](README.md#property-index-mode "README.md#property-index-mode")
 
-String. ??
+Object. An object keyed by property name, which can specify descriptions that override those in the source schemas.
 
-## escape_chars key
+You can override descriptions for individual properties. The `description_overrides` object is keyed by property name. Values are lists, which enable different overrides for the same property in different schemas. Each object in the list can have the following entries:
+
+| Key                   | Value          |
+| :-------------------- | :------------- |
+| `type`                | Property type. |
+| `schemas`             | List of schemas to which this element applies. |
+| `overrideDescription` | String that replaces the description in the schema. |
+| `globalOverride`      | The `overrideDescription` in this element applies to all instances of the property name that match the `type`. |
+| `description`         | Description in the schema. |
+| `knownException`      | A variant description is expected. |
+
+The `description` and `knownException` keys are primarily for user reference. When generating configuration output, the doc generator includes the description and set `knownException` to `false`. The user can edit the resulting output to distinguish expected exceptions from those that need attention. Neither field affects the property index document itself.
+
+> **Note:** Although `description_overrides` has a similar function to `property_description_overrides` in other modes, it has a different structure.
+
+Some examples:
+
+```json
+"EventType": [{
+   "overrideDescription": "This indicates the type of an event recorded in this log.",
+   "globalOverride": true,
+   "type": "string"
+}]
+```
+
+The combination of `globalOverride` and `overrideDescription` indicates that all instances of the `EventType` property that have type `string` should have their description replaced with `"This indicates the type of an event recorded in this log."`
+
+```json
+"FirmwareVersion": [{
+   "description": "Firmware version.",
+   "type": "string",
+   "knownException": true,
+   "overrideDescription": "Override text for FirmwareVersion",
+   "schemas": [
+      "AttributeRegistry/SupportedSystems"
+   ]
+}, {
+   "overrideDescription": "The firmware version of this thingamajig.",
+   "type": "string",
+   "knownException": true,
+   "schemas": ["Power/PowerSupplies",
+      "Manager",
+      "ComputerSystem/TrustedModules",
+      "Storage/StorageControllers"
+   ]
+}, {
+   "description": "The version of firmware for this PCIe device.",
+   "type": "string",
+   "knownException": true,
+   "schemas": ["PCIeDevice"]
+}]
+```
+
+The first two entries in this `FirmwareVersion` example override the description for `FirmwareVersion` with type `string`, in the listed schemas. The third entry identifies another instance of `FirmwareVersion` with another description, which is expected but should not be overridden.
+
+## escape_chars
 
 **Output modes:** ??
 
@@ -119,7 +174,7 @@ String. ??
 
 <b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>escape</code>
 
-## excluded_annotations key
+## excluded_annotations
 
 **Output modes:** [CSV format](README.md#csv-format "README.md#csv-format"), [Profile mode](README.md#profile-mode "README.md#profile-mode"), [Standard](README.md#standard-mode), [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode"), [Subset](README.md#subset-mode)
 
@@ -133,75 +188,85 @@ Strings that begin with <code>\*</code> define wildcards.
 
    ??. No default. List of pattern properties to exclude from output.<br /><br />In JSON, you must escape back slashes (<code>"\"</code> becomes <code>"\\"</code>).
 
-## excluded_properties key
+## excluded_properties
 
 **Output modes:** [CSV format](README.md#csv-format "README.md#csv-format"), [Profile mode](README.md#profile-mode "README.md#profile-mode"), [Standard](README.md#standard-mode), [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode"), [Subset](README.md#subset-mode)
 
-  Array of strings. No default. List of property names to exclude. Strings that begin with <code>*</code> define wildcards. For example, <code>"*odata.count"</code> matches <code>"Members\@odata.count"</code> and others.
+Array of strings. No default. List of property names to exclude from the generated documentation. Strings that begin with <code>*</code> define wildcards. For example, <code>"*odata.count"</code> matches <code>"Members\@odata.count"</code> and others.
+
+To exclude properties from the output, include them in the `excluded_properties` list. An asterisk (`*`) as the first character in a property acts as a wild card. In the following example, any property name that ends with `"@odata.count"` is omitted:
+
+```json
+"excluded_properties": ["description",
+   "Id", "@odata.context",
+   "@odata.type", "@odata.id",
+   "@odata.etag", "*@odata.count"
+]
+```
 
 ## excluded_schemas key
 
- **Output modes:** [CSV format](README.md#csv-format "README.md#csv-format"), [Profile mode](README.md#profile-mode "README.md#profile-mode"), [Standard](README.md#standard-mode), [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode"), [Subset](README.md#subset-mode)
+**Output modes:** [CSV format](README.md#csv-format "README.md#csv-format"), [Profile mode](README.md#profile-mode "README.md#profile-mode"), [Standard](README.md#standard-mode), [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode"), [Subset](README.md#subset-mode)
 
-   Array of strings. No default. List of schemas, by name, to exclude from output.
+Array of strings. No default. List of schemas, by name, to exclude from output.
 
-## format key
+## format
 
 **Output modes:** [CSV format](README.md#csv-format "README.md#csv-format"), [Profile mode](README.md#profile-mode "README.md#profile-mode"), [Standard](README.md#standard-mode), [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode"), [Subset](README.md#subset-mode)
 
 &nbsp;? Output format. Value is <code>markdown</code>, <code>slate</code>, <code>html</code>, or <code>csv</code>.
 
-  **Equivalent&nbsp;command&#8209;line&nbsp;argument:** <code>format</code>
+**Equivalent&nbsp;command&#8209;line&nbsp;argument:** <code>format</code>
 
-## html_title key
-
-**Output modes:** [Standard](README.md#standard-mode), [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode"), [Subset](README.md#subset-mode)
-
-  String. No default. HTML <code>title</code> element in HTML output.
-
-## import_from key
+## html_title
 
 **Output modes:** [Standard](README.md#standard-mode), [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode"), [Subset](README.md#subset-mode)
 
-  String. File name or directory that contains the JSON schemas to process. Wild cards are acceptable. Default: <code>json-schema</code>.
+String. No default. HTML <code>title</code> element in HTML output.
+
+## import_from
+
+**Output modes:** [Standard](README.md#standard-mode), [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode"), [Subset](README.md#subset-mode)
+
+String. File name or directory that contains the JSON schemas to process. Wild cards are acceptable. Default: <code>json-schema</code>.
 
 <b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b>&nbsp;<code>import_from</code>
 
-## locale key
+## locale
 
 **Output modes:** 
 
-  No default. Case-sensitive locale code for localized output. Localization of strings supplied by the doc generator uses <a href="https://www.gnu.org/software/gettext/" title="https://www.gnu.org/software/gettext/"><code>gettext</code></a>. Locale files are in the <code>locale</code> directory in the <code>doc_generator</code> root. Translated descriptions and annotations may be supplied in localized JSON Schema files.
+No default. Case-sensitive locale code for localized output. Localization of strings supplied by the doc generator uses <a href="https://www.gnu.org/software/gettext/" title="https://www.gnu.org/software/gettext/"><code>gettext</code></a>. Locale files are in the <code>locale</code> directory in the <code>doc_generator</code> root. Translated descriptions and annotations may be supplied in localized JSON Schema files.
 
-## normative key
+## normative
 
 **Output modes:** [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode")
 
 &nbsp;? No default. Produce normative (developer-focused) output.
 
-## object_reference_disposition key
+## object_reference_disposition
 
 **Output modes:** [Standard](README.md#standard-mode), [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode")
 
 &nbsp;? No default. Data structure that specifies properties that should be moved to the <b>Common Objects</b> clause and/or objects that should be included in-line where they are referenced, to override default behavior. For details, see <a href="#object_reference_disposition-key">object_reference_disposition key</a>.
 
-  The `object_reference_disposition` key specifies a JSON object with either or both these fields:
+The `object_reference_disposition` key specifies a JSON object with either or both these fields:
 
-  * `common_object`. List of property names. For example `"Redundancy"`. 
-  * `include`. List of properties by their full path.
+* `common_object`. List of property names. For example `"Redundancy"`. 
+* `include`. List of properties by their full path.
 
-  For example:
+For example:
 
-  ```json
-  "object_reference_disposition": {
-     "common_object": ["Redundancy"],
-     "include": [
-        "http://redfish.dmtf.org/schemas/v1/PCIeDevice.json#/definitions/PCIeInterface"
-     ]
-  }
-  ```
+```json
+"object_reference_disposition": {
+   "common_object": ["Redundancy"],
+   "include": [
+    "http://redfish.dmtf.org/schemas/v1/PCIeDevice.json#/definitions/PCIeInterface"
+  ]
+}
+```
 
-## omit_version_in_headers key
+## omit_version_in_headers
 
 **Output modes:** 
 
@@ -214,7 +279,7 @@ Strings that begin with <code>\*</code> define wildcards.
       <li><code>false</code>. Include schema versions in clause headers.</li>
    </ul>
 
-## outfile key
+## outfile
 
 **Output modes:** [CSV format](README.md#csv-format "README.md#csv-format"), [Profile mode](README.md#profile-mode "README.md#profile-mode"), [Property index mode](README.md#property-index-mode "README.md#property-index-mode"), [Standard](README.md#standard-mode), [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode"), [Subset](README.md#subset-mode)
 
@@ -222,7 +287,7 @@ Strings that begin with <code>\*</code> define wildcards.
 
  <b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>out</code>
 
-## payload_dir key
+## payload_dir
 
 **Output modes:** [Standard](README.md#standard-mode), [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode")
 
@@ -235,7 +300,7 @@ Strings that begin with <code>\*</code> define wildcards.
 
  <b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b>&nbsp;<code>payload_dir</code>
 
-## profile_doc key
+## profile_doc
 
 **Output modes:** [Profile mode](README.md#profile-mode "README.md#profile-mode")
 
@@ -243,7 +308,7 @@ Strings that begin with <code>\*</code> define wildcards.
 
  <b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>profile</code>
 
-## profile_terse key
+## profile_terse
 
 **Output modes:** [Profile mode](README.md#profile-mode "README.md#profile-mode")
 
@@ -253,13 +318,13 @@ Strings that begin with <code>\*</code> define wildcards.
 
  <b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>terse</code>
 
-## profile_uri_to_local key
+## profile_uri_to_local
 
 **Output modes:** [Profile mode](README.md#profile-mode "README.md#profile-mode"), [Subset](README.md#subset-mode)
 
 &nbsp;? No default. For profile mode only, an object like <code>uri_mapping</code>, for locations of profiles.
 
-## property_index key
+## property_index
 
 **Output modes:** [Property index mode](README.md#property-index-mode "README.md#property-index-mode")
 
@@ -267,7 +332,7 @@ Boolean. No default. Produce <b>Property Index</b> output. For details, see <a h
 
 <b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>property_index</code>
 
-## property_index_config_out key
+## property_index_config_out
 
 **Output modes:** 
 
@@ -275,13 +340,13 @@ Boolean. No default. Produce <b>Property Index</b> output. For details, see <a h
 
 <b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>property_index_config_out</code>
 
-## registry_uri_to_local key
+## registry_uri_to_local
 
 **Output modes:** [Profile mode](README.md#profile-mode "README.md#profile-mode")
 
 &nbsp;? No default. For profile mode only, an object like <code>uri_mapping</code>, for locations of registries.
 
-## subset key
+## subset
 
 **Output modes:** [Subset](README.md#subset-mode)
 
@@ -289,7 +354,7 @@ Boolean. No default. Produce <b>Property Index</b> output. For details, see <a h
 
 <b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>subset</code>
 
-## uri_mapping key
+## uri_mapping
 
 **Output modes:** [CSV format](README.md#csv-format "README.md#csv-format"), [Profile mode](README.md#profile-mode "README.md#profile-mode"), [Property index mode](README.md#property-index-mode "README.md#property-index-mode"), [Standard](README.md#standard-mode), [Standard normative mode](README.md#standard-normative-mode "README.md#standard-normative-mode"), [Subset](README.md#subset-mode)
 

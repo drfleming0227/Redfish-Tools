@@ -6,15 +6,7 @@
 
 Copyright 2018-2021 Distributed Management Task Force, Inc. All rights reserved.
 
-You can run the **Redfish doc generator** in *property-index mode* to generate an index of property names and descriptions. 
 
-DSP2053, *Redfish Property Guide* at [https://www.dmtf.org/sites/default/files/standards/documents/DSP2053_2020.4.pdf](https://www.dmtf.org/sites/default/files/standards/documents/DSP2053_2020.4.pdf "https://www.dmtf.org/sites/default/files/standards/documents/DSP2053_2020.4.pdf") is an example of a property index document.
-
-For each property, this output includes the property name, list of schemas in which the property is defined, the property type, and property description.
-
-When you run the doc generator in property-index mode, only a few command-line options or configuration keys apply.
-
-Use the `--property_index_config_out` option to specify an output file for updated configuration information. The doc generator extends the input configuration by adding entries for any properties where the property name appears with more than one type or description.
 
 ## Contents
 
@@ -131,87 +123,16 @@ Other properties may be included for the user's reference, and are ignored by th
 
 ### Description overrides
 
-You can override descriptions for individual properties. The `description_overrides` object is keyed by property name. Values are lists, which enable different overrides for the same property in different schemas. Each object in the list can have the following entries:
 
-| Key                   | Value          |
-| :-------------------- | :------------- |
-| `type`                | Property type. |
-| `schemas`             | List of schemas to which this element applies. |
-| `overrideDescription` | String that replaces the description in the schema. |
-| `globalOverride`      | The `overrideDescription` in this element applies to all instances of the property name that match the `type`. |
-| `description`         | Description in the schema. |
-| `knownException`      | A variant description is expected. |
-
-The `description` and `knownException` keys are primarily for user reference. When generating configuration output, the doc generator includes the description and set `knownException` to `false`. The user can edit the resulting output to distinguish expected exceptions from those that need attention. Neither field affects the property index document itself.
-
-> **Note:** Although `description_overrides` has a similar function to `property_description_overrides` in other modes, it has a different structure.
-
-Some examples:
-
-```json
-"EventType": [{
-   "overrideDescription": "This indicates the type of an event recorded in this log.",
-   "globalOverride": true,
-   "type": "string"
-}]
-```
-
-The combination of `globalOverride` and `overrideDescription` indicates that all instances of the `EventType` property that have type `string` should have their description replaced with `"This indicates the type of an event recorded in this log."`
-
-```json
-"FirmwareVersion": [{
-   "description": "Firmware version.",
-   "type": "string",
-   "knownException": true,
-   "overrideDescription": "Override text for FirmwareVersion",
-   "schemas": [
-      "AttributeRegistry/SupportedSystems"
-   ]
-}, {
-   "overrideDescription": "The firmware version of this thingamajig.",
-   "type": "string",
-   "knownException": true,
-   "schemas": ["Power/PowerSupplies",
-      "Manager",
-      "ComputerSystem/TrustedModules",
-      "Storage/StorageControllers"
-   ]
-}, {
-   "description": "The version of firmware for this PCIe device.",
-   "type": "string",
-   "knownException": true,
-   "schemas": ["PCIeDevice"]
-}]
-```
-
-The first two entries in this `FirmwareVersion` example override the description for `FirmwareVersion` with type `string`, in the listed schemas. The third entry identifies another instance of `FirmwareVersion` with another description, which is expected but should not be overridden.
 
 ### Excluded properties
 
-To exclude properties from the output, include them in the `excluded_properties` list. An asterisk (`*`) as the first character in a property acts as a wild card. In the following example, any property name that ends with `"@odata.count"` is omitted:
 
-```json
-"excluded_properties": ["description",
-   "Id", "@odata.context",
-   "@odata.type", "@odata.id",
-   "@odata.etag", "*@odata.count"
-]
-```
 
 ### URI mapping
 
-This object maps partial URIs, as found in the schemas, to local directories. The partial URI should include the domain part of the URI but can omit the protocol (http:// or https://).
 
-```json
-"uri_mapping": { "redfish.dmtf.org/schemas/v1": "./json-schema" }
-```
 
 ## Configuration file output
 
-Use the `--property_index_config_out` option to specify an output file for updated configuration information. The doc generator extends the input configuration by adding entries for any properties where the property name appears with more than one type or description.
 
-If you specify `globalOverride` for a property name or property name and type, no data is added for matching instances.
-
-All added entries include `"knownException": false`. In addition, if an entry includes `"knownException": true` in the input configuration but the description no longer matches, `knownException` is set to `false`. 
-
-In the previous example, if `FirmwareVersion` in the `PCIeDevice` schema had a different description than the one listed in the example input, it appears in the output with its new description and `"knownException": false`.

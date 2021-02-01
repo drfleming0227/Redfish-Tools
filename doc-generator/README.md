@@ -196,7 +196,7 @@ Use the following command-line options to define the output mode and format:
       </tr>
       <tr>
          <td align="left" valign="top"><code>--property_index</code></td>
-         <td align="left" valign="top">Produces <a href="#property-index-mode"><i>property index mode</i></a> output.</td>
+         <td align="left" valign="top">Produces <a href="#property-index-mode">property index mode</a> output.</td>
       </tr>
    </tbody>
 </table>
