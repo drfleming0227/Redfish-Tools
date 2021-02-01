@@ -137,7 +137,7 @@ The *output mode* defines the type and audience of the generated document:
 | <a id="standard-normative-mode"></a>Standard&nbsp;normative | Guide with normative descriptions for developers. Normative output prefers long descriptions to descriptions. |
 | <a id="profile-mode"></a>Profile | Document with a subset of properties with profile requirements for service developers. A profile mode document can be terse or verbose. Default is verbose. |
 | <a id="subset-mode"></a>Subset | Subset of schema to include in white papers or other documents. |
-| <a id="property-index-mode"></a>Property index | An index of property names and descriptions for schema authors to enable them to locate existing property definitions within the Redfish Schema. End users and other consumers of Redfish data can also use a property index to look up property definitions without regard to their location in the schema.<br/><br/>DSP2053, *Redfish Property Guide* at [https://www.dmtf.org/sites/default/files/standards/documents/DSP2053_2020.4.pdf](https://www.dmtf.org/sites/default/files/standards/documents/DSP2053_2020.4.pdf "https://www.dmtf.org/sites/default/files/standards/documents/DSP2053_2020.4.pdf") is an example of a property index document. For each property, this output includes the property name, list of schemas in which the property is defined, the property type, and property description.<br/><br/>When you run the doc generator in property-index mode, only a few command-line options or configuration keys apply.<br/><br/>Use the `--property_index_config_out` option to specify an output file for updated configuration information. The doc generator extends the input configuration by adding entries for any properties where the property name appears with more than one type or description. |
+| <a id="property-index-mode"></a>Property index | An index of property names and descriptions for schema authors to enable them to locate existing property definitions within the Redfish Schema. End users and other consumers of Redfish data can also use a property index to look up property definitions without regard to their location in the schema.<br/><br/>DSP2053, *Redfish Property Guide* at [https://www.dmtf.org/sites/default/files/standards/documents/DSP2053_2020.4.pdf](https://www.dmtf.org/sites/default/files/standards/documents/DSP2053_2020.4.pdf "https://www.dmtf.org/sites/default/files/standards/documents/DSP2053_2020.4.pdf") is an example of a property index document. For each property, this output includes the property name, list of schemas in which the property is defined, the property type, and property description.<br/><br/>When you run the doc generator in property-index mode, only a few command-line options or configuration keys apply. |
 
 ### Output formats
 
@@ -181,6 +181,10 @@ Use the following command-line options to define the output mode and format:
       <tr>
          <td align="left" valign="top"><code>--profile&nbsp;PROFILE_DOC</code></td>
          <td align="left" valign="top">Defines path to a JSON profile document, for <a href="#terse-profile-mode">profile mode</a> output.</td>
+      </tr>
+      <tr>
+        <td align="left" valign="top"><code>--property_index_config_out CONFIG_FILE_OUT</code></td>
+        <td align="left" valign="top">Specifies an output file for updated configuration information. The doc generator extends the input configuration by adding entries for any properties where the property name appears with more than one type or description.</td>
       </tr>
       <tr>
          <td align="left" valign="top"><code>-t</code>,&nbsp;<code>--terse</code></td>
