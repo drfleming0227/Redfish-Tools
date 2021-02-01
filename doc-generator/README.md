@@ -8,7 +8,7 @@ Copyright 2016-2021 Distributed Management Task Force, Inc. All rights reserved.
 
 The **Redfish doc generator** &mdash; [`doc_generator.py`](doc_generator.py "doc_generator.py") &mdash; is a Python tool that generates documentation in a specified or default [*output mode and format*](#output-modes-and-formats) from JSON Schema files and supplemental files.
 
-To configure the generated documentation, specify command-line arguments and configuration keys. If you specify a configuration option in more than one way, command&#8209;line arguments take precedence over the configuration keys.
+To configure the generated documentation, specify command-line arguments and configuration keys in the base configuration file. If you specify a configuration option in more than one way, command&#8209;line arguments take precedence over the configuration keys.
 
 > **Important notice about the Redfish doc generator: v3:**
 >
@@ -112,7 +112,7 @@ To configure the generated documentation, specify command-line arguments and con
 
 Use the `--config` command-line argument to specify the [base configuration file](README-configuration-files.md#base-configuration-file "README-configuration-files.md/#base-configuration-file").
 
-> **Note:** You can specify some configuration information, such as URI mappings, in only the base configuration file and not on the command line.
+> **Note:** You can specify some configuration information, such as URI mappings, through the base configuration file only and not on the command line.
 
 Several flavors of the base configuration file are available. Additionally, the base configuration file can embed the content supplement configuration file and supplemental files. See [Redfish doc generator: Configuration and supplemental files](README-configuration-and-supplemental-files.md "README-configuration-and-supplemental-files.md").
 
@@ -137,7 +137,7 @@ The *output mode* defines the type and audience of the generated document:
 | <a id="standard-normative-mode"></a>Standard&nbsp;normative | Guide with normative descriptions for developers. Normative output prefers long descriptions to descriptions. |
 | <a id="profile-mode"></a>Profile | Document with a subset of properties with profile requirements for service developers. A profile mode document can be terse or verbose. Default is verbose. |
 | <a id="subset-mode"></a>Subset | Subset of schema to include in white papers or other documents. |
-| <a id="property-index-mode"></a>Property index | <a href="README-property-index-mode.md" title="README-property-index-mode.md">Property index output</a> for Schema authors to enable them to locate existing property definitions within the Redfish Schema. End users and other consumers of Redfish data can also use a property index to look up property definitions without regard to their location in the Schema. |
+| <a id="property-index-mode"></a>Property index | <a href="README-property-index-mode.md" title="README-property-index-mode.md">Property index output</a> for schema authors to enable them to locate existing property definitions within the Redfish Schema. End users and other consumers of Redfish data can also use a property index to look up property definitions without regard to their location in the Schema. |
 
 ### Output formats
 
@@ -224,6 +224,6 @@ For `doc_generator.py` command examples, see [Redfish doc generator: examples](R
 
 ## Processing
 
-The doc generator looks for a `json-schema` directory and supplemental files in the [base configuration file](README-configuration-and-supplemental-files#base=configuration-file) that you specify when you run it.
+The doc generator reads the [base configuration file](README-configuration-and-supplemental-files#base=configuration-file) to locate the `json-schema` directory, the optional content supplement configuration file, and any supplemental files.
 
 Typically, the tool processes an entire set of JSON Schema files for a version.
