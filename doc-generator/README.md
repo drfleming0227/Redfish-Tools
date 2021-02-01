@@ -142,7 +142,7 @@ The *output mode* defines the type and audience of the generated document:
 | <a id="standard-mode"></a>Standard | Guide for novice&nbsp;and&nbsp;experienced&nbsp;developers. |
 | <a id="standard-normative-mode"></a>Standard&nbsp;normative | Guide with normative descriptions for developers. Normative output prefers long descriptions to descriptions. |
 | <a id="profile-mode"></a>Profile | Document with a subset of properties with profile requirements for service developers. A profile mode document can be terse or verbose. Default is verbose. |
-| <a id="subset-mode"></a>Schema subset | Subset of schema to include in white papers or other documents. |
+| <a id="schema-subset-mode"></a>Schema subset | Subset of schema to include in white papers or other documents. |
 | <a id="property-index-mode"></a>Property index | An index of property names and descriptions for schema authors to enable them to locate existing property definitions within the Redfish Schema. End users and other consumers of Redfish data can also use a property index to look up property definitions without regard to their location in the schema. For each property, this output includes the property name, list of schemas in which the property is defined, the property type, and property description.<br/><br/>DSP2053, *Redfish Property Guide* at [https://www.dmtf.org/sites/default/files/standards/documents/DSP2053_2020.4.pdf](https://www.dmtf.org/sites/default/files/standards/documents/DSP2053_2020.4.pdf "https://www.dmtf.org/sites/default/files/standards/documents/DSP2053_2020.4.pdf") is an example of a property index document.<br/><br/>When you run the doc generator in property-index mode, only a few command-line options or configuration keys apply. |
 
 ### Output formats
@@ -163,7 +163,7 @@ Use the following command-line options to define the output mode and format:
 <table>
    <thead>
       <tr>
-         <th align="left" valign="top">Command&#8209;line&nbsp;option </th>
+         <th align="left" valign="top">Command&#8209;line&nbsp;option</th>
          <th align="left" valign="top">Description</th>
       </tr>
    </thead>
@@ -172,14 +172,14 @@ Use the following command-line options to define the output mode and format:
          <td align="left" valign="top">
             <code>-n</code>,&nbsp;<code>--normative</code>
          </td>
-         <td align="left" valign="top">Produces <a href="#standard-normative-mode">standard normative mode</a>, or developer-focused, output. </td>
+         <td align="left" valign="top">Produces <a href="#standard-normative-mode">standard normative mode</a>, or developer-focused, output.</td>
       </tr>
       <tr>
          <td align="left" valign="top">
             <code>--format</code>
          </td>
          <td align="left" valign="top">
-            <p>Defines the <a href="#output-formats">output format</a>. Value is: </p>
+            <p>Defines the <a href="#output-formats">output format</a>. Value is:</p>
             <ul>
                <li><code>markdown</code>&mdash; Markdown file targeted for the DMTF document publication process.</li>
                <li><code>slate</code>(default) &mdash; GitHub-flavored Markdown file targeted for the <a href="https://github.com/slatedocs/slate" title="https://github.com/slatedocs/slate">Slate API doc generator</a>.</li>
@@ -216,7 +216,7 @@ Use the following command-line options to define the output mode and format:
          <td align="left" valign="top">
             <code>--property_index</code>
          </td>
-         <td align="left" valign="top">Produces <a href="#property-index-mode">property index mode</a> output. </td>
+         <td align="left" valign="top">Produces <a href="#property-index-mode">property index mode</a> output.</td>
       </tr>
    </tbody>
 </table>
@@ -232,13 +232,13 @@ The doc generator supports several output modes through various command-line or 
 * Provides links to examples of `doc_generator.py` command usage.
 
 | Output format or mode | Sample base configuration file | Example command usage |
-| :----------------- | :----------------------------- | :-------------------- |
-| CSV format              | [`sample_inputs/csv/config.json`](sample_inputs/csv/config.json) | [CSV format](README-configuration-files.md#csv-format) |
+| :-------------------- | :----------------------------- | :-------------------- |
+| CSV format            | [`sample_inputs/csv/config.json`](sample_inputs/csv/config.json) | [CSV format](README-configuration-files.md#csv-format) |
 | Profile mode          | [`sample_inputs/profile_mode/config.json`](sample_inputs/profile_mode/config.json) | [Terse profile mode in Markdown format](README-configuration-files.md#terse-profile-mode-in-markdown-format) |
-| Property index mode    | [`sample_inputs/property_index/config.json`](sample_inputs/property_index/config.json) | [Property index mode in HTML format](README-configuration-files.md#property-index-mode-in-html-format) |
-| Standard mode          | [`sample_inputs/standard_html/config.json`](sample_inputs/standard_html/config.json) | [Standard mode in HTML format](README-configuration-files.md#standard-mode-in-html-format) |
-| Standard normative | [`sample_inputs/standard_html/config_normative.json`](sample_inputs/standard_html/config_normative.json) | [Standard normative mode in HTML format](README-configuration-files.md#standard-normative-mode-in-html-format) |
-| Subset mode           | [`sample_inputs/subset/config.json`](sample_inputs/subset/config.json) | [Subset mode in HTML format](README-configuration-files.md#subset-mode-in-html-format) |
+| Property index mode   | [`sample_inputs/property_index/config.json`](sample_inputs/property_index/config.json) | [Property index mode in HTML format](README-configuration-files.md#property-index-mode-in-html-format) |
+| Standard mode         | [`sample_inputs/standard_html/config.json`](sample_inputs/standard_html/config.json) | [Standard mode in HTML format](README-configuration-files.md#standard-mode-in-html-format) |
+| Standard normative    | [`sample_inputs/standard_html/config_normative.json`](sample_inputs/standard_html/config_normative.json) | [Standard normative mode in HTML format](README-configuration-files.md#standard-normative-mode-in-html-format) |
+| Schema subset mode    | [`sample_inputs/subset/config.json`](sample_inputs/subset/config.json) | [Schema subset mode in HTML format](README-configuration-files.md#schema-subset-mode-in-html-format) |
 
 Depending on the output mode, the configuration keys in the base configuration file can change. Some output modes, such as the property index mode, support additional configuration keys.
 
