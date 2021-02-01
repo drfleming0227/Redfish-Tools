@@ -110,7 +110,7 @@ To include supplemental files and the content supplement configuration file:
       </tr>
       <tr>
          <td align="left" valign="top"><code>add_toc</code></td>
-         <td align="left" valign="top"><ul><li><a href="README.md#standard-mode" title="README.md#standard-mode">Standard mode</a></li><li><a href="README.md#standard-normative-mode" title="README.md#standard-normative-mode">Standard normative mode</a></li></ul></td>
+         <td align="left" valign="top"><ul><li><a href="README.md#standard-mode" title="README.md#standard-mode">Standard</a></li><li><a href="README.md#standard-normative-mode" title="README.md#standard-normative-mode">Standard&nbsp;normative</a></li></ul></td>
          <td align="left" valign="top"><p>Boolean</p>
             <p>By default, the table of contents (TOC) appears at the top of the HTML output. If the <code>[add_toc]</code> directive appears anywhere in the boilerplate intro or boilerplate postscript file, <code>add_toc</code> key is <code>true</code> by default.</p>
             <p>Value is:</p>
