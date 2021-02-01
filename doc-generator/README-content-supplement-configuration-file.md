@@ -56,6 +56,14 @@ Maps reference URIs to replacement URIs. The match type is full or partial. Repl
 }
 ```
 
+In this structure:
+
+| Attribute    | Description                                                   |
+| :----------- | :------------------------------------------------------------ |
+| URI | Defines the URI to replace. |
+| `full_match` | Boolean. If `true`, the match is full. Otherwise, the match is partial. |
+| `replace_with`  | Defines the replacement URI. |
+
 ### schema_supplement
 
 **Data type:** Dictionary
