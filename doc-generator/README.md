@@ -211,14 +211,14 @@ The doc generator supports several output modes through various command-line or 
 * Provides links to sample versions of the base configuration file.
 * Provides links to examples of `doc_generator.py` command usage.
 
-| Output mode        | Sample base configuration file | Example command usage |
+| Output format or mode | Sample base configuration file | Example command usage |
 | :----------------- | :----------------------------- | :-------------------- |
-| CSV                | [`sample_inputs/csv/config.json`](sample_inputs/csv/config.json) | [CSV format](README-configuration-files.md#csv-format) |
-| Profile            | [`sample_inputs/profile_mode/config.json`](sample_inputs/profile_mode/config.json) | [Terse profile mode in Markdown format](README-configuration-files.md#terse-profile-mode-in-markdown-format) |
-| Property index     | [`sample_inputs/property_index/config.json`](sample_inputs/property_index/config.json) | [Property index mode in HTML format](README-configuration-files.md#property-index-mode-in-html-format) |
-| Standard           | [`sample_inputs/standard_html/config.json`](sample_inputs/standard_html/config.json) | [Standard mode in HTML format](README-configuration-files.md#standard-mode-in-html-format) |
+| CSV format              | [`sample_inputs/csv/config.json`](sample_inputs/csv/config.json) | [CSV format](README-configuration-files.md#csv-format) |
+| Profile mode          | [`sample_inputs/profile_mode/config.json`](sample_inputs/profile_mode/config.json) | [Terse profile mode in Markdown format](README-configuration-files.md#terse-profile-mode-in-markdown-format) |
+| Property index mode    | [`sample_inputs/property_index/config.json`](sample_inputs/property_index/config.json) | [Property index mode in HTML format](README-configuration-files.md#property-index-mode-in-html-format) |
+| Standard mode          | [`sample_inputs/standard_html/config.json`](sample_inputs/standard_html/config.json) | [Standard mode in HTML format](README-configuration-files.md#standard-mode-in-html-format) |
 | Standard normative | [`sample_inputs/standard_html/config_normative.json`](sample_inputs/standard_html/config_normative.json) | [Standard normative mode in HTML format](README-configuration-files.md#standard-normative-mode-in-html-format) |
-| Subset             | [`sample_inputs/subset/config.json`](sample_inputs/subset/config.json) | [Subset mode in HTML format](README-configuration-files.md#subset-mode-in-html-format) |
+| Subset mode           | [`sample_inputs/subset/config.json`](sample_inputs/subset/config.json) | [Subset mode in HTML format](README-configuration-files.md#subset-mode-in-html-format) |
 
 Depending on the output mode, the configuration keys in the base configuration file can change. Some output modes, such as the property index mode, support additional configuration keys.
 
