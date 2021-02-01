@@ -12,11 +12,11 @@ To configure the generated documentation, specify configuration keys in the base
 
 **Output modes:** If you specify a configuration option in more than one way, command&#8209;line arguments take precedence over the configuration keys.
 
-> **Important notice about the Redfish doc generator: v3:**
+>**Important notice about the Redfish doc generator: v3:**
 >
-> The doc generator v3 contains _**breaking configuration changes**_ and updates to the `README` files. For information about these changes, see [Redfish doc generator: v3 changes](README-doc-generator-v3-changes.md "README-doc-generator-v3-changes.md").
-> 
-> To use the previous version of the doc generator, see [Doc Generator v2](https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0 "https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0").
+>The doc generator v3 contains _**breaking configuration changes**_ and updates to the `README` files. For information about these changes, see [Redfish doc generator: v3 changes](README-doc-generator-v3-changes.md "README-doc-generator-v3-changes.md").
+>
+>To use the previous version of the doc generator, see [Doc Generator v2](https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0 "https://github.com/DMTF/Redfish-Tools/releases/tag/doc_gen_v2.0.0").
 
 ## Contents
 
@@ -116,7 +116,7 @@ If you specify a configuration option in more than one way, command-line argumen
 
 Use the `--config` command-line argument to specify the base configuration file.
 
-> **Note:** You can specify some configuration information, such as URI mappings, through the base configuration file only and not on the command line.
+>**Note:** You can specify some configuration information, such as URI mappings, through the base configuration file only and not on the command line.
 
 Several flavors of the base configuration file are available. Additionally, the base configuration file can embed the content supplement configuration file and supplemental files.
 
@@ -151,10 +151,10 @@ The *output format* defines the format of the generated document:
 
 | Output&nbsp;format    | Description                      |
 | :-------------------- | :------------------------------- |
-| <code>markdown</code> | Markdown file targeted for the DMTF document publication process. |
-| <code>slate</code>    | (default) GitHub-flavored Markdown file targeted for the <a href="https://github.com/slatedocs/slate" title="https://github.com/slatedocs/slate">Slate API doc generator</a>. For Slate, place the <code>index.html.md</code> output in your Slate repository's source directory. |
-| <code>html</code>     | HyperText Markup Language (HTML) file. |
-| <code>csv</code>      | Comma-separated values (CSV) file. |
+| <code>markdown</code>| Markdown file targeted for the DMTF document publication process. |
+| <code>slate</code>   | (default) GitHub-flavored Markdown file targeted for the <a href="https://github.com/slatedocs/slate" title="https://github.com/slatedocs/slate">Slate API doc generator</a>. For Slate, place the <code>index.html.md</code>output in your Slate repository's source directory. |
+| <code>html</code>    | HyperText Markup Language (HTML) file. |
+| <code>csv</code>     | Comma-separated values (CSV) file. |
 
 ### Command-line arguments that define the output mode and format
 
@@ -163,46 +163,60 @@ Use the following command-line options to define the output mode and format:
 <table>
    <thead>
       <tr>
-         <th align="left" valign="top">Command&#8209;line&nbsp;option</th>
+         <th align="left" valign="top">Command&#8209;line&nbsp;option </th>
          <th align="left" valign="top">Description</th>
       </tr>
-    </thead>
-    <tbody>
+   </thead>
+   <tbody>
       <tr>
-         <td align="left" valign="top"><code>-n</code>,&nbsp;<code>--normative</code></td>
-         <td align="left" valign="top">Produces <a href="#standard-normative-mode">standard normative mode</a>, or developer-focused, output.</td>
+         <td align="left" valign="top">
+            <code>-n</code>,&nbsp;<code>--normative</code>
+         </td>
+         <td align="left" valign="top">Produces <a href="#standard-normative-mode">standard normative mode</a>, or developer-focused, output. </td>
       </tr>
       <tr>
-         <td align="left" valign="top"><code>--format</code></td>
          <td align="left" valign="top">
-            <p>Defines the <a href="#output-formats">output format</a>. Value is:</p>
+            <code>--format</code>
+         </td>
+         <td align="left" valign="top">
+            <p>Defines the <a href="#output-formats">output format</a>. Value is: </p>
             <ul>
-               <li><code>markdown</code> &mdash; Markdown file targeted for the DMTF document publication process.</li>
-               <li><code>slate</code> (default) &mdash; GitHub-flavored Markdown file targeted for the <a href="https://github.com/slatedocs/slate" title="https://github.com/slatedocs/slate">Slate API doc generator</a>.</li>
-               <li><code>html</code> &mdash; HyperText Markup Language (HTML) file.</li>
-               <li><code>csv</code> &mdash; Comma-separated values (CSV) file.</li>
+               <li><code>markdown</code>&mdash; Markdown file targeted for the DMTF document publication process.</li>
+               <li><code>slate</code>(default) &mdash; GitHub-flavored Markdown file targeted for the <a href="https://github.com/slatedocs/slate" title="https://github.com/slatedocs/slate">Slate API doc generator</a>.</li>
+               <li><code>html</code>&mdash; HyperText Markup Language (HTML) file.</li>
+               <li><code>csv</code>&mdash; Comma-separated values (CSV) file.</li>
             </ul>
          </td>
       </tr>
       <tr>
-         <td align="left" valign="top"><code>--profile&nbsp;PROFILE_DOC</code></td>
-         <td align="left" valign="top">Defines path to a JSON profile document, for <a href="#terse-profile-mode">profile mode</a> output.</td>
+         <td align="left" valign="top">
+            <code>--profile&nbsp;PROFILE_DOC</code>
+         </td>
+         <td align="left" valign="top">Defines path to a JSON profile document, for <a href="#terse-profile-mode">profile mode</a>output.</td>
       </tr>
       <tr>
-        <td align="left" valign="top"><code>--property_index_config_out&nbsp;CONFIG_FILE_OUT</code></td>
-        <td align="left" valign="top">Specifies an output file for updated configuration information. The doc generator extends the input configuration by adding entries for any properties where the property name appears with more than one type or description.</td>
+         <td align="left" valign="top">
+            <code>--property_index_config_out&nbsp;CONFIG_FILE_OUT</code>
+         </td>
+         <td align="left" valign="top">Specifies an output file for updated configuration information. The doc generator extends the input configuration by adding entries for any properties where the property name appears with more than one type or description.</td>
       </tr>
       <tr>
-         <td align="left" valign="top"><code>-t</code>,&nbsp;<code>--terse</code></td>
-         <td align="left" valign="top">Generates <a href="#terse-profile-mode">terse profile mode</a> output, which includes a subset of properties with profile requirements. Meaningful only with <code>--profile</code>.</td>
+         <td align="left" valign="top">
+            <code>-t</code>,&nbsp;<code>--terse</code>
+         </td>
+         <td align="left" valign="top">Generates <a href="#profile-mode">terse profile mode</a>output, which includes a subset of properties with profile requirements. Meaningful only with <code>--profile</code>.</td>
       </tr>
       <tr>
-         <td align="left" valign="top"><code>--subset SUBSET_DOC</code></td>
-         <td align="left" valign="top">Defines path to a JSON profile document. Generates <a href="#subset-mode"><i>Schema subset mode</i></a> output, with the subset defined in the JSON profile document.</td>
+         <td align="left" valign="top">
+            <code>--subset SUBSET_DOC</code>
+         </td>
+         <td align="left" valign="top">Defines path to a JSON profile document. Generates <a href="#subset-mode"><i>Schema subset mode</i></a>output, with the subset defined in the JSON profile document.</td>
       </tr>
       <tr>
-         <td align="left" valign="top"><code>--property_index</code></td>
-         <td align="left" valign="top">Produces <a href="#property-index-mode">property index mode</a> output.</td>
+         <td align="left" valign="top">
+            <code>--property_index</code>
+         </td>
+         <td align="left" valign="top">Produces <a href="#property-index-mode">property index mode</a>output. </td>
       </tr>
    </tbody>
 </table>
