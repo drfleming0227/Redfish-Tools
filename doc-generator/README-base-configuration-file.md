@@ -44,6 +44,17 @@ The names of some configuration keys differ from their command&#8209;line argume
 * [Subset configuration file](#subset-configuration-file)
 * [Property index configuration file](#property-index-configuration-file)
 
+## xx
+
+| Output format or mode | Sample base configuration file | Example command usage |
+| :----------------- | :----------------------------- | :-------------------- |
+| CSV format              | [`sample_inputs/csv/config.json`](sample_inputs/csv/config.json) | [CSV format](README-configuration-files.md#csv-format) |
+| Profile mode          | [`sample_inputs/profile_mode/config.json`](sample_inputs/profile_mode/config.json) | [Terse profile mode in Markdown format](README-configuration-files.md#terse-profile-mode-in-markdown-format) |
+| Property index mode    | [`sample_inputs/property_index/config.json`](sample_inputs/property_index/config.json) | [Property index mode in HTML format](README-configuration-files.md#property-index-mode-in-html-format) |
+| Standard mode          | [`sample_inputs/standard_html/config.json`](sample_inputs/standard_html/config.json) | [Standard mode in HTML format](README-configuration-files.md#standard-mode-in-html-format) |
+| Standard normative | [`sample_inputs/standard_html/config_normative.json`](sample_inputs/standard_html/config_normative.json) | [Standard normative mode in HTML format](README-configuration-files.md#standard-normative-mode-in-html-format) |
+| Subset mode           | [`sample_inputs/subset/config.json`](sample_inputs/subset/config.json) | [Subset mode in HTML format](README-configuration-files.md#subset-mode-in-html-format) |
+
 ## actions_in_property_table
 
 **Output modes:** [Subset](README.md#subset-mode)
