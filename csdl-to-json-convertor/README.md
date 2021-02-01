@@ -64,7 +64,7 @@ For example:
 % python3 csdl-to-json.py --input ../../Redfish/metadata --output ../../Redfish/json-schema/ --config dmtf-config.json
 ```
 
-In this example, the **CSDL-to-JSON converter** converts the CSDL metadata files in the `Redfish/metadata` input directory to JSON files in the `/Redfish/json-schema` output directory. The converter reads the configuration keys from the `dmtf-config.json` configuration file to configure the output.
+In this example, the converter parses and converts the CSDL metadata files in the `Redfish/metadata` input directory to JSON files in the `/Redfish/json-schema` output directory. The converter reads the configuration keys from the `dmtf-config.json` configuration file to configure the JSON files.
 
 ## Configuration
 
@@ -97,9 +97,7 @@ The CSDL-to-JSON converter makes these assumptions about the format of the Redfi
 * Any referenced external namespaces have proper `Include` statements at the top of each CSDL file.
 * All annotations have their expected facets filled.
     For example, the `OData.Description` annotation must use the `String=` facet.
-* All namespaces follow the Redfish-defined format where a namespace is either:
-    * Unversioned.
-    * In the form, `<name>.v<X>_<Y>_<Z>`.
+* All namespaces follow the Redfish-defined format where a namespace is either unversioned or in the form, `<name>.v<X>_<Y>_<Z>`.
 * References to another CSDL file assume that its JSON Schema file is in the same folder.
 
 ### Details
