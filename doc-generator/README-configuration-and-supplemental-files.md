@@ -93,7 +93,6 @@ To include supplemental files and the content supplement configuration file:
       <tr>
          <th align="left" valign="top">Key</th>
          <th align="left" valign="top">Output modes</th>
-         <th align="left" valign="top">Type</th>
          <th align="left" valign="top">Description</th>
       </tr>
    </thead>
@@ -101,8 +100,7 @@ To include supplemental files and the content supplement configuration file:
       <tr>
          <td align="left" valign="top"><code>actions_in_property_table</code></td>
          <td align="left" valign="top"><a href="README.md#schema-subset-mode">Schema subset</a></td>
-         <td align="left" valign="top">Boolean.</td>
-         <td align="left" valign="top">
+         <td align="left" valign="top"><p>Boolean.</p>
             <p>Value is:</p>
             <ul>
                <li><code>true</code>. (Default) Include <code>Actions</code> in property tables.</li>
@@ -110,11 +108,10 @@ To include supplemental files and the content supplement configuration file:
             </ul>
          </td>
       </tr>
-      <!-- <tr>
+      <tr>
          <td align="left" valign="top"><code>add_toc</code></td>
-         <td align="left" valign="top"><a href="README.md#standard-mode" title="README.md#standard-mode">Standard mode</a>, <a href="README.md#standard-normative-mode" title="README.md#standard-normative-mode">Standard normative mode</a></td>
-         <td align="left" valign="top"> Boolean</td>
-         <td align="left" valign="top">
+         <td align="left" valign="top"><ul><li><a href="README.md#standard-mode" title="README.md#standard-mode">Standard mode</a></li><li><a href="README.md#standard-normative-mode" title="README.md#standard-normative-mode">Standard normative mode</a></li></ul></td>
+         <td align="left" valign="top"><p>Boolean</p>
             <p>By default, the table of contents (TOC) appears at the top of the HTML output. If the <code>[add_toc]</code> directive appears anywhere in the boilerplate intro or boilerplate postscript file, <code>add_toc</code> key is <code>true</code> by default.</p>
             <p>Value is:</p>
             <ul>
@@ -129,7 +126,7 @@ To include supplemental files and the content supplement configuration file:
             </ul>
          </td>
       </tr>
-      <tr>
+      <!-- <tr>
          <td align="left" valign="top"><code>boilerplate_intro</code></td>
          <td align="left" valign="top"><a href="README.md#profile-mode" title="README.md#profile-mode">Profile mode</a>, <a href="README.md#standard-mode" title="README.md#standard-mode">Standard mode</a>, <a href="README.md#standard-normative-mode" title="README.md#standard-normative-mode">Standard normative mode</a>, <a href="README.md#subset-mode" title="README.md#subset-mode">Subset mode</a></td>
          <td align="left" valign="top"> String</td>
