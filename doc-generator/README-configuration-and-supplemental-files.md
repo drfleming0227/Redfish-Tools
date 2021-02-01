@@ -110,7 +110,7 @@ To include supplemental files and the content supplement configuration file:
             </ul>
          </td>
       </tr>
-      <tr>
+      <!-- <tr>
          <td align="left" valign="top"><code>add_toc</code></td>
          <td align="left" valign="top"><a href="README.md#standard-mode" title="README.md#standard-mode">Standard mode</a>, <a href="README.md#standard-normative-mode" title="README.md#standard-normative-mode">Standard normative mode</a></td>
          <td align="left" valign="top"> Boolean</td>
@@ -378,7 +378,7 @@ To include supplemental files and the content supplement configuration file:
 "uri_mapping": { "redfish.dmtf.org/schemas/v1": "./json-schema" }
 </pre>
          </td>
-      </tr>
+      </tr> -->
    </tbody>
 </table>
 
