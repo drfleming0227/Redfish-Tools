@@ -8,7 +8,7 @@ Copyright 2016-2021 Distributed Management Task Force, Inc. All rights reserved.
 
 To configure the generated documentation, you specify configuration keys in the base configuration file and command-line arguments.
 
-**Output modes:** If you specify a configuration option in more than one way, command-line arguments take precedence over configuration keys.
+If you specify a configuration option in more than one way, command-line arguments take precedence over configuration keys.
 
 The doc generator reads configuration keys from the [base configuration file](#base-configuration-file). if the base configuration file includes a pointer to the [content supplement configuration file](#content-supplement-configuration-file), the doc generator also reads configuration keys from it. 
 
@@ -585,8 +585,8 @@ In this structure:
 | `SchemaName` | Defines the schema name as either a bare schema name or a schema name with an underscore and an appended major version.<br/><br/>For example, `"ComputerSystem"` or `"ComputerSystem_2"`. |
 | `description` | Replaces the description of the schema. |
 | `intro`  | Defines a string to replace the description or append to the `description` string, if provided. |
-| `mockup` | Mutually exclusive with `jsonpayload`. If you specify both attributes, `mockup` takes precedence.<blockquote><b>Note:</b> If you specify a <code>payload_dir</code> key in the <a href="README-base-configuration-file.md" title="README-base-configuration-file">base configuration file</a>, the payload directory takes precedence over <code>mockup</code>.</blockquote> |
-| `jsonpayload` | Mutually exclusive with `mockup`. If you specify both attributes, `mockup` takes precedence.<blockquote><b>Note:</b> If you specify a <code>payload_dir</code> key in the <a href="README-base-configuration-file.md" title="README-base-configuration-file">base configuration file</a>, the payload directory takes precedence over <code>jsonpayload</code>.</blockquote> |
+| `mockup` | Mutually exclusive with `jsonpayload`. If you specify both attributes, `mockup` takes precedence.<blockquote><b>Note:</b> If you specify a <code>payload_dir</code> key in the <a href="#base-configuration-file" title="#base-configuration-file">base configuration file</a>, the payload directory takes precedence over <code>mockup</code>.</blockquote> |
+| `jsonpayload` | Mutually exclusive with `mockup`. If you specify both attributes, `mockup` takes precedence.<blockquote><b>Note:</b> If you specify a <code>payload_dir</code> key in the <a href="#base-configuration-file" title="#base-configuration-file">base configuration file</a>, the payload directory takes precedence over <code>jsonpayload</code>.</blockquote> |
 
 ### units_translation
 
