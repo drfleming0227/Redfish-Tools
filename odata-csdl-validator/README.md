@@ -30,7 +30,7 @@ The **OData CSDL validator** &mdash; [`odata_validator.py`](odata_validator.py "
 
 The `odata_validator.py` tool takes a single `MetaData` argument in one of the following formats:
 
-| Format                                           | Example                                              |
+| Format                                           | Example argument                                     |
 | :----------------------------------------------- | :--------------------------------------------------- |
 | Local path to a [single XML metadata file](#single-xml-metadata-file).        | `test_metadata/ServiceRoot.xml`                      |
 | Local path to a [directory of XML metadata files](#directory-of-xml-metadata-files). | `test_metadata`                                      |
@@ -75,7 +75,7 @@ Run the OData CSDL validator against the local path to a directory of XML metada
 % python3 odata_validator.py ../../Redfish/test_metadata
 ```
 
-In this example, the **OData CSDL validator** parses and validates that the metadata in the files in the `/Redfish/test_metadata` input directory conforms to OData V4.0.
+In this example, the **OData CSDL validator** parses and validates that the metadata in the files in the `/Redfish/test_metadata` input directory conform to OData V4.0.
 
 ### URL of an XML metadata file
 
