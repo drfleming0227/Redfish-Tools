@@ -10,9 +10,7 @@ The **Redfish doc generator** &mdash; [`doc_generator.py`](doc_generator.py "doc
 
 To configure the generated documentation, specify configuration keys in the base configuration file and command-line arguments.
 
-**Output modes:**
-
-**Output modes:**. If you specify a configuration option in more than one way, command&#8209;line arguments take precedence over the configuration keys.
+**Output modes:** If you specify a configuration option in more than one way, command&#8209;line arguments take precedence over the configuration keys.
 
 > **Important notice about the Redfish doc generator: v3:**
 >
@@ -114,9 +112,7 @@ Example:
 
 To configure the generated documentation, specify configuration keys in the base configuration file and command-line arguments.
 
-**Output modes:**
-
-**Output modes:**. If you specify a configuration option in more than one way, command-line arguments take precedence over configuration keys.
+If you specify a configuration option in more than one way, command-line arguments take precedence over configuration keys.
 
 Use the `--config` command-line argument to specify the base configuration file.
 
