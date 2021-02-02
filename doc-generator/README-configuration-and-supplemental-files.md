@@ -6,13 +6,7 @@
 
 Copyright 2016-2021 Distributed Management Task Force, Inc. All rights reserved.
 
-To configure the generated documentation, you specify configuration keys in the base configuration file and command-line arguments.
-
-If you specify a configuration option in more than one way, command-line arguments take precedence over configuration keys.
-
-The doc generator reads configuration keys from the [base configuration file](#base-configuration-file). if the base configuration file includes a pointer to the [content supplement configuration file](#content-supplement-configuration-file), the doc generator also reads configuration keys from it. 
-
-Additionally, if the base configuration file includes pointers to the [boilerplate intro](#boilerplate-intro-file "#boilerplate-intro-file") and [boilerplate&nbsp;postscript](#boilerplate-postscript-file "#boilerplate-postscript-file") supplemental files, the doc generator includes content from these files in the generated output.
+To configure the generated documentation, you specify configuration keys in the [base configuration file](#base-configuration-file "#base-configuration-file") and command-line arguments. If you specify a configuration option in more than one way, command-line arguments take precedence over configuration keys.
 
 ## Contents
 
@@ -25,9 +19,11 @@ Additionally, if the base configuration file includes pointers to the [boilerpla
 
 The base configuration file is a JSON file that configures the generated documentation and can include pointers to the [content supplement configuration file](#content-supplement-configuration-file "#content-supplement-configuration-file") and the [boilerplate intro](#boilerplate-intro-file "#boilerplate-intro-file") and [boilerplate postscript](#boilerplate-postscript-file "#boilerplate-postscript-file") supplemental files.
 
-Depending on the [output mode](README.md#output-modes "README.md#output-modes"), the configuration keys in the base configuration file can change. Some output modes, such as the property index mode, support additional configuration keys.
+The doc generator reads configuration keys from the [base configuration file](#base-configuration-file). If the base configuration file includes a pointer to the [content supplement configuration file](#content-supplement-configuration-file), the doc generator also reads configuration keys from it. 
 
-The names of some configuration keys differ from their command&#8209;line argument equivalents. Unless otherwise noted, the configuration key has the same meaning as its command&#8209;line argument equivalent. The `uri_mapping` configuration key is required but all other configuration keys are optional.
+Additionally, if the base configuration file includes pointers to the [boilerplate intro](#boilerplate-intro-file "#boilerplate-intro-file") and [boilerplate&nbsp;postscript](#boilerplate-postscript-file "#boilerplate-postscript-file") supplemental files, the doc generator includes content from these files in the generated output.
+
+Depending on the [output mode](README.md#output-modes "README.md#output-modes"), the configuration keys in the base configuration file can change. Some output modes, such as the property index mode, support additional configuration keys.
 
 To include supplemental files and the content supplement configuration file:
 
