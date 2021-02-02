@@ -266,7 +266,7 @@ To include supplemental files and the content supplement configuration file:
                relative to the location of the configuration file.</p>
          </td>
       </tr>
-      <!-- <tr>
+      <tr>
          <td align="left" valign="top">
             <code>description_overrides</code>
          </td>
@@ -405,7 +405,7 @@ To include supplemental files and the content supplement configuration file:
                </li>
             </ul>
          </td>
-      </tr> -->
+      </tr>
       <tr>
          <td align="left" valign="top">
             <code>escape_chars</code>
