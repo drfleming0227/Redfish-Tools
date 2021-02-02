@@ -149,7 +149,7 @@ To include supplemental files and the content supplement configuration file:
                         boilerplate postscript file. </li>
                   </ul>
                </li>
-               <li><code>false</code>. Do not generate a TOC. </li>
+               <li><code>false</code>. Do not generate a TOC.</li>
             </ul>
          </td>
       </tr>
@@ -166,10 +166,11 @@ To include supplemental files and the content supplement configuration file:
                      title="README.md#standard-mode">Standard</a>
                </li>
                <li><a href="README.md#standard-normative-mode"
-                     title="README.md#standard-normative-mode">Standard
-                     normative</a></li>
+                     title="README.md#standard-normative-mode">Standard&nbsp;normative</a>
+               </li>
                <li><a href="README.md#subset-mode"
-                     title="README.md#schema-subset-mode">Schema subset</a></li>
+                     title="README.md#schema-subset-mode">Schema&nbsp;subset</a>
+               </li>
             </ul>
          </td>
          <td align="left" valign="top">
@@ -212,28 +213,27 @@ To include supplemental files and the content supplement configuration file:
                      title="README.md#standard-mode">Standard</a>
                </li>
                <li><a href="README.md#standard-normative-mode"
-                     title="README.md#standard-normative-mode">Standard
-                     normative</a></li>
+                     title="README.md#standard-normative-mode">Standard&nbsp;normative</a>
+               </li>
             </ul>
          </td>
          <td align="left" valign="top">
             <p>Integer</p>
             <p>No default. Threshold at which multiple references to the same
                object within a schema are moved into <b>Property details</b>
+               with a single-row listing for each object in the main table
                instead of expanded in place.</p>
-            <p>This setting specifies that multiple objects within a schema,
-               that are defined by reference to the same definition, should have
-               their definitions moved into the <b>Property Details</b> clause
-               with a single-row listing for each object in the main table.</p>
-            <p>For example, to move an object to <b>Property details</b> if it
-               is referred to three or more times:</p>
-            <pre lang="json">"combine_multiple_refs": 3</pre>
             <p>Value is:</p>
             <ul>
                <li>Absent or <code>0</code>. No combining occurs.</li>
                <li><code>1</code>. Does not make sense. Not valid.</li>
-               <li><code>2</code> or greater. Defines the number of references to the same object to combine and place into the <b>Property details</b> clause.</li>
+               <li><code>2</code> or greater. Defines the number of references
+                  to the same object to combine and place into the <b>Property
+                     details</b> clause.</li>
             </ul>
+            <p>For example, to move a referenced object to <b>Property
+                  details</b> if it is referred to three or more times:</p>
+            <pre lang="json">"combine_multiple_refs": 3</pre>
          </td>
       </tr>
       <tr>
@@ -249,9 +249,10 @@ To include supplemental files and the content supplement configuration file:
                      title="README.md#standard-mode">Standard</a>
                </li>
                <li><a href="README.md#standard-normative-mode"
-                     title="README.md#standard-normative-mode">Standard
-                     normative</a></li>
-               <li><a href="README.md#schema-subset-mode">Schema subset</a></li>
+                     title="README.md#standard-normative-mode">Standard&nbsp;normative</a>
+               </li>
+               <li><a href="README.md#schema-subset-mode">Schema&nbsp;subset</a>
+               </li>
             </ul>
          </td>
          <td align="left" valign="top">
@@ -261,8 +262,7 @@ To include supplemental files and the content supplement configuration file:
                generated schema documentation. If a relative path, must be
                relative to the location of the configuration file.</p>
          </td>
-      </tr></tbody></table>
-      <!--
+      </tr>
       <tr>
          <td align="left" valign="top">
             <code>description_overrides</code>
@@ -270,7 +270,7 @@ To include supplemental files and the content supplement configuration file:
          <td align="left" valign="top">
             <ul>
                <li><a href="README.md#property-index-mode"
-                     title="README.md#property-index-mode">Property index</a>
+                     title="README.md#property-index-mode">Property&nbsp;index</a>
                </li>
             </ul>
          </td>
@@ -286,8 +286,8 @@ To include supplemental files and the content supplement configuration file:
             <table>
                <thead>
                   <tr>
-                     <th align="left" valign="top">Key </th>
-                     <th align="left" valign="top"> Value</th>
+                     <th align="left" valign="top">Key</th>
+                     <th align="left" valign="top">Value</th>
                   </tr>
                </thead>
                <tbody>
@@ -295,20 +295,20 @@ To include supplemental files and the content supplement configuration file:
                      <td align="left" valign="top">
                         <code>type</code>
                      </td>
-                     <td align="left" valign="top"> Property type. </td>
+                     <td align="left" valign="top">Property type.</td>
                   </tr>
                   <tr>
                      <td align="left" valign="top">
                         <code>schemas</code>
                      </td>
-                     <td align="left" valign="top"> List of schemas to which
-                        this element applies. </td>
+                     <td align="left" valign="top">List of schemas to which this
+                        element applies.</td>
                   </tr>
                   <tr>
                      <td align="left" valign="top">
                         <code>overrideDescription</code>
                      </td>
-                     <td align="left" valign="top"> String that replaces the
+                     <td align="left" valign="top">String that replaces the
                         description in the schema.</td>
                   </tr>
                   <tr>
@@ -318,13 +318,13 @@ To include supplemental files and the content supplement configuration file:
                      <td align="left" valign="top">The
                         <code>overrideDescription</code> in this element applies
                         to all instances of the property name that match the
-                        <code>type</code>. </td>
+                        <code>type</code>.</td>
                   </tr>
                   <tr>
                      <td align="left" valign="top">
                         <code>description</code>
                      </td>
-                     <td align="left" valign="top"> Description in the schema.
+                     <td align="left" valign="top">Description in the schema.
                      </td>
                   </tr>
                   <tr>
@@ -332,7 +332,7 @@ To include supplemental files and the content supplement configuration file:
                         <code>knownException</code>
                      </td>
                      <td align="left" valign="top">
-                        <p>A variant description is expected. </p>
+                        <p>A variant description is expected.</p>
                         <p>The <code>description</code> and
                            <code>knownException</code> keys are primarily for
                            user reference. When generating configuration output,
@@ -388,14 +388,24 @@ To include supplemental files and the content supplement configuration file:
    "knownException": true,
    "schemas": ["PCIeDevice"]
 }]</pre>
-            <p>The first two entries in this <code>FirmwareVersion</code>
-               example override the description for <code>FirmwareVersion</code>
-               with type <code>string</code>, in the listed schemas. The third
-               entry identifies another instance of <code>FirmwareVersion</code>
-               with another description, which is expected but should not be
-               overridden.</p>
+            <ul>
+               <li>
+                  <p>The first two entries in this <code>FirmwareVersion</code>
+                     example override the description for
+                     <code>FirmwareVersion</code> with type <code>string</code>
+                     in the listed schemas.</p>
+               </li>
+               <li>
+                  <p>The third entry identifies another instance of
+                     <code>FirmwareVersion</code> with another description,
+                     which is expected but should not be overridden.</p>
+               </li>
+            </ul>
          </td>
       </tr>
+   </tbody>
+</table>
+      <!--
       <tr>
          <td align="left" valign="top">
             <code>escape_chars</code>
