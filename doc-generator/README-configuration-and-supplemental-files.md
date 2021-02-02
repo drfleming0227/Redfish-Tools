@@ -140,8 +140,7 @@ To include supplemental files and the content supplement configuration file:
       <tr>
          <td align="left" valign="top"><code>combine_multiple_refs</code></td>
          <td align="left" valign="top"><ul><li><a href="README.md#standard-mode" title="README.md#standard-mode">Standard</a></li><li><a href="README.md#standard-normative-mode" title="README.md#standard-normative-mode">Standard normative mode</a></li></ul></td>
-         <td align="left" valign="top">Integer</td>
-         <td align="left" valign="top">
+         <td align="left" valign="top"><p>Integer</p>
             <p>No default. Threshold at which multiple references to the same object within a schema are moved into <b>Property details</b> instead of expanded in place.</p>
             <p>For details, see <a href="#combine_multiple_refs"><code>combine_multiple_refs</code></a>.</p>
             <p>This setting specifies that multiple objects within a schema, that are defined by reference to the same definition, should have their definitions moved into the <b>Property Details</b> clause, with a single-line (row) listing for each object in the main table. <code>combine_multiple_refs</code> is an integer threshold that triggers this behavior.</p>
@@ -153,8 +152,7 @@ To include supplemental files and the content supplement configuration file:
       <tr>
          <td align="left" valign="top"><code>content_supplement</code></td>
          <td align="left" valign="top"><ul><li><a href="README.md#profile-mode" title="README.md#profile-mode">Profile mode</a></li><li><a href="README.md#standard-mode" title="README.md#standard-mode">Standard</a></li><li><a href="README.md#standard-normative-mode" title="README.md#standard-normative-mode">Standard normative</a></li><li><a href="README.md#schema-subset-mode">Schema subset</a></li></ul></td>
-         <td align="left" valign="top">String</td>
-         <td align="left" valign="top">No default. Location of a JSON-formatted content supplement file, which specifies content substitutions to be made within the generated schema documentation. If a relative path, must be relative to the location of the configuration file.</td>
+         <td align="left" valign="top"><p>String</p><p>No default. Location of a JSON-formatted content supplement file, which specifies content substitutions to be made within the generated schema documentation. If a relative path, must be relative to the location of the configuration file.</p></td>
       </tr>
      <!--  <tr>
          <td align="left" valign="top"><code>description_overrides</code></td>
