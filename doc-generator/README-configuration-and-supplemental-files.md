@@ -53,7 +53,7 @@ These output modes support the content supplement configuration file:
 | <a href="README.md#profile-mode" title="README.md#profile-mode">Profile mode</a> | [`sample_inputs/profile_mode/content_supplement.json`](sample_inputs/profile_mode/content_supplement.json "sample_inputs/profile_mode/content_supplement.json") |
 | [Standard mode](README.md#standard-mode "README.md#standard-mode") | [`sample_inputs/standard_html/content_supplement.json`](sample_inputs/standard_html/content_supplement.json "sample_inputs/standard_html/content_supplement.json") |
 | <a href="README.md#standard-normative-mode" title="README.md#standard-normative-mode">Standard normative mode</a> | [`sample_inputs/standard_html/content_supplement.json`](sample_inputs/standard_html/content_supplement.json "sample_inputs/standard_html/content_supplement.json") |
-| [Subset mode](README.md#subset-mode "README.md#subset-mode") | [`sample_inputs/subset/content_supplement.json`](sample_inputs/subset/content_supplement.json "sample_inputs/subset/content_supplement.json") |
+| [Schema subset mode](README.md#schema-subset-mode "README.md#schema-subset-mode") | [`sample_inputs/subset/content_supplement.json`](sample_inputs/subset/content_supplement.json "sample_inputs/subset/content_supplement.json") |
 
 ### Content supplement configuration file keys
 
