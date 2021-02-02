@@ -137,25 +137,26 @@ To include supplemental files and the content supplement configuration file:
          <td align="left" valign="top"><ul><li><a href="README.md#standard-mode" title="README.md#standard-mode">Standard</a></li><li><a href="README.md#standard-normative-mode" title="README.md#standard-normative-mode">Standard&nbsp;normative</a></li></ul></td>
          <td align="left" valign="top"><p>String</p><p>No default. Location of the HTML or Markdown file that contains content to appear at the end of the document after the generated schema documentation. If a relative path, should be relative to the location of the configuration file.</p></td>
       </tr>
-      <!-- <tr>
+      <tr>
          <td align="left" valign="top"><code>combine_multiple_refs</code></td>
-         <td align="left" valign="top"><li><a href="README.md#standard-mode" title="README.md#standard-mode">Standard</a></li><a href="README.md#standard-normative-mode" title="README.md#standard-normative-mode">Standard normative mode</a></td>
-         <td align="left" valign="top"> Integer</td>
+         <td align="left" valign="top"><ul><li><a href="README.md#standard-mode" title="README.md#standard-mode">Standard</a></li><li><a href="README.md#standard-normative-mode" title="README.md#standard-normative-mode">Standard normative mode</a></li></ul></td>
+         <td align="left" valign="top">Integer</td>
          <td align="left" valign="top">
             <p>No default. Threshold at which multiple references to the same object within a schema are moved into <b>Property details</b> instead of expanded in place.</p>
-            <p>For details, see <a href="#combine_multiple_refs-key">combine_multiple_refs key</a>.</p>
-            <p> This setting specifies that multiple objects within a schema, that are defined by reference to the same definition, should have their definitions moved into the Property Details section, with a single-line (row) listing for each object in the main table. combine_multiple_refs is an integer threshold at which this behavior kicks in. If it is absent or 0, no combining occurs. If it is 2 or greater, combining occurs at that number of references to the same object. A setting of 1 does not make sense and should be prevented.</p>
+            <p>For details, see <a href="#combine_multiple_refs"><code>combine_multiple_refs</code></a>.</p>
+            <p>This setting specifies that multiple objects within a schema, that are defined by reference to the same definition, should have their definitions moved into the <b>Property Details</b> clause, with a single-line (row) listing for each object in the main table. <code>combine_multiple_refs</code> is an integer threshold that triggers this behavior.</p>
             <p>The <code>combine_multiple_refs</code> key specifies a threshold at which multiple references to the same object within a schema are moved into <b>Property details</b> instead of expanded in place. For example, to move an object to <b>Property details</b> if it is referred to three or more times:</p>
             <pre lang="json">"combine_multiple_refs": 3</pre>
+            <p>Value is:</p><ul><li>Absent or 0. No combining occurs.</li><li>2 or greater. Combining occurs at that number of references to the same object.</li><li>1. Does not make sense and should be avoided.</li></ul>
          </td>
       </tr>
       <tr>
          <td align="left" valign="top"><code>content_supplement</code></td>
-         <td align="left" valign="top"><a href="README.md#profile-mode" title="README.md#profile-mode">Profile mode</a>, <li><a href="README.md#standard-mode" title="README.md#standard-mode">Standard</a></li><a href="README.md#standard-normative-mode" title="README.md#standard-normative-mode">Standard normative mode</a>, <a href="README.md#schema-subset-mode">Schema subset</a></td>
+         <td align="left" valign="top"><ul><li><a href="README.md#profile-mode" title="README.md#profile-mode">Profile mode</a></li><li><a href="README.md#standard-mode" title="README.md#standard-mode">Standard</a></li><li><a href="README.md#standard-normative-mode" title="README.md#standard-normative-mode">Standard normative</a></li><li><a href="README.md#schema-subset-mode">Schema subset</a></li></ul></td>
          <td align="left" valign="top">String</td>
          <td align="left" valign="top">No default. Location of a JSON-formatted content supplement file, which specifies content substitutions to be made within the generated schema documentation. If a relative path, must be relative to the location of the configuration file.</td>
       </tr>
-      <tr>
+     <!--  <tr>
          <td align="left" valign="top"><code>description_overrides</code></td>
          <td align="left" valign="top"><a href="README.md#property-index-mode" title="README.md#property-index-mode">Property index mode</a></td>
          <td align="left" valign="top">Object</td>
