@@ -230,10 +230,9 @@ To include supplemental files and the content supplement configuration file:
             <pre lang="json">"combine_multiple_refs": 3</pre>
             <p>Value is:</p>
             <ul>
-               <li>Absent or 0. No combining occurs.</li>
-               <li>2 or greater. Combining occurs at that number of references
-                  to the same object.</li>
-               <li>1. Does not make sense and should be avoided.</li>
+               <li>Absent or <code>0</code>. No combining occurs.</li>
+               <li><code>1</code>. Does not make sense. Not valid.</li>
+               <li><code>2</code> or greater. Defines the number of references to the same object to combine and place into the <b>Property details</b> clause.</li>
             </ul>
          </td>
       </tr>
