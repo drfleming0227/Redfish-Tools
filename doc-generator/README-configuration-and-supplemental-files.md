@@ -23,7 +23,7 @@ Additionally, if the base configuration file includes pointers to the [boilerpla
 
 ## Base configuration file
 
-The base configuration file is a JSON file that configures the generated documentation and can include pointers to the [content supplement configuration file](#content-supplement-configuration-file) and the [boilerplate intro](README-supplementary-files.md#boilerplate-intro-file "README-supplementary-files.md#boilerplate-intro-file") and [boilerplate postscript](README-supplementary-files.md#boilerplate-postscript-file "README-supplementary-files.md#boilerplate-postscript-file") supplemental files.
+The base configuration file is a JSON file that configures the generated documentation and can include pointers to the [content supplement configuration file](#content-supplement-configuration-file "#content-supplement-configuration-file") and the [boilerplate intro](#boilerplate-intro-file "#boilerplate-intro-file") and [boilerplate postscript](#boilerplate-postscript-file "#boilerplate-postscript-file") supplemental files.
 
 Depending on the [output mode](README.md#output-modes "README.md#output-modes"), the configuration keys in the base configuration file can change. Some output modes, such as the property index mode, support additional configuration keys.
 
