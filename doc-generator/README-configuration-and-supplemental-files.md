@@ -18,7 +18,6 @@ Additionally, if the base configuration file includes pointers to the <a href="#
 
 * [Base configuration file](#base-configuration-file)
 * [Content supplement configuration file](#content-supplement-configuration-file)
-* [Content supplement configuration file keys](#content-supplement-configuration-file-keys)
 * [Boilerplate intro file](#boilerplate-intro-file)
 * [Boilerplate postscript file](#boilerplate-postscript-file)
 

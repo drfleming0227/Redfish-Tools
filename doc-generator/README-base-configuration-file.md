@@ -2,7 +2,7 @@
 <p align="center">
   <img src="http://redfish.dmtf.org/sites/all/themes/dmtf2015/images/dmtf-redfish-logo.png" alt="DMTF Redfish" width=180>
 
-# Redfish doc generator: Base configuration file
+# Redfish doc generator: Base configuration file keys
 
 Copyright 2016-2021 Distributed Management Task Force, Inc. All rights reserved.
 
