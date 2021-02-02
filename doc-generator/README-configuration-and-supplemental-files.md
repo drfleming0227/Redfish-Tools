@@ -99,7 +99,7 @@ To include supplemental files and the content supplement configuration file:
    <tbody>
       <tr>
          <td align="left" valign="top"><code>actions_in_property_table</code></td>
-         <td align="left" valign="top"><a href="README.md#schema-subset-mode">Schema subset</a></td>
+         <td align="left" valign="top"><ul><li><a href="README.md#schema-subset-mode">Schema subset</a></li></ul></td>
          <td align="left" valign="top"><p>Boolean</p>
             <p>Value is:</p>
             <ul>
@@ -128,7 +128,7 @@ To include supplemental files and the content supplement configuration file:
       </tr>
       <tr>
          <td align="left" valign="top"><code>boilerplate_intro</code></td>
-         <td align="left" valign="top"><ul><li><a href="README.md#profile-mode" title="README.md#profile-mode">Profile mode</a></li><li><a href="README.md#standard-mode" title="README.md#standard-mode">Standard mode</a></li><li><a href="README.md#standard-normative-mode" title="README.md#standard-normative-mode">Standard normative mode</a></li><li><a href="README.md#subset-mode" title="README.md#subset-mode">Subset mode</a></li></ul></td>
+         <td align="left" valign="top"><ul><li><a href="README.md#profile-mode" title="README.md#profile-mode">Profile</a></li><li><a href="README.md#standard-mode" title="README.md#standard-mode">Standard</a></li><li><a href="README.md#standard-normative-mode" title="README.md#standard-normative-mode">Standard normative</a></li><li><a href="README.md#subset-mode" title="README.md#schema-subset-mode">Schema subset</a></li></ul></td>
          <td align="left" valign="top"><p>String</p>
          <p>No default. Location of the HTML or Markdown file that contains content to appear at the beginning of the document before the generated schema documentation. If a relative path, should be relative to the location of the configuration file.</p></td>
       </tr>
@@ -139,19 +139,18 @@ To include supplemental files and the content supplement configuration file:
       </tr>
       <tr>
          <td align="left" valign="top"><code>combine_multiple_refs</code></td>
-         <td align="left" valign="top"><ul><li><a href="README.md#standard-mode" title="README.md#standard-mode">Standard</a></li><li><a href="README.md#standard-normative-mode" title="README.md#standard-normative-mode">Standard normative mode</a></li></ul></td>
+         <td align="left" valign="top"><ul><li><a href="README.md#standard-mode" title="README.md#standard-mode">Standard</a></li><li><a href="README.md#standard-normative-mode" title="README.md#standard-normative-mode">Standard normative</a></li></ul></td>
          <td align="left" valign="top"><p>Integer</p>
             <p>No default. Threshold at which multiple references to the same object within a schema are moved into <b>Property details</b> instead of expanded in place.</p>
-            <p>For details, see <a href="#combine_multiple_refs"><code>combine_multiple_refs</code></a>.</p>
-            <p>This setting specifies that multiple objects within a schema, that are defined by reference to the same definition, should have their definitions moved into the <b>Property Details</b> clause, with a single-line (row) listing for each object in the main table. <code>combine_multiple_refs</code> is an integer threshold that triggers this behavior.</p>
-            <p>The <code>combine_multiple_refs</code> key specifies a threshold at which multiple references to the same object within a schema are moved into <b>Property details</b> instead of expanded in place. For example, to move an object to <b>Property details</b> if it is referred to three or more times:</p>
+            <p>This setting specifies that multiple objects within a schema, that are defined by reference to the same definition, should have their definitions moved into the <b>Property Details</b> clause with a single-row listing for each object in the main table.</p>
+            <p>For example, to move an object to <b>Property details</b> if it is referred to three or more times:</p>
             <pre lang="json">"combine_multiple_refs": 3</pre>
             <p>Value is:</p><ul><li>Absent or 0. No combining occurs.</li><li>2 or greater. Combining occurs at that number of references to the same object.</li><li>1. Does not make sense and should be avoided.</li></ul>
          </td>
       </tr>
       <tr>
          <td align="left" valign="top"><code>content_supplement</code></td>
-         <td align="left" valign="top"><ul><li><a href="README.md#profile-mode" title="README.md#profile-mode">Profile mode</a></li><li><a href="README.md#standard-mode" title="README.md#standard-mode">Standard</a></li><li><a href="README.md#standard-normative-mode" title="README.md#standard-normative-mode">Standard normative</a></li><li><a href="README.md#schema-subset-mode">Schema subset</a></li></ul></td>
+         <td align="left" valign="top"><ul><li><a href="README.md#profile-mode" title="README.md#profile-mode">Profile</a></li><li><a href="README.md#standard-mode" title="README.md#standard-mode">Standard</a></li><li><a href="README.md#standard-normative-mode" title="README.md#standard-normative-mode">Standard normative</a></li><li><a href="README.md#schema-subset-mode">Schema subset</a></li></ul></td>
          <td align="left" valign="top"><p>String</p><p>No default. Location of a JSON-formatted content supplement file, which specifies content substitutions to be made within the generated schema documentation. If a relative path, must be relative to the location of the configuration file.</p></td>
       </tr>
      <tr>
@@ -159,15 +158,24 @@ To include supplemental files and the content supplement configuration file:
          <td align="left" valign="top"><ul><li><a href="README.md#property-index-mode" title="README.md#property-index-mode">Property index</a></li></ul></td>
          <td align="left" valign="top"><p>Object</p>
             <p>An object keyed by property name, which can specify descriptions that override those in the source schemas.</p>
-            <p>You can override descriptions for individual properties. The <code>description_overrides</code> object is keyed by property name. Values are lists, which enable different overrides for the same property in different schemas. Each object in the list can have the following entries:</p> | Key | Value | | :-------------------- | :------------- | | `type` | Property type. | | `schemas` | List of schemas to which this element applies. | | `overrideDescription` | String that replaces the description in the schema. | | `globalOverride` | The `overrideDescription` in this element applies to all instances of the property name that match the `type`. | | `description` | Description in the schema. | | `knownException` | A variant description is expected. | <p>The `description` and `knownException` keys are primarily for user reference. When generating configuration output, the doc generator includes the description and set `knownException` to `false`. The user can edit the resulting output to distinguish expected exceptions from those that need attention. Neither field affects the property index document itself.</p>
-            <blockquote><b>Note:</b> Although `description_overrides` has a similar function to `property_description_overrides` in other modes, it has a different structure.</blockquote>
+            <p>You can override descriptions for individual properties. The <code>description_overrides</code> object is keyed by property name. Values are lists, which enable different overrides for the same property in different schemas. Each object in the list can have the following entries:</p><table>
+   <thead>
+      <tr>
+         <th align="left" valign="top">Key</th>
+         <th align="left" valign="top">Value</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td align="left" valign="top"><code>type</code></td><td align="left" valign="top">Property type.</td></tr><tr><td align="left" valign="top"><code>schemas</code></td><td align="left" valign="top">List of schemas to which this element applies.</td></tr><tr><td align="left" valign="top"><code>overrideDescription</code></td><td align="left" valign="top">String that replaces the description in the schema.</td></tr><tr><td align="left" valign="top"><code>globalOverride</code></td><td align="left" valign="top">The <code>overrideDescription</code> in this element applies to all instances of the property name that match the <code>type</code>.</td></tr><tr><td align="left" valign="top"><code>description</code></td><td align="left" valign="top">Description in the schema.</td></tr><tr><td align="left" valign="top"><code>knownException</code></td><td align="left" valign="top"><p>A variant description is expected.</p><p>The <code>description</code> and <code>knownException</code> keys are primarily for user reference. When generating configuration output, the doc generator includes the description and sets <code>knownException</code> to <code>false</code>. The user can edit the resulting output to distinguish expected exceptions from those that need attention. Neither field affects the property index document itself.</p>
+            <blockquote><b>Note:</b> Although <code>description_overrides</code> has a similar function to <code>property_description_overrides</code> in other modes, it has a different structure.</blockquote></td></tr></tbody></table>
             <p>Some examples:</p>
             <pre lang="json">"EventType": [{
    "overrideDescription": "This indicates the type of an event recorded in this log.",
    "globalOverride": true,
    "type": "string"
 }]</pre>
-            <p>The combination of `globalOverride` and `overrideDescription` indicates that all instances of the `EventType` property that have type `string` should have their description replaced with `"This indicates the type of an event recorded in this log."`</p>
+            <p>The combination of <code>globalOverride</code> and <code>overrideDescription</code> indicates that all instances of the <code>EventType</code> property that have type <code>string</code> should have their description replaced with <code>"This indicates the type of an event recorded in this log."</code></p>
             <pre lang="json">
 "FirmwareVersion": [{
    "description": "Firmware version.",
@@ -192,7 +200,7 @@ To include supplemental files and the content supplement configuration file:
    "knownException": true,
    "schemas": ["PCIeDevice"]
 }]</pre>
-            <p>The first two entries in this `FirmwareVersion` example override the description for `FirmwareVersion` with type `string`, in the listed schemas. The third entry identifies another instance of `FirmwareVersion` with another description, which is expected but should not be overridden.</p>
+            <p>The first two entries in this <code>FirmwareVersion</code> example override the description for <code>FirmwareVersion</code> with type <code>string</code>, in the listed schemas. The third entry identifies another instance of <code>FirmwareVersion</code> with another description, which is expected but should not be overridden.</p>
          </td>
       </tr>
       <tr>
@@ -203,6 +211,8 @@ To include supplemental files and the content supplement configuration file:
             <p><b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>escape</code></p>
          </td>
       </tr>
+         </tbody>
+</table>
      <!--   <tr>
          <td align="left" valign="top"><code>excluded_annotations</code></td>
          <td align="left" valign="top"><a href="README.md#csv-formnat" title="README.md#csv-format">CSV format</a>, <a href="README.md#profile-mode" title="README.md#profile-mode">Profile mode</a>, <li><a href="README.md#standard-mode" title="README.md#standard-mode">Standard</a></li><a href="README.md#standard-normative-mode" title="README.md#standard-normative-mode">Standard normative mode</a>, <a href="README.md#schema-subset-mode">Schema subset</a></td>
@@ -372,8 +382,7 @@ To include supplemental files and the content supplement configuration file:
 </pre>
          </td>
       </tr> -->
-   </tbody>
-</table>
+
 
 <!-- ### actions_in_property_table
 
