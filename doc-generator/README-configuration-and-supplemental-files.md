@@ -262,7 +262,8 @@ To include supplemental files and the content supplement configuration file:
                generated schema documentation. If a relative path, must be
                relative to the location of the configuration file.</p>
          </td>
-      </tr>
+      </tr></tbody></table>
+      <!--
       <tr>
          <td align="left" valign="top">
             <code>description_overrides</code>
