@@ -42,9 +42,7 @@ To include supplemental files and the content supplement configuration file:
     }
     ``` 
 
-### Contents
-
-* [Example base configuration files](#example-base-configuration-files)
+<!-- * [Example base configuration files](#example-base-configuration-files)
 * [actions_in_property_table](#actions_in_property_table)
 * [add_toc](#add_toc)
 * [boilerplate_intro](#boilerplate_intro)
@@ -75,7 +73,7 @@ To include supplemental files and the content supplement configuration file:
 * [subset](#subset)
 * [uri_mapping](#uri_mapping)
 * [Subset configuration file](#subset-configuration-file)
-* [Property index configuration file](#property-index-configuration-file)
+* [Property index configuration file](#property-index-configuration-file) -->
 
 ### Example base configuration files
 
@@ -87,6 +85,8 @@ To include supplemental files and the content supplement configuration file:
 | Standard mode         | [`sample_inputs/standard_html/config.json`](sample_inputs/standard_html/config.json) | [Standard mode in HTML format](README-configuration-files.md#standard-mode-in-html-format) |
 | Standard normative | [`sample_inputs/standard_html/config_normative.json`](sample_inputs/standard_html/config_normative.json) | [Standard normative mode in HTML format](README-configuration-files.md#standard-normative-mode-in-html-format) |
 | Schema subset mode   | [`sample_inputs/subset/config.json`](sample_inputs/subset/config.json) | [Schema subset mode in HTML format](README-configuration-files.md#schema-subset-mode-in-html-format) |
+
+### Configuration keys
 
 <table>
    <thead>
@@ -154,11 +154,10 @@ To include supplemental files and the content supplement configuration file:
          <td align="left" valign="top"><ul><li><a href="README.md#profile-mode" title="README.md#profile-mode">Profile mode</a></li><li><a href="README.md#standard-mode" title="README.md#standard-mode">Standard</a></li><li><a href="README.md#standard-normative-mode" title="README.md#standard-normative-mode">Standard normative</a></li><li><a href="README.md#schema-subset-mode">Schema subset</a></li></ul></td>
          <td align="left" valign="top"><p>String</p><p>No default. Location of a JSON-formatted content supplement file, which specifies content substitutions to be made within the generated schema documentation. If a relative path, must be relative to the location of the configuration file.</p></td>
       </tr>
-     <!--  <tr>
+     <tr>
          <td align="left" valign="top"><code>description_overrides</code></td>
-         <td align="left" valign="top"><a href="README.md#property-index-mode" title="README.md#property-index-mode">Property index mode</a></td>
-         <td align="left" valign="top">Object</td>
-         <td align="left" valign="top">
+         <td align="left" valign="top"><ul><li><a href="README.md#property-index-mode" title="README.md#property-index-mode">Property index</a></li></ul></td>
+         <td align="left" valign="top"><p>Object</p>
             <p>An object keyed by property name, which can specify descriptions that override those in the source schemas.</p>
             <p>You can override descriptions for individual properties. The <code>description_overrides</code> object is keyed by property name. Values are lists, which enable different overrides for the same property in different schemas. Each object in the list can have the following entries:</p> | Key | Value | | :-------------------- | :------------- | | `type` | Property type. | | `schemas` | List of schemas to which this element applies. | | `overrideDescription` | String that replaces the description in the schema. | | `globalOverride` | The `overrideDescription` in this element applies to all instances of the property name that match the `type`. | | `description` | Description in the schema. | | `knownException` | A variant description is expected. | <p>The `description` and `knownException` keys are primarily for user reference. When generating configuration output, the doc generator includes the description and set `knownException` to `false`. The user can edit the resulting output to distinguish expected exceptions from those that need attention. Neither field affects the property index document itself.</p>
             <blockquote><b>Note:</b> Although `description_overrides` has a similar function to `property_description_overrides` in other modes, it has a different structure.</blockquote>
@@ -199,13 +198,12 @@ To include supplemental files and the content supplement configuration file:
       <tr>
          <td align="left" valign="top"><code>escape_chars</code></td>
          <td align="left" valign="top">??</td>
-         <td align="left" valign="top">??</td>
-         <td align="left" valign="top">
+         <td align="left" valign="top"><p>??</p>
             <p>No default. Characters to escape in generated Markdown. For example, use <code>--escape=@</code> if your Markdown processor converts embedded <code>@</code> characters to <code>mailto</code> links.</p>
             <p><b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b> <code>escape</code></p>
          </td>
       </tr>
-      <tr>
+     <!--   <tr>
          <td align="left" valign="top"><code>excluded_annotations</code></td>
          <td align="left" valign="top"><a href="README.md#csv-formnat" title="README.md#csv-format">CSV format</a>, <a href="README.md#profile-mode" title="README.md#profile-mode">Profile mode</a>, <li><a href="README.md#standard-mode" title="README.md#standard-mode">Standard</a></li><a href="README.md#standard-normative-mode" title="README.md#standard-normative-mode">Standard normative mode</a>, <a href="README.md#schema-subset-mode">Schema subset</a></td>
          <td align="left" valign="top">Array of strings</td>
@@ -365,8 +363,8 @@ To include supplemental files and the content supplement configuration file:
       <tr>
          <td align="left" valign="top"><code>uri_mapping</code></td>
          <td align="left" valign="top"><a href="README.md#csv-formnat" title="README.md#csv-format">CSV format</a>, <a href="README.md#profile-mode" title="README.md#profile-mode">Profile mode</a>, <a href="README.md#property-index-mode" title="README.md#property-index-mode">Property index mode</a>, <li><a href="README.md#standard-mode" title="README.md#standard-mode">Standard</a></li><a href="README.md#standard-normative-mode" title="README.md#standard-normative-mode">Standard normative mode</a>, <a href="README.md#schema-subset-mode">Schema subset</a></td>
-         <td align="left" valign="top">Object</td>
-         <td align="left" valign="top">
+         <td align="left" valign="top"><p>Object</p>
+            
             <p>No default. Partial URL of schema repositories as attributes, and local directory paths as values.</p>
             <p>This object maps partial URIs, as found in the schemas, to local directories. The partial URI should include the domain part of the URI but can omit the protocol (http:// or https://).</p>
             <pre lang="json">
