@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.com/DMTF/Redfish-Tools.svg?branch=master)](https://travis-ci.com/github/DMTF/Redfish-Tools)
 <p align="center">
-  <img src="http://redfish.dmtf.org/sites/all/themes/dmtf2015/images/dmtf-redfish-logo.png" alt="DMTF Redfish" width=180>
+  <img src="http://redfish.dmtf.org/sites/all/themes/dmtf2015/images/dmtf-redfish-logo.png" alt="DMTF Redfish" width=180></p>
 
 # Redfish doc generator: Configuration and supplemental files
 
@@ -91,9 +91,12 @@ To include supplemental files and the content supplement configuration file:
 <table>
    <thead>
       <tr>
-         <th align="left" valign="top"> Key</th>
-         <th align="left" valign="top"> Output modes</th>
-         <th align="left" valign="top"> Description</th>
+         <th align="left" valign="top">
+            Key</th>
+         <th align="left" valign="top">
+            Output modes</th>
+         <th align="left" valign="top">
+            Description</th>
       </tr>
    </thead>
    <tbody>
@@ -263,7 +266,7 @@ To include supplemental files and the content supplement configuration file:
                relative to the location of the configuration file.</p>
          </td>
       </tr>
-      <tr>
+      <!-- <tr>
          <td align="left" valign="top">
             <code>description_overrides</code>
          </td>
@@ -402,15 +405,13 @@ To include supplemental files and the content supplement configuration file:
                </li>
             </ul>
          </td>
-      </tr>
-   </tbody>
-</table>
-      <!--
+      </tr> -->
       <tr>
          <td align="left" valign="top">
             <code>escape_chars</code>
          </td>
-         <td align="left" valign="top"> ??</td>
+         <td align="left" valign="top">
+            ??</td>
          <td align="left" valign="top">
             <p>??</p>
             <p>No default. Characters to escape in generated Markdown. For
@@ -418,8 +419,7 @@ To include supplemental files and the content supplement configuration file:
                converts embedded <code>@</code> characters to
                <code>mailto</code> links.</p>
             <p><b>Equivalent&nbsp;command&#8209;line&nbsp;argument:</b>
-               <code>escape</code>
-            </p>
+               <code>escape</code></p>
          </td>
       </tr>
    </tbody>
